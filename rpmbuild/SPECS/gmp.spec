@@ -5,7 +5,7 @@ Summary:	The GMP package contains math libraries. These have useful functions fo
 
 License:	GPL
 URL:		https://gmplib.org/
-Source0:	gmp-6.1.2.tar.bz2
+Source0:	https://ftp.gnu.org/gnu/gmp/gmp-%{version}.tar.bz2
 
 %description
 

@@ -1,11 +1,11 @@
 Name:           file
-Version:	5.37
+Version:	5.38
 Release:        1%{?dist}
 Summary:	File utility
 
-License:	MIT?
-URL:		ftp://ftp.astron.com/pub/file/
-Source0:	file-5.37.tar.gz
+License:	MIT
+URL:		https://astron.com/
+Source0:	https://astron.com/pub/file/file-%{version}.tar.gz
 
 %description
 File utility
@@ -20,7 +20,7 @@ make check
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%make_install
+make install DESTDIR=$RPM_BUILD_ROOT
 
 %files
 /usr/bin/file

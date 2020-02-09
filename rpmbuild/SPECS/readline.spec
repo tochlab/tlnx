@@ -5,7 +5,7 @@ Summary:	GNU Readline Library
 
 License:	GPL
 URL:		http://www.gnu.org/software/readline/
-Source0:	readline-8.0.tar.gz
+Source0:	https://ftp.gnu.org/gnu/readline/readline-%{version}.tar.gz
 
 %description
 
@@ -19,7 +19,7 @@ make %{?_smp_mflags}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%make_install
+make install DESTDIR=$RPM_BUILD_ROOT
 mkdir %{buildroot}/lib
 mv -v %{buildroot}/usr/lib/lib{readline,history}.so.* %{buildroot}/lib
 chmod -v u+w %{buildroot}/lib/lib{readline,history}.so.*

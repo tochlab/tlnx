@@ -5,7 +5,7 @@ Summary:	M4 is an implementation of the traditional Unix macro processor.
 
 License:	GPL
 URL:		http://www.gnu.org/software/m4/
-Source0:	m4-1.4.18.tar.gz
+Source0:	https://ftp.gnu.org/gnu/m4/m4-%{version}.tar.gz
 
 %description
 
@@ -21,7 +21,7 @@ make %{?_smp_mflags}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%make_install
+make install DESTDIR=$RPM_BUILD_ROOT
 
 %files
 /*

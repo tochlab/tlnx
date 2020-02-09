@@ -1,11 +1,11 @@
 Name:           man-pages
-Version:	5.01
+Version:	5.04
 Release:        1
 Summary:	Man page
 
 License:	GPLv2
 URL:		https://www.kernel.org/doc/man-pages/
-Source0:	man-pages-5.01.tar.xz
+Source0:	https://mirrors.edge.kernel.org/pub/linux/docs/man-pages/man-pages-%{version}.tar.gz
 BuildArch:	noarch
 
 %description
@@ -16,6 +16,7 @@ BuildArch:	noarch
 %build
 
 %install
+rm -rf $RPM_BUILD_ROOT
 make install PREFIX=/usr DESTDIR=%{buildroot}
 
 %files

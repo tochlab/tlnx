@@ -5,7 +5,7 @@ Summary:	Zlib
 
 License:	ZLIB
 URL:		https://www.zlib.net/
-Source0:	zlib-1.2.11.tar.gz
+Source0:	https://www.zlib.net/zlib-%{version}.tar.gz
 
 %description
 Zlib compress library

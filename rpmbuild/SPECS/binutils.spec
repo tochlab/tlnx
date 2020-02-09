@@ -1,11 +1,11 @@
 Name:           binutils
-Version:	2.32
+Version:	2.34
 Release:        1%{?dist}
 Summary:	The GNU Binutils are a collection of binary tools.
 
 License:	GPL
 URL:		https://www.gnu.org/software/binutils/
-Source0:	binutils-2.32.tar.gz
+Source0:	https://ftp.gnu.org/gnu/binutils/binutils-2.34.tar.gz
 
 %description
 

@@ -36,7 +36,7 @@
 
 ~~Pkg-config-0.29.2~~
 
-Ncurses-6.2
+~~Ncurses-6.2~~
 
 Libcap-2.31
 

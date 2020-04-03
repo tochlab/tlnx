@@ -52,7 +52,7 @@ Iana-Etc-2.30
 
 ~~Grep-3.4~~
 
-Bash-5.0
+~~Bash-5.0~~
 
 Libtool-2.4.6
 

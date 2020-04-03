@@ -34,7 +34,7 @@
 
 ~~GCC-9.2.0~~
 
-Pkg-config-0.29.2
+~~Pkg-config-0.29.2~~
 
 Ncurses-6.2
 

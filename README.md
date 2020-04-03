@@ -38,7 +38,7 @@
 
 ~~Ncurses-6.2~~
 
-Libcap-2.31
+~~Libcap-2.33~~
 
 Sed-4.8
 

@@ -1,4 +1,4 @@
-Linux-5.5.3 API Headers
+~~Linux-5.5.3 API Headers~~
 
 ~~Man-pages-5.05~~
 
@@ -12,19 +12,19 @@ Xz-5.2.4
 
 ~~File-5.38~~
 
-Readline-8.0
+~~Readline-8.0~~
 
-M4-1.4.18
+~~M4-1.4.18~~
 
-Bc-2.5.3
+~~Bc-2.5.3~~
 
-Binutils-2.34
+~~Binutils-2.34~~
 
-GMP-6.2.0
+~~GMP-6.2.0~~
 
-MPFR-4.0.2
+~~MPFR-4.0.2~~
 
-MPC-1.1.0
+~~MPC-1.1.0~~
 
 Attr-2.4.48
 

@@ -54,7 +54,7 @@ Iana-Etc-2.30
 
 ~~Bash-5.0~~
 
-Libtool-2.4.6
+~~Libtool-2.4.6~~
 
 GDBM-1.18.1
 

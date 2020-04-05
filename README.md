@@ -64,7 +64,7 @@ Iana-Etc-2.30
 
 ~~Inetutils-1.9.4~~
 
-Perl-5.30.1
+~~Perl-5.30.2~~
 
 XML::Parser-2.46
 

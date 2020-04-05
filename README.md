@@ -66,9 +66,9 @@ Iana-Etc-2.30
 
 ~~Perl-5.30.2~~
 
-XML::Parser-2.46
+~~XML::Parser-2.46~~
 
-Intltool-0.51.0
+~~Intltool-0.51.0~~
 
 Autoconf-2.69
 

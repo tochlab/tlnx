@@ -70,7 +70,7 @@ Iana-Etc-2.30
 
 ~~Intltool-0.51.0~~
 
-Autoconf-2.69
+~~Autoconf-2.69~~
 
 Automake-1.16.1
 

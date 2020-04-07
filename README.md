@@ -74,7 +74,7 @@ Iana-Etc-2.30
 
 ~~Automake-1.16.1~~
 
-Kmod-26
+~~Kmod-26~~
 
 Gettext-0.20.1
 

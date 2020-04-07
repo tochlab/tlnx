@@ -76,7 +76,7 @@ Iana-Etc-2.30
 
 ~~Kmod-26~~
 
-Gettext-0.20.1
+~~Gettext-0.20.1~~
 
 Libelf from Elfutils-0.178
 

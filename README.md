@@ -72,7 +72,7 @@ Iana-Etc-2.30
 
 ~~Autoconf-2.69~~
 
-Automake-1.16.1
+~~Automake-1.16.1~~
 
 Kmod-26
 

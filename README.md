@@ -94,7 +94,7 @@ Iana-Etc-2.30
 
 ~~Check-0.14.0~~
 
-Diffutils-3.7
+~~Diffutils-3.7~~
 
 Gawk-5.0.1
 

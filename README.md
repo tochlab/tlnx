@@ -86,7 +86,7 @@ Iana-Etc-2.30
 
 ~~Python-3.8.2~~
 
-Ninja-1.10.0
+~~Ninja-1.10.0~~
 
 Meson-0.53.1
 

@@ -90,7 +90,7 @@ Iana-Etc-2.30
 
 ~~Meson-0.53.1~~
 
-Coreutils-8.31
+~~Coreutils-8.31~~
 
 Check-0.14.0
 

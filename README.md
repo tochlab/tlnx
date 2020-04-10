@@ -106,7 +106,7 @@ Iana-Etc-2.30
 
 ~~Less-551~~
 
-Gzip-1.10
+~~Gzip-1.10~~
 
 Zstd-1.4.4
 

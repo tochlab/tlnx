@@ -102,7 +102,7 @@ Iana-Etc-2.30
 
 ~~Groff-1.22.4~~
 
-GRUB-2.04
+~~GRUB-2.04~~
 
 Less-551
 

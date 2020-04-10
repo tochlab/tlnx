@@ -132,7 +132,7 @@ IPRoute2-5.5.0
 
 ~~Util-linux-2.35.1~~
 
-E2fsprogs-1.45.5
+~~E2fsprogs-1.45.5~~
 
 Sysklogd-1.5.1
 

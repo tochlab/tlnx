@@ -124,7 +124,7 @@ IPRoute2-5.5.0
 
 ~~Tar-1.32~~
 
-Texinfo-6.7
+~~Texinfo-6.7~~
 
 Vim-8.2.0190
 

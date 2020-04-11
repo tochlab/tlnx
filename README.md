@@ -134,7 +134,7 @@ IPRoute2-5.5.0
 
 ~~E2fsprogs-1.45.5~~
 
-Sysklogd-1.5.1
+~~Sysklogd-1.5.1~~
 
 Sysvinit-2.96
 

@@ -136,6 +136,6 @@ IPRoute2-5.5.0
 
 ~~Sysklogd-1.5.1~~
 
-Sysvinit-2.96
+~~Sysvinit-2.96~~
 
 Eudev-3.2.9 

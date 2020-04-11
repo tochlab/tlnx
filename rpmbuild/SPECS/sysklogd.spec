@@ -16,7 +16,7 @@ Source0:	https://github.com/troglobit/sysklogd/releases/download/v%{version}/sys
 %setup -q
 
 %build
-./configure --prefix=/usr --bindir=/bin --sbindir=/sbin
+./configure --prefix=/usr --bindir=/bin --sbindir=/sbin --without-logger
 make %{?_smp_mflags}
 
 %install
@@ -24,7 +24,6 @@ rm -rf $RPM_BUILD_ROOT
 %make_install
 
 %files
-/bin/logger
 /sbin/syslogd
 /usr/include/syslog/syslog.h
 /usr/lib/libsyslog.a
@@ -40,7 +39,6 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/doc/sysklogd/example/example.c
 /usr/share/doc/sysklogd/example/example.mk
 /usr/share/doc/sysklogd/syslog.conf
-/usr/share/man/man1/logger.1.gz
 /usr/share/man/man3/syslogp.3.gz
 /usr/share/man/man5/syslog.conf.5.gz
 /usr/share/man/man8/syslogd.8.gz

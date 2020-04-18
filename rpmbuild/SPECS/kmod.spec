@@ -5,7 +5,7 @@ Summary:	library and tools for managing linux kernel modules
 
 License:	LGPL-2
 URL:		https://git.kernel.org/?p=utils/kernel/kmod/kmod.git
-Source0:	https://www.kernel.org/pub/linux/utils/kernel/kmod-%{version}.tar.gz
+Source0:	https://www.kernel.org/pub/linux/utils/kernel/kmod/kmod-%{version}.tar.gz
 
 #BuildRequires:
 #Requires:

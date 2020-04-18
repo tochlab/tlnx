@@ -2907,6 +2907,13 @@ cd %{_builddir}/Python-%{version}
 /usr/lib/python3.8/lib-dynload/unicodedata.cpython-38-x86_64-linux-gnu.so
 /usr/lib/python3.8/lib-dynload/xxlimited.cpython-38-x86_64-linux-gnu.so
 /usr/lib/python3.8/lib-dynload/zlib.cpython-38-x86_64-linux-gnu.so
+/usr/lib/python3.8/lib-dynload/_bz2.cpython-38-x86_64-linux-gnu.so
+/usr/lib/python3.8/lib-dynload/_ctypes.cpython-38-x86_64-linux-gnu.so
+/usr/lib/python3.8/lib-dynload/_dbm.cpython-38-x86_64-linux-gnu.so
+/usr/lib/python3.8/lib-dynload/_gdbm.cpython-38-x86_64-linux-gnu.so
+/usr/lib/python3.8/lib-dynload/_sqlite3.cpython-38-x86_64-linux-gnu.so
+/usr/lib/python3.8/lib-dynload/_uuid.cpython-38-x86_64-linux-gnu.so
+/usr/lib/python3.8/lib-dynload/readline.cpython-38-x86_64-linux-gnu.so
 /usr/lib/python3.8/lib2to3/Grammar.txt
 /usr/lib/python3.8/lib2to3/Grammar3.8.2.final.0.pickle
 /usr/lib/python3.8/lib2to3/PatternGrammar.txt

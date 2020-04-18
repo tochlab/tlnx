@@ -1,2 +1,2 @@
 #!/bin/sh
-find . -name \*.spec -exec spectool -g -R {} \;
+find ./rpmbuild/SPECS/ -name \*.spec -exec spectool -g -R {} \;

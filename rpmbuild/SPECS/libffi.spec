@@ -22,14 +22,15 @@ make %{?_smp_mflags}
 %install
 rm -rf $RPM_BUILD_ROOT
 %make_install
+rm $RPM_BUILD_ROOT/usr/share/info/dir
 
 %files
 /usr/include/ffi.h
 /usr/include/ffitarget.h
-/usr/lib/libffi.la
-/usr/lib/libffi.so
-/usr/lib/libffi.so.7
-/usr/lib/libffi.so.7.1.0
+/usr/lib64/libffi.la
+/usr/lib64/libffi.so
+/usr/lib64/libffi.so.7
+/usr/lib64/libffi.so.7.1.0
 /usr/lib/pkgconfig/libffi.pc
 /usr/share/info/libffi.info.gz
 /usr/share/man/man3/ffi.3.gz

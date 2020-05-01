@@ -22,13 +22,14 @@ make %{?_smp_mflags}
 %install
 rm -rf $RPM_BUILD_ROOT
 %make_install
+rm -rf $RPM_BUILD_ROOT/usr/share/info/dir
 
 %files
 /usr/bin/find
 /usr/bin/locate
 /usr/bin/updatedb
 /usr/bin/xargs
-/usr/lib/x86_64-linux-gnu/frcode
+/usr/libexec/frcode
 /usr/share/info/find-maint.info.gz
 /usr/share/info/find.info-1.gz
 /usr/share/info/find.info-2.gz

@@ -16,13 +16,14 @@ Source0:	https://ftp.gnu.org/gnu/grep/grep-%{version}.tar.xz
 %setup -q
 
 %build
-./configure --prefix=/usr --bindir=/bin
+./configure --prefix=/usr --bindir=/bin --infodir=/usr/share/info
 make %{?_smp_mflags}
 make check
 
 %install
 rm -rf $RPM_BUILD_ROOT
 %make_install
+rm $RPM_BUILD_ROOT/usr/share/info/dir
 
 %files
 /bin/egrep

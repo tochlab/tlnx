@@ -16,12 +16,13 @@ Source0:	https://ftp.gnu.org/gnu/groff/groff-%{version}.tar.gz
 %setup -q
 
 %build
-./configure --prefix=/usr
+./configure --prefix=/usr --without-x
 make
 
 %install
 rm -rf $RPM_BUILD_ROOT
 %make_install
+rm -rf $RPM_BUILD_ROOT/usr/share/info/dir
 
 %files
 /usr/bin/addftinfo
@@ -636,6 +637,72 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/man/man7/groff_trace.7.gz
 /usr/share/man/man7/groff_www.7.gz
 /usr/share/man/man7/roff.7.gz
+/usr/share/doc/groff-1.22.4/examples/mom/letter.pdf
+/usr/share/doc/groff-1.22.4/examples/mom/mom-pdf.pdf
+/usr/share/doc/groff-1.22.4/examples/mom/mon_premier_doc.pdf
+/usr/share/doc/groff-1.22.4/examples/mom/sample_docs.pdf
+/usr/share/doc/groff-1.22.4/examples/mom/slide-demo.pdf
+/usr/share/doc/groff-1.22.4/examples/mom/typesetting.pdf
+/usr/share/doc/groff-1.22.4/pdf/automake.pdf
+/usr/share/doc/groff-1.22.4/pdf/mom-pdf.pdf
+/usr/share/doc/groff-1.22.4/pdf/pdfmark.pdf
+/usr/share/groff/1.22.4/font/devpdf/AB
+/usr/share/groff/1.22.4/font/devpdf/ABI
+/usr/share/groff/1.22.4/font/devpdf/AI
+/usr/share/groff/1.22.4/font/devpdf/AR
+/usr/share/groff/1.22.4/font/devpdf/BMB
+/usr/share/groff/1.22.4/font/devpdf/BMBI
+/usr/share/groff/1.22.4/font/devpdf/BMI
+/usr/share/groff/1.22.4/font/devpdf/BMR
+/usr/share/groff/1.22.4/font/devpdf/HNB
+/usr/share/groff/1.22.4/font/devpdf/HNBI
+/usr/share/groff/1.22.4/font/devpdf/HNI
+/usr/share/groff/1.22.4/font/devpdf/HNR
+/usr/share/groff/1.22.4/font/devpdf/NB
+/usr/share/groff/1.22.4/font/devpdf/NBI
+/usr/share/groff/1.22.4/font/devpdf/NI
+/usr/share/groff/1.22.4/font/devpdf/NR
+/usr/share/groff/1.22.4/font/devpdf/PB
+/usr/share/groff/1.22.4/font/devpdf/PBI
+/usr/share/groff/1.22.4/font/devpdf/PI
+/usr/share/groff/1.22.4/font/devpdf/PR
+/usr/share/groff/1.22.4/font/devpdf/U-AB
+/usr/share/groff/1.22.4/font/devpdf/U-ABI
+/usr/share/groff/1.22.4/font/devpdf/U-AI
+/usr/share/groff/1.22.4/font/devpdf/U-AR
+/usr/share/groff/1.22.4/font/devpdf/U-BMB
+/usr/share/groff/1.22.4/font/devpdf/U-BMBI
+/usr/share/groff/1.22.4/font/devpdf/U-BMI
+/usr/share/groff/1.22.4/font/devpdf/U-BMR
+/usr/share/groff/1.22.4/font/devpdf/U-CB
+/usr/share/groff/1.22.4/font/devpdf/U-CBI
+/usr/share/groff/1.22.4/font/devpdf/U-CI
+/usr/share/groff/1.22.4/font/devpdf/U-CR
+/usr/share/groff/1.22.4/font/devpdf/U-HB
+/usr/share/groff/1.22.4/font/devpdf/U-HBI
+/usr/share/groff/1.22.4/font/devpdf/U-HI
+/usr/share/groff/1.22.4/font/devpdf/U-HNB
+/usr/share/groff/1.22.4/font/devpdf/U-HNBI
+/usr/share/groff/1.22.4/font/devpdf/U-HNI
+/usr/share/groff/1.22.4/font/devpdf/U-HNR
+/usr/share/groff/1.22.4/font/devpdf/U-HR
+/usr/share/groff/1.22.4/font/devpdf/U-NB
+/usr/share/groff/1.22.4/font/devpdf/U-NBI
+/usr/share/groff/1.22.4/font/devpdf/U-NI
+/usr/share/groff/1.22.4/font/devpdf/U-NR
+/usr/share/groff/1.22.4/font/devpdf/U-PB
+/usr/share/groff/1.22.4/font/devpdf/U-PBI
+/usr/share/groff/1.22.4/font/devpdf/U-PI
+/usr/share/groff/1.22.4/font/devpdf/U-PR
+/usr/share/groff/1.22.4/font/devpdf/U-S
+/usr/share/groff/1.22.4/font/devpdf/U-TB
+/usr/share/groff/1.22.4/font/devpdf/U-TBI
+/usr/share/groff/1.22.4/font/devpdf/U-TI
+/usr/share/groff/1.22.4/font/devpdf/U-TR
+/usr/share/groff/1.22.4/font/devpdf/U-ZCMI
+/usr/share/groff/1.22.4/font/devpdf/U-ZD
+/usr/share/groff/1.22.4/font/devpdf/ZCMI
+
 
 %changelog
 * Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>

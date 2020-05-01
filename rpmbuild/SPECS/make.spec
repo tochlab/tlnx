@@ -16,7 +16,7 @@ Source0:	https://ftp.gnu.org/gnu/make/make-%{version}.tar.gz
 %setup -q
 
 %build
-./configure --prefix=/usr
+./configure --prefix=/usr --without-guile
 make %{?_smp_mflags}
 
 %install

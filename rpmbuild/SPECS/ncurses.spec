@@ -22,7 +22,10 @@ Source0:	https://ftp.gnu.org/gnu/ncurses/ncurses-%{version}.tar.gz
             --without-debug         \
             --without-normal        \
             --enable-pc-files       \
-            --enable-widec
+            --enable-widec          \
+            --disable-termcap       \
+            --with-termlib          \
+            --enable-symlinks
 
 make %{?_smp_mflags}
 
@@ -76,6 +79,12 @@ rm -rf $RPM_BUILD_ROOT
 /usr/lib/libpanelw.so.6
 /usr/lib/libpanelw.so.6.2
 /usr/lib/terminfo
+
+/usr/lib/libtinfow.so
+/usr/lib/libtinfow.so.6
+/usr/lib/libtinfow.so.6.2
+/usr/share/pkgconfig/tinfow.pc
+
 /usr/share/man/man1/captoinfo.1m.gz
 /usr/share/man/man1/clear.1.gz
 /usr/share/man/man1/infocmp.1m.gz

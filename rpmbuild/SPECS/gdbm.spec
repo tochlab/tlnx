@@ -25,6 +25,11 @@ make %{?_smp_mflags}
 rm -rf $RPM_BUILD_ROOT
 #make install DESTDIR=%{?buildroot}
 %make_install
+%{__rm} -f %{buildroot}/usr/share/info/dir
+
+#%post
+#/sbin/ldconfig
+#/sbin/install-info /usr/share/info/gdbm.info.gz /usr/share/info/dir 2> /dev/null || :
 
 %files
 /usr/bin/gdbm_dump
@@ -41,7 +46,6 @@ rm -rf $RPM_BUILD_ROOT
 /usr/lib/libgdbm_compat.so
 /usr/lib/libgdbm_compat.so.4
 /usr/lib/libgdbm_compat.so.4.0.0
-/usr/share/info/dir
 /usr/share/info/gdbm.info.gz
 /usr/share/locale/da/LC_MESSAGES/gdbm.mo
 /usr/share/locale/de/LC_MESSAGES/gdbm.mo

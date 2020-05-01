@@ -16,7 +16,7 @@ Source0:	http://ftp.rpm.org/releases/rpm-4.14.x/rpm-%{version}.tar.bz2
 %setup -q
 
 %build
-%configure --without-lua
+%configure --without-lua --without-dbus
 make %{?_smp_mflags}
 
 %install

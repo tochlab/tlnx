@@ -16,7 +16,7 @@ Contains base tree for initial work
 
 %install
     mkdir -pv %{buildroot}/{bin,boot,etc/{opt,sysconfig},home,lib/firmware,mnt,opt}
-    mkdir -pv %{buildroot}/{media/{floppy,cdrom},sbin,srv,var}
+    mkdir -pv %{buildroot}/{media/{floppy,cdrom},sbin,srv,var,proc}
     install -dv -m 0750 root
     install -dv -m 1777 tmp var/tmp
     mkdir -pv %{buildroot}/usr/{,local/}{bin,include,lib,sbin,src}

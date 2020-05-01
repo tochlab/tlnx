@@ -13,13 +13,14 @@ Source0:	https://ftp.gnu.org/gnu/readline/readline-%{version}.tar.gz
 %setup -q
 
 %build
-./configure -prefix=/usr --disable-static --docdir=/usr/share/doc/readline-8.0
+./configure -prefix=/usr --disable-static --docdir=/usr/share/doc/readline-%{version}
 
 make %{?_smp_mflags}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT
+%{__rm} -f %{buildroot}/usr/share/info/dir
 mkdir %{buildroot}/lib
 mv -v %{buildroot}/usr/lib/lib{readline,history}.so.* %{buildroot}/lib
 chmod -v u+w %{buildroot}/lib/lib{readline,history}.so.*
@@ -27,7 +28,28 @@ ln -sfv ../../lib/$(readlink %{buildroot}/usr/lib/libreadline.so) %{buildroot}/u
 ln -sfv ../../lib/$(readlink %{buildroot}/usr/lib/libhistory.so ) %{buildroot}/usr/lib/libhistory.so
 
 %files
-%doc
-/*
+/lib/libhistory.so.8
+/lib/libhistory.so.8.0
+/lib/libreadline.so.8
+/lib/libreadline.so.8.0
+/usr/include/readline/chardefs.h
+/usr/include/readline/history.h
+/usr/include/readline/keymaps.h
+/usr/include/readline/readline.h
+/usr/include/readline/rlconf.h
+/usr/include/readline/rlstdc.h
+/usr/include/readline/rltypedefs.h
+/usr/include/readline/tilde.h
+/usr/lib/libhistory.so
+/usr/lib/libreadline.so
+/usr/lib/pkgconfig/readline.pc
+/usr/share/doc/readline-%{version}/CHANGES
+/usr/share/doc/readline-%{version}/INSTALL
+/usr/share/doc/readline-%{version}/README
+/usr/share/info/history.info.gz
+/usr/share/info/readline.info.gz
+/usr/share/info/rluserman.info.gz
+/usr/share/man/man3/history.3.gz
+/usr/share/man/man3/readline.3.gz
 
 %changelog

@@ -27,6 +27,7 @@ make %{?_smp_mflags}
 %install
 rm -rf $RPM_BUILD_ROOT
 %make_install
+%{__rm} -f %{buildroot}/usr/share/man/man1/passwd.1
 
 %files
 /etc/ssl/ct_log_list.cnf
@@ -4153,7 +4154,7 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/man/man1/openssl-version.1.gz
 /usr/share/man/man1/openssl-x509.1.gz
 /usr/share/man/man1/openssl.1.gz
-/usr/share/man/man1/passwd.1.gz
+#/usr/share/man/man1/passwd.1.gz
 /usr/share/man/man1/pkcs12.1.gz
 /usr/share/man/man1/pkcs7.1.gz
 /usr/share/man/man1/pkcs8.1.gz

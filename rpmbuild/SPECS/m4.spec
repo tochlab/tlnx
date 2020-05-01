@@ -22,8 +22,13 @@ make %{?_smp_mflags}
 %install
 rm -rf $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT
+%{__rm} -f %{buildroot}/usr/share/info/dir
 
 %files
-/*
+/usr/bin/m4
+/usr/share/info/m4.info-1.gz
+/usr/share/info/m4.info-2.gz
+/usr/share/info/m4.info.gz
+/usr/share/man/man1/m4.1.gz
 
 %changelog

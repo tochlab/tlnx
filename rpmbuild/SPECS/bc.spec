@@ -31,9 +31,14 @@ make %{?_smp_mflags}
 %install
 rm -rf $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT
+rm -rf $RPM_BUILD_ROOT/usr/share/info/dir
 
 
 %files
-/*
+/usr/bin/bc
+/usr/bin/dc
+/usr/share/info/bc.info.gz
+/usr/share/info/dc.info.gz
+/usr/share/man/man1/bc.1.gz
+/usr/share/man/man1/dc.1.gz
 
-%changelog

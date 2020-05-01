@@ -30,7 +30,7 @@ make %{?_smp_mflags}
 rm -rf $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT
 find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
-
+%{__rm} -f %{buildroot}/usr/share/info/dir
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -42,6 +42,10 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %files
-/*
+/usr/include/mpc.h
+/usr/lib/libmpc.so
+/usr/lib/libmpc.so.3
+/usr/lib/libmpc.so.3.1.0
+/usr/share/info/mpc.info.gz
 
 %changelog

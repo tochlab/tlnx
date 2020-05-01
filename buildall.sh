@@ -1,5 +1,5 @@
 #!/bin/sh
-for s in $(find ./rpmbuild/SPECS/ -name \*.spec)
+for s in $(find ./SPECS/ -name \*.spec)
 do
 	echo ===== BUILD $s =====
 	rpmbuild --clean -bb $s 

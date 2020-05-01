@@ -22,6 +22,15 @@ make %{?_smp_mflags}
 %install
 rm -rf $RPM_BUILD_ROOT
 %make_install
+%{__rm} -f %{buildroot}/usr/share/info/dir
+
+#%post
+#/sbin/ldconfig
+#/sbin/install-info /usr/share/info/DevIL_manual.info.gz /usr/share/info/dir 2> /dev/null || :
+
+#%postun
+#/sbin/ldconfig
+#/sbin/install-info --delete /usr/share/info/DevIL_manual.info.gz /usr/share/info/dir 2> /dev/null || :
 
 %files
 %doc

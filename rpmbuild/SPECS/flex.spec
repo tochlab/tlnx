@@ -24,6 +24,7 @@ make check
 %install
 rm -rf $RPM_BUILD_ROOT
 %make_install
+rm -rf $RPM_BUILD_ROOT/usr/share/info/dir
 
 %files
 /usr/bin/flex
@@ -39,9 +40,6 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/doc/flex-2.6.4/NEWS
 /usr/share/doc/flex-2.6.4/ONEWS
 /usr/share/doc/flex-2.6.4/README.md
-/usr/share/info/flex.info-1.gz
-/usr/share/info/flex.info-2.gz
-/usr/share/info/flex.info.gz
 /usr/share/locale/ca/LC_MESSAGES/flex.mo
 /usr/share/locale/da/LC_MESSAGES/flex.mo
 /usr/share/locale/de/LC_MESSAGES/flex.mo
@@ -66,6 +64,9 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/locale/zh_CN/LC_MESSAGES/flex.mo
 /usr/share/locale/zh_TW/LC_MESSAGES/flex.mo
 /usr/share/man/man1/flex.1.gz
+/usr/share/info/flex.info-1.gz
+/usr/share/info/flex.info-2.gz
+/usr/share/info/flex.info.gz
 
 %changelog
 * Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>

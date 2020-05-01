@@ -23,6 +23,7 @@ make check
 %install
 rm -rf $RPM_BUILD_ROOT
 %make_install
+rm -rf $RPM_BUILD_ROOT/usr/share/info/dir
 
 %files
 /bin/sed

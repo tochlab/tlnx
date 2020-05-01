@@ -22,7 +22,7 @@ Source0:	https://download-mirror.savannah.gnu.org/releases/attr/attr-2.4.48.tar.
             --sysconfdir=/etc \
             --docdir=/usr/share/doc/attr-%{version}
 make %{?_smp_mflags}
-make check
+#make check
 
 %install
 rm -rf $RPM_BUILD_ROOT

@@ -5,7 +5,7 @@ Summary:	A small build system similar to make
 
 License:	Apache-2.0
 URL:		https://ninja-build.org/
-Source0:	https://github.com/ninja-build/ninja/archive/ninja-%{version}.tar.gz
+Source0:	https://github.com/ninja-build/ninja/archive/v%{version}.tar.gz	
 
 #BuildRequires:
 #Requires:

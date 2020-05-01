@@ -26,6 +26,7 @@ make %{?_smp_mflags}
 %install
 rm -rf $RPM_BUILD_ROOT
 %make_install
+rm -fr $RPM_BUILD_ROOT/usr/share/info/dir
 
 %files
 /etc/bash_completion.d/grub
@@ -671,6 +672,66 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/locale/vi/LC_MESSAGES/grub.mo
 /usr/share/locale/zh_CN/LC_MESSAGES/grub.mo
 /usr/share/locale/zh_TW/LC_MESSAGES/grub.mo
+/usr/bin/grub-mkfont
+/usr/bin/grub-mount
+/usr/share/grub/themes/starfield/COPYING.CC-BY-SA-3.0
+/usr/share/grub/themes/starfield/README
+/usr/share/grub/themes/starfield/blob_w.png
+/usr/share/grub/themes/starfield/boot_menu_c.png
+/usr/share/grub/themes/starfield/boot_menu_e.png
+/usr/share/grub/themes/starfield/boot_menu_n.png
+/usr/share/grub/themes/starfield/boot_menu_ne.png
+/usr/share/grub/themes/starfield/boot_menu_nw.png
+/usr/share/grub/themes/starfield/boot_menu_s.png
+/usr/share/grub/themes/starfield/boot_menu_se.png
+/usr/share/grub/themes/starfield/boot_menu_sw.png
+/usr/share/grub/themes/starfield/boot_menu_w.png
+/usr/share/grub/themes/starfield/dejavu_10.pf2
+/usr/share/grub/themes/starfield/dejavu_12.pf2
+/usr/share/grub/themes/starfield/dejavu_14.pf2
+/usr/share/grub/themes/starfield/dejavu_16.pf2
+/usr/share/grub/themes/starfield/dejavu_bold_14.pf2
+/usr/share/grub/themes/starfield/slider_c.png
+/usr/share/grub/themes/starfield/slider_n.png
+/usr/share/grub/themes/starfield/slider_s.png
+/usr/share/grub/themes/starfield/starfield.png
+/usr/share/grub/themes/starfield/terminal_box_c.png
+/usr/share/grub/themes/starfield/terminal_box_e.png
+/usr/share/grub/themes/starfield/terminal_box_n.png
+/usr/share/grub/themes/starfield/terminal_box_ne.png
+/usr/share/grub/themes/starfield/terminal_box_nw.png
+/usr/share/grub/themes/starfield/terminal_box_s.png
+/usr/share/grub/themes/starfield/terminal_box_se.png
+/usr/share/grub/themes/starfield/terminal_box_sw.png
+/usr/share/grub/themes/starfield/terminal_box_w.png
+/usr/share/grub/themes/starfield/theme.txt
+/usr/share/man/man1/grub-editenv.1.gz
+/usr/share/man/man1/grub-file.1.gz
+/usr/share/man/man1/grub-fstest.1.gz
+/usr/share/man/man1/grub-glue-efi.1.gz
+/usr/share/man/man1/grub-kbdcomp.1.gz
+/usr/share/man/man1/grub-menulst2cfg.1.gz
+/usr/share/man/man1/grub-mkfont.1.gz
+/usr/share/man/man1/grub-mkimage.1.gz
+/usr/share/man/man1/grub-mklayout.1.gz
+/usr/share/man/man1/grub-mknetdir.1.gz
+/usr/share/man/man1/grub-mkpasswd-pbkdf2.1.gz
+/usr/share/man/man1/grub-mkrelpath.1.gz
+/usr/share/man/man1/grub-mkrescue.1.gz
+/usr/share/man/man1/grub-mkstandalone.1.gz
+/usr/share/man/man1/grub-mount.1.gz
+/usr/share/man/man1/grub-render-label.1.gz
+/usr/share/man/man1/grub-script-check.1.gz
+/usr/share/man/man1/grub-syslinux2cfg.1.gz
+/usr/share/man/man8/grub-bios-setup.8.gz
+/usr/share/man/man8/grub-install.8.gz
+/usr/share/man/man8/grub-macbless.8.gz
+/usr/share/man/man8/grub-mkconfig.8.gz
+/usr/share/man/man8/grub-ofpathname.8.gz
+/usr/share/man/man8/grub-probe.8.gz
+/usr/share/man/man8/grub-reboot.8.gz
+/usr/share/man/man8/grub-set-default.8.gz
+/usr/share/man/man8/grub-sparc64-setup.8.gz
 
 
 %changelog

@@ -738,7 +738,6 @@ rm -rf $RPM_BUILD_ROOT
 /usr/lib/perl5/5.30.1/pod/perl5282delta.pod
 /usr/lib/perl5/5.30.1/pod/perl5300delta.pod
 /usr/lib/perl5/5.30.1/pod/perl5301delta.pod
-/usr/lib/perl5/5.30.1/pod/perl5302delta.pod
 /usr/lib/perl5/5.30.1/pod/perl561delta.pod
 /usr/lib/perl5/5.30.1/pod/perl56delta.pod
 /usr/lib/perl5/5.30.1/pod/perl581delta.pod
@@ -1733,7 +1732,6 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/man/man1/perl5282delta.1.gz
 /usr/share/man/man1/perl5300delta.1.gz
 /usr/share/man/man1/perl5301delta.1.gz
-/usr/share/man/man1/perl5302delta.1.gz
 /usr/share/man/man1/perl561delta.1.gz
 /usr/share/man/man1/perl56delta.1.gz
 /usr/share/man/man1/perl581delta.1.gz

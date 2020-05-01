@@ -16,11 +16,19 @@ Source0:	http://ftpmirror.gnu.org/gnu/bash/bash-%{version}.tar.gz
 %setup -q
 
 %build
+
 ./configure --prefix=/usr                    \
-            --docdir=/usr/share/doc/bash-%{version}    \
 	    --bindir=/bin \
-            --without-bash-malloc            \
-            --with-installed-readline
+	    --disable-profiling \
+	    --with-curses \
+	    --disable-mem-scramble \
+	    --enable-net-redirections \
+	    --enable-readline \
+	    --enable-bang-history \
+	    --enable-history \
+	    --without-afs \
+	    --without-bash-malloc \
+	    --with-installed-readline=. 
 make %{?_smp_mflags}
 
 %install
@@ -122,16 +130,16 @@ ln -sf bash sh
 /usr/lib/bash/unlink
 /usr/lib/bash/whoami
 /usr/lib/pkgconfig/bash.pc
-/usr/share/doc/bash-5.0/CHANGES
-/usr/share/doc/bash-5.0/COMPAT
-/usr/share/doc/bash-5.0/FAQ
-/usr/share/doc/bash-5.0/INTRO
-/usr/share/doc/bash-5.0/NEWS
-/usr/share/doc/bash-5.0/POSIX
-/usr/share/doc/bash-5.0/RBASH
-/usr/share/doc/bash-5.0/README
-/usr/share/doc/bash-5.0/bash.html
-/usr/share/doc/bash-5.0/bashref.html
+/usr/share/doc/bash/CHANGES
+/usr/share/doc/bash/COMPAT
+/usr/share/doc/bash/FAQ
+/usr/share/doc/bash/INTRO
+/usr/share/doc/bash/NEWS
+/usr/share/doc/bash/POSIX
+/usr/share/doc/bash/RBASH
+/usr/share/doc/bash/README
+/usr/share/doc/bash/bash.html
+/usr/share/doc/bash/bashref.html
 /usr/share/info/bash.info.gz
 /usr/share/locale/af/LC_MESSAGES/bash.mo
 /usr/share/locale/bg/LC_MESSAGES/bash.mo

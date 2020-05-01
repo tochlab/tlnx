@@ -26,6 +26,7 @@ make %{?_smp_mflags}
 %install
 rm -rf $RPM_BUILD_ROOT
 %make_install
+rm -fr $RPM_BUILD_ROOT/usr/share/info/dir
 cd %{buildroot}/bin
 ln -sf bash sh
 

@@ -42,6 +42,7 @@ chmod -v u+w $RPM_BUILD_ROOT/usr/lib/libss.a
 /bin/compile_et
 /bin/lsattr
 /bin/mk_cmds
+/bin/fuse2fs
 /etc/cron.d/e2scrub_all
 /etc/e2scrub.conf
 /etc/mke2fs.conf
@@ -53,11 +54,11 @@ chmod -v u+w $RPM_BUILD_ROOT/usr/lib/libss.a
 /lib/libext2fs.so.2.4
 /lib/libss.so.2
 /lib/libss.so.2.0
-/lib/systemd/system/e2scrub@.service
-/lib/systemd/system/e2scrub_all.service
-/lib/systemd/system/e2scrub_all.timer
-/lib/systemd/system/e2scrub_fail@.service
-/lib/systemd/system/e2scrub_reap.service
+#/lib/systemd/system/e2scrub@.service
+#/lib/systemd/system/e2scrub_all.service
+#/lib/systemd/system/e2scrub_all.timer
+#/lib/systemd/system/e2scrub_fail@.service
+#/lib/systemd/system/e2scrub_reap.service
 /lib/udev/rules.d/96-e2scrub.rules
 /sbin/badblocks
 /sbin/debugfs
@@ -96,7 +97,7 @@ chmod -v u+w $RPM_BUILD_ROOT/usr/lib/libss.a
 /usr/include/ss/ss.h
 /usr/include/ss/ss_err.h
 /usr/lib/e2fsprogs/e2scrub_all_cron
-/usr/lib/e2fsprogs/e2scrub_fail
+#/usr/lib/e2fsprogs/e2scrub_fail
 /usr/lib/e2initrd_helper
 /usr/lib/libcom_err.a
 /usr/lib/libcom_err.so
@@ -143,6 +144,7 @@ chmod -v u+w $RPM_BUILD_ROOT/usr/lib/libss.a
 /usr/share/man/man1/compile_et.1.gz
 /usr/share/man/man1/lsattr.1.gz
 /usr/share/man/man1/mk_cmds.1.gz
+/usr/share/man/man1/fuse2fs.1.gz
 /usr/share/man/man3/com_err.3.gz
 /usr/share/man/man5/e2fsck.conf.5.gz
 /usr/share/man/man5/ext2.5.gz

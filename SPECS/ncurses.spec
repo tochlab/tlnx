@@ -18,14 +18,39 @@ Source0:	https://ftp.gnu.org/gnu/ncurses/ncurses-%{version}.tar.gz
 %build
 ./configure --prefix=/usr           \
             --mandir=/usr/share/man \
-            --with-shared           \
-            --without-debug         \
-            --without-normal        \
-            --enable-pc-files       \
-            --enable-widec          \
-            --disable-termcap       \
-            --with-termlib          \
-            --enable-symlinks
+	    --enable-pc-files \
+	    --with-shared \
+	    --without-hashed-db \
+	    --without-ada \
+	    --with-cxx \
+	    --with-cxx-binding \
+	    --with-cxx-shared \
+	    --without-debug \
+	    --without-profile \
+	    --without-gpm \
+	    --disable-term-driver \
+	    --disable-termcap \
+	    --enable-symlinks \
+	    --with-rcs-ids \
+	    --with-manpage-format=normal \
+	    --enable-const \
+	    --enable-colorfgbg \
+	    --enable-hard-tabs \
+	    --enable-echo \
+	    --enable-warnings \
+	    --without-assertions \
+	    --enable-leaks \
+	    --without-expanded \
+	    --with-macros \
+	    --without-progs \
+	    --without-tests \
+	    --without-trace \
+	    --with-termlib \
+	    --disable-stripping \
+	    --disable-widec \
+	    --without-pthread \
+	    --without-reentrant \
+	    --enable-overwrite
 
 make %{?_smp_mflags}
 
@@ -34,17 +59,7 @@ rm -rf $RPM_BUILD_ROOT
 %make_install
 
 %files
-/usr/bin/captoinfo
-/usr/bin/clear
-/usr/bin/infocmp
-/usr/bin/infotocap
-/usr/bin/ncursesw6-config
-/usr/bin/reset
-/usr/bin/tabs
-/usr/bin/tic
-/usr/bin/toe
-/usr/bin/tput
-/usr/bin/tset
+/usr/bin/ncurses6-config
 /usr/include/curses.h
 /usr/include/cursesapp.h
 /usr/include/cursesf.h
@@ -56,40 +71,44 @@ rm -rf $RPM_BUILD_ROOT
 /usr/include/etip.h
 /usr/include/form.h
 /usr/include/menu.h
-/usr/include/nc_tparm.h
 /usr/include/ncurses.h
 /usr/include/ncurses_dll.h
 /usr/include/panel.h
 /usr/include/term.h
-/usr/include/term_entry.h
 /usr/include/termcap.h
-/usr/include/tic.h
 /usr/include/unctrl.h
-/usr/lib/libformw.so
-/usr/lib/libformw.so.6
-/usr/lib/libformw.so.6.2
-/usr/lib/libmenuw.so
-/usr/lib/libmenuw.so.6
-/usr/lib/libmenuw.so.6.2
-/usr/lib/libncurses++w.a
-/usr/lib/libncursesw.so
-/usr/lib/libncursesw.so.6
-/usr/lib/libncursesw.so.6.2
-/usr/lib/libpanelw.so
-/usr/lib/libpanelw.so.6
-/usr/lib/libpanelw.so.6.2
+/usr/lib/libcurses.a
+/usr/lib/libcurses.so
+/usr/lib/libform.a
+/usr/lib/libform.so
+/usr/lib/libform.so.6
+/usr/lib/libform.so.6.2
+/usr/lib/libmenu.a
+/usr/lib/libmenu.so
+/usr/lib/libmenu.so.6
+/usr/lib/libmenu.so.6.2
+/usr/lib/libncurses++.a
+/usr/lib/libncurses++.so
+/usr/lib/libncurses++.so.6
+/usr/lib/libncurses++.so.6.2
+/usr/lib/libncurses.a
+/usr/lib/libncurses.so
+/usr/lib/libncurses.so.6
+/usr/lib/libncurses.so.6.2
+/usr/lib/libpanel.a
+/usr/lib/libpanel.so
+/usr/lib/libpanel.so.6
+/usr/lib/libpanel.so.6.2
+/usr/lib/libtinfo.a
+/usr/lib/libtinfo.so
+/usr/lib/libtinfo.so.6
+/usr/lib/libtinfo.so.6.2
 /usr/lib/terminfo
-
-/usr/lib/libtinfow.so
-/usr/lib/libtinfow.so.6
-/usr/lib/libtinfow.so.6.2
-/usr/share/pkgconfig/tinfow.pc
-
 /usr/share/man/man1/captoinfo.1m.gz
 /usr/share/man/man1/clear.1.gz
 /usr/share/man/man1/infocmp.1m.gz
 /usr/share/man/man1/infotocap.1m.gz
-/usr/share/man/man1/ncursesw6-config.1.gz
+/usr/share/man/man1/ncurses6-config.1.gz
 /usr/share/man/man1/reset.1.gz
 /usr/share/man/man1/tabs.1.gz
 /usr/share/man/man1/tic.1m.gz
@@ -979,11 +998,12 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/man/man5/terminfo.5.gz
 /usr/share/man/man5/user_caps.5.gz
 /usr/share/man/man7/term.7.gz
-/usr/share/pkgconfig/formw.pc
-/usr/share/pkgconfig/menuw.pc
-/usr/share/pkgconfig/ncurses++w.pc
-/usr/share/pkgconfig/ncursesw.pc
-/usr/share/pkgconfig/panelw.pc
+/usr/share/pkgconfig/form.pc
+/usr/share/pkgconfig/menu.pc
+/usr/share/pkgconfig/ncurses++.pc
+/usr/share/pkgconfig/ncurses.pc
+/usr/share/pkgconfig/panel.pc
+/usr/share/pkgconfig/tinfo.pc
 /usr/share/tabset/std
 /usr/share/tabset/stdcrt
 /usr/share/tabset/vt100
@@ -3768,6 +3788,7 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/terminfo/z/ztx
 /usr/share/terminfo/z/ztx-1-a
 /usr/share/terminfo/z/ztx11
+
 
 
 %changelog

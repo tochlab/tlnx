@@ -16,11 +16,11 @@ Source0:	https://mirrors.edge.kernel.org/pub/linux/libs/security/linux-privs/lib
 %setup -q
 
 %build
-make lib=lib %{?_smp_mflags}
+make lib=lib GOLANG=0
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%make_install lib=lib
+%make_install lib=lib GOLANG=0
 
 %files
 /lib/libcap.a
@@ -28,6 +28,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/libcap.so.2
 /lib/libcap.so.2.33
 /lib/libpsx.a
+/lib/security/pam_cap.so
 /sbin/capsh
 /sbin/getcap
 /sbin/getpcaps

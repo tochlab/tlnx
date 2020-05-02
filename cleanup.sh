@@ -1,2 +1,3 @@
 #!/bin/sh
-rm -frv /home/toch/tmp/*
+umount /home/toch/tmp/dev
+rm -fr /home/toch/tmp/*

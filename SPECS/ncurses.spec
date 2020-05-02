@@ -18,6 +18,7 @@ Source0:	https://ftp.gnu.org/gnu/ncurses/ncurses-%{version}.tar.gz
 %build
 ./configure --prefix=/usr           \
             --mandir=/usr/share/man \
+            --libdir=/usr/lib64 \
 	    --enable-pc-files \
 	    --with-shared \
 	    --without-hashed-db \
@@ -77,33 +78,32 @@ rm -rf $RPM_BUILD_ROOT
 /usr/include/term.h
 /usr/include/termcap.h
 /usr/include/unctrl.h
-/usr/lib/libcurses.a
-/usr/lib/libcurses.so
-/usr/lib/libform.a
-/usr/lib/libform.so
-/usr/lib/libform.so.6
-/usr/lib/libform.so.6.2
-/usr/lib/libmenu.a
-/usr/lib/libmenu.so
-/usr/lib/libmenu.so.6
-/usr/lib/libmenu.so.6.2
-/usr/lib/libncurses++.a
-/usr/lib/libncurses++.so
-/usr/lib/libncurses++.so.6
-/usr/lib/libncurses++.so.6.2
-/usr/lib/libncurses.a
-/usr/lib/libncurses.so
-/usr/lib/libncurses.so.6
-/usr/lib/libncurses.so.6.2
-/usr/lib/libpanel.a
-/usr/lib/libpanel.so
-/usr/lib/libpanel.so.6
-/usr/lib/libpanel.so.6.2
-/usr/lib/libtinfo.a
-/usr/lib/libtinfo.so
-/usr/lib/libtinfo.so.6
-/usr/lib/libtinfo.so.6.2
-/usr/lib/terminfo
+/usr/lib64/libcurses.a
+/usr/lib64/libcurses.so
+/usr/lib64/libform.a
+/usr/lib64/libform.so
+/usr/lib64/libform.so.6
+/usr/lib64/libform.so.6.2
+/usr/lib64/libmenu.a
+/usr/lib64/libmenu.so
+/usr/lib64/libmenu.so.6
+/usr/lib64/libmenu.so.6.2
+/usr/lib64/libncurses++.a
+/usr/lib64/libncurses++.so
+/usr/lib64/libncurses++.so.6
+/usr/lib64/libncurses++.so.6.2
+/usr/lib64/libncurses.a
+/usr/lib64/libncurses.so
+/usr/lib64/libncurses.so.6
+/usr/lib64/libncurses.so.6.2
+/usr/lib64/libpanel.a
+/usr/lib64/libpanel.so
+/usr/lib64/libpanel.so.6
+/usr/lib64/libpanel.so.6.2
+/usr/lib64/libtinfo.a
+/usr/lib64/libtinfo.so
+/usr/lib64/libtinfo.so.6
+/usr/lib64/libtinfo.so.6.2
 /usr/share/man/man1/captoinfo.1m.gz
 /usr/share/man/man1/clear.1.gz
 /usr/share/man/man1/infocmp.1m.gz

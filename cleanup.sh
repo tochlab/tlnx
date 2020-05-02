@@ -1,2 +1,2 @@
 #!/bin/sh
-rm -fr /home/toch/tmp/
+rm -frv /home/toch/tmp/*

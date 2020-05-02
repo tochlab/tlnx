@@ -39,8 +39,7 @@ cd build
 	     --disable-systemtap \
 	     --disable-nscd \
 	     --disable-timezone-tools
-#make %{?_smp_mflags}
-make -j 64
+make %{?_smp_mflags}
 
 %install
 rm -rf $RPM_BUILD_ROOT

@@ -16,7 +16,7 @@ Source0:	https://curl.haxx.se/download/curl-%{version}.tar.gz
 %setup -q
 
 %build
-%configure
+%configure --libdir=/usr/lib
 make %{?_smp_mflags}
 
 %install
@@ -35,12 +35,12 @@ rm -rf $RPM_BUILD_ROOT
 /usr/include/curl/system.h
 /usr/include/curl/typecheck-gcc.h
 /usr/include/curl/urlapi.h
-/usr/lib64/libcurl.a
-/usr/lib64/libcurl.la
-/usr/lib64/libcurl.so
-/usr/lib64/libcurl.so.4
-/usr/lib64/libcurl.so.4.6.0
-/usr/lib64/pkgconfig/libcurl.pc
+/usr/lib/libcurl.a
+/usr/lib/libcurl.la
+/usr/lib/libcurl.so
+/usr/lib/libcurl.so.4
+/usr/lib/libcurl.so.4.6.0
+/usr/lib/pkgconfig/libcurl.pc
 /usr/share/aclocal/libcurl.m4
 /usr/share/man/man1/curl-config.1.gz
 /usr/share/man/man1/curl.1.gz

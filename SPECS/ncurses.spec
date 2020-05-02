@@ -54,9 +54,48 @@ Source0:	https://ftp.gnu.org/gnu/ncurses/ncurses-%{version}.tar.gz
 	    --enable-overwrite
 
 make %{?_smp_mflags}
+%make_install
+
+./configure --prefix=/usr           \
+            --mandir=/usr/share/man \
+            --libdir=/usr/lib \
+	    --enable-pc-files \
+	    --with-shared \
+	    --without-hashed-db \
+	    --without-ada \
+	    --with-cxx \
+	    --with-cxx-binding \
+	    --with-cxx-shared \
+	    --without-debug \
+	    --without-profile \
+	    --without-gpm \
+	    --disable-term-driver \
+	    --disable-termcap \
+	    --enable-symlinks \
+	    --with-rcs-ids \
+	    --with-manpage-format=normal \
+	    --enable-const \
+	    --enable-colorfgbg \
+	    --enable-hard-tabs \
+	    --enable-echo \
+	    --enable-warnings \
+	    --without-assertions \
+	    --enable-leaks \
+	    --without-expanded \
+	    --with-macros \
+	    --without-progs \
+	    --without-tests \
+	    --without-trace \
+	    --with-termlib \
+	    --disable-stripping \
+	    --enable-widec \
+	    --without-pthread \
+	    --without-reentrant \
+	    --enable-overwrite
+
+make %{?_smp_mflags}
 
 %install
-rm -rf $RPM_BUILD_ROOT
 %make_install
 
 %files
@@ -3789,8 +3828,32 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/terminfo/z/ztx
 /usr/share/terminfo/z/ztx-1-a
 /usr/share/terminfo/z/ztx11
-
-
+/usr/bin/ncursesw6-config
+/usr/lib/libformw.a
+/usr/lib/libformw.so
+/usr/lib/libformw.so.6
+/usr/lib/libformw.so.6.2
+/usr/lib/libmenuw.a
+/usr/lib/libmenuw.so
+/usr/lib/libmenuw.so.6
+/usr/lib/libmenuw.so.6.2
+/usr/lib/libncurses++w.a
+/usr/lib/libncurses++w.so
+/usr/lib/libncurses++w.so.6
+/usr/lib/libncurses++w.so.6.2
+/usr/lib/libncursesw.a
+/usr/lib/libncursesw.so
+/usr/lib/libncursesw.so.6
+/usr/lib/libncursesw.so.6.2
+/usr/lib/libpanelw.a
+/usr/lib/libpanelw.so
+/usr/lib/libpanelw.so.6
+/usr/lib/libpanelw.so.6.2
+/usr/lib/libtinfow.a
+/usr/lib/libtinfow.so
+/usr/lib/libtinfow.so.6
+/usr/lib/libtinfow.so.6.2
+/usr/share/man/man1/ncursesw6-config.1.gz
 
 
 %changelog

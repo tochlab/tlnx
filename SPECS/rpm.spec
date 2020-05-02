@@ -16,7 +16,7 @@ Source0:	http://ftp.rpm.org/releases/rpm-4.14.x/rpm-%{version}.tar.bz2
 %setup -q
 
 %build
-%configure --without-lua --without-dbus
+%configure --without-lua --without-dbus --libdir=/usr/lib
 make %{?_smp_mflags}
 
 %install
@@ -201,31 +201,31 @@ rm -rf $RPM_BUILD_ROOT
 /usr/lib/rpm/script.req
 /usr/lib/rpm/sepdebugcrcfix
 /usr/lib/rpm/tgpg
-/usr/lib64/librpm.la
-/usr/lib64/librpm.so
-/usr/lib64/librpm.so.8
-/usr/lib64/librpm.so.8.2.0
-/usr/lib64/librpmbuild.la
-/usr/lib64/librpmbuild.so
-/usr/lib64/librpmbuild.so.8
-/usr/lib64/librpmbuild.so.8.2.0
-/usr/lib64/librpmio.la
-/usr/lib64/librpmio.so
-/usr/lib64/librpmio.so.8
-/usr/lib64/librpmio.so.8.2.0
-/usr/lib64/librpmsign.la
-/usr/lib64/librpmsign.so
-/usr/lib64/librpmsign.so.8
-/usr/lib64/librpmsign.so.8.2.0
-/usr/lib64/pkgconfig/rpm.pc
-/usr/lib64/rpm-plugins/ima.la
-/usr/lib64/rpm-plugins/ima.so
-/usr/lib64/rpm-plugins/prioreset.la
-/usr/lib64/rpm-plugins/prioreset.so
-/usr/lib64/rpm-plugins/syslog.la
-/usr/lib64/rpm-plugins/syslog.so
-/usr/lib64/rpm-plugins/systemd_inhibit.la
-/usr/lib64/rpm-plugins/systemd_inhibit.so
+/usr/lib/librpm.la
+/usr/lib/librpm.so
+/usr/lib/librpm.so.8
+/usr/lib/librpm.so.8.2.0
+/usr/lib/librpmbuild.la
+/usr/lib/librpmbuild.so
+/usr/lib/librpmbuild.so.8
+/usr/lib/librpmbuild.so.8.2.0
+/usr/lib/librpmio.la
+/usr/lib/librpmio.so
+/usr/lib/librpmio.so.8
+/usr/lib/librpmio.so.8.2.0
+/usr/lib/librpmsign.la
+/usr/lib/librpmsign.so
+/usr/lib/librpmsign.so.8
+/usr/lib/librpmsign.so.8.2.0
+/usr/lib/pkgconfig/rpm.pc
+/usr/lib/rpm-plugins/ima.la
+/usr/lib/rpm-plugins/ima.so
+/usr/lib/rpm-plugins/prioreset.la
+/usr/lib/rpm-plugins/prioreset.so
+/usr/lib/rpm-plugins/syslog.la
+/usr/lib/rpm-plugins/syslog.so
+/usr/lib/rpm-plugins/systemd_inhibit.la
+/usr/lib/rpm-plugins/systemd_inhibit.so
 /usr/share/locale/ar/LC_MESSAGES/rpm.mo
 /usr/share/locale/br/LC_MESSAGES/rpm.mo
 /usr/share/locale/ca/LC_MESSAGES/rpm.mo
@@ -289,10 +289,3 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/man/ru/man8/rpm.8.gz
 /usr/share/man/ru/man8/rpm2cpio.8.gz
 /usr/share/man/sk/man8/rpm.8.gz
-
-
-%changelog
-* Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>
--
-
-# see /usr/libexec/rpm/macros for macros

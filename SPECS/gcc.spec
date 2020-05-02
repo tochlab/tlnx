@@ -1044,8 +1044,8 @@ ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/%{version}/liblto_plugin.so \
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libstdc++.la
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libstdc++.so
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libstdc++.so.6
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libstdc++.so.6.0.27
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libstdc++.so.6.0.27-gdb.py
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libstdc++.so.6.0.28
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libstdc++.so.6.0.28-gdb.py
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libstdc++fs.a
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libstdc++fs.la
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libsupc++.a

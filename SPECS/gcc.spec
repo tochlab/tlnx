@@ -25,7 +25,8 @@ cd       build
              --enable-languages=c,c++ \
              --disable-multilib       \
              --disable-bootstrap      \
-             --with-system-zlib
+             --with-system-zlib       \
+             --libdir=/usr/lib
 
 make %{?_smp_mflags}
 
@@ -35,8 +36,7 @@ cd build
 rm -rf $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT
 rm -rf $RPM_BUILD_ROOT/usr/lib/gcc/$(gcc -dumpmachine)/%{version}/include-fixed/bits/
-#mkdir -pv $RPM_BUILD_ROOT/usr/share/gdb/auto-load/usr/lib
-#mv -v $RPM_BUILD_ROOT/usr/lib/*gdb.py $RPM_BUILD_ROOT/usr/share/gdb/auto-load/usr/lib
+mv %{buildroot}/usr/lib64/* %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/
 %{__rm} -f %{buildroot}/usr/share/info/dir
 
 %clean
@@ -51,7 +51,7 @@ ln -sv /usr/bin/cpp /lib
 install -v -dm755 /usr/lib/bfd-plugins
 ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/%{version}/liblto_plugin.so \
 /usr/lib/bfd-plugins/
-        
+
 %files
 /usr/bin/c++
 /usr/bin/cpp
@@ -871,6 +871,7 @@ ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/%{version}/liblto_plugin.so \
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/boost/predef/os/unix.h
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/json-c/json
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/limits.h
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/net-snmp/net-snmp-config.h
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/nss/secport.h
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/ntfs-3g/device_io.h
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/ntfs-3g/realpath.h
@@ -988,9 +989,78 @@ ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/%{version}/liblto_plugin.so \
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/install-tools/include/limits.h
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/install-tools/macro_list
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/install-tools/mkheaders.conf
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libasan.a
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libasan.la
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libasan.so
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libasan.so.5
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libasan.so.5.0.0
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libasan_preinit.o
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libatomic.a
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libatomic.la
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libatomic.so
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libatomic.so.1
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libatomic.so.1.2.0
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libcc1.la
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libcc1.so
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libcc1.so.0
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libcc1.so.0.0.0
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libgcc.a
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libgcc_eh.a
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libgcc_s.so
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libgcc_s.so.1
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libgcov.a
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libgomp.a
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libgomp.la
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libgomp.so
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libgomp.so.1
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libgomp.so.1.0.0
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libgomp.spec
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libitm.a
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libitm.la
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libitm.so
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libitm.so.1
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libitm.so.1.0.0
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libitm.spec
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/liblsan.a
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/liblsan.la
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/liblsan.so
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/liblsan.so.0
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/liblsan.so.0.0.0
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/liblsan_preinit.o
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libquadmath.a
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libquadmath.la
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libquadmath.so
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libquadmath.so.0
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libquadmath.so.0.0.0
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libsanitizer.spec
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libssp.a
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libssp.la
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libssp.so
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libssp.so.0
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libssp.so.0.0.0
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libssp_nonshared.a
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libssp_nonshared.la
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libstdc++.a
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libstdc++.la
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libstdc++.so
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libstdc++.so.6
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libstdc++.so.6.0.27
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libstdc++.so.6.0.27-gdb.py
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libstdc++fs.a
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libstdc++fs.la
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libsupc++.a
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libsupc++.la
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libtsan.a
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libtsan.la
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libtsan.so
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libtsan.so.0
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libtsan.so.0.0.0
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libtsan_preinit.o
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libubsan.a
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libubsan.la
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libubsan.so
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libubsan.so.1
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libubsan.so.1.0.0
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/gtype.state
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/ada/gcc-interface/ada-tree.def
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/addresses.h
@@ -1424,75 +1494,6 @@ ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/%{version}/liblto_plugin.so \
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/libcp1plugin.so
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/libcp1plugin.so.0
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/libcp1plugin.so.0.0.0
-/usr/lib64/libasan.a
-/usr/lib64/libasan.la
-/usr/lib64/libasan.so
-/usr/lib64/libasan.so.5
-/usr/lib64/libasan.so.5.0.0
-/usr/lib64/libasan_preinit.o
-/usr/lib64/libatomic.a
-/usr/lib64/libatomic.la
-/usr/lib64/libatomic.so
-/usr/lib64/libatomic.so.1
-/usr/lib64/libatomic.so.1.2.0
-/usr/lib64/libcc1.la
-/usr/lib64/libcc1.so
-/usr/lib64/libcc1.so.0
-/usr/lib64/libcc1.so.0.0.0
-/usr/lib64/libgcc_s.so
-/usr/lib64/libgcc_s.so.1
-/usr/lib64/libgomp.a
-/usr/lib64/libgomp.la
-/usr/lib64/libgomp.so
-/usr/lib64/libgomp.so.1
-/usr/lib64/libgomp.so.1.0.0
-/usr/lib64/libgomp.spec
-/usr/lib64/libitm.a
-/usr/lib64/libitm.la
-/usr/lib64/libitm.so
-/usr/lib64/libitm.so.1
-/usr/lib64/libitm.so.1.0.0
-/usr/lib64/libitm.spec
-/usr/lib64/liblsan.a
-/usr/lib64/liblsan.la
-/usr/lib64/liblsan.so
-/usr/lib64/liblsan.so.0
-/usr/lib64/liblsan.so.0.0.0
-/usr/lib64/liblsan_preinit.o
-/usr/lib64/libquadmath.a
-/usr/lib64/libquadmath.la
-/usr/lib64/libquadmath.so
-/usr/lib64/libquadmath.so.0
-/usr/lib64/libquadmath.so.0.0.0
-/usr/lib64/libsanitizer.spec
-/usr/lib64/libssp.a
-/usr/lib64/libssp.la
-/usr/lib64/libssp.so
-/usr/lib64/libssp.so.0
-/usr/lib64/libssp.so.0.0.0
-/usr/lib64/libssp_nonshared.a
-/usr/lib64/libssp_nonshared.la
-/usr/lib64/libstdc++.a
-/usr/lib64/libstdc++.la
-/usr/lib64/libstdc++.so
-/usr/lib64/libstdc++.so.6
-/usr/lib64/libstdc++.so.6.0.27
-/usr/lib64/libstdc++.so.6.0.27-gdb.py
-/usr/lib64/libstdc++fs.a
-/usr/lib64/libstdc++fs.la
-/usr/lib64/libsupc++.a
-/usr/lib64/libsupc++.la
-/usr/lib64/libtsan.a
-/usr/lib64/libtsan.la
-/usr/lib64/libtsan.so
-/usr/lib64/libtsan.so.0
-/usr/lib64/libtsan.so.0.0.0
-/usr/lib64/libtsan_preinit.o
-/usr/lib64/libubsan.a
-/usr/lib64/libubsan.la
-/usr/lib64/libubsan.so
-/usr/lib64/libubsan.so.1
-/usr/lib64/libubsan.so.1.0.0
 /usr/libexec/gcc/x86_64-pc-linux-gnu/%{version}/cc1
 /usr/libexec/gcc/x86_64-pc-linux-gnu/%{version}/cc1plus
 /usr/libexec/gcc/x86_64-pc-linux-gnu/%{version}/collect2
@@ -1572,4 +1573,3 @@ ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/%{version}/liblto_plugin.so \
 /usr/share/man/man7/gpl.7.gz
 
 
-%changelog

@@ -14,7 +14,7 @@ File utility
 %setup -q
 
 %build
-%configure --prefix=/usr
+%configure --prefix=/usr --libdir=/usr/lib
 make %{?_smp_mflags}
 make check
 
@@ -25,10 +25,10 @@ make install DESTDIR=$RPM_BUILD_ROOT
 %files
 /usr/bin/file
 /usr/include/magic.h
-/usr/lib64/libmagic.la
-/usr/lib64/libmagic.so
-/usr/lib64/libmagic.so.1
-/usr/lib64/libmagic.so.1.0.0
+/usr/lib/libmagic.la
+/usr/lib/libmagic.so
+/usr/lib/libmagic.so.1
+/usr/lib/libmagic.so.1.0.0
 /usr/share/man/man1/file.1.gz
 /usr/share/man/man3/libmagic.3.gz
 /usr/share/man/man4/magic.4.gz

@@ -25,7 +25,10 @@ cd       build
              --disable-libblkid      \
              --disable-libuuid       \
              --disable-uuidd         \
-             --disable-fsck
+             --disable-fsck          \
+	     --disable-fuse2fs       \
+	     --without-systemd       \
+
 make %{?_smp_mflags}
 
 %install
@@ -36,14 +39,14 @@ chmod -v u+w $RPM_BUILD_ROOT/usr/lib/libcom_err.a
 chmod -v u+w $RPM_BUILD_ROOT/usr/lib/libe2p.a
 chmod -v u+w $RPM_BUILD_ROOT/usr/lib/libext2fs.a
 chmod -v u+w $RPM_BUILD_ROOT/usr/lib/libss.a
+rm -fr $RPM_BUILD_ROOT/usr/lib/systemd
 
 %files
 /bin/chattr
 /bin/compile_et
 /bin/lsattr
 /bin/mk_cmds
-/bin/fuse2fs
-/etc/cron.d/e2scrub_all
+#/etc/cron.d/e2scrub_all
 /etc/e2scrub.conf
 /etc/mke2fs.conf
 /lib/libcom_err.so.2
@@ -59,7 +62,8 @@ chmod -v u+w $RPM_BUILD_ROOT/usr/lib/libss.a
 #/lib/systemd/system/e2scrub_all.timer
 #/lib/systemd/system/e2scrub_fail@.service
 #/lib/systemd/system/e2scrub_reap.service
-/lib/udev/rules.d/96-e2scrub.rules
+#/lib/udev/rules.d/96-e2scrub.rules
+/usr/lib/udev/rules.d/96-e2scrub.rules
 /sbin/badblocks
 /sbin/debugfs
 /sbin/dumpe2fs
@@ -96,8 +100,8 @@ chmod -v u+w $RPM_BUILD_ROOT/usr/lib/libss.a
 /usr/include/ext2fs/tdb.h
 /usr/include/ss/ss.h
 /usr/include/ss/ss_err.h
-/usr/lib/e2fsprogs/e2scrub_all_cron
-#/usr/lib/e2fsprogs/e2scrub_fail
+#/usr/lib/e2fsprogs/e2scrub_all_cron
+/usr/lib/e2fsprogs/e2scrub_fail
 /usr/lib/e2initrd_helper
 /usr/lib/libcom_err.a
 /usr/lib/libcom_err.so
@@ -118,7 +122,7 @@ chmod -v u+w $RPM_BUILD_ROOT/usr/lib/libss.a
 /usr/sbin/mklost+found
 /usr/share/et/et_c.awk
 /usr/share/et/et_h.awk
-/usr/share/info/libext2fs.info.gz
+#/usr/share/info/libext2fs.info.gz
 /usr/share/locale/ca/LC_MESSAGES/e2fsprogs.mo
 /usr/share/locale/cs/LC_MESSAGES/e2fsprogs.mo
 /usr/share/locale/da/LC_MESSAGES/e2fsprogs.mo
@@ -144,7 +148,7 @@ chmod -v u+w $RPM_BUILD_ROOT/usr/lib/libss.a
 /usr/share/man/man1/compile_et.1.gz
 /usr/share/man/man1/lsattr.1.gz
 /usr/share/man/man1/mk_cmds.1.gz
-/usr/share/man/man1/fuse2fs.1.gz
+#/usr/share/man/man1/fuse2fs.1.gz
 /usr/share/man/man3/com_err.3.gz
 /usr/share/man/man5/e2fsck.conf.5.gz
 /usr/share/man/man5/ext2.5.gz

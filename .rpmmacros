@@ -1,0 +1,4 @@
+%dist .tlnx0
+%debug_package %{nil}
+%__brp_mangle_shebangs %{nil}
+%undefine __brp_python_bytecompile

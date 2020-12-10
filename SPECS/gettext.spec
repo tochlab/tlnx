@@ -18,7 +18,8 @@ Source0:	https://mirror.tochlab.net/pub/gnu/gettext/gettext-%{version}.tar.gz
 %build
 ./configure --prefix=/usr    \
             --disable-static \
-            --docdir=/usr/share/doc/gettext-%{version}
+            --docdir=/usr/share/doc/gettext-%{version} \
+	    --disable-csharp
 make %{?_smp_mflags}
 
 %install

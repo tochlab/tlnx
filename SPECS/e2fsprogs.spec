@@ -46,7 +46,7 @@ rm -fr $RPM_BUILD_ROOT/usr/lib/systemd
 /bin/compile_et
 /bin/lsattr
 /bin/mk_cmds
-#/etc/cron.d/e2scrub_all
+/etc/cron.d/e2scrub_all
 /etc/e2scrub.conf
 /etc/mke2fs.conf
 /lib/libcom_err.so.2
@@ -62,8 +62,8 @@ rm -fr $RPM_BUILD_ROOT/usr/lib/systemd
 #/lib/systemd/system/e2scrub_all.timer
 #/lib/systemd/system/e2scrub_fail@.service
 #/lib/systemd/system/e2scrub_reap.service
-#/lib/udev/rules.d/96-e2scrub.rules
-/usr/lib/udev/rules.d/96-e2scrub.rules
+/lib/udev/rules.d/96-e2scrub.rules
+#/usr/lib/udev/rules.d/96-e2scrub.rules
 /sbin/badblocks
 /sbin/debugfs
 /sbin/dumpe2fs
@@ -100,8 +100,8 @@ rm -fr $RPM_BUILD_ROOT/usr/lib/systemd
 /usr/include/ext2fs/tdb.h
 /usr/include/ss/ss.h
 /usr/include/ss/ss_err.h
-#/usr/lib/e2fsprogs/e2scrub_all_cron
-/usr/lib/e2fsprogs/e2scrub_fail
+/usr/lib/e2fsprogs/e2scrub_all_cron
+#/usr/lib/e2fsprogs/e2scrub_fail
 /usr/lib/e2initrd_helper
 /usr/lib/libcom_err.a
 /usr/lib/libcom_err.so
@@ -122,7 +122,7 @@ rm -fr $RPM_BUILD_ROOT/usr/lib/systemd
 /usr/sbin/mklost+found
 /usr/share/et/et_c.awk
 /usr/share/et/et_h.awk
-#/usr/share/info/libext2fs.info.gz
+/usr/share/info/libext2fs.info.gz
 /usr/share/locale/ca/LC_MESSAGES/e2fsprogs.mo
 /usr/share/locale/cs/LC_MESSAGES/e2fsprogs.mo
 /usr/share/locale/da/LC_MESSAGES/e2fsprogs.mo

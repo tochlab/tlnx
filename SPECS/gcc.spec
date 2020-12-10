@@ -36,6 +36,18 @@ cd build
 rm -rf $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT
 rm -rf $RPM_BUILD_ROOT/usr/lib/gcc/$(gcc -dumpmachine)/%{version}/include-fixed/bits/
+rm $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed/README \
+   $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed/X11/Xw32defs.h \
+   $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed/boost/predef/os/unix.h \
+   $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed/net-snmp/net-snmp-config.h \
+   $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed/nss/secport.h \
+   $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed/ntfs-3g/device_io.h \
+   $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed/ntfs-3g/realpath.h \
+   $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed/slang.h \
+   $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed/xorg/compiler.h \
+   $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed/xorg/edid.h \
+   $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed/zzip/conf.h \
+   $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed/zzip/fetch.h
 mv %{buildroot}/usr/lib64/* %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/
 %{__rm} -f %{buildroot}/usr/share/info/dir
 
@@ -866,19 +878,8 @@ ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/%{version}/liblto_plugin.so \
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/crtprec32.o
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/crtprec64.o
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/crtprec80.o
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/README
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/X11/Xw32defs.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/boost/predef/os/unix.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/json-c/json
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/limits.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/net-snmp/net-snmp-config.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/nss/secport.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/ntfs-3g/device_io.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/ntfs-3g/realpath.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/slang.h
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/syslimits.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/xorg/compiler.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/xorg/edid.h
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/adxintrin.h
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/ammintrin.h
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/avx2intrin.h

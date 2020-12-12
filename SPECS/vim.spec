@@ -21,7 +21,7 @@ tar xvf %{_sourcedir}/vim-%{version}.tar.bz2
 %build
 cd vim82
 echo '#define SYS_VIMRC_FILE "/etc/vimrc"' >> src/feature.h
-./configure --prefix=/usr --enable-gui=no --disable-nls
+./configure --prefix=/usr --enable-gui=no --disable-nls --without-x --disable-canberra --disable-gpm --with-features=normal 
 make %{?_smp_mflags}
 
 %install

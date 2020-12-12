@@ -1,5 +1,5 @@
 Name:           glibc
-Version:	2.31
+Version:	2.32
 Release:        1
 Summary:	GNU libc C library
 
@@ -20,7 +20,6 @@ cd build
 	     --enable-kernel=3.2.0 \
 	     --enable-stackguard-randomization \
 	     --disable-cet \
-	     --enable-obsolete-rpc \
 	     --enable-stack-protector=strong \
 	     --without-selinux \
 	     --without-cvs \
@@ -47,57 +46,60 @@ rm -rf $RPM_BUILD_ROOT
 cd build
 mkdir -pv %{buildroot}/etc/
 touch %{buildroot}/etc/ld.so.conf
+mkdir %{buildroot}/etc/ld.so.conf.d
 make DESTDIR=%{buildroot} install
 cp -v ../nscd/nscd.conf %{buildroot}/etc/nscd.conf
 mkdir -pv %{buildroot}/var/cache/nscd
 echo /usr/local/lib > %{buildroot}/etc/ld.so.conf
+echo include ld.so.conf.d/*.conf >> %{buildroot}/etc/ld.so.conf
 rm -rf %{buildroot}/usr/share/info/dir
 
 %files
 /etc/ld.so.cache
 /etc/ld.so.conf
+/etc/ld.so.conf.d
 /etc/nscd.conf
 /etc/rpc
-/lib/ld-2.31.so
+/lib/ld-2.32.so
 /lib/ld-linux-x86-64.so.2
-/lib/libBrokenLocale-2.31.so
+/lib/libBrokenLocale-2.32.so
 /lib/libBrokenLocale.so.1
 /lib/libSegFault.so
-/lib/libanl-2.31.so
+/lib/libanl-2.32.so
 /lib/libanl.so.1
-/lib/libc-2.31.so
+/lib/libc-2.32.so
 /lib/libc.so.6
-/lib/libcrypt-2.31.so
+/lib/libcrypt-2.32.so
 /lib/libcrypt.so.1
-/lib/libdl-2.31.so
+/lib/libdl-2.32.so
 /lib/libdl.so.2
-/lib/libm-2.31.so
+/lib/libm-2.32.so
 /lib/libm.so.6
 /lib/libmemusage.so
-/lib/libmvec-2.31.so
+/lib/libmvec-2.32.so
 /lib/libmvec.so.1
-/lib/libnsl-2.31.so
+/lib/libnsl-2.32.so
 /lib/libnsl.so.1
-/lib/libnss_compat-2.31.so
+/lib/libnss_compat-2.32.so
 /lib/libnss_compat.so.2
-/lib/libnss_db-2.31.so
+/lib/libnss_db-2.32.so
 /lib/libnss_db.so.2
-/lib/libnss_dns-2.31.so
+/lib/libnss_dns-2.32.so
 /lib/libnss_dns.so.2
-/lib/libnss_files-2.31.so
+/lib/libnss_files-2.32.so
 /lib/libnss_files.so.2
-/lib/libnss_hesiod-2.31.so
+/lib/libnss_hesiod-2.32.so
 /lib/libnss_hesiod.so.2
 /lib/libpcprofile.so
-/lib/libpthread-2.31.so
+/lib/libpthread-2.32.so
 /lib/libpthread.so.0
-/lib/libresolv-2.31.so
+/lib/libresolv-2.32.so
 /lib/libresolv.so.2
-/lib/librt-2.31.so
+/lib/librt-2.32.so
 /lib/librt.so.1
 /lib/libthread_db-1.0.so
 /lib/libthread_db.so.1
-/lib/libutil-2.31.so
+/lib/libutil-2.32.so
 /lib/libutil.so.1
 /sbin/ldconfig
 /sbin/sln
@@ -113,7 +115,6 @@ rm -rf %{buildroot}/usr/share/info/dir
 /usr/bin/mtrace
 /usr/bin/pcprofiledump
 /usr/bin/pldd
-/usr/bin/rpcgen
 /usr/bin/sotruss
 /usr/bin/sprof
 /usr/bin/xtrace
@@ -154,7 +155,6 @@ rm -rf %{buildroot}/usr/share/info/dir
 /usr/include/bits/fcntl.h
 /usr/include/bits/fcntl2.h
 /usr/include/bits/fenv.h
-/usr/include/bits/fenvinline.h
 /usr/include/bits/floatn-common.h
 /usr/include/bits/floatn.h
 /usr/include/bits/flt-eval-method.h
@@ -185,7 +185,6 @@ rm -rf %{buildroot}/usr/share/info/dir
 /usr/include/bits/mathcalls-narrow.h
 /usr/include/bits/mathcalls.h
 /usr/include/bits/mathdef.h
-/usr/include/bits/mathinline.h
 /usr/include/bits/mman-linux.h
 /usr/include/bits/mman-map-flags-generic.h
 /usr/include/bits/mman-shared.h
@@ -193,7 +192,6 @@ rm -rf %{buildroot}/usr/share/info/dir
 /usr/include/bits/monetary-ldbl.h
 /usr/include/bits/mqueue.h
 /usr/include/bits/mqueue2.h
-/usr/include/bits/msq-pad.h
 /usr/include/bits/msq.h
 /usr/include/bits/netdb.h
 /usr/include/bits/param.h
@@ -214,12 +212,10 @@ rm -rf %{buildroot}/usr/share/info/dir
 /usr/include/bits/sched.h
 /usr/include/bits/select.h
 /usr/include/bits/select2.h
-/usr/include/bits/sem-pad.h
 /usr/include/bits/sem.h
 /usr/include/bits/semaphore.h
 /usr/include/bits/setjmp.h
 /usr/include/bits/setjmp2.h
-/usr/include/bits/shm-pad.h
 /usr/include/bits/shm.h
 /usr/include/bits/shmlba.h
 /usr/include/bits/sigaction.h
@@ -231,7 +227,6 @@ rm -rf %{buildroot}/usr/share/info/dir
 /usr/include/bits/signal_ext.h
 /usr/include/bits/signalfd.h
 /usr/include/bits/signum-generic.h
-/usr/include/bits/signum.h
 /usr/include/bits/sigstack.h
 /usr/include/bits/sigthread.h
 /usr/include/bits/sockaddr.h
@@ -260,9 +255,7 @@ rm -rf %{buildroot}/usr/share/info/dir
 /usr/include/bits/strings_fortified.h
 /usr/include/bits/struct_mutex.h
 /usr/include/bits/struct_rwlock.h
-/usr/include/bits/sys_errlist.h
 /usr/include/bits/syscall.h
-/usr/include/bits/sysctl.h
 /usr/include/bits/syslog-ldbl.h
 /usr/include/bits/syslog-path.h
 /usr/include/bits/syslog.h
@@ -442,48 +435,6 @@ rm -rf %{buildroot}/usr/share/info/dir
 /usr/include/regex.h
 /usr/include/regexp.h
 /usr/include/resolv.h
-/usr/include/rpc/auth.h
-/usr/include/rpc/auth_des.h
-/usr/include/rpc/auth_unix.h
-/usr/include/rpc/clnt.h
-/usr/include/rpc/key_prot.h
-/usr/include/rpc/netdb.h
-/usr/include/rpc/pmap_clnt.h
-/usr/include/rpc/pmap_prot.h
-/usr/include/rpc/pmap_rmt.h
-/usr/include/rpc/rpc.h
-/usr/include/rpc/rpc_msg.h
-/usr/include/rpc/svc.h
-/usr/include/rpc/svc_auth.h
-/usr/include/rpc/types.h
-/usr/include/rpc/xdr.h
-/usr/include/rpcsvc/bootparam.h
-/usr/include/rpcsvc/bootparam_prot.h
-/usr/include/rpcsvc/bootparam_prot.x
-/usr/include/rpcsvc/key_prot.h
-/usr/include/rpcsvc/key_prot.x
-/usr/include/rpcsvc/klm_prot.h
-/usr/include/rpcsvc/klm_prot.x
-/usr/include/rpcsvc/mount.h
-/usr/include/rpcsvc/mount.x
-/usr/include/rpcsvc/nfs_prot.h
-/usr/include/rpcsvc/nfs_prot.x
-/usr/include/rpcsvc/nlm_prot.h
-/usr/include/rpcsvc/nlm_prot.x
-/usr/include/rpcsvc/rex.h
-/usr/include/rpcsvc/rex.x
-/usr/include/rpcsvc/rquota.h
-/usr/include/rpcsvc/rquota.x
-/usr/include/rpcsvc/rstat.h
-/usr/include/rpcsvc/rstat.x
-/usr/include/rpcsvc/rusers.h
-/usr/include/rpcsvc/rusers.x
-/usr/include/rpcsvc/sm_inter.h
-/usr/include/rpcsvc/sm_inter.x
-/usr/include/rpcsvc/spray.h
-/usr/include/rpcsvc/spray.x
-/usr/include/rpcsvc/yppasswd.h
-/usr/include/rpcsvc/yppasswd.x
 /usr/include/sched.h
 /usr/include/scsi/scsi.h
 /usr/include/scsi/scsi_ioctl.h
@@ -559,7 +510,6 @@ rm -rf %{buildroot}/usr/share/info/dir
 /usr/include/sys/statvfs.h
 /usr/include/sys/swap.h
 /usr/include/sys/syscall.h
-/usr/include/sys/sysctl.h
 /usr/include/sys/sysinfo.h
 /usr/include/sys/syslog.h
 /usr/include/sys/sysmacros.h
@@ -881,7 +831,7 @@ rm -rf %{buildroot}/usr/share/info/dir
 /usr/lib/libdl.a
 /usr/lib/libdl.so
 /usr/lib/libg.a
-/usr/lib/libm-2.31.a
+/usr/lib/libm-2.32.a
 /usr/lib/libm.a
 /usr/lib/libm.so
 /usr/lib/libmcheck.a
@@ -896,7 +846,6 @@ rm -rf %{buildroot}/usr/share/info/dir
 /usr/lib/libpthread.so
 /usr/lib/libresolv.a
 /usr/lib/libresolv.so
-/usr/lib/librpcsvc.a
 /usr/lib/librt.a
 /usr/lib/librt.so
 /usr/lib/libthread_db.so
@@ -1549,5 +1498,12 @@ rm -rf %{buildroot}/usr/share/info/dir
 /usr/share/locale/zh_CN/LC_MESSAGES/libc.mo
 /usr/share/locale/zh_TW/LC_MESSAGES/libc.mo
 /var/db/Makefile
+/usr/include/bits/signum-arch.h
+/usr/include/bits/types/struct_msqid_ds.h
+/usr/include/bits/types/struct_semid_ds.h
+/usr/include/bits/types/struct_shmid_ds.h
+/usr/include/rpc/netdb.h
+/usr/include/sys/single_threaded.h
+/usr/share/i18n/locales/ckb_IQ
 
 

@@ -14,6 +14,9 @@ Source0:	https://ftp.gnu.org/gnu/readline/readline-%{version}.tar.gz
 
 %build
 ./configure -prefix=/usr --disable-static --docdir=/usr/share/doc/readline-%{version}
+for mfile in $(find "$PWD" -name 'Makefile'); do
+    sed -i 's|SHLIB_LIBS =|SHLIB_LIBS = -ltinfo|g' "$mfile"
+done
 
 make %{?_smp_mflags}
 

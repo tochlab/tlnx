@@ -32,6 +32,7 @@ Contains base tree for initial work
     #ln -sv run var/run
     #ln -sv run/lock var/lock
     mkdir -pv %{buildroot}/var/{opt,cache,lib/{color,misc,locate},local}
+    echo 127.0.0.1 localhost > %{buildroot}/etc/hosts
 
 %files
 /*

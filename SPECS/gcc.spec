@@ -36,7 +36,7 @@ cd build
 rm -rf $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT
 rm -rf $RPM_BUILD_ROOT/usr/lib/gcc/$(gcc -dumpmachine)/%{version}/include-fixed/bits/
-rm $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed/README \
+rm -fr $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed/README \
    $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed/X11/Xw32defs.h \
    $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed/boost/predef/os/unix.h \
    $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed/net-snmp/net-snmp-config.h \
@@ -49,7 +49,9 @@ rm $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed/README \
    $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed/zzip/conf.h \
    $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed/zzip/fetch.h
 mv %{buildroot}/usr/lib64/* %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/
-%{__rm} -f %{buildroot}/usr/share/info/dir
+mkdir -p %{buildroot}/etc/ld.so.conf.d
+echo /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/ > %{buildroot}/etc/ld.so.conf.d/gcc
+%{__rm} -f %{buildroot}/usr/share/info/*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -65,6 +67,7 @@ ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/%{version}/liblto_plugin.so \
 /usr/lib/bfd-plugins/
 
 %files
+/etc/ld.so.conf.d/gcc
 /usr/bin/c++
 /usr/bin/cpp
 /usr/bin/g++
@@ -1513,14 +1516,6 @@ ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/%{version}/liblto_plugin.so \
 /usr/share/gcc-%{version}/python/libstdcxx/v6/__init__.py
 /usr/share/gcc-%{version}/python/libstdcxx/v6/printers.py
 /usr/share/gcc-%{version}/python/libstdcxx/v6/xmethods.py
-/usr/share/info/cpp.info.gz
-/usr/share/info/cppinternals.info.gz
-/usr/share/info/gcc.info.gz
-/usr/share/info/gccinstall.info.gz
-/usr/share/info/gccint.info.gz
-/usr/share/info/libgomp.info.gz
-/usr/share/info/libitm.info.gz
-/usr/share/info/libquadmath.info.gz
 /usr/share/locale/be/LC_MESSAGES/cpplib.mo
 /usr/share/locale/be/LC_MESSAGES/gcc.mo
 /usr/share/locale/ca/LC_MESSAGES/cpplib.mo

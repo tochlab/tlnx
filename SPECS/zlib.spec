@@ -14,7 +14,7 @@ Zlib compress library
 %setup -q
 
 %build
-./configure --prefix=/usr --libdir=/lib/ --64
+./configure --prefix=/usr --sharedlibdir=/lib/ --64
 make %{?_smp_mflags}
 make check
 
@@ -25,7 +25,14 @@ make install DESTDIR=%{buildroot}
 
 
 %files
-/*
+/lib/libz.so
+/lib/libz.so.1
+/lib/libz.so.1.2.11
+/usr/include/zconf.h
+/usr/include/zlib.h
+/usr/lib/libz.a
+/usr/lib/pkgconfig/zlib.pc
+/usr/share/man/man3/zlib.3.gz
 
 %changelog
 #

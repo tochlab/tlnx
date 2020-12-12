@@ -1,11 +1,11 @@
 Name:           rpm
-Version:	4.14.3
+Version:	4.16.1
 Release:        1%{?dist}
 Summary:	Red Hat Package Management Utils
 
 License:	GPL-2 LGPL-2
 URL:		https://rpm.org
-Source0:	http://ftp.rpm.org/releases/rpm-4.14.x/rpm-%{version}.tar.bz2	
+Source0:	http://ftp.rpm.org/releases/rpm-4.16.x/rpm-%{version}.tar.bz2
 
 #BuildRequires:
 #Requires:
@@ -16,7 +16,7 @@ Source0:	http://ftp.rpm.org/releases/rpm-4.14.x/rpm-%{version}.tar.bz2
 %setup -q
 
 %build
-%configure --without-lua --without-dbus --libdir=/usr/lib
+%configure --without-lua --without-dbus --libdir=/usr/lib --with-crypto=openssl --enable-sqlite=no --enable-zstd=no --disable-inhibit-plugin
 make %{?_smp_mflags}
 
 %install
@@ -71,7 +71,32 @@ rm -rf $RPM_BUILD_ROOT
 /usr/include/rpm/rpmtypes.h
 /usr/include/rpm/rpmurl.h
 /usr/include/rpm/rpmutil.h
-/usr/include/rpm/rpmvf.h
+/usr/include/rpm/rpmver.h
+/usr/lib/librpm.la
+/usr/lib/librpm.so
+/usr/lib/librpm.so.9
+/usr/lib/librpm.so.9.1.1
+/usr/lib/librpmbuild.la
+/usr/lib/librpmbuild.so
+/usr/lib/librpmbuild.so.9
+/usr/lib/librpmbuild.so.9.1.1
+/usr/lib/librpmio.la
+/usr/lib/librpmio.so
+/usr/lib/librpmio.so.9
+/usr/lib/librpmio.so.9.1.1
+/usr/lib/librpmsign.la
+/usr/lib/librpmsign.so
+/usr/lib/librpmsign.so.9
+/usr/lib/librpmsign.so.9.1.1
+/usr/lib/pkgconfig/rpm.pc
+/usr/lib/rpm-plugins/ima.la
+/usr/lib/rpm-plugins/ima.so
+/usr/lib/rpm-plugins/prioreset.la
+/usr/lib/rpm-plugins/prioreset.so
+/usr/lib/rpm-plugins/syslog.la
+/usr/lib/rpm-plugins/syslog.so
+#/usr/lib/rpm-plugins/systemd_inhibit.la
+#/usr/lib/rpm-plugins/systemd_inhibit.so
 /usr/lib/rpm/brp-compress
 /usr/lib/rpm/brp-java-gcjcompile
 /usr/lib/rpm/brp-python-bytecompile
@@ -85,11 +110,7 @@ rm -rf $RPM_BUILD_ROOT
 /usr/lib/rpm/check-prereqs
 /usr/lib/rpm/check-rpaths
 /usr/lib/rpm/check-rpaths-worker
-/usr/lib/rpm/config.guess
-/usr/lib/rpm/config.sub
 /usr/lib/rpm/debugedit
-/usr/lib/rpm/debuginfo.prov
-/usr/lib/rpm/desktop-file.prov
 /usr/lib/rpm/elfdeps
 /usr/lib/rpm/fileattrs/debuginfo.attr
 /usr/lib/rpm/fileattrs/desktop.attr
@@ -97,12 +118,12 @@ rm -rf $RPM_BUILD_ROOT
 /usr/lib/rpm/fileattrs/font.attr
 /usr/lib/rpm/fileattrs/libtool.attr
 /usr/lib/rpm/fileattrs/metainfo.attr
-/usr/lib/rpm/fileattrs/mono.attr
 /usr/lib/rpm/fileattrs/ocaml.attr
 /usr/lib/rpm/fileattrs/perl.attr
 /usr/lib/rpm/fileattrs/perllib.attr
 /usr/lib/rpm/fileattrs/pkgconfig.attr
 /usr/lib/rpm/fileattrs/python.attr
+/usr/lib/rpm/fileattrs/pythondist.attr
 /usr/lib/rpm/fileattrs/script.attr
 /usr/lib/rpm/find-debuginfo.sh
 /usr/lib/rpm/find-lang.sh
@@ -111,15 +132,8 @@ rm -rf $RPM_BUILD_ROOT
 /usr/lib/rpm/fontconfig.prov
 /usr/lib/rpm/libtooldeps.sh
 /usr/lib/rpm/macros
-/usr/lib/rpm/macros.perl
-/usr/lib/rpm/macros.php
-/usr/lib/rpm/macros.python
-/usr/lib/rpm/metainfo.prov
 /usr/lib/rpm/mkinstalldirs
-/usr/lib/rpm/mono-find-provides
-/usr/lib/rpm/mono-find-requires
-/usr/lib/rpm/ocaml-find-provides.sh
-/usr/lib/rpm/ocaml-find-requires.sh
+/usr/lib/rpm/ocamldeps.sh
 /usr/lib/rpm/perl.prov
 /usr/lib/rpm/perl.req
 /usr/lib/rpm/pkgconfigdeps.sh
@@ -142,6 +156,8 @@ rm -rf $RPM_BUILD_ROOT
 /usr/lib/rpm/platform/armv7hl-linux/macros
 /usr/lib/rpm/platform/armv7hnl-linux/macros
 /usr/lib/rpm/platform/armv7l-linux/macros
+/usr/lib/rpm/platform/armv8hl-linux/macros
+/usr/lib/rpm/platform/armv8l-linux/macros
 /usr/lib/rpm/platform/athlon-linux/macros
 /usr/lib/rpm/platform/geode-linux/macros
 /usr/lib/rpm/platform/i386-linux/macros
@@ -187,45 +203,19 @@ rm -rf $RPM_BUILD_ROOT
 /usr/lib/rpm/platform/sparcv9-linux/macros
 /usr/lib/rpm/platform/sparcv9v-linux/macros
 /usr/lib/rpm/platform/x86_64-linux/macros
-/usr/lib/rpm/python-macro-helper
-/usr/lib/rpm/pythondeps.sh
 /usr/lib/rpm/pythondistdeps.py
 /usr/lib/rpm/rpm.daily
 /usr/lib/rpm/rpm.log
 /usr/lib/rpm/rpm.supp
 /usr/lib/rpm/rpm2cpio.sh
-/usr/lib/rpm/rpmdb_loadcvt
+/usr/lib/rpm/rpmdb_dump
+/usr/lib/rpm/rpmdb_load
 /usr/lib/rpm/rpmdeps
-/usr/lib/rpm/rpmpopt-4.14.3
+/usr/lib/rpm/rpmpopt-4.16.1
 /usr/lib/rpm/rpmrc
 /usr/lib/rpm/script.req
 /usr/lib/rpm/sepdebugcrcfix
 /usr/lib/rpm/tgpg
-/usr/lib/librpm.la
-/usr/lib/librpm.so
-/usr/lib/librpm.so.8
-/usr/lib/librpm.so.8.2.0
-/usr/lib/librpmbuild.la
-/usr/lib/librpmbuild.so
-/usr/lib/librpmbuild.so.8
-/usr/lib/librpmbuild.so.8.2.0
-/usr/lib/librpmio.la
-/usr/lib/librpmio.so
-/usr/lib/librpmio.so.8
-/usr/lib/librpmio.so.8.2.0
-/usr/lib/librpmsign.la
-/usr/lib/librpmsign.so
-/usr/lib/librpmsign.so.8
-/usr/lib/librpmsign.so.8.2.0
-/usr/lib/pkgconfig/rpm.pc
-/usr/lib/rpm-plugins/ima.la
-/usr/lib/rpm-plugins/ima.so
-/usr/lib/rpm-plugins/prioreset.la
-/usr/lib/rpm-plugins/prioreset.so
-/usr/lib/rpm-plugins/syslog.la
-/usr/lib/rpm-plugins/syslog.so
-/usr/lib/rpm-plugins/systemd_inhibit.la
-/usr/lib/rpm-plugins/systemd_inhibit.so
 /usr/share/locale/ar/LC_MESSAGES/rpm.mo
 /usr/share/locale/br/LC_MESSAGES/rpm.mo
 /usr/share/locale/ca/LC_MESSAGES/rpm.mo
@@ -270,8 +260,13 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/man/ko/man8/rpm2cpio.8.gz
 /usr/share/man/man1/gendiff.1.gz
 /usr/share/man/man8/rpm-misc.8.gz
-/usr/share/man/man8/rpm-plugin-systemd-inhibit.8.gz
+/usr/share/man/man8/rpm-plugin-ima.8.gz
+/usr/share/man/man8/rpm-plugin-prioreset.8.gz
+/usr/share/man/man8/rpm-plugin-syslog.8.gz
+#/usr/share/man/man8/rpm-plugin-systemd-inhibit.8.gz
+/usr/share/man/man8/rpm-plugins.8.gz
 /usr/share/man/man8/rpm.8.gz
+/usr/share/man/man8/rpm2archive.8.gz
 /usr/share/man/man8/rpm2cpio.8.gz
 /usr/share/man/man8/rpmbuild.8.gz
 /usr/share/man/man8/rpmdb.8.gz
@@ -289,3 +284,4 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/man/ru/man8/rpm.8.gz
 /usr/share/man/ru/man8/rpm2cpio.8.gz
 /usr/share/man/sk/man8/rpm.8.gz
+

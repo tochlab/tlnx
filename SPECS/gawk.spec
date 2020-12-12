@@ -1,5 +1,5 @@
 Name:           gawk
-Version:	5.0.1
+Version:	5.1.0
 Release:        1%{?dist}
 Summary:	GNU awk pattern-matching language
 

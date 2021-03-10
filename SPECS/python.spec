@@ -1,5 +1,5 @@
 Name:          	python 
-Version:	3.8.2
+Version:	3.8.8
 Release:        1%{?dist}
 Summary:	An interpreted, interactive, object-oriented programming language
 
@@ -16,7 +16,7 @@ Source0:	https://www.python.org/ftp/python/%{version}/Python-%{version}.tar.xz
 #%setup -q
 umask 022
 cd %{_builddir}
-rm -rf Python-3.8.2
+rm -rf Python-%{version}
 tar xvf %{_sourcedir}/Python-%{version}.tar.xz
 
 

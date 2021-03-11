@@ -1,5 +1,5 @@
 Name:           glibc
-Version:	2.32
+Version:	2.33
 Release:        1
 Summary:	GNU libc C library
 
@@ -60,46 +60,46 @@ rm -rf %{buildroot}/usr/share/info/dir
 /etc/ld.so.conf.d
 /etc/nscd.conf
 /etc/rpc
-/lib/ld-2.32.so
+/lib/ld-%{version}.so
 /lib/ld-linux-x86-64.so.2
-/lib/libBrokenLocale-2.32.so
+/lib/libBrokenLocale-%{version}.so
 /lib/libBrokenLocale.so.1
 /lib/libSegFault.so
-/lib/libanl-2.32.so
+/lib/libanl-%{version}.so
 /lib/libanl.so.1
-/lib/libc-2.32.so
+/lib/libc-%{version}.so
 /lib/libc.so.6
-/lib/libcrypt-2.32.so
+/lib/libcrypt-%{version}.so
 /lib/libcrypt.so.1
-/lib/libdl-2.32.so
+/lib/libdl-%{version}.so
 /lib/libdl.so.2
-/lib/libm-2.32.so
+/lib/libm-%{version}.so
 /lib/libm.so.6
 /lib/libmemusage.so
-/lib/libmvec-2.32.so
+/lib/libmvec-%{version}.so
 /lib/libmvec.so.1
-/lib/libnsl-2.32.so
+/lib/libnsl-%{version}.so
 /lib/libnsl.so.1
-/lib/libnss_compat-2.32.so
+/lib/libnss_compat-%{version}.so
 /lib/libnss_compat.so.2
-/lib/libnss_db-2.32.so
+/lib/libnss_db-%{version}.so
 /lib/libnss_db.so.2
-/lib/libnss_dns-2.32.so
+/lib/libnss_dns-%{version}.so
 /lib/libnss_dns.so.2
-/lib/libnss_files-2.32.so
+/lib/libnss_files-%{version}.so
 /lib/libnss_files.so.2
-/lib/libnss_hesiod-2.32.so
+/lib/libnss_hesiod-%{version}.so
 /lib/libnss_hesiod.so.2
 /lib/libpcprofile.so
-/lib/libpthread-2.32.so
+/lib/libpthread-%{version}.so
 /lib/libpthread.so.0
-/lib/libresolv-2.32.so
+/lib/libresolv-%{version}.so
 /lib/libresolv.so.2
-/lib/librt-2.32.so
+/lib/librt-%{version}.so
 /lib/librt.so.1
 /lib/libthread_db-1.0.so
 /lib/libthread_db.so.1
-/lib/libutil-2.32.so
+/lib/libutil-%{version}.so
 /lib/libutil.so.1
 /sbin/ldconfig
 /sbin/sln
@@ -532,7 +532,7 @@ rm -rf %{buildroot}/usr/share/info/dir
 /usr/include/sys/vlimit.h
 /usr/include/sys/vm86.h
 /usr/include/sys/vt.h
-/usr/include/sys/vtimes.h
+#/usr/include/sys/vtimes.h
 /usr/include/sys/wait.h
 /usr/include/sys/xattr.h
 /usr/include/syscall.h
@@ -831,7 +831,7 @@ rm -rf %{buildroot}/usr/share/info/dir
 /usr/lib/libdl.a
 /usr/lib/libdl.so
 /usr/lib/libg.a
-/usr/lib/libm-2.32.a
+/usr/lib/libm-%{version}.a
 /usr/lib/libm.a
 /usr/lib/libm.so
 /usr/lib/libmcheck.a
@@ -1505,5 +1505,9 @@ rm -rf %{buildroot}/usr/share/info/dir
 /usr/include/rpc/netdb.h
 /usr/include/sys/single_threaded.h
 /usr/share/i18n/locales/ckb_IQ
-
+/usr/include/bits/struct_stat.h
+/usr/include/bits/types/struct___jmp_buf_tag.h
+/usr/include/bits/types/struct_timeb.h
+/usr/include/sys/platform/x86.h
+/usr/share/locale/sr/LC_MESSAGES/libc.mo
 

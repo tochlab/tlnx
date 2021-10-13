@@ -5,7 +5,7 @@ Summary:	Standard tool to compile source trees
 
 License:	GPL-3+
 URL:		https://www.gnu.org/software/make/make.html
-Source0:	https://ftp.gnu.org/gnu/make/make-%{version}.tar.gz
+Source0:	https://ftpmirror.gnu.org/gnu/make/make-%{version}.tar.gz
 
 #BuildRequires:
 #Requires:

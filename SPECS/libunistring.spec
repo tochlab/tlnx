@@ -5,7 +5,7 @@ Summary:	Library for manipulating Unicode and C strings according to Unicode sta
 
 License:	LGPL-3 GPL-3
 URL:		https://www.gnu.org/software/libunistring/
-Source0:	https://ftp.gnu.org/gnu/libunistring/libunistring-%{version}.tar.gz
+Source0:	https://ftpmirror.gnu.org/gnu/libunistring/libunistring-%{version}.tar.gz
 
 #BuildRequires:
 #Requires:

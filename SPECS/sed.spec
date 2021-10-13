@@ -5,7 +5,7 @@ Summary:	Super-useful stream editor
 
 License:	GPL-3
 URL:		http://sed.sourceforge.net/
-Source0:	https://ftp.gnu.org/gnu/sed/sed-%{version}.tar.gz
+Source0:	https://ftpmirror.gnu.org/gnu/sed/sed-%{version}.tar.gz
 
 #BuildRequires:
 #Requires:

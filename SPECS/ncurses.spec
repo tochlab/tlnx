@@ -5,7 +5,7 @@ Summary:	console display librar
 
 License:	MIT
 URL:		https://invisible-island.net/ncurses/announce.html
-Source0:	https://ftp.gnu.org/gnu/ncurses/ncurses-%{version}.tar.gz
+Source0:	https://ftpmirror.gnu.org/gnu/ncurses/ncurses-%{version}.tar.gz
 
 #BuildRequires:
 #Requires:

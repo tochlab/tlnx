@@ -5,7 +5,7 @@ Summary:	GNU utilities for finding files
 
 License:	GPL-3+
 URL:		https://www.gnu.org/software/findutils/
-Source0:	https://ftp.gnu.org/gnu/findutils/findutils-%{version}.tar.xz
+Source0:	https://ftpmirror.gnu.org/gnu/findutils/findutils-%{version}.tar.xz
 
 #BuildRequires:
 #Requires:

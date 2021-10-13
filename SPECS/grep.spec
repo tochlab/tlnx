@@ -5,7 +5,7 @@ Summary:	GNU regular expression matcher
 
 License:	GPL-3
 URL:		https://www.gnu.org/software/grep/
-Source0:	https://ftp.gnu.org/gnu/grep/grep-%{version}.tar.xz
+Source0:	https://ftpmirror.gnu.org/gnu/grep/grep-%{version}.tar.xz
 
 #BuildRequires:
 #Requires:

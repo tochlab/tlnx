@@ -5,7 +5,7 @@ Summary:	Inetutils
 
 License:	GPL
 URL:		https://www.gnu.org/software/inetutils/
-Source0:	https://ftp.gnu.org/gnu/inetutils/inetutils-%{version}.tar.gz
+Source0:	https://ftpmirror.gnu.org/gnu/inetutils/inetutils-%{version}.tar.gz
 
 #BuildRequires:
 #Requires:

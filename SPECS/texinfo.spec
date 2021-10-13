@@ -5,7 +5,7 @@ Summary:	The GNU info program and utilities
 
 License:	GPL-3
 URL:		https://www.gnu.org/software/texinfo/
-Source0:	https://ftp.gnu.org/gnu/texinfo/texinfo-%{version}.tar.gz
+Source0:	https://ftpmirror.gnu.org/gnu/texinfo/texinfo-%{version}.tar.gz
 
 #BuildRequires:
 #Requires:

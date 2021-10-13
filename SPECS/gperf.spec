@@ -5,7 +5,7 @@ Summary:	A perfect hash function generator
 
 License:	GPL-2
 URL:		https://www.gnu.org/software/gperf/
-Source0:	https://ftp.gnu.org/gnu/gperf/gperf-%{version}.tar.gz
+Source0:	https://ftpmirror.gnu.org/gnu/gperf/gperf-%{version}.tar.gz
 
 #BuildRequires:
 #Requires:

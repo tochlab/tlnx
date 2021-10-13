@@ -5,7 +5,7 @@ Summary:	Standard GNU utilities (chmod, cp, dd, ls, sort, tr, head, wc, who,...
 
 License:	GPL-3
 URL:		https://www.gnu.org/software/coreutils/
-Source0:	https://ftp.gnu.org/gnu/coreutils/coreutils-%{version}.tar.xz
+Source0:	https://ftpmirror.gnu.org/gnu/coreutils/coreutils-%{version}.tar.xz
 
 #BuildRequires:
 #Requires:

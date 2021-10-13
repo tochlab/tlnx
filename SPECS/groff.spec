@@ -5,7 +5,7 @@ Summary:	Text formatter used for man pages
 
 License:	GPL-2
 URL:		https://www.gnu.org/software/groff/groff.html
-Source0:	https://ftp.gnu.org/gnu/groff/groff-%{version}.tar.gz
+Source0:	https://ftpmirror.gnu.org/gnu/groff/groff-%{version}.tar.gz
 
 #BuildRequires:
 #Requires:

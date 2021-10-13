@@ -5,7 +5,7 @@ Summary:	The GNU Binutils are a collection of binary tools.
 
 License:	GPL
 URL:		https://www.gnu.org/software/binutils/
-Source0:	https://ftp.gnu.org/gnu/binutils/binutils-2.34.tar.gz
+Source0:	https://ftpmirror.gnu.org/gnu/binutils/binutils-2.34.tar.gz
 
 %description
 

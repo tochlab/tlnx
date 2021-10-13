@@ -5,7 +5,7 @@ Summary:	GNU Tar provides the ability to create tar archives
 
 License:	GPL-3+
 URL:		https://www.gnu.org/software/tar/
-Source0:	https://ftp.gnu.org/gnu/tar/tar-%{version}.tar.gz
+Source0:	https://ftpmirror.gnu.org/gnu/tar/tar-%{version}.tar.gz
 
 #BuildRequires:
 #Requires:

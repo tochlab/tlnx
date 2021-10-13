@@ -5,7 +5,7 @@ Summary:	An implementation of the IDNA2008 specifications (RFCs 5890, 5891, 5892
 
 License:	GPL-2+ LGPL-3+
 URL:		https://www.gnu.org/software/libidn/#libidn2
-Source0:	https://ftp.gnu.org/gnu/libidn/libidn2-%{version}.tar.gz
+Source0:	https://ftpmirror.gnu.org/gnu/libidn/libidn2-%{version}.tar.gz
 
 #BuildRequires:
 #Requires:

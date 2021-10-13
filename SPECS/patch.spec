@@ -5,7 +5,7 @@ Summary:	Utility to apply diffs to files
 
 License:	GPL-3+
 URL:		https://www.gnu.org/software/patch/patch.html
-Source0:	https://ftp.gnu.org/gnu/patch/patch-%{version}.tar.gz
+Source0:	https://ftpmirror.gnu.org/gnu/patch/patch-%{version}.tar.gz
 
 #BuildRequires:
 #Requires:

@@ -5,7 +5,7 @@ Summary:	Standard GNU compressor
 
 License:	GPL-3
 URL:		https://www.gnu.org/software/gzip/
-Source0:	https://ftp.gnu.org/gnu/gzip/gzip-%{version}.tar.gz
+Source0:	https://ftpmirror.gnu.org/gnu/gzip/gzip-%{version}.tar.gz
 
 #BuildRequires:
 #Requires:

@@ -5,7 +5,7 @@ Summary:	GNU GRUB boot loader
 
 License:	GPL-3+ BSD MIT
 URL:		https://www.gnu.org/software/grub/
-Source0:	https://ftp.gnu.org/gnu/grub/grub-%{version}.tar.gz
+Source0:	https://ftpmirror.gnu.org/gnu/grub/grub-%{version}.tar.gz
 
 #BuildRequires:
 #Requires:

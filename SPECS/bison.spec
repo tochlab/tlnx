@@ -5,7 +5,7 @@ Summary:	A general-purpose (yacc-compatible) parser generator
 
 License:	GPL-2
 URL:		https://www.gnu.org/software/bison/
-Source0:	https://ftp.gnu.org/gnu/bison/bison-%{version}.tar.gz
+Source0:	https://ftpmirror.gnu.org/gnu/bison/bison-%{version}.tar.gz
 
 #BuildRequires:
 #Requires: m4

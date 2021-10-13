@@ -6,7 +6,7 @@ Summary:        gcc
 #Group:          
 License:        GPL
 URL:            https://gcc.gnu.org/
-Source0:        https://ftp.gnu.org/gnu/gcc/gcc-%{version}/gcc-%{version}.tar.gz
+Source0:        https://ftpmirror.gnu.org/gnu/gcc/gcc-%{version}/gcc-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 #BuildRequires:  

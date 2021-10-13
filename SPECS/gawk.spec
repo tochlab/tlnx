@@ -5,7 +5,7 @@ Summary:	GNU awk pattern-matching language
 
 License:	GPL-2
 URL:		https://www.gnu.org/software/gawk/gawk.html
-Source0:	https://ftp.gnu.org/gnu/gawk/gawk-%{version}.tar.gz
+Source0:	https://ftpmirror.gnu.org/gnu/gawk/gawk-%{version}.tar.gz
 
 #BuildRequires:
 #Requires:

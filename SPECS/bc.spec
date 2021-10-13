@@ -5,7 +5,7 @@ Summary:	bc is an arbitrary precision numeric processing language.
 
 License:	GPL
 URL:		http://www.gnu.org/software/bc/
-Source0:	https://ftp.gnu.org/gnu/bc/bc-1.07.1.tar.gz
+Source0:	https://ftpmirror.gnu.org/gnu/bc/bc-1.07.1.tar.gz
 
 %description
 

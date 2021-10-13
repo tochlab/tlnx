@@ -5,7 +5,7 @@ Summary:        Used to create autoconfiguration files
 
 License:	GPL-3
 URL:		https://www.gnu.org/software/autoconf/autoconf.html
-Source0:	http://ftp.gnu.org/gnu/autoconf/autoconf-%{version}.tar.gz
+Source0:	https://ftpmirror.gnu.org/gnu/autoconf/autoconf-%{version}.tar.gz
 
 #BuildRequires:
 #Requires:

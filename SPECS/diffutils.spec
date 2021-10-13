@@ -5,7 +5,7 @@ Summary:	Tools to make diffs and compare files
 
 License:	GPL-2
 URL:		https://www.gnu.org/software/diffutils/
-Source0:	https://ftp.gnu.org/gnu/diffutils/diffutils-%{version}.tar.xz
+Source0:	https://ftpmirror.gnu.org/gnu/diffutils/diffutils-%{version}.tar.xz
 
 #BuildRequires:
 #Requires:

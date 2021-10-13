@@ -5,7 +5,7 @@ Summary:	GNU libc C library
 
 License:	LGPL-2.1+ BSD HPND ISC inner-net rc PCRE
 URL:		https://www.gnu.org/software/libc/
-Source0:	https://ftp.gnu.org/gnu/glibc/glibc-%{version}.tar.gz
+Source0:	https://ftpmirror.gnu.org/gnu/glibc/glibc-%{version}.tar.gz
 
 %description
 GNU C library

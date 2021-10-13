@@ -5,7 +5,7 @@ Summary:	GNU Readline Library
 
 License:	GPL
 URL:		http://www.gnu.org/software/readline/
-Source0:	https://ftp.gnu.org/gnu/readline/readline-%{version}.tar.gz
+Source0:	https://ftpmirror.gnu.org/gnu/readline/readline-%{version}.tar.gz
 
 %description
 

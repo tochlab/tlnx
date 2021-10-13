@@ -1,5 +1,5 @@
 Name:           gcc
-Version:        9.3.0
+Version:        11.2.0
 Release:        1%{?dist}
 Summary:        gcc
 
@@ -36,21 +36,21 @@ cd build
 rm -rf $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT
 rm -rf $RPM_BUILD_ROOT/usr/lib/gcc/$(gcc -dumpmachine)/%{version}/include-fixed/bits/
-rm -fr $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed/README \
-   $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed/X11/Xw32defs.h \
-   $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed/boost/predef/os/unix.h \
-   $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed/net-snmp/net-snmp-config.h \
-   $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed/nss/secport.h \
-   $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed/ntfs-3g/device_io.h \
-   $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed/ntfs-3g/realpath.h \
-   $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed/slang.h \
-   $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed/xorg/compiler.h \
-   $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed/xorg/edid.h \
-   $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed/zzip/conf.h \
-   $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed/zzip/fetch.h
+rm -fr $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed/README \
+   $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed/X11/Xw32defs.h \
+   $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed/boost/predef/os/unix.h \
+   $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed/net-snmp/net-snmp-config.h \
+   $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed/nss/secport.h \
+   $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed/ntfs-3g/device_io.h \
+   $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed/ntfs-3g/realpath.h \
+   $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed/slang.h \
+   $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed/xorg/compiler.h \
+   $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed/xorg/edid.h \
+   $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed/zzip/conf.h \
+   $RPM_BUILD_ROOT/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed/zzip/fetch.h
 mv %{buildroot}/usr/lib64/* %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/
 mkdir -p %{buildroot}/etc/ld.so.conf.d
-echo /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/ > %{buildroot}/etc/ld.so.conf.d/gcc
+echo /usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/ > %{buildroot}/etc/ld.so.conf.d/gcc
 %{__rm} -f %{buildroot}/usr/share/info/*
 
 %clean

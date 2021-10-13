@@ -5,8 +5,9 @@ def juin(lines):
     result = ""
     for ll in lines:
         result += ll
+        result += ":"
 
-    return result
+    return result[:-1]
 
 
 def get_url(filename):
@@ -26,8 +27,6 @@ def get_url(filename):
         return None
 
     source = source.replace("%{version}", version).strip()
-    source = source.replace("http//", "http://").strip()
-    source = source.replace("https//", "https://").strip()
     return source
 
 

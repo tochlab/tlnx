@@ -1,11 +1,11 @@
 Name:         	psmisc 
-Version:	23.3
+Version:	23.4
 Release:        1%{?dist}
 Summary:	A set of tools that use the proc filesystem
 
 License:	GPL-2
 URL:		http://psmisc.sourceforge.net/
-Source0:	https://mirror.yandex.ru/gentoo-distfiles/distfiles/d1/psmisc-%{version}.tar.xz
+Source0:	https://mirror.yandex.ru/gentoo-distfiles/distfiles/psmisc-%{version}.tar.xz
 
 #BuildRequires:
 #Requires: ncurses

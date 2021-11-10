@@ -16,7 +16,7 @@ Source0:	https://www.libarchive.org/downloads/libarchive-%{version}.tar.xz
 %setup -q
 
 %build
-%configure --without-libb2 --without-zstd --without-lz4 --without-xml2
+%configure --without-libb2 --without-lz4 --without-xml2
 make %{?_smp_mflags}
 
 %install

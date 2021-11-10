@@ -1,6 +1,6 @@
 Name:           coreutils
 Version:	8.31
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:	Standard GNU utilities (chmod, cp, dd, ls, sort, tr, head, wc, who,...
 
 License:	GPL-3
@@ -24,120 +24,125 @@ Source0:	https://ftpmirror.gnu.org/gnu/coreutils/coreutils-%{version}.tar.xz
 autoreconf -fiv
 FORCE_UNSAFE_CONFIGURE=1 ./configure \
             --prefix=/usr            \
-            --enable-no-install-program=kill,uptime \
-	    --bindir=/bin
+            --enable-no-install-program=kill,uptime
 make %{?_smp_mflags}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 %make_install
+# Move critical binaries into /bin (required by FHS)
+mkdir $RPM_BUILD_ROOT/bin/
+cd $RPM_BUILD_ROOT/usr/bin
+fhs="cat chgrp chmod chown cp date dd df echo false ln ls mkdir mknod mv pwd rm rmdir stty sync true uname"
+mv ${fhs} $RPM_BUILD_ROOT/bin/
+
 rm $RPM_BUILD_ROOT/usr/share/info/dir
 
 %files
-/bin/[
-/bin/b2sum
-/bin/base32
-/bin/base64
-/bin/basename
-/bin/basenc
+/usr/bin/[
+/usr/bin/b2sum
+/usr/bin/base32
+/usr/bin/base64
+/usr/bin/basename
+/usr/bin/basenc
 /bin/cat
-/bin/chcon
+/usr/bin/chcon
 /bin/chgrp
 /bin/chmod
 /bin/chown
-/bin/chroot
-/bin/cksum
-/bin/comm
+/usr/bin/chroot
+/usr/bin/cksum
+/usr/bin/comm
 /bin/cp
-/bin/csplit
-/bin/cut
+/usr/bin/csplit
+/usr/bin/cut
 /bin/date
 /bin/dd
 /bin/df
-/bin/dir
-/bin/dircolors
-/bin/dirname
-/bin/du
+/usr/bin/dir
+/usr/bin/dircolors
+/usr/bin/dirname
+/usr/bin/du
 /bin/echo
-/bin/env
-/bin/expand
-/bin/expr
-/bin/factor
+/usr/bin/env
+/usr/bin/expand
+/usr/bin/expr
+/usr/bin/factor
 /bin/false
-/bin/fmt
-/bin/fold
-/bin/groups
-/bin/head
-/bin/hostid
-/bin/id
-/bin/install
-/bin/join
-/bin/link
+/usr/bin/fmt
+/usr/bin/fold
+/usr/bin/groups
+/usr/bin/head
+/usr/bin/hostid
+/usr/bin/id
+/usr/bin/install
+/usr/bin/join
+/usr/bin/link
 /bin/ln
-/bin/logname
+/usr/bin/logname
 /bin/ls
-/bin/md5sum
+/usr/bin/md5sum
 /bin/mkdir
-/bin/mkfifo
+/usr/bin/mkfifo
 /bin/mknod
-/bin/mktemp
+/usr/bin/mktemp
 /bin/mv
-/bin/nice
-/bin/nl
-/bin/nohup
-/bin/nproc
-/bin/numfmt
-/bin/od
-/bin/paste
-/bin/pathchk
-/bin/pinky
-/bin/pr
-/bin/printenv
-/bin/printf
-/bin/ptx
+/usr/bin/nice
+/usr/bin/nl
+/usr/bin/nohup
+/usr/bin/nproc
+/usr/bin/numfmt
+/usr/bin/od
+/usr/bin/paste
+/usr/bin/pathchk
+/usr/bin/pinky
+/usr/bin/pr
+/usr/bin/printenv
+/usr/bin/printf
+/usr/bin/ptx
 /bin/pwd
-/bin/readlink
-/bin/realpath
+/usr/bin/readlink
+/usr/bin/realpath
 /bin/rm
 /bin/rmdir
-/bin/runcon
-/bin/seq
-/bin/sha1sum
-/bin/sha224sum
-/bin/sha256sum
-/bin/sha384sum
-/bin/sha512sum
-/bin/shred
-/bin/shuf
-/bin/sleep
-/bin/sort
-/bin/split
-/bin/stat
-/bin/stdbuf
+/usr/bin/runcon
+/usr/bin/seq
+/usr/bin/sha1sum
+/usr/bin/sha224sum
+/usr/bin/sha256sum
+/usr/bin/sha384sum
+/usr/bin/sha512sum
+/usr/bin/shred
+/usr/bin/shuf
+/usr/bin/sleep
+/usr/bin/sort
+/usr/bin/split
+/usr/bin/stat
+/usr/bin/stdbuf
 /bin/stty
-/bin/sum
+/usr/bin/sum
 /bin/sync
-/bin/tac
-/bin/tail
-/bin/tee
-/bin/test
-/bin/timeout
-/bin/touch
-/bin/tr
+/usr/bin/tac
+/usr/bin/tail
+/usr/bin/tee
+/usr/bin/test
+/usr/bin/timeout
+/usr/bin/touch
+/usr/bin/tr
 /bin/true
-/bin/truncate
-/bin/tsort
-/bin/tty
+/usr/bin/truncate
+/usr/bin/tsort
+/usr/bin/tty
 /bin/uname
-/bin/unexpand
-/bin/uniq
-/bin/unlink
-/bin/users
-/bin/vdir
-/bin/wc
-/bin/who
-/bin/whoami
-/bin/yes
+/usr/bin/unexpand
+/usr/bin/uniq
+/usr/bin/unlink
+/usr/bin/users
+/usr/bin/vdir
+/usr/bin/wc
+/usr/bin/who
+/usr/bin/whoami
+/usr/bin/yes
 /usr/libexec/coreutils/libstdbuf.so
 /usr/share/info/coreutils.info.gz
 /usr/share/locale/af/LC_MESSAGES/coreutils.mo

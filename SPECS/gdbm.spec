@@ -1,5 +1,5 @@
 Name:          	gdbm 
-Version:	1.18.1
+Version:	1.21
 Release:        1%{?dist}
 Summary:	Standard GNU database libraries
 
@@ -18,7 +18,8 @@ Source0:	https://ftpmirror.gnu.org/gnu/gdbm/gdbm-%{version}.tar.gz
 %build
 ./configure --prefix=/usr    \
             --disable-static \
-            --enable-libgdbm-compat
+            --enable-libgdbm-compat \
+	    --disable-nls
 make %{?_smp_mflags}
 
 %install
@@ -47,19 +48,6 @@ rm -rf $RPM_BUILD_ROOT
 /usr/lib/libgdbm_compat.so.4
 /usr/lib/libgdbm_compat.so.4.0.0
 /usr/share/info/gdbm.info.gz
-/usr/share/locale/da/LC_MESSAGES/gdbm.mo
-/usr/share/locale/de/LC_MESSAGES/gdbm.mo
-/usr/share/locale/eo/LC_MESSAGES/gdbm.mo
-/usr/share/locale/es/LC_MESSAGES/gdbm.mo
-/usr/share/locale/fi/LC_MESSAGES/gdbm.mo
-/usr/share/locale/fr/LC_MESSAGES/gdbm.mo
-/usr/share/locale/ja/LC_MESSAGES/gdbm.mo
-/usr/share/locale/pl/LC_MESSAGES/gdbm.mo
-/usr/share/locale/pt_BR/LC_MESSAGES/gdbm.mo
-/usr/share/locale/sr/LC_MESSAGES/gdbm.mo
-/usr/share/locale/sv/LC_MESSAGES/gdbm.mo
-/usr/share/locale/uk/LC_MESSAGES/gdbm.mo
-/usr/share/locale/vi/LC_MESSAGES/gdbm.mo
 /usr/share/man/man1/gdbm_dump.1.gz
 /usr/share/man/man1/gdbm_load.1.gz
 /usr/share/man/man1/gdbmtool.1.gz

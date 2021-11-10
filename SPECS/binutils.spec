@@ -1,11 +1,11 @@
 Name:           binutils
-Version:	2.34
+Version:	2.37
 Release:        1%{?dist}
 Summary:	The GNU Binutils are a collection of binary tools.
 
 License:	GPL
 URL:		https://www.gnu.org/software/binutils/
-Source0:	https://ftpmirror.gnu.org/gnu/binutils/binutils-2.34.tar.gz
+Source0:	https://ftpmirror.gnu.org/gnu/binutils/binutils-%{version}.tar.gz
 
 %description
 
@@ -46,7 +46,6 @@ rm -rf $RPM_BUILD_ROOT/usr/share/info/dir
 /usr/bin/strip
 /usr/include/ansidecl.h
 /usr/include/bfd.h
-/usr/include/bfd_stdint.h
 /usr/include/bfdlink.h
 /usr/include/ctf-api.h
 /usr/include/ctf.h
@@ -54,7 +53,7 @@ rm -rf $RPM_BUILD_ROOT/usr/share/info/dir
 /usr/include/dis-asm.h
 /usr/include/plugin-api.h
 /usr/include/symcat.h
-/usr/lib/libbfd-2.34.so
+/usr/lib/libbfd-%{version}.so
 /usr/lib/libbfd.a
 /usr/lib/libbfd.la
 /usr/lib/libbfd.so
@@ -68,7 +67,7 @@ rm -rf $RPM_BUILD_ROOT/usr/share/info/dir
 /usr/lib/libctf.so
 /usr/lib/libctf.so.0
 /usr/lib/libctf.so.0.0.0
-/usr/lib/libopcodes-2.34.so
+/usr/lib/libopcodes-%{version}.so
 /usr/lib/libopcodes.a
 /usr/lib/libopcodes.la
 /usr/lib/libopcodes.so
@@ -357,6 +356,7 @@ rm -rf $RPM_BUILD_ROOT/usr/share/info/dir
 /usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_x86_64.xu
 /usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_x86_64.xw
 /usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_x86_64.xwe
-
+/usr/lib/bfd-plugins/libdep.so
+/usr/share/locale/sr/LC_MESSAGES/gold.mo
 
 %changelog

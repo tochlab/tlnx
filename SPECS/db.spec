@@ -5,7 +5,7 @@ Summary:	Oracle Berkeley DB
 
 License:	Sleepycat
 URL:		http://www.oracle.com/technetwork/database/database-technologies/berkeleydb/overview/index.html
-Source0:	http://distfiles.gentoo.org/distfiles/c5/db-%{version}.tar.gz	
+Source0:	http://distfiles.gentoo.org/distfiles/c5/db-%{version}.tar.gz
 
 #BuildRequires:
 #Requires:

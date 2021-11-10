@@ -1,5 +1,5 @@
 Name:           elfutils
-Version:        0.178
+Version:        0.185
 Release:        1%{?dist}
 Summary:	Libraries/utilities to handle ELF objects (drop in replacement for libelf)
 
@@ -52,15 +52,15 @@ rm -rf $RPM_BUILD_ROOT
 /usr/include/gelf.h
 /usr/include/libelf.h
 /usr/include/nlist.h
-/usr/lib/libasm-0.178.so
+/usr/lib/libasm-%{version}.so
 /usr/lib/libasm.a
 /usr/lib/libasm.so
 /usr/lib/libasm.so.1
-/usr/lib/libdw-0.178.so
+/usr/lib/libdw-%{version}.so
 /usr/lib/libdw.a
 /usr/lib/libdw.so
 /usr/lib/libdw.so.1
-/usr/lib/libelf-0.178.so
+/usr/lib/libelf-%{version}.so
 /usr/lib/libelf.a
 /usr/lib/libelf.so
 /usr/lib/libelf.so.1
@@ -74,6 +74,24 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/locale/ja/LC_MESSAGES/elfutils.mo
 /usr/share/locale/pl/LC_MESSAGES/elfutils.mo
 /usr/share/locale/uk/LC_MESSAGES/elfutils.mo
+/usr/bin/debuginfod-find
+/usr/etc/profile.d/debuginfod.csh
+/usr/etc/profile.d/debuginfod.sh
+/usr/include/elfutils/debuginfod.h
+/usr/lib/libdebuginfod-%{version}.so
+/usr/lib/libdebuginfod.so
+/usr/lib/libdebuginfod.so.1
+/usr/share/man/man1/debuginfod-find.1.gz
+/usr/share/man/man3/debuginfod_add_http_header.3.gz
+/usr/share/man/man3/debuginfod_begin.3.gz
+/usr/share/man/man3/debuginfod_end.3.gz
+/usr/share/man/man3/debuginfod_find_debuginfo.3.gz
+/usr/share/man/man3/debuginfod_find_executable.3.gz
+/usr/share/man/man3/debuginfod_find_source.3.gz
+/usr/share/man/man3/debuginfod_get_url.3.gz
+/usr/share/man/man3/debuginfod_get_user_data.3.gz
+/usr/share/man/man3/debuginfod_set_progressfn.3.gz
+/usr/share/man/man3/debuginfod_set_user_data.3.gz
 /usr/share/man/man1/eu-elfclassify.1.gz
 /usr/share/man/man1/eu-readelf.1.gz
 /usr/share/man/man3/elf_begin.3.gz

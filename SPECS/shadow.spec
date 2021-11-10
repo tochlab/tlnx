@@ -1,6 +1,6 @@
 Name:           shadow
 Version:        4.8.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        shadow utils
 
 #Group:          
@@ -28,7 +28,7 @@ sed -i -e 's@#ENCRYPT_METHOD DES@ENCRYPT_METHOD SHA512@' \
 sed -i 's/1000/999/' etc/useradd
 
 %build
-%configure --sysconfdir=/etc --with-group-name-max-length=32
+%configure --sysconfdir=/etc --with-group-name-max-length=32 --without-libpam
 make %{?_smp_mflags}
 
 

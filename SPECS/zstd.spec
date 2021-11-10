@@ -5,7 +5,7 @@ Summary:	zstd fast compression library
 
 License:	BSD GPL-2
 URL:		https://facebook.github.io/zstd/
-Source0:	https://github.com/facebook/zstd/releases/download/v${version}/zstd-%{version}.tar.gz
+Source0:	https://github.com/facebook/zstd/releases/download/v%{version}/zstd-%{version}.tar.gz
 
 #BuildRequires:
 #Requires:

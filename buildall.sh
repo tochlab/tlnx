@@ -1,5 +1,12 @@
 #!/bin/sh
-for s in $(find ./SPECS/ -name \*.spec)
+buildlist=$(find ./SPECS/ -name \*.spec)
+rm -f buildlist.txt
+for s in $buildlist
+do
+echo $s >> buildlist.txt
+done
+
+for s in $buildlist
 do
 	echo ===== BUILD $s =====
 	rpmbuild --clean -bb $s 

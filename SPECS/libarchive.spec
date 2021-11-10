@@ -5,7 +5,7 @@ Summary:	Multi-format archive and compression library
 
 License:	BSD
 URL:		https://www.libarchive.org/
-Source0:	https://www.libarchive.org/downloads/libarchive-%{version}.tar.xz
+Source0:	https://github.com/libarchive/libarchive/releases/download/v%{version}/libarchive-%{version}.tar.gz	
 
 #BuildRequires:
 #Requires:

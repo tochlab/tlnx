@@ -1,3 +1,5 @@
 #!/bin/sh
+python genurls.py > urllist.txt
 mkdir ./SOURCES
-find ./SPECS/ -name \*.spec -exec spectool -g -R {} \;
+cd ./SOURCES
+wget -c -i ../urllist.txt

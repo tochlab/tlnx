@@ -1,11 +1,11 @@
 Name:           pcre
-Version:	8.44
+Version:	8.45
 Release:        1%{?dist}
 Summary:	Perl-compatible regular expression library
 
 License:	BSD
 URL:		http://www.pcre.org/
-Source0:	https://ftp.pcre.org/pub/pcre/pcre-%{version}.tar.gz
+Source0:	https://jztkft.dl.sourceforge.net/project/pcre/pcre/%{version}/pcre-%{version}.tar.bz2	
 
 #BuildRequires:
 #Requires:
@@ -47,12 +47,12 @@ rm -rf $RPM_BUILD_ROOT
 /usr/lib64/libpcre.la
 /usr/lib64/libpcre.so
 /usr/lib64/libpcre.so.1
-/usr/lib64/libpcre.so.1.2.12
+/usr/lib64/libpcre.so.1.2.13
 /usr/lib64/libpcre16.a
 /usr/lib64/libpcre16.la
 /usr/lib64/libpcre16.so
 /usr/lib64/libpcre16.so.0
-/usr/lib64/libpcre16.so.0.2.12
+/usr/lib64/libpcre16.so.0.2.13
 /usr/lib64/libpcrecpp.a
 /usr/lib64/libpcrecpp.la
 /usr/lib64/libpcrecpp.so

@@ -5,7 +5,7 @@ Summary:	Standard EXT2/EXT3/EXT4 filesystem utilities
 
 License:	GPL-2 BSD
 URL:		http://e2fsprogs.sourceforge.net/
-Source0:	http://prdownloads.sourceforge.net/e2fsprogs/e2fsprogs-%{version}.tar.gz
+Source0:	https://mirrors.edge.kernel.org/pub/linux/kernel/people/tytso/e2fsprogs/v%{version}/e2fsprogs-%{version}.tar.gz	
 
 #BuildRequires: uuid library libblkid-dev
 #Requires:

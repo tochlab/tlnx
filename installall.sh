@@ -3,7 +3,7 @@ INSTALL_DESTDIR=/home/tlnx/tmp/
 for s in $(find ./RPMS/ -name \*.rpm)
 do
 	echo ===== INSTALL $s to $INSTALL_DESTDIR =====
-	rpm -i --nodeps --nopost --root=$INSTALL_DESTDIR $s
+	rpm -i --nodeps --root=$INSTALL_DESTDIR $s
 	if [ $? -ne 0 ]; then
 		echo Problem with $s 
 		break;

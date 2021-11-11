@@ -61,7 +61,7 @@ chown -v -R root:root \
 /usr/lib/gcc/*linux-gnu/%{version}/include{,-fixed}
 
 ln -sv /usr/bin/cpp /lib
-#ln -sv gcc /usr/bin/cc
+ln -sv /usr/bin/gcc /usr/bin/cc
 install -v -dm755 /usr/lib/bfd-plugins
 ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/%{version}/liblto_plugin.so \
 /usr/lib/bfd-plugins/

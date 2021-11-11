@@ -28,7 +28,7 @@ sed -i -e 's@#ENCRYPT_METHOD DES@ENCRYPT_METHOD SHA512@' \
 sed -i 's/1000/999/' etc/useradd
 
 %build
-%configure --sysconfdir=/etc --with-group-name-max-length=32 --without-libpam
+%configure --sysconfdir=/etc --with-group-name-max-length=32
 make %{?_smp_mflags}
 
 

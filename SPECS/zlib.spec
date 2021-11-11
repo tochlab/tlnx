@@ -1,6 +1,6 @@
 Name:           zlib
 Version:	1.2.11
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:	Zlib
 
 License:	ZLIB
@@ -14,7 +14,7 @@ Zlib compress library
 %setup -q
 
 %build
-./configure --prefix=/usr --sharedlibdir=/lib/ --64
+./configure --prefix=/usr --sharedlibdir=/lib/ --64 --shared
 make %{?_smp_mflags}
 make check
 
@@ -22,7 +22,7 @@ make check
 rm -rf $RPM_BUILD_ROOT
 
 make install DESTDIR=%{buildroot}
-
+rm -fv %{buildroot}/usr/lib/libz.a
 
 %files
 /lib/libz.so
@@ -30,7 +30,6 @@ make install DESTDIR=%{buildroot}
 /lib/libz.so.1.2.11
 /usr/include/zconf.h
 /usr/include/zlib.h
-/usr/lib/libz.a
 /usr/lib/pkgconfig/zlib.pc
 /usr/share/man/man3/zlib.3.gz
 

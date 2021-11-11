@@ -16,11 +16,11 @@ Source0:	https://mirrors.edge.kernel.org/pub/linux/libs/security/linux-privs/lib
 %setup -q
 
 %build
-make lib=lib GOLANG=0
+#make lib=lib GOLANG=0
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%make_install lib=lib GOLANG=0
+%make_install lib=lib GOLANG=no PAM_CAP=yes
 
 %files
 /lib/libcap.a

@@ -1,6 +1,6 @@
 Name:          	ncurses
 Version:	6.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:	console display librar
 
 License:	MIT
@@ -59,6 +59,13 @@ make %{?_smp_mflags}
 make install DESTDIR=%{buildroot}
 cd %{buildroot}/usr/lib
 ln -svf libtinfow.so.6 libtinfo.so.6
+ln -s libformw.so libform.so
+ln -s libmenuw.so libmenu.so
+ln -s libncurses++w.so libncurses++.so
+ln -s libncursesw.so libncurses.so
+ln -s libpanelw.so libpanel.so
+ln -s libtinfow.so libtinfo.so
+
 
 %files
 /usr/include/curses.h
@@ -3777,11 +3784,17 @@ ln -svf libtinfow.so.6 libtinfo.so.6
 /usr/lib/libpanelw.so
 /usr/lib/libpanelw.so.6
 /usr/lib/libpanelw.so.6.2
+/usr/lib/libtinfo.so.6
 /usr/lib/libtinfow.a
 /usr/lib/libtinfow.so
 /usr/lib/libtinfow.so.6
 /usr/lib/libtinfow.so.6.2
-/usr/lib/libtinfo.so.6
+/usr/lib/libtinfo.so
+/usr/lib/libform.so
+/usr/lib/libmenu.so
+/usr/lib/libncurses++.so
+/usr/lib/libncurses.so
+/usr/lib/libpanel.so
 /usr/share/man/man1/ncursesw6-config.1.gz
 /usr/share/pkgconfig/formw.pc
 /usr/share/pkgconfig/menuw.pc

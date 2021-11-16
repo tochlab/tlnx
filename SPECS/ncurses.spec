@@ -1,7 +1,7 @@
 Name:          	ncurses
-Version:	6.2
-Release:        2%{?dist}
-Summary:	console display librar
+Version:	6.3
+Release:        1%{?dist}
+Summary:	console display library
 
 License:	MIT
 URL:		https://invisible-island.net/ncurses/announce.html
@@ -16,7 +16,7 @@ Source0:	https://ftpmirror.gnu.org/gnu/ncurses/ncurses-%{version}.tar.gz
 %setup -q
 
 %build
-./configure --prefix=/usr           \
+%configure  --prefix=/usr           \
             --mandir=/usr/share/man \
             --libdir=/usr/lib \
 	    --enable-pc-files \
@@ -43,7 +43,7 @@ Source0:	https://ftpmirror.gnu.org/gnu/ncurses/ncurses-%{version}.tar.gz
 	    --enable-leaks \
 	    --without-expanded \
 	    --with-macros \
-	    --without-progs \
+	    --with-progs  \
 	    --without-tests \
 	    --without-trace \
 	    --with-termlib \
@@ -66,8 +66,21 @@ ln -s libncursesw.so libncurses.so
 ln -s libpanelw.so libpanel.so
 ln -s libtinfow.so libtinfo.so
 
+%post
+ldconfig
 
 %files
+/usr/bin/captoinfo
+/usr/bin/clear
+/usr/bin/infocmp
+/usr/bin/infotocap
+/usr/bin/ncursesw6-config
+/usr/bin/reset
+/usr/bin/tabs
+/usr/bin/tic
+/usr/bin/toe
+/usr/bin/tput
+/usr/bin/tset
 /usr/include/curses.h
 /usr/include/cursesapp.h
 /usr/include/cursesf.h
@@ -79,17 +92,58 @@ ln -s libtinfow.so libtinfo.so
 /usr/include/etip.h
 /usr/include/form.h
 /usr/include/menu.h
+/usr/include/nc_tparm.h
 /usr/include/ncurses.h
 /usr/include/ncurses_dll.h
 /usr/include/panel.h
 /usr/include/term.h
+/usr/include/term_entry.h
 /usr/include/termcap.h
+/usr/include/tic.h
 /usr/include/unctrl.h
+/usr/lib/libform.so
+/usr/lib/libformw.a
+/usr/lib/libformw.so
+/usr/lib/libformw.so.6
+/usr/lib/libformw.so.6.3
+/usr/lib/libmenu.so
+/usr/lib/libmenuw.a
+/usr/lib/libmenuw.so
+/usr/lib/libmenuw.so.6
+/usr/lib/libmenuw.so.6.3
+/usr/lib/libncurses++.so
+/usr/lib/libncurses++w.a
+/usr/lib/libncurses++w.so
+/usr/lib/libncurses++w.so.6
+/usr/lib/libncurses++w.so.6.3
+/usr/lib/libncurses.so
+/usr/lib/libncursesw.a
+/usr/lib/libncursesw.so
+/usr/lib/libncursesw.so.6
+/usr/lib/libncursesw.so.6.3
+/usr/lib/libpanel.so
+/usr/lib/libpanelw.a
+/usr/lib/libpanelw.so
+/usr/lib/libpanelw.so.6
+/usr/lib/libpanelw.so.6.3
+/usr/lib/libtinfo.so
+/usr/lib/libtinfo.so.6
+/usr/lib/libtinfow.a
+/usr/lib/libtinfow.so
+/usr/lib/libtinfow.so.6
+/usr/lib/libtinfow.so.6.3
 /usr/lib/terminfo
+/usr/lib64/pkgconfig/formw.pc
+/usr/lib64/pkgconfig/menuw.pc
+/usr/lib64/pkgconfig/ncurses++w.pc
+/usr/lib64/pkgconfig/ncursesw.pc
+/usr/lib64/pkgconfig/panelw.pc
+/usr/lib64/pkgconfig/tinfow.pc
 /usr/share/man/man1/captoinfo.1m.gz
 /usr/share/man/man1/clear.1.gz
 /usr/share/man/man1/infocmp.1m.gz
 /usr/share/man/man1/infotocap.1m.gz
+/usr/share/man/man1/ncursesw6-config.1.gz
 /usr/share/man/man1/reset.1.gz
 /usr/share/man/man1/tabs.1.gz
 /usr/share/man/man1/tic.1m.gz
@@ -285,6 +339,7 @@ ln -s libtinfow.so libtinfo.so
 /usr/share/man/man3/erasechar.3x.gz
 /usr/share/man/man3/erasechar_sp.3x.gz
 /usr/share/man/man3/erasewchar.3x.gz
+/usr/share/man/man3/erasewchar_sp.3x.gz
 /usr/share/man/man3/exit_curses.3x.gz
 /usr/share/man/man3/exit_terminfo.3x.gz
 /usr/share/man/man3/extended_color_content.3x.gz
@@ -478,6 +533,7 @@ ln -s libtinfow.so libtinfo.so
 /usr/share/man/man3/killchar.3x.gz
 /usr/share/man/man3/killchar_sp.3x.gz
 /usr/share/man/man3/killwchar.3x.gz
+/usr/share/man/man3/killwchar_sp.3x.gz
 /usr/share/man/man3/leaveok.3x.gz
 /usr/share/man/man3/legacy_coding.3x.gz
 /usr/share/man/man3/link_field.3x.gz
@@ -684,6 +740,7 @@ ln -s libtinfow.so libtinfo.so
 /usr/share/man/man3/refresh.3x.gz
 /usr/share/man/man3/replace_panel.3x.gz
 /usr/share/man/man3/reset_color_pairs.3x.gz
+/usr/share/man/man3/reset_color_pairs_sp.3x.gz
 /usr/share/man/man3/reset_prog_mode.3x.gz
 /usr/share/man/man3/reset_prog_mode_sp.3x.gz
 /usr/share/man/man3/reset_shell_mode.3x.gz
@@ -770,7 +827,6 @@ ln -s libtinfow.so libtinfo.so
 /usr/share/man/man3/setcchar.3x.gz
 /usr/share/man/man3/setscrreg.3x.gz
 /usr/share/man/man3/setsyx.3x.gz
-/usr/share/man/man3/setterm.3x.gz
 /usr/share/man/man3/setupterm.3x.gz
 /usr/share/man/man3/show_panel.3x.gz
 /usr/share/man/man3/slk_attr.3x.gz
@@ -831,6 +887,7 @@ ln -s libtinfow.so libtinfo.so
 /usr/share/man/man3/tgetstr.3x.gz
 /usr/share/man/man3/tgetstr_sp.3x.gz
 /usr/share/man/man3/tgoto.3x.gz
+/usr/share/man/man3/tgoto_sp.3x.gz
 /usr/share/man/man3/tigetflag.3x.gz
 /usr/share/man/man3/tigetflag_sp.3x.gz
 /usr/share/man/man3/tigetnum.3x.gz
@@ -844,6 +901,7 @@ ln -s libtinfow.so libtinfo.so
 /usr/share/man/man3/touchline.3x.gz
 /usr/share/man/man3/touchwin.3x.gz
 /usr/share/man/man3/tparm.3x.gz
+/usr/share/man/man3/tparm_sp.3x.gz
 /usr/share/man/man3/tputs.3x.gz
 /usr/share/man/man3/tputs_sp.3x.gz
 /usr/share/man/man3/trace.3x.gz
@@ -1049,6 +1107,7 @@ ln -s libtinfow.so libtinfo.so
 /usr/share/terminfo/Q/Q310-vip-w
 /usr/share/terminfo/Q/Q310-vip-w-am
 /usr/share/terminfo/X/X-hpterm
+/usr/share/terminfo/X/X-hpterm-color2
 /usr/share/terminfo/a/a210
 /usr/share/terminfo/a/a80
 /usr/share/terminfo/a/a980
@@ -1100,6 +1159,7 @@ ln -s libtinfow.so libtinfo.so
 /usr/share/terminfo/a/abm85e
 /usr/share/terminfo/a/abm85h
 /usr/share/terminfo/a/abm85h-old
+/usr/share/terminfo/a/absolute
 /usr/share/terminfo/a/act4
 /usr/share/terminfo/a/act5
 /usr/share/terminfo/a/addrinfo
@@ -1193,6 +1253,7 @@ ln -s libtinfow.so libtinfo.so
 /usr/share/terminfo/a/ansi+local1
 /usr/share/terminfo/a/ansi+pp
 /usr/share/terminfo/a/ansi+rca
+/usr/share/terminfo/a/ansi+rca2
 /usr/share/terminfo/a/ansi+rep
 /usr/share/terminfo/a/ansi+sgr
 /usr/share/terminfo/a/ansi+sgrbold
@@ -1334,6 +1395,8 @@ ln -s libtinfow.so libtinfo.so
 /usr/share/terminfo/a/att605-pc
 /usr/share/terminfo/a/att605-w
 /usr/share/terminfo/a/att610
+/usr/share/terminfo/a/att610+cvis
+/usr/share/terminfo/a/att610+cvis0
 /usr/share/terminfo/a/att610-103k
 /usr/share/terminfo/a/att610-103k-w
 /usr/share/terminfo/a/att610-w
@@ -1893,6 +1956,9 @@ ln -s libtinfow.so libtinfo.so
 /usr/share/terminfo/f/fenix
 /usr/share/terminfo/f/fenixw
 /usr/share/terminfo/f/fixterm
+/usr/share/terminfo/f/foot
+/usr/share/terminfo/f/foot+base
+/usr/share/terminfo/f/foot-direct
 /usr/share/terminfo/f/fortune
 /usr/share/terminfo/f/fos
 /usr/share/terminfo/f/fox
@@ -2074,7 +2140,9 @@ ln -s libtinfow.so libtinfo.so
 /usr/share/terminfo/h/hp9837
 /usr/share/terminfo/h/hp9845
 /usr/share/terminfo/h/hp98550
+/usr/share/terminfo/h/hp98550-color
 /usr/share/terminfo/h/hp98550a
+/usr/share/terminfo/h/hp98550a-color
 /usr/share/terminfo/h/hp98720
 /usr/share/terminfo/h/hp98721
 /usr/share/terminfo/h/hpansi
@@ -2084,6 +2152,9 @@ ln -s libtinfow.so libtinfo.so
 /usr/share/terminfo/h/hpsub
 /usr/share/terminfo/h/hpterm
 /usr/share/terminfo/h/hpterm-color
+/usr/share/terminfo/h/hpterm-color2
+/usr/share/terminfo/h/hterm
+/usr/share/terminfo/h/hterm-256color
 /usr/share/terminfo/h/htx11
 /usr/share/terminfo/h/hurd
 /usr/share/terminfo/h/hz1000
@@ -2160,6 +2231,7 @@ ln -s libtinfow.so libtinfo.so
 /usr/share/terminfo/i/ims950-b
 /usr/share/terminfo/i/ims950-rv
 /usr/share/terminfo/i/infoton
+/usr/share/terminfo/i/infoton2
 /usr/share/terminfo/i/interix
 /usr/share/terminfo/i/interix-nti
 /usr/share/terminfo/i/intertec
@@ -2227,6 +2299,8 @@ ln -s libtinfow.so libtinfo.so
 /usr/share/terminfo/l/lft
 /usr/share/terminfo/l/lft-pc850
 /usr/share/terminfo/l/linux
+/usr/share/terminfo/l/linux+decid
+/usr/share/terminfo/l/linux+sfkeys
 /usr/share/terminfo/l/linux-16color
 /usr/share/terminfo/l/linux-basic
 /usr/share/terminfo/l/linux-c
@@ -2239,6 +2313,7 @@ ln -s libtinfow.so libtinfo.so
 /usr/share/terminfo/l/linux-m1b
 /usr/share/terminfo/l/linux-m2
 /usr/share/terminfo/l/linux-nic
+/usr/share/terminfo/l/linux-s
 /usr/share/terminfo/l/linux-vt
 /usr/share/terminfo/l/linux2.2
 /usr/share/terminfo/l/linux2.6
@@ -2724,12 +2799,15 @@ ln -s libtinfow.so libtinfo.so
 /usr/share/terminfo/p/putty+fnkeys+vt100
 /usr/share/terminfo/p/putty+fnkeys+vt400
 /usr/share/terminfo/p/putty+fnkeys+xterm
+/usr/share/terminfo/p/putty+keypad
+/usr/share/terminfo/p/putty+screen
 /usr/share/terminfo/p/putty-256color
 /usr/share/terminfo/p/putty-m1
 /usr/share/terminfo/p/putty-m1b
 /usr/share/terminfo/p/putty-m2
 /usr/share/terminfo/p/putty-noapp
 /usr/share/terminfo/p/putty-sco
+/usr/share/terminfo/p/putty-screen
 /usr/share/terminfo/p/putty-vt100
 /usr/share/terminfo/q/qansi
 /usr/share/terminfo/q/qansi-g
@@ -2841,6 +2919,7 @@ ln -s libtinfow.so libtinfo.so
 /usr/share/terminfo/s/screen.linux-m1
 /usr/share/terminfo/s/screen.linux-m1b
 /usr/share/terminfo/s/screen.linux-m2
+/usr/share/terminfo/s/screen.linux-s
 /usr/share/terminfo/s/screen.minitel1
 /usr/share/terminfo/s/screen.minitel1-nb
 /usr/share/terminfo/s/screen.minitel12-80
@@ -2870,6 +2949,8 @@ ln -s libtinfow.so libtinfo.so
 /usr/share/terminfo/s/screen5
 /usr/share/terminfo/s/screwpoint
 /usr/share/terminfo/s/scrhp
+/usr/share/terminfo/s/scrt
+/usr/share/terminfo/s/securecrt
 /usr/share/terminfo/s/sibo
 /usr/share/terminfo/s/simpleterm
 /usr/share/terminfo/s/simterm
@@ -2994,6 +3075,7 @@ ln -s libtinfow.so libtinfo.so
 /usr/share/terminfo/t/terminology
 /usr/share/terminfo/t/terminology-0.6.1
 /usr/share/terminfo/t/terminology-1.0.0
+/usr/share/terminfo/t/terminology-1.8.1
 /usr/share/terminfo/t/termite
 /usr/share/terminfo/t/tgtelnet
 /usr/share/terminfo/t/ti700
@@ -3024,6 +3106,7 @@ ln -s libtinfow.so libtinfo.so
 /usr/share/terminfo/t/tkterm
 /usr/share/terminfo/t/tmux
 /usr/share/terminfo/t/tmux-256color
+/usr/share/terminfo/t/tmux-direct
 /usr/share/terminfo/t/tn1200
 /usr/share/terminfo/t/tn300
 /usr/share/terminfo/t/trs16
@@ -3291,9 +3374,14 @@ ln -s libtinfow.so libtinfo.so
 /usr/share/terminfo/v/vt200-old
 /usr/share/terminfo/v/vt200-w
 /usr/share/terminfo/v/vt220
+/usr/share/terminfo/v/vt220+cvis
+/usr/share/terminfo/v/vt220+cvis8
 /usr/share/terminfo/v/vt220+keypad
+/usr/share/terminfo/v/vt220+pcedit
+/usr/share/terminfo/v/vt220+vtedit
 /usr/share/terminfo/v/vt220-8
 /usr/share/terminfo/v/vt220-8bit
+/usr/share/terminfo/v/vt220-base
 /usr/share/terminfo/v/vt220-js
 /usr/share/terminfo/v/vt220-nam
 /usr/share/terminfo/v/vt220-old
@@ -3325,6 +3413,8 @@ ln -s libtinfow.so libtinfo.so
 /usr/share/terminfo/v/vt510pc
 /usr/share/terminfo/v/vt510pcdos
 /usr/share/terminfo/v/vt52
+/usr/share/terminfo/v/vt52+keypad
+/usr/share/terminfo/v/vt52-basic
 /usr/share/terminfo/v/vt520
 /usr/share/terminfo/v/vt520ansi
 /usr/share/terminfo/v/vt525
@@ -3649,19 +3739,26 @@ ln -s libtinfow.so libtinfo.so
 /usr/share/terminfo/x/xtalk
 /usr/share/terminfo/x/xterm
 /usr/share/terminfo/x/xterm+256color
+/usr/share/terminfo/x/xterm+256color2
 /usr/share/terminfo/x/xterm+256setaf
 /usr/share/terminfo/x/xterm+88color
+/usr/share/terminfo/x/xterm+88color2
 /usr/share/terminfo/x/xterm+alt+title
 /usr/share/terminfo/x/xterm+alt1049
 /usr/share/terminfo/x/xterm+app
 /usr/share/terminfo/x/xterm+direct
+/usr/share/terminfo/x/xterm+direct16
 /usr/share/terminfo/x/xterm+direct2
+/usr/share/terminfo/x/xterm+direct256
 /usr/share/terminfo/x/xterm+edit
 /usr/share/terminfo/x/xterm+indirect
 /usr/share/terminfo/x/xterm+kbs
 /usr/share/terminfo/x/xterm+keypad
+/usr/share/terminfo/x/xterm+meta
 /usr/share/terminfo/x/xterm+noalt
 /usr/share/terminfo/x/xterm+noapp
+/usr/share/terminfo/x/xterm+nofkeys
+/usr/share/terminfo/x/xterm+nopcfkeys
 /usr/share/terminfo/x/xterm+osc104
 /usr/share/terminfo/x/xterm+pc+edit
 /usr/share/terminfo/x/xterm+pcc0
@@ -3681,6 +3778,7 @@ ln -s libtinfow.so libtinfo.so
 /usr/share/terminfo/x/xterm+sm+1006
 /usr/share/terminfo/x/xterm+titlestack
 /usr/share/terminfo/x/xterm+tmux
+/usr/share/terminfo/x/xterm+tmux2
 /usr/share/terminfo/x/xterm+vt+edit
 /usr/share/terminfo/x/xterm+x10mouse
 /usr/share/terminfo/x/xterm+x11hilite
@@ -3698,7 +3796,9 @@ ln -s libtinfow.so libtinfo.so
 /usr/share/terminfo/x/xterm-bold
 /usr/share/terminfo/x/xterm-color
 /usr/share/terminfo/x/xterm-direct
+/usr/share/terminfo/x/xterm-direct16
 /usr/share/terminfo/x/xterm-direct2
+/usr/share/terminfo/x/xterm-direct256
 /usr/share/terminfo/x/xterm-hp
 /usr/share/terminfo/x/xterm-mono
 /usr/share/terminfo/x/xterm-new
@@ -3763,45 +3863,6 @@ ln -s libtinfow.so libtinfo.so
 /usr/share/terminfo/z/ztx
 /usr/share/terminfo/z/ztx-1-a
 /usr/share/terminfo/z/ztx11
-/usr/bin/ncursesw6-config
-/usr/lib/libformw.a
-/usr/lib/libformw.so
-/usr/lib/libformw.so.6
-/usr/lib/libformw.so.6.2
-/usr/lib/libmenuw.a
-/usr/lib/libmenuw.so
-/usr/lib/libmenuw.so.6
-/usr/lib/libmenuw.so.6.2
-/usr/lib/libncurses++w.a
-/usr/lib/libncurses++w.so
-/usr/lib/libncurses++w.so.6
-/usr/lib/libncurses++w.so.6.2
-/usr/lib/libncursesw.a
-/usr/lib/libncursesw.so
-/usr/lib/libncursesw.so.6
-/usr/lib/libncursesw.so.6.2
-/usr/lib/libpanelw.a
-/usr/lib/libpanelw.so
-/usr/lib/libpanelw.so.6
-/usr/lib/libpanelw.so.6.2
-/usr/lib/libtinfo.so.6
-/usr/lib/libtinfow.a
-/usr/lib/libtinfow.so
-/usr/lib/libtinfow.so.6
-/usr/lib/libtinfow.so.6.2
-/usr/lib/libtinfo.so
-/usr/lib/libform.so
-/usr/lib/libmenu.so
-/usr/lib/libncurses++.so
-/usr/lib/libncurses.so
-/usr/lib/libpanel.so
-/usr/share/man/man1/ncursesw6-config.1.gz
-/usr/share/pkgconfig/formw.pc
-/usr/share/pkgconfig/menuw.pc
-/usr/share/pkgconfig/ncurses++w.pc
-/usr/share/pkgconfig/ncursesw.pc
-/usr/share/pkgconfig/panelw.pc
-/usr/share/pkgconfig/tinfow.pc
 
 
 %changelog

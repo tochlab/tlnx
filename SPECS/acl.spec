@@ -17,7 +17,7 @@ access control list utilities, libraries and headers
 %setup -q
 
 %build
-./configure --prefix=/usr         \
+%configure --prefix=/usr         \
             --bindir=/bin         \
             --disable-static      \
             --libexecdir=/usr/lib \

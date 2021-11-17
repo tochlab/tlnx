@@ -16,7 +16,7 @@ Source0:	https://ftpmirror.gnu.org/gnu/bison/bison-%{version}.tar.gz
 %setup -q
 
 %build
-./configure --prefix=/usr --docdir=/usr/share/doc/bison-%{version}
+%configure --prefix=/usr --docdir=/usr/share/doc/bison-%{version}
 make %{?_smp_mflags}
 
 %install

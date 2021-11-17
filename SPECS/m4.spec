@@ -16,7 +16,7 @@ echo "#define _IO_IN_BACKUP 0x100" >> lib/stdio-impl.h
 
 
 %build
-./configure --prefix=/usr
+%configure --prefix=/usr
 make %{?_smp_mflags}
 
 %install

@@ -16,7 +16,7 @@ Source0:	https://ftpmirror.gnu.org/gnu/inetutils/inetutils-%{version}.tar.gz
 %setup -q
 
 %build
-./configure --prefix=/usr        \
+%configure --prefix=/usr        \
             --localstatedir=/var \
 	    --bindir=/bin	 \
 	    --sbindir=/sbin	 \

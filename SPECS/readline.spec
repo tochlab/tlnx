@@ -13,7 +13,7 @@ Source0:	https://ftpmirror.gnu.org/gnu/readline/readline-%{version}.tar.gz
 %setup -q
 
 %build
-./configure -prefix=/usr --disable-static --docdir=/usr/share/doc/readline-%{version}
+%configure -prefix=/usr --disable-static --docdir=/usr/share/doc/readline-%{version}
 for mfile in $(find "$PWD" -name 'Makefile'); do
     sed -i 's|SHLIB_LIBS =|SHLIB_LIBS = -ltinfo|g' "$mfile"
 done

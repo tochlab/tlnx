@@ -16,7 +16,7 @@ Source0:	http://www.greenwoodsoftware.com/less/less-%{version}.tar.gz
 %setup -q
 
 %build
-./configure --prefix=/usr --sysconfdir=/etc
+%configure --prefix=/usr --sysconfdir=/etc
 make %{?_smp_mflags}
 
 %install

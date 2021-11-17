@@ -16,7 +16,7 @@ Source0:	https://ftpmirror.gnu.org/gnu/gzip/gzip-%{version}.tar.gz
 %setup -q
 
 %build
-./configure --prefix=/usr --bindir=/bin
+%configure --prefix=/usr --bindir=/bin
 make %{?_smp_mflags}
 
 %install

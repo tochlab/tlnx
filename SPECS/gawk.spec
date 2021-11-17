@@ -16,7 +16,7 @@ Source0:	https://ftpmirror.gnu.org/gnu/gawk/gawk-%{version}.tar.gz
 %setup -q
 
 %build
-./configure --prefix=/usr
+%configure --prefix=/usr
 make %{?_smp_mflags}
 
 %install

@@ -16,7 +16,7 @@ Source0:	https://github.com/libexpat/libexpat/releases/download/R_2_2_9/expat-%{
 %setup -q
 
 %build
-./configure --prefix=/usr    \
+%configure --prefix=/usr    \
             --disable-static \
             --docdir=/usr/share/doc/expat-%{version}
 make %{?_smp_mflags}

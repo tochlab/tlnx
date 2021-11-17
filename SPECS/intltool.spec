@@ -17,7 +17,7 @@ Source0:	https://launchpad.net/intltool/trunk/%{version}/+download/intltool-%{ve
 
 %build
 sed -i 's:\\\${:\\\$\\{:' intltool-update.in
-./configure --prefix=/usr
+%configure --prefix=/usr
 make %{?_smp_mflags}
 
 %install

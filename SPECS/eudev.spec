@@ -16,7 +16,7 @@ Source0:	https://dev.gentoo.org/~blueness/eudev/eudev-%{version}.tar.gz
 %setup -q
 
 %build
-./configure --prefix=/usr           \
+%configure --prefix=/usr           \
             --bindir=/sbin          \
             --sbindir=/sbin         \
             --libdir=/usr/lib       \

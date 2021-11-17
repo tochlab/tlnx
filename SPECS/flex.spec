@@ -17,7 +17,7 @@ Source0:	https://github.com/westes/flex/releases/download/v%{version}/flex-%{ver
 sed -i "/math.h/a #include <malloc.h>" src/flexdef.h
 
 %build
-./configure --prefix=/usr --docdir=/usr/share/doc/flex-%{version}
+%configure --prefix=/usr --docdir=/usr/share/doc/flex-%{version}
 make %{?_smp_mflags}
 make check
 

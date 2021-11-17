@@ -16,7 +16,7 @@ Source0:	http://download.savannah.nongnu.org/releases/man-db/man-db-%{version}.t
 %setup -q
 
 %build
-./configure --prefix=/usr                        \
+%configure --prefix=/usr                        \
             --docdir=/usr/share/doc/man-db-%{version} \
             --sysconfdir=/etc                    \
             --disable-setuid                     \

@@ -16,7 +16,7 @@ Source0:	https://pkgconfig.freedesktop.org/releases/pkg-config-%{version}.tar.gz
 %setup -q
 
 %build
-./configure --prefix=/usr              \
+%configure --prefix=/usr              \
             --with-internal-glib       \
             --disable-host-tool        \
             --docdir=/usr/share/doc/pkg-config-%{version}

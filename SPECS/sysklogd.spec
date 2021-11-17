@@ -16,7 +16,7 @@ Source0:	https://github.com/troglobit/sysklogd/releases/download/v%{version}/sys
 %setup -q
 
 %build
-./configure --prefix=/usr --bindir=/bin --sbindir=/sbin --without-logger
+%configure --prefix=/usr --bindir=/bin --sbindir=/sbin --without-logger
 make %{?_smp_mflags}
 
 %install

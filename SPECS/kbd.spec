@@ -16,7 +16,7 @@ Source0:	https://mirrors.edge.kernel.org/pub/linux/utils/kbd/kbd-%{version}.tar.
 %setup -q
 
 %build
-./configure --prefix=/usr --disable-vlock
+%configure --prefix=/usr --disable-vlock
 make %{?_smp_mflags}
 
 %install

@@ -16,7 +16,7 @@ Source0:	https://ftpmirror.gnu.org/gnu/gdbm/gdbm-%{version}.tar.gz
 %setup -q
 
 %build
-./configure --prefix=/usr    \
+%configure --prefix=/usr    \
             --disable-static \
             --enable-libgdbm-compat \
 	    --disable-nls

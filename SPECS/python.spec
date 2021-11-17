@@ -22,7 +22,7 @@ tar xvf %{_sourcedir}/Python-%{version}.tar.xz
 
 %build
 cd %{_builddir}/Python-%{version}
-./configure --prefix=/usr       \
+%configure --prefix=/usr       \
             --enable-shared     \
             --with-system-expat \
             --with-system-ffi   \

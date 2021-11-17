@@ -16,7 +16,7 @@ Source0:	https://ftpmirror.gnu.org/gnu/make/make-%{version}.tar.gz
 %setup -q
 
 %build
-./configure --prefix=/usr --without-guile
+%configure --prefix=/usr --without-guile
 make %{?_smp_mflags}
 
 %install

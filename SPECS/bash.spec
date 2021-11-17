@@ -17,7 +17,7 @@ Source0:	http://ftpmirror.gnu.org/gnu/bash/bash-%{version}.tar.gz
 
 %build
 
-./configure --prefix=/usr                    \
+%configure --prefix=/usr                    \
 	    --bindir=/bin \
 	    --disable-profiling \
 	    --with-curses \

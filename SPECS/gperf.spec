@@ -16,7 +16,7 @@ Source0:	https://ftpmirror.gnu.org/gnu/gperf/gperf-%{version}.tar.gz
 %setup -q
 
 %build
-./configure --prefix=/usr --docdir=/usr/share/doc/gperf-%{version}
+%configure --prefix=/usr --docdir=/usr/share/doc/gperf-%{version}
 make %{?_smp_mflags}
 
 %install

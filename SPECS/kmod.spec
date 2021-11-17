@@ -16,7 +16,7 @@ Source0:	https://www.kernel.org/pub/linux/utils/kernel/kmod/kmod-%{version}.tar.
 %setup -q
 
 %build
-./configure --prefix=/usr          \
+%configure --prefix=/usr          \
             --bindir=/bin          \
             --sysconfdir=/etc      \
             --with-rootlibdir=/lib \

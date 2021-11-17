@@ -16,7 +16,7 @@ Source0:	https://ftpmirror.gnu.org/gnu/diffutils/diffutils-%{version}.tar.xz
 %setup -q
 
 %build
-./configure --prefix=/usr
+%configure --prefix=/usr
 make %{?_smp_mflags}
 
 %install

@@ -16,7 +16,7 @@ Source0:	https://mirror.tochlab.net/pub/gnu/automake/automake-%{version}.tar.gz
 %setup -q
 
 %build
-./configure --prefix=/usr --docdir=/usr/share/doc/automake-%{version}
+%configure --prefix=/usr --docdir=/usr/share/doc/automake-%{version}
 make %{?_smp_mflags}
 
 %install

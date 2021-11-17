@@ -16,7 +16,7 @@ Source0:	https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.35/util-l
 %setup -q
 
 %build
-./configure  \
+%configure  \
             --docdir=/usr/share/doc/util-linux \
             --disable-chfn-chsh  \
             --disable-login      \

@@ -16,7 +16,7 @@ Source0:	https://mirror.tochlab.net/pub/gnu/gettext/gettext-%{version}.tar.gz
 %setup -q
 
 %build
-./configure --prefix=/usr    \
+%configure --prefix=/usr    \
             --disable-static \
             --docdir=/usr/share/doc/gettext-%{version} \
 	    --disable-csharp

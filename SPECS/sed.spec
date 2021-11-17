@@ -16,7 +16,7 @@ Source0:	https://ftpmirror.gnu.org/gnu/sed/sed-%{version}.tar.gz
 %setup -q
 
 %build
-./configure --prefix=/usr --bindir=/bin
+%configure --prefix=/usr --bindir=/bin
 make %{?_smp_mflags}
 #make check
 

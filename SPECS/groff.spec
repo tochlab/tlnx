@@ -16,7 +16,7 @@ Source0:	https://ftpmirror.gnu.org/gnu/groff/groff-%{version}.tar.gz
 %setup -q
 
 %build
-./configure --prefix=/usr --without-x --with-doc=no --without-uchardet
+%configure --prefix=/usr --without-x --with-doc=no --without-uchardet
 make
 
 %install

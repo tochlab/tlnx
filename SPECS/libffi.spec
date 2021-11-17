@@ -16,7 +16,6 @@ Source0:	https://github.com/libffi/libffi/releases/download/v%{version}/libffi-%
 %setup -q
 
 %build
-#./configure --prefix=/usr --libdir=/usr/lib --disable-static 
 %configure --libdir=/usr/lib
 make %{?_smp_mflags}
 

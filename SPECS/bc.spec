@@ -25,7 +25,7 @@ EOF
 
 %build
 sed -i -e '/flex/s/as_fn_error/: ;; # &/' configure
-./configure --prefix=/usr --with-readline --mandir=/usr/share/man --infodir=/usr/share/info
+%configure --prefix=/usr --with-readline --mandir=/usr/share/man --infodir=/usr/share/info
 make %{?_smp_mflags}
 
 %install

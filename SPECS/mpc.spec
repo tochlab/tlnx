@@ -20,7 +20,7 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 
 %build
-./configure --prefix=/usr    \
+%configure --prefix=/usr    \
             --disable-static \
             --docdir=/usr/share/doc/mpc-%{version}
 make %{?_smp_mflags}

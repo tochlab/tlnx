@@ -16,7 +16,7 @@ Source0:	https://ftpmirror.gnu.org/gnu/texinfo/texinfo-%{version}.tar.gz
 %setup -q
 
 %build
-./configure --prefix=/usr --disable-static
+%configure --prefix=/usr --disable-static
 make %{?_smp_mflags}
 
 %install

@@ -16,49 +16,54 @@ Source0:	https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-%{version}.t
 %setup -q
 
 %build
-perl Makefile.PL PREFIX=/usr EXPATLIBPATH=/usr/lib EXPATINCPATH=/usr/include DESTDIR=%{buildroot}
+perl Makefile.PL PREFIX=/usr DESTDIR=%{buildroot} INSTALLPRIVLIB=/usr/lib/perl5/5.34 INSTALLSITELIB=/usr/lib/perl5/5.34 INSTALLVENDORLIB=/usr/lib/perl5/5.34 INSTALLARCHLIB=/usr/lib/perl5/5.34 INSTALLSITEARCH=/usr/lib/perl5/5.34 INSTALLVENDORARCH=/usr/lib/perl5/5.34
 make %{?_smp_mflags}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make pure_install
-mv %{buildroot}/usr/lib64 %{buildroot}/usr/lib
+make install
+rm $RPM_BUILD_ROOT/usr/lib/perl5/5.34/perllocal.pod
+#if [ -e "%{buildroot}/usr/lib64" ]
+#then
+#mv -f %{buildroot}/usr/lib64 %{buildroot}/usr/lib
+#fi
+
 
 %files
-/usr/lib/perl5/5.34/x86_64-linux/XML/Parser.pm
-/usr/lib/perl5/5.34/x86_64-linux/XML/Parser/Encodings/Japanese_Encodings.msg
-/usr/lib/perl5/5.34/x86_64-linux/XML/Parser/Encodings/README
-/usr/lib/perl5/5.34/x86_64-linux/XML/Parser/Encodings/big5.enc
-/usr/lib/perl5/5.34/x86_64-linux/XML/Parser/Encodings/euc-kr.enc
-/usr/lib/perl5/5.34/x86_64-linux/XML/Parser/Encodings/ibm866.enc
-/usr/lib/perl5/5.34/x86_64-linux/XML/Parser/Encodings/iso-8859-15.enc
-/usr/lib/perl5/5.34/x86_64-linux/XML/Parser/Encodings/iso-8859-2.enc
-/usr/lib/perl5/5.34/x86_64-linux/XML/Parser/Encodings/iso-8859-3.enc
-/usr/lib/perl5/5.34/x86_64-linux/XML/Parser/Encodings/iso-8859-4.enc
-/usr/lib/perl5/5.34/x86_64-linux/XML/Parser/Encodings/iso-8859-5.enc
-/usr/lib/perl5/5.34/x86_64-linux/XML/Parser/Encodings/iso-8859-7.enc
-/usr/lib/perl5/5.34/x86_64-linux/XML/Parser/Encodings/iso-8859-8.enc
-/usr/lib/perl5/5.34/x86_64-linux/XML/Parser/Encodings/iso-8859-9.enc
-/usr/lib/perl5/5.34/x86_64-linux/XML/Parser/Encodings/koi8-r.enc
-/usr/lib/perl5/5.34/x86_64-linux/XML/Parser/Encodings/windows-1250.enc
-/usr/lib/perl5/5.34/x86_64-linux/XML/Parser/Encodings/windows-1251.enc
-/usr/lib/perl5/5.34/x86_64-linux/XML/Parser/Encodings/windows-1252.enc
-/usr/lib/perl5/5.34/x86_64-linux/XML/Parser/Encodings/windows-1255.enc
-/usr/lib/perl5/5.34/x86_64-linux/XML/Parser/Encodings/x-euc-jp-jisx0221.enc
-/usr/lib/perl5/5.34/x86_64-linux/XML/Parser/Encodings/x-euc-jp-unicode.enc
-/usr/lib/perl5/5.34/x86_64-linux/XML/Parser/Encodings/x-sjis-cp932.enc
-/usr/lib/perl5/5.34/x86_64-linux/XML/Parser/Encodings/x-sjis-jdk117.enc
-/usr/lib/perl5/5.34/x86_64-linux/XML/Parser/Encodings/x-sjis-jisx0221.enc
-/usr/lib/perl5/5.34/x86_64-linux/XML/Parser/Encodings/x-sjis-unicode.enc
-/usr/lib/perl5/5.34/x86_64-linux/XML/Parser/Expat.pm
-/usr/lib/perl5/5.34/x86_64-linux/XML/Parser/LWPExternEnt.pl
-/usr/lib/perl5/5.34/x86_64-linux/XML/Parser/Style/Debug.pm
-/usr/lib/perl5/5.34/x86_64-linux/XML/Parser/Style/Objects.pm
-/usr/lib/perl5/5.34/x86_64-linux/XML/Parser/Style/Stream.pm
-/usr/lib/perl5/5.34/x86_64-linux/XML/Parser/Style/Subs.pm
-/usr/lib/perl5/5.34/x86_64-linux/XML/Parser/Style/Tree.pm
-/usr/lib/perl5/5.34/x86_64-linux/auto/XML/Parser/.packlist
-/usr/lib/perl5/5.34/x86_64-linux/auto/XML/Parser/Expat/Expat.so
+/usr/lib/perl5/5.34/XML/Parser.pm
+/usr/lib/perl5/5.34/XML/Parser/Encodings/Japanese_Encodings.msg
+/usr/lib/perl5/5.34/XML/Parser/Encodings/README
+/usr/lib/perl5/5.34/XML/Parser/Encodings/big5.enc
+/usr/lib/perl5/5.34/XML/Parser/Encodings/euc-kr.enc
+/usr/lib/perl5/5.34/XML/Parser/Encodings/ibm866.enc
+/usr/lib/perl5/5.34/XML/Parser/Encodings/iso-8859-15.enc
+/usr/lib/perl5/5.34/XML/Parser/Encodings/iso-8859-2.enc
+/usr/lib/perl5/5.34/XML/Parser/Encodings/iso-8859-3.enc
+/usr/lib/perl5/5.34/XML/Parser/Encodings/iso-8859-4.enc
+/usr/lib/perl5/5.34/XML/Parser/Encodings/iso-8859-5.enc
+/usr/lib/perl5/5.34/XML/Parser/Encodings/iso-8859-7.enc
+/usr/lib/perl5/5.34/XML/Parser/Encodings/iso-8859-8.enc
+/usr/lib/perl5/5.34/XML/Parser/Encodings/iso-8859-9.enc
+/usr/lib/perl5/5.34/XML/Parser/Encodings/koi8-r.enc
+/usr/lib/perl5/5.34/XML/Parser/Encodings/windows-1250.enc
+/usr/lib/perl5/5.34/XML/Parser/Encodings/windows-1251.enc
+/usr/lib/perl5/5.34/XML/Parser/Encodings/windows-1252.enc
+/usr/lib/perl5/5.34/XML/Parser/Encodings/windows-1255.enc
+/usr/lib/perl5/5.34/XML/Parser/Encodings/x-euc-jp-jisx0221.enc
+/usr/lib/perl5/5.34/XML/Parser/Encodings/x-euc-jp-unicode.enc
+/usr/lib/perl5/5.34/XML/Parser/Encodings/x-sjis-cp932.enc
+/usr/lib/perl5/5.34/XML/Parser/Encodings/x-sjis-jdk117.enc
+/usr/lib/perl5/5.34/XML/Parser/Encodings/x-sjis-jisx0221.enc
+/usr/lib/perl5/5.34/XML/Parser/Encodings/x-sjis-unicode.enc
+/usr/lib/perl5/5.34/XML/Parser/Expat.pm
+/usr/lib/perl5/5.34/XML/Parser/LWPExternEnt.pl
+/usr/lib/perl5/5.34/XML/Parser/Style/Debug.pm
+/usr/lib/perl5/5.34/XML/Parser/Style/Objects.pm
+/usr/lib/perl5/5.34/XML/Parser/Style/Stream.pm
+/usr/lib/perl5/5.34/XML/Parser/Style/Subs.pm
+/usr/lib/perl5/5.34/XML/Parser/Style/Tree.pm
+/usr/lib/perl5/5.34/auto/XML/Parser/.packlist
+/usr/lib/perl5/5.34/auto/XML/Parser/Expat/Expat.so
 /usr/man/man3/XML::Parser.3pm.gz
 /usr/man/man3/XML::Parser::Expat.3pm.gz
 /usr/man/man3/XML::Parser::Style::Debug.3pm.gz
@@ -66,5 +71,4 @@ mv %{buildroot}/usr/lib64 %{buildroot}/usr/lib
 /usr/man/man3/XML::Parser::Style::Stream.3pm.gz
 /usr/man/man3/XML::Parser::Style::Subs.3pm.gz
 /usr/man/man3/XML::Parser::Style::Tree.3pm.gz
-
 

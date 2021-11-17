@@ -1,6 +1,6 @@
 Name:           libtirpc
 Version:	1.3.2
-Release:        2%{?dist}
+Release:        1%{?dist}
 Summary:	Transport Independent RPC library (SunRPC replacement)
 
 License:	GPL-2
@@ -24,6 +24,8 @@ make %{?_smp_mflags}
 rm -rf $RPM_BUILD_ROOT
 %make_install
 %{__rm} -f %{buildroot}/usr/share/info/dir
+mkdir %{buildroot}/usr/lib/
+mv %{buildroot}/lib/pkgconfig %{buildroot}/usr/lib/
 
 #%post
 #/sbin/ldconfig
@@ -41,7 +43,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/libtirpc.so
 /lib/libtirpc.so.3
 /lib/libtirpc.so.3.0.0
-/lib/pkgconfig/libtirpc.pc
+/usr/lib/pkgconfig/libtirpc.pc
 /usr/include/tirpc/netconfig.h
 /usr/include/tirpc/rpc/auth.h
 /usr/include/tirpc/rpc/auth_des.h

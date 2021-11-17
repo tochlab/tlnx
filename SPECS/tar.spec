@@ -16,7 +16,8 @@ Source0:	https://ftpmirror.gnu.org/gnu/tar/tar-%{version}.tar.gz
 %setup -q
 
 %build
-./configure --prefix=/usr \
+export FORCE_UNSAFE_CONFIGURE=1
+%configure --prefix=/usr \
             --bindir=/bin
 make %{?_smp_mflags}
 

@@ -32,7 +32,17 @@ Contains base tree for initial work
     #ln -sv run var/run
     #ln -sv run/lock var/lock
     mkdir -pv %{buildroot}/var/{opt,cache,lib/{color,misc,locate},local}
-    echo 127.0.0.1 localhost > %{buildroot}/etc/hosts
+    echo 127.0.0.1 localhost black > %{buildroot}/etc/hosts
+
+    echo "set +h" > %{buildroot}/root/.bashrc
+    echo "umask 022" >> %{buildroot}/root/.bashrc
+    echo "LC_ALL=C" >> %{buildroot}/root/.bashrc
+    echo "LANG=C" >> %{buildroot}/root/.bashrc
+    echo "PATH=/bin:/sbin:/usr/bin:/usr/sbin" >>  %{buildroot}/root/.bashrc
+    echo "export LC_ALL LANG PATH" >> %{buildroot}/root/.bashrc
+
+###    mknod -m 600 %{buildroot}/dev/console c 5 1
+###    mknod -m 666 %{buildroot}/dev/null c 1 3
 
 %files
 /*

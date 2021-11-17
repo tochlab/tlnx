@@ -17,7 +17,7 @@ Source0:	http://ftp.rpm.org/popt/releases/popt-1.x/popt-%{version}.tar.gz
 
 %build
 ./autogen.sh
-%configure
+%configure --libdir=/usr/lib
 make %{?_smp_mflags}
 
 %install
@@ -35,12 +35,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 /usr/include/popt.h
-/usr/lib64/libpopt.a
-/usr/lib64/libpopt.la
-/usr/lib64/libpopt.so
-/usr/lib64/libpopt.so.0
-/usr/lib64/libpopt.so.0.0.1
-/usr/lib64/pkgconfig/popt.pc
+/usr/lib/libpopt.a
+/usr/lib/libpopt.la
+/usr/lib/libpopt.so
+/usr/lib/libpopt.so.0
+/usr/lib/libpopt.so.0.0.1
+/usr/lib/pkgconfig/popt.pc
 /usr/share/locale/cs/LC_MESSAGES/popt.mo
 /usr/share/locale/da/LC_MESSAGES/popt.mo
 /usr/share/locale/de/LC_MESSAGES/popt.mo

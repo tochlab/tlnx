@@ -16,10 +16,52 @@ Source0:	https://ftpmirror.gnu.org/gnu/ncurses/ncurses-%{version}.tar.gz
 %setup -q
 
 %build
+
+%install
 %configure  --prefix=/usr           \
             --mandir=/usr/share/man \
             --libdir=/usr/lib \
 	    --enable-pc-files \
+	    --with-shared \
+	    --without-hashed-db \
+	    --without-ada \
+	    --with-cxx \
+	    --with-cxx-binding \
+	    --with-cxx-shared \
+	    --without-debug \
+	    --without-profile \
+	    --without-gpm \
+	    --disable-term-driver \
+	    --disable-termcap \
+	    --enable-symlinks \
+	    --with-rcs-ids \
+	    --with-manpage-format=normal \
+	    --enable-const \
+	    --enable-colorfgbg \
+	    --enable-hard-tabs \
+	    --enable-echo \
+	    --enable-warnings \
+	    --without-assertions \
+	    --enable-leaks \
+	    --without-expanded \
+	    --with-macros \
+	    --with-progs  \
+	    --without-tests \
+	    --without-trace \
+	    --with-termlib \
+	    --disable-stripping \
+	    --without-pthread \
+	    --without-reentrant \
+	    --enable-overwrite
+
+make %{?_smp_mflags}
+make install DESTDIR=%{buildroot}
+
+%configure  --prefix=/usr           \
+            --mandir=/usr/share/man \
+            --libdir=/usr/lib \
+	    --enable-pc-files \
+	    --with-pc-suffix	\
 	    --with-shared \
 	    --without-hashed-db \
 	    --without-ada \
@@ -55,21 +97,33 @@ Source0:	https://ftpmirror.gnu.org/gnu/ncurses/ncurses-%{version}.tar.gz
 
 make %{?_smp_mflags}
 
-%install
 make install DESTDIR=%{buildroot}
-cd %{buildroot}/usr/lib
-ln -svf libtinfow.so.6 libtinfo.so.6
-ln -s libformw.so libform.so
-ln -s libmenuw.so libmenu.so
-ln -s libncurses++w.so libncurses++.so
-ln -s libncursesw.so libncurses.so
-ln -s libpanelw.so libpanel.so
-ln -s libtinfow.so libtinfo.so
 
 %post
 ldconfig
 
 %files
+/usr/bin/ncurses6-config
+/usr/lib/libcurses.a
+/usr/lib/libcurses.so
+/usr/lib/libform.a
+/usr/lib/libform.so.6
+/usr/lib/libform.so.6.3
+/usr/lib/libmenu.a
+/usr/lib/libmenu.so.6
+/usr/lib/libmenu.so.6.3
+/usr/lib/libncurses++.a
+/usr/lib/libncurses++.so.6
+/usr/lib/libncurses++.so.6.3
+/usr/lib/libncurses.a
+/usr/lib/libncurses.so.6
+/usr/lib/libncurses.so.6.3
+/usr/lib/libpanel.a
+/usr/lib/libpanel.so.6
+/usr/lib/libpanel.so.6.3
+/usr/lib/libtinfo.a
+/usr/lib/libtinfo.so.6.3
+/usr/share/man/man1/ncurses6-config.1.gz
 /usr/bin/captoinfo
 /usr/bin/clear
 /usr/bin/infocmp
@@ -133,12 +187,12 @@ ldconfig
 /usr/lib/libtinfow.so.6
 /usr/lib/libtinfow.so.6.3
 /usr/lib/terminfo
-/usr/lib64/pkgconfig/formw.pc
-/usr/lib64/pkgconfig/menuw.pc
-/usr/lib64/pkgconfig/ncurses++w.pc
-/usr/lib64/pkgconfig/ncursesw.pc
-/usr/lib64/pkgconfig/panelw.pc
-/usr/lib64/pkgconfig/tinfow.pc
+/usr/lib64/pkgconfig/form.pc
+/usr/lib64/pkgconfig/menu.pc
+/usr/lib64/pkgconfig/ncurses++.pc
+/usr/lib64/pkgconfig/ncurses.pc
+/usr/lib64/pkgconfig/panel.pc
+/usr/lib64/pkgconfig/tinfo.pc
 /usr/share/man/man1/captoinfo.1m.gz
 /usr/share/man/man1/clear.1.gz
 /usr/share/man/man1/infocmp.1m.gz

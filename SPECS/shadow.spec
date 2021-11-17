@@ -1,6 +1,6 @@
 Name:           shadow
 Version:        4.8.1
-Release:        2%{?dist}
+Release:        1%{?dist}
 Summary:        shadow utils
 
 #Group:          
@@ -36,6 +36,43 @@ make %{?_smp_mflags}
 rm -rf $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT
 
+%post
+if [ ! -f "/etc/passwd" ]; then
+    echo "root:x:0:0:root:/root:/bin/bash" > /etc/passwd
+    echo "bin:x:1:1:bin:/dev/null:/bin/false" >> /etc/passwd
+    echo "daemon:x:6:6:Daemon User:/dev/null:/bin/false" >> /etc/passwd
+    echo "messagebus:x:18:18:D-Bus Message Daemon User:/run/dbus:/bin/false" >> /etc/passwd
+    echo "uuidd:x:80:80:UUID Generation Daemon User:/dev/null:/bin/false" >> /etc/passwd
+    echo "nobody:x:99:99:Unprivileged User:/dev/null:/bin/false" >> /etc/passwd
+fi
+
+if [ ! -f "/etc/group" ]; then
+    echo "root:x:0:" > /etc/group
+    echo "bin:x:1:daemon" >> /etc/group
+    echo "sys:x:2:" >> /etc/group
+    echo "kmem:x:3:" >> /etc/group
+    echo "tape:x:4:" >> /etc/group
+    echo "tty:x:5:" >> /etc/group
+    echo "daemon:x:6:" >> /etc/group
+    echo "floppy:x:7:" >> /etc/group
+    echo "disk:x:8:" >> /etc/group
+    echo "lp:x:9:" >> /etc/group
+    echo "dialout:x:10:" >> /etc/group
+    echo "audio:x:11:" >> /etc/group
+    echo "video:x:12:" >> /etc/group
+    echo "utmp:x:13:" >> /etc/group
+    echo "usb:x:14:" >> /etc/group
+    echo "cdrom:x:15:" >> /etc/group
+    echo "adm:x:16:" >> /etc/group
+    echo "messagebus:x:18:" >> /etc/group
+    echo "input:x:24:" >> /etc/group
+    echo "mail:x:34:" >> /etc/group
+    echo "kvm:x:61:" >> /etc/group
+    echo "uuidd:x:80:" >> /etc/group
+    echo "wheel:x:97:" >> /etc/group
+    echo "nogroup:x:99:" >> /etc/group
+    echo "users:x:999:" >> /etc/group
+fi
 
 %clean
 rm -rf $RPM_BUILD_ROOT

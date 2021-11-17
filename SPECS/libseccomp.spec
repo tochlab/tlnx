@@ -16,7 +16,7 @@ Source0:	https://github.com/seccomp/libseccomp/releases/download/v%{version}/lib
 %setup -q
 
 %build
-%configure
+%configure --libdir=/usr/lib
 make %{?_smp_mflags}
 
 %install
@@ -36,12 +36,12 @@ rm -rf $RPM_BUILD_ROOT
 /usr/bin/scmp_sys_resolver
 /usr/include/seccomp-syscalls.h
 /usr/include/seccomp.h
-/usr/lib64/libseccomp.a
-/usr/lib64/libseccomp.la
-/usr/lib64/libseccomp.so
-/usr/lib64/libseccomp.so.2
-/usr/lib64/libseccomp.so.%{version}
-/usr/lib64/pkgconfig/libseccomp.pc
+/usr/lib/libseccomp.a
+/usr/lib/libseccomp.la
+/usr/lib/libseccomp.so
+/usr/lib/libseccomp.so.2
+/usr/lib/libseccomp.so.%{version}
+/usr/lib/pkgconfig/libseccomp.pc
 /usr/share/man/man1/scmp_sys_resolver.1.gz
 /usr/share/man/man3/seccomp_api_get.3.gz
 /usr/share/man/man3/seccomp_api_set.3.gz

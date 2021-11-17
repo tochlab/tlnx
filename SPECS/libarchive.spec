@@ -16,7 +16,7 @@ Source0:	https://github.com/libarchive/libarchive/releases/download/v%{version}/
 %setup -q
 
 %build
-%configure --without-libb2 --without-lz4 --without-xml2
+%configure --without-libb2 --without-lz4 --without-xml2 --libdir=/usr/lib
 make %{?_smp_mflags}
 
 %install
@@ -38,12 +38,12 @@ rm -rf $RPM_BUILD_ROOT
 /usr/bin/bsdtar
 /usr/include/archive.h
 /usr/include/archive_entry.h
-/usr/lib64/libarchive.a
-/usr/lib64/libarchive.la
-/usr/lib64/libarchive.so
-/usr/lib64/libarchive.so.13
-/usr/lib64/libarchive.so.13.4.3
-/usr/lib64/pkgconfig/libarchive.pc
+/usr/lib/libarchive.a
+/usr/lib/libarchive.la
+/usr/lib/libarchive.so
+/usr/lib/libarchive.so.13
+/usr/lib/libarchive.so.13.4.3
+/usr/lib/pkgconfig/libarchive.pc
 /usr/share/man/man1/bsdcat.1.gz
 /usr/share/man/man1/bsdcpio.1.gz
 /usr/share/man/man1/bsdtar.1.gz

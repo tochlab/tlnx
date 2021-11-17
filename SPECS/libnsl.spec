@@ -17,7 +17,7 @@ Public client interface for NIS(YP) and NIS+ in a IPv6 ready version
 %setup -q
 
 %build
-%configure
+%configure --libdir=/usr/lib
 make %{?_smp_mflags}
 
 %install
@@ -48,12 +48,12 @@ rm -rf $RPM_BUILD_ROOT
 /usr/include/rpcsvc/yppasswd.h
 /usr/include/rpcsvc/yppasswd.x
 /usr/include/rpcsvc/ypupd.h
-/usr/lib64/libnsl.a
-/usr/lib64/libnsl.la
-/usr/lib64/libnsl.so
-/usr/lib64/libnsl.so.2
-/usr/lib64/libnsl.so.2.0.1
-/usr/lib64/pkgconfig/libnsl.pc
+/usr/lib/libnsl.a
+/usr/lib/libnsl.la
+/usr/lib/libnsl.so
+/usr/lib/libnsl.so.2
+/usr/lib/libnsl.so.2.0.1
+/usr/lib/pkgconfig/libnsl.pc
 
 %doc
 

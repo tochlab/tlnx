@@ -16,7 +16,7 @@ Source0:	https://curl.haxx.se/download/curl-%{version}.tar.gz
 %setup -q
 
 %build
-%configure --libdir=/usr/lib
+%configure --libdir=/usr/lib --without-http2 --without-brotli
 make %{?_smp_mflags}
 
 %install

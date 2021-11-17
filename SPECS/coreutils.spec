@@ -1,6 +1,6 @@
 Name:           coreutils
 Version:	8.31
-Release:        2%{?dist}
+Release:        1%{?dist}
 Summary:	Standard GNU utilities (chmod, cp, dd, ls, sort, tr, head, wc, who,...
 
 License:	GPL-3

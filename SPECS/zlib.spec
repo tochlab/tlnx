@@ -1,6 +1,6 @@
 Name:           zlib
 Version:	1.2.11
-Release:        2%{?dist}
+Release:        1%{?dist}
 Summary:	Zlib
 
 License:	ZLIB

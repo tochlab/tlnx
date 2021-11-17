@@ -26,7 +26,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__rm} -f %{buildroot}/usr/share/info/dir
 %{__rm} %{buildroot}/usr/share/man/man3/crypt.3
 %{__rm} %{buildroot}/usr/include/crypt.h
-
+mkdir %{buildroot}/usr/lib/
+mv %{buildroot}/lib/pkgconfig %{buildroot}/usr/lib/
 
 #%post
 #/sbin/ldconfig
@@ -42,10 +43,8 @@ rm -rf $RPM_BUILD_ROOT
 /lib/libcrypt.so
 /lib/libcrypt.so.2
 /lib/libcrypt.so.2.0.0
-/lib/pkgconfig/libcrypt.pc
-/lib/pkgconfig/libxcrypt.pc
-#/usr/include/crypt.h
-#/usr/share/man/man3/crypt.3.gz
+/usr/lib/pkgconfig/libcrypt.pc
+/usr/lib/pkgconfig/libxcrypt.pc
 /usr/share/man/man3/crypt_checksalt.3.gz
 /usr/share/man/man3/crypt_gensalt.3.gz
 /usr/share/man/man3/crypt_gensalt_ra.3.gz

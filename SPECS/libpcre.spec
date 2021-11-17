@@ -16,7 +16,7 @@ Source0:	https://jztkft.dl.sourceforge.net/project/pcre/pcre/%{version}/pcre-%{v
 %setup -q
 
 %build
-%configure --enable-pcre8 --enable-pcre16 --enable-shared
+%configure --enable-pcre8 --enable-pcre16 --enable-shared --libdir=/usr/lib
 
 make %{?_smp_mflags}
 
@@ -43,30 +43,30 @@ rm -rf $RPM_BUILD_ROOT
 /usr/include/pcrecpp.h
 /usr/include/pcrecpparg.h
 /usr/include/pcreposix.h
-/usr/lib64/libpcre.a
-/usr/lib64/libpcre.la
-/usr/lib64/libpcre.so
-/usr/lib64/libpcre.so.1
-/usr/lib64/libpcre.so.1.2.13
-/usr/lib64/libpcre16.a
-/usr/lib64/libpcre16.la
-/usr/lib64/libpcre16.so
-/usr/lib64/libpcre16.so.0
-/usr/lib64/libpcre16.so.0.2.13
-/usr/lib64/libpcrecpp.a
-/usr/lib64/libpcrecpp.la
-/usr/lib64/libpcrecpp.so
-/usr/lib64/libpcrecpp.so.0
-/usr/lib64/libpcrecpp.so.0.0.2
-/usr/lib64/libpcreposix.a
-/usr/lib64/libpcreposix.la
-/usr/lib64/libpcreposix.so
-/usr/lib64/libpcreposix.so.0
-/usr/lib64/libpcreposix.so.0.0.7
-/usr/lib64/pkgconfig/libpcre.pc
-/usr/lib64/pkgconfig/libpcre16.pc
-/usr/lib64/pkgconfig/libpcrecpp.pc
-/usr/lib64/pkgconfig/libpcreposix.pc
+/usr/lib/libpcre.a
+/usr/lib/libpcre.la
+/usr/lib/libpcre.so
+/usr/lib/libpcre.so.1
+/usr/lib/libpcre.so.1.2.13
+/usr/lib/libpcre16.a
+/usr/lib/libpcre16.la
+/usr/lib/libpcre16.so
+/usr/lib/libpcre16.so.0
+/usr/lib/libpcre16.so.0.2.13
+/usr/lib/libpcrecpp.a
+/usr/lib/libpcrecpp.la
+/usr/lib/libpcrecpp.so
+/usr/lib/libpcrecpp.so.0
+/usr/lib/libpcrecpp.so.0.0.2
+/usr/lib/libpcreposix.a
+/usr/lib/libpcreposix.la
+/usr/lib/libpcreposix.so
+/usr/lib/libpcreposix.so.0
+/usr/lib/libpcreposix.so.0.0.7
+/usr/lib/pkgconfig/libpcre.pc
+/usr/lib/pkgconfig/libpcre16.pc
+/usr/lib/pkgconfig/libpcrecpp.pc
+/usr/lib/pkgconfig/libpcreposix.pc
 /usr/share/doc/pcre/AUTHORS
 /usr/share/doc/pcre/COPYING
 /usr/share/doc/pcre/ChangeLog

@@ -18,7 +18,7 @@ Source0:	https://ftpmirror.gnu.org/gnu/sed/sed-%{version}.tar.gz
 %build
 ./configure --prefix=/usr --bindir=/bin
 make %{?_smp_mflags}
-make check
+#make check
 
 %install
 rm -rf $RPM_BUILD_ROOT

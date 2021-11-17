@@ -1,5 +1,5 @@
 Name:           procps
-Version:	v3.3.15
+Version:	v3.3.16
 Release:        1%{?dist}
 Summary:	standard informational utilities and process-handling tools
 
@@ -17,10 +17,10 @@ Source0:	https://gitlab.com/procps-ng/procps/-/archive/%{version}/procps-%{versi
 
 %build
 ./autogen.sh
-./configure --prefix=/usr                            \
-            --exec-prefix=                           \
+%configure  --bindir=/bin                            \
+            --sbindir=/sbin                          \
             --libdir=/usr/lib                        \
-            --docdir=/usr/share/doc/procps \
+            --docdir=/usr/share/doc/procps           \
             --disable-static                         \
             --disable-kill
 make %{?_smp_mflags}
@@ -30,7 +30,7 @@ rm -rf $RPM_BUILD_ROOT
 %make_install
 
 %files
-  /bin/free
+/bin/free
 /bin/pgrep
 /bin/pidof
 /bin/pkill
@@ -60,8 +60,8 @@ rm -rf $RPM_BUILD_ROOT
 /usr/include/proc/whattime.h
 /usr/lib/libprocps.la
 /usr/lib/libprocps.so
-/usr/lib/libprocps.so.7
-/usr/lib/libprocps.so.7.1.0
+/usr/lib/libprocps.so.8
+/usr/lib/libprocps.so.8.0.2
 /usr/lib/pkgconfig/libprocps.pc
 /usr/share/doc/procps/FAQ
 /usr/share/doc/procps/bugs.md

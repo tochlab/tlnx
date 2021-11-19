@@ -19,6 +19,7 @@ access control list utilities, libraries and headers
 %build
 %configure --prefix=/usr         \
             --bindir=/bin         \
+	    --libdir=/usr/lib     \
             --disable-static      \
             --libexecdir=/usr/lib \
             --docdir=/usr/share/doc/acl-%{version}

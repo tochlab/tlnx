@@ -17,6 +17,7 @@ Source0:	https://ftpmirror.gnu.org/gnu/grub/grub-%{version}.tar.gz
 
 %build
 %configure --prefix=/usr          \
+            --libdir=/usr/lib      \
             --sbindir=/sbin        \
             --sysconfdir=/etc      \
             --disable-efiemu       \

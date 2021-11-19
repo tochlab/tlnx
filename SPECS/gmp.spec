@@ -13,7 +13,7 @@ Source0:	https://ftpmirror.gnu.org/gnu/gmp/gmp-%{version}.tar.bz2
 %setup -q
 
 %build
-%configure --prefix=/usr --enable-cxx --disable-static --docdir=/usr/share/doc/gmp-%{version}
+%configure --prefix=/usr --libdir=/usr/lib --enable-cxx --disable-static --docdir=/usr/share/doc/gmp-%{version}
 make %{?_smp_mflags}
 
 %install

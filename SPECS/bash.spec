@@ -19,6 +19,7 @@ Source0:	http://ftpmirror.gnu.org/gnu/bash/bash-%{version}.tar.gz
 
 %configure --prefix=/usr                    \
 	    --bindir=/bin \
+	    --libdir=/usr/lib \
 	    --disable-profiling \
 	    --with-curses \
 	    --disable-mem-scramble \

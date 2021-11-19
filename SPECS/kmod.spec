@@ -20,6 +20,7 @@ Source0:	https://www.kernel.org/pub/linux/utils/kernel/kmod/kmod-%{version}.tar.
             --bindir=/bin          \
             --sysconfdir=/etc      \
             --with-rootlibdir=/lib \
+	    --libdir=/usr/lib      \
             --with-xz              \
             --with-zlib
 make %{?_smp_mflags}

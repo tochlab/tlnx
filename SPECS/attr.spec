@@ -17,6 +17,7 @@ Source0:	https://download-mirror.savannah.gnu.org/releases/attr/attr-2.4.48.tar.
 
 %build
 %configure --prefix=/usr     \
+	    --libdir=/usr/lib \
             --bindir=/bin     \
             --disable-static  \
             --sysconfdir=/etc \

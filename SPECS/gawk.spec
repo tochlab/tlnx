@@ -16,7 +16,7 @@ Source0:	https://ftpmirror.gnu.org/gnu/gawk/gawk-%{version}.tar.gz
 %setup -q
 
 %build
-%configure --prefix=/usr
+%configure --prefix=/usr --libdir=/usr/lib
 make %{?_smp_mflags}
 
 %install
@@ -28,8 +28,8 @@ rm -rf $RPM_BUILD_ROOT/usr/share/info/dir
 /usr/bin/awk
 /usr/bin/gawk
 /usr/bin/gawk-%{version}
-/usr/etc/profile.d/gawk.csh
-/usr/etc/profile.d/gawk.sh
+/etc/profile.d/gawk.csh
+/etc/profile.d/gawk.sh
 /usr/include/gawkapi.h
 /usr/lib/gawk/filefuncs.so
 /usr/lib/gawk/fnmatch.so

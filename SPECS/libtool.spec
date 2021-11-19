@@ -16,7 +16,7 @@ Source0:	http://ftpmirror.gnu.org/gnu/libtool/libtool-%{version}.tar.gz
 %setup -q
 
 %build
-%configure --prefix=/usr
+%configure --prefix=/usr --libdir=/usr/lib
 make %{?_smp_mflags}
 #make check
 

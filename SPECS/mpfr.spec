@@ -21,6 +21,7 @@ MPFR Library
 
 %build
 %configure --prefix=/usr        \
+	    --libdir=/usr/lib   \
             --disable-static     \
             --enable-thread-safe \
             --docdir=/usr/share/doc/mpfr-%{version}

@@ -16,7 +16,7 @@ Source0:	https://github.com/libcheck/check/releases/download/%{version}/check-%{
 %setup -q
 
 %build
-%configure --prefix=/usr
+%configure --prefix=/usr --libdir=/usr/lib
 make %{?_smp_mflags}
 
 %install

@@ -18,6 +18,7 @@ XZ utils
 
 %build
 %configure --prefix=/usr    \
+	    --libdir=/usr/lib \
             --disable-static \
             --docdir=/usr/share/doc/xz-%{version}
 

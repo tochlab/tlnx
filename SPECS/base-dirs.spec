@@ -18,9 +18,9 @@ Contains base tree for initial work
     rm -fr %{buildroot}
     mkdir -pv %{buildroot}/{bin,boot,etc/{opt,sysconfig},home,lib/firmware,mnt,opt}
     mkdir -pv %{buildroot}/{media/{floppy,cdrom},sbin,srv,var,proc,dev}
-    mkdir -m 0750 %{buildroot}/root
-    mkdir -m 1777 %{buildroot}/tmp 
-    mkdir -m 1777 %{buildroot}/var/tmp
+    mkdir -pvm 0750 %{buildroot}/root
+    mkdir -pvm 1777 %{buildroot}/tmp 
+    mkdir -pvm 1777 %{buildroot}/var/tmp
     mkdir -pv %{buildroot}/usr/{,local/}{bin,include,lib,sbin,src}
     mkdir -pv %{buildroot}/usr/{,local/}share/{color,dict,doc,info,locale,man}
     mkdir -v  %{buildroot}/usr/{,local/}share/{misc,terminfo,zoneinfo}

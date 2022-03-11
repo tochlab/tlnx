@@ -20,7 +20,7 @@ Source0:	https://mirrors.edge.kernel.org/pub/linux/libs/security/linux-privs/lib
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%make_install lib=lib GOLANG=no PAM_CAP=yes
+%make_install lib=lib GOLANG=no PAM_CAP=no
 
 %files
 /lib/libcap.a
@@ -28,7 +28,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/libcap.so.2
 /lib/libcap.so.2.33
 /lib/libpsx.a
-/lib/security/pam_cap.so
+#/lib/security/pam_cap.so
 /sbin/capsh
 /sbin/getcap
 /sbin/getpcaps

@@ -34,7 +34,6 @@ make %{?_smp_mflags}
 %install
 rm -rf $RPM_BUILD_ROOT
 %make_install
-rm %{buildroot}/usr/share/info/dir
 
 %files
 /bin/dnsdomainname

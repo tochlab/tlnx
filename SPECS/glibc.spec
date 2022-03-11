@@ -17,7 +17,7 @@ GNU C library
 mkdir build
 cd build
 ../configure --prefix=/usr \
-	     --enable-kernel=3.2.0 \
+	     --enable-kernel=5.10.0 \
 	     --enable-stackguard-randomization \
 	     --disable-cet \
 	     --enable-stack-protector=strong \
@@ -27,7 +27,7 @@ cd build
 	     --enable-bind-now \
 	     --disable-profile \
 	     --without-gd \
-	     --with-headers=/usr/include \
+	     --with-headers=/tmp/usr/include/ \
 	     --sysconfdir=/etc \
 	     --localstatedir=/var \
 	     --libdir=/usr/lib \
@@ -57,49 +57,48 @@ rm -rf %{buildroot}/usr/share/info/dir
 %files
 /etc/ld.so.cache
 /etc/ld.so.conf
-/etc/ld.so.conf.d
 /etc/nscd.conf
 /etc/rpc
-/lib/ld-%{version}.so
+/lib/ld-2.33.so
 /lib/ld-linux-x86-64.so.2
-/lib/libBrokenLocale-%{version}.so
+/lib/libBrokenLocale-2.33.so
 /lib/libBrokenLocale.so.1
 /lib/libSegFault.so
-/lib/libanl-%{version}.so
+/lib/libanl-2.33.so
 /lib/libanl.so.1
-/lib/libc-%{version}.so
+/lib/libc-2.33.so
 /lib/libc.so.6
-/lib/libcrypt-%{version}.so
+/lib/libcrypt-2.33.so
 /lib/libcrypt.so.1
-/lib/libdl-%{version}.so
+/lib/libdl-2.33.so
 /lib/libdl.so.2
-/lib/libm-%{version}.so
+/lib/libm-2.33.so
 /lib/libm.so.6
 /lib/libmemusage.so
-/lib/libmvec-%{version}.so
+/lib/libmvec-2.33.so
 /lib/libmvec.so.1
-/lib/libnsl-%{version}.so
+/lib/libnsl-2.33.so
 /lib/libnsl.so.1
-/lib/libnss_compat-%{version}.so
+/lib/libnss_compat-2.33.so
 /lib/libnss_compat.so.2
-/lib/libnss_db-%{version}.so
+/lib/libnss_db-2.33.so
 /lib/libnss_db.so.2
-/lib/libnss_dns-%{version}.so
+/lib/libnss_dns-2.33.so
 /lib/libnss_dns.so.2
-/lib/libnss_files-%{version}.so
+/lib/libnss_files-2.33.so
 /lib/libnss_files.so.2
-/lib/libnss_hesiod-%{version}.so
+/lib/libnss_hesiod-2.33.so
 /lib/libnss_hesiod.so.2
 /lib/libpcprofile.so
-/lib/libpthread-%{version}.so
+/lib/libpthread-2.33.so
 /lib/libpthread.so.0
-/lib/libresolv-%{version}.so
+/lib/libresolv-2.33.so
 /lib/libresolv.so.2
-/lib/librt-%{version}.so
+/lib/librt-2.33.so
 /lib/librt.so.1
 /lib/libthread_db-1.0.so
 /lib/libthread_db.so.1
-/lib/libutil-%{version}.so
+/lib/libutil-2.33.so
 /lib/libutil.so.1
 /sbin/ldconfig
 /sbin/sln
@@ -226,6 +225,7 @@ rm -rf %{buildroot}/usr/share/info/dir
 /usr/include/bits/siginfo-consts.h
 /usr/include/bits/signal_ext.h
 /usr/include/bits/signalfd.h
+/usr/include/bits/signum-arch.h
 /usr/include/bits/signum-generic.h
 /usr/include/bits/sigstack.h
 /usr/include/bits/sigthread.h
@@ -255,6 +255,7 @@ rm -rf %{buildroot}/usr/share/info/dir
 /usr/include/bits/strings_fortified.h
 /usr/include/bits/struct_mutex.h
 /usr/include/bits/struct_rwlock.h
+/usr/include/bits/struct_stat.h
 /usr/include/bits/syscall.h
 /usr/include/bits/syslog-ldbl.h
 /usr/include/bits/syslog-path.h
@@ -299,14 +300,19 @@ rm -rf %{buildroot}/usr/share/info/dir
 /usr/include/bits/types/sigval_t.h
 /usr/include/bits/types/stack_t.h
 /usr/include/bits/types/struct_FILE.h
+/usr/include/bits/types/struct___jmp_buf_tag.h
 /usr/include/bits/types/struct_iovec.h
 /usr/include/bits/types/struct_itimerspec.h
+/usr/include/bits/types/struct_msqid_ds.h
 /usr/include/bits/types/struct_osockaddr.h
 /usr/include/bits/types/struct_rusage.h
 /usr/include/bits/types/struct_sched_param.h
+/usr/include/bits/types/struct_semid_ds.h
+/usr/include/bits/types/struct_shmid_ds.h
 /usr/include/bits/types/struct_sigstack.h
 /usr/include/bits/types/struct_statx.h
 /usr/include/bits/types/struct_statx_timestamp.h
+/usr/include/bits/types/struct_timeb.h
 /usr/include/bits/types/struct_timespec.h
 /usr/include/bits/types/struct_timeval.h
 /usr/include/bits/types/struct_tm.h
@@ -435,6 +441,7 @@ rm -rf %{buildroot}/usr/share/info/dir
 /usr/include/regex.h
 /usr/include/regexp.h
 /usr/include/resolv.h
+/usr/include/rpc/netdb.h
 /usr/include/sched.h
 /usr/include/scsi/scsi.h
 /usr/include/scsi/scsi_ioctl.h
@@ -484,6 +491,7 @@ rm -rf %{buildroot}/usr/share/info/dir
 /usr/include/sys/pci.h
 /usr/include/sys/perm.h
 /usr/include/sys/personality.h
+/usr/include/sys/platform/x86.h
 /usr/include/sys/poll.h
 /usr/include/sys/prctl.h
 /usr/include/sys/procfs.h
@@ -502,6 +510,7 @@ rm -rf %{buildroot}/usr/share/info/dir
 /usr/include/sys/shm.h
 /usr/include/sys/signal.h
 /usr/include/sys/signalfd.h
+/usr/include/sys/single_threaded.h
 /usr/include/sys/socket.h
 /usr/include/sys/socketvar.h
 /usr/include/sys/soundcard.h
@@ -532,7 +541,6 @@ rm -rf %{buildroot}/usr/share/info/dir
 /usr/include/sys/vlimit.h
 /usr/include/sys/vm86.h
 /usr/include/sys/vt.h
-#/usr/include/sys/vtimes.h
 /usr/include/sys/wait.h
 /usr/include/sys/xattr.h
 /usr/include/syscall.h
@@ -831,7 +839,7 @@ rm -rf %{buildroot}/usr/share/info/dir
 /usr/lib/libdl.a
 /usr/lib/libdl.so
 /usr/lib/libg.a
-/usr/lib/libm-%{version}.a
+/usr/lib/libm-2.33.a
 /usr/lib/libm.a
 /usr/lib/libm.so
 /usr/lib/libmcheck.a
@@ -1150,6 +1158,7 @@ rm -rf %{buildroot}/usr/share/info/dir
 /usr/share/i18n/locales/ca_IT
 /usr/share/i18n/locales/ce_RU
 /usr/share/i18n/locales/chr_US
+/usr/share/i18n/locales/ckb_IQ
 /usr/share/i18n/locales/cmn_TW
 /usr/share/i18n/locales/cns11643_stroke
 /usr/share/i18n/locales/crh_UA
@@ -1442,24 +1451,8 @@ rm -rf %{buildroot}/usr/share/info/dir
 /usr/share/i18n/locales/zh_SG
 /usr/share/i18n/locales/zh_TW
 /usr/share/i18n/locales/zu_ZA
-/usr/share/info/libc.info-1.gz
-/usr/share/info/libc.info-10.gz
-/usr/share/info/libc.info-11.gz
-/usr/share/info/libc.info-12.gz
-/usr/share/info/libc.info-13.gz
-/usr/share/info/libc.info-14.gz
-/usr/share/info/libc.info-15.gz
-/usr/share/info/libc.info-16.gz
-/usr/share/info/libc.info-17.gz
-/usr/share/info/libc.info-2.gz
-/usr/share/info/libc.info-3.gz
-/usr/share/info/libc.info-4.gz
-/usr/share/info/libc.info-5.gz
-/usr/share/info/libc.info-6.gz
-/usr/share/info/libc.info-7.gz
-/usr/share/info/libc.info-8.gz
-/usr/share/info/libc.info-9.gz
-/usr/share/info/libc.info.gz
+/usr/share/locale/locale.alias
+/var/db/Makefile
 /usr/share/locale/be/LC_MESSAGES/libc.mo
 /usr/share/locale/bg/LC_MESSAGES/libc.mo
 /usr/share/locale/ca/LC_MESSAGES/libc.mo
@@ -1480,7 +1473,6 @@ rm -rf %{buildroot}/usr/share/info/dir
 /usr/share/locale/it/LC_MESSAGES/libc.mo
 /usr/share/locale/ja/LC_MESSAGES/libc.mo
 /usr/share/locale/ko/LC_MESSAGES/libc.mo
-/usr/share/locale/locale.alias
 /usr/share/locale/lt/LC_MESSAGES/libc.mo
 /usr/share/locale/nb/LC_MESSAGES/libc.mo
 /usr/share/locale/nl/LC_MESSAGES/libc.mo
@@ -1491,23 +1483,10 @@ rm -rf %{buildroot}/usr/share/info/dir
 /usr/share/locale/rw/LC_MESSAGES/libc.mo
 /usr/share/locale/sk/LC_MESSAGES/libc.mo
 /usr/share/locale/sl/LC_MESSAGES/libc.mo
+/usr/share/locale/sr/LC_MESSAGES/libc.mo
 /usr/share/locale/sv/LC_MESSAGES/libc.mo
 /usr/share/locale/tr/LC_MESSAGES/libc.mo
 /usr/share/locale/uk/LC_MESSAGES/libc.mo
 /usr/share/locale/vi/LC_MESSAGES/libc.mo
 /usr/share/locale/zh_CN/LC_MESSAGES/libc.mo
 /usr/share/locale/zh_TW/LC_MESSAGES/libc.mo
-/var/db/Makefile
-/usr/include/bits/signum-arch.h
-/usr/include/bits/types/struct_msqid_ds.h
-/usr/include/bits/types/struct_semid_ds.h
-/usr/include/bits/types/struct_shmid_ds.h
-/usr/include/rpc/netdb.h
-/usr/include/sys/single_threaded.h
-/usr/share/i18n/locales/ckb_IQ
-/usr/include/bits/struct_stat.h
-/usr/include/bits/types/struct___jmp_buf_tag.h
-/usr/include/bits/types/struct_timeb.h
-/usr/include/sys/platform/x86.h
-/usr/share/locale/sr/LC_MESSAGES/libc.mo
-

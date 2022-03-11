@@ -28,6 +28,7 @@ cd       build
              --disable-fsck          \
 	     --disable-fuse2fs       \
 	     --without-systemd       \
+             --with-systemd-unit-dir=no \
 
 make %{?_smp_mflags}
 
@@ -122,7 +123,6 @@ rm -fr $RPM_BUILD_ROOT/usr/lib/systemd
 /usr/sbin/mklost+found
 /usr/share/et/et_c.awk
 /usr/share/et/et_h.awk
-/usr/share/info/libext2fs.info.gz
 /usr/share/locale/ca/LC_MESSAGES/e2fsprogs.mo
 /usr/share/locale/cs/LC_MESSAGES/e2fsprogs.mo
 /usr/share/locale/da/LC_MESSAGES/e2fsprogs.mo

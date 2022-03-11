@@ -5,7 +5,7 @@ Summary:	Transport Independent RPC library (SunRPC replacement)
 
 License:	GPL-2
 URL:		https://sourceforge.net/projects/libtirpc/
-Source0:	https://deac-riga.dl.sourceforge.net/project/libtirpc/libtirpc/%{version}/libtirpc-%{version}.tar.bz2
+Source0:	https://downloads.sourceforge.net/project/libtirpc/libtirpc/%{version}/libtirpc-%{version}.tar.bz2
 
 #BuildRequires:
 #Requires:

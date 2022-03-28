@@ -1,5 +1,5 @@
 Name:           zlib
-Version:	1.2.11
+Version:	1.2.12
 Release:        1%{?dist}
 Summary:	Zlib
 
@@ -27,7 +27,7 @@ rm -fv %{buildroot}/usr/lib/libz.a
 %files
 /lib/libz.so
 /lib/libz.so.1
-/lib/libz.so.1.2.11
+/lib/libz.so.1.2.12
 /usr/include/zconf.h
 /usr/include/zlib.h
 /usr/lib/pkgconfig/zlib.pc

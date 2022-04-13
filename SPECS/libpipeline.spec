@@ -25,7 +25,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 /usr/include/pipeline.h
-/usr/lib/libpipeline.la
+#/usr/lib/libpipeline.la
 /usr/lib/libpipeline.so
 /usr/lib/libpipeline.so.1
 /usr/lib/libpipeline.so.%{version}

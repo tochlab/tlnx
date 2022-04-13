@@ -23,6 +23,7 @@ make %{?_smp_mflags}
 rm -rf $RPM_BUILD_ROOT
 make install
 rm $RPM_BUILD_ROOT/usr/lib/perl5/5.34/perllocal.pod
+chmod +w $RPM_BUILD_ROOT/usr/lib/perl5/5.34/auto/XML/Parser/Expat/Expat.so
 #if [ -e "%{buildroot}/usr/lib64" ]
 #then
 #mv -f %{buildroot}/usr/lib64 %{buildroot}/usr/lib

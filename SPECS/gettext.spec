@@ -26,6 +26,7 @@ make %{?_smp_mflags}
 %install
 rm -rf $RPM_BUILD_ROOT
 %make_install
+rm -fr %{buildroot}/usr/share/info/dir
 
 %files
 /usr/bin/autopoint
@@ -61,21 +62,21 @@ rm -rf $RPM_BUILD_ROOT
 /usr/lib/gettext/project-id
 /usr/lib/gettext/urlget
 /usr/lib/gettext/user-email
-/usr/lib/libasprintf.la
+#/usr/lib/libasprintf.la
 /usr/lib/libasprintf.so
 /usr/lib/libasprintf.so.0
 /usr/lib/libasprintf.so.0.0.0
 /usr/lib/libgettextlib-0.20.1.so
-/usr/lib/libgettextlib.la
+#/usr/lib/libgettextlib.la
 /usr/lib/libgettextlib.so
-/usr/lib/libgettextpo.la
+#/usr/lib/libgettextpo.la
 /usr/lib/libgettextpo.so
 /usr/lib/libgettextpo.so.0
 /usr/lib/libgettextpo.so.0.5.5
 /usr/lib/libgettextsrc-0.20.1.so
-/usr/lib/libgettextsrc.la
+#/usr/lib/libgettextsrc.la
 /usr/lib/libgettextsrc.so
-/usr/lib/libtextstyle.la
+#/usr/lib/libtextstyle.la
 /usr/lib/libtextstyle.so
 /usr/lib/libtextstyle.so.0
 /usr/lib/libtextstyle.so.0.0.0

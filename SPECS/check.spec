@@ -29,7 +29,7 @@ rm -rf $RPM_BUILD_ROOT/usr/share/info/dir
 /usr/include/check.h
 /usr/include/check_stdint.h
 /usr/lib/libcheck.a
-/usr/lib/libcheck.la
+#/usr/lib/libcheck.la
 /usr/lib/libcheck.so
 /usr/lib/libcheck.so.0
 /usr/lib/libcheck.so.0.0.0

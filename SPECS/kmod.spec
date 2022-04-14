@@ -34,7 +34,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/libkmod.so.2
 /lib/libkmod.so.2.3.4
 /usr/include/libkmod.h
-/usr/lib/libkmod.la
+#/usr/lib/libkmod.la
 /usr/lib/libkmod.so
 /usr/lib/pkgconfig/libkmod.pc
 /usr/share/bash-completion/completions/kmod

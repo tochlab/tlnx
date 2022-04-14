@@ -39,7 +39,7 @@ mv %{buildroot}/lib/pkgconfig %{buildroot}/usr/lib/
 
 %files
 /lib/libcrypt.a
-/lib/libcrypt.la
+#/lib/libcrypt.la
 /lib/libcrypt.so
 /lib/libcrypt.so.2
 /lib/libcrypt.so.2.0.0

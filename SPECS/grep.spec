@@ -1,5 +1,5 @@
 Name:           grep 
-Version:	3.4
+Version:	3.7
 Release:        1%{?dist}
 Summary:	GNU regular expression matcher
 
@@ -23,6 +23,7 @@ make check
 %install
 rm -rf $RPM_BUILD_ROOT
 %make_install
+rm -fr %{buildroot}/usr/share/info/dir
 
 %files
 /bin/egrep

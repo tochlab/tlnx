@@ -182,7 +182,7 @@ rm -fr $RPM_BUILD_ROOT/usr/lib/systemd
 /usr/share/man/man8/tune2fs.8.gz
 /usr/share/ss/ct_c.awk
 /usr/share/ss/ct_c.sed
-
+/usr/share/info/libext2fs.info.gz
 
 %changelog
 * Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>

@@ -34,11 +34,11 @@ rm -rf $RPM_BUILD_ROOT/usr/share/info/dir
 /usr/bin/texi2dvi
 /usr/bin/texi2pdf
 /usr/bin/texindex
-/usr/lib/texinfo/MiscXS.la
+#/usr/lib/texinfo/MiscXS.la
 /usr/lib/texinfo/MiscXS.so
-/usr/lib/texinfo/Parsetexi.la
+#/usr/lib/texinfo/Parsetexi.la
 /usr/lib/texinfo/Parsetexi.so
-/usr/lib/texinfo/XSParagraph.la
+#/usr/lib/texinfo/XSParagraph.la
 /usr/lib/texinfo/XSParagraph.so
 /usr/share/info/info-stnd.info.gz
 /usr/share/info/texinfo.info-1.gz

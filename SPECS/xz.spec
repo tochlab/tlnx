@@ -68,7 +68,7 @@ rm -rf $RPM_BUILD_ROOT
 /usr/include/lzma/stream_flags.h
 /usr/include/lzma/version.h
 /usr/include/lzma/vli.h
-/usr/lib/liblzma.la
+#/usr/lib/liblzma.la
 /usr/lib/liblzma.so
 /usr/lib/liblzma.so.5
 /usr/lib/liblzma.so.5.2.5

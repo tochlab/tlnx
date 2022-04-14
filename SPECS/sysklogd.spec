@@ -27,7 +27,7 @@ rm -rf $RPM_BUILD_ROOT
 /sbin/syslogd
 /usr/include/syslog/syslog.h
 /usr/lib/libsyslog.a
-/usr/lib/libsyslog.la
+#/usr/lib/libsyslog.la
 /usr/lib/libsyslog.so
 /usr/lib/libsyslog.so.0
 /usr/lib/libsyslog.so.0.0.0

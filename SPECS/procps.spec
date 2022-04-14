@@ -58,7 +58,7 @@ rm -rf $RPM_BUILD_ROOT
 /usr/include/proc/version.h
 /usr/include/proc/wchan.h
 /usr/include/proc/whattime.h
-/usr/lib/libprocps.la
+#/usr/lib/libprocps.la
 /usr/lib/libprocps.so
 /usr/lib/libprocps.so.8
 /usr/lib/libprocps.so.8.0.2

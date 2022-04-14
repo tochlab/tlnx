@@ -36,7 +36,7 @@ rm -rf $RPM_BUILD_ROOT
 /usr/include/curl/typecheck-gcc.h
 /usr/include/curl/urlapi.h
 /usr/lib/libcurl.a
-/usr/lib/libcurl.la
+#/usr/lib/libcurl.la
 /usr/lib/libcurl.so
 /usr/lib/libcurl.so.4
 /usr/lib/libcurl.so.4.6.0

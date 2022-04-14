@@ -36,7 +36,7 @@ rm -rf $RPM_BUILD_ROOT
 /bin/setfacl
 /usr/include/acl/libacl.h
 /usr/include/sys/acl.h
-/usr/lib/libacl.la
+#/usr/lib/libacl.la
 /usr/lib/libacl.so
 /usr/lib/libacl.so.1
 /usr/lib/libacl.so.1.1.2253

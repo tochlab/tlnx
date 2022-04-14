@@ -68,7 +68,7 @@ mkdir -pv $RPM_BUILD_ROOT/etc/udev/rules.d
 /lib/udev/rules.d/60-persistent-alsa.rules
 /lib/udev/rules.d/60-persistent-input.rules
 /lib/udev/rules.d/60-persistent-storage-tape.rules
-#/lib/udev/rules.d/60-persistent-storage.rules
+/lib/udev/rules.d/60-persistent-storage.rules
 /lib/udev/rules.d/60-persistent-v4l.rules
 /lib/udev/rules.d/60-sensor.rules
 /lib/udev/rules.d/60-serial.rules
@@ -79,7 +79,7 @@ mkdir -pv $RPM_BUILD_ROOT/etc/udev/rules.d
 /lib/udev/rules.d/75-net-description.rules
 /lib/udev/rules.d/75-probe_mtd.rules
 /lib/udev/rules.d/78-sound-card.rules
-#/lib/udev/rules.d/80-drivers.rules
+/lib/udev/rules.d/80-drivers.rules
 /lib/udev/rules.d/80-net-name-slot.rules
 /lib/udev/scsi_id
 /lib/udev/v4l_id
@@ -87,7 +87,7 @@ mkdir -pv $RPM_BUILD_ROOT/etc/udev/rules.d
 /sbin/udevd
 /usr/include/libudev.h
 /usr/include/udev.h
-/usr/lib/libudev.la
+#/usr/lib/libudev.la
 /usr/lib/libudev.so
 /usr/lib/pkgconfig/libudev.pc
 /usr/share/man/man5/udev.conf.5.gz

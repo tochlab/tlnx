@@ -39,7 +39,7 @@ mv %{buildroot}/lib/pkgconfig %{buildroot}/usr/lib/
 /etc/bindresvport.blacklist
 /etc/netconfig
 /lib/libtirpc.a
-/lib/libtirpc.la
+#/lib/libtirpc.la
 /lib/libtirpc.so
 /lib/libtirpc.so.3
 /lib/libtirpc.so.3.0.0

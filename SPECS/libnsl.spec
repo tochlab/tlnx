@@ -49,7 +49,7 @@ rm -rf $RPM_BUILD_ROOT
 /usr/include/rpcsvc/yppasswd.x
 /usr/include/rpcsvc/ypupd.h
 /usr/lib/libnsl.a
-/usr/lib/libnsl.la
+#/usr/lib/libnsl.la
 /usr/lib/libnsl.so
 /usr/lib/libnsl.so.2
 /usr/lib/libnsl.so.2.0.1

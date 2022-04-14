@@ -40,11 +40,11 @@ rm -rf $RPM_BUILD_ROOT
 /usr/include/dbm.h
 /usr/include/gdbm.h
 /usr/include/ndbm.h
-/usr/lib/libgdbm.la
+#/usr/lib/libgdbm.la
 /usr/lib/libgdbm.so
 /usr/lib/libgdbm.so.6
 /usr/lib/libgdbm.so.6.0.0
-/usr/lib/libgdbm_compat.la
+#/usr/lib/libgdbm_compat.la
 /usr/lib/libgdbm_compat.so
 /usr/lib/libgdbm_compat.so.4
 /usr/lib/libgdbm_compat.so.4.0.0

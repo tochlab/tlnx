@@ -40,7 +40,7 @@ rm -rf $RPM_BUILD_ROOT
 /usr/bin/idn2
 /usr/include/idn2.h
 /usr/lib/libidn2.a
-/usr/lib/libidn2.la
+#/usr/lib/libidn2.la
 /usr/lib/libidn2.so
 /usr/lib/libidn2.so.0
 /usr/lib/libidn2.so.0.3.7

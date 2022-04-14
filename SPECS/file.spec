@@ -25,7 +25,7 @@ make install DESTDIR=$RPM_BUILD_ROOT
 %files
 /usr/bin/file
 /usr/include/magic.h
-/usr/lib/libmagic.la
+#/usr/lib/libmagic.la
 /usr/lib/libmagic.so
 /usr/lib/libmagic.so.1
 /usr/lib/libmagic.so.1.0.0

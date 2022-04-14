@@ -39,7 +39,7 @@ rm -rf $RPM_BUILD_ROOT
 /usr/include/archive.h
 /usr/include/archive_entry.h
 /usr/lib/libarchive.a
-/usr/lib/libarchive.la
+#/usr/lib/libarchive.la
 /usr/lib/libarchive.so
 /usr/lib/libarchive.so.13
 /usr/lib/libarchive.so.13.4.3

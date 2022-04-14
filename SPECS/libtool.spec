@@ -33,7 +33,7 @@ rm -rf $RPM_BUILD_ROOT/usr/share/info/dir
 /usr/include/libltdl/lt_system.h
 /usr/include/ltdl.h
 /usr/lib/libltdl.a
-/usr/lib/libltdl.la
+#/usr/lib/libltdl.la
 /usr/lib/libltdl.so
 /usr/lib/libltdl.so.7
 /usr/lib/libltdl.so.7.3.1

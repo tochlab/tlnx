@@ -37,7 +37,7 @@ rm -rf $RPM_BUILD_ROOT
 /usr/include/seccomp-syscalls.h
 /usr/include/seccomp.h
 /usr/lib/libseccomp.a
-/usr/lib/libseccomp.la
+#/usr/lib/libseccomp.la
 /usr/lib/libseccomp.so
 /usr/lib/libseccomp.so.2
 /usr/lib/libseccomp.so.%{version}

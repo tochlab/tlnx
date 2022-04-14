@@ -36,7 +36,7 @@ rm -rf $RPM_BUILD_ROOT
 /usr/bin/psl
 /usr/include/libpsl.h
 /usr/lib/libpsl.a
-/usr/lib/libpsl.la
+#/usr/lib/libpsl.la
 /usr/lib/libpsl.so
 /usr/lib/libpsl.so.5
 /usr/lib/libpsl.so.5.3.2

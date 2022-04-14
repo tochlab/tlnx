@@ -31,6 +31,7 @@ make %{?_smp_mflags}
 %install
 rm -rf $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT
+rm -fr %{buildroot}/usr/share/info/dir
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -39,7 +40,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 /usr/include/mpf2mpfr.h
 /usr/include/mpfr.h
-/usr/lib/libmpfr.la
+#/usr/lib/libmpfr.la
 /usr/lib/libmpfr.so
 /usr/lib/libmpfr.so.6
 /usr/lib/libmpfr.so.6.0.2

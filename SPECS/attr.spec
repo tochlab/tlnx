@@ -37,7 +37,7 @@ rm -rf $RPM_BUILD_ROOT
 /usr/include/attr/attributes.h
 /usr/include/attr/error_context.h
 /usr/include/attr/libattr.h
-/usr/lib/libattr.la
+#/usr/lib/libattr.la
 /usr/lib/libattr.so
 /usr/lib/libattr.so.1
 /usr/lib/libattr.so.1.1.2448

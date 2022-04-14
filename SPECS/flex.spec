@@ -31,7 +31,7 @@ rm -rf $RPM_BUILD_ROOT/usr/share/info/dir
 /usr/bin/flex++
 /usr/include/FlexLexer.h
 /usr/lib/libfl.a
-/usr/lib/libfl.la
+#/usr/lib/libfl.la
 /usr/lib/libfl.so
 /usr/lib/libfl.so.2
 /usr/lib/libfl.so.2.0.0

@@ -80,7 +80,6 @@ rm -rf $RPM_BUILD_ROOT
 /sbin/mkfs.minix
 /sbin/mkswap
 /sbin/pivot_root
-/sbin/raw
 /sbin/sfdisk
 /sbin/sulogin
 /sbin/swaplabel
@@ -150,15 +149,15 @@ rm -rf $RPM_BUILD_ROOT
 /usr/include/libmount/libmount.h
 /usr/include/libsmartcols/libsmartcols.h
 /usr/include/uuid/uuid.h
-/usr/lib/libblkid.la
+#/usr/lib/libblkid.la
 /usr/lib/libblkid.so
-/usr/lib/libfdisk.la
+#/usr/lib/libfdisk.la
 /usr/lib/libfdisk.so
-/usr/lib/libmount.la
+#/usr/lib/libmount.la
 /usr/lib/libmount.so
-/usr/lib/libsmartcols.la
+#/usr/lib/libsmartcols.la
 /usr/lib/libsmartcols.so
-/usr/lib/libuuid.la
+#/usr/lib/libuuid.la
 /usr/lib/libuuid.so
 /usr/lib/pkgconfig/blkid.pc
 /usr/lib/pkgconfig/fdisk.pc
@@ -240,7 +239,6 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/bash-completion/completions/partx
 /usr/share/bash-completion/completions/pivot_root
 /usr/share/bash-completion/completions/prlimit
-/usr/share/bash-completion/completions/raw
 /usr/share/bash-completion/completions/readprofile
 /usr/share/bash-completion/completions/rename
 /usr/share/bash-completion/completions/renice
@@ -403,7 +401,6 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/man/man8/mount.8.gz
 /usr/share/man/man8/partx.8.gz
 /usr/share/man/man8/pivot_root.8.gz
-/usr/share/man/man8/raw.8.gz
 /usr/share/man/man8/readprofile.8.gz
 /usr/share/man/man8/resizepart.8.gz
 /usr/share/man/man8/rfkill.8.gz

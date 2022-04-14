@@ -36,7 +36,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 /usr/include/popt.h
 /usr/lib/libpopt.a
-/usr/lib/libpopt.la
+#/usr/lib/libpopt.la
 /usr/lib/libpopt.so
 /usr/lib/libpopt.so.0
 /usr/lib/libpopt.so.0.0.1

@@ -34,6 +34,60 @@ make %{?_smp_mflags}
 %install
 rm -rf $RPM_BUILD_ROOT
 %make_install
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/CORE/libperl.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Devel/Peek/Peek.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Digest/MD5/MD5.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Digest/SHA/SHA.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Encode/Byte/Byte.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Encode/CN/CN.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Encode/EBCDIC/EBCDIC.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/SDBM_File/SDBM_File.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Socket/Socket.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Encode/JP/JP.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Storable/Storable.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Sys/Hostname/Hostname.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Sys/Syslog/Syslog.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/threads/shared/shared.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Encode/KR/KR.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/threads/threads.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Encode/Symbol/Symbol.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Time/Piece/Piece.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Time/HiRes/HiRes.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Encode/TW/TW.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Encode/Unicode/Unicode.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Unicode/Collate/Collate.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Encode/Encode.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Unicode/Normalize/Normalize.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Fcntl/Fcntl.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Math/BigInt/FastCalc/FastCalc.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/File/DosGlob/DosGlob.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/File/Glob/Glob.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Filter/Util/Call/Call.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/GDBM_File/GDBM_File.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Hash/Util/FieldHash/FieldHash.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Hash/Util/Util.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/I18N/Langinfo/Langinfo.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/IPC/SysV/SysV.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/List/Util/Util.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/MIME/Base64/Base64.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/mro/mro.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/NDBM_File/NDBM_File.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Opcode/Opcode.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/PerlIO/encoding/encoding.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/PerlIO/mmap/mmap.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/PerlIO/scalar/scalar.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/PerlIO/via/via.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/POSIX/POSIX.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/re/re.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/IO/IO.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/attributes/attributes.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Cwd/Cwd.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Data/Dumper/Dumper.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/B/B.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/DB_File/DB_File.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Compress/Raw/Zlib/Zlib.so
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Compress/Raw/Bzip2/Bzip2.so
+
 
 %files
 /usr/bin/corelist

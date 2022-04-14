@@ -1,5 +1,5 @@
 Name: linux-headers
-Version: 5.10.79
+Version: 5.10.110
 Release: 1
 Summary: Header files for the Linux kernel for use by glibc
 License: GPLv2

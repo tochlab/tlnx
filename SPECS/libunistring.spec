@@ -54,7 +54,7 @@ rm -rf $RPM_BUILD_ROOT
 /usr/include/uniwbrk.h
 /usr/include/uniwidth.h
 /usr/lib/libunistring.a
-/usr/lib/libunistring.la
+#/usr/lib/libunistring.la
 /usr/lib/libunistring.so
 /usr/lib/libunistring.so.2
 /usr/lib/libunistring.so.2.1.0

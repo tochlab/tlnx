@@ -31,7 +31,7 @@ rm -rf $RPM_BUILD_ROOT
 /usr/include/expat.h
 /usr/include/expat_config.h
 /usr/include/expat_external.h
-/usr/lib/libexpat.la
+#/usr/lib/libexpat.la
 /usr/lib/libexpat.so
 /usr/lib/libexpat.so.1
 /usr/lib/libexpat.so.1.6.11

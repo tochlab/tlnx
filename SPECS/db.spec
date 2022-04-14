@@ -78,7 +78,7 @@ cd build
 /usr/include/db_185.h
 /usr/include/db_cxx.h
 /usr/lib/libdb-5.3.a
-/usr/lib/libdb-5.3.la
+#/usr/lib/libdb-5.3.la
 /usr/lib/libdb-5.3.so
 /usr/lib/libdb-5.so
 /usr/lib/libdb.a

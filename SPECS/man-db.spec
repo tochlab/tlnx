@@ -45,10 +45,10 @@ rm -rf $RPM_BUILD_ROOT
 /usr/bin/manpath
 /usr/bin/whatis
 /usr/lib/man-db/libman-%{version}.so
-/usr/lib/man-db/libman.la
+#/usr/lib/man-db/libman.la
 /usr/lib/man-db/libman.so
 /usr/lib/man-db/libmandb-%{version}.so
-/usr/lib/man-db/libmandb.la
+#/usr/lib/man-db/libmandb.la
 /usr/lib/man-db/libmandb.so
 /usr/libexec/man-db/globbing
 /usr/libexec/man-db/manconv

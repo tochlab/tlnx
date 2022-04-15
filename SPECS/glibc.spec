@@ -1,5 +1,5 @@
 Name:           glibc
-Version:	2.33
+Version:	2.34
 Release:        1
 Summary:	GNU libc C library
 
@@ -27,14 +27,13 @@ cd build
 	     --enable-bind-now \
 	     --disable-profile \
 	     --without-gd \
-	     --with-headers=/tmp/usr/include/ \
 	     --sysconfdir=/etc \
 	     --localstatedir=/var \
 	     --libdir=/usr/lib \
 	     --mandir=/usr/share/man \
 	     --infodir=/usr/share/info \
 	     --libexecdir=/usr/lib/misc/glibc \
-	     --enable-crypt \
+	     --disable-crypt \
 	     --disable-systemtap \
 	     --disable-nscd \
 	     --disable-timezone-tools \
@@ -53,52 +52,64 @@ mkdir -pv %{buildroot}/var/cache/nscd
 echo /usr/local/lib > %{buildroot}/etc/ld.so.conf
 echo include ld.so.conf.d/*.conf >> %{buildroot}/etc/ld.so.conf
 rm -rf %{buildroot}/usr/share/info/dir
+mv %{buildroot}/usr/lib/lib* %{buildroot}/lib/
+
+%post
+chmod +x /lib/libc.so.6
+chmod +x /lib/ld-linux-x86-64.so.2
+
 
 %files
 /etc/ld.so.cache
 /etc/ld.so.conf
 /etc/nscd.conf
 /etc/rpc
-/lib/ld-2.33.so
-/lib/ld-linux-x86-64.so.2
-/lib/libBrokenLocale-2.33.so
+%attr(755, root, root) /lib/ld-linux-x86-64.so.2
+/lib/libBrokenLocale.a
+/lib/libBrokenLocale.so
 /lib/libBrokenLocale.so.1
 /lib/libSegFault.so
-/lib/libanl-2.33.so
+/lib/libanl.a
+/lib/libanl.so
 /lib/libanl.so.1
-/lib/libc-2.33.so
-/lib/libc.so.6
-/lib/libcrypt-2.33.so
-/lib/libcrypt.so.1
-/lib/libdl-2.33.so
+/lib/libc.a
+/lib/libc.so
+%attr(755, root, root) /lib/libc.so.6
+/lib/libc_malloc_debug.so
+/lib/libc_malloc_debug.so.0
+/lib/libc_nonshared.a
+/lib/libdl.a
 /lib/libdl.so.2
-/lib/libm-2.33.so
+/lib/libg.a
+/lib/libm-2.34.a
+/lib/libm.a
+/lib/libm.so
 /lib/libm.so.6
+/lib/libmcheck.a
 /lib/libmemusage.so
-/lib/libmvec-2.33.so
+/lib/libmvec.a
+/lib/libmvec.so
 /lib/libmvec.so.1
-/lib/libnsl-2.33.so
 /lib/libnsl.so.1
-/lib/libnss_compat-2.33.so
+/lib/libnss_compat.so
 /lib/libnss_compat.so.2
-/lib/libnss_db-2.33.so
+/lib/libnss_db.so
 /lib/libnss_db.so.2
-/lib/libnss_dns-2.33.so
 /lib/libnss_dns.so.2
-/lib/libnss_files-2.33.so
 /lib/libnss_files.so.2
-/lib/libnss_hesiod-2.33.so
+/lib/libnss_hesiod.so
 /lib/libnss_hesiod.so.2
 /lib/libpcprofile.so
-/lib/libpthread-2.33.so
+/lib/libpthread.a
 /lib/libpthread.so.0
-/lib/libresolv-2.33.so
+/lib/libresolv.a
+/lib/libresolv.so
 /lib/libresolv.so.2
-/lib/librt-2.33.so
+/lib/librt.a
 /lib/librt.so.1
-/lib/libthread_db-1.0.so
+/lib/libthread_db.so
 /lib/libthread_db.so.1
-/lib/libutil-2.33.so
+/lib/libutil.a
 /lib/libutil.so.1
 /sbin/ldconfig
 /sbin/sln
@@ -194,6 +205,7 @@ rm -rf %{buildroot}/usr/share/info/dir
 /usr/include/bits/msq.h
 /usr/include/bits/netdb.h
 /usr/include/bits/param.h
+/usr/include/bits/platform/x86.h
 /usr/include/bits/poll.h
 /usr/include/bits/poll2.h
 /usr/include/bits/posix1_lim.h
@@ -204,6 +216,8 @@ rm -rf %{buildroot}/usr/share/info/dir
 /usr/include/bits/procfs-id.h
 /usr/include/bits/procfs-prregset.h
 /usr/include/bits/procfs.h
+/usr/include/bits/pthread_stack_min-dynamic.h
+/usr/include/bits/pthread_stack_min.h
 /usr/include/bits/pthreadtypes-arch.h
 /usr/include/bits/pthreadtypes.h
 /usr/include/bits/ptrace-shared.h
@@ -228,6 +242,7 @@ rm -rf %{buildroot}/usr/share/info/dir
 /usr/include/bits/signum-arch.h
 /usr/include/bits/signum-generic.h
 /usr/include/bits/sigstack.h
+/usr/include/bits/sigstksz.h
 /usr/include/bits/sigthread.h
 /usr/include/bits/sockaddr.h
 /usr/include/bits/socket-constants.h
@@ -256,6 +271,7 @@ rm -rf %{buildroot}/usr/share/info/dir
 /usr/include/bits/struct_mutex.h
 /usr/include/bits/struct_rwlock.h
 /usr/include/bits/struct_stat.h
+/usr/include/bits/struct_stat_time64_helper.h
 /usr/include/bits/syscall.h
 /usr/include/bits/syslog-ldbl.h
 /usr/include/bits/syslog-path.h
@@ -303,11 +319,17 @@ rm -rf %{buildroot}/usr/share/info/dir
 /usr/include/bits/types/struct___jmp_buf_tag.h
 /usr/include/bits/types/struct_iovec.h
 /usr/include/bits/types/struct_itimerspec.h
+/usr/include/bits/types/struct_msqid64_ds.h
+/usr/include/bits/types/struct_msqid64_ds_helper.h
 /usr/include/bits/types/struct_msqid_ds.h
 /usr/include/bits/types/struct_osockaddr.h
 /usr/include/bits/types/struct_rusage.h
 /usr/include/bits/types/struct_sched_param.h
+/usr/include/bits/types/struct_semid64_ds.h
+/usr/include/bits/types/struct_semid64_ds_helper.h
 /usr/include/bits/types/struct_semid_ds.h
+/usr/include/bits/types/struct_shmid64_ds.h
+/usr/include/bits/types/struct_shmid64_ds_helper.h
 /usr/include/bits/types/struct_shmid_ds.h
 /usr/include/bits/types/struct_sigstack.h
 /usr/include/bits/types/struct_statx.h
@@ -339,7 +361,6 @@ rm -rf %{buildroot}/usr/share/info/dir
 /usr/include/byteswap.h
 /usr/include/complex.h
 /usr/include/cpio.h
-/usr/include/crypt.h
 /usr/include/ctype.h
 /usr/include/dirent.h
 /usr/include/dlfcn.h
@@ -351,6 +372,7 @@ rm -rf %{buildroot}/usr/share/info/dir
 /usr/include/error.h
 /usr/include/execinfo.h
 /usr/include/fcntl.h
+/usr/include/features-time64.h
 /usr/include/features.h
 /usr/include/fenv.h
 /usr/include/finclude/math-vector-fortran.h
@@ -820,6 +842,7 @@ rm -rf %{buildroot}/usr/share/info/dir
 /usr/lib/gconv/UTF-7.so
 /usr/lib/gconv/VISCII.so
 /usr/lib/gconv/gconv-modules
+/usr/lib/gconv/gconv-modules.d/gconv-modules-extra.conf
 /usr/lib/gconv/libCNS.so
 /usr/lib/gconv/libGB.so
 /usr/lib/gconv/libISOIR165.so
@@ -827,38 +850,6 @@ rm -rf %{buildroot}/usr/share/info/dir
 /usr/lib/gconv/libJISX0213.so
 /usr/lib/gconv/libKSC.so
 /usr/lib/gcrt1.o
-/usr/lib/libBrokenLocale.a
-/usr/lib/libBrokenLocale.so
-/usr/lib/libanl.a
-/usr/lib/libanl.so
-/usr/lib/libc.a
-/usr/lib/libc.so
-/usr/lib/libc_nonshared.a
-/usr/lib/libcrypt.a
-/usr/lib/libcrypt.so
-/usr/lib/libdl.a
-/usr/lib/libdl.so
-/usr/lib/libg.a
-/usr/lib/libm-2.33.a
-/usr/lib/libm.a
-/usr/lib/libm.so
-/usr/lib/libmcheck.a
-/usr/lib/libmvec.a
-/usr/lib/libmvec.so
-/usr/lib/libnss_compat.so
-/usr/lib/libnss_db.so
-/usr/lib/libnss_dns.so
-/usr/lib/libnss_files.so
-/usr/lib/libnss_hesiod.so
-/usr/lib/libpthread.a
-/usr/lib/libpthread.so
-/usr/lib/libresolv.a
-/usr/lib/libresolv.so
-/usr/lib/librt.a
-/usr/lib/librt.so
-/usr/lib/libthread_db.so
-/usr/lib/libutil.a
-/usr/lib/libutil.so
 /usr/lib/misc/glibc/getconf/POSIX_V6_LP64_OFF64
 /usr/lib/misc/glibc/getconf/POSIX_V7_LP64_OFF64
 /usr/lib/misc/glibc/getconf/XBS5_LP64_OFF64
@@ -1451,8 +1442,24 @@ rm -rf %{buildroot}/usr/share/info/dir
 /usr/share/i18n/locales/zh_SG
 /usr/share/i18n/locales/zh_TW
 /usr/share/i18n/locales/zu_ZA
-/usr/share/locale/locale.alias
-/var/db/Makefile
+/usr/share/info/libc.info-1.gz
+/usr/share/info/libc.info-10.gz
+/usr/share/info/libc.info-11.gz
+/usr/share/info/libc.info-12.gz
+/usr/share/info/libc.info-13.gz
+/usr/share/info/libc.info-14.gz
+/usr/share/info/libc.info-15.gz
+/usr/share/info/libc.info-16.gz
+/usr/share/info/libc.info-17.gz
+/usr/share/info/libc.info-2.gz
+/usr/share/info/libc.info-3.gz
+/usr/share/info/libc.info-4.gz
+/usr/share/info/libc.info-5.gz
+/usr/share/info/libc.info-6.gz
+/usr/share/info/libc.info-7.gz
+/usr/share/info/libc.info-8.gz
+/usr/share/info/libc.info-9.gz
+/usr/share/info/libc.info.gz
 /usr/share/locale/be/LC_MESSAGES/libc.mo
 /usr/share/locale/bg/LC_MESSAGES/libc.mo
 /usr/share/locale/ca/LC_MESSAGES/libc.mo
@@ -1473,6 +1480,7 @@ rm -rf %{buildroot}/usr/share/info/dir
 /usr/share/locale/it/LC_MESSAGES/libc.mo
 /usr/share/locale/ja/LC_MESSAGES/libc.mo
 /usr/share/locale/ko/LC_MESSAGES/libc.mo
+/usr/share/locale/locale.alias
 /usr/share/locale/lt/LC_MESSAGES/libc.mo
 /usr/share/locale/nb/LC_MESSAGES/libc.mo
 /usr/share/locale/nl/LC_MESSAGES/libc.mo
@@ -1490,21 +1498,5 @@ rm -rf %{buildroot}/usr/share/info/dir
 /usr/share/locale/vi/LC_MESSAGES/libc.mo
 /usr/share/locale/zh_CN/LC_MESSAGES/libc.mo
 /usr/share/locale/zh_TW/LC_MESSAGES/libc.mo
-/usr/share/info/libc.info-1.gz
-/usr/share/info/libc.info-10.gz
-/usr/share/info/libc.info-11.gz
-/usr/share/info/libc.info-12.gz
-/usr/share/info/libc.info-13.gz
-/usr/share/info/libc.info-14.gz
-/usr/share/info/libc.info-15.gz
-/usr/share/info/libc.info-16.gz
-/usr/share/info/libc.info-17.gz
-/usr/share/info/libc.info-2.gz
-/usr/share/info/libc.info-3.gz
-/usr/share/info/libc.info-4.gz
-/usr/share/info/libc.info-5.gz
-/usr/share/info/libc.info-6.gz
-/usr/share/info/libc.info-7.gz
-/usr/share/info/libc.info-8.gz
-/usr/share/info/libc.info-9.gz
-/usr/share/info/libc.info.gz
+/var/db/Makefile
+

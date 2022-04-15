@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 buildlist=$(find ./SPECS/ -name \*.spec)
 rm -f buildlist.txt
 for s in $buildlist

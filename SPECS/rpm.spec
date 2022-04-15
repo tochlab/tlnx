@@ -1,11 +1,11 @@
 Name:           rpm
-Version:	4.16.1
+Version:	4.17.0
 Release:        1%{?dist}
 Summary:	Red Hat Package Management Utils
 
 License:	GPL-2 LGPL-2
 URL:		https://rpm.org
-Source0:	http://ftp.rpm.org/releases/rpm-4.16.x/rpm-%{version}.tar.bz2
+Source0:	http://ftp.rpm.org/releases/rpm-4.17.x/rpm-%{version}.tar.bz2
 
 #BuildRequires:
 #Requires:
@@ -16,7 +16,7 @@ Source0:	http://ftp.rpm.org/releases/rpm-4.16.x/rpm-%{version}.tar.bz2
 %setup -q
 
 %build
-%configure --without-lua --without-dbus --libdir=/usr/lib --with-crypto=openssl --enable-sqlite=no --enable-zstd=no --disable-inhibit-plugin
+%configure --with-lua=lua54 --without-dbus --libdir=/usr/lib --with-crypto=openssl --enable-sqlite=no --enable-zstd=no --disable-inhibit-plugin
 make %{?_smp_mflags}
 
 %install
@@ -75,19 +75,19 @@ rm -rf $RPM_BUILD_ROOT
 #/usr/lib/librpm.la
 /usr/lib/librpm.so
 /usr/lib/librpm.so.9
-/usr/lib/librpm.so.9.1.1
+/usr/lib/librpm.so.9.2.0
 #/usr/lib/librpmbuild.la
 /usr/lib/librpmbuild.so
 /usr/lib/librpmbuild.so.9
-/usr/lib/librpmbuild.so.9.1.1
+/usr/lib/librpmbuild.so.9.2.0
 #/usr/lib/librpmio.la
 /usr/lib/librpmio.so
 /usr/lib/librpmio.so.9
-/usr/lib/librpmio.so.9.1.1
+/usr/lib/librpmio.so.9.2.0
 #/usr/lib/librpmsign.la
 /usr/lib/librpmsign.so
 /usr/lib/librpmsign.so.9
-/usr/lib/librpmsign.so.9.1.1
+/usr/lib/librpmsign.so.9.2.0
 /usr/lib/pkgconfig/rpm.pc
 #/usr/lib/rpm-plugins/ima.la
 /usr/lib/rpm-plugins/ima.so
@@ -98,39 +98,39 @@ rm -rf $RPM_BUILD_ROOT
 #/usr/lib/rpm-plugins/systemd_inhibit.la
 #/usr/lib/rpm-plugins/systemd_inhibit.so
 /usr/lib/rpm/brp-compress
-/usr/lib/rpm/brp-java-gcjcompile
-/usr/lib/rpm/brp-python-bytecompile
-/usr/lib/rpm/brp-python-hardlink
+#/usr/lib/rpm/brp-java-gcjcompile
+#/usr/lib/rpm/brp-python-bytecompile
+#/usr/lib/rpm/brp-python-hardlink
 /usr/lib/rpm/brp-strip
 /usr/lib/rpm/brp-strip-comment-note
-/usr/lib/rpm/brp-strip-shared
+#/usr/lib/rpm/brp-strip-shared
 /usr/lib/rpm/brp-strip-static-archive
 /usr/lib/rpm/check-buildroot
 /usr/lib/rpm/check-files
 /usr/lib/rpm/check-prereqs
 /usr/lib/rpm/check-rpaths
 /usr/lib/rpm/check-rpaths-worker
-/usr/lib/rpm/debugedit
+#/usr/lib/rpm/debugedit
 /usr/lib/rpm/elfdeps
 /usr/lib/rpm/fileattrs/debuginfo.attr
 /usr/lib/rpm/fileattrs/desktop.attr
 /usr/lib/rpm/fileattrs/elf.attr
 /usr/lib/rpm/fileattrs/font.attr
-/usr/lib/rpm/fileattrs/libtool.attr
+#/usr/lib/rpm/fileattrs/libtool.attr
 /usr/lib/rpm/fileattrs/metainfo.attr
 /usr/lib/rpm/fileattrs/ocaml.attr
 /usr/lib/rpm/fileattrs/perl.attr
 /usr/lib/rpm/fileattrs/perllib.attr
 /usr/lib/rpm/fileattrs/pkgconfig.attr
-/usr/lib/rpm/fileattrs/python.attr
-/usr/lib/rpm/fileattrs/pythondist.attr
+#/usr/lib/rpm/fileattrs/python.attr
+#/usr/lib/rpm/fileattrs/pythondist.attr
 /usr/lib/rpm/fileattrs/script.attr
-/usr/lib/rpm/find-debuginfo.sh
+#/usr/lib/rpm/find-debuginfo.sh
 /usr/lib/rpm/find-lang.sh
 /usr/lib/rpm/find-provides
 /usr/lib/rpm/find-requires
 /usr/lib/rpm/fontconfig.prov
-/usr/lib/rpm/libtooldeps.sh
+#/usr/lib/rpm/libtooldeps.sh
 /usr/lib/rpm/macros
 /usr/lib/rpm/mkinstalldirs
 /usr/lib/rpm/ocamldeps.sh
@@ -203,7 +203,7 @@ rm -rf $RPM_BUILD_ROOT
 /usr/lib/rpm/platform/sparcv9-linux/macros
 /usr/lib/rpm/platform/sparcv9v-linux/macros
 /usr/lib/rpm/platform/x86_64-linux/macros
-/usr/lib/rpm/pythondistdeps.py
+#/usr/lib/rpm/pythondistdeps.py
 /usr/lib/rpm/rpm.daily
 /usr/lib/rpm/rpm.log
 /usr/lib/rpm/rpm.supp
@@ -211,10 +211,10 @@ rm -rf $RPM_BUILD_ROOT
 /usr/lib/rpm/rpmdb_dump
 /usr/lib/rpm/rpmdb_load
 /usr/lib/rpm/rpmdeps
-/usr/lib/rpm/rpmpopt-4.16.1
+/usr/lib/rpm/rpmpopt-4.17.0
 /usr/lib/rpm/rpmrc
 /usr/lib/rpm/script.req
-/usr/lib/rpm/sepdebugcrcfix
+#/usr/lib/rpm/sepdebugcrcfix
 /usr/lib/rpm/tgpg
 /usr/share/locale/ar/LC_MESSAGES/rpm.mo
 /usr/share/locale/br/LC_MESSAGES/rpm.mo
@@ -284,4 +284,12 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/man/ru/man8/rpm.8.gz
 /usr/share/man/ru/man8/rpm2cpio.8.gz
 /usr/share/man/sk/man8/rpm.8.gz
+/usr/lib/rpm-plugins/fsverity.so
+/usr/lib/rpm/brp-elfperms
+/usr/lib/rpm/brp-remove-la-files
+/usr/share/locale/gu/LC_MESSAGES/rpm.mo
+/usr/share/locale/he/LC_MESSAGES/rpm.mo
+/usr/share/locale/pa/LC_MESSAGES/rpm.mo
+/usr/share/locale/si/LC_MESSAGES/rpm.mo
+
 

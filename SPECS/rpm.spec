@@ -1,6 +1,6 @@
 Name:           rpm
 Version:	4.17.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:	Red Hat Package Management Utils
 
 License:	GPL-2 LGPL-2
@@ -16,7 +16,7 @@ Source0:	http://ftp.rpm.org/releases/rpm-4.17.x/rpm-%{version}.tar.bz2
 %setup -q
 
 %build
-%configure --with-lua=lua54 --without-dbus --libdir=/usr/lib --with-crypto=openssl --enable-sqlite=no --enable-zstd=no --disable-inhibit-plugin
+%configure --without-dbus --libdir=/usr/lib --with-crypto=openssl --enable-sqlite --enable-zstd=no --disable-inhibit-plugin
 make %{?_smp_mflags}
 
 %install

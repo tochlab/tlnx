@@ -6,6 +6,7 @@ Summary:	A powerful light-weight programming language designed for extending app
 License:	MIT
 URL:		https://www.lua.org/
 Source0:	https://www.lua.org/ftp/lua-%{version}.tar.gz
+Patch0:         lua-makefile.patch
 
 #BuildRequires:
 #Requires:
@@ -14,6 +15,7 @@ Source0:	https://www.lua.org/ftp/lua-%{version}.tar.gz
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 make %{?_smp_mflags}
@@ -40,6 +42,7 @@ rm -rf $RPM_BUILD_ROOT
 /usr/include/luaconf.h
 /usr/include/lualib.h
 /usr/lib/liblua.a
+/usr/lib/liblua.so
 /usr/man/man1/lua.1.gz
 /usr/man/man1/luac.1.gz
 

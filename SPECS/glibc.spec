@@ -52,11 +52,8 @@ mkdir -pv %{buildroot}/var/cache/nscd
 echo /usr/local/lib > %{buildroot}/etc/ld.so.conf
 echo include ld.so.conf.d/*.conf >> %{buildroot}/etc/ld.so.conf
 rm -rf %{buildroot}/usr/share/info/dir
-mv %{buildroot}/usr/lib/lib* %{buildroot}/lib/
-
-%post
-chmod +x /lib/libc.so.6
-chmod +x /lib/ld-linux-x86-64.so.2
+mv %{buildroot}/usr/lib/libc.so %{buildroot}/lib
+mv %{buildroot}/usr/lib/libc.a %{buildroot}/lib
 
 
 %files
@@ -65,51 +62,51 @@ chmod +x /lib/ld-linux-x86-64.so.2
 /etc/nscd.conf
 /etc/rpc
 %attr(755, root, root) /lib/ld-linux-x86-64.so.2
-/lib/libBrokenLocale.a
-/lib/libBrokenLocale.so
+/usr/lib/libBrokenLocale.a
+/usr/lib/libBrokenLocale.so
 /lib/libBrokenLocale.so.1
 /lib/libSegFault.so
-/lib/libanl.a
-/lib/libanl.so
+/usr/lib/libanl.a
+/usr/lib/libanl.so
 /lib/libanl.so.1
 /lib/libc.a
 /lib/libc.so
 %attr(755, root, root) /lib/libc.so.6
-/lib/libc_malloc_debug.so
+/usr/lib/libc_malloc_debug.so
 /lib/libc_malloc_debug.so.0
-/lib/libc_nonshared.a
-/lib/libdl.a
+/usr/lib/libc_nonshared.a
+/usr/lib/libdl.a
 /lib/libdl.so.2
-/lib/libg.a
-/lib/libm-2.34.a
-/lib/libm.a
-/lib/libm.so
+/usr/lib/libg.a
+/usr/lib/libm-%{version}.a
+/usr/lib/libm.a
+/usr/lib/libm.so
 /lib/libm.so.6
-/lib/libmcheck.a
+/usr/lib/libmcheck.a
 /lib/libmemusage.so
-/lib/libmvec.a
-/lib/libmvec.so
+/usr/lib/libmvec.a
+/usr/lib/libmvec.so
 /lib/libmvec.so.1
 /lib/libnsl.so.1
-/lib/libnss_compat.so
+/usr/lib/libnss_compat.so
 /lib/libnss_compat.so.2
-/lib/libnss_db.so
+/usr/lib/libnss_db.so
 /lib/libnss_db.so.2
 /lib/libnss_dns.so.2
 /lib/libnss_files.so.2
-/lib/libnss_hesiod.so
+/usr/lib/libnss_hesiod.so
 /lib/libnss_hesiod.so.2
 /lib/libpcprofile.so
-/lib/libpthread.a
+/usr/lib/libpthread.a
 /lib/libpthread.so.0
-/lib/libresolv.a
-/lib/libresolv.so
+/usr/lib/libresolv.a
+/usr/lib/libresolv.so
 /lib/libresolv.so.2
-/lib/librt.a
+/usr/lib/librt.a
 /lib/librt.so.1
-/lib/libthread_db.so
+/usr/lib/libthread_db.so
 /lib/libthread_db.so.1
-/lib/libutil.a
+/usr/lib/libutil.a
 /lib/libutil.so.1
 /sbin/ldconfig
 /sbin/sln

@@ -1,5 +1,5 @@
 Name:           binutils
-Version:	2.37
+Version:	2.38
 Release:        1%{?dist}
 Summary:	The GNU Binutils are a collection of binary tools.
 
@@ -358,5 +358,6 @@ rm -rf $RPM_BUILD_ROOT/usr/share/info/dir
 /usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_x86_64.xwe
 /usr/lib/bfd-plugins/libdep.so
 /usr/share/locale/sr/LC_MESSAGES/gold.mo
+/usr/share/info/ctf-spec.info.gz
 
 %changelog

@@ -54,6 +54,7 @@ rm -fr %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed/README 
    %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed/schily/scg \
    %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed/scsilib \
    %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed/winpr2/winpr/platform.h \
+   %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed/sys/rseq.h
    
 mv %{buildroot}/usr/lib64/* %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/
 mkdir -p %{buildroot}/etc/ld.so.conf.d

@@ -1,5 +1,5 @@
 Name:           glibc
-Version:	2.34
+Version:	2.35
 Release:        1
 Summary:	GNU libc C library
 
@@ -65,7 +65,6 @@ mv %{buildroot}/usr/lib/libc.a %{buildroot}/lib
 /usr/lib/libBrokenLocale.a
 /usr/lib/libBrokenLocale.so
 /lib/libBrokenLocale.so.1
-/lib/libSegFault.so
 /usr/lib/libanl.a
 /usr/lib/libanl.so
 /lib/libanl.so.1
@@ -110,7 +109,6 @@ mv %{buildroot}/usr/lib/libc.a %{buildroot}/lib
 /lib/libutil.so.1
 /sbin/ldconfig
 /sbin/sln
-/usr/bin/catchsegv
 /usr/bin/gencat
 /usr/bin/getconf
 /usr/bin/getent
@@ -1496,4 +1494,16 @@ mv %{buildroot}/usr/lib/libc.a %{buildroot}/lib
 /usr/share/locale/zh_CN/LC_MESSAGES/libc.mo
 /usr/share/locale/zh_TW/LC_MESSAGES/libc.mo
 /var/db/Makefile
+/usr/bin/ld.so
+/usr/include/bits/atomic_wide_counter.h
+/usr/include/bits/dl_find_object.h
+/usr/include/bits/link_lavcurrent.h
+/usr/include/bits/rseq.h
+/usr/include/sys/rseq.h
+/usr/lib/grcrt1.o
+/usr/lib/rcrt1.o
+/usr/share/i18n/locales/C
+/usr/share/i18n/locales/ab_GE
+/usr/share/info/libc.info-18.gz
+
 

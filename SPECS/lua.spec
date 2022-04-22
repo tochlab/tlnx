@@ -25,7 +25,8 @@ rm -rf $RPM_BUILD_ROOT
 %make_install INSTALL_TOP=%{buildroot}/usr
 %{__rm} -f %{buildroot}/usr/share/info/dir
 
-#%post
+%post
+ln -sf /usr/lib/liblua.so /usr/lib/liblua5.4.so.0
 #/sbin/ldconfig
 #/sbin/install-info /usr/share/info/DevIL_manual.info.gz /usr/share/info/dir 2> /dev/null || :
 

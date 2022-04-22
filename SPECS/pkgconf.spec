@@ -23,6 +23,9 @@ make %{?_smp_mflags}
 rm -rf $RPM_BUILD_ROOT
 %make_install
 
+%post
+ln -sf /usr/bin/pkgconf /usr/bin/pkg-config
+
 %files
 /usr/bin/pkgconf
 /usr/include/pkgconf/libpkgconf/bsdstubs.h

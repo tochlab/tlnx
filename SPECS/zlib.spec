@@ -14,7 +14,7 @@ Zlib compress library
 %setup -q
 
 %build
-./configure --prefix=/usr --sharedlibdir=/lib/ --64 --shared --with-pkg-config-libdir=/usr/lib/pkgconfig
+./configure --prefix=/usr --sharedlibdir=/lib/ --64 --shared
 make %{?_smp_mflags}
 make check
 

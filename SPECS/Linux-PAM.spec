@@ -25,6 +25,7 @@ rm -rf $RPM_BUILD_ROOT
 %make_install
 %{__rm} -f %{buildroot}/usr/share/info/dir
 %{__rm} -f %{buildroot}/usr/lib/systemd/system/pam_namespace.service
+mv %{buildroot}/lib/pkgconfig/ %{buildroot}/usr/lib/
 
 #%post
 #/sbin/ldconfig
@@ -56,9 +57,9 @@ rm -rf $RPM_BUILD_ROOT
 /lib/libpamc.so
 /lib/libpamc.so.0
 /lib/libpamc.so.0.82.1
-/lib/pkgconfig/pam.pc
-/lib/pkgconfig/pam_misc.pc
-/lib/pkgconfig/pamc.pc
+/usr/lib/pkgconfig/pam.pc
+/usr/lib/pkgconfig/pam_misc.pc
+/usr/lib/pkgconfig/pamc.pc
 #/lib/security/pam_access.la
 /lib/security/pam_access.so
 #/lib/security/pam_debug.la

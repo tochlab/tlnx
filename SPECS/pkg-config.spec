@@ -19,7 +19,9 @@ Source0:	https://pkgconfig.freedesktop.org/releases/pkg-config-%{version}.tar.gz
 %configure --prefix=/usr              \
             --with-internal-glib       \
             --disable-host-tool        \
-            --docdir=/usr/share/doc/pkg-config-%{version}
+            --docdir=/usr/share/doc/pkg-config-%{version} \
+            --with-pkg-config-libdir=/usr/lib/pkgconfig
+            
 make %{?_smp_mflags}
 
 %install

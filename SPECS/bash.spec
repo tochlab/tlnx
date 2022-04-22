@@ -29,7 +29,8 @@ Source0:	http://ftpmirror.gnu.org/gnu/bash/bash-%{version}.tar.gz
 	    --enable-history \
 	    --without-afs \
 	    --without-bash-malloc \
-	    --with-installed-readline=. 
+	    --with-installed-readline=. \
+	    --with-pkg-config-libdir=/usr/lib/pkgconfig
 make %{?_smp_mflags}
 
 %install

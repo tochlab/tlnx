@@ -52,7 +52,8 @@ Source0:	https://ftpmirror.gnu.org/gnu/ncurses/ncurses-%{version}.tar.gz
 	    --disable-stripping \
 	    --without-pthread \
 	    --without-reentrant \
-	    --enable-overwrite
+	    --enable-overwrite \
+	    --with-pkg-config-libdir=/usr/lib/pkgconfig
 
 make %{?_smp_mflags}
 make install DESTDIR=%{buildroot}
@@ -93,7 +94,8 @@ make install DESTDIR=%{buildroot}
 	    --enable-widec \
 	    --without-pthread \
 	    --without-reentrant \
-	    --enable-overwrite
+	    --enable-overwrite \
+	    --with-pkg-config-libdir=/usr/lib/pkgconfig
 
 make %{?_smp_mflags}
 
@@ -186,12 +188,12 @@ ldconfig
 /usr/lib/libtinfow.so.6
 /usr/lib/libtinfow.so.6.3
 /usr/lib/terminfo
-/usr/lib64/pkgconfig/form.pc
-/usr/lib64/pkgconfig/menu.pc
-/usr/lib64/pkgconfig/ncurses++.pc
-/usr/lib64/pkgconfig/ncurses.pc
-/usr/lib64/pkgconfig/panel.pc
-/usr/lib64/pkgconfig/tinfo.pc
+/usr/lib/pkgconfig/form.pc
+/usr/lib/pkgconfig/menu.pc
+/usr/lib/pkgconfig/ncurses++.pc
+/usr/lib/pkgconfig/ncurses.pc
+/usr/lib/pkgconfig/panel.pc
+/usr/lib/pkgconfig/tinfo.pc
 /usr/share/man/man1/captoinfo.1m.gz
 /usr/share/man/man1/clear.1.gz
 /usr/share/man/man1/infocmp.1m.gz

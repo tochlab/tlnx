@@ -21,7 +21,8 @@ Source0:	https://download-mirror.savannah.gnu.org/releases/attr/attr-2.4.48.tar.
             --bindir=/bin     \
             --disable-static  \
             --sysconfdir=/etc \
-            --docdir=/usr/share/doc/attr-%{version}
+            --docdir=/usr/share/doc/attr-%{version} \
+            --with-pkg-config-libdir=/usr/lib/pkgconfig
 make %{?_smp_mflags}
 #make check
 

@@ -17,7 +17,7 @@ Public client interface for NIS(YP) and NIS+ in a IPv6 ready version
 %setup -q
 
 %build
-%configure --libdir=/usr/lib
+%configure --libdir=/usr/lib --with-pkg-config-libdir=/usr/lib/pkgconfig
 make %{?_smp_mflags}
 
 %install

@@ -16,7 +16,7 @@ Source0:	https://jztkft.dl.sourceforge.net/project/pcre/pcre/%{version}/pcre-%{v
 %setup -q
 
 %build
-%configure --enable-pcre8 --enable-pcre16 --enable-shared --libdir=/usr/lib
+%configure --enable-pcre8 --enable-pcre16 --enable-shared --libdir=/usr/lib --with-pkg-config-libdir=/usr/lib/pkgconfig
 
 make %{?_smp_mflags}
 

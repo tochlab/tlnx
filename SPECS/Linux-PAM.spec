@@ -17,7 +17,7 @@ Linux PAM (Pluggable Authentication Modules for Linux) project
 %setup -q
 
 %build
-%configure --includedir=/usr/include/security --libdir=/lib --sbindir=/sbin --bindir=/bin
+%configure --includedir=/usr/include/security --libdir=/lib --sbindir=/sbin --bindir=/bin --with-pkg-config-libdir=/usr/lib/pkgconfig
 make %{?_smp_mflags}
 
 %install

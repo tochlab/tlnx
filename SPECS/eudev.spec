@@ -25,7 +25,8 @@ Source0:	https://dev.gentoo.org/~blueness/eudev/eudev-%{version}.tar.gz
             --with-rootprefix=      \
             --with-rootlibdir=/lib  \
             --enable-manpages       \
-            --disable-static
+            --disable-static \
+            --with-pkg-config-libdir=/usr/lib/pkgconfig
 make %{?_smp_mflags}
 
 %install

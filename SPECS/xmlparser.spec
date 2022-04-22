@@ -24,6 +24,9 @@ rm -rf $RPM_BUILD_ROOT
 make install
 rm $RPM_BUILD_ROOT/usr/lib/perl5/5.34/perllocal.pod
 chmod +w $RPM_BUILD_ROOT/usr/lib/perl5/5.34/auto/XML/Parser/Expat/Expat.so
+rm -fr %{buildroot}/usr/man/
+rm -fr %{buildroot}/usr/share/man/
+
 #if [ -e "%{buildroot}/usr/lib64" ]
 #then
 #mv -f %{buildroot}/usr/lib64 %{buildroot}/usr/lib
@@ -65,11 +68,4 @@ chmod +w $RPM_BUILD_ROOT/usr/lib/perl5/5.34/auto/XML/Parser/Expat/Expat.so
 /usr/lib/perl5/5.34/XML/Parser/Style/Tree.pm
 /usr/lib/perl5/5.34/auto/XML/Parser/.packlist
 /usr/lib/perl5/5.34/auto/XML/Parser/Expat/Expat.so
-/usr/man/man3/XML::Parser.3pm.gz
-/usr/man/man3/XML::Parser::Expat.3pm.gz
-/usr/man/man3/XML::Parser::Style::Debug.3pm.gz
-/usr/man/man3/XML::Parser::Style::Objects.3pm.gz
-/usr/man/man3/XML::Parser::Style::Stream.3pm.gz
-/usr/man/man3/XML::Parser::Style::Subs.3pm.gz
-/usr/man/man3/XML::Parser::Style::Tree.3pm.gz
 

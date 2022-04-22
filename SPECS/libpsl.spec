@@ -16,7 +16,7 @@ Source0:	https://github.com/rockdaboot/libpsl/releases/download/libpsl-%{version
 %setup -q
 
 %build
-%configure --libdir=/usr/lib
+%configure --libdir=/usr/lib --with-pkg-config-libdir=/usr/lib/pkgconfig
 make %{?_smp_mflags}
 
 %install

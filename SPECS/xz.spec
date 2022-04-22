@@ -20,7 +20,8 @@ XZ utils
 %configure --prefix=/usr    \
 	    --libdir=/usr/lib \
             --disable-static \
-            --docdir=/usr/share/doc/xz-%{version}
+            --docdir=/usr/share/doc/xz-%{version} \
+            --with-pkg-config-libdir=/usr/lib/pkgconfig
 
 make %{?_smp_mflags}
 make check

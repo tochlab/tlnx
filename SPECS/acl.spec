@@ -22,7 +22,8 @@ access control list utilities, libraries and headers
 	    --libdir=/usr/lib     \
             --disable-static      \
             --libexecdir=/usr/lib \
-            --docdir=/usr/share/doc/acl-%{version}
+            --docdir=/usr/share/doc/acl-%{version} \
+            --with-pkg-config-libdir=/usr/lib/pkgconfig
 
 make %{?_smp_mflags}
 

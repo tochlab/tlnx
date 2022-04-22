@@ -16,7 +16,7 @@ Source0:	http://download.savannah.nongnu.org/releases/libpipeline/libpipeline-%{
 %setup -q
 
 %build
-%configure --prefix=/usr --libdir=/usr/lib
+%configure --prefix=/usr --libdir=/usr/lib --with-pkg-config-libdir=/usr/lib/pkgconfig
 make %{?_smp_mflags}
 
 %install

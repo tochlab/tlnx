@@ -19,7 +19,8 @@ Source0:	https://ftpmirror.gnu.org/gnu/libidn/libidn2-%{version}.tar.gz
 %configure --disable-doc \
 	   --disable-gcc-warnings \
            --disable-gtk-doc \
-	   --libdir=/usr/lib
+	   --libdir=/usr/lib \
+	   --with-pkg-config-libdir=/usr/lib/pkgconfig
 
 make %{?_smp_mflags}
 

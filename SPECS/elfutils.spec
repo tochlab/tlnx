@@ -16,7 +16,7 @@ Source0:	https://sourceware.org/elfutils/ftp/%{version}/elfutils-%{version}.tar.
 %setup -q
 
 %build
-./configure --prefix=/usr --disable-libdebuginfod --disable-debuginfod 
+./configure --prefix=/usr --disable-libdebuginfod --disable-debuginfod --with-pkg-config-libdir=/usr/lib/pkgconfig
 make %{?_smp_mflags}
 
 %install

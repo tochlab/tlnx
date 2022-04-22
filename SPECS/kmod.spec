@@ -22,7 +22,8 @@ Source0:	https://www.kernel.org/pub/linux/utils/kernel/kmod/kmod-%{version}.tar.
             --with-rootlibdir=/lib \
 	    --libdir=/usr/lib      \
             --with-xz              \
-            --with-zlib
+            --with-zlib \
+            --with-pkg-config-libdir=/usr/lib/pkgconfig
 make %{?_smp_mflags}
 
 %install

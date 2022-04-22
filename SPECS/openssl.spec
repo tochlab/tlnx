@@ -19,6 +19,7 @@ Source0:	https://www.openssl.org/source/old/1.1.1/openssl-%{version}.tar.gz
 ./config --prefix=/usr         \
          --openssldir=/etc/ssl \
          --libdir=lib          \
+         --with-pkg-config-libdir=/usr/lib/pkgconfig \
          shared                \
          zlib-dynamic
 

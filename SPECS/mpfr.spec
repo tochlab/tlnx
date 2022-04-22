@@ -24,7 +24,8 @@ MPFR Library
 	    --libdir=/usr/lib   \
             --disable-static     \
             --enable-thread-safe \
-            --docdir=/usr/share/doc/mpfr-%{version}
+            --docdir=/usr/share/doc/mpfr-%{version} \
+            --with-pkg-config-libdir=/usr/lib/pkgconfig
 make %{?_smp_mflags}
 
 

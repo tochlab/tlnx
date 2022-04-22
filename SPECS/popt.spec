@@ -17,7 +17,7 @@ Source0:	http://ftp.rpm.org/popt/releases/popt-1.x/popt-%{version}.tar.gz
 
 %build
 ./autogen.sh
-%configure --libdir=/usr/lib
+%configure --libdir=/usr/lib --with-pkg-config-libdir=/usr/lib/pkgconfig
 make %{?_smp_mflags}
 
 %install

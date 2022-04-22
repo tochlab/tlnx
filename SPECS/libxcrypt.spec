@@ -17,7 +17,7 @@ Extended crypt library for descrypt, md5crypt, bcrypt, and others
 %setup -q
 
 %build
-%configure --libdir=/lib --disable-xcrypt-compat-files  --enable-obsolete-api=no
+%configure --libdir=/lib --disable-xcrypt-compat-files  --enable-obsolete-api=no --with-pkg-config-libdir=/usr/lib/pkgconfig
 make %{?_smp_mflags}
 
 %install
@@ -25,7 +25,7 @@ rm -rf $RPM_BUILD_ROOT
 %make_install
 %{__rm} -f %{buildroot}/usr/share/info/dir
 %{__rm} %{buildroot}/usr/share/man/man3/crypt.3
-%{__rm} %{buildroot}/usr/include/crypt.h
+#%{__rm} %{buildroot}/usr/include/crypt.h
 mkdir %{buildroot}/usr/lib/
 mv %{buildroot}/lib/pkgconfig %{buildroot}/usr/lib/
 
@@ -54,6 +54,7 @@ mv %{buildroot}/lib/pkgconfig %{buildroot}/usr/lib/
 /usr/share/man/man3/crypt_ra.3.gz
 /usr/share/man/man3/crypt_rn.3.gz
 /usr/share/man/man5/crypt.5.gz
+/usr/include/crypt.h
 
 %doc
 

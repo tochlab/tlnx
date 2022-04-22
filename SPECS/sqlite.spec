@@ -21,7 +21,7 @@ tar xvf %{_sourcedir}/sqlite-autoconf-3380200.tar.gz
 
 %build
 cd sqlite-autoconf-3380200
-%configure --prefix=/usr --libdir=/usr/lib
+%configure --prefix=/usr --libdir=/usr/lib --with-pkg-config-libdir=/usr/lib/pkgconfig
 make %{?_smp_mflags}
 
 %install

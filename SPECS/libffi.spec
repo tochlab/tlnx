@@ -16,7 +16,7 @@ Source0:	https://github.com/libffi/libffi/releases/download/v%{version}/libffi-%
 %setup -q
 
 %build
-%configure --libdir=/usr/lib
+%configure --libdir=/usr/lib --with-pkg-config-libdir=/usr/lib/pkgconfig
 make %{?_smp_mflags}
 
 %install

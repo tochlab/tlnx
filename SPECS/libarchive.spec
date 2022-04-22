@@ -16,7 +16,7 @@ Source0:	https://github.com/libarchive/libarchive/releases/download/v%{version}/
 %setup -q
 
 %build
-%configure --without-libb2 --without-lz4 --without-xml2 --libdir=/usr/lib
+%configure --without-libb2 --without-lz4 --without-xml2 --libdir=/usr/lib --with-pkg-config-libdir=/usr/lib/pkgconfig
 make %{?_smp_mflags}
 
 %install

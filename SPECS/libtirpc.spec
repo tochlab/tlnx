@@ -17,7 +17,7 @@ Transport Independent RPC library (SunRPC replacement)
 %setup -q
 
 %build
-%configure --libdir=/lib --disable-gssapi
+%configure --libdir=/lib --disable-gssapi --with-pkg-config-libdir=/usr/lib/pkgconfig
 make %{?_smp_mflags}
 
 %install
@@ -25,7 +25,7 @@ rm -rf $RPM_BUILD_ROOT
 %make_install
 %{__rm} -f %{buildroot}/usr/share/info/dir
 mkdir %{buildroot}/usr/lib/
-mv %{buildroot}/lib/pkgconfig %{buildroot}/usr/lib/
+#mv %{buildroot}/lib/pkgconfig %{buildroot}/usr/lib/
 
 #%post
 #/sbin/ldconfig

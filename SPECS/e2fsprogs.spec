@@ -29,6 +29,7 @@ cd       build
 	     --disable-fuse2fs       \
 	     --without-systemd       \
              --with-systemd-unit-dir=no \
+	     --with-pkg-config-libdir=/usr/lib/pkgconfig
 
 make %{?_smp_mflags}
 

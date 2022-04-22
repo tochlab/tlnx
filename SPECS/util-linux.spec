@@ -30,7 +30,10 @@ Source0:	https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.35/util-l
 	    --disable-makeinstall-chown \
             --without-python     \
             --without-systemd    \
-            --without-systemdsystemunitdir
+            --without-systemdsystemunitdir \
+            --disable-raw \
+            --with-pkg-config-libdir=/usr/lib/pkgconfig
+            
 make %{?_smp_mflags}
 
 %install

@@ -22,8 +22,13 @@ make %{?_smp_mflags}
 %install
 rm -rf $RPM_BUILD_ROOT
 %make_install
+mkdir %{buildroot}/root
+cp %{_sourcedir}/rpmmacros %{buildroot}/root/.rpmmacros
+cp %{_sourcedir}/rpmrc %{buildroot}/root/.rpmrc
 
 %files
+/root/.rpmmacros
+/root/.rpmrc
 /usr/bin/gendiff
 /usr/bin/rpm
 /usr/bin/rpm2archive

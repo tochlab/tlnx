@@ -40,6 +40,7 @@ Contains base tree for initial work
     echo "LANG=C" >> %{buildroot}/root/.bashrc
     echo "PATH=/bin:/sbin:/usr/bin:/usr/sbin" >>  %{buildroot}/root/.bashrc
     echo "export LC_ALL LANG PATH" >> %{buildroot}/root/.bashrc
+    cp %{_sourcedir}/profile %{buildroot}/etc/profile
 
 ###    mknod -m 600 %{buildroot}/dev/console c 5 1
 ###    mknod -m 666 %{buildroot}/dev/null c 1 3

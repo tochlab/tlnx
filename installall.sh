@@ -11,4 +11,4 @@ do
 done
 	echo root:x:0:0:root:/root:/bin/bash > $INSTALL_DESTDIR/etc/passwd
 	echo root:x:0:root > $INSTALL_DESTDIR/etc/group
-	cp profile $INSTALL_DESTDIR/etc
+#	cp profile $INSTALL_DESTDIR/etc

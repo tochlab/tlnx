@@ -24,6 +24,8 @@ make %{?_smp_mflags}
 rm -rf $RPM_BUILD_ROOT
 %make_install INSTALL_TOP=%{buildroot}/usr
 %{__rm} -f %{buildroot}/usr/share/info/dir
+mkdir -p %{buildroot}/usr/lib/pkgconfig
+cp %{_sourcedir}/lua.pc %{buildroot}/usr/lib/pkgconfig
 
 %post
 ln -sf /usr/lib/liblua.so /usr/lib/liblua5.4.so.0
@@ -46,6 +48,7 @@ ln -sf /usr/lib/liblua.so /usr/lib/liblua5.4.so.0
 /usr/lib/liblua.so
 /usr/man/man1/lua.1.gz
 /usr/man/man1/luac.1.gz
+/usr/lib/pkgconfig/lua.pc
 
 %changelog
 * Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>

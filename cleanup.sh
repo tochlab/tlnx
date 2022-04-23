@@ -1,4 +1,4 @@
 #!/bin/sh
-umount /home/toch/tmp/dev
-umount /home/toch/tmp/proc
-rm -fr /home/toch/tmp/*
+umount /home/tlnx/tmp/dev
+umount /home/tlnx/tmp/proc
+rm -fr /home/tlnx/tmp/*

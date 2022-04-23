@@ -1,0 +1,5 @@
+%dist .tlnx0
+%debug_package %{nil}
+%__brp_mangle_shebangs %{nil}
+%__brp_python_bytecompile %{nil}
+%__install              install

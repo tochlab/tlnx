@@ -1,5 +1,5 @@
 Name:           kbd
-Version:	2.2.0
+Version:	2.4.0
 Release:        1%{?dist}
 Summary:	Keyboard and console utilities
 
@@ -711,6 +711,20 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/unimaps/ruscii.uni
 /usr/share/unimaps/tcvn.uni
 /usr/share/unimaps/viscii.uni
+/usr/share/consolefonts/solar24x32.psfu.gz
+/usr/share/keymaps/i386/neo/README.md
+/usr/share/keymaps/i386/neo/adnw.map.gz
+/usr/share/keymaps/i386/neo/bone.map.gz
+/usr/share/keymaps/i386/neo/koy.map.gz
+/usr/share/keymaps/i386/neo/neo.map.gz
+/usr/share/keymaps/i386/neo/neoqwertz.map.gz
+/usr/share/keymaps/i386/qwerty/ca.map.gz
+/usr/share/keymaps/i386/qwerty/us1.map.gz
+/usr/share/locale/pt/LC_MESSAGES/kbd.mo
+/usr/share/locale/pt_BR/LC_MESSAGES/kbd.mo
+/usr/share/locale/sr/LC_MESSAGES/kbd.mo
+
+
 
 %changelog
 * Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>

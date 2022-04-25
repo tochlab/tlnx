@@ -1,12 +1,12 @@
 Name:           shadow
-Version:        4.8.1
+Version:        4.11.1
 Release:        1%{?dist}
-Summary:        shadow utils
+Summary:        Utilities to deal with user accounts
 
 #Group:          
-License:        GPL
-URL:            https://github.com/shadow-maint/shadow/releases/download/4.8.1/shadow-4.8.1.tar.gz
-Source0:        https://github.com/shadow-maint/shadow/releases/download/4.8.1/shadow-4.8.1.tar.gz
+License:        BSD GPL-2
+URL:            https://github.com/shadow-maint/shadow
+Source0:        https://github.com/shadow-maint/shadow/releases/download/v%{version}/shadow-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 #BuildRequires:  
@@ -25,7 +25,7 @@ find man -name Makefile.in -exec sed -i 's/passwd\.5 / /'   {} \;
 sed -i -e 's@#ENCRYPT_METHOD DES@ENCRYPT_METHOD SHA512@' \
        -e 's@/var/spool/mail@/var/mail@' etc/login.defs
        
-sed -i 's/1000/999/' etc/useradd
+#sed -i 's/1000/999/' etc/useradd
 
 %build
 %configure --sysconfdir=/etc --with-group-name-max-length=32
@@ -79,6 +79,90 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %files
-/*
+/etc/login.defs
+/etc/pam.d/chfn
+/etc/pam.d/chsh
+/etc/pam.d/groupmems
+/etc/pam.d/login
+/etc/pam.d/passwd
+/etc/pam.d/su
+/usr/bin/chage
+/usr/bin/chfn
+/usr/bin/chsh
+/usr/bin/expiry
+/usr/bin/faillog
+/usr/bin/getsubids
+/usr/bin/gpasswd
+/usr/bin/lastlog
+/usr/bin/login
+/usr/bin/newgidmap
+/usr/bin/newgrp
+/usr/bin/newuidmap
+/usr/bin/passwd
+/usr/bin/sg
+/usr/bin/su
+/usr/include/shadow/subid.h
+/usr/lib64/libsubid.a
+/usr/lib64/libsubid.so
+/usr/lib64/libsubid.so.4
+/usr/lib64/libsubid.so.4.0.0
+/usr/sbin/chgpasswd
+/usr/sbin/chpasswd
+/usr/sbin/groupadd
+/usr/sbin/groupdel
+/usr/sbin/groupmems
+/usr/sbin/groupmod
+/usr/sbin/grpck
+/usr/sbin/grpconv
+/usr/sbin/grpunconv
+/usr/sbin/logoutd
+/usr/sbin/newusers
+/usr/sbin/nologin
+/usr/sbin/pwck
+/usr/sbin/pwconv
+/usr/sbin/pwunconv
+/usr/sbin/useradd
+/usr/sbin/userdel
+/usr/sbin/usermod
+/usr/sbin/vigr
+/usr/sbin/vipw
+/usr/share/locale/bs/LC_MESSAGES/shadow.mo
+/usr/share/locale/ca/LC_MESSAGES/shadow.mo
+/usr/share/locale/cs/LC_MESSAGES/shadow.mo
+/usr/share/locale/da/LC_MESSAGES/shadow.mo
+/usr/share/locale/de/LC_MESSAGES/shadow.mo
+/usr/share/locale/dz/LC_MESSAGES/shadow.mo
+/usr/share/locale/el/LC_MESSAGES/shadow.mo
+/usr/share/locale/es/LC_MESSAGES/shadow.mo
+/usr/share/locale/eu/LC_MESSAGES/shadow.mo
+/usr/share/locale/fi/LC_MESSAGES/shadow.mo
+/usr/share/locale/fr/LC_MESSAGES/shadow.mo
+/usr/share/locale/gl/LC_MESSAGES/shadow.mo
+/usr/share/locale/he/LC_MESSAGES/shadow.mo
+/usr/share/locale/hu/LC_MESSAGES/shadow.mo
+/usr/share/locale/id/LC_MESSAGES/shadow.mo
+/usr/share/locale/it/LC_MESSAGES/shadow.mo
+/usr/share/locale/ja/LC_MESSAGES/shadow.mo
+/usr/share/locale/kk/LC_MESSAGES/shadow.mo
+/usr/share/locale/km/LC_MESSAGES/shadow.mo
+/usr/share/locale/ko/LC_MESSAGES/shadow.mo
+/usr/share/locale/nb/LC_MESSAGES/shadow.mo
+/usr/share/locale/ne/LC_MESSAGES/shadow.mo
+/usr/share/locale/nl/LC_MESSAGES/shadow.mo
+/usr/share/locale/nn/LC_MESSAGES/shadow.mo
+/usr/share/locale/pl/LC_MESSAGES/shadow.mo
+/usr/share/locale/pt/LC_MESSAGES/shadow.mo
+/usr/share/locale/pt_BR/LC_MESSAGES/shadow.mo
+/usr/share/locale/ro/LC_MESSAGES/shadow.mo
+/usr/share/locale/ru/LC_MESSAGES/shadow.mo
+/usr/share/locale/sk/LC_MESSAGES/shadow.mo
+/usr/share/locale/sq/LC_MESSAGES/shadow.mo
+/usr/share/locale/sv/LC_MESSAGES/shadow.mo
+/usr/share/locale/tl/LC_MESSAGES/shadow.mo
+/usr/share/locale/tr/LC_MESSAGES/shadow.mo
+/usr/share/locale/uk/LC_MESSAGES/shadow.mo
+/usr/share/locale/vi/LC_MESSAGES/shadow.mo
+/usr/share/locale/zh_CN/LC_MESSAGES/shadow.mo
+/usr/share/locale/zh_TW/LC_MESSAGES/shadow.mo
 
 %changelog

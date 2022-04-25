@@ -4,7 +4,7 @@ Release:        1%{?dist}
 Summary:        bzip2 archiver
 
 License:        BSD
-URL:            https://sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz
+URL:            https://sourceware.org/pub/bzip2
 Source0:        https://sourceware.org/pub/bzip2/bzip2-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 

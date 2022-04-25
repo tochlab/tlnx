@@ -1,5 +1,5 @@
-Name:          	bison 
-Version:	3.5.3
+Name:          	bison
+Version:	3.8.2
 Release:        1%{?dist}
 Summary:	A general-purpose (yacc-compatible) parser generator
 
@@ -16,7 +16,7 @@ Source0:	https://ftpmirror.gnu.org/gnu/bison/bison-%{version}.tar.gz
 %setup -q
 
 %build
-%configure --prefix=/usr --libdir=/usr/lib --docdir=/usr/share/doc/bison-%{version}
+%configure --prefix=/usr --libdir=/usr/lib --docdir=/usr/share/doc/bison
 make %{?_smp_mflags}
 
 %install
@@ -33,7 +33,6 @@ rm -fr $RPM_BUILD_ROOT/usr/share/info/dir
 /usr/share/bison/bison-default.css
 /usr/share/bison/m4sugar/foreach.m4
 /usr/share/bison/m4sugar/m4sugar.m4
-/usr/share/bison/skeletons/README-D.txt
 /usr/share/bison/skeletons/bison.m4
 /usr/share/bison/skeletons/c++-skel.m4
 /usr/share/bison/skeletons/c++.m4
@@ -44,6 +43,7 @@ rm -fr $RPM_BUILD_ROOT/usr/share/info/dir
 /usr/share/bison/skeletons/d.m4
 /usr/share/bison/skeletons/glr.c
 /usr/share/bison/skeletons/glr.cc
+/usr/share/bison/skeletons/glr2.cc
 /usr/share/bison/skeletons/java-skel.m4
 /usr/share/bison/skeletons/java.m4
 /usr/share/bison/skeletons/lalr1.cc
@@ -51,54 +51,68 @@ rm -fr $RPM_BUILD_ROOT/usr/share/info/dir
 /usr/share/bison/skeletons/lalr1.java
 /usr/share/bison/skeletons/location.cc
 /usr/share/bison/skeletons/stack.hh
+/usr/share/bison/skeletons/traceon.m4
 /usr/share/bison/skeletons/variant.hh
 /usr/share/bison/skeletons/yacc.c
 /usr/share/bison/xslt/bison.xsl
 /usr/share/bison/xslt/xml2dot.xsl
 /usr/share/bison/xslt/xml2text.xsl
 /usr/share/bison/xslt/xml2xhtml.xsl
-/usr/share/doc/bison-3.5.3/AUTHORS
-/usr/share/doc/bison-3.5.3/COPYING
-/usr/share/doc/bison-3.5.3/NEWS
-/usr/share/doc/bison-3.5.3/README
-/usr/share/doc/bison-3.5.3/THANKS
-/usr/share/doc/bison-3.5.3/TODO
-/usr/share/doc/bison-3.5.3/examples/README.md
-/usr/share/doc/bison-3.5.3/examples/c++/Makefile
-/usr/share/doc/bison-3.5.3/examples/c++/README.md
-/usr/share/doc/bison-3.5.3/examples/c++/calc++/Makefile
-/usr/share/doc/bison-3.5.3/examples/c++/calc++/README.md
-/usr/share/doc/bison-3.5.3/examples/c++/calc++/calc++.cc
-/usr/share/doc/bison-3.5.3/examples/c++/calc++/driver.cc
-/usr/share/doc/bison-3.5.3/examples/c++/calc++/driver.hh
-/usr/share/doc/bison-3.5.3/examples/c++/calc++/parser.yy
-/usr/share/doc/bison-3.5.3/examples/c++/calc++/scanner.ll
-/usr/share/doc/bison-3.5.3/examples/c++/simple.yy
-/usr/share/doc/bison-3.5.3/examples/c++/variant-11.yy
-/usr/share/doc/bison-3.5.3/examples/c++/variant.yy
-/usr/share/doc/bison-3.5.3/examples/c/README.md
-/usr/share/doc/bison-3.5.3/examples/c/calc/Makefile
-/usr/share/doc/bison-3.5.3/examples/c/calc/README.md
-/usr/share/doc/bison-3.5.3/examples/c/calc/calc.y
-/usr/share/doc/bison-3.5.3/examples/c/lexcalc/Makefile
-/usr/share/doc/bison-3.5.3/examples/c/lexcalc/README.md
-/usr/share/doc/bison-3.5.3/examples/c/lexcalc/parse.y
-/usr/share/doc/bison-3.5.3/examples/c/lexcalc/scan.l
-/usr/share/doc/bison-3.5.3/examples/c/mfcalc/Makefile
-/usr/share/doc/bison-3.5.3/examples/c/mfcalc/calc.h
-/usr/share/doc/bison-3.5.3/examples/c/mfcalc/mfcalc.y
-/usr/share/doc/bison-3.5.3/examples/c/reccalc/Makefile
-/usr/share/doc/bison-3.5.3/examples/c/reccalc/README.md
-/usr/share/doc/bison-3.5.3/examples/c/reccalc/parse.y
-/usr/share/doc/bison-3.5.3/examples/c/reccalc/scan.l
-/usr/share/doc/bison-3.5.3/examples/c/rpcalc/Makefile
-/usr/share/doc/bison-3.5.3/examples/c/rpcalc/rpcalc.y
-/usr/share/doc/bison-3.5.3/examples/d/Makefile
-/usr/share/doc/bison-3.5.3/examples/d/README.md
-/usr/share/doc/bison-3.5.3/examples/d/calc.y
-/usr/share/doc/bison-3.5.3/examples/java/Calc.y
-/usr/share/doc/bison-3.5.3/examples/java/Makefile
-/usr/share/doc/bison-3.5.3/examples/java/README.md
+/usr/share/doc/bison/AUTHORS
+/usr/share/doc/bison/COPYING
+/usr/share/doc/bison/NEWS
+/usr/share/doc/bison/README
+/usr/share/doc/bison/THANKS
+/usr/share/doc/bison/TODO
+/usr/share/doc/bison/examples/README.md
+/usr/share/doc/bison/examples/c++/Makefile
+/usr/share/doc/bison/examples/c++/README.md
+/usr/share/doc/bison/examples/c++/calc++/Makefile
+/usr/share/doc/bison/examples/c++/calc++/README.md
+/usr/share/doc/bison/examples/c++/calc++/calc++.cc
+/usr/share/doc/bison/examples/c++/calc++/driver.cc
+/usr/share/doc/bison/examples/c++/calc++/driver.hh
+/usr/share/doc/bison/examples/c++/calc++/parser.yy
+/usr/share/doc/bison/examples/c++/calc++/scanner.ll
+/usr/share/doc/bison/examples/c++/simple.yy
+/usr/share/doc/bison/examples/c++/variant-11.yy
+/usr/share/doc/bison/examples/c++/variant.yy
+/usr/share/doc/bison/examples/c/README.md
+/usr/share/doc/bison/examples/c/bistromathic/Makefile
+/usr/share/doc/bison/examples/c/bistromathic/README.md
+/usr/share/doc/bison/examples/c/bistromathic/parse.y
+/usr/share/doc/bison/examples/c/calc/Makefile
+/usr/share/doc/bison/examples/c/calc/README.md
+/usr/share/doc/bison/examples/c/calc/calc.y
+/usr/share/doc/bison/examples/c/glr/Makefile
+/usr/share/doc/bison/examples/c/glr/README.md
+/usr/share/doc/bison/examples/c/glr/c++-types.y
+/usr/share/doc/bison/examples/c/lexcalc/Makefile
+/usr/share/doc/bison/examples/c/lexcalc/README.md
+/usr/share/doc/bison/examples/c/lexcalc/parse.y
+/usr/share/doc/bison/examples/c/lexcalc/scan.l
+/usr/share/doc/bison/examples/c/mfcalc/Makefile
+/usr/share/doc/bison/examples/c/mfcalc/calc.h
+/usr/share/doc/bison/examples/c/mfcalc/mfcalc.y
+/usr/share/doc/bison/examples/c/pushcalc/Makefile
+/usr/share/doc/bison/examples/c/pushcalc/README.md
+/usr/share/doc/bison/examples/c/pushcalc/calc.y
+/usr/share/doc/bison/examples/c/reccalc/Makefile
+/usr/share/doc/bison/examples/c/reccalc/README.md
+/usr/share/doc/bison/examples/c/reccalc/parse.y
+/usr/share/doc/bison/examples/c/reccalc/scan.l
+/usr/share/doc/bison/examples/c/rpcalc/Makefile
+/usr/share/doc/bison/examples/c/rpcalc/rpcalc.y
+/usr/share/doc/bison/examples/d/README.md
+/usr/share/doc/bison/examples/d/calc/Makefile
+/usr/share/doc/bison/examples/d/calc/calc.y
+/usr/share/doc/bison/examples/d/simple/Makefile
+/usr/share/doc/bison/examples/d/simple/calc.y
+/usr/share/doc/bison/examples/java/README.md
+/usr/share/doc/bison/examples/java/calc/Calc.y
+/usr/share/doc/bison/examples/java/calc/Makefile
+/usr/share/doc/bison/examples/java/simple/Calc.y
+/usr/share/doc/bison/examples/java/simple/Makefile
 /usr/share/info/bison.info.gz
 /usr/share/locale/af/LC_MESSAGES/bison-gnulib.mo
 /usr/share/locale/ast/LC_MESSAGES/bison-runtime.mo
@@ -192,6 +206,7 @@ rm -fr $RPM_BUILD_ROOT/usr/share/info/dir
 /usr/share/locale/sv/LC_MESSAGES/bison-gnulib.mo
 /usr/share/locale/sv/LC_MESSAGES/bison-runtime.mo
 /usr/share/locale/sv/LC_MESSAGES/bison.mo
+/usr/share/locale/ta/LC_MESSAGES/bison-runtime.mo
 /usr/share/locale/th/LC_MESSAGES/bison-runtime.mo
 /usr/share/locale/tr/LC_MESSAGES/bison-gnulib.mo
 /usr/share/locale/tr/LC_MESSAGES/bison-runtime.mo
@@ -213,5 +228,3 @@ rm -fr $RPM_BUILD_ROOT/usr/share/info/dir
 
 
 %changelog
-* Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>
--

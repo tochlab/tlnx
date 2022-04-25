@@ -1,5 +1,5 @@
 Name:           gmp
-Version:	6.1.2
+Version:	6.2.1
 Release:        1%{?dist}
 Summary:	The GMP package contains math libraries. These have useful functions for arbitrary precision arithmetic.
 
@@ -13,7 +13,7 @@ Source0:	https://ftpmirror.gnu.org/gnu/gmp/gmp-%{version}.tar.bz2
 %setup -q
 
 %build
-%configure --prefix=/usr --libdir=/usr/lib --enable-cxx --disable-static --docdir=/usr/share/doc/gmp-%{version}
+%configure --prefix=/usr --libdir=/usr/lib --enable-cxx --disable-static --docdir=/usr/share/doc/gmp
 make %{?_smp_mflags}
 
 %install
@@ -24,14 +24,14 @@ rm -rf $RPM_BUILD_ROOT
 %files
 /usr/include/gmp.h
 /usr/include/gmpxx.h
-#/usr/lib/libgmp.la
 /usr/lib/libgmp.so
 /usr/lib/libgmp.so.10
-/usr/lib/libgmp.so.10.3.2
-#/usr/lib/libgmpxx.la
+/usr/lib/libgmp.so.10.4.1
 /usr/lib/libgmpxx.so
 /usr/lib/libgmpxx.so.4
-/usr/lib/libgmpxx.so.4.5.2
+/usr/lib/libgmpxx.so.4.6.1
+/usr/lib/pkgconfig/gmp.pc
+/usr/lib/pkgconfig/gmpxx.pc
 /usr/share/info/gmp.info-1.gz
 /usr/share/info/gmp.info-2.gz
 /usr/share/info/gmp.info.gz

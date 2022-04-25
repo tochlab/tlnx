@@ -1,5 +1,5 @@
 Name:           libarchive
-Version:	3.4.3
+Version:	3.6.1
 Release:        1%{?dist}
 Summary:	Multi-format archive and compression library
 
@@ -42,7 +42,7 @@ rm -rf $RPM_BUILD_ROOT
 #/usr/lib/libarchive.la
 /usr/lib/libarchive.so
 /usr/lib/libarchive.so.13
-/usr/lib/libarchive.so.13.4.3
+/usr/lib/libarchive.so.13.6.1
 /usr/lib/pkgconfig/libarchive.pc
 /usr/share/man/man1/bsdcat.1.gz
 /usr/share/man/man1/bsdcpio.1.gz

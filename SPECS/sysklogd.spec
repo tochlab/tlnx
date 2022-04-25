@@ -1,5 +1,5 @@
 Name:           sysklogd
-Version:	2.1.2
+Version:	2.3.0
 Release:        1%{?dist}
 Summary:	Standard log daemons
 
@@ -27,7 +27,6 @@ rm -rf $RPM_BUILD_ROOT
 /sbin/syslogd
 /usr/include/syslog/syslog.h
 /usr/lib/libsyslog.a
-#/usr/lib/libsyslog.la
 /usr/lib/libsyslog.so
 /usr/lib/libsyslog.so.0
 /usr/lib/libsyslog.so.0.0.0
@@ -45,7 +44,3 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
-* Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>
--
-
-# see /usr/libexec/rpm/macros for macros

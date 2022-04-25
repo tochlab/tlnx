@@ -1,5 +1,5 @@
 Name:           zstd
-Version:	1.5.0
+Version:	1.5.2
 Release:        1%{?dist}
 Summary:	zstd fast compression library
 
@@ -49,7 +49,3 @@ ldconfig
 %doc
 
 %changelog
-* Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>
--
-
-# see /usr/libexec/rpm/macros for macros

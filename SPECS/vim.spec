@@ -1,11 +1,11 @@
 Name:           vim
-Version:	8.2
+Version:	8.2.4823
 Release:        1%{?dist}
-Summary:	Vim, an improved vi-style text editor	
+Summary:	Vim, an improved vi-style text editor
 
 License:	vim
 URL:		https://vim.sourceforge.io/
-Source0:	http://ftp.vim.org/pub/vim/unix/vim-%{version}.tar.bz2
+Source0:	https://github.com/vim/vim/archive/refs/tags/v%{version}.tar.gz
 
 #BuildRequires:
 #Requires:
@@ -13,20 +13,14 @@ Source0:	http://ftp.vim.org/pub/vim/unix/vim-%{version}.tar.bz2
 %description
 
 %prep
-umask 022
-cd %{_builddir}
-rm -rf Python-3.8.2
-tar xvf %{_sourcedir}/vim-%{version}.tar.bz2
+%setup -q
 
 %build
-cd vim82
-echo '#define SYS_VIMRC_FILE "/etc/vimrc"' >> src/feature.h
 %configure --prefix=/usr --enable-gui=no --disable-nls --without-x --disable-canberra --disable-gpm --with-features=normal 
 make %{?_smp_mflags}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-cd %{_builddir}/vim82
 %make_install
 
 %files
@@ -401,7 +395,6 @@ cd %{_builddir}/vim82
 /usr/share/vim/vim82/ftplugin/framescript.vim
 /usr/share/vim/vim82/ftplugin/fvwm.vim
 /usr/share/vim/vim82/ftplugin/gdb.vim
-/usr/share/vim/vim82/ftplugin/git.vim
 /usr/share/vim/vim82/ftplugin/gitcommit.vim
 /usr/share/vim/vim82/ftplugin/gitconfig.vim
 /usr/share/vim/vim82/ftplugin/gitrebase.vim
@@ -479,7 +472,6 @@ cd %{_builddir}/vim82
 /usr/share/vim/vim82/ftplugin/passwd.vim
 /usr/share/vim/vim82/ftplugin/pdf.vim
 /usr/share/vim/vim82/ftplugin/perl.vim
-/usr/share/vim/vim82/ftplugin/perl6.vim
 /usr/share/vim/vim82/ftplugin/php.vim
 /usr/share/vim/vim82/ftplugin/pinfo.vim
 /usr/share/vim/vim82/ftplugin/plaintex.vim
@@ -637,7 +629,6 @@ cd %{_builddir}/vim82
 /usr/share/vim/vim82/indent/occam.vim
 /usr/share/vim/vim82/indent/pascal.vim
 /usr/share/vim/vim82/indent/perl.vim
-/usr/share/vim/vim82/indent/perl6.vim
 /usr/share/vim/vim82/indent/php.vim
 /usr/share/vim/vim82/indent/postscr.vim
 /usr/share/vim/vim82/indent/pov.vim
@@ -780,7 +771,6 @@ cd %{_builddir}/vim82
 /usr/share/vim/vim82/print/latin1.ps
 /usr/share/vim/vim82/print/mac-roman.ps
 /usr/share/vim/vim82/print/prolog.ps
-/usr/share/vim/vim82/rgb.txt
 /usr/share/vim/vim82/scripts.vim
 /usr/share/vim/vim82/spell/check_locales.vim
 /usr/share/vim/vim82/spell/cleanadd.vim
@@ -1164,7 +1154,6 @@ cd %{_builddir}/vim82
 /usr/share/vim/vim82/syntax/pccts.vim
 /usr/share/vim/vim82/syntax/pdf.vim
 /usr/share/vim/vim82/syntax/perl.vim
-/usr/share/vim/vim82/syntax/perl6.vim
 /usr/share/vim/vim82/syntax/pf.vim
 /usr/share/vim/vim82/syntax/pfmain.vim
 /usr/share/vim/vim82/syntax/php.vim
@@ -1503,10 +1492,131 @@ cd %{_builddir}/vim82
 /usr/share/vim/vim82/tutor/tutor.zh_cn.utf-8
 /usr/share/vim/vim82/tutor/tutor.zh_tw.utf-8
 /usr/share/vim/vim82/vimrc_example.vim
+/usr/share/vim/vim82/autoload/dist/script.vim
+/usr/share/vim/vim82/autoload/freebasic.vim
+/usr/share/vim/vim82/colors/lists/csscolors.vim
+/usr/share/vim/vim82/colors/lists/default.vim
+/usr/share/vim/vim82/compiler/cm3.vim
+/usr/share/vim/vim82/compiler/dart.vim
+/usr/share/vim/vim82/compiler/dart2js.vim
+/usr/share/vim/vim82/compiler/dart2native.vim
+/usr/share/vim/vim82/compiler/dartanalyser.vim
+/usr/share/vim/vim82/compiler/dartdevc.vim
+/usr/share/vim/vim82/compiler/dartdoc.vim
+/usr/share/vim/vim82/compiler/dartfmt.vim
+/usr/share/vim/vim82/compiler/eslint.vim
+/usr/share/vim/vim82/compiler/fbc.vim
+/usr/share/vim/vim82/compiler/gawk.vim
+/usr/share/vim/vim82/compiler/gjs.vim
+/usr/share/vim/vim82/compiler/jest.vim
+/usr/share/vim/vim82/compiler/jjs.vim
+/usr/share/vim/vim82/compiler/jshint.vim
+/usr/share/vim/vim82/compiler/jsonlint.vim
+/usr/share/vim/vim82/compiler/powershell.vim
+/usr/share/vim/vim82/compiler/rhino.vim
+/usr/share/vim/vim82/compiler/rubocop.vim
+/usr/share/vim/vim82/compiler/scdoc.vim
+/usr/share/vim/vim82/compiler/shellcheck.vim
+/usr/share/vim/vim82/compiler/sml.vim
+/usr/share/vim/vim82/compiler/spectral.vim
+/usr/share/vim/vim82/compiler/standard.vim
+/usr/share/vim/vim82/compiler/stylelint.vim
+/usr/share/vim/vim82/compiler/ts-node.vim
+/usr/share/vim/vim82/compiler/tsc.vim
+/usr/share/vim/vim82/compiler/typedoc.vim
+/usr/share/vim/vim82/compiler/xo.vim
+/usr/share/vim/vim82/compiler/yamllint.vim
+/usr/share/vim/vim82/compiler/zsh.vim
+/usr/share/vim/vim82/doc/builtin.txt
+/usr/share/vim/vim82/doc/ft_ps1.txt
+/usr/share/vim/vim82/doc/ft_raku.txt
+/usr/share/vim/vim82/doc/os_haiku.txt
+/usr/share/vim/vim82/doc/usr_46.txt
+/usr/share/vim/vim82/doc/version9.txt
+/usr/share/vim/vim82/doc/vim9.txt
+/usr/share/vim/vim82/ftplugin/asm.vim
+/usr/share/vim/vim82/ftplugin/basic.vim
+/usr/share/vim/vim82/ftplugin/elm.vim
+/usr/share/vim/vim82/ftplugin/fpcmake.vim
+/usr/share/vim/vim82/ftplugin/freebasic.vim
+/usr/share/vim/vim82/ftplugin/fstab.vim
+/usr/share/vim/vim82/ftplugin/i3config.vim
+/usr/share/vim/vim82/ftplugin/jsonc.vim
+/usr/share/vim/vim82/ftplugin/julia.vim
+/usr/share/vim/vim82/ftplugin/m3build.vim
+/usr/share/vim/vim82/ftplugin/m3quake.vim
+/usr/share/vim/vim82/ftplugin/masm.vim
+/usr/share/vim/vim82/ftplugin/modula2.vim
+/usr/share/vim/vim82/ftplugin/modula3.vim
+/usr/share/vim/vim82/ftplugin/nginx.vim
+/usr/share/vim/vim82/ftplugin/octave.vim
+/usr/share/vim/vim82/ftplugin/pbtxt.vim
+/usr/share/vim/vim82/ftplugin/poke.vim
+/usr/share/vim/vim82/ftplugin/ps1.vim
+/usr/share/vim/vim82/ftplugin/ps1xml.vim
+/usr/share/vim/vim82/ftplugin/qb64.vim
+/usr/share/vim/vim82/ftplugin/raku.vim
+/usr/share/vim/vim82/ftplugin/routeros.vim
+/usr/share/vim/vim82/ftplugin/scdoc.vim
+/usr/share/vim/vim82/ftplugin/sexplib.vim
+/usr/share/vim/vim82/ftplugin/solution.vim
+/usr/share/vim/vim82/ftplugin/swift.vim
+/usr/share/vim/vim82/ftplugin/swiftgyb.vim
+/usr/share/vim/vim82/ftplugin/tidy.vim
+/usr/share/vim/vim82/ftplugin/toml.vim
+/usr/share/vim/vim82/ftplugin/typescript.vim
+/usr/share/vim/vim82/ftplugin/typescriptreact.vim
+/usr/share/vim/vim82/indent/basic.vim
+/usr/share/vim/vim82/indent/dune.vim
+/usr/share/vim/vim82/indent/elm.vim
+/usr/share/vim/vim82/indent/freebasic.vim
+/usr/share/vim/vim82/indent/jsonc.vim
+/usr/share/vim/vim82/indent/julia.vim
+/usr/share/vim/vim82/indent/krl.vim
+/usr/share/vim/vim82/indent/nginx.vim
+/usr/share/vim/vim82/indent/ps1.vim
+/usr/share/vim/vim82/indent/qb64.vim
+/usr/share/vim/vim82/indent/raku.vim
+/usr/share/vim/vim82/indent/sshconfig.vim
+/usr/share/vim/vim82/syntax/aidl.vim
+/usr/share/vim/vim82/syntax/bsdl.vim
+/usr/share/vim/vim82/syntax/cabalconfig.vim
+/usr/share/vim/vim82/syntax/cabalproject.vim
+/usr/share/vim/vim82/syntax/dep3patch.vim
+/usr/share/vim/vim82/syntax/elm.vim
+/usr/share/vim/vim82/syntax/fpcmake.vim
+/usr/share/vim/vim82/syntax/gemtext.vim
+/usr/share/vim/vim82/syntax/gift.vim
+/usr/share/vim/vim82/syntax/gvpr.vim
+/usr/share/vim/vim82/syntax/help_ru.vim
+/usr/share/vim/vim82/syntax/i3config.vim
+/usr/share/vim/vim82/syntax/jsonc.vim
+/usr/share/vim/vim82/syntax/julia.vim
+/usr/share/vim/vim82/syntax/krl.vim
+/usr/share/vim/vim82/syntax/m3build.vim
+/usr/share/vim/vim82/syntax/m3quake.vim
+/usr/share/vim/vim82/syntax/nginx.vim
+/usr/share/vim/vim82/syntax/opam.vim
+/usr/share/vim/vim82/syntax/openscad.vim
+/usr/share/vim/vim82/syntax/pamenv.vim
+/usr/share/vim/vim82/syntax/pbtxt.vim
+/usr/share/vim/vim82/syntax/poke.vim
+/usr/share/vim/vim82/syntax/ps1.vim
+/usr/share/vim/vim82/syntax/ps1xml.vim
+/usr/share/vim/vim82/syntax/psl.vim
+/usr/share/vim/vim82/syntax/qb64.vim
+/usr/share/vim/vim82/syntax/raku.vim
+/usr/share/vim/vim82/syntax/rego.vim
+/usr/share/vim/vim82/syntax/routeros.vim
+/usr/share/vim/vim82/syntax/scdoc.vim
+/usr/share/vim/vim82/syntax/sexplib.vim
+/usr/share/vim/vim82/syntax/sil.vim
+/usr/share/vim/vim82/syntax/squirrel.vim
+/usr/share/vim/vim82/syntax/structurizr.vim
+/usr/share/vim/vim82/syntax/swift.vim
+/usr/share/vim/vim82/syntax/swiftgyb.vim
+/usr/share/vim/vim82/syntax/toml.vim
+/usr/share/vim/vim82/tools/emoji_list.vim
 
 
 %changelog
-* Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>
--
-
-# see /usr/libexec/rpm/macros for macros

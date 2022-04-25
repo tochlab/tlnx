@@ -1,5 +1,5 @@
 Name:           gcc
-Version:        11.2.0
+Version:        11.3.0
 Release:        1%{?dist}
 Summary:        gcc
 
@@ -26,7 +26,10 @@ cd       build
              --disable-multilib       \
              --disable-bootstrap      \
              --with-system-zlib       \
-             --libdir=/usr/lib
+             --libdir=/usr/lib        \
+	     --includedir=/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include
+
+#--bindir=/usr/x86_64-pc-linux-gnu/gcc-bin/11.2.1 --includedir=/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.1/include --datadir=/usr/share/gcc-data/x86_64-pc-linux-gnu/11.2.1 --mandir=/usr/share/gcc-data/x86_64-pc-linux-gnu/11.2.1/man --infodir=/usr/share/gcc-data/x86_64-pc-linux-gnu/11.2.1/info --with-gxx-include-dir=/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.1/include/g++-v11 --with-python-dir=/share/gcc-data/x86_64-pc-linux-gnu/11.2.1/python
 
 make %{?_smp_mflags}
 
@@ -36,29 +39,29 @@ cd build
 rm -rf $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT
 rm -rf %{buildroot}/usr/lib/gcc/$(gcc -dumpmachine)/%{version}/include-fixed/bits/
-rm -fr %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed/README \
-   %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed/X11/Xw32defs.h \
-   %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed/boost/predef/os/unix.h \
-   %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed/net-snmp/net-snmp-config.h \
-   %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed/nss/secport.h \
-   %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed/ntfs-3g/device_io.h \
-   %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed/ntfs-3g/realpath.h \
-   %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed/slang.h \
-   %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed/xorg/compiler.h \
-   %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed/xorg/edid.h \
-   %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed/zzip/conf.h \
-   %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed/zzip/fetch.h \
-   %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed/scg/scgio.h \
-   %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed/schily/mconfig.h \
-   %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed/schily/prototyp.h \
-   %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed/schily/scg \
-   %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed/scsilib \
-   %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed/winpr2/winpr/platform.h \
-   %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed/sys/rseq.h
+rm -fr %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/README \
+   %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/X11/Xw32defs.h \
+   %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/boost/predef/os/unix.h \
+   %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/net-snmp/net-snmp-config.h \
+   %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/nss/secport.h \
+   %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/ntfs-3g/device_io.h \
+   %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/ntfs-3g/realpath.h \
+   %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/slang.h \
+   %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/xorg/compiler.h \
+   %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/xorg/edid.h \
+   %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/zzip/conf.h \
+   %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/zzip/fetch.h \
+   %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/scg/scgio.h \
+   %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/schily/mconfig.h \
+   %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/schily/prototyp.h \
+   %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/schily/scg \
+   %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/scsilib \
+   %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/winpr2/winpr/platform.h \
+   %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/sys/rseq.h
    
 mv %{buildroot}/usr/lib64/* %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/
 mkdir -p %{buildroot}/etc/ld.so.conf.d
-echo /usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/ > %{buildroot}/etc/ld.so.conf.d/gcc.conf
+echo /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/ > %{buildroot}/etc/ld.so.conf.d/gcc.conf
 %{__rm} -f %{buildroot}/usr/share/info/*
 
 %clean
@@ -913,6 +916,7 @@ ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/%{version}/liblto_plugin.so \
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/mmintrin.h
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/movdirintrin.h
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/mwaitxintrin.h
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/mwaitintrin.h
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/nmmintrin.h
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/omp.h
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/openacc.h
@@ -969,15 +973,12 @@ ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/%{version}/liblto_plugin.so \
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/install-tools/macro_list
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/install-tools/mkheaders.conf
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libasan.a
-#/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libasan.la
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libasan.so
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libasan_preinit.o
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libatomic.a
-#/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libatomic.la
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libatomic.so
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libatomic.so.1
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libatomic.so.1.2.0
-#/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libcc1.la
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libcc1.so
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libcc1.so.0
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libcc1.so.0.0.0
@@ -987,52 +988,41 @@ ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/%{version}/liblto_plugin.so \
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libgcc_s.so.1
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libgcov.a
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libgomp.a
-#/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libgomp.la
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libgomp.so
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libgomp.so.1
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libgomp.so.1.0.0
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libgomp.spec
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libitm.a
-#/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libitm.la
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libitm.so
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libitm.so.1
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libitm.so.1.0.0
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libitm.spec
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/liblsan.a
-#/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/liblsan.la
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/liblsan.so
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/liblsan.so.0
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/liblsan.so.0.0.0
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/liblsan_preinit.o
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libquadmath.a
-#/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libquadmath.la
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libquadmath.so
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libquadmath.so.0
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libquadmath.so.0.0.0
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libsanitizer.spec
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libssp.a
-#/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libssp.la
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libssp.so
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libssp.so.0
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libssp.so.0.0.0
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libssp_nonshared.a
-#/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libssp_nonshared.la
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libstdc++.a
-#/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libstdc++.la
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libstdc++.so
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libstdc++.so.6
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libstdc++fs.a
-#/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libstdc++fs.la
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libsupc++.a
-#/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libsupc++.la
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libtsan.a
-#/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libtsan.la
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libtsan.so
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libtsan.so.0
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libtsan.so.0.0.0
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libtsan_preinit.o
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libubsan.a
-#/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libubsan.la
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libubsan.so
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libubsan.so.1
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libubsan.so.1.0.0
@@ -1450,11 +1440,9 @@ ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/%{version}/liblto_plugin.so \
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/wide-int.h
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/xcoff.h
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/xcoffout.h
-#/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/libcc1plugin.la
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/libcc1plugin.so
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/libcc1plugin.so.0
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/libcc1plugin.so.0.0.0
-#/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/libcp1plugin.la
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/libcp1plugin.so
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/libcp1plugin.so.0
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/libcp1plugin.so.0.0.0
@@ -1465,7 +1453,6 @@ ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/%{version}/liblto_plugin.so \
 /usr/libexec/gcc/x86_64-pc-linux-gnu/%{version}/install-tools/fixincl
 /usr/libexec/gcc/x86_64-pc-linux-gnu/%{version}/install-tools/mkheaders
 /usr/libexec/gcc/x86_64-pc-linux-gnu/%{version}/install-tools/mkinstalldirs
-#/usr/libexec/gcc/x86_64-pc-linux-gnu/%{version}/liblto_plugin.la
 /usr/libexec/gcc/x86_64-pc-linux-gnu/%{version}/liblto_plugin.so
 /usr/libexec/gcc/x86_64-pc-linux-gnu/%{version}/lto-wrapper
 /usr/libexec/gcc/x86_64-pc-linux-gnu/%{version}/lto1
@@ -1636,3 +1623,4 @@ ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/%{version}/liblto_plugin.so \
 /usr/share/man/man1/lto-dump.1.gz
 
 
+%changelog

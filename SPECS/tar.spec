@@ -1,5 +1,5 @@
-Name:           tar 
-Version:	1.32
+Name:           tar
+Version:	1.34
 Release:        1%{?dist}
 Summary:	GNU Tar provides the ability to create tar archives
 
@@ -75,7 +75,3 @@ rm $RPM_BUILD_ROOT/usr/share/info/dir
 
 
 %changelog
-* Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>
--
-
-# see /usr/libexec/rpm/macros for macros

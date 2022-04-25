@@ -1,5 +1,5 @@
 Name:           procps
-Version:	v3.3.16
+Version:	v3.3.17
 Release:        1%{?dist}
 Summary:	standard informational utilities and process-handling tools
 
@@ -46,6 +46,7 @@ rm -rf $RPM_BUILD_ROOT
 /bin/vmstat
 /bin/w
 /bin/watch
+/bin/pwait
 /sbin/sysctl
 /usr/include/proc/alloc.h
 /usr/include/proc/devname.h
@@ -60,10 +61,9 @@ rm -rf $RPM_BUILD_ROOT
 /usr/include/proc/version.h
 /usr/include/proc/wchan.h
 /usr/include/proc/whattime.h
-#/usr/lib/libprocps.la
 /usr/lib/libprocps.so
 /usr/lib/libprocps.so.8
-/usr/lib/libprocps.so.8.0.2
+/usr/lib/libprocps.so.8.0.3
 /usr/lib/pkgconfig/libprocps.pc
 /usr/share/doc/procps/FAQ
 /usr/share/doc/procps/bugs.md
@@ -95,10 +95,64 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/man/man5/sysctl.conf.5.gz
 /usr/share/man/man8/sysctl.8.gz
 /usr/share/man/man8/vmstat.8.gz
+/usr/share/man/de/man1/free.1.gz
+/usr/share/man/de/man1/pgrep.1.gz
+/usr/share/man/de/man1/pmap.1.gz
+/usr/share/man/de/man1/ps.1.gz
+/usr/share/man/de/man1/pwdx.1.gz
+/usr/share/man/de/man1/tload.1.gz
+/usr/share/man/de/man1/uptime.1.gz
+/usr/share/man/de/man1/w.1.gz
+/usr/share/man/de/man5/sysctl.conf.5.gz
+/usr/share/man/de/man8/sysctl.8.gz
+/usr/share/man/de/man8/vmstat.8.gz
+/usr/share/man/fr/man1/free.1.gz
+/usr/share/man/fr/man1/pgrep.1.gz
+/usr/share/man/fr/man1/pmap.1.gz
+/usr/share/man/fr/man1/ps.1.gz
+/usr/share/man/fr/man1/pwdx.1.gz
+/usr/share/man/fr/man1/tload.1.gz
+/usr/share/man/fr/man1/uptime.1.gz
+/usr/share/man/fr/man1/w.1.gz
+/usr/share/man/fr/man5/sysctl.conf.5.gz
+/usr/share/man/fr/man8/sysctl.8.gz
+/usr/share/man/fr/man8/vmstat.8.gz
+/usr/share/man/man1/pwait.1.gz
+/usr/share/man/pl/man1/free.1.gz
+/usr/share/man/pl/man1/pmap.1.gz
+/usr/share/man/pl/man1/pwdx.1.gz
+/usr/share/man/pl/man1/tload.1.gz
+/usr/share/man/pl/man1/uptime.1.gz
+/usr/share/man/pl/man1/w.1.gz
+/usr/share/man/pl/man8/sysctl.8.gz
+/usr/share/man/pl/man8/vmstat.8.gz
+/usr/share/man/pt_BR/man1/free.1.gz
+/usr/share/man/pt_BR/man1/pmap.1.gz
+/usr/share/man/pt_BR/man1/pwdx.1.gz
+/usr/share/man/pt_BR/man1/tload.1.gz
+/usr/share/man/pt_BR/man1/uptime.1.gz
+/usr/share/man/pt_BR/man1/w.1.gz
+/usr/share/man/pt_BR/man8/sysctl.8.gz
+/usr/share/man/pt_BR/man8/vmstat.8.gz
+/usr/share/man/sv/man1/free.1.gz
+/usr/share/man/sv/man1/pgrep.1.gz
+/usr/share/man/sv/man1/pmap.1.gz
+/usr/share/man/sv/man1/pwdx.1.gz
+/usr/share/man/sv/man1/tload.1.gz
+/usr/share/man/sv/man1/uptime.1.gz
+/usr/share/man/sv/man1/w.1.gz
+/usr/share/man/sv/man8/sysctl.8.gz
+/usr/share/man/sv/man8/vmstat.8.gz
+/usr/share/man/uk/man1/free.1.gz
+/usr/share/man/uk/man1/pgrep.1.gz
+/usr/share/man/uk/man1/pmap.1.gz
+/usr/share/man/uk/man1/pwdx.1.gz
+/usr/share/man/uk/man1/tload.1.gz
+/usr/share/man/uk/man1/uptime.1.gz
+/usr/share/man/uk/man1/w.1.gz
+/usr/share/man/uk/man5/sysctl.conf.5.gz
+/usr/share/man/uk/man8/sysctl.8.gz
+/usr/share/man/uk/man8/vmstat.8.gz
 
 
 %changelog
-* Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>
--
-
-# see /usr/libexec/rpm/macros for macros

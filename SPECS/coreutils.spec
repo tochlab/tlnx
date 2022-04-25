@@ -1,5 +1,5 @@
 Name:           coreutils
-Version:	8.31
+Version:	8.32
 Release:        1%{?dist}
 Summary:	Standard GNU utilities (chmod, cp, dd, ls, sort, tr, head, wc, who,...
 
@@ -337,10 +337,3 @@ rm $RPM_BUILD_ROOT/usr/share/info/dir
 
 
 %changelog
-* Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>
--
-
-# kill/uptime - procps
-# groups/su   - shadow
-# hostname    - net-tools
-# see /usr/libexec/rpm/macros for macros

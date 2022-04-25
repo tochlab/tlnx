@@ -1,5 +1,5 @@
 Name:           gawk
-Version:	5.1.0
+Version:	5.1.1
 Release:        1%{?dist}
 Summary:	GNU awk pattern-matching language
 
@@ -105,10 +105,8 @@ rm -rf $RPM_BUILD_ROOT/usr/share/info/dir
 /usr/share/man/man3/revtwoway.3am.gz
 /usr/share/man/man3/rwarray.3am.gz
 /usr/share/man/man3/time.3am.gz
-
+/usr/share/awk/isnumeric.awk
+/usr/share/locale/bg/LC_MESSAGES/gawk.mo
+/usr/share/locale/sr/LC_MESSAGES/gawk.mo
 
 %changelog
-* Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>
--
-
-# see /usr/libexec/rpm/macros for macros

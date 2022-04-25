@@ -51,7 +51,3 @@ cd %{_builddir}/sqlite-autoconf-3380200
 
 
 %changelog
-* Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>
--
-
-# see /usr/libexec/rpm/macros for macros

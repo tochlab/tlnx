@@ -1,5 +1,5 @@
 Name:           file
-Version:	5.38
+Version:	5.41
 Release:        1%{?dist}
 Summary:	File utility
 
@@ -25,10 +25,10 @@ make install DESTDIR=$RPM_BUILD_ROOT
 %files
 /usr/bin/file
 /usr/include/magic.h
-#/usr/lib/libmagic.la
 /usr/lib/libmagic.so
 /usr/lib/libmagic.so.1
 /usr/lib/libmagic.so.1.0.0
+/usr/lib/pkgconfig/libmagic.pc
 /usr/share/man/man1/file.1.gz
 /usr/share/man/man3/libmagic.3.gz
 /usr/share/man/man4/magic.4.gz

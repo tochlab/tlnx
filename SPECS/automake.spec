@@ -1,5 +1,5 @@
-Name:           automake 
-Version:	1.16.1
+Name:           automake
+Version:	1.16.5
 Release:        1%{?dist}
 Summary:	Used to generate Makefile.in from Makefile.am
 
@@ -16,7 +16,7 @@ Source0:	https://mirror.tochlab.net/pub/gnu/automake/automake-%{version}.tar.gz
 %setup -q
 
 %build
-%configure --prefix=/usr --docdir=/usr/share/doc/automake-%{version}
+%configure --prefix=/usr --docdir=/usr/share/doc/automake
 make %{?_smp_mflags}
 
 %install
@@ -139,7 +139,7 @@ rm -f $RPM_BUILD_ROOT/usr/share/info/dir
 /usr/share/automake-1.16/test-driver
 /usr/share/automake-1.16/texinfo.tex
 /usr/share/automake-1.16/ylwrap
-/usr/share/doc/automake-1.16.1/amhello-1.0.tar.gz
+/usr/share/doc/automake/amhello-1.0.tar.gz
 /usr/share/info/automake-history.info.gz
 /usr/share/info/automake.info-1.gz
 /usr/share/info/automake.info-2.gz
@@ -151,7 +151,3 @@ rm -f $RPM_BUILD_ROOT/usr/share/info/dir
 
 
 %changelog
-* Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>
--
-
-# see /usr/libexec/rpm/macros for macros

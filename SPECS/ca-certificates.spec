@@ -1,5 +1,5 @@
 Name:           ca-certificates
-Version:	20190110
+Version:	20211016
 Release:        1%{?dist}
 Summary:	Common CA Certificates PEM files
 

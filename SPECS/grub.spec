@@ -1,5 +1,5 @@
 Name:           grub
-Version:	2.04
+Version:	2.06
 Release:        1%{?dist}
 Summary:	GNU GRUB boot loader
 
@@ -592,8 +592,6 @@ rm -fr $RPM_BUILD_ROOT/usr/share/man/
 /usr/lib/grub/i386-pc/usbtest.module
 /usr/lib/grub/i386-pc/vbe.mod
 /usr/lib/grub/i386-pc/vbe.module
-/usr/lib/grub/i386-pc/verifiers.mod
-/usr/lib/grub/i386-pc/verifiers.module
 /usr/lib/grub/i386-pc/vga.mod
 /usr/lib/grub/i386-pc/vga.module
 /usr/lib/grub/i386-pc/vga_text.mod
@@ -678,10 +676,17 @@ rm -fr $RPM_BUILD_ROOT/usr/share/man/
 /usr/share/locale/vi/LC_MESSAGES/grub.mo
 /usr/share/locale/zh_CN/LC_MESSAGES/grub.mo
 /usr/share/locale/zh_TW/LC_MESSAGES/grub.mo
-
+/etc/grub.d/30_uefi-firmware
+/usr/lib/grub/i386-pc/afsplitter.mod
+/usr/lib/grub/i386-pc/afsplitter.module
+/usr/lib/grub/i386-pc/json.mod
+/usr/lib/grub/i386-pc/json.module
+/usr/lib/grub/i386-pc/luks2.mod
+/usr/lib/grub/i386-pc/luks2.module
+/usr/lib/grub/i386-pc/smbios.mod
+/usr/lib/grub/i386-pc/smbios.module
+/usr/share/info/grub.info-1.gz
+/usr/share/info/grub.info-2.gz
+/usr/share/locale/lg/LC_MESSAGES/grub.mo
 
 %changelog
-* Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>
--
-
-# see /usr/libexec/rpm/macros for macros

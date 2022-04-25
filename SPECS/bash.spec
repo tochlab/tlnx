@@ -1,5 +1,5 @@
-Name:           bash 
-Version:	5.0
+Name:           bash
+Version:	5.1.16
 Release:        1%{?dist}
 Summary:	The standard GNU Bourne again shell
 
@@ -131,6 +131,12 @@ ln -sf bash sh
 /usr/lib/bash/uname
 /usr/lib/bash/unlink
 /usr/lib/bash/whoami
+/usr/lib/bash/accept
+/usr/lib/bash/csv
+/usr/lib/bash/cut
+/usr/lib/bash/mkfifo
+/usr/lib/bash/mktemp
+/usr/lib/bash/rm
 /usr/lib/pkgconfig/bash.pc
 /usr/share/doc/bash/CHANGES
 /usr/share/doc/bash/COMPAT
@@ -181,10 +187,9 @@ ln -sf bash sh
 /usr/share/locale/vi/LC_MESSAGES/bash.mo
 /usr/share/locale/zh_CN/LC_MESSAGES/bash.mo
 /usr/share/locale/zh_TW/LC_MESSAGES/bash.mo
+/usr/share/locale/ko/LC_MESSAGES/bash.mo
 /usr/share/man/man1/bash.1.gz
 /usr/share/man/man1/bashbug.1.gz
 
 
 %changelog
-* Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>
--

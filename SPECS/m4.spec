@@ -11,8 +11,6 @@ Source0:	https://ftpmirror.gnu.org/gnu/m4/m4-%{version}.tar.gz
 
 %prep
 %setup -q
-#sed -i 's/IO_ftrylockfile/IO_EOF_SEEN/' lib/*.c
-#echo "#define _IO_IN_BACKUP 0x100" >> lib/stdio-impl.h
 
 
 %build
@@ -56,4 +54,5 @@ make install DESTDIR=$RPM_BUILD_ROOT
 /usr/share/locale/vi/LC_MESSAGES/m4.mo
 /usr/share/locale/zh_CN/LC_MESSAGES/m4.mo
 /usr/share/locale/zh_TW/LC_MESSAGES/m4.mo
+
 %changelog

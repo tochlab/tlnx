@@ -1,12 +1,12 @@
 Name:           mpc
-Version:        1.1.0
+Version:        1.2.1
 Release:        1%{?dist}
 Summary:        mpc lib
 
 Group:          System Environment/Libraries
 License:        GPL
 #URL:            
-Source0:        https://mirror.tochlab.net/pub/gnu/mpc/mpc-%{version}.tar.gz
+Source0:        https://ftpmirror.gnu.org/mpc/mpc-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 #BuildRequires:  
@@ -46,7 +46,7 @@ rm -rf $RPM_BUILD_ROOT
 /usr/include/mpc.h
 /usr/lib/libmpc.so
 /usr/lib/libmpc.so.3
-/usr/lib/libmpc.so.3.1.0
+/usr/lib/libmpc.so.3.2.1
 /usr/share/info/mpc.info.gz
 
 %changelog

@@ -1,5 +1,5 @@
 Name:           curl
-Version:	7.70.0
+Version:	7.82.0
 Release:        1%{?dist}
 Summary:	A Client that groks URLs
 
@@ -16,7 +16,7 @@ Source0:	https://curl.haxx.se/download/curl-%{version}.tar.gz
 %setup -q
 
 %build
-%configure --libdir=/usr/lib --without-http2 --without-brotli --with-pkg-config-libdir=/usr/lib/pkgconfig
+%configure --libdir=/usr/lib --without-http2 --without-brotli --with-pkg-config-libdir=/usr/lib/pkgconfig --with-openssl
 make %{?_smp_mflags}
 
 %install
@@ -36,10 +36,9 @@ rm -rf $RPM_BUILD_ROOT
 /usr/include/curl/typecheck-gcc.h
 /usr/include/curl/urlapi.h
 /usr/lib/libcurl.a
-#/usr/lib/libcurl.la
 /usr/lib/libcurl.so
 /usr/lib/libcurl.so.4
-/usr/lib/libcurl.so.4.6.0
+/usr/lib/libcurl.so.4.7.0
 /usr/lib/pkgconfig/libcurl.pc
 /usr/share/aclocal/libcurl.m4
 /usr/share/man/man1/curl-config.1.gz
@@ -477,6 +476,44 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/man/man3/libcurl-tutorial.3.gz
 /usr/share/man/man3/libcurl-url.3.gz
 /usr/share/man/man3/libcurl.3.gz
+/usr/include/curl/options.h
+/usr/share/man/man3/CURLINFO_EFFECTIVE_METHOD.3.gz
+/usr/share/man/man3/CURLINFO_PROXY_ERROR.3.gz
+/usr/share/man/man3/CURLINFO_REFERER.3.gz
+/usr/share/man/man3/CURLOPT_AWS_SIGV4.3.gz
+/usr/share/man/man3/CURLOPT_CAINFO_BLOB.3.gz
+/usr/share/man/man3/CURLOPT_DOH_SSL_VERIFYHOST.3.gz
+/usr/share/man/man3/CURLOPT_DOH_SSL_VERIFYPEER.3.gz
+/usr/share/man/man3/CURLOPT_DOH_SSL_VERIFYSTATUS.3.gz
+/usr/share/man/man3/CURLOPT_HSTS.3.gz
+/usr/share/man/man3/CURLOPT_HSTSREADDATA.3.gz
+/usr/share/man/man3/CURLOPT_HSTSREADFUNCTION.3.gz
+/usr/share/man/man3/CURLOPT_HSTSWRITEDATA.3.gz
+/usr/share/man/man3/CURLOPT_HSTSWRITEFUNCTION.3.gz
+/usr/share/man/man3/CURLOPT_HSTS_CTRL.3.gz
+/usr/share/man/man3/CURLOPT_ISSUERCERT_BLOB.3.gz
+/usr/share/man/man3/CURLOPT_MAXLIFETIME_CONN.3.gz
+/usr/share/man/man3/CURLOPT_MIME_OPTIONS.3.gz
+/usr/share/man/man3/CURLOPT_PREREQDATA.3.gz
+/usr/share/man/man3/CURLOPT_PREREQFUNCTION.3.gz
+/usr/share/man/man3/CURLOPT_PROXY_CAINFO_BLOB.3.gz
+/usr/share/man/man3/CURLOPT_PROXY_ISSUERCERT.3.gz
+/usr/share/man/man3/CURLOPT_PROXY_ISSUERCERT_BLOB.3.gz
+/usr/share/man/man3/CURLOPT_PROXY_SSLCERT_BLOB.3.gz
+/usr/share/man/man3/CURLOPT_PROXY_SSLKEY_BLOB.3.gz
+/usr/share/man/man3/CURLOPT_SSH_HOST_PUBLIC_KEY_SHA256.3.gz
+/usr/share/man/man3/CURLOPT_SSLCERT_BLOB.3.gz
+/usr/share/man/man3/CURLOPT_SSLKEY_BLOB.3.gz
+/usr/share/man/man3/CURLOPT_SSL_EC_CURVES.3.gz
+/usr/share/man/man3/CURLSHOPT_LOCKFUNC.3.gz
+/usr/share/man/man3/CURLSHOPT_SHARE.3.gz
+/usr/share/man/man3/CURLSHOPT_UNLOCKFUNC.3.gz
+/usr/share/man/man3/CURLSHOPT_UNSHARE.3.gz
+/usr/share/man/man3/CURLSHOPT_USERDATA.3.gz
+/usr/share/man/man3/curl_easy_option_by_id.3.gz
+/usr/share/man/man3/curl_easy_option_by_name.3.gz
+/usr/share/man/man3/curl_easy_option_next.3.gz
+/usr/share/man/man3/curl_url_strerror.3.gz
 
 
-# see /usr/libexec/rpm/macros for macros
+%changelog

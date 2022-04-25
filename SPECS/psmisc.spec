@@ -1,4 +1,4 @@
-Name:         	psmisc 
+Name:         	psmisc
 Version:	v23.4
 Release:        1%{?dist}
 Summary:	A set of tools that use the proc filesystem
@@ -40,5 +40,3 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/man/man1/pstree.1.gz
 
 %changelog
-* Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>
--

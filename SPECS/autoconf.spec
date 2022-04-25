@@ -1,5 +1,5 @@
 Name:           autoconf
-Version:	2.69
+Version:	2.71
 Release:        1%{?dist}
 Summary:        Used to create autoconfiguration files
 
@@ -83,13 +83,12 @@ rm -fr $RPM_BUILD_ROOT/usr/share/info/dir
 /usr/share/man/man1/autoreconf.1.gz
 /usr/share/man/man1/autoscan.1.gz
 /usr/share/man/man1/autoupdate.1.gz
-/usr/share/man/man1/config.guess.1.gz
-/usr/share/man/man1/config.sub.1.gz
 /usr/share/man/man1/ifnames.1.gz
+/usr/share/autoconf/Autom4te/Config.pm
+/usr/share/autoconf/autoconf/trailer.m4
+/usr/share/autoconf/build-aux/config.guess
+/usr/share/autoconf/build-aux/config.sub
+/usr/share/autoconf/build-aux/install-sh
 
 
 %changelog
-* Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>
--
-
-# see /usr/libexec/rpm/macros for macros

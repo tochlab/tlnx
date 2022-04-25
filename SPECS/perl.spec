@@ -1,5 +1,5 @@
 Name:           perl
-Version:	5.34.0
+Version:	5.34.1
 Release:        1%{?dist}
 Summary:	Larry Wall's Practical Extraction and Report Language
 
@@ -100,7 +100,7 @@ chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Compress/Raw/Bzip2/Bzip2.so
 /usr/bin/json_pp
 /usr/bin/libnetcfg
 /usr/bin/perl
-/usr/bin/perl5.34.0
+/usr/bin/perl%{version}
 /usr/bin/perlbug
 /usr/bin/perldoc
 /usr/bin/perlivp
@@ -2567,10 +2567,8 @@ chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Compress/Raw/Bzip2/Bzip2.so
 /usr/share/man/man3/vmsish.3.gz
 /usr/share/man/man3/warnings.3.gz
 /usr/share/man/man3/warnings::register.3.gz
-
+/usr/lib/perl5/5.34/pod/perl5341delta.pod
+/usr/share/man/man1/perl5341delta.1.gz
 
 %changelog
-* Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>
--
 
-# see /usr/libexec/rpm/macros for macros

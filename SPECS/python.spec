@@ -1,5 +1,5 @@
 Name:          	Python
-Version:	3.9.10
+Version:	3.9.12
 Release:        1%{?dist}
 Summary:	An interpreted, interactive, object-oriented programming language
 
@@ -640,7 +640,7 @@ ln -s /usr/bin/python3 /usr/bin/python
 /usr/lib/python3.9/ensurepip/__init__.py
 /usr/lib/python3.9/ensurepip/__main__.py
 /usr/lib/python3.9/ensurepip/_bundled/__init__.py
-/usr/lib/python3.9/ensurepip/_bundled/pip-21.2.4-py3-none-any.whl
+/usr/lib/python3.9/ensurepip/_bundled/pip-22.0.4-py3-none-any.whl
 /usr/lib/python3.9/ensurepip/_bundled/setuptools-58.1.0-py3-none-any.whl
 /usr/lib/python3.9/ensurepip/_uninstall.py
 /usr/lib/python3.9/enum.py
@@ -822,6 +822,11 @@ ln -s /usr/bin/python3 /usr/bin/python
 /usr/lib/python3.9/idlelib/window.py
 /usr/lib/python3.9/idlelib/zoomheight.py
 /usr/lib/python3.9/idlelib/zzdummy.py
+/usr/lib/python3.9/idlelib/idle_test/example_noext
+/usr/lib/python3.9/idlelib/idle_test/example_stub.pyi
+/usr/lib/python3.9/idlelib/idle_test/test_util.py
+/usr/lib/python3.9/idlelib/util.py
+/usr/lib/python3.9/test/ann_module7.py
 /usr/lib/python3.9/imaplib.py
 /usr/lib/python3.9/imghdr.py
 /usr/lib/python3.9/imp.py
@@ -919,9 +924,9 @@ ln -s /usr/bin/python3 /usr/bin/python
 /usr/lib/python3.9/lib-dynload/xxlimited.cpython-39-x86_64-linux-gnu.so
 /usr/lib/python3.9/lib-dynload/zlib.cpython-39-x86_64-linux-gnu.so
 /usr/lib/python3.9/lib2to3/Grammar.txt
-/usr/lib/python3.9/lib2to3/Grammar3.9.10.final.0.pickle
+/usr/lib/python3.9/lib2to3/Grammar%{version}.final.0.pickle
 /usr/lib/python3.9/lib2to3/PatternGrammar.txt
-/usr/lib/python3.9/lib2to3/PatternGrammar3.9.10.final.0.pickle
+/usr/lib/python3.9/lib2to3/PatternGrammar%{version}.final.0.pickle
 /usr/lib/python3.9/lib2to3/__init__.py
 /usr/lib/python3.9/lib2to3/__main__.py
 /usr/lib/python3.9/lib2to3/btm_matcher.py
@@ -1542,7 +1547,7 @@ ln -s /usr/bin/python3 /usr/bin/python
 /usr/lib/python3.9/test/test_asyncio/echo2.py
 /usr/lib/python3.9/test/test_asyncio/echo3.py
 /usr/lib/python3.9/test/test_asyncio/functional.py
-/usr/lib/python3.9/test/test_asyncio/test_asyncio_waitfor.py
+/usr/lib/python3.9/test/test_asyncio/test_waitfor.py
 /usr/lib/python3.9/test/test_asyncio/test_base_events.py
 /usr/lib/python3.9/test/test_asyncio/test_buffered_proto.py
 /usr/lib/python3.9/test/test_asyncio/test_context.py
@@ -2459,7 +2464,3 @@ ln -s /usr/bin/python3 /usr/bin/python
 
 
 %changelog
-* Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>
--
-
-# see /usr/libexec/rpm/macros for macros

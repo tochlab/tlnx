@@ -58,7 +58,3 @@ rm -rf $RPM_BUILD_ROOT
 %doc
 
 %changelog
-* Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>
--
-
-# see /usr/libexec/rpm/macros for macros

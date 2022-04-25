@@ -1,11 +1,11 @@
 Name:           attr 
-Version:	2.4.48
+Version:	2.5.1
 Release:        1%{?dist}
 Summary:	Extended attributes tools
 
 License:	GPL
 URL:		https://savannah.nongnu.org/projects/attr
-Source0:	https://download-mirror.savannah.gnu.org/releases/attr/attr-2.4.48.tar.gz
+Source0:	https://download-mirror.savannah.gnu.org/releases/attr/attr-%{version}.tar.gz
 
 #BuildRequires:
 #Requires:
@@ -21,7 +21,7 @@ Source0:	https://download-mirror.savannah.gnu.org/releases/attr/attr-2.4.48.tar.
             --bindir=/bin     \
             --disable-static  \
             --sysconfdir=/etc \
-            --docdir=/usr/share/doc/attr-%{version} \
+            --docdir=/usr/share/doc/attr \
             --with-pkg-config-libdir=/usr/lib/pkgconfig
 make %{?_smp_mflags}
 #make check
@@ -38,15 +38,14 @@ rm -rf $RPM_BUILD_ROOT
 /usr/include/attr/attributes.h
 /usr/include/attr/error_context.h
 /usr/include/attr/libattr.h
-#/usr/lib/libattr.la
 /usr/lib/libattr.so
 /usr/lib/libattr.so.1
-/usr/lib/libattr.so.1.1.2448
+/usr/lib/libattr.so.1.1.2501
 /usr/lib/pkgconfig/libattr.pc
-/usr/share/doc/attr-2.4.48/CHANGES
-/usr/share/doc/attr-2.4.48/COPYING
-/usr/share/doc/attr-2.4.48/COPYING.LGPL
-/usr/share/doc/attr-2.4.48/PORTING
+/usr/share/doc/attr/CHANGES
+/usr/share/doc/attr/COPYING
+/usr/share/doc/attr/COPYING.LGPL
+/usr/share/doc/attr/PORTING
 /usr/share/locale/cs/LC_MESSAGES/attr.mo
 /usr/share/locale/de/LC_MESSAGES/attr.mo
 /usr/share/locale/en@boldquot/LC_MESSAGES/attr.mo
@@ -73,5 +72,3 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
-* Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>
--

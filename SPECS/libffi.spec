@@ -1,5 +1,5 @@
 Name:           libffi
-Version:	3.3
+Version:	3.4.2
 Release:        1
 Summary:	a portable, high level programming interface to various calling conventions
 
@@ -30,10 +30,9 @@ rm $RPM_BUILD_ROOT/usr/share/info/dir
 /usr/include/ffi.h
 /usr/include/ffitarget.h
 /usr/lib/libffi.a
-#/usr/lib/libffi.la
 /usr/lib/libffi.so
-/usr/lib/libffi.so.7
-/usr/lib/libffi.so.7.1.0
+/usr/lib/libffi.so.8
+/usr/lib/libffi.so.8.1.0
 /usr/lib/pkgconfig/libffi.pc
 /usr/share/info/libffi.info.gz
 /usr/share/man/man3/ffi.3.gz

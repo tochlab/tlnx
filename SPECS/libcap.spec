@@ -1,5 +1,5 @@
-Name:          	libcap 
-Version:	2.33
+Name:          	libcap
+Version:	2.64
 Release:        1%{?dist}
 Summary:	POSIX 1003.1e capabilities
 
@@ -20,15 +20,17 @@ Source0:	https://mirrors.edge.kernel.org/pub/linux/libs/security/linux-privs/lib
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%make_install lib=lib GOLANG=no PAM_CAP=no
+%make_install lib=/usr/lib GOLANG=no PAM_CAP=no
 
 %files
-/lib/libcap.a
-/lib/libcap.so
-/lib/libcap.so.2
-/lib/libcap.so.2.33
-/lib/libpsx.a
-#/lib/security/pam_cap.so
+/usr/lib/libcap.a
+/usr/lib/libcap.so
+/usr/lib/libcap.so.2
+/usr/lib/libcap.so.2.64
+/usr/lib/libpsx.a
+/usr/lib/libpsx.so
+/usr/lib/libpsx.so.2
+/usr/lib/libpsx.so.2.64
 /sbin/capsh
 /sbin/getcap
 /sbin/getpcaps
@@ -73,15 +75,39 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/man/man3/capsetp.3.gz
 /usr/share/man/man3/libcap.3.gz
 /usr/share/man/man3/libpsx.3.gz
-/usr/share/man/man3/psx_register.3.gz
 /usr/share/man/man3/psx_syscall.3.gz
 /usr/share/man/man3/psx_syscall3.3.gz
 /usr/share/man/man3/psx_syscall6.3.gz
+/usr/share/man/man3/cap_fill.3.gz
+/usr/share/man/man3/cap_fill_flag.3.gz
+/usr/share/man/man3/cap_func_launcher.3.gz
+/usr/share/man/man3/cap_iab.3.gz
+/usr/share/man/man3/cap_iab_compare.3.gz
+/usr/share/man/man3/cap_iab_dup.3.gz
+/usr/share/man/man3/cap_iab_fill.3.gz
+/usr/share/man/man3/cap_iab_from_text.3.gz
+/usr/share/man/man3/cap_iab_get_pid.3.gz
+/usr/share/man/man3/cap_iab_get_proc.3.gz
+/usr/share/man/man3/cap_iab_get_vector.3.gz
+/usr/share/man/man3/cap_iab_init.3.gz
+/usr/share/man/man3/cap_iab_set_proc.3.gz
+/usr/share/man/man3/cap_iab_set_vector.3.gz
+/usr/share/man/man3/cap_iab_to_text.3.gz
+/usr/share/man/man3/cap_launch.3.gz
+/usr/share/man/man3/cap_launcher_callback.3.gz
+/usr/share/man/man3/cap_launcher_set_chroot.3.gz
+/usr/share/man/man3/cap_launcher_set_iab.3.gz
+/usr/share/man/man3/cap_launcher_set_mode.3.gz
+/usr/share/man/man3/cap_launcher_setgroups.3.gz
+/usr/share/man/man3/cap_launcher_setuid.3.gz
+/usr/share/man/man3/cap_max_bits.3.gz
+/usr/share/man/man3/cap_mode.3.gz
+/usr/share/man/man3/cap_new_launcher.3.gz
+/usr/share/man/man3/psx_set_sensitivity.3.gz
+/usr/share/man/man8/captree.8.gz
 /usr/share/man/man8/getcap.8.gz
 /usr/share/man/man8/getpcaps.8.gz
 /usr/share/man/man8/setcap.8.gz
 
 
 %changelog
-* Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>
--

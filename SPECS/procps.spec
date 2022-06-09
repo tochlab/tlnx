@@ -23,7 +23,8 @@ Source0:	https://gitlab.com/procps-ng/procps/-/archive/%{version}/procps-%{versi
             --docdir=/usr/share/doc/procps           \
             --disable-static                         \
             --disable-kill \
-            --with-pkg-config-libdir=/usr/lib/pkgconfig
+            --with-pkg-config-libdir=/usr/lib/pkgconfig \
+	    --disable-nls
             
 make %{?_smp_mflags}
 
@@ -67,14 +68,6 @@ rm -rf $RPM_BUILD_ROOT
 /usr/lib/pkgconfig/libprocps.pc
 /usr/share/doc/procps/FAQ
 /usr/share/doc/procps/bugs.md
-/usr/share/locale/de/LC_MESSAGES/procps-ng.mo
-/usr/share/locale/fr/LC_MESSAGES/procps-ng.mo
-/usr/share/locale/pl/LC_MESSAGES/procps-ng.mo
-/usr/share/locale/pt_BR/LC_MESSAGES/procps-ng.mo
-/usr/share/locale/sv/LC_MESSAGES/procps-ng.mo
-/usr/share/locale/uk/LC_MESSAGES/procps-ng.mo
-/usr/share/locale/vi/LC_MESSAGES/procps-ng.mo
-/usr/share/locale/zh_CN/LC_MESSAGES/procps-ng.mo
 /usr/share/man/man1/free.1.gz
 /usr/share/man/man1/pgrep.1.gz
 /usr/share/man/man1/pidof.1.gz
@@ -95,64 +88,7 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/man/man5/sysctl.conf.5.gz
 /usr/share/man/man8/sysctl.8.gz
 /usr/share/man/man8/vmstat.8.gz
-/usr/share/man/de/man1/free.1.gz
-/usr/share/man/de/man1/pgrep.1.gz
-/usr/share/man/de/man1/pmap.1.gz
-/usr/share/man/de/man1/ps.1.gz
-/usr/share/man/de/man1/pwdx.1.gz
-/usr/share/man/de/man1/tload.1.gz
-/usr/share/man/de/man1/uptime.1.gz
-/usr/share/man/de/man1/w.1.gz
-/usr/share/man/de/man5/sysctl.conf.5.gz
-/usr/share/man/de/man8/sysctl.8.gz
-/usr/share/man/de/man8/vmstat.8.gz
-/usr/share/man/fr/man1/free.1.gz
-/usr/share/man/fr/man1/pgrep.1.gz
-/usr/share/man/fr/man1/pmap.1.gz
-/usr/share/man/fr/man1/ps.1.gz
-/usr/share/man/fr/man1/pwdx.1.gz
-/usr/share/man/fr/man1/tload.1.gz
-/usr/share/man/fr/man1/uptime.1.gz
-/usr/share/man/fr/man1/w.1.gz
-/usr/share/man/fr/man5/sysctl.conf.5.gz
-/usr/share/man/fr/man8/sysctl.8.gz
-/usr/share/man/fr/man8/vmstat.8.gz
 /usr/share/man/man1/pwait.1.gz
-/usr/share/man/pl/man1/free.1.gz
-/usr/share/man/pl/man1/pmap.1.gz
-/usr/share/man/pl/man1/pwdx.1.gz
-/usr/share/man/pl/man1/tload.1.gz
-/usr/share/man/pl/man1/uptime.1.gz
-/usr/share/man/pl/man1/w.1.gz
-/usr/share/man/pl/man8/sysctl.8.gz
-/usr/share/man/pl/man8/vmstat.8.gz
-/usr/share/man/pt_BR/man1/free.1.gz
-/usr/share/man/pt_BR/man1/pmap.1.gz
-/usr/share/man/pt_BR/man1/pwdx.1.gz
-/usr/share/man/pt_BR/man1/tload.1.gz
-/usr/share/man/pt_BR/man1/uptime.1.gz
-/usr/share/man/pt_BR/man1/w.1.gz
-/usr/share/man/pt_BR/man8/sysctl.8.gz
-/usr/share/man/pt_BR/man8/vmstat.8.gz
-/usr/share/man/sv/man1/free.1.gz
-/usr/share/man/sv/man1/pgrep.1.gz
-/usr/share/man/sv/man1/pmap.1.gz
-/usr/share/man/sv/man1/pwdx.1.gz
-/usr/share/man/sv/man1/tload.1.gz
-/usr/share/man/sv/man1/uptime.1.gz
-/usr/share/man/sv/man1/w.1.gz
-/usr/share/man/sv/man8/sysctl.8.gz
-/usr/share/man/sv/man8/vmstat.8.gz
-/usr/share/man/uk/man1/free.1.gz
-/usr/share/man/uk/man1/pgrep.1.gz
-/usr/share/man/uk/man1/pmap.1.gz
-/usr/share/man/uk/man1/pwdx.1.gz
-/usr/share/man/uk/man1/tload.1.gz
-/usr/share/man/uk/man1/uptime.1.gz
-/usr/share/man/uk/man1/w.1.gz
-/usr/share/man/uk/man5/sysctl.conf.5.gz
-/usr/share/man/uk/man8/sysctl.8.gz
-/usr/share/man/uk/man8/vmstat.8.gz
 
 
 %changelog

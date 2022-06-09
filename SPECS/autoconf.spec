@@ -16,7 +16,6 @@ Source0:	https://ftpmirror.gnu.org/gnu/autoconf/autoconf-%{version}.tar.gz
 %setup -q
 
 %build
-sed '361 s/{/\\{/' -i bin/autoscan.in
 %configure --prefix=/usr
 make %{?_smp_mflags}
 

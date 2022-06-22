@@ -35,12 +35,14 @@ make %{?_smp_mflags}
 rm -rf $RPM_BUILD_ROOT
 %make_install
 rm -fr %{buildroot}/usr/lib/perl5/5.34/auto/
-rm -fr %{buildroot}/usr/lib/perl5/5.34/DB_File.pm
-rm -fr %{buildroot}/usr/share/man/man3/DB_File.3.gz
+#rm -fr %{buildroot}/usr/lib/perl5/5.34/DB_File.pm
+#rm -fr %{buildroot}/usr/share/man/man3/DB_File.3.gz
 chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/CORE/libperl.so
 
 
 %files
+/usr/lib/perl5/5.34/DB_File.pm
+/usr/share/man/man3/DB_File.3.gz
 /usr/bin/corelist
 /usr/bin/cpan
 /usr/bin/enc2xs

@@ -1,9 +1,9 @@
 Name:           libnsl
-Version:	1.3.0
+Version:	2.0.0
 Release:        1%{?dist}
-Summary:	Library contains the public client interface for NIS(YP) and NIS+ in a IPv6 ready version 
+Summary:	Public client interface for NIS(YP) in a IPv6 ready version
 
-License:	LGPL-2.1
+License:	LGPL-2.1+
 URL:		https://github.com/thkukuk/libnsl
 Source0:	https://github.com/thkukuk/libnsl/releases/download/v%{version}/libnsl-%{version}.tar.xz
 
@@ -11,7 +11,6 @@ Source0:	https://github.com/thkukuk/libnsl/releases/download/v%{version}/libnsl-
 #Requires:
 
 %description
-Public client interface for NIS(YP) and NIS+ in a IPv6 ready version
 
 %prep
 %setup -q
@@ -34,13 +33,6 @@ rm -rf $RPM_BUILD_ROOT
 #/sbin/install-info --delete /usr/share/info/DevIL_manual.info.gz /usr/share/info/dir 2> /dev/null || :
 
 %files
-/usr/include/rpcsvc/nis.h
-/usr/include/rpcsvc/nis.x
-/usr/include/rpcsvc/nis_callback.h
-/usr/include/rpcsvc/nis_callback.x
-/usr/include/rpcsvc/nis_object.x
-/usr/include/rpcsvc/nis_tags.h
-/usr/include/rpcsvc/nislib.h
 /usr/include/rpcsvc/yp.h
 /usr/include/rpcsvc/yp.x
 /usr/include/rpcsvc/yp_prot.h
@@ -49,11 +41,11 @@ rm -rf $RPM_BUILD_ROOT
 /usr/include/rpcsvc/yppasswd.x
 /usr/include/rpcsvc/ypupd.h
 /usr/lib/libnsl.a
-#/usr/lib/libnsl.la
 /usr/lib/libnsl.so
-/usr/lib/libnsl.so.2
-/usr/lib/libnsl.so.2.0.1
+/usr/lib/libnsl.so.3
+/usr/lib/libnsl.so.3.0.0
 /usr/lib/pkgconfig/libnsl.pc
+
 
 %doc
 

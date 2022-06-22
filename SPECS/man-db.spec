@@ -26,7 +26,8 @@ Source0:	http://download.savannah.nongnu.org/releases/man-db/man-db-%{version}.t
             --with-vgrind=/usr/bin/vgrind        \
             --with-grap=/usr/bin/grap            \
             --with-systemdtmpfilesdir=           \
-            --with-systemdsystemunitdir=	 
+            --with-systemdsystemunitdir=	\
+	    --disable-nls 
 make %{?_smp_mflags}
 
 %install

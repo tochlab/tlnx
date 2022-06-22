@@ -17,7 +17,7 @@ Source0:	https://gitlab.com/psmisc/psmisc/-/archive/%{version}/psmisc-%{version}
 
 %build
 ./autogen.sh
-LDFLAGS="-Wl,--build-id" ./configure --prefix=/usr --disable-nls
+LDFLAGS="-Wl,--build-id" ./configure --prefix=/usr
 make %{?_smp_mflags}
 
 %install

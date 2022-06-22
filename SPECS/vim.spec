@@ -16,7 +16,7 @@ Source0:	https://github.com/vim/vim/archive/refs/tags/v%{version}.tar.gz
 %setup -q
 
 %build
-%configure --prefix=/usr --enable-gui=no --disable-nls --without-x --disable-canberra --disable-gpm --with-features=normal 
+%configure --prefix=/usr --enable-gui=no --without-x --disable-canberra --disable-gpm --with-features=normal
 make %{?_smp_mflags}
 
 %install

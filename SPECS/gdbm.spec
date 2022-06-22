@@ -19,8 +19,7 @@ Source0:	https://ftpmirror.gnu.org/gnu/gdbm/gdbm-%{version}.tar.gz
 %configure --prefix=/usr    \
 	    --libdir=/usr/lib \
             --disable-static \
-            --enable-libgdbm-compat \
-	    --disable-nls
+            --enable-libgdbm-compat
 make %{?_smp_mflags}
 
 %install

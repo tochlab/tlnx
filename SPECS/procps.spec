@@ -23,8 +23,7 @@ Source0:	https://gitlab.com/procps-ng/procps/-/archive/%{version}/procps-%{versi
             --docdir=/usr/share/doc/procps           \
             --disable-static                         \
             --disable-kill \
-            --with-pkg-config-libdir=/usr/lib/pkgconfig \
-	    --disable-nls
+            --with-pkg-config-libdir=/usr/lib/pkgconfig
             
 make %{?_smp_mflags}
 

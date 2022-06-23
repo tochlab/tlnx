@@ -1,5 +1,5 @@
 Name:           gzip
-Version:	1.10
+Version:	1.12
 Release:        1%{?dist}
 Summary:	Standard GNU compressor
 
@@ -54,7 +54,3 @@ rm -rf $RPM_BUILD_ROOT/usr/share/info/dir
 
 
 %changelog
-* Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>
--
-
-# see /usr/libexec/rpm/macros for macros

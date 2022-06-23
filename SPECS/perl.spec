@@ -1,5 +1,5 @@
 Name:           perl
-Version:	5.34.0
+Version:	5.34.1
 Release:        1%{?dist}
 Summary:	Larry Wall's Practical Extraction and Report Language
 
@@ -34,62 +34,18 @@ make %{?_smp_mflags}
 %install
 rm -rf $RPM_BUILD_ROOT
 %make_install
+#rm -fr %{buildroot}/usr/lib/perl5/5.34/auto/
+#rm -fr %{buildroot}/usr/lib/perl5/5.34/DB_File.pm
+#rm -fr %{buildroot}/usr/share/man/man3/DB_File.3.gz
 chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/CORE/libperl.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Devel/Peek/Peek.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Digest/MD5/MD5.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Digest/SHA/SHA.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Encode/Byte/Byte.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Encode/CN/CN.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Encode/EBCDIC/EBCDIC.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/SDBM_File/SDBM_File.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Socket/Socket.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Encode/JP/JP.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Storable/Storable.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Sys/Hostname/Hostname.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Sys/Syslog/Syslog.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/threads/shared/shared.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Encode/KR/KR.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/threads/threads.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Encode/Symbol/Symbol.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Time/Piece/Piece.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Time/HiRes/HiRes.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Encode/TW/TW.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Encode/Unicode/Unicode.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Unicode/Collate/Collate.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Encode/Encode.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Unicode/Normalize/Normalize.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Fcntl/Fcntl.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Math/BigInt/FastCalc/FastCalc.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/File/DosGlob/DosGlob.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/File/Glob/Glob.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Filter/Util/Call/Call.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/GDBM_File/GDBM_File.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Hash/Util/FieldHash/FieldHash.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Hash/Util/Util.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/I18N/Langinfo/Langinfo.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/IPC/SysV/SysV.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/List/Util/Util.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/MIME/Base64/Base64.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/mro/mro.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/NDBM_File/NDBM_File.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Opcode/Opcode.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/PerlIO/encoding/encoding.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/PerlIO/mmap/mmap.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/PerlIO/scalar/scalar.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/PerlIO/via/via.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/POSIX/POSIX.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/re/re.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/IO/IO.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/attributes/attributes.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Cwd/Cwd.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Data/Dumper/Dumper.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/B/B.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/DB_File/DB_File.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Compress/Raw/Zlib/Zlib.so
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Compress/Raw/Bzip2/Bzip2.so
+chmod -R +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/
 
+%post
+chmod -R -x,-w /usr/lib/perl5/5.34/auto/
 
 %files
+/usr/lib/perl5/5.34/DB_File.pm
+/usr/share/man/man3/DB_File.3.gz
 /usr/bin/corelist
 /usr/bin/cpan
 /usr/bin/enc2xs
@@ -100,7 +56,7 @@ chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Compress/Raw/Bzip2/Bzip2.so
 /usr/bin/json_pp
 /usr/bin/libnetcfg
 /usr/bin/perl
-/usr/bin/perl5.34.0
+/usr/bin/perl%{version}
 /usr/bin/perlbug
 /usr/bin/perldoc
 /usr/bin/perlivp
@@ -296,7 +252,6 @@ chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Compress/Raw/Bzip2/Bzip2.so
 /usr/lib/perl5/5.34/DBM_Filter/int32.pm
 /usr/lib/perl5/5.34/DBM_Filter/null.pm
 /usr/lib/perl5/5.34/DBM_Filter/utf8.pm
-/usr/lib/perl5/5.34/DB_File.pm
 /usr/lib/perl5/5.34/Data/Dumper.pm
 /usr/lib/perl5/5.34/Devel/PPPort.pm
 /usr/lib/perl5/5.34/Devel/Peek.pm
@@ -898,58 +853,6 @@ chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Compress/Raw/Bzip2/Bzip2.so
 /usr/lib/perl5/5.34/XSLoader.pm
 /usr/lib/perl5/5.34/_charnames.pm
 /usr/lib/perl5/5.34/attributes.pm
-/usr/lib/perl5/5.34/auto/B/B.so
-/usr/lib/perl5/5.34/auto/Compress/Raw/Bzip2/Bzip2.so
-/usr/lib/perl5/5.34/auto/Compress/Raw/Zlib/Zlib.so
-/usr/lib/perl5/5.34/auto/Cwd/Cwd.so
-/usr/lib/perl5/5.34/auto/DB_File/DB_File.so
-/usr/lib/perl5/5.34/auto/Data/Dumper/Dumper.so
-/usr/lib/perl5/5.34/auto/Devel/Peek/Peek.so
-/usr/lib/perl5/5.34/auto/Digest/MD5/MD5.so
-/usr/lib/perl5/5.34/auto/Digest/SHA/SHA.so
-/usr/lib/perl5/5.34/auto/Encode/Byte/Byte.so
-/usr/lib/perl5/5.34/auto/Encode/CN/CN.so
-/usr/lib/perl5/5.34/auto/Encode/EBCDIC/EBCDIC.so
-/usr/lib/perl5/5.34/auto/Encode/Encode.so
-/usr/lib/perl5/5.34/auto/Encode/JP/JP.so
-/usr/lib/perl5/5.34/auto/Encode/KR/KR.so
-/usr/lib/perl5/5.34/auto/Encode/Symbol/Symbol.so
-/usr/lib/perl5/5.34/auto/Encode/TW/TW.so
-/usr/lib/perl5/5.34/auto/Encode/Unicode/Unicode.so
-/usr/lib/perl5/5.34/auto/Fcntl/Fcntl.so
-/usr/lib/perl5/5.34/auto/File/DosGlob/DosGlob.so
-/usr/lib/perl5/5.34/auto/File/Glob/Glob.so
-/usr/lib/perl5/5.34/auto/Filter/Util/Call/Call.so
-/usr/lib/perl5/5.34/auto/GDBM_File/GDBM_File.so
-/usr/lib/perl5/5.34/auto/Hash/Util/FieldHash/FieldHash.so
-/usr/lib/perl5/5.34/auto/Hash/Util/Util.so
-/usr/lib/perl5/5.34/auto/I18N/Langinfo/Langinfo.so
-/usr/lib/perl5/5.34/auto/IO/IO.so
-/usr/lib/perl5/5.34/auto/IPC/SysV/SysV.so
-/usr/lib/perl5/5.34/auto/List/Util/Util.so
-/usr/lib/perl5/5.34/auto/MIME/Base64/Base64.so
-/usr/lib/perl5/5.34/auto/Math/BigInt/FastCalc/FastCalc.so
-/usr/lib/perl5/5.34/auto/NDBM_File/NDBM_File.so
-/usr/lib/perl5/5.34/auto/Opcode/Opcode.so
-/usr/lib/perl5/5.34/auto/POSIX/POSIX.so
-/usr/lib/perl5/5.34/auto/PerlIO/encoding/encoding.so
-/usr/lib/perl5/5.34/auto/PerlIO/mmap/mmap.so
-/usr/lib/perl5/5.34/auto/PerlIO/scalar/scalar.so
-/usr/lib/perl5/5.34/auto/PerlIO/via/via.so
-/usr/lib/perl5/5.34/auto/SDBM_File/SDBM_File.so
-/usr/lib/perl5/5.34/auto/Socket/Socket.so
-/usr/lib/perl5/5.34/auto/Storable/Storable.so
-/usr/lib/perl5/5.34/auto/Sys/Hostname/Hostname.so
-/usr/lib/perl5/5.34/auto/Sys/Syslog/Syslog.so
-/usr/lib/perl5/5.34/auto/Time/HiRes/HiRes.so
-/usr/lib/perl5/5.34/auto/Time/Piece/Piece.so
-/usr/lib/perl5/5.34/auto/Unicode/Collate/Collate.so
-/usr/lib/perl5/5.34/auto/Unicode/Normalize/Normalize.so
-/usr/lib/perl5/5.34/auto/attributes/attributes.so
-/usr/lib/perl5/5.34/auto/mro/mro.so
-/usr/lib/perl5/5.34/auto/re/re.so
-/usr/lib/perl5/5.34/auto/threads/shared/shared.so
-/usr/lib/perl5/5.34/auto/threads/threads.so
 /usr/lib/perl5/5.34/autodie.pm
 /usr/lib/perl5/5.34/autodie/Scope/Guard.pm
 /usr/lib/perl5/5.34/autodie/Scope/GuardStack.pm
@@ -2064,7 +1967,6 @@ chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Compress/Raw/Bzip2/Bzip2.so
 /usr/share/man/man3/DBM_Filter::int32.3.gz
 /usr/share/man/man3/DBM_Filter::null.3.gz
 /usr/share/man/man3/DBM_Filter::utf8.3.gz
-/usr/share/man/man3/DB_File.3.gz
 /usr/share/man/man3/Data::Dumper.3.gz
 /usr/share/man/man3/Devel::PPPort.3.gz
 /usr/share/man/man3/Devel::Peek.3.gz
@@ -2567,10 +2469,61 @@ chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/Compress/Raw/Bzip2/Bzip2.so
 /usr/share/man/man3/vmsish.3.gz
 /usr/share/man/man3/warnings.3.gz
 /usr/share/man/man3/warnings::register.3.gz
+/usr/lib/perl5/5.34/pod/perl5341delta.pod
+/usr/share/man/man1/perl5341delta.1.gz
+   /usr/lib/perl5/5.34/auto/B/B.so
+   /usr/lib/perl5/5.34/auto/Compress/Raw/Bzip2/Bzip2.so
+   /usr/lib/perl5/5.34/auto/Compress/Raw/Zlib/Zlib.so
+   /usr/lib/perl5/5.34/auto/Cwd/Cwd.so
+   /usr/lib/perl5/5.34/auto/DB_File/DB_File.so
+   /usr/lib/perl5/5.34/auto/Data/Dumper/Dumper.so
+   /usr/lib/perl5/5.34/auto/Devel/Peek/Peek.so
+   /usr/lib/perl5/5.34/auto/Digest/MD5/MD5.so
+   /usr/lib/perl5/5.34/auto/Digest/SHA/SHA.so
+   /usr/lib/perl5/5.34/auto/Encode/Byte/Byte.so
+   /usr/lib/perl5/5.34/auto/Encode/CN/CN.so
+   /usr/lib/perl5/5.34/auto/Encode/EBCDIC/EBCDIC.so
+   /usr/lib/perl5/5.34/auto/Encode/Encode.so
+   /usr/lib/perl5/5.34/auto/Encode/JP/JP.so
+   /usr/lib/perl5/5.34/auto/Encode/KR/KR.so
+   /usr/lib/perl5/5.34/auto/Encode/Symbol/Symbol.so
+   /usr/lib/perl5/5.34/auto/Encode/TW/TW.so
+   /usr/lib/perl5/5.34/auto/Encode/Unicode/Unicode.so
+   /usr/lib/perl5/5.34/auto/Fcntl/Fcntl.so
+   /usr/lib/perl5/5.34/auto/File/DosGlob/DosGlob.so
+   /usr/lib/perl5/5.34/auto/File/Glob/Glob.so
+   /usr/lib/perl5/5.34/auto/Filter/Util/Call/Call.so
+   /usr/lib/perl5/5.34/auto/GDBM_File/GDBM_File.so
+   /usr/lib/perl5/5.34/auto/Hash/Util/FieldHash/FieldHash.so
+   /usr/lib/perl5/5.34/auto/Hash/Util/Util.so
+   /usr/lib/perl5/5.34/auto/I18N/Langinfo/Langinfo.so
+   /usr/lib/perl5/5.34/auto/IO/IO.so
+   /usr/lib/perl5/5.34/auto/IPC/SysV/SysV.so
+   /usr/lib/perl5/5.34/auto/List/Util/Util.so
+   /usr/lib/perl5/5.34/auto/MIME/Base64/Base64.so
+   /usr/lib/perl5/5.34/auto/Math/BigInt/FastCalc/FastCalc.so
+   /usr/lib/perl5/5.34/auto/NDBM_File/NDBM_File.so
+   /usr/lib/perl5/5.34/auto/Opcode/Opcode.so
+   /usr/lib/perl5/5.34/auto/POSIX/POSIX.so
+   /usr/lib/perl5/5.34/auto/PerlIO/encoding/encoding.so
+   /usr/lib/perl5/5.34/auto/PerlIO/mmap/mmap.so
+   /usr/lib/perl5/5.34/auto/PerlIO/scalar/scalar.so
+   /usr/lib/perl5/5.34/auto/PerlIO/via/via.so
+   /usr/lib/perl5/5.34/auto/SDBM_File/SDBM_File.so
+   /usr/lib/perl5/5.34/auto/Socket/Socket.so
+   /usr/lib/perl5/5.34/auto/Storable/Storable.so
+   /usr/lib/perl5/5.34/auto/Sys/Hostname/Hostname.so
+   /usr/lib/perl5/5.34/auto/Sys/Syslog/Syslog.so
+   /usr/lib/perl5/5.34/auto/Time/HiRes/HiRes.so
+   /usr/lib/perl5/5.34/auto/Time/Piece/Piece.so
+   /usr/lib/perl5/5.34/auto/Unicode/Collate/Collate.so
+   /usr/lib/perl5/5.34/auto/Unicode/Normalize/Normalize.so
+   /usr/lib/perl5/5.34/auto/attributes/attributes.so
+   /usr/lib/perl5/5.34/auto/mro/mro.so
+   /usr/lib/perl5/5.34/auto/re/re.so
+   /usr/lib/perl5/5.34/auto/threads/shared/shared.so
+   /usr/lib/perl5/5.34/auto/threads/threads.so
 
 
 %changelog
-* Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>
--
 
-# see /usr/libexec/rpm/macros for macros

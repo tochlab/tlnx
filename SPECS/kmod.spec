@@ -1,5 +1,5 @@
 Name:           kmod
-Version:	26
+Version:	29
 Release:        1%{?dist}
 Summary:	library and tools for managing linux kernel modules
 
@@ -33,9 +33,8 @@ rm -rf $RPM_BUILD_ROOT
 %files
 /bin/kmod
 /lib/libkmod.so.2
-/lib/libkmod.so.2.3.4
+/lib/libkmod.so.2.3.7
 /usr/include/libkmod.h
-#/usr/lib/libkmod.la
 /usr/lib/libkmod.so
 /usr/lib/pkgconfig/libkmod.pc
 /usr/share/bash-completion/completions/kmod
@@ -53,7 +52,4 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
-* Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>
--
 
-# see /usr/libexec/rpm/macros for macros

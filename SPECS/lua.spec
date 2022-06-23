@@ -51,7 +51,3 @@ ln -sf /usr/lib/liblua.so /usr/lib/liblua5.4.so.0
 /usr/lib/pkgconfig/lua.pc
 
 %changelog
-* Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>
--
-
-# see /usr/libexec/rpm/macros for macros

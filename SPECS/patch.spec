@@ -28,7 +28,3 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/man/man1/patch.1.gz
 
 %changelog
-* Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>
--
-
-# see /usr/libexec/rpm/macros for macros

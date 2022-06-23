@@ -1,5 +1,5 @@
 Name: linux-headers
-Version: 5.10.110
+Version: 5.10.112
 Release: 1
 Summary: Header files for the Linux kernel for use by glibc
 License: GPLv2
@@ -965,5 +965,4 @@ cp -rv dest/* %{buildroot}/usr
 /usr/include/xen/privcmd.h
 
 %changelog
-# Nothing
 

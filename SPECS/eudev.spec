@@ -1,11 +1,11 @@
 Name:           eudev
-Version:	3.2.9
+Version:	3.2.11
 Release:        1%{?dist}
 Summary:	Linux dynamic and persistent device naming support (aka userspace devfs)
 
 License:	LGPL-2.1 MIT GPL-2
 URL:		https://github.com/gentoo/eudev
-Source0:	https://dev.gentoo.org/~blueness/eudev/eudev-%{version}.tar.gz
+Source0:	https://github.com/eudev-project/eudev/releases/download/v%{version}/eudev-%{version}.tar.gz
 
 #BuildRequires:
 #Requires:
@@ -39,6 +39,7 @@ mkdir -pv $RPM_BUILD_ROOT/etc/udev/rules.d
 /etc/udev/hwdb.d/20-OUI.hwdb
 /etc/udev/hwdb.d/20-acpi-vendor.hwdb
 /etc/udev/hwdb.d/20-bluetooth-vendor-product.hwdb
+/etc/udev/hwdb.d/20-dmi-id.hwdb
 /etc/udev/hwdb.d/20-net-ifname.hwdb
 /etc/udev/hwdb.d/20-pci-classes.hwdb
 /etc/udev/hwdb.d/20-pci-vendor-model.hwdb
@@ -47,12 +48,20 @@ mkdir -pv $RPM_BUILD_ROOT/etc/udev/rules.d
 /etc/udev/hwdb.d/20-usb-classes.hwdb
 /etc/udev/hwdb.d/20-usb-vendor-model.hwdb
 /etc/udev/hwdb.d/20-vmbus-class.hwdb
+/etc/udev/hwdb.d/60-autosuspend-fingerprint-reader.hwdb
+/etc/udev/hwdb.d/60-autosuspend.hwdb
 /etc/udev/hwdb.d/60-evdev.hwdb
+/etc/udev/hwdb.d/60-input-id.hwdb
 /etc/udev/hwdb.d/60-keyboard.hwdb
+/etc/udev/hwdb.d/60-seat.hwdb
 /etc/udev/hwdb.d/60-sensor.hwdb
+/etc/udev/hwdb.d/70-analyzers.hwdb
+/etc/udev/hwdb.d/70-cameras.hwdb
+/etc/udev/hwdb.d/70-joystick.hwdb
 /etc/udev/hwdb.d/70-mouse.hwdb
 /etc/udev/hwdb.d/70-pointingstick.hwdb
 /etc/udev/hwdb.d/70-touchpad.hwdb
+/etc/udev/hwdb.d/80-ieee1394-unit-function.hwdb
 /etc/udev/udev.conf
 /lib/libudev.so.1
 /lib/libudev.so.1.6.3
@@ -88,7 +97,6 @@ mkdir -pv $RPM_BUILD_ROOT/etc/udev/rules.d
 /sbin/udevd
 /usr/include/libudev.h
 /usr/include/udev.h
-#/usr/lib/libudev.la
 /usr/lib/libudev.so
 /usr/lib/pkgconfig/libudev.pc
 /usr/share/man/man5/udev.conf.5.gz
@@ -99,8 +107,3 @@ mkdir -pv $RPM_BUILD_ROOT/etc/udev/rules.d
 
 
 %changelog
-* Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>
--
-
-# see /usr/libexec/rpm/macros for macros
-#udevadm hwdb --update

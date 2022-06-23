@@ -1,5 +1,5 @@
 Name:           check
-Version:	0.14.0
+Version:	0.15.2
 Release:        1%{?dist}
 Summary:	A unit test framework for C
 
@@ -65,7 +65,3 @@ rm -rf $RPM_BUILD_ROOT/usr/share/info/dir
 
 
 %changelog
-* Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>
--
-
-# see /usr/libexec/rpm/macros for macros

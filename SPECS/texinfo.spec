@@ -1,11 +1,12 @@
 Name:           texinfo
-Version:	6.7
+Version:	6.8
 Release:        1%{?dist}
 Summary:	The GNU info program and utilities
 
 License:	GPL-3
 URL:		https://www.gnu.org/software/texinfo/
 Source0:	https://ftpmirror.gnu.org/gnu/texinfo/texinfo-%{version}.tar.gz
+Patch0:		texinfo-6.8-undo-gnulib-nonnul.patch
 
 #BuildRequires:
 #Requires:
@@ -14,6 +15,7 @@ Source0:	https://ftpmirror.gnu.org/gnu/texinfo/texinfo-%{version}.tar.gz
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %configure --prefix=/usr --libdir=/usr/lib --disable-static
@@ -34,11 +36,8 @@ rm -rf $RPM_BUILD_ROOT/usr/share/info/dir
 /usr/bin/texi2dvi
 /usr/bin/texi2pdf
 /usr/bin/texindex
-#/usr/lib/texinfo/MiscXS.la
 /usr/lib/texinfo/MiscXS.so
-#/usr/lib/texinfo/Parsetexi.la
 /usr/lib/texinfo/Parsetexi.so
-#/usr/lib/texinfo/XSParagraph.la
 /usr/lib/texinfo/XSParagraph.so
 /usr/share/info/info-stnd.info.gz
 /usr/share/info/texinfo.info-1.gz
@@ -475,10 +474,10 @@ rm -rf $RPM_BUILD_ROOT/usr/share/info/dir
 /usr/share/texinfo/lib/libintl-perl/lib/Locale/gettext_pp.pm
 /usr/share/texinfo/texindex.awk
 /usr/share/texinfo/texinfo.dtd
-
+/usr/share/texinfo/init/highlight_syntax.pm
+/usr/share/texinfo/js/info.css
+/usr/share/texinfo/js/info.js
+/usr/share/texinfo/js/modernizr.js
+/usr/share/texinfo/lib/libintl-perl/lib/Locale/gettext_dumb.pm
 
 %changelog
-* Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>
--
-
-# see /usr/libexec/rpm/macros for macros

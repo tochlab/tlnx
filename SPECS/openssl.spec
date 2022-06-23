@@ -1,11 +1,11 @@
-Name:           openssl 
-Version:	1.1.1d
+Name:           openssl
+Version:	1.1.1n
 Release:        1%{?dist}
 Summary:	full-strength general purpose cryptography library (including SSL and TLS)
 
 License:	openssl
 URL:		https://www.openssl.org/
-Source0:	https://www.openssl.org/source/old/1.1.1/openssl-%{version}.tar.gz
+Source0:	https://www.openssl.org/source/openssl-%{version}.tar.gz
 
 #BuildRequires:
 #Requires:
@@ -8007,10 +8007,112 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/man/man7/scrypt.7.gz
 /usr/share/man/man7/ssl.7.gz
 /usr/share/man/man7/x509.7.gz
+/usr/share/doc/openssl/html/man3/BN_abs_is_word.html
+/usr/share/doc/openssl/html/man3/BN_mod_sqrt.html
+/usr/share/doc/openssl/html/man3/CRYPTO_secure_allocated.html
+/usr/share/doc/openssl/html/man3/DH_compute_key_padded.html
+/usr/share/doc/openssl/html/man3/EC_KEY_decoded_from_explicit_params.html
+/usr/share/doc/openssl/html/man3/EVP_Digest.html
+/usr/share/doc/openssl/html/man3/EVP_MD_CTX_pkey_ctx.html
+/usr/share/doc/openssl/html/man3/EVP_MD_CTX_set_update_fn.html
+/usr/share/doc/openssl/html/man3/EVP_MD_CTX_update_fn.html
+/usr/share/doc/openssl/html/man3/EVP_MD_flags.html
+/usr/share/doc/openssl/html/man3/EVP_PKEY_CTX_set_dsa_paramgen_md.html
+/usr/share/doc/openssl/html/man3/EVP_PKEY_CTX_set_dsa_paramgen_q_bits.html
+/usr/share/doc/openssl/html/man3/EVP_PKEY_bits.html
+/usr/share/doc/openssl/html/man3/EVP_PKEY_meth_get_digestsign.html
+/usr/share/doc/openssl/html/man3/EVP_PKEY_meth_get_digestverify.html
+/usr/share/doc/openssl/html/man3/EVP_PKEY_meth_set_digestsign.html
+/usr/share/doc/openssl/html/man3/EVP_PKEY_meth_set_digestverify.html
+/usr/share/doc/openssl/html/man3/OCSP_REQ_CTX_i2d.html
+/usr/share/doc/openssl/html/man3/PEM_read_bio_Parameters.html
+/usr/share/doc/openssl/html/man3/PEM_write_bio_Parameters.html
+/usr/share/doc/openssl/html/man3/RSA_get0_pss_params.html
+/usr/share/doc/openssl/html/man3/SSL_CTX_set_cookie_generate_cb.html
+/usr/share/doc/openssl/html/man3/SSL_CTX_set_cookie_verify_cb.html
+/usr/share/doc/openssl/html/man3/SSL_add_dir_cert_subjects_to_stack.html
+/usr/share/doc/openssl/html/man3/SSL_add_file_cert_subjects_to_stack.html
+/usr/share/doc/openssl/html/man3/X509_ALGOR_copy.html
+/usr/share/doc/openssl/html/man3/X509_LOOKUP.html
+/usr/share/doc/openssl/html/man3/X509_LOOKUP_METHOD.html
+/usr/share/doc/openssl/html/man3/X509_LOOKUP_TYPE.html
+/usr/share/doc/openssl/html/man3/X509_LOOKUP_add_dir.html
+/usr/share/doc/openssl/html/man3/X509_LOOKUP_by_alias.html
+/usr/share/doc/openssl/html/man3/X509_LOOKUP_by_fingerprint.html
+/usr/share/doc/openssl/html/man3/X509_LOOKUP_by_issuer_serial.html
+/usr/share/doc/openssl/html/man3/X509_LOOKUP_by_subject.html
+/usr/share/doc/openssl/html/man3/X509_LOOKUP_ctrl.html
+/usr/share/doc/openssl/html/man3/X509_LOOKUP_free.html
+/usr/share/doc/openssl/html/man3/X509_LOOKUP_init.html
+/usr/share/doc/openssl/html/man3/X509_LOOKUP_load_file.html
+/usr/share/doc/openssl/html/man3/X509_LOOKUP_new.html
+/usr/share/doc/openssl/html/man3/X509_LOOKUP_shutdown.html
+/usr/share/doc/openssl/html/man3/X509_REQ_set0_signature.html
+/usr/share/doc/openssl/html/man3/X509_REQ_set1_signature_algo.html
+/usr/share/doc/openssl/html/man3/X509_STORE.html
+/usr/share/doc/openssl/html/man3/X509_STORE_CTX_purpose_inherit.html
+/usr/share/doc/openssl/html/man3/X509_STORE_CTX_set_purpose.html
+/usr/share/doc/openssl/html/man3/X509_STORE_CTX_set_trust.html
+/usr/share/doc/openssl/html/man3/X509_STORE_add_lookup.html
+/usr/share/doc/openssl/html/man3/X509_check_purpose.html
+/usr/share/doc/openssl/html/man3/d2i_X509_bio.html
+/usr/share/doc/openssl/html/man3/d2i_X509_fp.html
+/usr/share/doc/openssl/html/man3/i2d_X509_bio.html
+/usr/share/doc/openssl/html/man3/i2d_X509_fp.html
+/usr/share/doc/openssl/html/man7/proxy-certificates.html
+/usr/share/man/man3/BN_abs_is_word.3.gz
+/usr/share/man/man3/BN_mod_sqrt.3.gz
+/usr/share/man/man3/CRYPTO_secure_allocated.3.gz
+/usr/share/man/man3/DH_compute_key_padded.3.gz
+/usr/share/man/man3/EC_KEY_decoded_from_explicit_params.3.gz
+/usr/share/man/man3/EVP_Digest.3.gz
+/usr/share/man/man3/EVP_MD_CTX_pkey_ctx.3.gz
+/usr/share/man/man3/EVP_MD_CTX_set_update_fn.3.gz
+/usr/share/man/man3/EVP_MD_CTX_update_fn.3.gz
+/usr/share/man/man3/EVP_MD_flags.3.gz
+/usr/share/man/man3/EVP_PKEY_CTX_set_dsa_paramgen_md.3.gz
+/usr/share/man/man3/EVP_PKEY_CTX_set_dsa_paramgen_q_bits.3.gz
+/usr/share/man/man3/EVP_PKEY_bits.3.gz
+/usr/share/man/man3/EVP_PKEY_meth_get_digestsign.3.gz
+/usr/share/man/man3/EVP_PKEY_meth_get_digestverify.3.gz
+/usr/share/man/man3/EVP_PKEY_meth_set_digestsign.3.gz
+/usr/share/man/man3/EVP_PKEY_meth_set_digestverify.3.gz
+/usr/share/man/man3/OCSP_REQ_CTX_i2d.3.gz
+/usr/share/man/man3/PEM_read_bio_Parameters.3.gz
+/usr/share/man/man3/PEM_write_bio_Parameters.3.gz
+/usr/share/man/man3/RSA_get0_pss_params.3.gz
+/usr/share/man/man3/SSL_CTX_set_cookie_generate_cb.3.gz
+/usr/share/man/man3/SSL_CTX_set_cookie_verify_cb.3.gz
+/usr/share/man/man3/SSL_add_dir_cert_subjects_to_stack.3.gz
+/usr/share/man/man3/SSL_add_file_cert_subjects_to_stack.3.gz
+/usr/share/man/man3/X509_ALGOR_copy.3.gz
+/usr/share/man/man3/X509_LOOKUP.3.gz
+/usr/share/man/man3/X509_LOOKUP_METHOD.3.gz
+/usr/share/man/man3/X509_LOOKUP_TYPE.3.gz
+/usr/share/man/man3/X509_LOOKUP_add_dir.3.gz
+/usr/share/man/man3/X509_LOOKUP_by_alias.3.gz
+/usr/share/man/man3/X509_LOOKUP_by_fingerprint.3.gz
+/usr/share/man/man3/X509_LOOKUP_by_issuer_serial.3.gz
+/usr/share/man/man3/X509_LOOKUP_by_subject.3.gz
+/usr/share/man/man3/X509_LOOKUP_ctrl.3.gz
+/usr/share/man/man3/X509_LOOKUP_free.3.gz
+/usr/share/man/man3/X509_LOOKUP_init.3.gz
+/usr/share/man/man3/X509_LOOKUP_load_file.3.gz
+/usr/share/man/man3/X509_LOOKUP_new.3.gz
+/usr/share/man/man3/X509_LOOKUP_shutdown.3.gz
+/usr/share/man/man3/X509_REQ_set0_signature.3.gz
+/usr/share/man/man3/X509_REQ_set1_signature_algo.3.gz
+/usr/share/man/man3/X509_STORE.3.gz
+/usr/share/man/man3/X509_STORE_CTX_purpose_inherit.3.gz
+/usr/share/man/man3/X509_STORE_CTX_set_purpose.3.gz
+/usr/share/man/man3/X509_STORE_CTX_set_trust.3.gz
+/usr/share/man/man3/X509_STORE_add_lookup.3.gz
+/usr/share/man/man3/X509_check_purpose.3.gz
+/usr/share/man/man3/d2i_X509_bio.3.gz
+/usr/share/man/man3/d2i_X509_fp.3.gz
+/usr/share/man/man3/i2d_X509_bio.3.gz
+/usr/share/man/man3/i2d_X509_fp.3.gz
+/usr/share/man/man7/proxy-certificates.7.gz
 
 
 %changelog
-* Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>
--
-
-# see /usr/libexec/rpm/macros for macros

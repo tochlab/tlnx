@@ -1,5 +1,5 @@
 Name:       	acl 
-Version:	2.2.53
+Version:	2.3.1
 Release:        1%{?dist}
 Summary:	access control list utilities, libraries and headers
 
@@ -22,7 +22,7 @@ access control list utilities, libraries and headers
 	    --libdir=/usr/lib     \
             --disable-static      \
             --libexecdir=/usr/lib \
-            --docdir=/usr/share/doc/acl-%{version} \
+            --docdir=/usr/share/doc/acl \
             --with-pkg-config-libdir=/usr/lib/pkgconfig
 
 make %{?_smp_mflags}
@@ -37,17 +37,16 @@ rm -rf $RPM_BUILD_ROOT
 /bin/setfacl
 /usr/include/acl/libacl.h
 /usr/include/sys/acl.h
-#/usr/lib/libacl.la
 /usr/lib/libacl.so
 /usr/lib/libacl.so.1
-/usr/lib/libacl.so.1.1.2253
+/usr/lib/libacl.so.1.1.2301
 /usr/lib/pkgconfig/libacl.pc
-/usr/share/doc/acl-2.2.53/CHANGES
-/usr/share/doc/acl-2.2.53/COPYING
-/usr/share/doc/acl-2.2.53/COPYING.LGPL
-/usr/share/doc/acl-2.2.53/PORTING
-/usr/share/doc/acl-2.2.53/extensions.txt
-/usr/share/doc/acl-2.2.53/libacl.txt
+/usr/share/doc/acl/CHANGES
+/usr/share/doc/acl/COPYING
+/usr/share/doc/acl/COPYING.LGPL
+/usr/share/doc/acl/PORTING
+/usr/share/doc/acl/extensions.txt
+/usr/share/doc/acl/libacl.txt
 /usr/share/locale/de/LC_MESSAGES/acl.mo
 /usr/share/locale/en@boldquot/LC_MESSAGES/acl.mo
 /usr/share/locale/en@quot/LC_MESSAGES/acl.mo
@@ -102,5 +101,3 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
-* Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>
--

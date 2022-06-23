@@ -1,5 +1,5 @@
 Name:           libxcrypt
-Version:	4.4.26
+Version:	4.4.28
 Release:        1%{?dist}
 Summary:	Extended crypt library for descrypt, md5crypt, bcrypt, and others
 

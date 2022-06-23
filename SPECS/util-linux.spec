@@ -1,11 +1,11 @@
 Name:           util-linux
-Version:	2.35.1
+Version:	2.37.4
 Release:        1%{?dist}
 Summary:	Various useful Linux utilities
 
 License:	GPL-2 GPL-3 LGPL-2.1 BSD-4 MIT public-domain
 URL:		https://www.kernel.org/pub/linux/utils/util-linux/
-Source0:	https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.35/util-linux-%{version}.tar.gz
+Source0:	https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.37/util-linux-%{version}.tar.gz
 
 #BuildRequires:
 #Requires:
@@ -169,7 +169,6 @@ rm -rf $RPM_BUILD_ROOT
 /usr/lib/pkgconfig/uuid.pc
 /usr/sbin/addpart
 /usr/sbin/delpart
-/usr/sbin/fdformat
 /usr/sbin/ldattach
 /usr/sbin/partx
 /usr/sbin/readprofile
@@ -196,7 +195,6 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/bash-completion/completions/dmesg
 /usr/share/bash-completion/completions/eject
 /usr/share/bash-completion/completions/fallocate
-/usr/share/bash-completion/completions/fdformat
 /usr/share/bash-completion/completions/fdisk
 /usr/share/bash-completion/completions/fincore
 /usr/share/bash-completion/completions/findfs
@@ -271,8 +269,6 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/bash-completion/completions/whereis
 /usr/share/bash-completion/completions/wipefs
 /usr/share/bash-completion/completions/zramctl
-/usr/share/doc/util-linux/getopt/getopt-parse.bash
-/usr/share/doc/util-linux/getopt/getopt-parse.tcsh
 /usr/share/locale/ca/LC_MESSAGES/util-linux.mo
 /usr/share/locale/cs/LC_MESSAGES/util-linux.mo
 /usr/share/locale/da/LC_MESSAGES/util-linux.mo
@@ -377,7 +373,6 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/man/man8/chmem.8.gz
 /usr/share/man/man8/ctrlaltdel.8.gz
 /usr/share/man/man8/delpart.8.gz
-/usr/share/man/man8/fdformat.8.gz
 /usr/share/man/man8/fdisk.8.gz
 /usr/share/man/man8/findfs.8.gz
 /usr/share/man/man8/findmnt.8.gz
@@ -387,11 +382,8 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/man/man8/fsfreeze.8.gz
 /usr/share/man/man8/fstrim.8.gz
 /usr/share/man/man8/hwclock.8.gz
-/usr/share/man/man8/i386.8.gz
 /usr/share/man/man8/isosize.8.gz
 /usr/share/man/man8/ldattach.8.gz
-/usr/share/man/man8/linux32.8.gz
-/usr/share/man/man8/linux64.8.gz
 /usr/share/man/man8/losetup.8.gz
 /usr/share/man/man8/lsblk.8.gz
 /usr/share/man/man8/lslocks.8.gz
@@ -416,15 +408,22 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/man/man8/swapon.8.gz
 /usr/share/man/man8/switch_root.8.gz
 /usr/share/man/man8/umount.8.gz
-/usr/share/man/man8/uname26.8.gz
 /usr/share/man/man8/uuidd.8.gz
 /usr/share/man/man8/wdctl.8.gz
 /usr/share/man/man8/wipefs.8.gz
-/usr/share/man/man8/x86_64.8.gz
 /usr/share/man/man8/zramctl.8.gz
+/usr/bin/irqtop
+/usr/bin/lsirq
+/usr/bin/uclampset
+/usr/share/bash-completion/completions/hardlink
+/usr/share/bash-completion/completions/irqtop
+/usr/share/bash-completion/completions/lsirq
+/usr/share/bash-completion/completions/uclampset
+/usr/share/doc/util-linux/getopt-example.bash
+/usr/share/doc/util-linux/getopt-example.tcsh
+/usr/share/man/man1/irqtop.1.gz
+/usr/share/man/man1/lsirq.1.gz
+/usr/share/man/man1/uclampset.1.gz
+
 
 %changelog
-* Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>
--
-
-# see /usr/libexec/rpm/macros for macros

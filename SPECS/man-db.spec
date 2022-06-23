@@ -1,5 +1,5 @@
 Name:           man-db
-Version:	2.9.1
+Version:	2.9.4
 Release:        1%{?dist}
 Summary:	a man replacement that utilizes berkdb instead of flat files
 
@@ -18,7 +18,7 @@ Source0:	http://download.savannah.nongnu.org/releases/man-db/man-db-%{version}.t
 %build
 %configure --prefix=/usr                        \
 	    --libdir=/usr/lib \
-            --docdir=/usr/share/doc/man-db-%{version} \
+            --docdir=/usr/share/doc/man-db \
             --sysconfdir=/etc                    \
             --disable-setuid                     \
             --enable-cache-owner=bin             \
@@ -26,8 +26,8 @@ Source0:	http://download.savannah.nongnu.org/releases/man-db/man-db-%{version}.t
             --with-vgrind=/usr/bin/vgrind        \
             --with-grap=/usr/bin/grap            \
             --with-systemdtmpfilesdir=           \
-            --with-systemdsystemunitdir=	 \
-	    --disable-nls
+            --with-systemdsystemunitdir=	\
+	    --disable-nls 
 make %{?_smp_mflags}
 
 %install
@@ -45,17 +45,15 @@ rm -rf $RPM_BUILD_ROOT
 /usr/bin/manpath
 /usr/bin/whatis
 /usr/lib/man-db/libman-%{version}.so
-#/usr/lib/man-db/libman.la
 /usr/lib/man-db/libman.so
 /usr/lib/man-db/libmandb-%{version}.so
-#/usr/lib/man-db/libmandb.la
 /usr/lib/man-db/libmandb.so
 /usr/libexec/man-db/globbing
 /usr/libexec/man-db/manconv
 /usr/libexec/man-db/zsoelim
 /usr/sbin/accessdb
-/usr/share/doc/man-db-%{version}/man-db-manual.ps
-/usr/share/doc/man-db-%{version}/man-db-manual.txt
+/usr/share/doc/man-db/man-db-manual.ps
+/usr/share/doc/man-db/man-db-manual.txt
 /usr/share/man/man1/apropos.1.gz
 /usr/share/man/man1/lexgrog.1.gz
 /usr/share/man/man1/man-recode.1.gz
@@ -71,7 +69,3 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
-* Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>
--
-
-# see /usr/libexec/rpm/macros for macros

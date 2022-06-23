@@ -1,5 +1,5 @@
 Name:           man-pages
-Version:	5.09
+Version:	5.13
 Release:        1
 Summary:	Man page
 

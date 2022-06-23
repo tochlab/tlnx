@@ -1,5 +1,5 @@
 Name:           inetutils
-Version:	1.9.4
+Version:	2.2
 Release:        1%{?dist}
 Summary:	Inetutils
 
@@ -59,7 +59,3 @@ rm -fr %{buildroot}/usr/share/info/dir
 
 
 %changelog
-* Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>
--
-
-# see /usr/libexec/rpm/macros for macros

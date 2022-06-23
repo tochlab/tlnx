@@ -100,7 +100,3 @@ mv %{buildroot}/lib/pkgconfig %{buildroot}/usr/lib/
 %doc
 
 %changelog
-* Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>
--
-
-# see /usr/libexec/rpm/macros for macros

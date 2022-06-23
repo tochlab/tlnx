@@ -3,7 +3,7 @@ Version:	5.2.5
 Release:        1%{?dist}
 Summary:	XZ utils
 
-License:	Unknown
+License:	public-domain LGPL-2.1+ GPL-2+
 URL:		https://tukaani.org/xz/
 Source0:	https://tukaani.org/xz/xz-%{version}.tar.gz
 
@@ -20,7 +20,7 @@ XZ utils
 %configure --prefix=/usr    \
 	    --libdir=/usr/lib \
             --disable-static \
-            --docdir=/usr/share/doc/xz-%{version} \
+            --docdir=/usr/share/doc/xz \
             --with-pkg-config-libdir=/usr/lib/pkgconfig
 
 make %{?_smp_mflags}
@@ -69,30 +69,29 @@ rm -rf $RPM_BUILD_ROOT
 /usr/include/lzma/stream_flags.h
 /usr/include/lzma/version.h
 /usr/include/lzma/vli.h
-#/usr/lib/liblzma.la
 /usr/lib/liblzma.so
 /usr/lib/liblzma.so.5
 /usr/lib/liblzma.so.5.2.5
 /usr/lib/pkgconfig/liblzma.pc
-/usr/share/doc/xz-5.2.5/AUTHORS
-/usr/share/doc/xz-5.2.5/COPYING
-/usr/share/doc/xz-5.2.5/COPYING.GPLv2
-/usr/share/doc/xz-5.2.5/NEWS
-/usr/share/doc/xz-5.2.5/README
-/usr/share/doc/xz-5.2.5/THANKS
-/usr/share/doc/xz-5.2.5/TODO
-/usr/share/doc/xz-5.2.5/examples/00_README.txt
-/usr/share/doc/xz-5.2.5/examples/01_compress_easy.c
-/usr/share/doc/xz-5.2.5/examples/02_decompress.c
-/usr/share/doc/xz-5.2.5/examples/03_compress_custom.c
-/usr/share/doc/xz-5.2.5/examples/04_compress_easy_mt.c
-/usr/share/doc/xz-5.2.5/examples/Makefile
-/usr/share/doc/xz-5.2.5/examples_old/xz_pipe_comp.c
-/usr/share/doc/xz-5.2.5/examples_old/xz_pipe_decomp.c
-/usr/share/doc/xz-5.2.5/faq.txt
-/usr/share/doc/xz-5.2.5/history.txt
-/usr/share/doc/xz-5.2.5/lzma-file-format.txt
-/usr/share/doc/xz-5.2.5/xz-file-format.txt
+/usr/share/doc/xz/AUTHORS
+/usr/share/doc/xz/COPYING
+/usr/share/doc/xz/COPYING.GPLv2
+/usr/share/doc/xz/NEWS
+/usr/share/doc/xz/README
+/usr/share/doc/xz/THANKS
+/usr/share/doc/xz/TODO
+/usr/share/doc/xz/examples/00_README.txt
+/usr/share/doc/xz/examples/01_compress_easy.c
+/usr/share/doc/xz/examples/02_decompress.c
+/usr/share/doc/xz/examples/03_compress_custom.c
+/usr/share/doc/xz/examples/04_compress_easy_mt.c
+/usr/share/doc/xz/examples/Makefile
+/usr/share/doc/xz/examples_old/xz_pipe_comp.c
+/usr/share/doc/xz/examples_old/xz_pipe_decomp.c
+/usr/share/doc/xz/faq.txt
+/usr/share/doc/xz/history.txt
+/usr/share/doc/xz/lzma-file-format.txt
+/usr/share/doc/xz/xz-file-format.txt
 /usr/share/locale/cs/LC_MESSAGES/xz.mo
 /usr/share/locale/da/LC_MESSAGES/xz.mo
 /usr/share/locale/de/LC_MESSAGES/xz.mo
@@ -153,5 +152,3 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
-* Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>
--

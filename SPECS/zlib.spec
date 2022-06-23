@@ -27,7 +27,7 @@ rm -fv %{buildroot}/usr/lib/libz.a
 %files
 /lib/libz.so
 /lib/libz.so.1
-/lib/libz.so.1.2.12
+/lib/libz.so.%{version}
 /usr/include/zconf.h
 /usr/include/zlib.h
 /usr/lib/pkgconfig/zlib.pc

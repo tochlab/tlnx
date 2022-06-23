@@ -1,4 +1,4 @@
-Name:           grep 
+Name:           grep
 Version:	3.7
 Release:        1%{?dist}
 Summary:	GNU regular expression matcher

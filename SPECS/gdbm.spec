@@ -1,5 +1,5 @@
-Name:          	gdbm 
-Version:	1.21
+Name:          	gdbm
+Version:	1.23
 Release:        1%{?dist}
 Summary:	Standard GNU database libraries
 
@@ -19,8 +19,7 @@ Source0:	https://ftpmirror.gnu.org/gnu/gdbm/gdbm-%{version}.tar.gz
 %configure --prefix=/usr    \
 	    --libdir=/usr/lib \
             --disable-static \
-            --enable-libgdbm-compat \
-	    --disable-nls
+            --enable-libgdbm-compat
 make %{?_smp_mflags}
 
 %install
@@ -40,11 +39,9 @@ rm -rf $RPM_BUILD_ROOT
 /usr/include/dbm.h
 /usr/include/gdbm.h
 /usr/include/ndbm.h
-#/usr/lib/libgdbm.la
 /usr/lib/libgdbm.so
 /usr/lib/libgdbm.so.6
 /usr/lib/libgdbm.so.6.0.0
-#/usr/lib/libgdbm_compat.la
 /usr/lib/libgdbm_compat.so
 /usr/lib/libgdbm_compat.so.4
 /usr/lib/libgdbm_compat.so.4.0.0
@@ -53,8 +50,20 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/man/man1/gdbm_load.1.gz
 /usr/share/man/man1/gdbmtool.1.gz
 /usr/share/man/man3/gdbm.3.gz
+/usr/share/locale/da/LC_MESSAGES/gdbm.mo
+/usr/share/locale/de/LC_MESSAGES/gdbm.mo
+/usr/share/locale/eo/LC_MESSAGES/gdbm.mo
+/usr/share/locale/es/LC_MESSAGES/gdbm.mo
+/usr/share/locale/fi/LC_MESSAGES/gdbm.mo
+/usr/share/locale/fr/LC_MESSAGES/gdbm.mo
+/usr/share/locale/ja/LC_MESSAGES/gdbm.mo
+/usr/share/locale/pl/LC_MESSAGES/gdbm.mo
+/usr/share/locale/pt_BR/LC_MESSAGES/gdbm.mo
+/usr/share/locale/ru/LC_MESSAGES/gdbm.mo
+/usr/share/locale/sr/LC_MESSAGES/gdbm.mo
+/usr/share/locale/sv/LC_MESSAGES/gdbm.mo
+/usr/share/locale/uk/LC_MESSAGES/gdbm.mo
+/usr/share/locale/vi/LC_MESSAGES/gdbm.mo
 
 
 %changelog
-* Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>
--

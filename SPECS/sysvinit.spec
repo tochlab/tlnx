@@ -1,11 +1,11 @@
 Name:           sysvinit
-Version:	2.96
+Version:	3.03
 Release:        1%{?dist}
 Summary:	/sbin/init - parent of all processes
 
 License:	GPL-2
 URL:		https://savannah.nongnu.org/projects/sysvinit
-Source0:	http://download.savannah.nongnu.org/releases/sysvinit/sysvinit-%{version}.tar.xz
+Source0:	https://github.com/slicer69/sysvinit/releases/download/%{version}/sysvinit-%{version}.tar.xz
 
 #BuildRequires:
 #Requires:
@@ -68,7 +68,3 @@ make ROOT=$RPM_BUILD_ROOT install
 
 
 %changelog
-* Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>
--
-
-# see /usr/libexec/rpm/macros for macros

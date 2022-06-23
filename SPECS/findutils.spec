@@ -1,5 +1,5 @@
 Name:           findutils
-Version:	4.7.0
+Version:	4.9.0
 Release:        1%{?dist}
 Summary:	GNU utilities for finding files
 
@@ -81,7 +81,3 @@ rm -rf $RPM_BUILD_ROOT/usr/share/info/dir
 
 
 %changelog
-* Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>
--
-
-# see /usr/libexec/rpm/macros for macros

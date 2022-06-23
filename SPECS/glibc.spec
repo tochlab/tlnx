@@ -54,7 +54,7 @@ echo include ld.so.conf.d/*.conf >> %{buildroot}/etc/ld.so.conf
 rm -rf %{buildroot}/usr/share/info/dir
 mv %{buildroot}/usr/lib/libc.so %{buildroot}/lib
 mv %{buildroot}/usr/lib/libc.a %{buildroot}/lib
-
+rm -rf %{buildroot}/lib/libnsl.so.1
 
 %files
 /etc/ld.so.cache
@@ -86,7 +86,6 @@ mv %{buildroot}/usr/lib/libc.a %{buildroot}/lib
 /usr/lib/libmvec.a
 /usr/lib/libmvec.so
 /lib/libmvec.so.1
-/lib/libnsl.so.1
 /usr/lib/libnss_compat.so
 /lib/libnss_compat.so.2
 /usr/lib/libnss_db.so

@@ -1,5 +1,5 @@
 Name:           readline
-Version:	8.0
+Version:	8.1
 Release:        1%{?dist}
 Summary:	GNU Readline Library
 
@@ -13,7 +13,7 @@ Source0:	https://ftpmirror.gnu.org/gnu/readline/readline-%{version}.tar.gz
 %setup -q
 
 %build
-%configure --prefix=/usr --libdir=/usr/lib --disable-static --docdir=/usr/share/doc/readline-%{version} --with-pkg-config-libdir=/usr/lib/pkgconfig
+%configure --prefix=/usr --libdir=/usr/lib --disable-static --docdir=/usr/share/doc/readline --with-pkg-config-libdir=/usr/lib/pkgconfig
 for mfile in $(find "$PWD" -name 'Makefile'); do
     sed -i 's|SHLIB_LIBS =|SHLIB_LIBS = -ltinfo|g' "$mfile"
 done
@@ -32,9 +32,9 @@ ln -sfv ../../lib/$(readlink %{buildroot}/usr/lib/libhistory.so ) %{buildroot}/u
 
 %files
 /lib/libhistory.so.8
-/lib/libhistory.so.8.0
+/lib/libhistory.so.%{version}
 /lib/libreadline.so.8
-/lib/libreadline.so.8.0
+/lib/libreadline.so.%{version}
 /usr/include/readline/chardefs.h
 /usr/include/readline/history.h
 /usr/include/readline/keymaps.h
@@ -46,9 +46,9 @@ ln -sfv ../../lib/$(readlink %{buildroot}/usr/lib/libhistory.so ) %{buildroot}/u
 /usr/lib/libhistory.so
 /usr/lib/libreadline.so
 /usr/lib/pkgconfig/readline.pc
-/usr/share/doc/readline-%{version}/CHANGES
-/usr/share/doc/readline-%{version}/INSTALL
-/usr/share/doc/readline-%{version}/README
+/usr/share/doc/readline/CHANGES
+/usr/share/doc/readline/INSTALL
+/usr/share/doc/readline/README
 /usr/share/info/history.info.gz
 /usr/share/info/readline.info.gz
 /usr/share/info/rluserman.info.gz

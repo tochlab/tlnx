@@ -23,7 +23,7 @@ make
 rm -rf $RPM_BUILD_ROOT
 %make_install
 rm -rf $RPM_BUILD_ROOT/usr/share/info/dir
-rm -fr $RPM_BUILD_ROOT//usr/share/groff/1.22.4/font/devpdf
+rm -fr $RPM_BUILD_ROOT/usr/share/groff/1.22.4/font/devpdf
 
 %files
 /usr/bin/addftinfo
@@ -486,7 +486,3 @@ rm -fr $RPM_BUILD_ROOT//usr/share/groff/1.22.4/font/devpdf
 
 
 %changelog
-* Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>
--
-
-# see /usr/libexec/rpm/macros for macros

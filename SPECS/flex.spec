@@ -17,7 +17,7 @@ Source0:	https://github.com/westes/flex/releases/download/v%{version}/flex-%{ver
 sed -i "/math.h/a #include <malloc.h>" src/flexdef.h
 
 %build
-%configure --prefix=/usr --libdir=/usr/lib --docdir=/usr/share/doc/flex-%{version}
+%configure --prefix=/usr --libdir=/usr/lib --docdir=/usr/share/doc/flex
 make %{?_smp_mflags}
 make check
 
@@ -31,15 +31,14 @@ rm -rf $RPM_BUILD_ROOT/usr/share/info/dir
 /usr/bin/flex++
 /usr/include/FlexLexer.h
 /usr/lib/libfl.a
-#/usr/lib/libfl.la
 /usr/lib/libfl.so
 /usr/lib/libfl.so.2
 /usr/lib/libfl.so.2.0.0
-/usr/share/doc/flex-2.6.4/AUTHORS
-/usr/share/doc/flex-2.6.4/COPYING
-/usr/share/doc/flex-2.6.4/NEWS
-/usr/share/doc/flex-2.6.4/ONEWS
-/usr/share/doc/flex-2.6.4/README.md
+/usr/share/doc/flex/AUTHORS
+/usr/share/doc/flex/COPYING
+/usr/share/doc/flex/NEWS
+/usr/share/doc/flex/ONEWS
+/usr/share/doc/flex/README.md
 /usr/share/locale/ca/LC_MESSAGES/flex.mo
 /usr/share/locale/da/LC_MESSAGES/flex.mo
 /usr/share/locale/de/LC_MESSAGES/flex.mo
@@ -69,5 +68,3 @@ rm -rf $RPM_BUILD_ROOT/usr/share/info/dir
 /usr/share/info/flex.info.gz
 
 %changelog
-* Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>
--

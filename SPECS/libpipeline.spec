@@ -1,5 +1,5 @@
 Name:           libpipeline
-Version:	1.5.2
+Version:	1.5.5
 Release:        1%{?dist}
 Summary:	a pipeline manipulation library
 
@@ -25,7 +25,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 /usr/include/pipeline.h
-#/usr/lib/libpipeline.la
 /usr/lib/libpipeline.so
 /usr/lib/libpipeline.so.1
 /usr/lib/libpipeline.so.%{version}
@@ -101,7 +100,3 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
-* Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>
--
-
-# see /usr/libexec/rpm/macros for macros

@@ -1,5 +1,5 @@
 Name:           libidn2
-Version:	2.3.0
+Version:	2.3.2
 Release:        1%{?dist}
 Summary:	An implementation of the IDNA2008 specifications (RFCs 5890, 5891, 5892, 5893)
 
@@ -41,7 +41,6 @@ rm -rf $RPM_BUILD_ROOT
 /usr/bin/idn2
 /usr/include/idn2.h
 /usr/lib/libidn2.a
-#/usr/lib/libidn2.la
 /usr/lib/libidn2.so
 /usr/lib/libidn2.so.0
 /usr/lib/libidn2.so.0.3.7
@@ -69,4 +68,6 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/locale/uk/LC_MESSAGES/libidn2.mo
 /usr/share/locale/vi/LC_MESSAGES/libidn2.mo
 /usr/share/locale/zh_CN/LC_MESSAGES/libidn2.mo
+
+%changelog
 

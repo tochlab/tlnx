@@ -1,5 +1,5 @@
 Name:           libseccomp
-Version:	2.4.4
+Version:	2.5.4
 Release:        1%{?dist}
 Summary:	High level interface to Linux seccomp filter
 
@@ -37,7 +37,6 @@ rm -rf $RPM_BUILD_ROOT
 /usr/include/seccomp-syscalls.h
 /usr/include/seccomp.h
 /usr/lib/libseccomp.a
-#/usr/lib/libseccomp.la
 /usr/lib/libseccomp.so
 /usr/lib/libseccomp.so.2
 /usr/lib/libseccomp.so.%{version}
@@ -69,11 +68,14 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/man/man3/seccomp_syscall_resolve_name_rewrite.3.gz
 /usr/share/man/man3/seccomp_syscall_resolve_num_arch.3.gz
 /usr/share/man/man3/seccomp_version.3.gz
+/usr/share/man/man3/seccomp_notify_alloc.3.gz
+/usr/share/man/man3/seccomp_notify_fd.3.gz
+/usr/share/man/man3/seccomp_notify_free.3.gz
+/usr/share/man/man3/seccomp_notify_id_valid.3.gz
+/usr/share/man/man3/seccomp_notify_receive.3.gz
+/usr/share/man/man3/seccomp_notify_respond.3.gz
+
 
 %doc
 
 %changelog
-* Tue May 31 2016 Adam Miller <maxamillion@fedoraproject.org>
--
-
-# see /usr/libexec/rpm/macros for macros

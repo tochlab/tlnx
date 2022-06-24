@@ -50,6 +50,11 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/man/man8/modprobe.8.gz
 /usr/share/man/man8/rmmod.8.gz
 
+%post
+ln -sf /bin/kmod /sbin/depmod
+ln -sf /bin/kmod /sbin/modprobe
+ln -sf /bin/kmod /sbin/insmod
+ln -sf /bin/kmod /sbin/rmmod
 
 %changelog
 

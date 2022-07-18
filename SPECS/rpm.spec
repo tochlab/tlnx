@@ -16,6 +16,8 @@ Source0:	http://ftp.rpm.org/releases/rpm-4.17.x/rpm-%{version}.tar.bz2
 %setup -q
 
 %build
+export LUA_CFLAGS="-I/usr/include/lua5.4/"
+export LUA_LIBS="-lm -llua5.4"
 %configure --without-dbus --libdir=/usr/lib --with-crypto=openssl --enable-sqlite --enable-zstd=no --disable-inhibit-plugin --with-pkg-config-libdir=/usr/lib/pkgconfig
 make %{?_smp_mflags}
 
@@ -25,6 +27,15 @@ rm -rf $RPM_BUILD_ROOT
 mkdir %{buildroot}/root
 cp %{_sourcedir}/rpmmacros %{buildroot}/root/.rpmmacros
 cp %{_sourcedir}/rpmrc %{buildroot}/root/.rpmrc
+rm %{buildroot}/usr/lib/librpm.la
+rm %{buildroot}/usr/lib/librpmbuild.la
+rm %{buildroot}/usr/lib/librpmio.la
+rm %{buildroot}/usr/lib/librpmsign.la
+rm %{buildroot}/usr/lib/rpm-plugins/fsverity.la
+rm %{buildroot}/usr/lib/rpm-plugins/ima.la
+rm %{buildroot}/usr/lib/rpm-plugins/prioreset.la
+rm %{buildroot}/usr/lib/rpm-plugins/syslog.la
+
 
 %files
 /root/.rpmmacros
@@ -116,7 +127,7 @@ cp %{_sourcedir}/rpmrc %{buildroot}/root/.rpmrc
 /usr/lib/rpm/check-rpaths
 /usr/lib/rpm/check-rpaths-worker
 #/usr/lib/rpm/debugedit
-/usr/lib/rpm/elfdeps
+#/usr/lib/rpm/elfdeps
 /usr/lib/rpm/fileattrs/debuginfo.attr
 /usr/lib/rpm/fileattrs/desktop.attr
 /usr/lib/rpm/fileattrs/elf.attr

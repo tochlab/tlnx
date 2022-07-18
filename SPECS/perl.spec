@@ -44,8 +44,8 @@ chmod -R +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/
 chmod -R -x,-w /usr/lib/perl5/5.34/auto/
 
 %files
-/usr/lib/perl5/5.34/DB_File.pm
-/usr/share/man/man3/DB_File.3.gz
+#/usr/lib/perl5/5.34/DB_File.pm
+#/usr/share/man/man3/DB_File.3.gz
 /usr/bin/corelist
 /usr/bin/cpan
 /usr/bin/enc2xs
@@ -488,7 +488,6 @@ chmod -R -x,-w /usr/lib/perl5/5.34/auto/
 /usr/lib/perl5/5.34/Memoize/Expire.pm
 /usr/lib/perl5/5.34/Memoize/ExpireFile.pm
 /usr/lib/perl5/5.34/Memoize/ExpireTest.pm
-/usr/lib/perl5/5.34/Memoize/NDBM_File.pm
 /usr/lib/perl5/5.34/Memoize/SDBM_File.pm
 /usr/lib/perl5/5.34/Memoize/Storable.pm
 /usr/lib/perl5/5.34/Module/CoreList.pm
@@ -498,7 +497,6 @@ chmod -R -x,-w /usr/lib/perl5/5.34/auto/
 /usr/lib/perl5/5.34/Module/Load/Conditional.pm
 /usr/lib/perl5/5.34/Module/Loaded.pm
 /usr/lib/perl5/5.34/Module/Metadata.pm
-/usr/lib/perl5/5.34/NDBM_File.pm
 /usr/lib/perl5/5.34/NEXT.pm
 /usr/lib/perl5/5.34/Net/Cmd.pm
 /usr/lib/perl5/5.34/Net/Config.pm
@@ -2161,7 +2159,6 @@ chmod -R -x,-w /usr/lib/perl5/5.34/auto/
 /usr/share/man/man3/Memoize::Expire.3.gz
 /usr/share/man/man3/Memoize::ExpireFile.3.gz
 /usr/share/man/man3/Memoize::ExpireTest.3.gz
-/usr/share/man/man3/Memoize::NDBM_File.3.gz
 /usr/share/man/man3/Memoize::SDBM_File.3.gz
 /usr/share/man/man3/Memoize::Storable.3.gz
 /usr/share/man/man3/Module::CoreList.3.gz
@@ -2170,7 +2167,6 @@ chmod -R -x,-w /usr/lib/perl5/5.34/auto/
 /usr/share/man/man3/Module::Load::Conditional.3.gz
 /usr/share/man/man3/Module::Loaded.3.gz
 /usr/share/man/man3/Module::Metadata.3.gz
-/usr/share/man/man3/NDBM_File.3.gz
 /usr/share/man/man3/NEXT.3.gz
 /usr/share/man/man3/Net::Cmd.3.gz
 /usr/share/man/man3/Net::Config.3.gz
@@ -2475,7 +2471,7 @@ chmod -R -x,-w /usr/lib/perl5/5.34/auto/
    /usr/lib/perl5/5.34/auto/Compress/Raw/Bzip2/Bzip2.so
    /usr/lib/perl5/5.34/auto/Compress/Raw/Zlib/Zlib.so
    /usr/lib/perl5/5.34/auto/Cwd/Cwd.so
-   /usr/lib/perl5/5.34/auto/DB_File/DB_File.so
+#   /usr/lib/perl5/5.34/auto/DB_File/DB_File.so
    /usr/lib/perl5/5.34/auto/Data/Dumper/Dumper.so
    /usr/lib/perl5/5.34/auto/Devel/Peek/Peek.so
    /usr/lib/perl5/5.34/auto/Digest/MD5/MD5.so
@@ -2502,7 +2498,6 @@ chmod -R -x,-w /usr/lib/perl5/5.34/auto/
    /usr/lib/perl5/5.34/auto/List/Util/Util.so
    /usr/lib/perl5/5.34/auto/MIME/Base64/Base64.so
    /usr/lib/perl5/5.34/auto/Math/BigInt/FastCalc/FastCalc.so
-   /usr/lib/perl5/5.34/auto/NDBM_File/NDBM_File.so
    /usr/lib/perl5/5.34/auto/Opcode/Opcode.so
    /usr/lib/perl5/5.34/auto/POSIX/POSIX.so
    /usr/lib/perl5/5.34/auto/PerlIO/encoding/encoding.so
@@ -2523,7 +2518,8 @@ chmod -R -x,-w /usr/lib/perl5/5.34/auto/
    /usr/lib/perl5/5.34/auto/re/re.so
    /usr/lib/perl5/5.34/auto/threads/shared/shared.so
    /usr/lib/perl5/5.34/auto/threads/threads.so
-
+   /usr/lib/perl5/5.34/Memoize/NDBM_File.pm
+   /usr/share/man/man3/Memoize::NDBM_File.3.gz
 
 %changelog
 

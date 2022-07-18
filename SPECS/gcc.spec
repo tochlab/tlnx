@@ -57,12 +57,15 @@ rm -fr %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/REA
    %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/schily/scg \
    %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/scsilib \
    %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/winpr2/winpr/platform.h \
-   %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/sys/rseq.h
+   %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/sys/rseq.h \
+   %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/tomcrypt_pk.h
    
 mv %{buildroot}/usr/lib64/* %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/
 mkdir -p %{buildroot}/etc/ld.so.conf.d
 echo /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/ > %{buildroot}/etc/ld.so.conf.d/gcc.conf
 %{__rm} -f %{buildroot}/usr/share/info/*
+find %{buildroot} -type f -name '*.la' -delete || die
+
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -979,9 +982,10 @@ ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/%{version}/liblto_plugin.so \
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libatomic.so
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libatomic.so.1
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libatomic.so.1.2.0
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libcc1.so
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libcc1.so.0
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libcc1.so.0.0.0
+/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/x86_64-linux-gnu/bits/statx.h
+/usr/lib/libcc1.so
+/usr/lib/libcc1.so.0
+/usr/lib/libcc1.so.0.0.0
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libgcc.a
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libgcc_eh.a
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libgcc_s.so
@@ -1468,7 +1472,7 @@ ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/%{version}/liblto_plugin.so \
 /usr/share/locale/da/LC_MESSAGES/gcc.mo
 /usr/share/locale/de/LC_MESSAGES/cpplib.mo
 /usr/share/locale/de/LC_MESSAGES/gcc.mo
-/usr/share/locale/de/LC_MESSAGES/libstdc++.mo
+#/usr/share/locale/de/LC_MESSAGES/libstdc++.mo
 /usr/share/locale/el/LC_MESSAGES/cpplib.mo
 /usr/share/locale/el/LC_MESSAGES/gcc.mo
 /usr/share/locale/eo/LC_MESSAGES/cpplib.mo
@@ -1478,7 +1482,7 @@ ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/%{version}/liblto_plugin.so \
 /usr/share/locale/fi/LC_MESSAGES/gcc.mo
 /usr/share/locale/fr/LC_MESSAGES/cpplib.mo
 /usr/share/locale/fr/LC_MESSAGES/gcc.mo
-/usr/share/locale/fr/LC_MESSAGES/libstdc++.mo
+#/usr/share/locale/fr/LC_MESSAGES/libstdc++.mo
 /usr/share/locale/hr/LC_MESSAGES/gcc.mo
 /usr/share/locale/id/LC_MESSAGES/cpplib.mo
 /usr/share/locale/id/LC_MESSAGES/gcc.mo
@@ -1555,7 +1559,6 @@ ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/%{version}/liblto_plugin.so \
 /usr/include/c++/%{version}/span
 /usr/include/c++/%{version}/stop_token
 /usr/include/c++/%{version}/syncstream
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/pthread.h
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/acc_prof.h
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/amxbf16intrin.h
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/amxint8intrin.h

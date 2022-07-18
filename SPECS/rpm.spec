@@ -27,14 +27,7 @@ rm -rf $RPM_BUILD_ROOT
 mkdir %{buildroot}/root
 cp %{_sourcedir}/rpmmacros %{buildroot}/root/.rpmmacros
 cp %{_sourcedir}/rpmrc %{buildroot}/root/.rpmrc
-rm %{buildroot}/usr/lib/librpm.la
-rm %{buildroot}/usr/lib/librpmbuild.la
-rm %{buildroot}/usr/lib/librpmio.la
-rm %{buildroot}/usr/lib/librpmsign.la
-rm %{buildroot}/usr/lib/rpm-plugins/fsverity.la
-rm %{buildroot}/usr/lib/rpm-plugins/ima.la
-rm %{buildroot}/usr/lib/rpm-plugins/prioreset.la
-rm %{buildroot}/usr/lib/rpm-plugins/syslog.la
+find %{buildroot} -type f -name '*.la' -delete || die
 
 
 %files

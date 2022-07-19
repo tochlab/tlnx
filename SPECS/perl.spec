@@ -27,7 +27,7 @@ sh Configure -des -Dprefix=/usr                 \
                   -Dvendorlib=/usr/lib/perl5/5.34 \
                   -Dvendorarch=/usr/lib/perl5/5.34 \
                   -Duseshrplib \
-                  -Dnoextensions=ODBM_File
+                  -Dnoextensions="ODBM_File DB_File NDBM_File"
                   
 make %{?_smp_mflags}
 

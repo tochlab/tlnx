@@ -26,7 +26,7 @@ Contains base tree for initial work
     mkdir -v  %{buildroot}/usr/{,local/}share/{misc,terminfo,zoneinfo}
     mkdir -v  %{buildroot}/usr/libexec
     mkdir -pv %{buildroot}/usr/{,local/}share/man/man{1..8}
-#    cd %{buildroot}; ln -s lib lib64
+    cd %{buildroot}; ln -s lib lib64
 
     mkdir -v %{buildroot}/var/{log,mail,spool}
     #ln -sv run var/run

@@ -27,6 +27,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__rm} %{buildroot}/usr/share/man/man3/crypt.3
 #%{__rm} %{buildroot}/usr/include/crypt.h
 mkdir %{buildroot}/usr/lib/
+cd %{buildroot}
+ln -s /lib/libcrypt.so.2.0.0 /lib/libcrypt.so.1
 mv %{buildroot}/lib/pkgconfig %{buildroot}/usr/lib/
 find %{buildroot} -type f -name '*.la' -delete || die
 
@@ -42,6 +44,7 @@ find %{buildroot} -type f -name '*.la' -delete || die
 /lib/libcrypt.a
 #/lib/libcrypt.la
 /lib/libcrypt.so
+/lib/libcrypt.so.1
 /lib/libcrypt.so.2
 /lib/libcrypt.so.2.0.0
 /usr/lib/pkgconfig/libcrypt.pc

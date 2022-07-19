@@ -28,6 +28,7 @@ make %{?_smp_mflags}
 rm -rf %{buildroot}
 %make_install
 rm -fr %{buildroot}/usr/lib/cmake
+find %{buildroot} -type f -name '*.la' -delete || die
 
 %files
 /usr/bin/xmlwf

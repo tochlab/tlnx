@@ -36,7 +36,7 @@ cd $RPM_BUILD_ROOT/usr/bin
 fhs="cat chgrp chmod chown cp date dd df echo false ln ls mkdir mknod mv pwd rm rmdir stty sync true uname"
 mv ${fhs} $RPM_BUILD_ROOT/bin/
 
-rm $RPM_BUILD_ROOT/usr/share/info/dir
+rm -f $RPM_BUILD_ROOT/usr/share/info/dir
 
 %files
 /usr/bin/[

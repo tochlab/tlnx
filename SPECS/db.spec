@@ -50,6 +50,7 @@ cd build
 %make_install
 %{__rm} -f %{buildroot}/usr/share/info/dir
 %{__rm} -fr %{buildroot}/usr/docs
+find %{buildroot} -type f -name '*.la' -delete || die
 
 #%post
 #/sbin/ldconfig

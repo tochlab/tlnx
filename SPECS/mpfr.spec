@@ -33,6 +33,8 @@ make %{?_smp_mflags}
 rm -rf $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT
 rm -fr %{buildroot}/usr/share/info/dir
+find %{buildroot} -type f -name '*.la' -delete || die
+
 
 %clean
 rm -rf $RPM_BUILD_ROOT

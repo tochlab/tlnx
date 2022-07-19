@@ -29,6 +29,7 @@ make %{?_smp_mflags}
 %install
 rm -rf $RPM_BUILD_ROOT
 %make_install
+find %{buildroot} -type f -name '*.la' -delete || die
 
 %files
 /bin/kmod

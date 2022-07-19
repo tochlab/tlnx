@@ -25,6 +25,7 @@ make check
 rm -rf $RPM_BUILD_ROOT
 %make_install
 rm -rf $RPM_BUILD_ROOT/usr/share/info/dir
+find %{buildroot} -type f -name '*.la' -delete || die
 
 %files
 /usr/bin/flex

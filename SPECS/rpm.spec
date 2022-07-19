@@ -18,7 +18,7 @@ Source0:	http://ftp.rpm.org/releases/rpm-4.17.x/rpm-%{version}.tar.bz2
 %build
 export LUA_CFLAGS="-I/usr/include/lua5.4/"
 export LUA_LIBS="-lm -llua5.4"
-%configure --without-dbus --libdir=/usr/lib --with-crypto=openssl --enable-sqlite --enable-zstd=no --disable-inhibit-plugin --with-pkg-config-libdir=/usr/lib/pkgconfig
+%configure --without-dbus --libdir=/usr/lib --with-crypto=openssl --enable-sqlite --disable-inhibit-plugin --with-pkg-config-libdir=/usr/lib/pkgconfig --without-audit
 make %{?_smp_mflags}
 
 %install
@@ -120,7 +120,7 @@ find %{buildroot} -type f -name '*.la' -delete || die
 /usr/lib/rpm/check-rpaths
 /usr/lib/rpm/check-rpaths-worker
 #/usr/lib/rpm/debugedit
-#/usr/lib/rpm/elfdeps
+/usr/lib/rpm/elfdeps
 /usr/lib/rpm/fileattrs/debuginfo.attr
 /usr/lib/rpm/fileattrs/desktop.attr
 /usr/lib/rpm/fileattrs/elf.attr

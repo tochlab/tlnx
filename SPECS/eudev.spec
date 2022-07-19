@@ -34,6 +34,7 @@ rm -rf $RPM_BUILD_ROOT
 %make_install
 mkdir -pv $RPM_BUILD_ROOT/lib/udev/rules.d
 mkdir -pv $RPM_BUILD_ROOT/etc/udev/rules.d
+find %{buildroot} -type f -name '*.la' -delete || die
 
 %files
 /etc/udev/hwdb.d/20-OUI.hwdb
@@ -89,7 +90,7 @@ mkdir -pv $RPM_BUILD_ROOT/etc/udev/rules.d
 /lib/udev/rules.d/75-net-description.rules
 /lib/udev/rules.d/75-probe_mtd.rules
 /lib/udev/rules.d/78-sound-card.rules
-/lib/udev/rules.d/80-drivers.rules
+#/lib/udev/rules.d/80-drivers.rules
 /lib/udev/rules.d/80-net-name-slot.rules
 /lib/udev/scsi_id
 /lib/udev/v4l_id

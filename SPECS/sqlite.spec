@@ -28,6 +28,7 @@ make %{?_smp_mflags}
 rm -rf $RPM_BUILD_ROOT
 cd %{_builddir}/sqlite-autoconf-3380200
 %make_install
+find %{buildroot} -type f -name '*.la' -delete || die
 
 
 #%post

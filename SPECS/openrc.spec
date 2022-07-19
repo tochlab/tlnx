@@ -197,10 +197,10 @@ DESTDIR=%{buildroot} meson install
 /lib/rc/sh/start-stop-daemon.sh
 /lib/rc/sh/supervise-daemon.sh
 /lib/rc/version
-/lib64/libeinfo.so
-/lib64/libeinfo.so.1
-/lib64/librc.so
-/lib64/librc.so.1
+/lib/libeinfo.so
+/lib/libeinfo.so.1
+/lib/librc.so
+/lib/librc.so.1
 /sbin/openrc
 /sbin/openrc-init
 /sbin/openrc-run
@@ -214,8 +214,8 @@ DESTDIR=%{buildroot} meson install
 /sbin/supervise-daemon
 /usr/include/einfo.h
 /usr/include/rc.h
-/usr/lib64/pkgconfig/einfo.pc
-/usr/lib64/pkgconfig/openrc.pc
+/usr/lib/pkgconfig/einfo.pc
+/usr/lib/pkgconfig/openrc.pc
 /usr/share/bash-completion/completions/openrc
 /usr/share/bash-completion/completions/openrc-service-script
 /usr/share/bash-completion/completions/rc-service

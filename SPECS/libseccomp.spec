@@ -23,6 +23,7 @@ make %{?_smp_mflags}
 rm -rf $RPM_BUILD_ROOT
 %make_install
 %{__rm} -f %{buildroot}/usr/share/info/dir
+find %{buildroot} -type f -name '*.la' -delete || die
 
 #%post
 #/sbin/ldconfig

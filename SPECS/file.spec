@@ -21,6 +21,7 @@ make check
 %install
 rm -rf $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT
+find %{buildroot} -type f -name '*.la' -delete || die
 
 %files
 /usr/bin/file

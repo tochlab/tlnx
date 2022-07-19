@@ -22,9 +22,8 @@ make %{?_smp_mflags}
 %install
 rm -rf $RPM_BUILD_ROOT
 %make_install
-mv $RPM_BUILD_ROOT/usr/lib64/* $RPM_BUILD_ROOT/usr/lib
-rm -fr $RPM_BUILD_ROOT/usr/lib64
-rm $RPM_BUILD_ROOT/usr/share/info/dir
+rm -f $RPM_BUILD_ROOT/usr/share/info/dir
+find %{buildroot} -type f -name '*.la' -delete || die
 
 %files
 /usr/include/ffi.h

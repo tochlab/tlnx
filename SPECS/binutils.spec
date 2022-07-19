@@ -24,6 +24,7 @@ rm -rf $RPM_BUILD_ROOT
 cd build
 make DESTDIR=%{buildroot} install
 rm -rf $RPM_BUILD_ROOT/usr/share/info/dir
+find %{buildroot} -type f -name '*.la' -delete || die
 
 %files
 /usr/bin/addr2line

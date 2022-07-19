@@ -27,6 +27,8 @@ rm -rf $RPM_BUILD_ROOT
 #make install DESTDIR=%{?buildroot}
 %make_install
 %{__rm} -f %{buildroot}/usr/share/info/dir
+find %{buildroot} -type f -name '*.la' -delete || die
+
 
 #%post
 #/sbin/ldconfig

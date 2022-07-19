@@ -28,6 +28,7 @@ rm -rf $RPM_BUILD_ROOT
 #%{__rm} %{buildroot}/usr/include/crypt.h
 mkdir %{buildroot}/usr/lib/
 mv %{buildroot}/lib/pkgconfig %{buildroot}/usr/lib/
+find %{buildroot} -type f -name '*.la' -delete || die
 
 #%post
 #/sbin/ldconfig

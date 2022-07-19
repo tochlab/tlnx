@@ -876,7 +876,7 @@ ln -s /usr/bin/python3 /usr/bin/python
 /usr/lib/python3.10/lib-dynload/_curses.cpython-310-x86_64-linux-gnu.so
 /usr/lib/python3.10/lib-dynload/_curses_panel.cpython-310-x86_64-linux-gnu.so
 /usr/lib/python3.10/lib-dynload/_datetime.cpython-310-x86_64-linux-gnu.so
-/usr/lib/python3.10/lib-dynload/_dbm.cpython-310-x86_64-linux-gnu.so
+#/usr/lib/python3.10/lib-dynload/_dbm.cpython-310-x86_64-linux-gnu.so
 /usr/lib/python3.10/lib-dynload/_decimal.cpython-310-x86_64-linux-gnu.so
 /usr/lib/python3.10/lib-dynload/_elementtree.cpython-310-x86_64-linux-gnu.so
 /usr/lib/python3.10/lib-dynload/_gdbm.cpython-310-x86_64-linux-gnu.so

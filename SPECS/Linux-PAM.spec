@@ -26,6 +26,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__rm} -f %{buildroot}/usr/share/info/dir
 %{__rm} -f %{buildroot}/usr/lib/systemd/system/pam_namespace.service
 mv %{buildroot}/lib/pkgconfig/ %{buildroot}/usr/lib/
+find %{buildroot} -type f -name '*.la' -delete || die
+
 
 #%post
 #/sbin/ldconfig
@@ -134,7 +136,7 @@ mv %{buildroot}/lib/pkgconfig/ %{buildroot}/usr/lib/
 #/lib/security/pam_unix.la
 /lib/security/pam_unix.so
 #/lib/security/pam_userdb.la
-/lib/security/pam_userdb.so
+#/lib/security/pam_userdb.so
 #/lib/security/pam_usertype.la
 /lib/security/pam_usertype.so
 #/lib/security/pam_warn.la
@@ -339,7 +341,7 @@ mv %{buildroot}/lib/pkgconfig/ %{buildroot}/usr/lib/
 /usr/share/man/man8/pam_timestamp_check.8.gz
 /usr/share/man/man8/pam_umask.8.gz
 /usr/share/man/man8/pam_unix.8.gz
-/usr/share/man/man8/pam_userdb.8.gz
+#/usr/share/man/man8/pam_userdb.8.gz
 /usr/share/man/man8/pam_usertype.8.gz
 /usr/share/man/man8/pam_warn.8.gz
 /usr/share/man/man8/pam_wheel.8.gz

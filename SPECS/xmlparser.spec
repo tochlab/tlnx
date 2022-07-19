@@ -27,12 +27,6 @@ chmod +w $RPM_BUILD_ROOT/usr/lib/perl5/5.34/auto/XML/Parser/Expat/Expat.so
 rm -fr %{buildroot}/usr/man/
 rm -fr %{buildroot}/usr/share/man/
 
-#if [ -e "%{buildroot}/usr/lib64" ]
-#then
-#mv -f %{buildroot}/usr/lib64 %{buildroot}/usr/lib
-#fi
-
-
 %files
 /usr/lib/perl5/5.34/XML/Parser.pm
 /usr/lib/perl5/5.34/XML/Parser/Encodings/Japanese_Encodings.msg

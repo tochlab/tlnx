@@ -28,6 +28,7 @@ make %{?_smp_mflags}
 rm -rf $RPM_BUILD_ROOT
 %make_install
 rm -fr %{buildroot}/usr/share/info/dir
+find %{buildroot} -type f -name '*.la' -delete || die
 
 %files
 /usr/bin/autopoint

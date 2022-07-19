@@ -53,7 +53,8 @@ Source0:	https://ftpmirror.gnu.org/gnu/ncurses/ncurses-%{version}.tar.gz
 	    --without-pthread \
 	    --without-reentrant \
 	    --enable-overwrite \
-	    --with-pkg-config-libdir=/usr/lib/pkgconfig
+	    --with-pkg-config-libdir=/usr/lib/pkgconfig \
+	    --with-manpage-renames
 
 make %{?_smp_mflags}
 make install DESTDIR=%{buildroot}
@@ -95,7 +96,8 @@ make install DESTDIR=%{buildroot}
 	    --without-pthread \
 	    --without-reentrant \
 	    --enable-overwrite \
-	    --with-pkg-config-libdir=/usr/lib/pkgconfig
+	    --with-pkg-config-libdir=/usr/lib/pkgconfig \
+	    --with-manpage-renames
 
 make %{?_smp_mflags}
 

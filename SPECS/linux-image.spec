@@ -4,7 +4,7 @@ Release: 1
 Summary: Linux Kernel
 License: GPLv2
 URL: https://www.kernel.org
-Source0: https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-%{version}.tar.xz
+Source0:	https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-%{version}.tar.xz
 
 %description
 

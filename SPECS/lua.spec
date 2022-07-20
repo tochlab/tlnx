@@ -6,7 +6,7 @@ Summary:	A powerful light-weight programming language designed for extending app
 License:	MIT
 URL:		https://www.lua.org/
 Source0:	https://www.lua.org/ftp/lua-%{version}.tar.gz
-Patch0:         lua-makefile.patch
+Patch0:	lua-makefile.patch
 
 #BuildRequires:
 #Requires:

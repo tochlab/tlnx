@@ -22,6 +22,7 @@ make %{?_smp_mflags}
 %install
 rm -rf $RPM_BUILD_ROOT
 %make_install
+mv %{buildroot}/usr/lib64/* %{buildroot}/usr/lib
 rm -f $RPM_BUILD_ROOT/usr/share/info/dir
 find %{buildroot} -type f -name '*.la' -delete || die
 

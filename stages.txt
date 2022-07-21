@@ -1,0 +1,56 @@
+base +
+bash +
+glibc +
+readline +
+ncurses +
+shadow +
+popt +
+sqlite +
+bzip2 +
+zlib +
+xz + // make check disabled
+coreutils +
+lua +
+zstd + // lz4 support?
+openssl +
+rpm - fail on lua
+
+file +
+elfutils +
+binutils +
+gcc ? /usr/lib/libcc....
+findutils +
+sed +
+grep +
+less +
+gzip +
+tar +
+gmp +
+mpc +
+mpfr +
+rsync +
+linux-headers +
+awk +
+make +
+bison +
+ffi +
+gdbm +
+libtirpc +
+libnsl +
+python +
+m4 +
+libpipeline +
+groff +
+man-db +
+perl +
+texinfo +
+diffutils +
+util-linux +
+Linux-PAM +
+autoconf +
+gettext +
+automake +
+patch +
+libarchive +
+libexpat +
+pkgconf +

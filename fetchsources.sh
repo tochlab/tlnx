@@ -1,6 +1,18 @@
 #!/bin/sh
 set -e
-python genurls.py > urllist.txt
+buildlist=$(find ./SPECS/ -name \*.spec)
 mkdir -p ./SOURCES
-cd ./SOURCES
-wget -c -i ../urllist.txt
+for spec in $buildlist; do
+rpmspec -P $spec | grep Source.: | cut -f 2 >> sourcelist.txt
+rpmspec -P $spec | grep Patch.: | cut -f 2 >> sourcelist.txt
+done
+
+sourcelist=$(cat sourcelist.txt)
+for src in $sourcelist; do
+    dstfile=$(basename $src)
+    if [ -f ./SOURCES/$dstfile ]; then
+	echo "File $dstfile exists"
+    else
+    wget $src --directory-prefix=./SOURCES/
+    fi
+done

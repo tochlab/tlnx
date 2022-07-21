@@ -6,7 +6,7 @@ Summary:	Common CA Certificates PEM files
 License:	MPL-1.1
 URL:		https://packages.debian.org/sid/ca-certificates
 Source0:	http://ftp.debian.org/debian/pool/main/c/ca-certificates/ca-certificates_%{version}.tar.xz
-Patch0:		ca-certificates-20211016.3.72-no-cryptography.patch
+Patch0:	ca-certificates-20211016.3.72-no-cryptography.patch
 
 #BuildRequires:
 #Requires:

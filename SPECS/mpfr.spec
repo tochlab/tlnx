@@ -6,7 +6,7 @@ Summary:        mpfr lib
 #Group:          
 License:        GPL
 URL:            https://www.mpfr.org/
-Source0:        https://ftpmirror.gnu.org/mpfr/mpfr-%{version}.tar.gz
+Source0:	https://ftpmirror.gnu.org/mpfr/mpfr-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 #BuildRequires:  

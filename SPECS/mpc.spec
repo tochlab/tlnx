@@ -6,7 +6,7 @@ Summary:        mpc lib
 Group:          System Environment/Libraries
 License:        GPL
 #URL:            
-Source0:        https://ftpmirror.gnu.org/mpc/mpc-%{version}.tar.gz
+Source0:	https://ftpmirror.gnu.org/mpc/mpc-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 #BuildRequires:  

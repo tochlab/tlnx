@@ -6,7 +6,7 @@ Summary:	The GNU info program and utilities
 License:	GPL-3
 URL:		https://www.gnu.org/software/texinfo/
 Source0:	https://ftpmirror.gnu.org/gnu/texinfo/texinfo-%{version}.tar.gz
-Patch0:		texinfo-6.8-undo-gnulib-nonnul.patch
+Patch0:	texinfo-6.8-undo-gnulib-nonnul.patch
 
 #BuildRequires:
 #Requires:

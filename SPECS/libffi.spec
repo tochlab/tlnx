@@ -16,13 +16,12 @@ Source0:	https://github.com/libffi/libffi/releases/download/v%{version}/libffi-%
 %setup -q
 
 %build
-%configure --libdir=/usr/lib --with-pkg-config-libdir=/usr/lib/pkgconfig
+%configure --with-pkg-config-libdir=/usr/lib/pkgconfig --libdir=/usr/lib
 make %{?_smp_mflags}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 %make_install
-mv %{buildroot}/usr/lib64/* %{buildroot}/usr/lib
 rm -f $RPM_BUILD_ROOT/usr/share/info/dir
 find %{buildroot} -type f -name '*.la' -delete || die
 

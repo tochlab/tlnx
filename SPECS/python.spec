@@ -23,7 +23,8 @@ Source0:	https://www.python.org/ftp/python/%{version}/Python-%{version}.tar.xz
             --with-system-expat \
             --with-system-ffi   \
 	    --without-ensurepip \
-	    --with-pkg-config-libdir=/usr/lib/pkgconfig
+	    --with-pkg-config-libdir=/usr/lib/pkgconfig \
+	    --enable-optimizations
 make %{?_smp_mflags}
 
 %install

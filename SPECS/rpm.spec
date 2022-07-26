@@ -16,8 +16,8 @@ Source0:	http://ftp.rpm.org/releases/rpm-4.17.x/rpm-%{version}.tar.bz2
 %setup -q
 
 %build
-export LUA_CFLAGS="-I/usr/include/lua5.4/"
-export LUA_LIBS="-lm -llua5.4"
+#export LUA_CFLAGS="-I/usr/include/lua5.4/"
+#export LUA_LIBS="-lm -llua5.4"
 %configure --without-dbus --libdir=/usr/lib --with-crypto=openssl --enable-sqlite --disable-inhibit-plugin --with-pkg-config-libdir=/usr/lib/pkgconfig --without-audit
 make %{?_smp_mflags}
 

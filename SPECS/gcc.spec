@@ -1624,6 +1624,7 @@ ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/%{version}/liblto_plugin.so \
 /usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/value-range.h
 /usr/libexec/gcc/x86_64-pc-linux-gnu/%{version}/g++-mapper-server
 /usr/share/man/man1/lto-dump.1.gz
-
+/usr/share/locale/de/LC_MESSAGES/libstdc++.mo
+/usr/share/locale/fr/LC_MESSAGES/libstdc++.mo
 
 %changelog

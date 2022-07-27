@@ -24,7 +24,7 @@ XZ utils
             --with-pkg-config-libdir=/usr/lib/pkgconfig
 
 make %{?_smp_mflags}
-make check
+#make check
 
 %install
 rm -rf $RPM_BUILD_ROOT

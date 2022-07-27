@@ -55,3 +55,4 @@ libarchive.spec
 expat.spec
 attr.spec
 libxcrypt.spec
+libtool.spec

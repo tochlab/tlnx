@@ -1,5 +1,5 @@
 Name: linux-image
-Version: 5.10.112
+Version: 5.10.140
 Release: 1
 Summary: Linux Kernel
 License: GPLv2
@@ -20,8 +20,8 @@ mkdir -p %{buildroot}/boot/
 INSTALL_PATH=%{buildroot}/boot/ make install
 mkdir -p %{buildroot}/lib/modules/%{version}/
 INSTALL_MOD_PATH=%{buildroot}/ make modules_install
-rm %{buildroot}/lib/modules/5.10.112/build
-rm %{buildroot}/lib/modules/5.10.112/source
+rm %{buildroot}/lib/modules/%{version}/build
+rm %{buildroot}/lib/modules/%{version}/source
 
 %files
 /boot/System.map-5.10.112
@@ -58,10 +58,9 @@ rm %{buildroot}/lib/modules/5.10.112/source
 rm -f /boot/System.map
 rm -f /boot/config
 rm -f /boot/vmlinuz
-ln -s /boot/System.map-5.10.112 /boot/System.map
-ln -s /boot/config-5.10.112 /boot/config
-ln -s /boot/vmlinuz-5.10.112 /boot/vmlinuz
-/sbin/depmod -a
+ln -s /boot/System.map-%{version} /boot/System.map
+ln -s /boot/config-%{version} /boot/config
+ln -s /boot/vmlinuz-%{version} /boot/vmlinuz
 
 %changelog
 

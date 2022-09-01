@@ -24,10 +24,9 @@ cd       build
 ../configure --prefix=/usr            \
              --enable-languages=c,c++ \
              --disable-multilib       \
-             --disable-bootstrap      \
              --with-system-zlib       \
              --libdir=/usr/lib        \
-	     --includedir=/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include
+	     --libexecdir=/usr/lib
 
 #--bindir=/usr/x86_64-pc-linux-gnu/gcc-bin/11.2.1 --includedir=/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.1/include --datadir=/usr/share/gcc-data/x86_64-pc-linux-gnu/11.2.1 --mandir=/usr/share/gcc-data/x86_64-pc-linux-gnu/11.2.1/man --infodir=/usr/share/gcc-data/x86_64-pc-linux-gnu/11.2.1/info --with-gxx-include-dir=/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.1/include/g++-v11 --with-python-dir=/share/gcc-data/x86_64-pc-linux-gnu/11.2.1/python
 
@@ -38,7 +37,8 @@ make %{?_smp_mflags}
 cd build
 rm -rf $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT
-rm -rf %{buildroot}/usr/lib/gcc/$(gcc -dumpmachine)/%{version}/include-fixed/bits/
+rm -rf %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/bits/
+rm -rf %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/x86_64-linux-gnu/bits/statx.h
 rm -fr %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/README \
    %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/X11/Xw32defs.h \
    %{buildroot}/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/boost/predef/os/unix.h \
@@ -74,1557 +74,1553 @@ rm -rf $RPM_BUILD_ROOT
 chown -v -R root:root \
 /usr/lib/gcc/*linux-gnu/%{version}/include{,-fixed}
 
-ln -sv /usr/bin/cpp /lib
+ln -sv /usr/bin/cpp /usr/lib
 ln -sv /usr/bin/gcc /usr/bin/cc
 install -v -dm755 /usr/lib/bfd-plugins
 ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/%{version}/liblto_plugin.so \
 /usr/lib/bfd-plugins/
 
 %files
-/etc/ld.so.conf.d/gcc.conf
-/usr/bin/c++
-/usr/bin/cpp
-/usr/bin/g++
-/usr/bin/gcc
-/usr/bin/gcc-ar
-/usr/bin/gcc-nm
-/usr/bin/gcc-ranlib
-/usr/bin/gcov
-/usr/bin/gcov-dump
-/usr/bin/gcov-tool
-/usr/bin/x86_64-pc-linux-gnu-c++
-/usr/bin/x86_64-pc-linux-gnu-g++
-/usr/bin/x86_64-pc-linux-gnu-gcc
-/usr/bin/x86_64-pc-linux-gnu-gcc-%{version}
-/usr/bin/x86_64-pc-linux-gnu-gcc-ar
-/usr/bin/x86_64-pc-linux-gnu-gcc-nm
-/usr/bin/x86_64-pc-linux-gnu-gcc-ranlib
-/usr/include/c++/%{version}/algorithm
-/usr/include/c++/%{version}/any
-/usr/include/c++/%{version}/array
-/usr/include/c++/%{version}/atomic
-/usr/include/c++/%{version}/backward/auto_ptr.h
-/usr/include/c++/%{version}/backward/backward_warning.h
-/usr/include/c++/%{version}/backward/binders.h
-/usr/include/c++/%{version}/backward/hash_fun.h
-/usr/include/c++/%{version}/backward/hash_map
-/usr/include/c++/%{version}/backward/hash_set
-/usr/include/c++/%{version}/backward/hashtable.h
-/usr/include/c++/%{version}/backward/strstream
-/usr/include/c++/%{version}/bit
-/usr/include/c++/%{version}/bits/algorithmfwd.h
-/usr/include/c++/%{version}/bits/alloc_traits.h
-/usr/include/c++/%{version}/bits/allocated_ptr.h
-/usr/include/c++/%{version}/bits/allocator.h
-/usr/include/c++/%{version}/bits/atomic_base.h
-/usr/include/c++/%{version}/bits/atomic_futex.h
-/usr/include/c++/%{version}/bits/atomic_lockfree_defines.h
-/usr/include/c++/%{version}/bits/basic_ios.h
-/usr/include/c++/%{version}/bits/basic_ios.tcc
-/usr/include/c++/%{version}/bits/basic_string.h
-/usr/include/c++/%{version}/bits/basic_string.tcc
-/usr/include/c++/%{version}/bits/boost_concept_check.h
-/usr/include/c++/%{version}/bits/c++0x_warning.h
-/usr/include/c++/%{version}/bits/char_traits.h
-/usr/include/c++/%{version}/bits/codecvt.h
-/usr/include/c++/%{version}/bits/concept_check.h
-/usr/include/c++/%{version}/bits/cpp_type_traits.h
-/usr/include/c++/%{version}/bits/cxxabi_forced.h
-/usr/include/c++/%{version}/bits/cxxabi_init_exception.h
-/usr/include/c++/%{version}/bits/deque.tcc
-/usr/include/c++/%{version}/bits/enable_special_members.h
-/usr/include/c++/%{version}/bits/erase_if.h
-/usr/include/c++/%{version}/bits/exception.h
-/usr/include/c++/%{version}/bits/exception_defines.h
-/usr/include/c++/%{version}/bits/exception_ptr.h
-/usr/include/c++/%{version}/bits/forward_list.h
-/usr/include/c++/%{version}/bits/forward_list.tcc
-/usr/include/c++/%{version}/bits/fs_dir.h
-/usr/include/c++/%{version}/bits/fs_fwd.h
-/usr/include/c++/%{version}/bits/fs_ops.h
-/usr/include/c++/%{version}/bits/fs_path.h
-/usr/include/c++/%{version}/bits/fstream.tcc
-/usr/include/c++/%{version}/bits/functexcept.h
-/usr/include/c++/%{version}/bits/functional_hash.h
-/usr/include/c++/%{version}/bits/gslice.h
-/usr/include/c++/%{version}/bits/gslice_array.h
-/usr/include/c++/%{version}/bits/hash_bytes.h
-/usr/include/c++/%{version}/bits/hashtable.h
-/usr/include/c++/%{version}/bits/hashtable_policy.h
-/usr/include/c++/%{version}/bits/indirect_array.h
-/usr/include/c++/%{version}/bits/invoke.h
-/usr/include/c++/%{version}/bits/ios_base.h
-/usr/include/c++/%{version}/bits/istream.tcc
-/usr/include/c++/%{version}/bits/list.tcc
-/usr/include/c++/%{version}/bits/locale_classes.h
-/usr/include/c++/%{version}/bits/locale_classes.tcc
-/usr/include/c++/%{version}/bits/locale_conv.h
-/usr/include/c++/%{version}/bits/locale_facets.h
-/usr/include/c++/%{version}/bits/locale_facets.tcc
-/usr/include/c++/%{version}/bits/locale_facets_nonio.h
-/usr/include/c++/%{version}/bits/locale_facets_nonio.tcc
-/usr/include/c++/%{version}/bits/localefwd.h
-/usr/include/c++/%{version}/bits/mask_array.h
-/usr/include/c++/%{version}/bits/memoryfwd.h
-/usr/include/c++/%{version}/bits/move.h
-/usr/include/c++/%{version}/bits/nested_exception.h
-/usr/include/c++/%{version}/bits/node_handle.h
-/usr/include/c++/%{version}/bits/ostream.tcc
-/usr/include/c++/%{version}/bits/ostream_insert.h
-/usr/include/c++/%{version}/bits/parse_numbers.h
-/usr/include/c++/%{version}/bits/postypes.h
-/usr/include/c++/%{version}/bits/predefined_ops.h
-/usr/include/c++/%{version}/bits/ptr_traits.h
-/usr/include/c++/%{version}/bits/quoted_string.h
-/usr/include/c++/%{version}/bits/random.h
-/usr/include/c++/%{version}/bits/random.tcc
-/usr/include/c++/%{version}/bits/range_access.h
-/usr/include/c++/%{version}/bits/refwrap.h
-/usr/include/c++/%{version}/bits/regex.h
-/usr/include/c++/%{version}/bits/regex.tcc
-/usr/include/c++/%{version}/bits/regex_automaton.h
-/usr/include/c++/%{version}/bits/regex_automaton.tcc
-/usr/include/c++/%{version}/bits/regex_compiler.h
-/usr/include/c++/%{version}/bits/regex_compiler.tcc
-/usr/include/c++/%{version}/bits/regex_constants.h
-/usr/include/c++/%{version}/bits/regex_error.h
-/usr/include/c++/%{version}/bits/regex_executor.h
-/usr/include/c++/%{version}/bits/regex_executor.tcc
-/usr/include/c++/%{version}/bits/regex_scanner.h
-/usr/include/c++/%{version}/bits/regex_scanner.tcc
-/usr/include/c++/%{version}/bits/shared_ptr.h
-/usr/include/c++/%{version}/bits/shared_ptr_atomic.h
-/usr/include/c++/%{version}/bits/shared_ptr_base.h
-/usr/include/c++/%{version}/bits/slice_array.h
-/usr/include/c++/%{version}/bits/specfun.h
-/usr/include/c++/%{version}/bits/sstream.tcc
-/usr/include/c++/%{version}/bits/std_abs.h
-/usr/include/c++/%{version}/bits/std_function.h
-/usr/include/c++/%{version}/bits/std_mutex.h
-/usr/include/c++/%{version}/bits/stl_algo.h
-/usr/include/c++/%{version}/bits/stl_algobase.h
-/usr/include/c++/%{version}/bits/stl_bvector.h
-/usr/include/c++/%{version}/bits/stl_construct.h
-/usr/include/c++/%{version}/bits/stl_deque.h
-/usr/include/c++/%{version}/bits/stl_function.h
-/usr/include/c++/%{version}/bits/stl_heap.h
-/usr/include/c++/%{version}/bits/stl_iterator.h
-/usr/include/c++/%{version}/bits/stl_iterator_base_funcs.h
-/usr/include/c++/%{version}/bits/stl_iterator_base_types.h
-/usr/include/c++/%{version}/bits/stl_list.h
-/usr/include/c++/%{version}/bits/stl_map.h
-/usr/include/c++/%{version}/bits/stl_multimap.h
-/usr/include/c++/%{version}/bits/stl_multiset.h
-/usr/include/c++/%{version}/bits/stl_numeric.h
-/usr/include/c++/%{version}/bits/stl_pair.h
-/usr/include/c++/%{version}/bits/stl_queue.h
-/usr/include/c++/%{version}/bits/stl_raw_storage_iter.h
-/usr/include/c++/%{version}/bits/stl_relops.h
-/usr/include/c++/%{version}/bits/stl_set.h
-/usr/include/c++/%{version}/bits/stl_stack.h
-/usr/include/c++/%{version}/bits/stl_tempbuf.h
-/usr/include/c++/%{version}/bits/stl_tree.h
-/usr/include/c++/%{version}/bits/stl_uninitialized.h
-/usr/include/c++/%{version}/bits/stl_vector.h
-/usr/include/c++/%{version}/bits/stream_iterator.h
-/usr/include/c++/%{version}/bits/streambuf.tcc
-/usr/include/c++/%{version}/bits/streambuf_iterator.h
-/usr/include/c++/%{version}/bits/string_view.tcc
-/usr/include/c++/%{version}/bits/stringfwd.h
-/usr/include/c++/%{version}/bits/uniform_int_dist.h
-/usr/include/c++/%{version}/bits/unique_lock.h
-/usr/include/c++/%{version}/bits/unique_ptr.h
-/usr/include/c++/%{version}/bits/unordered_map.h
-/usr/include/c++/%{version}/bits/unordered_set.h
-/usr/include/c++/%{version}/bits/uses_allocator.h
-/usr/include/c++/%{version}/bits/valarray_after.h
-/usr/include/c++/%{version}/bits/valarray_array.h
-/usr/include/c++/%{version}/bits/valarray_array.tcc
-/usr/include/c++/%{version}/bits/valarray_before.h
-/usr/include/c++/%{version}/bits/vector.tcc
-/usr/include/c++/%{version}/bitset
-/usr/include/c++/%{version}/cassert
-/usr/include/c++/%{version}/ccomplex
-/usr/include/c++/%{version}/cctype
-/usr/include/c++/%{version}/cerrno
-/usr/include/c++/%{version}/cfenv
-/usr/include/c++/%{version}/cfloat
-/usr/include/c++/%{version}/charconv
-/usr/include/c++/%{version}/chrono
-/usr/include/c++/%{version}/cinttypes
-/usr/include/c++/%{version}/ciso646
-/usr/include/c++/%{version}/climits
-/usr/include/c++/%{version}/clocale
-/usr/include/c++/%{version}/cmath
-/usr/include/c++/%{version}/codecvt
-/usr/include/c++/%{version}/complex
-/usr/include/c++/%{version}/complex.h
-/usr/include/c++/%{version}/condition_variable
-/usr/include/c++/%{version}/csetjmp
-/usr/include/c++/%{version}/csignal
-/usr/include/c++/%{version}/cstdalign
-/usr/include/c++/%{version}/cstdarg
-/usr/include/c++/%{version}/cstdbool
-/usr/include/c++/%{version}/cstddef
-/usr/include/c++/%{version}/cstdint
-/usr/include/c++/%{version}/cstdio
-/usr/include/c++/%{version}/cstdlib
-/usr/include/c++/%{version}/cstring
-/usr/include/c++/%{version}/ctgmath
-/usr/include/c++/%{version}/ctime
-/usr/include/c++/%{version}/cuchar
-/usr/include/c++/%{version}/cwchar
-/usr/include/c++/%{version}/cwctype
-/usr/include/c++/%{version}/cxxabi.h
-/usr/include/c++/%{version}/debug/assertions.h
-/usr/include/c++/%{version}/debug/bitset
-/usr/include/c++/%{version}/debug/debug.h
-/usr/include/c++/%{version}/debug/deque
-/usr/include/c++/%{version}/debug/formatter.h
-/usr/include/c++/%{version}/debug/forward_list
-/usr/include/c++/%{version}/debug/functions.h
-/usr/include/c++/%{version}/debug/helper_functions.h
-/usr/include/c++/%{version}/debug/list
-/usr/include/c++/%{version}/debug/macros.h
-/usr/include/c++/%{version}/debug/map
-/usr/include/c++/%{version}/debug/map.h
-/usr/include/c++/%{version}/debug/multimap.h
-/usr/include/c++/%{version}/debug/multiset.h
-/usr/include/c++/%{version}/debug/safe_base.h
-/usr/include/c++/%{version}/debug/safe_container.h
-/usr/include/c++/%{version}/debug/safe_iterator.h
-/usr/include/c++/%{version}/debug/safe_iterator.tcc
-/usr/include/c++/%{version}/debug/safe_local_iterator.h
-/usr/include/c++/%{version}/debug/safe_local_iterator.tcc
-/usr/include/c++/%{version}/debug/safe_sequence.h
-/usr/include/c++/%{version}/debug/safe_sequence.tcc
-/usr/include/c++/%{version}/debug/safe_unordered_base.h
-/usr/include/c++/%{version}/debug/safe_unordered_container.h
-/usr/include/c++/%{version}/debug/safe_unordered_container.tcc
-/usr/include/c++/%{version}/debug/set
-/usr/include/c++/%{version}/debug/set.h
-/usr/include/c++/%{version}/debug/stl_iterator.h
-/usr/include/c++/%{version}/debug/string
-/usr/include/c++/%{version}/debug/unordered_map
-/usr/include/c++/%{version}/debug/unordered_set
-/usr/include/c++/%{version}/debug/vector
-/usr/include/c++/%{version}/decimal/decimal
-/usr/include/c++/%{version}/decimal/decimal.h
-/usr/include/c++/%{version}/deque
-/usr/include/c++/%{version}/exception
-/usr/include/c++/%{version}/execution
-/usr/include/c++/%{version}/experimental/algorithm
-/usr/include/c++/%{version}/experimental/any
-/usr/include/c++/%{version}/experimental/array
-/usr/include/c++/%{version}/experimental/bits/fs_dir.h
-/usr/include/c++/%{version}/experimental/bits/fs_fwd.h
-/usr/include/c++/%{version}/experimental/bits/fs_ops.h
-/usr/include/c++/%{version}/experimental/bits/fs_path.h
-/usr/include/c++/%{version}/experimental/bits/lfts_config.h
-/usr/include/c++/%{version}/experimental/bits/net.h
-/usr/include/c++/%{version}/experimental/bits/shared_ptr.h
-/usr/include/c++/%{version}/experimental/bits/string_view.tcc
-/usr/include/c++/%{version}/experimental/buffer
-/usr/include/c++/%{version}/experimental/chrono
-/usr/include/c++/%{version}/experimental/deque
-/usr/include/c++/%{version}/experimental/executor
-/usr/include/c++/%{version}/experimental/filesystem
-/usr/include/c++/%{version}/experimental/forward_list
-/usr/include/c++/%{version}/experimental/functional
-/usr/include/c++/%{version}/experimental/internet
-/usr/include/c++/%{version}/experimental/io_context
-/usr/include/c++/%{version}/experimental/iterator
-/usr/include/c++/%{version}/experimental/list
-/usr/include/c++/%{version}/experimental/map
-/usr/include/c++/%{version}/experimental/memory
-/usr/include/c++/%{version}/experimental/memory_resource
-/usr/include/c++/%{version}/experimental/net
-/usr/include/c++/%{version}/experimental/netfwd
-/usr/include/c++/%{version}/experimental/numeric
-/usr/include/c++/%{version}/experimental/optional
-/usr/include/c++/%{version}/experimental/propagate_const
-/usr/include/c++/%{version}/experimental/random
-/usr/include/c++/%{version}/experimental/ratio
-/usr/include/c++/%{version}/experimental/regex
-/usr/include/c++/%{version}/experimental/set
-/usr/include/c++/%{version}/experimental/socket
-/usr/include/c++/%{version}/experimental/source_location
-/usr/include/c++/%{version}/experimental/string
-/usr/include/c++/%{version}/experimental/string_view
-/usr/include/c++/%{version}/experimental/system_error
-/usr/include/c++/%{version}/experimental/timer
-/usr/include/c++/%{version}/experimental/tuple
-/usr/include/c++/%{version}/experimental/type_traits
-/usr/include/c++/%{version}/experimental/unordered_map
-/usr/include/c++/%{version}/experimental/unordered_set
-/usr/include/c++/%{version}/experimental/utility
-/usr/include/c++/%{version}/experimental/vector
-/usr/include/c++/%{version}/ext/algorithm
-/usr/include/c++/%{version}/ext/aligned_buffer.h
-/usr/include/c++/%{version}/ext/alloc_traits.h
-/usr/include/c++/%{version}/ext/atomicity.h
-/usr/include/c++/%{version}/ext/bitmap_allocator.h
-/usr/include/c++/%{version}/ext/cast.h
-/usr/include/c++/%{version}/ext/cmath
-/usr/include/c++/%{version}/ext/codecvt_specializations.h
-/usr/include/c++/%{version}/ext/concurrence.h
-/usr/include/c++/%{version}/ext/debug_allocator.h
-/usr/include/c++/%{version}/ext/enc_filebuf.h
-/usr/include/c++/%{version}/ext/extptr_allocator.h
-/usr/include/c++/%{version}/ext/functional
-/usr/include/c++/%{version}/ext/hash_map
-/usr/include/c++/%{version}/ext/hash_set
-/usr/include/c++/%{version}/ext/iterator
-/usr/include/c++/%{version}/ext/malloc_allocator.h
-/usr/include/c++/%{version}/ext/memory
-/usr/include/c++/%{version}/ext/mt_allocator.h
-/usr/include/c++/%{version}/ext/new_allocator.h
-/usr/include/c++/%{version}/ext/numeric
-/usr/include/c++/%{version}/ext/numeric_traits.h
-/usr/include/c++/%{version}/ext/pb_ds/assoc_container.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/bin_search_tree_/bin_search_tree_.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/bin_search_tree_/constructors_destructor_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/bin_search_tree_/erase_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/bin_search_tree_/find_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/bin_search_tree_/info_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/bin_search_tree_/insert_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/bin_search_tree_/iterators_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/bin_search_tree_/node_iterators.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/bin_search_tree_/point_iterators.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/bin_search_tree_/policy_access_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/bin_search_tree_/r_erase_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/bin_search_tree_/rotate_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/bin_search_tree_/split_join_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/bin_search_tree_/traits.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/binary_heap_/binary_heap_.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/binary_heap_/const_iterator.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/binary_heap_/constructors_destructor_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/binary_heap_/debug_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/binary_heap_/entry_cmp.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/binary_heap_/entry_pred.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/binary_heap_/erase_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/binary_heap_/find_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/binary_heap_/info_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/binary_heap_/insert_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/binary_heap_/iterators_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/binary_heap_/point_const_iterator.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/binary_heap_/policy_access_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/binary_heap_/resize_policy.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/binary_heap_/split_join_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/binary_heap_/trace_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/binomial_heap_/binomial_heap_.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/binomial_heap_/constructors_destructor_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/binomial_heap_/debug_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/binomial_heap_base_/binomial_heap_base_.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/binomial_heap_base_/constructors_destructor_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/binomial_heap_base_/debug_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/binomial_heap_base_/erase_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/binomial_heap_base_/find_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/binomial_heap_base_/insert_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/binomial_heap_base_/split_join_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/branch_policy/branch_policy.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/branch_policy/null_node_metadata.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/branch_policy/traits.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/cc_hash_table_map_/cc_ht_map_.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/cc_hash_table_map_/cmp_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/cc_hash_table_map_/cond_key_dtor_entry_dealtor.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/cc_hash_table_map_/constructor_destructor_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/cc_hash_table_map_/constructor_destructor_no_store_hash_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/cc_hash_table_map_/constructor_destructor_store_hash_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/cc_hash_table_map_/debug_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/cc_hash_table_map_/debug_no_store_hash_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/cc_hash_table_map_/debug_store_hash_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/cc_hash_table_map_/entry_list_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/cc_hash_table_map_/erase_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/cc_hash_table_map_/erase_no_store_hash_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/cc_hash_table_map_/erase_store_hash_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/cc_hash_table_map_/find_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/cc_hash_table_map_/find_store_hash_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/cc_hash_table_map_/info_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/cc_hash_table_map_/insert_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/cc_hash_table_map_/insert_no_store_hash_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/cc_hash_table_map_/insert_store_hash_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/cc_hash_table_map_/iterators_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/cc_hash_table_map_/policy_access_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/cc_hash_table_map_/resize_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/cc_hash_table_map_/resize_no_store_hash_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/cc_hash_table_map_/resize_store_hash_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/cc_hash_table_map_/size_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/cc_hash_table_map_/trace_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/cond_dealtor.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/container_base_dispatch.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/debug_map_base.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/eq_fn/eq_by_less.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/eq_fn/hash_eq_fn.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/gp_hash_table_map_/constructor_destructor_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/gp_hash_table_map_/constructor_destructor_no_store_hash_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/gp_hash_table_map_/constructor_destructor_store_hash_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/gp_hash_table_map_/debug_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/gp_hash_table_map_/debug_no_store_hash_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/gp_hash_table_map_/debug_store_hash_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/gp_hash_table_map_/erase_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/gp_hash_table_map_/erase_no_store_hash_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/gp_hash_table_map_/erase_store_hash_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/gp_hash_table_map_/find_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/gp_hash_table_map_/find_no_store_hash_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/gp_hash_table_map_/find_store_hash_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/gp_hash_table_map_/gp_ht_map_.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/gp_hash_table_map_/info_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/gp_hash_table_map_/insert_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/gp_hash_table_map_/insert_no_store_hash_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/gp_hash_table_map_/insert_store_hash_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/gp_hash_table_map_/iterator_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/gp_hash_table_map_/policy_access_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/gp_hash_table_map_/resize_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/gp_hash_table_map_/resize_no_store_hash_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/gp_hash_table_map_/resize_store_hash_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/gp_hash_table_map_/trace_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/hash_fn/direct_mask_range_hashing_imp.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/hash_fn/direct_mod_range_hashing_imp.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/hash_fn/linear_probe_fn_imp.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/hash_fn/mask_based_range_hashing.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/hash_fn/mod_based_range_hashing.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/hash_fn/probe_fn_base.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/hash_fn/quadratic_probe_fn_imp.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/hash_fn/ranged_hash_fn.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/hash_fn/ranged_probe_fn.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/hash_fn/sample_probe_fn.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/hash_fn/sample_range_hashing.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/hash_fn/sample_ranged_hash_fn.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/hash_fn/sample_ranged_probe_fn.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/left_child_next_sibling_heap_/const_iterator.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/left_child_next_sibling_heap_/constructors_destructor_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/left_child_next_sibling_heap_/debug_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/left_child_next_sibling_heap_/erase_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/left_child_next_sibling_heap_/info_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/left_child_next_sibling_heap_/insert_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/left_child_next_sibling_heap_/iterators_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/left_child_next_sibling_heap_/left_child_next_sibling_heap_.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/left_child_next_sibling_heap_/node.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/left_child_next_sibling_heap_/point_const_iterator.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/left_child_next_sibling_heap_/policy_access_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/left_child_next_sibling_heap_/trace_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/list_update_map_/constructor_destructor_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/list_update_map_/debug_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/list_update_map_/entry_metadata_base.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/list_update_map_/erase_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/list_update_map_/find_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/list_update_map_/info_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/list_update_map_/insert_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/list_update_map_/iterators_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/list_update_map_/lu_map_.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/list_update_map_/trace_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/list_update_policy/lu_counter_metadata.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/list_update_policy/sample_update_policy.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/ov_tree_map_/constructors_destructor_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/ov_tree_map_/debug_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/ov_tree_map_/erase_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/ov_tree_map_/info_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/ov_tree_map_/insert_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/ov_tree_map_/iterators_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/ov_tree_map_/node_iterators.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/ov_tree_map_/ov_tree_map_.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/ov_tree_map_/policy_access_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/ov_tree_map_/split_join_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/ov_tree_map_/traits.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/pairing_heap_/constructors_destructor_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/pairing_heap_/debug_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/pairing_heap_/erase_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/pairing_heap_/find_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/pairing_heap_/insert_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/pairing_heap_/pairing_heap_.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/pairing_heap_/split_join_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/pat_trie_/constructors_destructor_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/pat_trie_/debug_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/pat_trie_/erase_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/pat_trie_/find_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/pat_trie_/info_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/pat_trie_/insert_join_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/pat_trie_/iterators_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/pat_trie_/pat_trie_.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/pat_trie_/pat_trie_base.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/pat_trie_/policy_access_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/pat_trie_/r_erase_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/pat_trie_/rotate_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/pat_trie_/split_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/pat_trie_/synth_access_traits.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/pat_trie_/trace_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/pat_trie_/traits.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/pat_trie_/update_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/priority_queue_base_dispatch.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/rb_tree_map_/constructors_destructor_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/rb_tree_map_/debug_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/rb_tree_map_/erase_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/rb_tree_map_/find_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/rb_tree_map_/info_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/rb_tree_map_/insert_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/rb_tree_map_/node.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/rb_tree_map_/rb_tree_.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/rb_tree_map_/split_join_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/rb_tree_map_/traits.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/rc_binomial_heap_/constructors_destructor_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/rc_binomial_heap_/debug_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/rc_binomial_heap_/erase_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/rc_binomial_heap_/insert_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/rc_binomial_heap_/rc.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/rc_binomial_heap_/rc_binomial_heap_.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/rc_binomial_heap_/split_join_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/rc_binomial_heap_/trace_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/resize_policy/cc_hash_max_collision_check_resize_trigger_imp.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/resize_policy/hash_exponential_size_policy_imp.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/resize_policy/hash_load_check_resize_trigger_imp.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/resize_policy/hash_load_check_resize_trigger_size_base.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/resize_policy/hash_prime_size_policy_imp.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/resize_policy/hash_standard_resize_policy_imp.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/resize_policy/sample_resize_policy.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/resize_policy/sample_resize_trigger.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/resize_policy/sample_size_policy.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/splay_tree_/constructors_destructor_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/splay_tree_/debug_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/splay_tree_/erase_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/splay_tree_/find_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/splay_tree_/info_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/splay_tree_/insert_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/splay_tree_/node.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/splay_tree_/splay_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/splay_tree_/splay_tree_.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/splay_tree_/split_join_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/splay_tree_/traits.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/standard_policies.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/thin_heap_/constructors_destructor_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/thin_heap_/debug_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/thin_heap_/erase_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/thin_heap_/find_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/thin_heap_/insert_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/thin_heap_/split_join_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/thin_heap_/thin_heap_.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/thin_heap_/trace_fn_imps.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/tree_policy/node_metadata_selector.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/tree_policy/order_statistics_imp.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/tree_policy/sample_tree_node_update.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/tree_trace_base.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/trie_policy/node_metadata_selector.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/trie_policy/order_statistics_imp.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/trie_policy/prefix_search_node_update_imp.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/trie_policy/sample_trie_access_traits.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/trie_policy/sample_trie_node_update.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/trie_policy/trie_policy_base.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/trie_policy/trie_string_access_traits_imp.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/type_utils.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/types_traits.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/unordered_iterator/const_iterator.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/unordered_iterator/iterator.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/unordered_iterator/point_const_iterator.hpp
-/usr/include/c++/%{version}/ext/pb_ds/detail/unordered_iterator/point_iterator.hpp
-/usr/include/c++/%{version}/ext/pb_ds/exception.hpp
-/usr/include/c++/%{version}/ext/pb_ds/hash_policy.hpp
-/usr/include/c++/%{version}/ext/pb_ds/list_update_policy.hpp
-/usr/include/c++/%{version}/ext/pb_ds/priority_queue.hpp
-/usr/include/c++/%{version}/ext/pb_ds/tag_and_trait.hpp
-/usr/include/c++/%{version}/ext/pb_ds/tree_policy.hpp
-/usr/include/c++/%{version}/ext/pb_ds/trie_policy.hpp
-/usr/include/c++/%{version}/ext/pod_char_traits.h
-/usr/include/c++/%{version}/ext/pointer.h
-/usr/include/c++/%{version}/ext/pool_allocator.h
-/usr/include/c++/%{version}/ext/random
-/usr/include/c++/%{version}/ext/random.tcc
-/usr/include/c++/%{version}/ext/rb_tree
-/usr/include/c++/%{version}/ext/rc_string_base.h
-/usr/include/c++/%{version}/ext/rope
-/usr/include/c++/%{version}/ext/ropeimpl.h
-/usr/include/c++/%{version}/ext/slist
-/usr/include/c++/%{version}/ext/sso_string_base.h
-/usr/include/c++/%{version}/ext/stdio_filebuf.h
-/usr/include/c++/%{version}/ext/stdio_sync_filebuf.h
-/usr/include/c++/%{version}/ext/string_conversions.h
-/usr/include/c++/%{version}/ext/throw_allocator.h
-/usr/include/c++/%{version}/ext/type_traits.h
-/usr/include/c++/%{version}/ext/typelist.h
-/usr/include/c++/%{version}/ext/vstring.h
-/usr/include/c++/%{version}/ext/vstring.tcc
-/usr/include/c++/%{version}/ext/vstring_fwd.h
-/usr/include/c++/%{version}/ext/vstring_util.h
-/usr/include/c++/%{version}/fenv.h
-/usr/include/c++/%{version}/filesystem
-/usr/include/c++/%{version}/forward_list
-/usr/include/c++/%{version}/fstream
-/usr/include/c++/%{version}/functional
-/usr/include/c++/%{version}/future
-/usr/include/c++/%{version}/initializer_list
-/usr/include/c++/%{version}/iomanip
-/usr/include/c++/%{version}/ios
-/usr/include/c++/%{version}/iosfwd
-/usr/include/c++/%{version}/iostream
-/usr/include/c++/%{version}/istream
-/usr/include/c++/%{version}/iterator
-/usr/include/c++/%{version}/limits
-/usr/include/c++/%{version}/list
-/usr/include/c++/%{version}/locale
-/usr/include/c++/%{version}/map
-/usr/include/c++/%{version}/math.h
-/usr/include/c++/%{version}/memory
-/usr/include/c++/%{version}/memory_resource
-/usr/include/c++/%{version}/mutex
-/usr/include/c++/%{version}/new
-/usr/include/c++/%{version}/numeric
-/usr/include/c++/%{version}/optional
-/usr/include/c++/%{version}/ostream
-/usr/include/c++/%{version}/parallel/algo.h
-/usr/include/c++/%{version}/parallel/algobase.h
-/usr/include/c++/%{version}/parallel/algorithm
-/usr/include/c++/%{version}/parallel/algorithmfwd.h
-/usr/include/c++/%{version}/parallel/balanced_quicksort.h
-/usr/include/c++/%{version}/parallel/base.h
-/usr/include/c++/%{version}/parallel/basic_iterator.h
-/usr/include/c++/%{version}/parallel/checkers.h
-/usr/include/c++/%{version}/parallel/compatibility.h
-/usr/include/c++/%{version}/parallel/compiletime_settings.h
-/usr/include/c++/%{version}/parallel/equally_split.h
-/usr/include/c++/%{version}/parallel/features.h
-/usr/include/c++/%{version}/parallel/find.h
-/usr/include/c++/%{version}/parallel/find_selectors.h
-/usr/include/c++/%{version}/parallel/for_each.h
-/usr/include/c++/%{version}/parallel/for_each_selectors.h
-/usr/include/c++/%{version}/parallel/iterator.h
-/usr/include/c++/%{version}/parallel/list_partition.h
-/usr/include/c++/%{version}/parallel/losertree.h
-/usr/include/c++/%{version}/parallel/merge.h
-/usr/include/c++/%{version}/parallel/multiseq_selection.h
-/usr/include/c++/%{version}/parallel/multiway_merge.h
-/usr/include/c++/%{version}/parallel/multiway_mergesort.h
-/usr/include/c++/%{version}/parallel/numeric
-/usr/include/c++/%{version}/parallel/numericfwd.h
-/usr/include/c++/%{version}/parallel/omp_loop.h
-/usr/include/c++/%{version}/parallel/omp_loop_static.h
-/usr/include/c++/%{version}/parallel/par_loop.h
-/usr/include/c++/%{version}/parallel/parallel.h
-/usr/include/c++/%{version}/parallel/partial_sum.h
-/usr/include/c++/%{version}/parallel/partition.h
-/usr/include/c++/%{version}/parallel/queue.h
-/usr/include/c++/%{version}/parallel/quicksort.h
-/usr/include/c++/%{version}/parallel/random_number.h
-/usr/include/c++/%{version}/parallel/random_shuffle.h
-/usr/include/c++/%{version}/parallel/search.h
-/usr/include/c++/%{version}/parallel/set_operations.h
-/usr/include/c++/%{version}/parallel/settings.h
-/usr/include/c++/%{version}/parallel/sort.h
-/usr/include/c++/%{version}/parallel/tags.h
-/usr/include/c++/%{version}/parallel/types.h
-/usr/include/c++/%{version}/parallel/unique_copy.h
-/usr/include/c++/%{version}/parallel/workstealing.h
-/usr/include/c++/%{version}/pstl/algorithm_fwd.h
-/usr/include/c++/%{version}/pstl/algorithm_impl.h
-/usr/include/c++/%{version}/pstl/execution_defs.h
-/usr/include/c++/%{version}/pstl/execution_impl.h
-/usr/include/c++/%{version}/pstl/glue_algorithm_defs.h
-/usr/include/c++/%{version}/pstl/glue_algorithm_impl.h
-/usr/include/c++/%{version}/pstl/glue_execution_defs.h
-/usr/include/c++/%{version}/pstl/glue_memory_defs.h
-/usr/include/c++/%{version}/pstl/glue_memory_impl.h
-/usr/include/c++/%{version}/pstl/glue_numeric_defs.h
-/usr/include/c++/%{version}/pstl/glue_numeric_impl.h
-/usr/include/c++/%{version}/pstl/memory_impl.h
-/usr/include/c++/%{version}/pstl/numeric_fwd.h
-/usr/include/c++/%{version}/pstl/numeric_impl.h
-/usr/include/c++/%{version}/pstl/parallel_backend.h
-/usr/include/c++/%{version}/pstl/parallel_backend_tbb.h
-/usr/include/c++/%{version}/pstl/parallel_backend_utils.h
-/usr/include/c++/%{version}/pstl/parallel_impl.h
-/usr/include/c++/%{version}/pstl/pstl_config.h
-/usr/include/c++/%{version}/pstl/unseq_backend_simd.h
-/usr/include/c++/%{version}/pstl/utils.h
-/usr/include/c++/%{version}/queue
-/usr/include/c++/%{version}/random
-/usr/include/c++/%{version}/ratio
-/usr/include/c++/%{version}/regex
-/usr/include/c++/%{version}/scoped_allocator
-/usr/include/c++/%{version}/set
-/usr/include/c++/%{version}/shared_mutex
-/usr/include/c++/%{version}/sstream
-/usr/include/c++/%{version}/stack
-/usr/include/c++/%{version}/stdexcept
-/usr/include/c++/%{version}/stdlib.h
-/usr/include/c++/%{version}/streambuf
-/usr/include/c++/%{version}/string
-/usr/include/c++/%{version}/string_view
-/usr/include/c++/%{version}/system_error
-/usr/include/c++/%{version}/tgmath.h
-/usr/include/c++/%{version}/thread
-/usr/include/c++/%{version}/tr1/array
-/usr/include/c++/%{version}/tr1/bessel_function.tcc
-/usr/include/c++/%{version}/tr1/beta_function.tcc
-/usr/include/c++/%{version}/tr1/ccomplex
-/usr/include/c++/%{version}/tr1/cctype
-/usr/include/c++/%{version}/tr1/cfenv
-/usr/include/c++/%{version}/tr1/cfloat
-/usr/include/c++/%{version}/tr1/cinttypes
-/usr/include/c++/%{version}/tr1/climits
-/usr/include/c++/%{version}/tr1/cmath
-/usr/include/c++/%{version}/tr1/complex
-/usr/include/c++/%{version}/tr1/complex.h
-/usr/include/c++/%{version}/tr1/cstdarg
-/usr/include/c++/%{version}/tr1/cstdbool
-/usr/include/c++/%{version}/tr1/cstdint
-/usr/include/c++/%{version}/tr1/cstdio
-/usr/include/c++/%{version}/tr1/cstdlib
-/usr/include/c++/%{version}/tr1/ctgmath
-/usr/include/c++/%{version}/tr1/ctime
-/usr/include/c++/%{version}/tr1/ctype.h
-/usr/include/c++/%{version}/tr1/cwchar
-/usr/include/c++/%{version}/tr1/cwctype
-/usr/include/c++/%{version}/tr1/ell_integral.tcc
-/usr/include/c++/%{version}/tr1/exp_integral.tcc
-/usr/include/c++/%{version}/tr1/fenv.h
-/usr/include/c++/%{version}/tr1/float.h
-/usr/include/c++/%{version}/tr1/functional
-/usr/include/c++/%{version}/tr1/functional_hash.h
-/usr/include/c++/%{version}/tr1/gamma.tcc
-/usr/include/c++/%{version}/tr1/hashtable.h
-/usr/include/c++/%{version}/tr1/hashtable_policy.h
-/usr/include/c++/%{version}/tr1/hypergeometric.tcc
-/usr/include/c++/%{version}/tr1/inttypes.h
-/usr/include/c++/%{version}/tr1/legendre_function.tcc
-/usr/include/c++/%{version}/tr1/limits.h
-/usr/include/c++/%{version}/tr1/math.h
-/usr/include/c++/%{version}/tr1/memory
-/usr/include/c++/%{version}/tr1/modified_bessel_func.tcc
-/usr/include/c++/%{version}/tr1/poly_hermite.tcc
-/usr/include/c++/%{version}/tr1/poly_laguerre.tcc
-/usr/include/c++/%{version}/tr1/random
-/usr/include/c++/%{version}/tr1/random.h
-/usr/include/c++/%{version}/tr1/random.tcc
-/usr/include/c++/%{version}/tr1/regex
-/usr/include/c++/%{version}/tr1/riemann_zeta.tcc
-/usr/include/c++/%{version}/tr1/shared_ptr.h
-/usr/include/c++/%{version}/tr1/special_function_util.h
-/usr/include/c++/%{version}/tr1/stdarg.h
-/usr/include/c++/%{version}/tr1/stdbool.h
-/usr/include/c++/%{version}/tr1/stdint.h
-/usr/include/c++/%{version}/tr1/stdio.h
-/usr/include/c++/%{version}/tr1/stdlib.h
-/usr/include/c++/%{version}/tr1/tgmath.h
-/usr/include/c++/%{version}/tr1/tuple
-/usr/include/c++/%{version}/tr1/type_traits
-/usr/include/c++/%{version}/tr1/unordered_map
-/usr/include/c++/%{version}/tr1/unordered_map.h
-/usr/include/c++/%{version}/tr1/unordered_set
-/usr/include/c++/%{version}/tr1/unordered_set.h
-/usr/include/c++/%{version}/tr1/utility
-/usr/include/c++/%{version}/tr1/wchar.h
-/usr/include/c++/%{version}/tr1/wctype.h
-/usr/include/c++/%{version}/tr2/bool_set
-/usr/include/c++/%{version}/tr2/bool_set.tcc
-/usr/include/c++/%{version}/tr2/dynamic_bitset
-/usr/include/c++/%{version}/tr2/dynamic_bitset.tcc
-/usr/include/c++/%{version}/tr2/ratio
-/usr/include/c++/%{version}/tr2/type_traits
-/usr/include/c++/%{version}/tuple
-/usr/include/c++/%{version}/type_traits
-/usr/include/c++/%{version}/typeindex
-/usr/include/c++/%{version}/typeinfo
-/usr/include/c++/%{version}/unordered_map
-/usr/include/c++/%{version}/unordered_set
-/usr/include/c++/%{version}/utility
-/usr/include/c++/%{version}/valarray
-/usr/include/c++/%{version}/variant
-/usr/include/c++/%{version}/vector
-/usr/include/c++/%{version}/version
-/usr/include/c++/%{version}/x86_64-pc-linux-gnu/bits/atomic_word.h
-/usr/include/c++/%{version}/x86_64-pc-linux-gnu/bits/basic_file.h
-/usr/include/c++/%{version}/x86_64-pc-linux-gnu/bits/c++allocator.h
-/usr/include/c++/%{version}/x86_64-pc-linux-gnu/bits/c++config.h
-/usr/include/c++/%{version}/x86_64-pc-linux-gnu/bits/c++io.h
-/usr/include/c++/%{version}/x86_64-pc-linux-gnu/bits/c++locale.h
-/usr/include/c++/%{version}/x86_64-pc-linux-gnu/bits/cpu_defines.h
-/usr/include/c++/%{version}/x86_64-pc-linux-gnu/bits/ctype_base.h
-/usr/include/c++/%{version}/x86_64-pc-linux-gnu/bits/ctype_inline.h
-/usr/include/c++/%{version}/x86_64-pc-linux-gnu/bits/cxxabi_tweaks.h
-/usr/include/c++/%{version}/x86_64-pc-linux-gnu/bits/error_constants.h
-/usr/include/c++/%{version}/x86_64-pc-linux-gnu/bits/extc++.h
-/usr/include/c++/%{version}/x86_64-pc-linux-gnu/bits/gthr-default.h
-/usr/include/c++/%{version}/x86_64-pc-linux-gnu/bits/gthr-posix.h
-/usr/include/c++/%{version}/x86_64-pc-linux-gnu/bits/gthr-single.h
-/usr/include/c++/%{version}/x86_64-pc-linux-gnu/bits/gthr.h
-/usr/include/c++/%{version}/x86_64-pc-linux-gnu/bits/messages_members.h
-/usr/include/c++/%{version}/x86_64-pc-linux-gnu/bits/opt_random.h
-/usr/include/c++/%{version}/x86_64-pc-linux-gnu/bits/os_defines.h
-/usr/include/c++/%{version}/x86_64-pc-linux-gnu/bits/stdc++.h
-/usr/include/c++/%{version}/x86_64-pc-linux-gnu/bits/stdtr1c++.h
-/usr/include/c++/%{version}/x86_64-pc-linux-gnu/bits/time_members.h
-/usr/include/c++/%{version}/x86_64-pc-linux-gnu/ext/opt_random.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/crtbegin.o
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/crtbeginS.o
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/crtbeginT.o
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/crtend.o
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/crtendS.o
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/crtfastmath.o
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/crtprec32.o
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/crtprec64.o
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/crtprec80.o
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/limits.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/syslimits.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/adxintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/ammintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/avx2intrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/avx5124fmapsintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/avx5124vnniwintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/avx512bitalgintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/avx512bwintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/avx512cdintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/avx512dqintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/avx512erintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/avx512fintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/avx512ifmaintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/avx512ifmavlintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/avx512pfintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/avx512vbmi2intrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/avx512vbmi2vlintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/avx512vbmiintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/avx512vbmivlintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/avx512vlbwintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/avx512vldqintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/avx512vlintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/avx512vnniintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/avx512vnnivlintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/avx512vpopcntdqintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/avx512vpopcntdqvlintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/avxintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/bmi2intrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/bmiintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/bmmintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/cet.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/cetintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/cldemoteintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/clflushoptintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/clwbintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/clzerointrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/cpuid.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/cross-stdarg.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/emmintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/f16cintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/float.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/fma4intrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/fmaintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/fxsrintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/gcov.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/gfniintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/ia32intrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/immintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/iso646.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/lwpintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/lzcntintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/mm3dnow.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/mm_malloc.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/mmintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/movdirintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/mwaitxintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/mwaitintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/nmmintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/omp.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/openacc.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/pconfigintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/pkuintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/pmmintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/popcntintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/prfchwintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/quadmath.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/quadmath_weak.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/rdseedintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/rtmintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/sanitizer/asan_interface.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/sanitizer/common_interface_defs.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/sanitizer/lsan_interface.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/sanitizer/tsan_interface.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/sgxintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/shaintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/smmintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/ssp/ssp.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/ssp/stdio.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/ssp/string.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/ssp/unistd.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/stdalign.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/stdarg.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/stdatomic.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/stdbool.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/stddef.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/stdfix.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/stdint-gcc.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/stdint.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/stdnoreturn.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/tbmintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/tmmintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/unwind.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/vaesintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/varargs.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/vpclmulqdqintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/waitpkgintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/wbnoinvdintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/wmmintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/x86intrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/xmmintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/xopintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/xsavecintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/xsaveintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/xsaveoptintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/xsavesintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/xtestintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/install-tools/fixinc_list
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/install-tools/gsyslimits.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/install-tools/include/README
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/install-tools/include/limits.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/install-tools/macro_list
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/install-tools/mkheaders.conf
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libasan.a
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libasan.so
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libasan_preinit.o
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libatomic.a
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libatomic.so
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libatomic.so.1
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libatomic.so.1.2.0
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include-fixed/x86_64-linux-gnu/bits/statx.h
-/usr/lib/libcc1.so
-/usr/lib/libcc1.so.0
-/usr/lib/libcc1.so.0.0.0
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libgcc.a
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libgcc_eh.a
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libgcc_s.so
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libgcc_s.so.1
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libgcov.a
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libgomp.a
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libgomp.so
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libgomp.so.1
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libgomp.so.1.0.0
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libgomp.spec
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libitm.a
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libitm.so
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libitm.so.1
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libitm.so.1.0.0
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libitm.spec
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/liblsan.a
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/liblsan.so
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/liblsan.so.0
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/liblsan.so.0.0.0
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/liblsan_preinit.o
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libquadmath.a
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libquadmath.so
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libquadmath.so.0
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libquadmath.so.0.0.0
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libsanitizer.spec
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libssp.a
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libssp.so
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libssp.so.0
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libssp.so.0.0.0
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libssp_nonshared.a
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libstdc++.a
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libstdc++.so
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libstdc++.so.6
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libstdc++fs.a
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libsupc++.a
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libtsan.a
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libtsan.so
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libtsan.so.0
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libtsan.so.0.0.0
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libtsan_preinit.o
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libubsan.a
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libubsan.so
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libubsan.so.1
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libubsan.so.1.0.0
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/gtype.state
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/ada/gcc-interface/ada-tree.def
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/addresses.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/alias.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/align.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/all-tree.def
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/alloc-pool.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/ansidecl.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/asan.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/attribs.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/auto-host.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/auto-profile.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/b-header-vars
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/backend.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/basic-block.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/bb-reorder.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/bitmap.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/brig-builtins.def
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/builtin-attrs.def
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/builtin-types.def
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/builtins.def
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/builtins.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/bversion.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/c-family/c-common.def
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/c-family/c-common.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/c-family/c-objc.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/c-family/c-pragma.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/c-family/c-pretty-print.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/c-tree.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/calls.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/ccmp.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/cfg-flags.def
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/cfg.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/cfganal.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/cfgbuild.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/cfgcleanup.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/cfgexpand.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/cfghooks.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/cfgloop.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/cfgloopmanip.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/cfgrtl.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/cgraph.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/cif-code.def
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/collect-utils.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/collect2-aix.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/collect2.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/color-macros.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/conditions.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/config.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/config/dbxelf.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/config/elfos.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/config/glibc-stdint.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/config/gnu-user.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/config/i386/att.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/config/i386/biarch64.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/config/i386/gnu-user-common.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/config/i386/gnu-user64.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/config/i386/i386-opts.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/config/i386/i386-protos.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/config/i386/i386.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/config/i386/linux-common.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/config/i386/linux64.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/config/i386/stringop.def
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/config/i386/unix.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/config/i386/x86-64.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/config/i386/x86-tune.def
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/config/initfini-array.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/config/linux-android.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/config/linux-protos.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/config/linux.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/config/vxworks-dummy.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/configargs.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/context.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/convert.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/coretypes.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/coverage.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/cp/cp-tree.def
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/cp/cp-tree.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/cp/cxx-pretty-print.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/cp/name-lookup.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/cp/operators.def
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/cp/type-utils.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/cppbuiltin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/cppdefault.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/cpplib.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/cselib.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/d/d-tree.def
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/data-streamer.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/dbgcnt.def
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/dbgcnt.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/dbxout.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/dce.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/ddg.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/debug.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/defaults.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/df.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/dfp.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/diagnostic-color.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/diagnostic-core.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/diagnostic.def
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/diagnostic.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/dojump.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/dominance.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/domwalk.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/double-int.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/dump-context.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/dumpfile.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/dwarf2asm.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/dwarf2out.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/edit-context.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/emit-rtl.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/errors.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/et-forest.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/except.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/explow.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/expmed.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/expr.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/fibonacci_heap.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/file-find.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/file-prefix-map.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/filenames.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/fixed-value.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/flag-types.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/flags.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/fold-const-call.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/fold-const.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/function.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/gcc-plugin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/gcc-rich-location.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/gcc-symtab.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/gcc.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/gcov-counter.def
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/gcov-io.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/gcse-common.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/gcse.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/generic-match.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/gengtype.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/genrtl.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/gensupport.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/ggc-internal.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/ggc.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/gimple-builder.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/gimple-expr.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/gimple-fold.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/gimple-iterator.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/gimple-low.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/gimple-match.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/gimple-predict.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/gimple-pretty-print.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/gimple-ssa-evrp-analyze.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/gimple-ssa-warn-restrict.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/gimple-ssa.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/gimple-streamer.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/gimple-walk.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/gimple.def
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/gimple.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/gimplify-me.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/gimplify.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/glimits.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/graph.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/graphds.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/graphite.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/gsstruct.def
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/gstab.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/gsyms.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/gsyslimits.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/gtm-builtins.def
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/gtype-desc.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/hard-reg-set.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/hash-map-traits.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/hash-map.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/hash-set.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/hash-table.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/hash-traits.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/hashtab.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/highlev-plugin-common.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/hooks.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/hosthooks-def.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/hosthooks.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/hw-doloop.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/hwint.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/ifcvt.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/inchash.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/incpath.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/input.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/insn-addr.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/insn-attr-common.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/insn-attr.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/insn-codes.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/insn-constants.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/insn-flags.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/insn-modes-inline.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/insn-modes.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/insn-notes.def
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/int-vector-builder.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/internal-fn.def
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/internal-fn.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/intl.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/ipa-fnsummary.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/ipa-icf-gimple.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/ipa-icf.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/ipa-inline.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/ipa-param-manipulation.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/ipa-predicate.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/ipa-prop.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/ipa-ref.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/ipa-reference.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/ipa-utils.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/ira-int.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/ira.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/is-a.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/json.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/langhooks-def.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/langhooks.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/lcm.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/libfuncs.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/libiberty.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/limitx.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/limity.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/line-map.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/loop-unroll.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/lower-subreg.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/lra-int.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/lra.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/lto-compress.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/lto-section-names.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/lto-streamer.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/machmode.def
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/machmode.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/md5.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/mem-stats-traits.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/mem-stats.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/memmodel.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/memory-block.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/mode-classes.def
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/objc/objc-tree.def
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/obstack.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/omp-builtins.def
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/omp-expand.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/omp-general.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/omp-low.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/omp-offload.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/omp-simd-clone.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/opt-problem.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/opt-suggestions.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/optabs-libfuncs.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/optabs-query.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/optabs-tree.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/optabs.def
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/optabs.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/optinfo-emit-json.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/optinfo.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/options.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/opts-diagnostic.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/opts.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/output.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/pass-instances.def
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/pass_manager.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/passes.def
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/plugin-api.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/plugin-version.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/plugin.def
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/plugin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/poly-int-types.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/poly-int.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/predict.def
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/predict.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/prefix.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/pretty-print.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/print-rtl.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/print-tree.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/profile-count.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/profile.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/read-md.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/read-rtl-function.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/real.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/realmpfr.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/recog.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/reg-notes.def
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/regcprop.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/regrename.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/regs.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/regset.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/reload.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/resource.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/rtl-error.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/rtl-iter.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/rtl.def
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/rtl.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/rtlhash.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/rtlhooks-def.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/rtx-vector-builder.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/run-rtl-passes.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/safe-ctype.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/sanitizer.def
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/sbitmap.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/sched-int.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/sel-sched-dump.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/sel-sched-ir.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/sel-sched.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/selftest-diagnostic.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/selftest-rtl.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/selftest.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/sese.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/shrink-wrap.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/signop.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/sparseset.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/spellcheck-tree.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/spellcheck.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/splay-tree.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/sreal.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/ssa-iterators.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/ssa.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/stab.def
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/statistics.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/stmt.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/stor-layout.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/streamer-hooks.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/stringpool.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/substring-locations.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/symbol-summary.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/symtab.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/sync-builtins.def
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/system.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/target-def.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/target-globals.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/target-hooks-macros.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/target-insns.def
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/target.def
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/target.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/targhooks.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/timevar.def
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/timevar.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tm-preds.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tm.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tm_p.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/toplev.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tracer.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/trans-mem.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-affine.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-cfg.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-cfgcleanup.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-check.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-chrec.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-core.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-data-ref.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-dfa.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-diagnostic.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-dump.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-eh.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-hash-traits.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-hasher.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-if-conv.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-inline.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-into-ssa.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-iterator.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-nested.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-object-size.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-outof-ssa.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-parloops.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-pass.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-phinodes.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-pretty-print.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-scalar-evolution.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-ssa-address.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-ssa-alias.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-ssa-ccp.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-ssa-coalesce.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-ssa-dce.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-ssa-dom.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-ssa-live.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-ssa-loop-ivopts.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-ssa-loop-manip.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-ssa-loop-niter.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-ssa-loop.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-ssa-operands.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-ssa-propagate.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-ssa-sccvn.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-ssa-scopedtables.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-ssa-strlen.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-ssa-ter.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-ssa-threadedge.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-ssa-threadupdate.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-ssa.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-ssanames.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-stdarg.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-streamer.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-switch-conversion.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-vector-builder.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-vectorizer.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-vrp.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree.def
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/treestruct.def
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tsan.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tsystem.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/typeclass.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/typed-splay-tree.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/ubsan.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/valtrack.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/value-prof.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/varasm.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/vec-perm-indices.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/vec.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/vector-builder.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/version.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/vmsdbg.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/vr-values.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/vtable-verify.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/wide-int-bitmask.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/wide-int-print.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/wide-int.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/xcoff.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/xcoffout.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/libcc1plugin.so
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/libcc1plugin.so.0
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/libcc1plugin.so.0.0.0
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/libcp1plugin.so
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/libcp1plugin.so.0
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/libcp1plugin.so.0.0.0
-/usr/libexec/gcc/x86_64-pc-linux-gnu/%{version}/cc1
-/usr/libexec/gcc/x86_64-pc-linux-gnu/%{version}/cc1plus
-/usr/libexec/gcc/x86_64-pc-linux-gnu/%{version}/collect2
-/usr/libexec/gcc/x86_64-pc-linux-gnu/%{version}/install-tools/fixinc.sh
-/usr/libexec/gcc/x86_64-pc-linux-gnu/%{version}/install-tools/fixincl
-/usr/libexec/gcc/x86_64-pc-linux-gnu/%{version}/install-tools/mkheaders
-/usr/libexec/gcc/x86_64-pc-linux-gnu/%{version}/install-tools/mkinstalldirs
-/usr/libexec/gcc/x86_64-pc-linux-gnu/%{version}/liblto_plugin.so
-/usr/libexec/gcc/x86_64-pc-linux-gnu/%{version}/lto-wrapper
-/usr/libexec/gcc/x86_64-pc-linux-gnu/%{version}/lto1
-/usr/libexec/gcc/x86_64-pc-linux-gnu/%{version}/plugin/gengtype
-/usr/share/gcc-%{version}/python/libstdcxx/__init__.py
-/usr/share/gcc-%{version}/python/libstdcxx/v6/__init__.py
-/usr/share/gcc-%{version}/python/libstdcxx/v6/printers.py
-/usr/share/gcc-%{version}/python/libstdcxx/v6/xmethods.py
-/usr/share/locale/be/LC_MESSAGES/cpplib.mo
-/usr/share/locale/be/LC_MESSAGES/gcc.mo
-/usr/share/locale/ca/LC_MESSAGES/cpplib.mo
-/usr/share/locale/da/LC_MESSAGES/cpplib.mo
-/usr/share/locale/da/LC_MESSAGES/gcc.mo
-/usr/share/locale/de/LC_MESSAGES/cpplib.mo
-/usr/share/locale/de/LC_MESSAGES/gcc.mo
-#/usr/share/locale/de/LC_MESSAGES/libstdc++.mo
-/usr/share/locale/el/LC_MESSAGES/cpplib.mo
-/usr/share/locale/el/LC_MESSAGES/gcc.mo
-/usr/share/locale/eo/LC_MESSAGES/cpplib.mo
-/usr/share/locale/es/LC_MESSAGES/cpplib.mo
-/usr/share/locale/es/LC_MESSAGES/gcc.mo
-/usr/share/locale/fi/LC_MESSAGES/cpplib.mo
-/usr/share/locale/fi/LC_MESSAGES/gcc.mo
-/usr/share/locale/fr/LC_MESSAGES/cpplib.mo
-/usr/share/locale/fr/LC_MESSAGES/gcc.mo
-#/usr/share/locale/fr/LC_MESSAGES/libstdc++.mo
-/usr/share/locale/hr/LC_MESSAGES/gcc.mo
-/usr/share/locale/id/LC_MESSAGES/cpplib.mo
-/usr/share/locale/id/LC_MESSAGES/gcc.mo
-/usr/share/locale/ja/LC_MESSAGES/cpplib.mo
-/usr/share/locale/ja/LC_MESSAGES/gcc.mo
-/usr/share/locale/nl/LC_MESSAGES/cpplib.mo
-/usr/share/locale/nl/LC_MESSAGES/gcc.mo
-/usr/share/locale/pt_BR/LC_MESSAGES/cpplib.mo
-/usr/share/locale/ru/LC_MESSAGES/cpplib.mo
-/usr/share/locale/ru/LC_MESSAGES/gcc.mo
-/usr/share/locale/sr/LC_MESSAGES/cpplib.mo
-/usr/share/locale/sr/LC_MESSAGES/gcc.mo
-/usr/share/locale/sv/LC_MESSAGES/cpplib.mo
-/usr/share/locale/sv/LC_MESSAGES/gcc.mo
-/usr/share/locale/tr/LC_MESSAGES/cpplib.mo
-/usr/share/locale/tr/LC_MESSAGES/gcc.mo
-/usr/share/locale/uk/LC_MESSAGES/cpplib.mo
-/usr/share/locale/uk/LC_MESSAGES/gcc.mo
-/usr/share/locale/vi/LC_MESSAGES/cpplib.mo
-/usr/share/locale/vi/LC_MESSAGES/gcc.mo
-/usr/share/locale/zh_CN/LC_MESSAGES/cpplib.mo
-/usr/share/locale/zh_CN/LC_MESSAGES/gcc.mo
-/usr/share/locale/zh_TW/LC_MESSAGES/cpplib.mo
-/usr/share/locale/zh_TW/LC_MESSAGES/gcc.mo
-/usr/share/man/man1/cpp.1.gz
-/usr/share/man/man1/g++.1.gz
-/usr/share/man/man1/gcc.1.gz
-/usr/share/man/man1/gcov-dump.1.gz
-/usr/share/man/man1/gcov-tool.1.gz
-/usr/share/man/man1/gcov.1.gz
-/usr/share/man/man7/fsf-funding.7.gz
-/usr/share/man/man7/gfdl.7.gz
-/usr/share/man/man7/gpl.7.gz
-/usr/bin/lto-dump
-/usr/include/c++/%{version}/barrier
-/usr/include/c++/%{version}/bits/align.h
-/usr/include/c++/%{version}/bits/atomic_timed_wait.h
-/usr/include/c++/%{version}/bits/atomic_wait.h
-/usr/include/c++/%{version}/bits/charconv.h
-/usr/include/c++/%{version}/bits/iterator_concepts.h
-/usr/include/c++/%{version}/bits/max_size_type.h
-/usr/include/c++/%{version}/bits/ranges_algo.h
-/usr/include/c++/%{version}/bits/ranges_algobase.h
-/usr/include/c++/%{version}/bits/ranges_base.h
-/usr/include/c++/%{version}/bits/ranges_cmp.h
-/usr/include/c++/%{version}/bits/ranges_uninitialized.h
-/usr/include/c++/%{version}/bits/ranges_util.h
-/usr/include/c++/%{version}/bits/semaphore_base.h
-/usr/include/c++/%{version}/bits/std_thread.h
-/usr/include/c++/%{version}/bits/this_thread_sleep.h
-/usr/include/c++/%{version}/bits/uses_allocator_args.h
-/usr/include/c++/%{version}/compare
-/usr/include/c++/%{version}/concepts
-/usr/include/c++/%{version}/coroutine
-/usr/include/c++/%{version}/experimental/bits/numeric_traits.h
-/usr/include/c++/%{version}/experimental/bits/simd.h
-/usr/include/c++/%{version}/experimental/bits/simd_builtin.h
-/usr/include/c++/%{version}/experimental/bits/simd_converter.h
-/usr/include/c++/%{version}/experimental/bits/simd_detail.h
-/usr/include/c++/%{version}/experimental/bits/simd_fixed_size.h
-/usr/include/c++/%{version}/experimental/bits/simd_math.h
-/usr/include/c++/%{version}/experimental/bits/simd_neon.h
-/usr/include/c++/%{version}/experimental/bits/simd_ppc.h
-/usr/include/c++/%{version}/experimental/bits/simd_scalar.h
-/usr/include/c++/%{version}/experimental/bits/simd_x86.h
-/usr/include/c++/%{version}/experimental/bits/simd_x86_conversions.h
-/usr/include/c++/%{version}/experimental/simd
-/usr/include/c++/%{version}/latch
-/usr/include/c++/%{version}/numbers
-/usr/include/c++/%{version}/pstl/parallel_backend_serial.h
-/usr/include/c++/%{version}/ranges
-/usr/include/c++/%{version}/semaphore
-/usr/include/c++/%{version}/source_location
-/usr/include/c++/%{version}/span
-/usr/include/c++/%{version}/stop_token
-/usr/include/c++/%{version}/syncstream
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/acc_prof.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/amxbf16intrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/amxint8intrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/amxtileintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/avx512bf16intrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/avx512bf16vlintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/avx512vp2intersectintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/avx512vp2intersectvlintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/avxvnniintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/enqcmdintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/hresetintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/keylockerintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/sanitizer/hwasan_interface.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/serializeintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/tsxldtrkintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/uintrintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/include/x86gprintrin.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libasan.so.6
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libasan.so.6.0.0
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libstdc++.so.6.0.29
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/libstdc++.so.6.0.29-gdb.py
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/array-traits.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/attr-fnspec.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/common/config/i386/i386-cpuinfo.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/coroutine-builtins.def
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/diagnostic-event-id.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/diagnostic-metadata.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/diagnostic-path.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/diagnostic-url.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/digraph.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/escaped_string.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/function-abi.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/gimple-array-bounds.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/gimple-range-cache.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/gimple-range-edge.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/gimple-range-gori.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/gimple-range.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/gomp-constants.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/graphviz.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/insn-config.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/ipa-modref-tree.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/ipa-modref.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/iterator-utils.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/mux-utils.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/obstack-utils.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/ordered-hash-map.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/range-op.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/range.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/rtl-ssa.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/rtlanal.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/shortest-paths.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/splay-tree-utils.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/symtab-clones.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/symtab-thunks.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-sra.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-ssa-alias-compare.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-ssa-dse.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-ssa-math-opts.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tree-ssa-reassoc.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/tristate.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/value-query.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/value-range-equiv.h
-/usr/lib/gcc/x86_64-pc-linux-gnu/%{version}/plugin/include/value-range.h
-/usr/libexec/gcc/x86_64-pc-linux-gnu/%{version}/g++-mapper-server
-/usr/share/man/man1/lto-dump.1.gz
-/usr/share/locale/de/LC_MESSAGES/libstdc++.mo
-/usr/share/locale/fr/LC_MESSAGES/libstdc++.mo
+   /etc/ld.so.conf.d/gcc.conf
+   /usr/bin/c++
+   /usr/bin/cpp
+   /usr/bin/g++
+   /usr/bin/gcc
+   /usr/bin/gcc-ar
+   /usr/bin/gcc-nm
+   /usr/bin/gcc-ranlib
+   /usr/bin/gcov
+   /usr/bin/gcov-dump
+   /usr/bin/gcov-tool
+   /usr/bin/lto-dump
+   /usr/bin/x86_64-pc-linux-gnu-c++
+   /usr/bin/x86_64-pc-linux-gnu-g++
+   /usr/bin/x86_64-pc-linux-gnu-gcc
+   /usr/bin/x86_64-pc-linux-gnu-gcc-11.3.0
+   /usr/bin/x86_64-pc-linux-gnu-gcc-ar
+   /usr/bin/x86_64-pc-linux-gnu-gcc-nm
+   /usr/bin/x86_64-pc-linux-gnu-gcc-ranlib
+   /usr/include/c++/11.3.0/algorithm
+   /usr/include/c++/11.3.0/any
+   /usr/include/c++/11.3.0/array
+   /usr/include/c++/11.3.0/atomic
+   /usr/include/c++/11.3.0/backward/auto_ptr.h
+   /usr/include/c++/11.3.0/backward/backward_warning.h
+   /usr/include/c++/11.3.0/backward/binders.h
+   /usr/include/c++/11.3.0/backward/hash_fun.h
+   /usr/include/c++/11.3.0/backward/hash_map
+   /usr/include/c++/11.3.0/backward/hash_set
+   /usr/include/c++/11.3.0/backward/hashtable.h
+   /usr/include/c++/11.3.0/backward/strstream
+   /usr/include/c++/11.3.0/barrier
+   /usr/include/c++/11.3.0/bit
+   /usr/include/c++/11.3.0/bits/algorithmfwd.h
+   /usr/include/c++/11.3.0/bits/align.h
+   /usr/include/c++/11.3.0/bits/alloc_traits.h
+   /usr/include/c++/11.3.0/bits/allocated_ptr.h
+   /usr/include/c++/11.3.0/bits/allocator.h
+   /usr/include/c++/11.3.0/bits/atomic_base.h
+   /usr/include/c++/11.3.0/bits/atomic_futex.h
+   /usr/include/c++/11.3.0/bits/atomic_lockfree_defines.h
+   /usr/include/c++/11.3.0/bits/atomic_timed_wait.h
+   /usr/include/c++/11.3.0/bits/atomic_wait.h
+   /usr/include/c++/11.3.0/bits/basic_ios.h
+   /usr/include/c++/11.3.0/bits/basic_ios.tcc
+   /usr/include/c++/11.3.0/bits/basic_string.h
+   /usr/include/c++/11.3.0/bits/basic_string.tcc
+   /usr/include/c++/11.3.0/bits/boost_concept_check.h
+   /usr/include/c++/11.3.0/bits/c++0x_warning.h
+   /usr/include/c++/11.3.0/bits/char_traits.h
+   /usr/include/c++/11.3.0/bits/charconv.h
+   /usr/include/c++/11.3.0/bits/codecvt.h
+   /usr/include/c++/11.3.0/bits/concept_check.h
+   /usr/include/c++/11.3.0/bits/cpp_type_traits.h
+   /usr/include/c++/11.3.0/bits/cxxabi_forced.h
+   /usr/include/c++/11.3.0/bits/cxxabi_init_exception.h
+   /usr/include/c++/11.3.0/bits/deque.tcc
+   /usr/include/c++/11.3.0/bits/enable_special_members.h
+   /usr/include/c++/11.3.0/bits/erase_if.h
+   /usr/include/c++/11.3.0/bits/exception.h
+   /usr/include/c++/11.3.0/bits/exception_defines.h
+   /usr/include/c++/11.3.0/bits/exception_ptr.h
+   /usr/include/c++/11.3.0/bits/forward_list.h
+   /usr/include/c++/11.3.0/bits/forward_list.tcc
+   /usr/include/c++/11.3.0/bits/fs_dir.h
+   /usr/include/c++/11.3.0/bits/fs_fwd.h
+   /usr/include/c++/11.3.0/bits/fs_ops.h
+   /usr/include/c++/11.3.0/bits/fs_path.h
+   /usr/include/c++/11.3.0/bits/fstream.tcc
+   /usr/include/c++/11.3.0/bits/functexcept.h
+   /usr/include/c++/11.3.0/bits/functional_hash.h
+   /usr/include/c++/11.3.0/bits/gslice.h
+   /usr/include/c++/11.3.0/bits/gslice_array.h
+   /usr/include/c++/11.3.0/bits/hash_bytes.h
+   /usr/include/c++/11.3.0/bits/hashtable.h
+   /usr/include/c++/11.3.0/bits/hashtable_policy.h
+   /usr/include/c++/11.3.0/bits/indirect_array.h
+   /usr/include/c++/11.3.0/bits/invoke.h
+   /usr/include/c++/11.3.0/bits/ios_base.h
+   /usr/include/c++/11.3.0/bits/istream.tcc
+   /usr/include/c++/11.3.0/bits/iterator_concepts.h
+   /usr/include/c++/11.3.0/bits/list.tcc
+   /usr/include/c++/11.3.0/bits/locale_classes.h
+   /usr/include/c++/11.3.0/bits/locale_classes.tcc
+   /usr/include/c++/11.3.0/bits/locale_conv.h
+   /usr/include/c++/11.3.0/bits/locale_facets.h
+   /usr/include/c++/11.3.0/bits/locale_facets.tcc
+   /usr/include/c++/11.3.0/bits/locale_facets_nonio.h
+   /usr/include/c++/11.3.0/bits/locale_facets_nonio.tcc
+   /usr/include/c++/11.3.0/bits/localefwd.h
+   /usr/include/c++/11.3.0/bits/mask_array.h
+   /usr/include/c++/11.3.0/bits/max_size_type.h
+   /usr/include/c++/11.3.0/bits/memoryfwd.h
+   /usr/include/c++/11.3.0/bits/move.h
+   /usr/include/c++/11.3.0/bits/nested_exception.h
+   /usr/include/c++/11.3.0/bits/node_handle.h
+   /usr/include/c++/11.3.0/bits/ostream.tcc
+   /usr/include/c++/11.3.0/bits/ostream_insert.h
+   /usr/include/c++/11.3.0/bits/parse_numbers.h
+   /usr/include/c++/11.3.0/bits/postypes.h
+   /usr/include/c++/11.3.0/bits/predefined_ops.h
+   /usr/include/c++/11.3.0/bits/ptr_traits.h
+   /usr/include/c++/11.3.0/bits/quoted_string.h
+   /usr/include/c++/11.3.0/bits/random.h
+   /usr/include/c++/11.3.0/bits/random.tcc
+   /usr/include/c++/11.3.0/bits/range_access.h
+   /usr/include/c++/11.3.0/bits/ranges_algo.h
+   /usr/include/c++/11.3.0/bits/ranges_algobase.h
+   /usr/include/c++/11.3.0/bits/ranges_base.h
+   /usr/include/c++/11.3.0/bits/ranges_cmp.h
+   /usr/include/c++/11.3.0/bits/ranges_uninitialized.h
+   /usr/include/c++/11.3.0/bits/ranges_util.h
+   /usr/include/c++/11.3.0/bits/refwrap.h
+   /usr/include/c++/11.3.0/bits/regex.h
+   /usr/include/c++/11.3.0/bits/regex.tcc
+   /usr/include/c++/11.3.0/bits/regex_automaton.h
+   /usr/include/c++/11.3.0/bits/regex_automaton.tcc
+   /usr/include/c++/11.3.0/bits/regex_compiler.h
+   /usr/include/c++/11.3.0/bits/regex_compiler.tcc
+   /usr/include/c++/11.3.0/bits/regex_constants.h
+   /usr/include/c++/11.3.0/bits/regex_error.h
+   /usr/include/c++/11.3.0/bits/regex_executor.h
+   /usr/include/c++/11.3.0/bits/regex_executor.tcc
+   /usr/include/c++/11.3.0/bits/regex_scanner.h
+   /usr/include/c++/11.3.0/bits/regex_scanner.tcc
+   /usr/include/c++/11.3.0/bits/semaphore_base.h
+   /usr/include/c++/11.3.0/bits/shared_ptr.h
+   /usr/include/c++/11.3.0/bits/shared_ptr_atomic.h
+   /usr/include/c++/11.3.0/bits/shared_ptr_base.h
+   /usr/include/c++/11.3.0/bits/slice_array.h
+   /usr/include/c++/11.3.0/bits/specfun.h
+   /usr/include/c++/11.3.0/bits/sstream.tcc
+   /usr/include/c++/11.3.0/bits/std_abs.h
+   /usr/include/c++/11.3.0/bits/std_function.h
+   /usr/include/c++/11.3.0/bits/std_mutex.h
+   /usr/include/c++/11.3.0/bits/std_thread.h
+   /usr/include/c++/11.3.0/bits/stl_algo.h
+   /usr/include/c++/11.3.0/bits/stl_algobase.h
+   /usr/include/c++/11.3.0/bits/stl_bvector.h
+   /usr/include/c++/11.3.0/bits/stl_construct.h
+   /usr/include/c++/11.3.0/bits/stl_deque.h
+   /usr/include/c++/11.3.0/bits/stl_function.h
+   /usr/include/c++/11.3.0/bits/stl_heap.h
+   /usr/include/c++/11.3.0/bits/stl_iterator.h
+   /usr/include/c++/11.3.0/bits/stl_iterator_base_funcs.h
+   /usr/include/c++/11.3.0/bits/stl_iterator_base_types.h
+   /usr/include/c++/11.3.0/bits/stl_list.h
+   /usr/include/c++/11.3.0/bits/stl_map.h
+   /usr/include/c++/11.3.0/bits/stl_multimap.h
+   /usr/include/c++/11.3.0/bits/stl_multiset.h
+   /usr/include/c++/11.3.0/bits/stl_numeric.h
+   /usr/include/c++/11.3.0/bits/stl_pair.h
+   /usr/include/c++/11.3.0/bits/stl_queue.h
+   /usr/include/c++/11.3.0/bits/stl_raw_storage_iter.h
+   /usr/include/c++/11.3.0/bits/stl_relops.h
+   /usr/include/c++/11.3.0/bits/stl_set.h
+   /usr/include/c++/11.3.0/bits/stl_stack.h
+   /usr/include/c++/11.3.0/bits/stl_tempbuf.h
+   /usr/include/c++/11.3.0/bits/stl_tree.h
+   /usr/include/c++/11.3.0/bits/stl_uninitialized.h
+   /usr/include/c++/11.3.0/bits/stl_vector.h
+   /usr/include/c++/11.3.0/bits/stream_iterator.h
+   /usr/include/c++/11.3.0/bits/streambuf.tcc
+   /usr/include/c++/11.3.0/bits/streambuf_iterator.h
+   /usr/include/c++/11.3.0/bits/string_view.tcc
+   /usr/include/c++/11.3.0/bits/stringfwd.h
+   /usr/include/c++/11.3.0/bits/this_thread_sleep.h
+   /usr/include/c++/11.3.0/bits/uniform_int_dist.h
+   /usr/include/c++/11.3.0/bits/unique_lock.h
+   /usr/include/c++/11.3.0/bits/unique_ptr.h
+   /usr/include/c++/11.3.0/bits/unordered_map.h
+   /usr/include/c++/11.3.0/bits/unordered_set.h
+   /usr/include/c++/11.3.0/bits/uses_allocator.h
+   /usr/include/c++/11.3.0/bits/uses_allocator_args.h
+   /usr/include/c++/11.3.0/bits/valarray_after.h
+   /usr/include/c++/11.3.0/bits/valarray_array.h
+   /usr/include/c++/11.3.0/bits/valarray_array.tcc
+   /usr/include/c++/11.3.0/bits/valarray_before.h
+   /usr/include/c++/11.3.0/bits/vector.tcc
+   /usr/include/c++/11.3.0/bitset
+   /usr/include/c++/11.3.0/cassert
+   /usr/include/c++/11.3.0/ccomplex
+   /usr/include/c++/11.3.0/cctype
+   /usr/include/c++/11.3.0/cerrno
+   /usr/include/c++/11.3.0/cfenv
+   /usr/include/c++/11.3.0/cfloat
+   /usr/include/c++/11.3.0/charconv
+   /usr/include/c++/11.3.0/chrono
+   /usr/include/c++/11.3.0/cinttypes
+   /usr/include/c++/11.3.0/ciso646
+   /usr/include/c++/11.3.0/climits
+   /usr/include/c++/11.3.0/clocale
+   /usr/include/c++/11.3.0/cmath
+   /usr/include/c++/11.3.0/codecvt
+   /usr/include/c++/11.3.0/compare
+   /usr/include/c++/11.3.0/complex
+   /usr/include/c++/11.3.0/complex.h
+   /usr/include/c++/11.3.0/concepts
+   /usr/include/c++/11.3.0/condition_variable
+   /usr/include/c++/11.3.0/coroutine
+   /usr/include/c++/11.3.0/csetjmp
+   /usr/include/c++/11.3.0/csignal
+   /usr/include/c++/11.3.0/cstdalign
+   /usr/include/c++/11.3.0/cstdarg
+   /usr/include/c++/11.3.0/cstdbool
+   /usr/include/c++/11.3.0/cstddef
+   /usr/include/c++/11.3.0/cstdint
+   /usr/include/c++/11.3.0/cstdio
+   /usr/include/c++/11.3.0/cstdlib
+   /usr/include/c++/11.3.0/cstring
+   /usr/include/c++/11.3.0/ctgmath
+   /usr/include/c++/11.3.0/ctime
+   /usr/include/c++/11.3.0/cuchar
+   /usr/include/c++/11.3.0/cwchar
+   /usr/include/c++/11.3.0/cwctype
+   /usr/include/c++/11.3.0/cxxabi.h
+   /usr/include/c++/11.3.0/debug/assertions.h
+   /usr/include/c++/11.3.0/debug/bitset
+   /usr/include/c++/11.3.0/debug/debug.h
+   /usr/include/c++/11.3.0/debug/deque
+   /usr/include/c++/11.3.0/debug/formatter.h
+   /usr/include/c++/11.3.0/debug/forward_list
+   /usr/include/c++/11.3.0/debug/functions.h
+   /usr/include/c++/11.3.0/debug/helper_functions.h
+   /usr/include/c++/11.3.0/debug/list
+   /usr/include/c++/11.3.0/debug/macros.h
+   /usr/include/c++/11.3.0/debug/map
+   /usr/include/c++/11.3.0/debug/map.h
+   /usr/include/c++/11.3.0/debug/multimap.h
+   /usr/include/c++/11.3.0/debug/multiset.h
+   /usr/include/c++/11.3.0/debug/safe_base.h
+   /usr/include/c++/11.3.0/debug/safe_container.h
+   /usr/include/c++/11.3.0/debug/safe_iterator.h
+   /usr/include/c++/11.3.0/debug/safe_iterator.tcc
+   /usr/include/c++/11.3.0/debug/safe_local_iterator.h
+   /usr/include/c++/11.3.0/debug/safe_local_iterator.tcc
+   /usr/include/c++/11.3.0/debug/safe_sequence.h
+   /usr/include/c++/11.3.0/debug/safe_sequence.tcc
+   /usr/include/c++/11.3.0/debug/safe_unordered_base.h
+   /usr/include/c++/11.3.0/debug/safe_unordered_container.h
+   /usr/include/c++/11.3.0/debug/safe_unordered_container.tcc
+   /usr/include/c++/11.3.0/debug/set
+   /usr/include/c++/11.3.0/debug/set.h
+   /usr/include/c++/11.3.0/debug/stl_iterator.h
+   /usr/include/c++/11.3.0/debug/string
+   /usr/include/c++/11.3.0/debug/unordered_map
+   /usr/include/c++/11.3.0/debug/unordered_set
+   /usr/include/c++/11.3.0/debug/vector
+   /usr/include/c++/11.3.0/decimal/decimal
+   /usr/include/c++/11.3.0/decimal/decimal.h
+   /usr/include/c++/11.3.0/deque
+   /usr/include/c++/11.3.0/exception
+   /usr/include/c++/11.3.0/execution
+   /usr/include/c++/11.3.0/experimental/algorithm
+   /usr/include/c++/11.3.0/experimental/any
+   /usr/include/c++/11.3.0/experimental/array
+   /usr/include/c++/11.3.0/experimental/bits/fs_dir.h
+   /usr/include/c++/11.3.0/experimental/bits/fs_fwd.h
+   /usr/include/c++/11.3.0/experimental/bits/fs_ops.h
+   /usr/include/c++/11.3.0/experimental/bits/fs_path.h
+   /usr/include/c++/11.3.0/experimental/bits/lfts_config.h
+   /usr/include/c++/11.3.0/experimental/bits/net.h
+   /usr/include/c++/11.3.0/experimental/bits/numeric_traits.h
+   /usr/include/c++/11.3.0/experimental/bits/shared_ptr.h
+   /usr/include/c++/11.3.0/experimental/bits/simd.h
+   /usr/include/c++/11.3.0/experimental/bits/simd_builtin.h
+   /usr/include/c++/11.3.0/experimental/bits/simd_converter.h
+   /usr/include/c++/11.3.0/experimental/bits/simd_detail.h
+   /usr/include/c++/11.3.0/experimental/bits/simd_fixed_size.h
+   /usr/include/c++/11.3.0/experimental/bits/simd_math.h
+   /usr/include/c++/11.3.0/experimental/bits/simd_neon.h
+   /usr/include/c++/11.3.0/experimental/bits/simd_ppc.h
+   /usr/include/c++/11.3.0/experimental/bits/simd_scalar.h
+   /usr/include/c++/11.3.0/experimental/bits/simd_x86.h
+   /usr/include/c++/11.3.0/experimental/bits/simd_x86_conversions.h
+   /usr/include/c++/11.3.0/experimental/bits/string_view.tcc
+   /usr/include/c++/11.3.0/experimental/buffer
+   /usr/include/c++/11.3.0/experimental/chrono
+   /usr/include/c++/11.3.0/experimental/deque
+   /usr/include/c++/11.3.0/experimental/executor
+   /usr/include/c++/11.3.0/experimental/filesystem
+   /usr/include/c++/11.3.0/experimental/forward_list
+   /usr/include/c++/11.3.0/experimental/functional
+   /usr/include/c++/11.3.0/experimental/internet
+   /usr/include/c++/11.3.0/experimental/io_context
+   /usr/include/c++/11.3.0/experimental/iterator
+   /usr/include/c++/11.3.0/experimental/list
+   /usr/include/c++/11.3.0/experimental/map
+   /usr/include/c++/11.3.0/experimental/memory
+   /usr/include/c++/11.3.0/experimental/memory_resource
+   /usr/include/c++/11.3.0/experimental/net
+   /usr/include/c++/11.3.0/experimental/netfwd
+   /usr/include/c++/11.3.0/experimental/numeric
+   /usr/include/c++/11.3.0/experimental/optional
+   /usr/include/c++/11.3.0/experimental/propagate_const
+   /usr/include/c++/11.3.0/experimental/random
+   /usr/include/c++/11.3.0/experimental/ratio
+   /usr/include/c++/11.3.0/experimental/regex
+   /usr/include/c++/11.3.0/experimental/set
+   /usr/include/c++/11.3.0/experimental/simd
+   /usr/include/c++/11.3.0/experimental/socket
+   /usr/include/c++/11.3.0/experimental/source_location
+   /usr/include/c++/11.3.0/experimental/string
+   /usr/include/c++/11.3.0/experimental/string_view
+   /usr/include/c++/11.3.0/experimental/system_error
+   /usr/include/c++/11.3.0/experimental/timer
+   /usr/include/c++/11.3.0/experimental/tuple
+   /usr/include/c++/11.3.0/experimental/type_traits
+   /usr/include/c++/11.3.0/experimental/unordered_map
+   /usr/include/c++/11.3.0/experimental/unordered_set
+   /usr/include/c++/11.3.0/experimental/utility
+   /usr/include/c++/11.3.0/experimental/vector
+   /usr/include/c++/11.3.0/ext/algorithm
+   /usr/include/c++/11.3.0/ext/aligned_buffer.h
+   /usr/include/c++/11.3.0/ext/alloc_traits.h
+   /usr/include/c++/11.3.0/ext/atomicity.h
+   /usr/include/c++/11.3.0/ext/bitmap_allocator.h
+   /usr/include/c++/11.3.0/ext/cast.h
+   /usr/include/c++/11.3.0/ext/cmath
+   /usr/include/c++/11.3.0/ext/codecvt_specializations.h
+   /usr/include/c++/11.3.0/ext/concurrence.h
+   /usr/include/c++/11.3.0/ext/debug_allocator.h
+   /usr/include/c++/11.3.0/ext/enc_filebuf.h
+   /usr/include/c++/11.3.0/ext/extptr_allocator.h
+   /usr/include/c++/11.3.0/ext/functional
+   /usr/include/c++/11.3.0/ext/hash_map
+   /usr/include/c++/11.3.0/ext/hash_set
+   /usr/include/c++/11.3.0/ext/iterator
+   /usr/include/c++/11.3.0/ext/malloc_allocator.h
+   /usr/include/c++/11.3.0/ext/memory
+   /usr/include/c++/11.3.0/ext/mt_allocator.h
+   /usr/include/c++/11.3.0/ext/new_allocator.h
+   /usr/include/c++/11.3.0/ext/numeric
+   /usr/include/c++/11.3.0/ext/numeric_traits.h
+   /usr/include/c++/11.3.0/ext/pb_ds/assoc_container.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/bin_search_tree_/bin_search_tree_.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/bin_search_tree_/constructors_destructor_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/bin_search_tree_/erase_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/bin_search_tree_/find_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/bin_search_tree_/info_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/bin_search_tree_/insert_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/bin_search_tree_/iterators_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/bin_search_tree_/node_iterators.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/bin_search_tree_/point_iterators.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/bin_search_tree_/policy_access_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/bin_search_tree_/r_erase_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/bin_search_tree_/rotate_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/bin_search_tree_/split_join_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/bin_search_tree_/traits.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/binary_heap_/binary_heap_.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/binary_heap_/const_iterator.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/binary_heap_/constructors_destructor_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/binary_heap_/debug_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/binary_heap_/entry_cmp.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/binary_heap_/entry_pred.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/binary_heap_/erase_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/binary_heap_/find_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/binary_heap_/info_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/binary_heap_/insert_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/binary_heap_/iterators_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/binary_heap_/point_const_iterator.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/binary_heap_/policy_access_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/binary_heap_/resize_policy.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/binary_heap_/split_join_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/binary_heap_/trace_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/binomial_heap_/binomial_heap_.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/binomial_heap_/constructors_destructor_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/binomial_heap_/debug_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/binomial_heap_base_/binomial_heap_base_.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/binomial_heap_base_/constructors_destructor_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/binomial_heap_base_/debug_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/binomial_heap_base_/erase_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/binomial_heap_base_/find_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/binomial_heap_base_/insert_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/binomial_heap_base_/split_join_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/branch_policy/branch_policy.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/branch_policy/null_node_metadata.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/branch_policy/traits.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/cc_hash_table_map_/cc_ht_map_.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/cc_hash_table_map_/cmp_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/cc_hash_table_map_/cond_key_dtor_entry_dealtor.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/cc_hash_table_map_/constructor_destructor_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/cc_hash_table_map_/constructor_destructor_no_store_hash_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/cc_hash_table_map_/constructor_destructor_store_hash_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/cc_hash_table_map_/debug_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/cc_hash_table_map_/debug_no_store_hash_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/cc_hash_table_map_/debug_store_hash_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/cc_hash_table_map_/entry_list_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/cc_hash_table_map_/erase_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/cc_hash_table_map_/erase_no_store_hash_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/cc_hash_table_map_/erase_store_hash_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/cc_hash_table_map_/find_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/cc_hash_table_map_/find_store_hash_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/cc_hash_table_map_/info_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/cc_hash_table_map_/insert_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/cc_hash_table_map_/insert_no_store_hash_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/cc_hash_table_map_/insert_store_hash_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/cc_hash_table_map_/iterators_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/cc_hash_table_map_/policy_access_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/cc_hash_table_map_/resize_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/cc_hash_table_map_/resize_no_store_hash_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/cc_hash_table_map_/resize_store_hash_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/cc_hash_table_map_/size_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/cc_hash_table_map_/trace_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/cond_dealtor.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/container_base_dispatch.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/debug_map_base.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/eq_fn/eq_by_less.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/eq_fn/hash_eq_fn.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/gp_hash_table_map_/constructor_destructor_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/gp_hash_table_map_/constructor_destructor_no_store_hash_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/gp_hash_table_map_/constructor_destructor_store_hash_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/gp_hash_table_map_/debug_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/gp_hash_table_map_/debug_no_store_hash_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/gp_hash_table_map_/debug_store_hash_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/gp_hash_table_map_/erase_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/gp_hash_table_map_/erase_no_store_hash_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/gp_hash_table_map_/erase_store_hash_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/gp_hash_table_map_/find_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/gp_hash_table_map_/find_no_store_hash_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/gp_hash_table_map_/find_store_hash_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/gp_hash_table_map_/gp_ht_map_.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/gp_hash_table_map_/info_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/gp_hash_table_map_/insert_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/gp_hash_table_map_/insert_no_store_hash_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/gp_hash_table_map_/insert_store_hash_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/gp_hash_table_map_/iterator_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/gp_hash_table_map_/policy_access_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/gp_hash_table_map_/resize_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/gp_hash_table_map_/resize_no_store_hash_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/gp_hash_table_map_/resize_store_hash_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/gp_hash_table_map_/trace_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/hash_fn/direct_mask_range_hashing_imp.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/hash_fn/direct_mod_range_hashing_imp.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/hash_fn/linear_probe_fn_imp.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/hash_fn/mask_based_range_hashing.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/hash_fn/mod_based_range_hashing.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/hash_fn/probe_fn_base.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/hash_fn/quadratic_probe_fn_imp.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/hash_fn/ranged_hash_fn.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/hash_fn/ranged_probe_fn.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/hash_fn/sample_probe_fn.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/hash_fn/sample_range_hashing.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/hash_fn/sample_ranged_hash_fn.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/hash_fn/sample_ranged_probe_fn.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/left_child_next_sibling_heap_/const_iterator.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/left_child_next_sibling_heap_/constructors_destructor_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/left_child_next_sibling_heap_/debug_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/left_child_next_sibling_heap_/erase_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/left_child_next_sibling_heap_/info_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/left_child_next_sibling_heap_/insert_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/left_child_next_sibling_heap_/iterators_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/left_child_next_sibling_heap_/left_child_next_sibling_heap_.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/left_child_next_sibling_heap_/node.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/left_child_next_sibling_heap_/point_const_iterator.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/left_child_next_sibling_heap_/policy_access_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/left_child_next_sibling_heap_/trace_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/list_update_map_/constructor_destructor_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/list_update_map_/debug_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/list_update_map_/entry_metadata_base.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/list_update_map_/erase_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/list_update_map_/find_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/list_update_map_/info_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/list_update_map_/insert_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/list_update_map_/iterators_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/list_update_map_/lu_map_.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/list_update_map_/trace_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/list_update_policy/lu_counter_metadata.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/list_update_policy/sample_update_policy.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/ov_tree_map_/constructors_destructor_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/ov_tree_map_/debug_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/ov_tree_map_/erase_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/ov_tree_map_/info_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/ov_tree_map_/insert_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/ov_tree_map_/iterators_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/ov_tree_map_/node_iterators.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/ov_tree_map_/ov_tree_map_.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/ov_tree_map_/policy_access_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/ov_tree_map_/split_join_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/ov_tree_map_/traits.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/pairing_heap_/constructors_destructor_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/pairing_heap_/debug_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/pairing_heap_/erase_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/pairing_heap_/find_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/pairing_heap_/insert_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/pairing_heap_/pairing_heap_.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/pairing_heap_/split_join_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/pat_trie_/constructors_destructor_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/pat_trie_/debug_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/pat_trie_/erase_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/pat_trie_/find_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/pat_trie_/info_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/pat_trie_/insert_join_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/pat_trie_/iterators_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/pat_trie_/pat_trie_.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/pat_trie_/pat_trie_base.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/pat_trie_/policy_access_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/pat_trie_/r_erase_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/pat_trie_/rotate_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/pat_trie_/split_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/pat_trie_/synth_access_traits.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/pat_trie_/trace_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/pat_trie_/traits.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/pat_trie_/update_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/priority_queue_base_dispatch.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/rb_tree_map_/constructors_destructor_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/rb_tree_map_/debug_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/rb_tree_map_/erase_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/rb_tree_map_/find_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/rb_tree_map_/info_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/rb_tree_map_/insert_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/rb_tree_map_/node.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/rb_tree_map_/rb_tree_.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/rb_tree_map_/split_join_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/rb_tree_map_/traits.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/rc_binomial_heap_/constructors_destructor_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/rc_binomial_heap_/debug_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/rc_binomial_heap_/erase_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/rc_binomial_heap_/insert_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/rc_binomial_heap_/rc.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/rc_binomial_heap_/rc_binomial_heap_.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/rc_binomial_heap_/split_join_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/rc_binomial_heap_/trace_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/resize_policy/cc_hash_max_collision_check_resize_trigger_imp.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/resize_policy/hash_exponential_size_policy_imp.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/resize_policy/hash_load_check_resize_trigger_imp.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/resize_policy/hash_load_check_resize_trigger_size_base.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/resize_policy/hash_prime_size_policy_imp.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/resize_policy/hash_standard_resize_policy_imp.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/resize_policy/sample_resize_policy.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/resize_policy/sample_resize_trigger.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/resize_policy/sample_size_policy.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/splay_tree_/constructors_destructor_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/splay_tree_/debug_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/splay_tree_/erase_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/splay_tree_/find_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/splay_tree_/info_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/splay_tree_/insert_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/splay_tree_/node.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/splay_tree_/splay_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/splay_tree_/splay_tree_.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/splay_tree_/split_join_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/splay_tree_/traits.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/standard_policies.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/thin_heap_/constructors_destructor_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/thin_heap_/debug_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/thin_heap_/erase_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/thin_heap_/find_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/thin_heap_/insert_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/thin_heap_/split_join_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/thin_heap_/thin_heap_.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/thin_heap_/trace_fn_imps.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/tree_policy/node_metadata_selector.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/tree_policy/order_statistics_imp.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/tree_policy/sample_tree_node_update.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/tree_trace_base.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/trie_policy/node_metadata_selector.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/trie_policy/order_statistics_imp.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/trie_policy/prefix_search_node_update_imp.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/trie_policy/sample_trie_access_traits.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/trie_policy/sample_trie_node_update.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/trie_policy/trie_policy_base.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/trie_policy/trie_string_access_traits_imp.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/type_utils.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/types_traits.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/unordered_iterator/const_iterator.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/unordered_iterator/iterator.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/unordered_iterator/point_const_iterator.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/detail/unordered_iterator/point_iterator.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/exception.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/hash_policy.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/list_update_policy.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/priority_queue.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/tag_and_trait.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/tree_policy.hpp
+   /usr/include/c++/11.3.0/ext/pb_ds/trie_policy.hpp
+   /usr/include/c++/11.3.0/ext/pod_char_traits.h
+   /usr/include/c++/11.3.0/ext/pointer.h
+   /usr/include/c++/11.3.0/ext/pool_allocator.h
+   /usr/include/c++/11.3.0/ext/random
+   /usr/include/c++/11.3.0/ext/random.tcc
+   /usr/include/c++/11.3.0/ext/rb_tree
+   /usr/include/c++/11.3.0/ext/rc_string_base.h
+   /usr/include/c++/11.3.0/ext/rope
+   /usr/include/c++/11.3.0/ext/ropeimpl.h
+   /usr/include/c++/11.3.0/ext/slist
+   /usr/include/c++/11.3.0/ext/sso_string_base.h
+   /usr/include/c++/11.3.0/ext/stdio_filebuf.h
+   /usr/include/c++/11.3.0/ext/stdio_sync_filebuf.h
+   /usr/include/c++/11.3.0/ext/string_conversions.h
+   /usr/include/c++/11.3.0/ext/throw_allocator.h
+   /usr/include/c++/11.3.0/ext/type_traits.h
+   /usr/include/c++/11.3.0/ext/typelist.h
+   /usr/include/c++/11.3.0/ext/vstring.h
+   /usr/include/c++/11.3.0/ext/vstring.tcc
+   /usr/include/c++/11.3.0/ext/vstring_fwd.h
+   /usr/include/c++/11.3.0/ext/vstring_util.h
+   /usr/include/c++/11.3.0/fenv.h
+   /usr/include/c++/11.3.0/filesystem
+   /usr/include/c++/11.3.0/forward_list
+   /usr/include/c++/11.3.0/fstream
+   /usr/include/c++/11.3.0/functional
+   /usr/include/c++/11.3.0/future
+   /usr/include/c++/11.3.0/initializer_list
+   /usr/include/c++/11.3.0/iomanip
+   /usr/include/c++/11.3.0/ios
+   /usr/include/c++/11.3.0/iosfwd
+   /usr/include/c++/11.3.0/iostream
+   /usr/include/c++/11.3.0/istream
+   /usr/include/c++/11.3.0/iterator
+   /usr/include/c++/11.3.0/latch
+   /usr/include/c++/11.3.0/limits
+   /usr/include/c++/11.3.0/list
+   /usr/include/c++/11.3.0/locale
+   /usr/include/c++/11.3.0/map
+   /usr/include/c++/11.3.0/math.h
+   /usr/include/c++/11.3.0/memory
+   /usr/include/c++/11.3.0/memory_resource
+   /usr/include/c++/11.3.0/mutex
+   /usr/include/c++/11.3.0/new
+   /usr/include/c++/11.3.0/numbers
+   /usr/include/c++/11.3.0/numeric
+   /usr/include/c++/11.3.0/optional
+   /usr/include/c++/11.3.0/ostream
+   /usr/include/c++/11.3.0/parallel/algo.h
+   /usr/include/c++/11.3.0/parallel/algobase.h
+   /usr/include/c++/11.3.0/parallel/algorithm
+   /usr/include/c++/11.3.0/parallel/algorithmfwd.h
+   /usr/include/c++/11.3.0/parallel/balanced_quicksort.h
+   /usr/include/c++/11.3.0/parallel/base.h
+   /usr/include/c++/11.3.0/parallel/basic_iterator.h
+   /usr/include/c++/11.3.0/parallel/checkers.h
+   /usr/include/c++/11.3.0/parallel/compatibility.h
+   /usr/include/c++/11.3.0/parallel/compiletime_settings.h
+   /usr/include/c++/11.3.0/parallel/equally_split.h
+   /usr/include/c++/11.3.0/parallel/features.h
+   /usr/include/c++/11.3.0/parallel/find.h
+   /usr/include/c++/11.3.0/parallel/find_selectors.h
+   /usr/include/c++/11.3.0/parallel/for_each.h
+   /usr/include/c++/11.3.0/parallel/for_each_selectors.h
+   /usr/include/c++/11.3.0/parallel/iterator.h
+   /usr/include/c++/11.3.0/parallel/list_partition.h
+   /usr/include/c++/11.3.0/parallel/losertree.h
+   /usr/include/c++/11.3.0/parallel/merge.h
+   /usr/include/c++/11.3.0/parallel/multiseq_selection.h
+   /usr/include/c++/11.3.0/parallel/multiway_merge.h
+   /usr/include/c++/11.3.0/parallel/multiway_mergesort.h
+   /usr/include/c++/11.3.0/parallel/numeric
+   /usr/include/c++/11.3.0/parallel/numericfwd.h
+   /usr/include/c++/11.3.0/parallel/omp_loop.h
+   /usr/include/c++/11.3.0/parallel/omp_loop_static.h
+   /usr/include/c++/11.3.0/parallel/par_loop.h
+   /usr/include/c++/11.3.0/parallel/parallel.h
+   /usr/include/c++/11.3.0/parallel/partial_sum.h
+   /usr/include/c++/11.3.0/parallel/partition.h
+   /usr/include/c++/11.3.0/parallel/queue.h
+   /usr/include/c++/11.3.0/parallel/quicksort.h
+   /usr/include/c++/11.3.0/parallel/random_number.h
+   /usr/include/c++/11.3.0/parallel/random_shuffle.h
+   /usr/include/c++/11.3.0/parallel/search.h
+   /usr/include/c++/11.3.0/parallel/set_operations.h
+   /usr/include/c++/11.3.0/parallel/settings.h
+   /usr/include/c++/11.3.0/parallel/sort.h
+   /usr/include/c++/11.3.0/parallel/tags.h
+   /usr/include/c++/11.3.0/parallel/types.h
+   /usr/include/c++/11.3.0/parallel/unique_copy.h
+   /usr/include/c++/11.3.0/parallel/workstealing.h
+   /usr/include/c++/11.3.0/pstl/algorithm_fwd.h
+   /usr/include/c++/11.3.0/pstl/algorithm_impl.h
+   /usr/include/c++/11.3.0/pstl/execution_defs.h
+   /usr/include/c++/11.3.0/pstl/execution_impl.h
+   /usr/include/c++/11.3.0/pstl/glue_algorithm_defs.h
+   /usr/include/c++/11.3.0/pstl/glue_algorithm_impl.h
+   /usr/include/c++/11.3.0/pstl/glue_execution_defs.h
+   /usr/include/c++/11.3.0/pstl/glue_memory_defs.h
+   /usr/include/c++/11.3.0/pstl/glue_memory_impl.h
+   /usr/include/c++/11.3.0/pstl/glue_numeric_defs.h
+   /usr/include/c++/11.3.0/pstl/glue_numeric_impl.h
+   /usr/include/c++/11.3.0/pstl/memory_impl.h
+   /usr/include/c++/11.3.0/pstl/numeric_fwd.h
+   /usr/include/c++/11.3.0/pstl/numeric_impl.h
+   /usr/include/c++/11.3.0/pstl/parallel_backend.h
+   /usr/include/c++/11.3.0/pstl/parallel_backend_serial.h
+   /usr/include/c++/11.3.0/pstl/parallel_backend_tbb.h
+   /usr/include/c++/11.3.0/pstl/parallel_backend_utils.h
+   /usr/include/c++/11.3.0/pstl/parallel_impl.h
+   /usr/include/c++/11.3.0/pstl/pstl_config.h
+   /usr/include/c++/11.3.0/pstl/unseq_backend_simd.h
+   /usr/include/c++/11.3.0/pstl/utils.h
+   /usr/include/c++/11.3.0/queue
+   /usr/include/c++/11.3.0/random
+   /usr/include/c++/11.3.0/ranges
+   /usr/include/c++/11.3.0/ratio
+   /usr/include/c++/11.3.0/regex
+   /usr/include/c++/11.3.0/scoped_allocator
+   /usr/include/c++/11.3.0/semaphore
+   /usr/include/c++/11.3.0/set
+   /usr/include/c++/11.3.0/shared_mutex
+   /usr/include/c++/11.3.0/source_location
+   /usr/include/c++/11.3.0/span
+   /usr/include/c++/11.3.0/sstream
+   /usr/include/c++/11.3.0/stack
+   /usr/include/c++/11.3.0/stdexcept
+   /usr/include/c++/11.3.0/stdlib.h
+   /usr/include/c++/11.3.0/stop_token
+   /usr/include/c++/11.3.0/streambuf
+   /usr/include/c++/11.3.0/string
+   /usr/include/c++/11.3.0/string_view
+   /usr/include/c++/11.3.0/syncstream
+   /usr/include/c++/11.3.0/system_error
+   /usr/include/c++/11.3.0/tgmath.h
+   /usr/include/c++/11.3.0/thread
+   /usr/include/c++/11.3.0/tr1/array
+   /usr/include/c++/11.3.0/tr1/bessel_function.tcc
+   /usr/include/c++/11.3.0/tr1/beta_function.tcc
+   /usr/include/c++/11.3.0/tr1/ccomplex
+   /usr/include/c++/11.3.0/tr1/cctype
+   /usr/include/c++/11.3.0/tr1/cfenv
+   /usr/include/c++/11.3.0/tr1/cfloat
+   /usr/include/c++/11.3.0/tr1/cinttypes
+   /usr/include/c++/11.3.0/tr1/climits
+   /usr/include/c++/11.3.0/tr1/cmath
+   /usr/include/c++/11.3.0/tr1/complex
+   /usr/include/c++/11.3.0/tr1/complex.h
+   /usr/include/c++/11.3.0/tr1/cstdarg
+   /usr/include/c++/11.3.0/tr1/cstdbool
+   /usr/include/c++/11.3.0/tr1/cstdint
+   /usr/include/c++/11.3.0/tr1/cstdio
+   /usr/include/c++/11.3.0/tr1/cstdlib
+   /usr/include/c++/11.3.0/tr1/ctgmath
+   /usr/include/c++/11.3.0/tr1/ctime
+   /usr/include/c++/11.3.0/tr1/ctype.h
+   /usr/include/c++/11.3.0/tr1/cwchar
+   /usr/include/c++/11.3.0/tr1/cwctype
+   /usr/include/c++/11.3.0/tr1/ell_integral.tcc
+   /usr/include/c++/11.3.0/tr1/exp_integral.tcc
+   /usr/include/c++/11.3.0/tr1/fenv.h
+   /usr/include/c++/11.3.0/tr1/float.h
+   /usr/include/c++/11.3.0/tr1/functional
+   /usr/include/c++/11.3.0/tr1/functional_hash.h
+   /usr/include/c++/11.3.0/tr1/gamma.tcc
+   /usr/include/c++/11.3.0/tr1/hashtable.h
+   /usr/include/c++/11.3.0/tr1/hashtable_policy.h
+   /usr/include/c++/11.3.0/tr1/hypergeometric.tcc
+   /usr/include/c++/11.3.0/tr1/inttypes.h
+   /usr/include/c++/11.3.0/tr1/legendre_function.tcc
+   /usr/include/c++/11.3.0/tr1/limits.h
+   /usr/include/c++/11.3.0/tr1/math.h
+   /usr/include/c++/11.3.0/tr1/memory
+   /usr/include/c++/11.3.0/tr1/modified_bessel_func.tcc
+   /usr/include/c++/11.3.0/tr1/poly_hermite.tcc
+   /usr/include/c++/11.3.0/tr1/poly_laguerre.tcc
+   /usr/include/c++/11.3.0/tr1/random
+   /usr/include/c++/11.3.0/tr1/random.h
+   /usr/include/c++/11.3.0/tr1/random.tcc
+   /usr/include/c++/11.3.0/tr1/regex
+   /usr/include/c++/11.3.0/tr1/riemann_zeta.tcc
+   /usr/include/c++/11.3.0/tr1/shared_ptr.h
+   /usr/include/c++/11.3.0/tr1/special_function_util.h
+   /usr/include/c++/11.3.0/tr1/stdarg.h
+   /usr/include/c++/11.3.0/tr1/stdbool.h
+   /usr/include/c++/11.3.0/tr1/stdint.h
+   /usr/include/c++/11.3.0/tr1/stdio.h
+   /usr/include/c++/11.3.0/tr1/stdlib.h
+   /usr/include/c++/11.3.0/tr1/tgmath.h
+   /usr/include/c++/11.3.0/tr1/tuple
+   /usr/include/c++/11.3.0/tr1/type_traits
+   /usr/include/c++/11.3.0/tr1/unordered_map
+   /usr/include/c++/11.3.0/tr1/unordered_map.h
+   /usr/include/c++/11.3.0/tr1/unordered_set
+   /usr/include/c++/11.3.0/tr1/unordered_set.h
+   /usr/include/c++/11.3.0/tr1/utility
+   /usr/include/c++/11.3.0/tr1/wchar.h
+   /usr/include/c++/11.3.0/tr1/wctype.h
+   /usr/include/c++/11.3.0/tr2/bool_set
+   /usr/include/c++/11.3.0/tr2/bool_set.tcc
+   /usr/include/c++/11.3.0/tr2/dynamic_bitset
+   /usr/include/c++/11.3.0/tr2/dynamic_bitset.tcc
+   /usr/include/c++/11.3.0/tr2/ratio
+   /usr/include/c++/11.3.0/tr2/type_traits
+   /usr/include/c++/11.3.0/tuple
+   /usr/include/c++/11.3.0/type_traits
+   /usr/include/c++/11.3.0/typeindex
+   /usr/include/c++/11.3.0/typeinfo
+   /usr/include/c++/11.3.0/unordered_map
+   /usr/include/c++/11.3.0/unordered_set
+   /usr/include/c++/11.3.0/utility
+   /usr/include/c++/11.3.0/valarray
+   /usr/include/c++/11.3.0/variant
+   /usr/include/c++/11.3.0/vector
+   /usr/include/c++/11.3.0/version
+   /usr/include/c++/11.3.0/x86_64-pc-linux-gnu/bits/atomic_word.h
+   /usr/include/c++/11.3.0/x86_64-pc-linux-gnu/bits/basic_file.h
+   /usr/include/c++/11.3.0/x86_64-pc-linux-gnu/bits/c++allocator.h
+   /usr/include/c++/11.3.0/x86_64-pc-linux-gnu/bits/c++config.h
+   /usr/include/c++/11.3.0/x86_64-pc-linux-gnu/bits/c++io.h
+   /usr/include/c++/11.3.0/x86_64-pc-linux-gnu/bits/c++locale.h
+   /usr/include/c++/11.3.0/x86_64-pc-linux-gnu/bits/cpu_defines.h
+   /usr/include/c++/11.3.0/x86_64-pc-linux-gnu/bits/ctype_base.h
+   /usr/include/c++/11.3.0/x86_64-pc-linux-gnu/bits/ctype_inline.h
+   /usr/include/c++/11.3.0/x86_64-pc-linux-gnu/bits/cxxabi_tweaks.h
+   /usr/include/c++/11.3.0/x86_64-pc-linux-gnu/bits/error_constants.h
+   /usr/include/c++/11.3.0/x86_64-pc-linux-gnu/bits/extc++.h
+   /usr/include/c++/11.3.0/x86_64-pc-linux-gnu/bits/gthr-default.h
+   /usr/include/c++/11.3.0/x86_64-pc-linux-gnu/bits/gthr-posix.h
+   /usr/include/c++/11.3.0/x86_64-pc-linux-gnu/bits/gthr-single.h
+   /usr/include/c++/11.3.0/x86_64-pc-linux-gnu/bits/gthr.h
+   /usr/include/c++/11.3.0/x86_64-pc-linux-gnu/bits/messages_members.h
+   /usr/include/c++/11.3.0/x86_64-pc-linux-gnu/bits/opt_random.h
+   /usr/include/c++/11.3.0/x86_64-pc-linux-gnu/bits/os_defines.h
+   /usr/include/c++/11.3.0/x86_64-pc-linux-gnu/bits/stdc++.h
+   /usr/include/c++/11.3.0/x86_64-pc-linux-gnu/bits/stdtr1c++.h
+   /usr/include/c++/11.3.0/x86_64-pc-linux-gnu/bits/time_members.h
+   /usr/include/c++/11.3.0/x86_64-pc-linux-gnu/ext/opt_random.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/cc1
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/cc1plus
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/collect2
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/crtbegin.o
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/crtbeginS.o
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/crtbeginT.o
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/crtend.o
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/crtendS.o
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/crtfastmath.o
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/crtprec32.o
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/crtprec64.o
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/crtprec80.o
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/g++-mapper-server
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include-fixed/*
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/acc_prof.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/adxintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/ammintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/amxbf16intrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/amxint8intrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/amxtileintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/avx2intrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/avx5124fmapsintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/avx5124vnniwintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/avx512bf16intrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/avx512bf16vlintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/avx512bitalgintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/avx512bwintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/avx512cdintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/avx512dqintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/avx512erintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/avx512fintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/avx512ifmaintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/avx512ifmavlintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/avx512pfintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/avx512vbmi2intrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/avx512vbmi2vlintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/avx512vbmiintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/avx512vbmivlintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/avx512vlbwintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/avx512vldqintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/avx512vlintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/avx512vnniintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/avx512vnnivlintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/avx512vp2intersectintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/avx512vp2intersectvlintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/avx512vpopcntdqintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/avx512vpopcntdqvlintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/avxintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/avxvnniintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/bmi2intrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/bmiintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/bmmintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/cet.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/cetintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/cldemoteintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/clflushoptintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/clwbintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/clzerointrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/cpuid.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/cross-stdarg.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/emmintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/enqcmdintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/f16cintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/float.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/fma4intrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/fmaintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/fxsrintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/gcov.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/gfniintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/hresetintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/ia32intrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/immintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/iso646.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/keylockerintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/lwpintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/lzcntintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/mm3dnow.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/mm_malloc.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/mmintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/movdirintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/mwaitintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/mwaitxintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/nmmintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/omp.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/openacc.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/pconfigintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/pkuintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/pmmintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/popcntintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/prfchwintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/quadmath.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/quadmath_weak.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/rdseedintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/rtmintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/sanitizer/asan_interface.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/sanitizer/common_interface_defs.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/sanitizer/hwasan_interface.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/sanitizer/lsan_interface.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/sanitizer/tsan_interface.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/serializeintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/sgxintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/shaintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/smmintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/ssp/ssp.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/ssp/stdio.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/ssp/string.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/ssp/unistd.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/stdalign.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/stdarg.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/stdatomic.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/stdbool.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/stddef.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/stdfix.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/stdint-gcc.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/stdint.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/stdnoreturn.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/tbmintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/tmmintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/tsxldtrkintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/uintrintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/unwind.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/vaesintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/varargs.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/vpclmulqdqintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/waitpkgintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/wbnoinvdintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/wmmintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/x86gprintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/x86intrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/xmmintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/xopintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/xsavecintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/xsaveintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/xsaveoptintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/xsavesintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/xtestintrin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/install-tools/fixinc.sh
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/install-tools/fixinc_list
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/install-tools/fixincl
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/install-tools/gsyslimits.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/install-tools/include/README
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/install-tools/include/limits.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/install-tools/macro_list
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/install-tools/mkheaders
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/install-tools/mkheaders.conf
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/install-tools/mkinstalldirs
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libasan.a
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libasan.so
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libasan.so.6
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libasan.so.6.0.0
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libasan_preinit.o
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libatomic.a
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libatomic.so
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libatomic.so.1
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libatomic.so.1.2.0
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libgcc.a
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libgcc_eh.a
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libgcc_s.so
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libgcc_s.so.1
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libgcov.a
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libgomp.a
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libgomp.so
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libgomp.so.1
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libgomp.so.1.0.0
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libgomp.spec
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libitm.a
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libitm.so
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libitm.so.1
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libitm.so.1.0.0
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libitm.spec
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/liblsan.a
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/liblsan.so
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/liblsan.so.0
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/liblsan.so.0.0.0
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/liblsan_preinit.o
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/liblto_plugin.so
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libquadmath.a
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libquadmath.so
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libquadmath.so.0
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libquadmath.so.0.0.0
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libsanitizer.spec
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libssp.a
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libssp.so
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libssp.so.0
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libssp.so.0.0.0
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libssp_nonshared.a
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libstdc++.a
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libstdc++.so
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libstdc++.so.6
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libstdc++.so.6.0.29
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libstdc++.so.6.0.29-gdb.py
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libstdc++fs.a
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libsupc++.a
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libtsan.a
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libtsan.so
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libtsan.so.0
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libtsan.so.0.0.0
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libtsan_preinit.o
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libubsan.a
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libubsan.so
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libubsan.so.1
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libubsan.so.1.0.0
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/lto-wrapper
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/lto1
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/gengtype
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/gtype.state
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/ada/gcc-interface/ada-tree.def
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/addresses.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/alias.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/align.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/all-tree.def
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/alloc-pool.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/ansidecl.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/array-traits.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/asan.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/attr-fnspec.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/attribs.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/auto-host.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/auto-profile.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/b-header-vars
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/backend.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/basic-block.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/bb-reorder.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/bitmap.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/brig-builtins.def
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/builtin-attrs.def
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/builtin-types.def
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/builtins.def
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/builtins.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/bversion.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/c-family/c-common.def
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/c-family/c-common.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/c-family/c-objc.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/c-family/c-pragma.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/c-family/c-pretty-print.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/c-tree.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/calls.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/ccmp.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/cfg-flags.def
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/cfg.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/cfganal.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/cfgbuild.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/cfgcleanup.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/cfgexpand.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/cfghooks.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/cfgloop.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/cfgloopmanip.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/cfgrtl.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/cgraph.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/cif-code.def
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/collect-utils.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/collect2-aix.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/collect2.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/color-macros.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/common/config/i386/i386-cpuinfo.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/conditions.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/config.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/config/dbxelf.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/config/elfos.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/config/glibc-stdint.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/config/gnu-user.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/config/i386/att.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/config/i386/biarch64.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/config/i386/gnu-user-common.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/config/i386/gnu-user64.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/config/i386/i386-opts.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/config/i386/i386-protos.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/config/i386/i386.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/config/i386/linux-common.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/config/i386/linux64.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/config/i386/stringop.def
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/config/i386/unix.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/config/i386/x86-64.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/config/i386/x86-tune.def
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/config/initfini-array.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/config/linux-android.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/config/linux-protos.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/config/linux.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/config/vxworks-dummy.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/configargs.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/context.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/convert.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/coretypes.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/coroutine-builtins.def
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/coverage.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/cp/cp-tree.def
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/cp/cp-tree.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/cp/cxx-pretty-print.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/cp/name-lookup.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/cp/operators.def
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/cp/type-utils.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/cppbuiltin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/cppdefault.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/cpplib.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/cselib.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/d/d-tree.def
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/data-streamer.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/dbgcnt.def
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/dbgcnt.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/dbxout.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/dce.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/ddg.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/debug.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/defaults.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/df.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/dfp.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/diagnostic-color.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/diagnostic-core.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/diagnostic-event-id.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/diagnostic-metadata.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/diagnostic-path.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/diagnostic-url.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/diagnostic.def
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/diagnostic.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/digraph.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/dojump.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/dominance.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/domwalk.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/double-int.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/dump-context.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/dumpfile.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/dwarf2asm.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/dwarf2out.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/edit-context.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/emit-rtl.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/errors.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/escaped_string.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/et-forest.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/except.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/explow.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/expmed.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/expr.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/fibonacci_heap.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/file-find.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/file-prefix-map.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/filenames.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/fixed-value.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/flag-types.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/flags.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/fold-const-call.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/fold-const.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/function-abi.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/function.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/gcc-plugin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/gcc-rich-location.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/gcc-symtab.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/gcc.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/gcov-counter.def
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/gcov-io.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/gcse-common.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/gcse.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/generic-match.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/gengtype.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/genrtl.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/gensupport.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/ggc-internal.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/ggc.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/gimple-array-bounds.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/gimple-builder.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/gimple-expr.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/gimple-fold.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/gimple-iterator.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/gimple-low.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/gimple-match.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/gimple-predict.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/gimple-pretty-print.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/gimple-range-cache.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/gimple-range-edge.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/gimple-range-gori.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/gimple-range.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/gimple-ssa-evrp-analyze.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/gimple-ssa-warn-restrict.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/gimple-ssa.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/gimple-streamer.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/gimple-walk.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/gimple.def
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/gimple.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/gimplify-me.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/gimplify.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/glimits.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/gomp-constants.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/graph.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/graphds.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/graphite.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/graphviz.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/gsstruct.def
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/gstab.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/gsyms.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/gsyslimits.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/gtm-builtins.def
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/gtype-desc.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/hard-reg-set.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/hash-map-traits.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/hash-map.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/hash-set.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/hash-table.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/hash-traits.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/hashtab.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/highlev-plugin-common.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/hooks.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/hosthooks-def.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/hosthooks.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/hw-doloop.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/hwint.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/ifcvt.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/inchash.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/incpath.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/input.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/insn-addr.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/insn-attr-common.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/insn-attr.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/insn-codes.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/insn-config.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/insn-constants.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/insn-flags.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/insn-modes-inline.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/insn-modes.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/insn-notes.def
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/int-vector-builder.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/internal-fn.def
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/internal-fn.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/intl.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/ipa-fnsummary.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/ipa-icf-gimple.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/ipa-icf.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/ipa-inline.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/ipa-modref-tree.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/ipa-modref.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/ipa-param-manipulation.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/ipa-predicate.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/ipa-prop.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/ipa-ref.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/ipa-reference.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/ipa-utils.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/ira-int.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/ira.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/is-a.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/iterator-utils.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/json.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/langhooks-def.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/langhooks.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/lcm.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/libfuncs.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/libiberty.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/limitx.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/limity.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/line-map.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/loop-unroll.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/lower-subreg.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/lra-int.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/lra.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/lto-compress.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/lto-section-names.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/lto-streamer.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/machmode.def
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/machmode.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/md5.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/mem-stats-traits.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/mem-stats.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/memmodel.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/memory-block.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/mode-classes.def
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/mux-utils.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/objc/objc-tree.def
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/obstack-utils.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/obstack.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/omp-builtins.def
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/omp-expand.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/omp-general.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/omp-low.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/omp-offload.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/omp-simd-clone.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/opt-problem.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/opt-suggestions.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/optabs-libfuncs.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/optabs-query.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/optabs-tree.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/optabs.def
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/optabs.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/optinfo-emit-json.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/optinfo.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/options.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/opts-diagnostic.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/opts.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/ordered-hash-map.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/output.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/pass-instances.def
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/pass_manager.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/passes.def
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/plugin-api.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/plugin-version.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/plugin.def
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/plugin.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/poly-int-types.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/poly-int.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/predict.def
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/predict.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/prefix.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/pretty-print.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/print-rtl.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/print-tree.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/profile-count.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/profile.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/range-op.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/range.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/read-md.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/read-rtl-function.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/real.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/realmpfr.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/recog.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/reg-notes.def
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/regcprop.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/regrename.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/regs.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/regset.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/reload.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/resource.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/rtl-error.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/rtl-iter.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/rtl-ssa.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/rtl.def
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/rtl.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/rtlanal.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/rtlhash.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/rtlhooks-def.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/rtx-vector-builder.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/run-rtl-passes.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/safe-ctype.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/sanitizer.def
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/sbitmap.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/sched-int.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/sel-sched-dump.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/sel-sched-ir.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/sel-sched.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/selftest-diagnostic.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/selftest-rtl.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/selftest.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/sese.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/shortest-paths.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/shrink-wrap.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/signop.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/sparseset.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/spellcheck-tree.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/spellcheck.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/splay-tree-utils.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/splay-tree.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/sreal.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/ssa-iterators.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/ssa.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/stab.def
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/statistics.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/stmt.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/stor-layout.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/streamer-hooks.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/stringpool.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/substring-locations.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/symbol-summary.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/symtab-clones.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/symtab-thunks.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/symtab.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/sync-builtins.def
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/system.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/target-def.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/target-globals.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/target-hooks-macros.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/target-insns.def
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/target.def
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/target.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/targhooks.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/timevar.def
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/timevar.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tm-preds.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tm.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tm_p.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/toplev.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tracer.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/trans-mem.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-affine.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-cfg.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-cfgcleanup.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-check.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-chrec.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-core.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-data-ref.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-dfa.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-diagnostic.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-dump.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-eh.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-hash-traits.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-hasher.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-if-conv.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-inline.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-into-ssa.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-iterator.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-nested.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-object-size.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-outof-ssa.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-parloops.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-pass.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-phinodes.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-pretty-print.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-scalar-evolution.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-sra.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-ssa-address.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-ssa-alias-compare.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-ssa-alias.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-ssa-ccp.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-ssa-coalesce.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-ssa-dce.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-ssa-dom.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-ssa-dse.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-ssa-live.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-ssa-loop-ivopts.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-ssa-loop-manip.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-ssa-loop-niter.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-ssa-loop.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-ssa-math-opts.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-ssa-operands.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-ssa-propagate.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-ssa-reassoc.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-ssa-sccvn.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-ssa-scopedtables.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-ssa-strlen.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-ssa-ter.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-ssa-threadedge.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-ssa-threadupdate.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-ssa.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-ssanames.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-stdarg.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-streamer.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-switch-conversion.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-vector-builder.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-vectorizer.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree-vrp.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree.def
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tree.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/treestruct.def
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tristate.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tsan.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/tsystem.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/typeclass.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/typed-splay-tree.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/ubsan.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/valtrack.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/value-prof.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/value-query.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/value-range-equiv.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/value-range.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/varasm.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/vec-perm-indices.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/vec.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/vector-builder.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/version.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/vmsdbg.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/vr-values.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/vtable-verify.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/wide-int-bitmask.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/wide-int-print.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/wide-int.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/xcoff.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/include/xcoffout.h
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/libcc1plugin.so
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/libcc1plugin.so.0
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/libcc1plugin.so.0.0.0
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/libcp1plugin.so
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/libcp1plugin.so.0
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/plugin/libcp1plugin.so.0.0.0
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libcc1.so
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libcc1.so.0
+   /usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/libcc1.so.0.0.0
+   /usr/share/gcc-11.3.0/python/libstdcxx/__init__.py
+   /usr/share/gcc-11.3.0/python/libstdcxx/v6/__init__.py
+   /usr/share/gcc-11.3.0/python/libstdcxx/v6/printers.py
+   /usr/share/gcc-11.3.0/python/libstdcxx/v6/xmethods.py
+   /usr/share/locale/be/LC_MESSAGES/cpplib.mo
+   /usr/share/locale/be/LC_MESSAGES/gcc.mo
+   /usr/share/locale/ca/LC_MESSAGES/cpplib.mo
+   /usr/share/locale/da/LC_MESSAGES/cpplib.mo
+   /usr/share/locale/da/LC_MESSAGES/gcc.mo
+   /usr/share/locale/de/LC_MESSAGES/cpplib.mo
+   /usr/share/locale/de/LC_MESSAGES/gcc.mo
+   /usr/share/locale/de/LC_MESSAGES/libstdc++.mo
+   /usr/share/locale/el/LC_MESSAGES/cpplib.mo
+   /usr/share/locale/el/LC_MESSAGES/gcc.mo
+   /usr/share/locale/eo/LC_MESSAGES/cpplib.mo
+   /usr/share/locale/es/LC_MESSAGES/cpplib.mo
+   /usr/share/locale/es/LC_MESSAGES/gcc.mo
+   /usr/share/locale/fi/LC_MESSAGES/cpplib.mo
+   /usr/share/locale/fi/LC_MESSAGES/gcc.mo
+   /usr/share/locale/fr/LC_MESSAGES/cpplib.mo
+   /usr/share/locale/fr/LC_MESSAGES/gcc.mo
+   /usr/share/locale/fr/LC_MESSAGES/libstdc++.mo
+   /usr/share/locale/hr/LC_MESSAGES/gcc.mo
+   /usr/share/locale/id/LC_MESSAGES/cpplib.mo
+   /usr/share/locale/id/LC_MESSAGES/gcc.mo
+   /usr/share/locale/ja/LC_MESSAGES/cpplib.mo
+   /usr/share/locale/ja/LC_MESSAGES/gcc.mo
+   /usr/share/locale/nl/LC_MESSAGES/cpplib.mo
+   /usr/share/locale/nl/LC_MESSAGES/gcc.mo
+   /usr/share/locale/pt_BR/LC_MESSAGES/cpplib.mo
+   /usr/share/locale/ru/LC_MESSAGES/cpplib.mo
+   /usr/share/locale/ru/LC_MESSAGES/gcc.mo
+   /usr/share/locale/sr/LC_MESSAGES/cpplib.mo
+   /usr/share/locale/sr/LC_MESSAGES/gcc.mo
+   /usr/share/locale/sv/LC_MESSAGES/cpplib.mo
+   /usr/share/locale/sv/LC_MESSAGES/gcc.mo
+   /usr/share/locale/tr/LC_MESSAGES/cpplib.mo
+   /usr/share/locale/tr/LC_MESSAGES/gcc.mo
+   /usr/share/locale/uk/LC_MESSAGES/cpplib.mo
+   /usr/share/locale/uk/LC_MESSAGES/gcc.mo
+   /usr/share/locale/vi/LC_MESSAGES/cpplib.mo
+   /usr/share/locale/vi/LC_MESSAGES/gcc.mo
+   /usr/share/locale/zh_CN/LC_MESSAGES/cpplib.mo
+   /usr/share/locale/zh_CN/LC_MESSAGES/gcc.mo
+   /usr/share/locale/zh_TW/LC_MESSAGES/cpplib.mo
+   /usr/share/locale/zh_TW/LC_MESSAGES/gcc.mo
+   /usr/share/man/man1/cpp.1.gz
+   /usr/share/man/man1/g++.1.gz
+   /usr/share/man/man1/gcc.1.gz
+   /usr/share/man/man1/gcov-dump.1.gz
+   /usr/share/man/man1/gcov-tool.1.gz
+   /usr/share/man/man1/gcov.1.gz
+   /usr/share/man/man1/lto-dump.1.gz
+   /usr/share/man/man7/fsf-funding.7.gz
+   /usr/share/man/man7/gfdl.7.gz
+   /usr/share/man/man7/gpl.7.gz
 
 %changelog

@@ -2013,6 +2013,47 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/vim/vim82/lang/menu_zh_tw.big5.vim
 /usr/share/vim/vim82/lang/menu_zh_tw.cp950.vim
 /usr/share/vim/vim82/lang/menu_zh_tw.utf-8.vim
+   /usr/share/vim/vim82/lang/af/LC_MESSAGES/vim.mo
+   /usr/share/vim/vim82/lang/ca/LC_MESSAGES/vim.mo
+   /usr/share/vim/vim82/lang/cs.cp1250/LC_MESSAGES/vim.mo
+   /usr/share/vim/vim82/lang/cs/LC_MESSAGES/vim.mo
+   /usr/share/vim/vim82/lang/da/LC_MESSAGES/vim.mo
+   /usr/share/vim/vim82/lang/de/LC_MESSAGES/vim.mo
+   /usr/share/vim/vim82/lang/en_GB/LC_MESSAGES/vim.mo
+   /usr/share/vim/vim82/lang/eo/LC_MESSAGES/vim.mo
+   /usr/share/vim/vim82/lang/es/LC_MESSAGES/vim.mo
+   /usr/share/vim/vim82/lang/fi/LC_MESSAGES/vim.mo
+   /usr/share/vim/vim82/lang/fr/LC_MESSAGES/vim.mo
+   /usr/share/vim/vim82/lang/ga/LC_MESSAGES/vim.mo
+   /usr/share/vim/vim82/lang/it/LC_MESSAGES/vim.mo
+   /usr/share/vim/vim82/lang/ja.euc-jp/LC_MESSAGES/vim.mo
+   /usr/share/vim/vim82/lang/ja.sjis/LC_MESSAGES/vim.mo
+   /usr/share/vim/vim82/lang/ja/LC_MESSAGES/vim.mo
+   /usr/share/vim/vim82/lang/ko.UTF-8/LC_MESSAGES/vim.mo
+   /usr/share/vim/vim82/lang/ko/LC_MESSAGES/vim.mo
+   /usr/share/vim/vim82/lang/lv/LC_MESSAGES/vim.mo
+   /usr/share/vim/vim82/lang/nb/LC_MESSAGES/vim.mo
+   /usr/share/vim/vim82/lang/nl/LC_MESSAGES/vim.mo
+   /usr/share/vim/vim82/lang/no/LC_MESSAGES/vim.mo
+   /usr/share/vim/vim82/lang/pl.UTF-8/LC_MESSAGES/vim.mo
+   /usr/share/vim/vim82/lang/pl.cp1250/LC_MESSAGES/vim.mo
+   /usr/share/vim/vim82/lang/pl/LC_MESSAGES/vim.mo
+   /usr/share/vim/vim82/lang/pt_BR/LC_MESSAGES/vim.mo
+   /usr/share/vim/vim82/lang/ru.cp1251/LC_MESSAGES/vim.mo
+   /usr/share/vim/vim82/lang/ru/LC_MESSAGES/vim.mo
+   /usr/share/vim/vim82/lang/sk.cp1250/LC_MESSAGES/vim.mo
+   /usr/share/vim/vim82/lang/sk/LC_MESSAGES/vim.mo
+   /usr/share/vim/vim82/lang/sr/LC_MESSAGES/vim.mo
+   /usr/share/vim/vim82/lang/sv/LC_MESSAGES/vim.mo
+   /usr/share/vim/vim82/lang/tr/LC_MESSAGES/vim.mo
+   /usr/share/vim/vim82/lang/uk.cp1251/LC_MESSAGES/vim.mo
+   /usr/share/vim/vim82/lang/uk/LC_MESSAGES/vim.mo
+   /usr/share/vim/vim82/lang/vi/LC_MESSAGES/vim.mo
+   /usr/share/vim/vim82/lang/zh_CN.UTF-8/LC_MESSAGES/vim.mo
+   /usr/share/vim/vim82/lang/zh_CN.cp936/LC_MESSAGES/vim.mo
+   /usr/share/vim/vim82/lang/zh_CN/LC_MESSAGES/vim.mo
+   /usr/share/vim/vim82/lang/zh_TW.UTF-8/LC_MESSAGES/vim.mo
+   /usr/share/vim/vim82/lang/zh_TW/LC_MESSAGES/vim.mo
 
 
 %changelog

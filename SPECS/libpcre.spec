@@ -5,7 +5,7 @@ Summary:	Perl-compatible regular expression library
 
 License:	BSD
 URL:		http://www.pcre.org/
-Source0:	https://dl.sourceforge.net/project/pcre/pcre/%{version}/pcre-%{version}.tar.gz
+Source0:	http://distfiles.gentoo.org/distfiles/0f/pcre-%{version}.tar.bz2
 
 #BuildRequires:
 #Requires:

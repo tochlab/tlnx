@@ -1,5 +1,5 @@
 Name:		Linux-PAM
-Version:	1.5.2
+Version:	1.5.3
 Release:        1%{?dist}
 Summary:	Linux PAM (Pluggable Authentication Modules for Linux) project
 
@@ -17,7 +17,7 @@ Linux PAM (Pluggable Authentication Modules for Linux) project
 %setup -q
 
 %build
-%configure --includedir=/usr/include/security --libdir=/lib --sbindir=/sbin --bindir=/bin
+%configure --includedir=/usr/include/security --libdir=/lib --sbindir=/sbin --bindir=/bin --disable-selinux
 make %{?_smp_mflags}
 
 %install
@@ -91,7 +91,7 @@ find %{buildroot} -type f -name '*.la' -delete || die
 #/lib/security/pam_keyinit.la
 /lib/security/pam_keyinit.so
 #/lib/security/pam_lastlog.la
-/lib/security/pam_lastlog.so
+#/lib/security/pam_lastlog.so
 #/lib/security/pam_limits.la
 /lib/security/pam_limits.so
 #/lib/security/pam_listfile.la
@@ -317,7 +317,6 @@ find %{buildroot} -type f -name '*.la' -delete || die
 /usr/share/man/man8/pam_group.8.gz
 /usr/share/man/man8/pam_issue.8.gz
 /usr/share/man/man8/pam_keyinit.8.gz
-/usr/share/man/man8/pam_lastlog.8.gz
 /usr/share/man/man8/pam_limits.8.gz
 /usr/share/man/man8/pam_listfile.8.gz
 /usr/share/man/man8/pam_localuser.8.gz
@@ -350,6 +349,8 @@ find %{buildroot} -type f -name '*.la' -delete || die
 /usr/share/man/man8/pwhistory_helper.8.gz
 /usr/share/man/man8/unix_chkpwd.8.gz
 /usr/share/man/man8/unix_update.8.gz
+/etc/security/pwhistory.conf
+/usr/share/man/man5/pwhistory.conf.5.gz
 
 
 %doc

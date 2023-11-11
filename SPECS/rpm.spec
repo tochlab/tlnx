@@ -5,7 +5,7 @@ Summary:	Red Hat Package Management Utils
 
 License:	GPL-2 LGPL-2
 URL:		https://rpm.org
-Source0:	http://ftp.rpm.org/releases/rpm-4.17.x/rpm-%{version}.tar.bz2
+Source0:	http://ftp.rpm.org/releases/rpm-4.19.x/rpm-%{version}.tar.bz2
 
 #BuildRequires:
 #Requires:

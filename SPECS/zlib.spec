@@ -1,5 +1,5 @@
 Name:           zlib
-Version:	1.2.13
+Version:	1.3
 Release:        1%{?dist}
 Summary:	Zlib
 

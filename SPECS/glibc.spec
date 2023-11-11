@@ -1,5 +1,5 @@
 Name:           glibc
-Version:	2.35
+Version:	2.38
 Release:        1
 Summary:	GNU libc C library
 

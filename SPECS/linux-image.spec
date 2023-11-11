@@ -1,5 +1,5 @@
 Name: linux-image
-Version: 5.10.140
+Version: 5.10.200
 Release: 1
 Summary: Linux Kernel
 License: GPLv2

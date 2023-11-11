@@ -1,5 +1,5 @@
 Name:           rpm
-Version:	4.17.0
+Version:	4.19.0
 Release:        1%{?dist}
 Summary:	Red Hat Package Management Utils
 

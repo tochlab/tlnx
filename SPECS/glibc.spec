@@ -1504,5 +1504,16 @@ rm -rf %{buildroot}/lib/libnsl.so.1
 /usr/share/locale/vi/LC_MESSAGES/libc.mo
 /usr/share/locale/zh_CN/LC_MESSAGES/libc.mo
 /usr/share/locale/zh_TW/LC_MESSAGES/libc.mo
-
+/usr/include/bits/mman_ext.h
+/usr/include/bits/select-decl.h
+/usr/include/bits/stdio2-decl.h
+/usr/include/bits/syslog-decl.h
+/usr/include/bits/types/idtype_t.h
+/usr/include/bits/unistd-decl.h
+/usr/include/bits/wchar2-decl.h
+/usr/include/sys/pidfd.h
+/usr/share/i18n/locales/rif_MA
+/usr/share/i18n/locales/syr
+/usr/share/locale/ka/LC_MESSAGES/libc.mo
+/usr/share/locale/ro/LC_MESSAGES/libc.mo
 

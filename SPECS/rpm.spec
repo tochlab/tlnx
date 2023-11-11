@@ -23,6 +23,7 @@ make %{?_smp_mflags}
 
 %install
 rm -rf $RPM_BUILD_ROOT
+cd rpm-build
 %make_install
 mkdir %{buildroot}/root
 cp %{_sourcedir}/rpmmacros %{buildroot}/root/.rpmmacros

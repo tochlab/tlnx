@@ -16,6 +16,8 @@ Source0:	http://ftp.rpm.org/releases/rpm-4.19.x/rpm-%{version}.tar.bz2
 %setup -q
 
 %build
+mkdir rpm-build
+cd rpm-build
 cmake .. -DWITH_AUDIT=OFF -DWITH_DBUS=OFF -DWITH_SELINUX=OFF -DWITH_INTERNAL_OPENPGP=ON
 make %{?_smp_mflags}
 

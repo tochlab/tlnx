@@ -239,7 +239,6 @@ find %{buildroot} -type f -name '*.la' -delete || die
 /usr/share/locale/zh_TW/LC_MESSAGES/rpm.mo
 /usr/share/man/man1/gendiff.1.gz
 /usr/share/man/man8/rpm-misc.8.gz
-/usr/share/man/man8/rpm-plugin-ima.8.gz
 /usr/share/man/man8/rpm-plugin-prioreset.8.gz
 /usr/share/man/man8/rpm-plugin-syslog.8.gz
 /usr/share/man/man8/rpm-plugins.8.gz

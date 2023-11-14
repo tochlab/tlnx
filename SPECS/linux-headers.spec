@@ -261,7 +261,6 @@ cp -rv dest/* %{buildroot}/usr
 /usr/include/linux/dm-log-userspace.h
 /usr/include/linux/dma-buf.h
 /usr/include/linux/dma-heap.h
-/usr/include/linux/dn.h
 /usr/include/linux/dns_resolver.h
 /usr/include/linux/dqblk_xfs.h
 /usr/include/linux/dvb/audio.h
@@ -581,7 +580,6 @@ cp -rv dest/* %{buildroot}/usr
 /usr/include/linux/netfilter_bridge/ebt_stp.h
 /usr/include/linux/netfilter_bridge/ebt_vlan.h
 /usr/include/linux/netfilter_bridge/ebtables.h
-/usr/include/linux/netfilter_decnet.h
 /usr/include/linux/netfilter_ipv4.h
 /usr/include/linux/netfilter_ipv4/ip_tables.h
 /usr/include/linux/netfilter_ipv4/ipt_CLUSTERIP.h

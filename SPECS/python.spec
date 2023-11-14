@@ -2493,6 +2493,6 @@ ln -s /usr/bin/python3 /usr/bin/python
 /usr/lib/python3.10/zoneinfo/_zoneinfo.py
 /usr/share/man/man1/python3.1.gz
 /usr/share/man/man1/python3.10.1.gz
-
+/usr/lib/python3.10/lib-dynload/_dbm.cpython-310-x86_64-linux-gnu.so
 
 %changelog

@@ -25,7 +25,7 @@ rm -rf $RPM_BUILD_ROOT
 %make_install
 %{__rm} -f %{buildroot}/usr/share/info/dir
 %{__rm} -f %{buildroot}/usr/lib/systemd/system/pam_namespace.service
-mkdir %{buildroot}/usr/lib/
+#mkdir %{buildroot}/usr/lib/
 mv %{buildroot}/lib/pkgconfig %{buildroot}/usr/lib/
 find %{buildroot} -type f -name '*.la' -delete || die
 

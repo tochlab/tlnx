@@ -56,3 +56,5 @@ expat.spec
 attr.spec
 libxcrypt.spec
 libtool.spec
+libcap.spec
+libseccomp.spec

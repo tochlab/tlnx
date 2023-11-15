@@ -10,6 +10,8 @@ Source0:	https://mirrors.edge.kernel.org/pub/software/scm/git/git-%{version}.tar
 #BuildRequires:
 #Requires:
 
+%global __strip /bin/true
+
 %description
 
 %prep

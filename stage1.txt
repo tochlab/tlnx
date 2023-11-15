@@ -58,3 +58,6 @@ libxcrypt.spec
 libtool.spec
 libcap.spec
 libseccomp.spec
+gperf.spec
+libxml2.spec
+

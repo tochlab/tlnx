@@ -18,7 +18,7 @@ Source0:	http://ftp.rpm.org/releases/rpm-4.19.x/rpm-%{version}.tar.bz2
 %build
 mkdir rpm-build
 cd rpm-build
-cmake .. -DWITH_AUDIT=OFF -DWITH_DBUS=OFF -DWITH_SELINUX=OFF -DWITH_INTERNAL_OPENPGP=ON -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_INSTALL_LIBDIR:PATH=/usr/lib
+cmake .. -DWITH_OPENSSL=ON -DWITH_AUDIT=OFF -DWITH_DBUS=OFF -DWITH_SELINUX=OFF -DWITH_INTERNAL_OPENPGP=ON -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_INSTALL_LIBDIR:PATH=/usr/lib
 make %{?_smp_mflags}
 
 %install

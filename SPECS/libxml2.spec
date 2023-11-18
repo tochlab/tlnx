@@ -31,6 +31,8 @@ cd libxml2-v%{version}
 %{__rm} -f %{buildroot}/usr/share/info/dir
 %{__rm} -fr %{buildroot}/usr/share/doc
 %{__rm} -fr %{buildroot}/usr/share/gtk-doc
+%{__rm} -fr %{buildroot}/usr/lib/python3.11
+
 find %{buildroot} -type f -name '*.la' -delete || die
 
 #%post
@@ -93,7 +95,6 @@ find %{buildroot} -type f -name '*.la' -delete || die
 /usr/include/libxml2/libxml/xpathInternals.h
 /usr/include/libxml2/libxml/xpointer.h
 /usr/lib64/cmake/libxml2/libxml2-config.cmake
-#/usr/lib64/libxml2.a
 /usr/lib64/libxml2.so
 /usr/lib64/libxml2.so.2
 /usr/lib64/libxml2.so.2.9.13

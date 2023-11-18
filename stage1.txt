@@ -60,4 +60,4 @@ libcap.spec
 libseccomp.spec
 gperf.spec
 libxml2.spec
-
+cmake.spec

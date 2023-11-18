@@ -1,5 +1,5 @@
 Name:          	Python
-Version:	3.10.5
+Version:	3.12.0
 Release:        1%{?dist}
 Summary:	An interpreted, interactive, object-oriented programming language
 

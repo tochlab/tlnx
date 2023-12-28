@@ -28,7 +28,6 @@ Linux-PAM.spec
 pkgconf.spec
 elfutils.spec
 binutils.spec
-gcc.spec
 gmp.spec
 mpc.spec
 mpfr.spec
@@ -58,3 +57,4 @@ libtool.spec
 libcap.spec
 acl.spec
 libseccomp.spec
+gcc.spec

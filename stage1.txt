@@ -57,3 +57,4 @@ attr.spec
 libtool.spec
 libcap.spec
 acl.spec
+libseccomp.spec

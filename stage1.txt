@@ -57,4 +57,5 @@ libtool.spec
 libcap.spec
 acl.spec
 libseccomp.spec
+libxcrypt.spec
 gcc.spec

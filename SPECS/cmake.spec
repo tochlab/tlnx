@@ -263,35 +263,35 @@ rm -rf $RPM_BUILD_ROOT
    /usr/local/share/cmake-3.27/Help/envvar/SSL_CERT_FILE.rst
    /usr/local/share/cmake-3.27/Help/envvar/SWIFTC.rst
    /usr/local/share/cmake-3.27/Help/envvar/VERBOSE.rst
-   /usr/local/share/cmake-3.27/Help/generator/Borland\ Makefiles.rst
+"/usr/local/share/cmake-3.27/Help/generator/Borland Makefiles.rst"
    /usr/local/share/cmake-3.27/Help/generator/CodeBlocks.rst
    /usr/local/share/cmake-3.27/Help/generator/CodeLite.rst
-   /usr/local/share/cmake-3.27/Help/generator/Eclipse\ CDT4.rst
-   /usr/local/share/cmake-3.27/Help/generator/Green\ Hills\ MULTI.rst
+"/usr/local/share/cmake-3.27/Help/generator/Eclipse CDT4.rst"
+"/usr/local/share/cmake-3.27/Help/generator/Green Hills MULTI.rst"
    /usr/local/share/cmake-3.27/Help/generator/Kate.rst
-   /usr/local/share/cmake-3.27/Help/generator/MSYS\ Makefiles.rst
-   /usr/local/share/cmake-3.27/Help/generator/MinGW\ Makefiles.rst
-   /usr/local/share/cmake-3.27/Help/generator/NMake\ Makefiles\ JOM.rst
-   /usr/local/share/cmake-3.27/Help/generator/NMake\ Makefiles.rst
-   /usr/local/share/cmake-3.27/Help/generator/Ninja\ Multi-Config.rst
-   /usr/local/share/cmake-3.27/Help/generator/Ninja.rst
-   /usr/local/share/cmake-3.27/Help/generator/Sublime\ Text\ 2.rst
-   /usr/local/share/cmake-3.27/Help/generator/Unix\ Makefiles.rst
+"/usr/local/share/cmake-3.27/Help/generator/MSYS Makefiles.rst"
+"/usr/local/share/cmake-3.27/Help/generator/MinGW Makefiles.rst"
+"/usr/local/share/cmake-3.27/Help/generator/NMake Makefiles JOM.rst"
+"/usr/local/share/cmake-3.27/Help/generator/NMake Makefiles.rst"
+"/usr/local/share/cmake-3.27/Help/generator/Ninja Multi-Config.rst"
+"/usr/local/share/cmake-3.27/Help/generator/Ninja.rst"
+"/usr/local/share/cmake-3.27/Help/generator/Sublime Text 2.rst"
+"/usr/local/share/cmake-3.27/Help/generator/Unix Makefiles.rst"
    /usr/local/share/cmake-3.27/Help/generator/VS_TOOLSET_HOST_ARCH.txt
    /usr/local/share/cmake-3.27/Help/generator/VS_TOOLSET_HOST_ARCH_LEGACY.txt
-   /usr/local/share/cmake-3.27/Help/generator/Visual\ Studio\ 10\ 2010.rst
-   /usr/local/share/cmake-3.27/Help/generator/Visual\ Studio\ 11\ 2012.rst
-   /usr/local/share/cmake-3.27/Help/generator/Visual\ Studio\ 12\ 2013.rst
-   /usr/local/share/cmake-3.27/Help/generator/Visual\ Studio\ 14\ 2015.rst
-   /usr/local/share/cmake-3.27/Help/generator/Visual\ Studio\ 15\ 2017.rst
-   /usr/local/share/cmake-3.27/Help/generator/Visual\ Studio\ 16\ 2019.rst
-   /usr/local/share/cmake-3.27/Help/generator/Visual\ Studio\ 17\ 2022.rst
-   /usr/local/share/cmake-3.27/Help/generator/Visual\ Studio\ 6.rst
-   /usr/local/share/cmake-3.27/Help/generator/Visual\ Studio\ 7\ .NET\ 2003.rst
-   /usr/local/share/cmake-3.27/Help/generator/Visual\ Studio\ 7.rst
-   /usr/local/share/cmake-3.27/Help/generator/Visual\ Studio\ 8\ 2005.rst
-   /usr/local/share/cmake-3.27/Help/generator/Visual\ Studio\ 9\ 2008.rst
-   /usr/local/share/cmake-3.27/Help/generator/Watcom\ WMake.rst
+"/usr/local/share/cmake-3.27/Help/generator/Visual Studio 10 2010.rst"
+"/usr/local/share/cmake-3.27/Help/generator/Visual Studio 11 2012.rst"
+"/usr/local/share/cmake-3.27/Help/generator/Visual Studio 12 2013.rst"
+"/usr/local/share/cmake-3.27/Help/generator/Visual Studio 14 2015.rst"
+"/usr/local/share/cmake-3.27/Help/generator/Visual Studio 15 2017.rst"
+"/usr/local/share/cmake-3.27/Help/generator/Visual Studio 16 2019.rst"
+"/usr/local/share/cmake-3.27/Help/generator/Visual Studio 17 2022.rst"
+"/usr/local/share/cmake-3.27/Help/generator/Visual Studio 6.rst"
+"/usr/local/share/cmake-3.27/Help/generator/Visual Studio 7 .NET 2003.rst"
+"/usr/local/share/cmake-3.27/Help/generator/Visual Studio 7.rst"
+"/usr/local/share/cmake-3.27/Help/generator/Visual Studio 8 2005.rst"
+"/usr/local/share/cmake-3.27/Help/generator/Visual Studio 9 2008.rst"
+"/usr/local/share/cmake-3.27/Help/generator/Watcom WMake.rst"
    /usr/local/share/cmake-3.27/Help/generator/Xcode.rst
    /usr/local/share/cmake-3.27/Help/include/COMPILE_DEFINITIONS_DISCLAIMER.txt
    /usr/local/share/cmake-3.27/Help/include/INTERFACE_INCLUDE_DIRECTORIES_WARNING.txt

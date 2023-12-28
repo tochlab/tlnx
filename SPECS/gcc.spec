@@ -27,7 +27,7 @@ cd       build
              --with-system-zlib       \
              --libdir=/usr/lib        \
 	     --libexecdir=/usr/lib \
-	     --disbale-nls
+	     --disable-nls
 
 #--bindir=/usr/x86_64-pc-linux-gnu/gcc-bin/11.2.1 --includedir=/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.1/include --datadir=/usr/share/gcc-data/x86_64-pc-linux-gnu/11.2.1 --mandir=/usr/share/gcc-data/x86_64-pc-linux-gnu/11.2.1/man --infodir=/usr/share/gcc-data/x86_64-pc-linux-gnu/11.2.1/info --with-gxx-include-dir=/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.1/include/g++-v11 --with-python-dir=/share/gcc-data/x86_64-pc-linux-gnu/11.2.1/python
 

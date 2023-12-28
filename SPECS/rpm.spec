@@ -29,6 +29,7 @@ mkdir %{buildroot}/root
 cp %{_sourcedir}/rpmmacros %{buildroot}/root/.rpmmacros
 cp %{_sourcedir}/rpmrc %{buildroot}/root/.rpmrc
 find %{buildroot} -type f -name '*.la' -delete || die
+rm -fr %{buildroot}/usr/share/locale
 
 
 %files

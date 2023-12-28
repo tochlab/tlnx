@@ -19,7 +19,7 @@ Source0:	https://ftpmirror.gnu.org/gnu/tar/tar-%{version}.tar.gz
 export FORCE_UNSAFE_CONFIGURE=1
 %configure --prefix=/usr \
             --bindir=/bin \
-	    --disbale-nls
+	    --disable-nls
 make %{?_smp_mflags}
 
 %install

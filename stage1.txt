@@ -60,4 +60,5 @@ libseccomp.spec
 libxcrypt.spec
 cmake.spec
 libxml2.spec
+libunistring.spec
 gcc.spec

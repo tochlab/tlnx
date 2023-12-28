@@ -1,5 +1,5 @@
 #!/bin/sh
-INSTALL_DESTDIR=/home/tlnx/tmp/
+INSTALL_DESTDIR=/root/tmp/
 mkdir $INSTALL_DESTDIR/dev
 mkdir $INSTALL_DESTDIR/proc
 mount --bind /dev/ $INSTALL_DESTDIR/dev

@@ -57,6 +57,8 @@ mv %{buildroot}/usr/lib/libc.so %{buildroot}/lib
 mv %{buildroot}/usr/lib/libc.a %{buildroot}/lib
 rm -rf %{buildroot}/lib/libnsl.so.1
 rm -fr %{buildroot}/usr/share/locale
+rm -fr %{buildroot}/usr/share/info
+
 
 %files
 /etc/ld.so.cache
@@ -1438,24 +1440,6 @@ rm -fr %{buildroot}/usr/share/locale
 /usr/share/i18n/locales/zh_SG
 /usr/share/i18n/locales/zh_TW
 /usr/share/i18n/locales/zu_ZA
-/usr/share/info/libc.info-1.gz
-/usr/share/info/libc.info-10.gz
-/usr/share/info/libc.info-11.gz
-/usr/share/info/libc.info-12.gz
-/usr/share/info/libc.info-13.gz
-/usr/share/info/libc.info-14.gz
-/usr/share/info/libc.info-15.gz
-/usr/share/info/libc.info-16.gz
-/usr/share/info/libc.info-17.gz
-/usr/share/info/libc.info-2.gz
-/usr/share/info/libc.info-3.gz
-/usr/share/info/libc.info-4.gz
-/usr/share/info/libc.info-5.gz
-/usr/share/info/libc.info-6.gz
-/usr/share/info/libc.info-7.gz
-/usr/share/info/libc.info-8.gz
-/usr/share/info/libc.info-9.gz
-/usr/share/info/libc.info.gz
 /var/db/Makefile
 /usr/bin/ld.so
 /usr/include/bits/atomic_wide_counter.h
@@ -1467,7 +1451,6 @@ rm -fr %{buildroot}/usr/share/locale
 /usr/lib/rcrt1.o
 /usr/share/i18n/locales/C
 /usr/share/i18n/locales/ab_GE
-/usr/share/info/libc.info-18.gz
 /usr/include/bits/mman_ext.h
 /usr/include/bits/select-decl.h
 /usr/include/bits/stdio2-decl.h

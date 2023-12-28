@@ -25,8 +25,9 @@ rm -rf $RPM_BUILD_ROOT
 %{__rm} -f %{buildroot}/usr/share/info/dir
 find %{buildroot} -type f -name '*.la' -delete || die
 
-#%post
-#/sbin/ldconfig
+%post
+ln -s /usr/lib/libunistring.so.2 /usr/lib/libunistring.so.5
+/sbin/ldconfig
 #/sbin/install-info /usr/share/info/DevIL_manual.info.gz /usr/share/info/dir 2> /dev/null || :
 
 #%postun

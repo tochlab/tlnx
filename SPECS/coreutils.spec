@@ -24,7 +24,8 @@ Source0:	https://ftpmirror.gnu.org/gnu/coreutils/coreutils-%{version}.tar.xz
 autoreconf -fiv
 FORCE_UNSAFE_CONFIGURE=1 ./configure \
             --prefix=/usr            \
-            --enable-no-install-program=kill,uptime
+            --enable-no-install-program=kill,uptime \
+	    --disbale-nls
 make %{?_smp_mflags}
 
 %install
@@ -145,92 +146,6 @@ rm -f $RPM_BUILD_ROOT/usr/share/info/dir
 /usr/bin/yes
 /usr/libexec/coreutils/libstdbuf.so
 /usr/share/info/coreutils.info.gz
-/usr/share/locale/af/LC_MESSAGES/coreutils.mo
-/usr/share/locale/af/LC_TIME/coreutils.mo
-/usr/share/locale/be/LC_MESSAGES/coreutils.mo
-/usr/share/locale/be/LC_TIME/coreutils.mo
-/usr/share/locale/bg/LC_MESSAGES/coreutils.mo
-/usr/share/locale/bg/LC_TIME/coreutils.mo
-/usr/share/locale/ca/LC_MESSAGES/coreutils.mo
-/usr/share/locale/ca/LC_TIME/coreutils.mo
-/usr/share/locale/cs/LC_MESSAGES/coreutils.mo
-/usr/share/locale/cs/LC_TIME/coreutils.mo
-/usr/share/locale/da/LC_MESSAGES/coreutils.mo
-/usr/share/locale/da/LC_TIME/coreutils.mo
-/usr/share/locale/de/LC_MESSAGES/coreutils.mo
-/usr/share/locale/de/LC_TIME/coreutils.mo
-/usr/share/locale/el/LC_MESSAGES/coreutils.mo
-/usr/share/locale/el/LC_TIME/coreutils.mo
-/usr/share/locale/eo/LC_MESSAGES/coreutils.mo
-/usr/share/locale/eo/LC_TIME/coreutils.mo
-/usr/share/locale/es/LC_MESSAGES/coreutils.mo
-/usr/share/locale/es/LC_TIME/coreutils.mo
-/usr/share/locale/et/LC_MESSAGES/coreutils.mo
-/usr/share/locale/et/LC_TIME/coreutils.mo
-/usr/share/locale/eu/LC_MESSAGES/coreutils.mo
-/usr/share/locale/eu/LC_TIME/coreutils.mo
-/usr/share/locale/fi/LC_MESSAGES/coreutils.mo
-/usr/share/locale/fi/LC_TIME/coreutils.mo
-/usr/share/locale/fr/LC_MESSAGES/coreutils.mo
-/usr/share/locale/fr/LC_TIME/coreutils.mo
-/usr/share/locale/ga/LC_MESSAGES/coreutils.mo
-/usr/share/locale/ga/LC_TIME/coreutils.mo
-/usr/share/locale/gl/LC_MESSAGES/coreutils.mo
-/usr/share/locale/gl/LC_TIME/coreutils.mo
-/usr/share/locale/hr/LC_MESSAGES/coreutils.mo
-/usr/share/locale/hr/LC_TIME/coreutils.mo
-/usr/share/locale/hu/LC_MESSAGES/coreutils.mo
-/usr/share/locale/hu/LC_TIME/coreutils.mo
-/usr/share/locale/ia/LC_MESSAGES/coreutils.mo
-/usr/share/locale/ia/LC_TIME/coreutils.mo
-/usr/share/locale/id/LC_MESSAGES/coreutils.mo
-/usr/share/locale/id/LC_TIME/coreutils.mo
-/usr/share/locale/it/LC_MESSAGES/coreutils.mo
-/usr/share/locale/it/LC_TIME/coreutils.mo
-/usr/share/locale/ja/LC_MESSAGES/coreutils.mo
-/usr/share/locale/ja/LC_TIME/coreutils.mo
-/usr/share/locale/kk/LC_MESSAGES/coreutils.mo
-/usr/share/locale/kk/LC_TIME/coreutils.mo
-/usr/share/locale/ko/LC_MESSAGES/coreutils.mo
-/usr/share/locale/ko/LC_TIME/coreutils.mo
-/usr/share/locale/lg/LC_MESSAGES/coreutils.mo
-/usr/share/locale/lg/LC_TIME/coreutils.mo
-/usr/share/locale/lt/LC_MESSAGES/coreutils.mo
-/usr/share/locale/lt/LC_TIME/coreutils.mo
-/usr/share/locale/ms/LC_MESSAGES/coreutils.mo
-/usr/share/locale/ms/LC_TIME/coreutils.mo
-/usr/share/locale/nb/LC_MESSAGES/coreutils.mo
-/usr/share/locale/nb/LC_TIME/coreutils.mo
-/usr/share/locale/nl/LC_MESSAGES/coreutils.mo
-/usr/share/locale/nl/LC_TIME/coreutils.mo
-/usr/share/locale/pl/LC_MESSAGES/coreutils.mo
-/usr/share/locale/pl/LC_TIME/coreutils.mo
-/usr/share/locale/pt/LC_MESSAGES/coreutils.mo
-/usr/share/locale/pt/LC_TIME/coreutils.mo
-/usr/share/locale/pt_BR/LC_MESSAGES/coreutils.mo
-/usr/share/locale/pt_BR/LC_TIME/coreutils.mo
-/usr/share/locale/ro/LC_MESSAGES/coreutils.mo
-/usr/share/locale/ro/LC_TIME/coreutils.mo
-/usr/share/locale/ru/LC_MESSAGES/coreutils.mo
-/usr/share/locale/ru/LC_TIME/coreutils.mo
-/usr/share/locale/sk/LC_MESSAGES/coreutils.mo
-/usr/share/locale/sk/LC_TIME/coreutils.mo
-/usr/share/locale/sl/LC_MESSAGES/coreutils.mo
-/usr/share/locale/sl/LC_TIME/coreutils.mo
-/usr/share/locale/sr/LC_MESSAGES/coreutils.mo
-/usr/share/locale/sr/LC_TIME/coreutils.mo
-/usr/share/locale/sv/LC_MESSAGES/coreutils.mo
-/usr/share/locale/sv/LC_TIME/coreutils.mo
-/usr/share/locale/tr/LC_MESSAGES/coreutils.mo
-/usr/share/locale/tr/LC_TIME/coreutils.mo
-/usr/share/locale/uk/LC_MESSAGES/coreutils.mo
-/usr/share/locale/uk/LC_TIME/coreutils.mo
-/usr/share/locale/vi/LC_MESSAGES/coreutils.mo
-/usr/share/locale/vi/LC_TIME/coreutils.mo
-/usr/share/locale/zh_CN/LC_MESSAGES/coreutils.mo
-/usr/share/locale/zh_CN/LC_TIME/coreutils.mo
-/usr/share/locale/zh_TW/LC_MESSAGES/coreutils.mo
-/usr/share/locale/zh_TW/LC_TIME/coreutils.mo
 /usr/share/man/man1/b2sum.1.gz
 /usr/share/man/man1/base32.1.gz
 /usr/share/man/man1/base64.1.gz

@@ -22,7 +22,8 @@ Source0:	https://download-mirror.savannah.gnu.org/releases/attr/attr-%{version}.
             --disable-static  \
             --sysconfdir=/etc \
             --docdir=/usr/share/doc/attr \
-            --with-pkg-config-libdir=/usr/lib/pkgconfig
+            --with-pkg-config-libdir=/usr/lib/pkgconfig \
+	    --disable-nls
 make %{?_smp_mflags}
 #make check
 
@@ -47,16 +48,6 @@ find %{buildroot} -type f -name '*.la' -delete || die
 /usr/share/doc/attr/COPYING
 /usr/share/doc/attr/COPYING.LGPL
 /usr/share/doc/attr/PORTING
-/usr/share/locale/cs/LC_MESSAGES/attr.mo
-/usr/share/locale/de/LC_MESSAGES/attr.mo
-/usr/share/locale/en@boldquot/LC_MESSAGES/attr.mo
-/usr/share/locale/en@quot/LC_MESSAGES/attr.mo
-/usr/share/locale/es/LC_MESSAGES/attr.mo
-/usr/share/locale/fr/LC_MESSAGES/attr.mo
-/usr/share/locale/gl/LC_MESSAGES/attr.mo
-/usr/share/locale/nl/LC_MESSAGES/attr.mo
-/usr/share/locale/pl/LC_MESSAGES/attr.mo
-/usr/share/locale/sv/LC_MESSAGES/attr.mo
 /usr/share/man/man1/attr.1.gz
 /usr/share/man/man1/getfattr.1.gz
 /usr/share/man/man1/setfattr.1.gz

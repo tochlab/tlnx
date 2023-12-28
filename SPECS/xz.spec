@@ -21,7 +21,8 @@ XZ utils
 	    --libdir=/usr/lib \
             --disable-static \
             --docdir=/usr/share/doc/xz \
-            --with-pkg-config-libdir=/usr/lib/pkgconfig
+            --with-pkg-config-libdir=/usr/lib/pkgconfig \
+	    --disable-nls
 
 make %{?_smp_mflags}
 #make check
@@ -94,40 +95,6 @@ find %{buildroot} -type f -name '*.la' -delete || die
 /usr/share/doc/xz/history.txt
 /usr/share/doc/xz/lzma-file-format.txt
 /usr/share/doc/xz/xz-file-format.txt
-/usr/share/locale/cs/LC_MESSAGES/xz.mo
-/usr/share/locale/da/LC_MESSAGES/xz.mo
-/usr/share/locale/de/LC_MESSAGES/xz.mo
-/usr/share/locale/fi/LC_MESSAGES/xz.mo
-/usr/share/locale/fr/LC_MESSAGES/xz.mo
-/usr/share/locale/hu/LC_MESSAGES/xz.mo
-/usr/share/locale/it/LC_MESSAGES/xz.mo
-/usr/share/locale/pl/LC_MESSAGES/xz.mo
-/usr/share/locale/pt_BR/LC_MESSAGES/xz.mo
-/usr/share/locale/vi/LC_MESSAGES/xz.mo
-/usr/share/locale/zh_CN/LC_MESSAGES/xz.mo
-/usr/share/locale/zh_TW/LC_MESSAGES/xz.mo
-/usr/share/man/de/man1/lzcat.1.gz
-/usr/share/man/de/man1/lzcmp.1.gz
-/usr/share/man/de/man1/lzdiff.1.gz
-/usr/share/man/de/man1/lzegrep.1.gz
-/usr/share/man/de/man1/lzfgrep.1.gz
-/usr/share/man/de/man1/lzgrep.1.gz
-/usr/share/man/de/man1/lzless.1.gz
-/usr/share/man/de/man1/lzma.1.gz
-/usr/share/man/de/man1/lzmadec.1.gz
-/usr/share/man/de/man1/lzmore.1.gz
-/usr/share/man/de/man1/unlzma.1.gz
-/usr/share/man/de/man1/unxz.1.gz
-/usr/share/man/de/man1/xz.1.gz
-/usr/share/man/de/man1/xzcat.1.gz
-/usr/share/man/de/man1/xzcmp.1.gz
-/usr/share/man/de/man1/xzdec.1.gz
-/usr/share/man/de/man1/xzdiff.1.gz
-/usr/share/man/de/man1/xzegrep.1.gz
-/usr/share/man/de/man1/xzfgrep.1.gz
-/usr/share/man/de/man1/xzgrep.1.gz
-/usr/share/man/de/man1/xzless.1.gz
-/usr/share/man/de/man1/xzmore.1.gz
 /usr/share/man/man1/lzcat.1.gz
 /usr/share/man/man1/lzcmp.1.gz
 /usr/share/man/man1/lzdiff.1.gz

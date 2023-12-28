@@ -21,7 +21,8 @@ Source0:	https://mirror.tochlab.net/pub/gnu/gettext/gettext-%{version}.tar.gz
             --disable-static \
             --docdir=/usr/share/doc/gettext \
             --datarootdir=/usr/share/gettext \
-	    --disable-csharp
+	    --disable-csharp \
+	    --disable-nls
 make %{?_smp_mflags}
 
 %install
@@ -1832,84 +1833,6 @@ find %{buildroot} -type f -name '*.la' -delete || die
 /usr/share/gettext/config.rpath
 /usr/share/gettext/gettext.h
 /usr/share/gettext/javaversion.class
-/usr/share/gettext/locale/ast/LC_MESSAGES/gettext-runtime.mo
-/usr/share/gettext/locale/be/LC_MESSAGES/gettext-runtime.mo
-/usr/share/gettext/locale/be/LC_MESSAGES/gettext-tools.mo
-/usr/share/gettext/locale/bg/LC_MESSAGES/gettext-runtime.mo
-/usr/share/gettext/locale/bg/LC_MESSAGES/gettext-tools.mo
-/usr/share/gettext/locale/ca/LC_MESSAGES/gettext-runtime.mo
-/usr/share/gettext/locale/ca/LC_MESSAGES/gettext-tools.mo
-/usr/share/gettext/locale/cs/LC_MESSAGES/gettext-runtime.mo
-/usr/share/gettext/locale/cs/LC_MESSAGES/gettext-tools.mo
-/usr/share/gettext/locale/da/LC_MESSAGES/gettext-runtime.mo
-/usr/share/gettext/locale/da/LC_MESSAGES/gettext-tools.mo
-/usr/share/gettext/locale/de/LC_MESSAGES/gettext-runtime.mo
-/usr/share/gettext/locale/de/LC_MESSAGES/gettext-tools.mo
-/usr/share/gettext/locale/el/LC_MESSAGES/gettext-runtime.mo
-/usr/share/gettext/locale/el/LC_MESSAGES/gettext-tools.mo
-/usr/share/gettext/locale/en@boldquot/LC_MESSAGES/gettext-runtime.mo
-/usr/share/gettext/locale/en@boldquot/LC_MESSAGES/gettext-tools.mo
-/usr/share/gettext/locale/en@quot/LC_MESSAGES/gettext-runtime.mo
-/usr/share/gettext/locale/en@quot/LC_MESSAGES/gettext-tools.mo
-/usr/share/gettext/locale/eo/LC_MESSAGES/gettext-runtime.mo
-/usr/share/gettext/locale/es/LC_MESSAGES/gettext-runtime.mo
-/usr/share/gettext/locale/es/LC_MESSAGES/gettext-tools.mo
-/usr/share/gettext/locale/et/LC_MESSAGES/gettext-runtime.mo
-/usr/share/gettext/locale/et/LC_MESSAGES/gettext-tools.mo
-/usr/share/gettext/locale/eu/LC_MESSAGES/gettext-tools.mo
-/usr/share/gettext/locale/fi/LC_MESSAGES/gettext-runtime.mo
-/usr/share/gettext/locale/fi/LC_MESSAGES/gettext-tools.mo
-/usr/share/gettext/locale/fr/LC_MESSAGES/gettext-runtime.mo
-/usr/share/gettext/locale/fr/LC_MESSAGES/gettext-tools.mo
-/usr/share/gettext/locale/ga/LC_MESSAGES/gettext-runtime.mo
-/usr/share/gettext/locale/gl/LC_MESSAGES/gettext-runtime.mo
-/usr/share/gettext/locale/gl/LC_MESSAGES/gettext-tools.mo
-/usr/share/gettext/locale/hr/LC_MESSAGES/gettext-runtime.mo
-/usr/share/gettext/locale/hu/LC_MESSAGES/gettext-runtime.mo
-/usr/share/gettext/locale/id/LC_MESSAGES/gettext-runtime.mo
-/usr/share/gettext/locale/id/LC_MESSAGES/gettext-tools.mo
-/usr/share/gettext/locale/it/LC_MESSAGES/gettext-runtime.mo
-/usr/share/gettext/locale/it/LC_MESSAGES/gettext-tools.mo
-/usr/share/gettext/locale/ja/LC_MESSAGES/gettext-runtime.mo
-/usr/share/gettext/locale/ja/LC_MESSAGES/gettext-tools.mo
-/usr/share/gettext/locale/ko/LC_MESSAGES/gettext-runtime.mo
-/usr/share/gettext/locale/ko/LC_MESSAGES/gettext-tools.mo
-/usr/share/gettext/locale/nb/LC_MESSAGES/gettext-runtime.mo
-/usr/share/gettext/locale/nb/LC_MESSAGES/gettext-tools.mo
-/usr/share/gettext/locale/nl/LC_MESSAGES/gettext-runtime.mo
-/usr/share/gettext/locale/nl/LC_MESSAGES/gettext-tools.mo
-/usr/share/gettext/locale/nn/LC_MESSAGES/gettext-runtime.mo
-/usr/share/gettext/locale/nn/LC_MESSAGES/gettext-tools.mo
-/usr/share/gettext/locale/pa/LC_MESSAGES/gettext-tools.mo
-/usr/share/gettext/locale/pl/LC_MESSAGES/gettext-runtime.mo
-/usr/share/gettext/locale/pl/LC_MESSAGES/gettext-tools.mo
-/usr/share/gettext/locale/pt/LC_MESSAGES/gettext-runtime.mo
-/usr/share/gettext/locale/pt/LC_MESSAGES/gettext-tools.mo
-/usr/share/gettext/locale/pt_BR/LC_MESSAGES/gettext-runtime.mo
-/usr/share/gettext/locale/pt_BR/LC_MESSAGES/gettext-tools.mo
-/usr/share/gettext/locale/ro/LC_MESSAGES/gettext-runtime.mo
-/usr/share/gettext/locale/ro/LC_MESSAGES/gettext-tools.mo
-/usr/share/gettext/locale/ru/LC_MESSAGES/gettext-runtime.mo
-/usr/share/gettext/locale/ru/LC_MESSAGES/gettext-tools.mo
-/usr/share/gettext/locale/sk/LC_MESSAGES/gettext-runtime.mo
-/usr/share/gettext/locale/sk/LC_MESSAGES/gettext-tools.mo
-/usr/share/gettext/locale/sl/LC_MESSAGES/gettext-runtime.mo
-/usr/share/gettext/locale/sl/LC_MESSAGES/gettext-tools.mo
-/usr/share/gettext/locale/sr/LC_MESSAGES/gettext-runtime.mo
-/usr/share/gettext/locale/sr/LC_MESSAGES/gettext-tools.mo
-/usr/share/gettext/locale/sv/LC_MESSAGES/gettext-runtime.mo
-/usr/share/gettext/locale/sv/LC_MESSAGES/gettext-tools.mo
-/usr/share/gettext/locale/tr/LC_MESSAGES/gettext-runtime.mo
-/usr/share/gettext/locale/tr/LC_MESSAGES/gettext-tools.mo
-/usr/share/gettext/locale/uk/LC_MESSAGES/gettext-runtime.mo
-/usr/share/gettext/locale/uk/LC_MESSAGES/gettext-tools.mo
-/usr/share/gettext/locale/vi/LC_MESSAGES/gettext-runtime.mo
-/usr/share/gettext/locale/vi/LC_MESSAGES/gettext-tools.mo
-/usr/share/gettext/locale/zh_CN/LC_MESSAGES/gettext-runtime.mo
-/usr/share/gettext/locale/zh_CN/LC_MESSAGES/gettext-tools.mo
-/usr/share/gettext/locale/zh_HK/LC_MESSAGES/gettext-runtime.mo
-/usr/share/gettext/locale/zh_TW/LC_MESSAGES/gettext-runtime.mo
-/usr/share/gettext/locale/zh_TW/LC_MESSAGES/gettext-tools.mo
 /usr/share/gettext/msgunfmt.tcl
 /usr/share/gettext/po/Makefile.in.in
 /usr/share/gettext/po/Makevars.template

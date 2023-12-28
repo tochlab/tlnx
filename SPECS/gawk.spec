@@ -16,7 +16,7 @@ Source0:	https://ftpmirror.gnu.org/gnu/gawk/gawk-%{version}.tar.gz
 %setup -q
 
 %build
-%configure --prefix=/usr --libdir=/usr/lib
+%configure --prefix=/usr --libdir=/usr/lib --disable-nls
 make %{?_smp_mflags}
 
 %install
@@ -75,24 +75,6 @@ rm -rf $RPM_BUILD_ROOT/usr/share/info/dir
 /usr/share/info/gawk.info.gz
 /usr/share/info/gawkinet.info.gz
 /usr/share/info/gawkworkflow.info.gz
-/usr/share/locale/ca/LC_MESSAGES/gawk.mo
-/usr/share/locale/da/LC_MESSAGES/gawk.mo
-/usr/share/locale/de/LC_MESSAGES/gawk.mo
-/usr/share/locale/es/LC_MESSAGES/gawk.mo
-/usr/share/locale/fi/LC_MESSAGES/gawk.mo
-/usr/share/locale/fr/LC_MESSAGES/gawk.mo
-/usr/share/locale/id/LC_MESSAGES/gawk.mo
-/usr/share/locale/it/LC_MESSAGES/gawk.mo
-/usr/share/locale/ja/LC_MESSAGES/gawk.mo
-/usr/share/locale/ko/LC_MESSAGES/gawk.mo
-/usr/share/locale/ms/LC_MESSAGES/gawk.mo
-/usr/share/locale/nl/LC_MESSAGES/gawk.mo
-/usr/share/locale/pl/LC_MESSAGES/gawk.mo
-/usr/share/locale/pt/LC_MESSAGES/gawk.mo
-/usr/share/locale/pt_BR/LC_MESSAGES/gawk.mo
-/usr/share/locale/sv/LC_MESSAGES/gawk.mo
-/usr/share/locale/vi/LC_MESSAGES/gawk.mo
-/usr/share/locale/zh_CN/LC_MESSAGES/gawk.mo
 /usr/share/man/man1/gawk.1.gz
 /usr/share/man/man3/filefuncs.3am.gz
 /usr/share/man/man3/fnmatch.3am.gz
@@ -106,7 +88,5 @@ rm -rf $RPM_BUILD_ROOT/usr/share/info/dir
 /usr/share/man/man3/rwarray.3am.gz
 /usr/share/man/man3/time.3am.gz
 /usr/share/awk/isnumeric.awk
-/usr/share/locale/bg/LC_MESSAGES/gawk.mo
-/usr/share/locale/sr/LC_MESSAGES/gawk.mo
 
 %changelog

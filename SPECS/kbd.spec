@@ -16,7 +16,7 @@ Source0:	https://mirrors.edge.kernel.org/pub/linux/utils/kbd/kbd-%{version}.tar.
 %setup -q
 
 %build
-%configure --prefix=/usr --disable-vlock
+%configure --prefix=/usr --disable-vlock --disable-nls
 make %{?_smp_mflags}
 
 %install
@@ -601,25 +601,6 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/keymaps/sun/sunt5-uk.map.gz
 /usr/share/keymaps/sun/sunt5-us-cz.map.gz
 /usr/share/keymaps/sun/sunt6-uk.map.gz
-/usr/share/locale/cs/LC_MESSAGES/kbd.mo
-/usr/share/locale/da/LC_MESSAGES/kbd.mo
-/usr/share/locale/de/LC_MESSAGES/kbd.mo
-/usr/share/locale/el/LC_MESSAGES/kbd.mo
-/usr/share/locale/eo/LC_MESSAGES/kbd.mo
-/usr/share/locale/es/LC_MESSAGES/kbd.mo
-/usr/share/locale/fr/LC_MESSAGES/kbd.mo
-/usr/share/locale/gr/LC_MESSAGES/kbd.mo
-/usr/share/locale/id/LC_MESSAGES/kbd.mo
-/usr/share/locale/it/LC_MESSAGES/kbd.mo
-/usr/share/locale/nl/LC_MESSAGES/kbd.mo
-/usr/share/locale/pl/LC_MESSAGES/kbd.mo
-/usr/share/locale/ro/LC_MESSAGES/kbd.mo
-/usr/share/locale/ru/LC_MESSAGES/kbd.mo
-/usr/share/locale/sv/LC_MESSAGES/kbd.mo
-/usr/share/locale/tr/LC_MESSAGES/kbd.mo
-/usr/share/locale/uk/LC_MESSAGES/kbd.mo
-/usr/share/locale/vi/LC_MESSAGES/kbd.mo
-/usr/share/locale/zh_CN/LC_MESSAGES/kbd.mo
 /usr/share/man/man1/chvt.1.gz
 /usr/share/man/man1/deallocvt.1.gz
 /usr/share/man/man1/dumpkeys.1.gz

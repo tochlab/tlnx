@@ -16,7 +16,7 @@ Source0:	https://sourceware.org/elfutils/ftp/%{version}/elfutils-%{version}.tar.
 %setup -q
 
 %build
-./configure --prefix=/usr --disable-libdebuginfod --disable-debuginfod --with-pkg-config-libdir=/usr/lib/pkgconfig
+./configure --prefix=/usr --disable-libdebuginfod --disable-debuginfod --with-pkg-config-libdir=/usr/lib/pkgconfig --disable-nls
 make %{?_smp_mflags}
 
 %install
@@ -66,13 +66,6 @@ rm -rf $RPM_BUILD_ROOT
 /usr/lib/libelf.so.1
 /usr/lib/pkgconfig/libdw.pc
 /usr/lib/pkgconfig/libelf.pc
-/usr/share/locale/de/LC_MESSAGES/elfutils.mo
-/usr/share/locale/en@boldquot/LC_MESSAGES/elfutils.mo
-/usr/share/locale/en@quot/LC_MESSAGES/elfutils.mo
-/usr/share/locale/es/LC_MESSAGES/elfutils.mo
-/usr/share/locale/ja/LC_MESSAGES/elfutils.mo
-/usr/share/locale/pl/LC_MESSAGES/elfutils.mo
-/usr/share/locale/uk/LC_MESSAGES/elfutils.mo
 /usr/share/man/man1/eu-elfclassify.1.gz
 /usr/share/man/man1/eu-readelf.1.gz
 /usr/share/man/man3/elf_begin.3.gz

@@ -23,7 +23,8 @@ access control list utilities, libraries and headers
             --disable-static      \
             --libexecdir=/usr/lib \
             --docdir=/usr/share/doc/acl \
-            --with-pkg-config-libdir=/usr/lib/pkgconfig
+            --with-pkg-config-libdir=/usr/lib/pkgconfig \
+	    --disable-nls
 
 make %{?_smp_mflags}
 
@@ -48,14 +49,6 @@ find %{buildroot} -type f -name '*.la' -delete || die
 /usr/share/doc/acl/PORTING
 /usr/share/doc/acl/extensions.txt
 /usr/share/doc/acl/libacl.txt
-/usr/share/locale/de/LC_MESSAGES/acl.mo
-/usr/share/locale/en@boldquot/LC_MESSAGES/acl.mo
-/usr/share/locale/en@quot/LC_MESSAGES/acl.mo
-/usr/share/locale/es/LC_MESSAGES/acl.mo
-/usr/share/locale/fr/LC_MESSAGES/acl.mo
-/usr/share/locale/gl/LC_MESSAGES/acl.mo
-/usr/share/locale/pl/LC_MESSAGES/acl.mo
-/usr/share/locale/sv/LC_MESSAGES/acl.mo
 /usr/share/man/man1/chacl.1.gz
 /usr/share/man/man1/getfacl.1.gz
 /usr/share/man/man1/setfacl.1.gz

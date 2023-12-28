@@ -26,7 +26,8 @@ cd       build
              --disable-multilib       \
              --with-system-zlib       \
              --libdir=/usr/lib        \
-	     --libexecdir=/usr/lib
+	     --libexecdir=/usr/lib \
+	     --disbale-nls
 
 #--bindir=/usr/x86_64-pc-linux-gnu/gcc-bin/11.2.1 --includedir=/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.1/include --datadir=/usr/share/gcc-data/x86_64-pc-linux-gnu/11.2.1 --mandir=/usr/share/gcc-data/x86_64-pc-linux-gnu/11.2.1/man --infodir=/usr/share/gcc-data/x86_64-pc-linux-gnu/11.2.1/info --with-gxx-include-dir=/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.1/include/g++-v11 --with-python-dir=/share/gcc-data/x86_64-pc-linux-gnu/11.2.1/python
 
@@ -1562,48 +1563,6 @@ ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/%{version}/liblto_plugin.so \
    /usr/share/gcc-13.2.0/python/libstdcxx/v6/__init__.py
    /usr/share/gcc-13.2.0/python/libstdcxx/v6/printers.py
    /usr/share/gcc-13.2.0/python/libstdcxx/v6/xmethods.py
-   /usr/share/locale/be/LC_MESSAGES/cpplib.mo
-   /usr/share/locale/be/LC_MESSAGES/gcc.mo
-   /usr/share/locale/ca/LC_MESSAGES/cpplib.mo
-   /usr/share/locale/da/LC_MESSAGES/cpplib.mo
-   /usr/share/locale/da/LC_MESSAGES/gcc.mo
-   /usr/share/locale/de/LC_MESSAGES/cpplib.mo
-   /usr/share/locale/de/LC_MESSAGES/gcc.mo
-   /usr/share/locale/de/LC_MESSAGES/libstdc++.mo
-   /usr/share/locale/el/LC_MESSAGES/cpplib.mo
-   /usr/share/locale/el/LC_MESSAGES/gcc.mo
-   /usr/share/locale/eo/LC_MESSAGES/cpplib.mo
-   /usr/share/locale/es/LC_MESSAGES/cpplib.mo
-   /usr/share/locale/es/LC_MESSAGES/gcc.mo
-   /usr/share/locale/fi/LC_MESSAGES/cpplib.mo
-   /usr/share/locale/fi/LC_MESSAGES/gcc.mo
-   /usr/share/locale/fr/LC_MESSAGES/cpplib.mo
-   /usr/share/locale/fr/LC_MESSAGES/gcc.mo
-   /usr/share/locale/fr/LC_MESSAGES/libstdc++.mo
-   /usr/share/locale/hr/LC_MESSAGES/gcc.mo
-   /usr/share/locale/id/LC_MESSAGES/cpplib.mo
-   /usr/share/locale/id/LC_MESSAGES/gcc.mo
-   /usr/share/locale/ja/LC_MESSAGES/cpplib.mo
-   /usr/share/locale/ja/LC_MESSAGES/gcc.mo
-   /usr/share/locale/nl/LC_MESSAGES/cpplib.mo
-   /usr/share/locale/nl/LC_MESSAGES/gcc.mo
-   /usr/share/locale/pt_BR/LC_MESSAGES/cpplib.mo
-   /usr/share/locale/ru/LC_MESSAGES/cpplib.mo
-   /usr/share/locale/ru/LC_MESSAGES/gcc.mo
-   /usr/share/locale/sr/LC_MESSAGES/cpplib.mo
-   /usr/share/locale/sr/LC_MESSAGES/gcc.mo
-   /usr/share/locale/sv/LC_MESSAGES/cpplib.mo
-   /usr/share/locale/sv/LC_MESSAGES/gcc.mo
-   /usr/share/locale/tr/LC_MESSAGES/cpplib.mo
-   /usr/share/locale/tr/LC_MESSAGES/gcc.mo
-   /usr/share/locale/uk/LC_MESSAGES/cpplib.mo
-   /usr/share/locale/uk/LC_MESSAGES/gcc.mo
-   /usr/share/locale/vi/LC_MESSAGES/cpplib.mo
-   /usr/share/locale/vi/LC_MESSAGES/gcc.mo
-   /usr/share/locale/zh_CN/LC_MESSAGES/cpplib.mo
-   /usr/share/locale/zh_CN/LC_MESSAGES/gcc.mo
-   /usr/share/locale/zh_TW/LC_MESSAGES/cpplib.mo
-   /usr/share/locale/zh_TW/LC_MESSAGES/gcc.mo
    /usr/share/man/man1/cpp.1.gz
    /usr/share/man/man1/g++.1.gz
    /usr/share/man/man1/gcc.1.gz
@@ -1674,7 +1633,5 @@ ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/%{version}/liblto_plugin.so \
    /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.0/plugin/include/value-range-pretty-print.h
    /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.0/plugin/include/value-range-storage.h
    /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.0/plugin/include/value-relation.h
-   /usr/share/locale/ka/LC_MESSAGES/cpplib.mo
-   /usr/share/locale/ro/LC_MESSAGES/cpplib.mo
 
 %changelog

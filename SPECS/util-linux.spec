@@ -32,7 +32,8 @@ Source0:	https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.37/util-l
             --without-systemd    \
             --without-systemdsystemunitdir \
             --disable-raw \
-            --with-pkg-config-libdir=/usr/lib/pkgconfig
+            --with-pkg-config-libdir=/usr/lib/pkgconfig \
+	    --disable-nls
             
 make %{?_smp_mflags}
 
@@ -271,33 +272,6 @@ find %{buildroot} -type f -name '*.la' -delete || die
 /usr/share/bash-completion/completions/whereis
 /usr/share/bash-completion/completions/wipefs
 /usr/share/bash-completion/completions/zramctl
-/usr/share/locale/ca/LC_MESSAGES/util-linux.mo
-/usr/share/locale/cs/LC_MESSAGES/util-linux.mo
-/usr/share/locale/da/LC_MESSAGES/util-linux.mo
-/usr/share/locale/de/LC_MESSAGES/util-linux.mo
-/usr/share/locale/es/LC_MESSAGES/util-linux.mo
-/usr/share/locale/et/LC_MESSAGES/util-linux.mo
-/usr/share/locale/eu/LC_MESSAGES/util-linux.mo
-/usr/share/locale/fi/LC_MESSAGES/util-linux.mo
-/usr/share/locale/fr/LC_MESSAGES/util-linux.mo
-/usr/share/locale/gl/LC_MESSAGES/util-linux.mo
-/usr/share/locale/hr/LC_MESSAGES/util-linux.mo
-/usr/share/locale/hu/LC_MESSAGES/util-linux.mo
-/usr/share/locale/id/LC_MESSAGES/util-linux.mo
-/usr/share/locale/it/LC_MESSAGES/util-linux.mo
-/usr/share/locale/ja/LC_MESSAGES/util-linux.mo
-/usr/share/locale/nl/LC_MESSAGES/util-linux.mo
-/usr/share/locale/pl/LC_MESSAGES/util-linux.mo
-/usr/share/locale/pt/LC_MESSAGES/util-linux.mo
-/usr/share/locale/pt_BR/LC_MESSAGES/util-linux.mo
-/usr/share/locale/ru/LC_MESSAGES/util-linux.mo
-/usr/share/locale/sl/LC_MESSAGES/util-linux.mo
-/usr/share/locale/sv/LC_MESSAGES/util-linux.mo
-/usr/share/locale/tr/LC_MESSAGES/util-linux.mo
-/usr/share/locale/uk/LC_MESSAGES/util-linux.mo
-/usr/share/locale/vi/LC_MESSAGES/util-linux.mo
-/usr/share/locale/zh_CN/LC_MESSAGES/util-linux.mo
-/usr/share/locale/zh_TW/LC_MESSAGES/util-linux.mo
 /usr/share/man/man1/cal.1.gz
 /usr/share/man/man1/choom.1.gz
 /usr/share/man/man1/chrt.1.gz

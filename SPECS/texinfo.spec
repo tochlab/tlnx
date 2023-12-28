@@ -18,7 +18,7 @@ Patch0:	texinfo-6.8-undo-gnulib-nonnul.patch
 %patch0 -p1
 
 %build
-%configure --prefix=/usr --libdir=/usr/lib --disable-static
+%configure --prefix=/usr --libdir=/usr/lib --disable-static --disable-nls
 make %{?_smp_mflags}
 
 %install
@@ -45,56 +45,6 @@ find %{buildroot} -type f -name '*.la' -delete || die
 /usr/share/info/texinfo.info-2.gz
 /usr/share/info/texinfo.info-3.gz
 /usr/share/info/texinfo.info.gz
-/usr/share/locale/ca.us-ascii/LC_MESSAGES/texinfo_document.mo
-/usr/share/locale/ca/LC_MESSAGES/texinfo.mo
-/usr/share/locale/ca/LC_MESSAGES/texinfo_document.mo
-/usr/share/locale/cs/LC_MESSAGES/texinfo.mo
-/usr/share/locale/cs/LC_MESSAGES/texinfo_document.mo
-/usr/share/locale/da/LC_MESSAGES/texinfo.mo
-/usr/share/locale/de.us-ascii/LC_MESSAGES/texinfo_document.mo
-/usr/share/locale/de/LC_MESSAGES/texinfo.mo
-/usr/share/locale/de/LC_MESSAGES/texinfo_document.mo
-/usr/share/locale/el/LC_MESSAGES/texinfo.mo
-/usr/share/locale/eo/LC_MESSAGES/texinfo.mo
-/usr/share/locale/eo/LC_MESSAGES/texinfo_document.mo
-/usr/share/locale/es/LC_MESSAGES/texinfo.mo
-/usr/share/locale/es/LC_MESSAGES/texinfo_document.mo
-/usr/share/locale/fi/LC_MESSAGES/texinfo.mo
-/usr/share/locale/fr/LC_MESSAGES/texinfo.mo
-/usr/share/locale/fr/LC_MESSAGES/texinfo_document.mo
-/usr/share/locale/he/LC_MESSAGES/texinfo.mo
-/usr/share/locale/hr/LC_MESSAGES/texinfo.mo
-/usr/share/locale/hr/LC_MESSAGES/texinfo_document.mo
-/usr/share/locale/hu/LC_MESSAGES/texinfo.mo
-/usr/share/locale/hu/LC_MESSAGES/texinfo_document.mo
-/usr/share/locale/id/LC_MESSAGES/texinfo.mo
-/usr/share/locale/it/LC_MESSAGES/texinfo.mo
-/usr/share/locale/it/LC_MESSAGES/texinfo_document.mo
-/usr/share/locale/ja/LC_MESSAGES/texinfo.mo
-/usr/share/locale/nb/LC_MESSAGES/texinfo.mo
-/usr/share/locale/nl/LC_MESSAGES/texinfo.mo
-/usr/share/locale/nl/LC_MESSAGES/texinfo_document.mo
-/usr/share/locale/no.us-ascii/LC_MESSAGES/texinfo_document.mo
-/usr/share/locale/pl/LC_MESSAGES/texinfo.mo
-/usr/share/locale/pl/LC_MESSAGES/texinfo_document.mo
-/usr/share/locale/pt.us-ascii/LC_MESSAGES/texinfo_document.mo
-/usr/share/locale/pt/LC_MESSAGES/texinfo.mo
-/usr/share/locale/pt/LC_MESSAGES/texinfo_document.mo
-/usr/share/locale/pt_BR.us-ascii/LC_MESSAGES/texinfo_document.mo
-/usr/share/locale/pt_BR/LC_MESSAGES/texinfo.mo
-/usr/share/locale/pt_BR/LC_MESSAGES/texinfo_document.mo
-/usr/share/locale/ro/LC_MESSAGES/texinfo.mo
-/usr/share/locale/ru/LC_MESSAGES/texinfo.mo
-/usr/share/locale/rw/LC_MESSAGES/texinfo.mo
-/usr/share/locale/sl/LC_MESSAGES/texinfo.mo
-/usr/share/locale/sv/LC_MESSAGES/texinfo.mo
-/usr/share/locale/sv/LC_MESSAGES/texinfo_document.mo
-/usr/share/locale/tr/LC_MESSAGES/texinfo.mo
-/usr/share/locale/uk/LC_MESSAGES/texinfo.mo
-/usr/share/locale/uk/LC_MESSAGES/texinfo_document.mo
-/usr/share/locale/vi/LC_MESSAGES/texinfo.mo
-/usr/share/locale/zh_CN/LC_MESSAGES/texinfo.mo
-/usr/share/locale/zh_TW/LC_MESSAGES/texinfo.mo
 /usr/share/man/man1/info.1.gz
 /usr/share/man/man1/install-info.1.gz
 /usr/share/man/man1/makeinfo.1.gz

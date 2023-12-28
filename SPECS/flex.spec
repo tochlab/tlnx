@@ -17,7 +17,7 @@ Source0:	https://github.com/westes/flex/releases/download/v%{version}/flex-%{ver
 sed -i "/math.h/a #include <malloc.h>" src/flexdef.h
 
 %build
-%configure --prefix=/usr --libdir=/usr/lib --docdir=/usr/share/doc/flex
+%configure --prefix=/usr --libdir=/usr/lib --docdir=/usr/share/doc/flex --disable-nls
 make %{?_smp_mflags}
 make check
 
@@ -40,29 +40,6 @@ find %{buildroot} -type f -name '*.la' -delete || die
 /usr/share/doc/flex/NEWS
 /usr/share/doc/flex/ONEWS
 /usr/share/doc/flex/README.md
-/usr/share/locale/ca/LC_MESSAGES/flex.mo
-/usr/share/locale/da/LC_MESSAGES/flex.mo
-/usr/share/locale/de/LC_MESSAGES/flex.mo
-/usr/share/locale/en@boldquot/LC_MESSAGES/flex.mo
-/usr/share/locale/en@quot/LC_MESSAGES/flex.mo
-/usr/share/locale/eo/LC_MESSAGES/flex.mo
-/usr/share/locale/es/LC_MESSAGES/flex.mo
-/usr/share/locale/fi/LC_MESSAGES/flex.mo
-/usr/share/locale/fr/LC_MESSAGES/flex.mo
-/usr/share/locale/ga/LC_MESSAGES/flex.mo
-/usr/share/locale/hr/LC_MESSAGES/flex.mo
-/usr/share/locale/ko/LC_MESSAGES/flex.mo
-/usr/share/locale/nl/LC_MESSAGES/flex.mo
-/usr/share/locale/pl/LC_MESSAGES/flex.mo
-/usr/share/locale/pt_BR/LC_MESSAGES/flex.mo
-/usr/share/locale/ro/LC_MESSAGES/flex.mo
-/usr/share/locale/ru/LC_MESSAGES/flex.mo
-/usr/share/locale/sr/LC_MESSAGES/flex.mo
-/usr/share/locale/sv/LC_MESSAGES/flex.mo
-/usr/share/locale/tr/LC_MESSAGES/flex.mo
-/usr/share/locale/vi/LC_MESSAGES/flex.mo
-/usr/share/locale/zh_CN/LC_MESSAGES/flex.mo
-/usr/share/locale/zh_TW/LC_MESSAGES/flex.mo
 /usr/share/man/man1/flex.1.gz
 /usr/share/info/flex.info-1.gz
 /usr/share/info/flex.info-2.gz

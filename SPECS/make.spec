@@ -16,7 +16,7 @@ Source0:	https://ftpmirror.gnu.org/gnu/make/make-%{version}.tar.gz
 %setup -q
 
 %build
-%configure --prefix=/usr --without-guile
+%configure --prefix=/usr --without-guile --disable-nls
 make %{?_smp_mflags}
 
 %install
@@ -30,35 +30,6 @@ rm -rf $RPM_BUILD_ROOT/usr/share/info/dir
 /usr/share/info/make.info-1.gz
 /usr/share/info/make.info-2.gz
 /usr/share/info/make.info.gz
-/usr/share/locale/be/LC_MESSAGES/make.mo
-/usr/share/locale/bg/LC_MESSAGES/make.mo
-/usr/share/locale/cs/LC_MESSAGES/make.mo
-/usr/share/locale/da/LC_MESSAGES/make.mo
-/usr/share/locale/de/LC_MESSAGES/make.mo
-/usr/share/locale/es/LC_MESSAGES/make.mo
-/usr/share/locale/fi/LC_MESSAGES/make.mo
-/usr/share/locale/fr/LC_MESSAGES/make.mo
-/usr/share/locale/ga/LC_MESSAGES/make.mo
-/usr/share/locale/gl/LC_MESSAGES/make.mo
-/usr/share/locale/he/LC_MESSAGES/make.mo
-/usr/share/locale/hr/LC_MESSAGES/make.mo
-/usr/share/locale/id/LC_MESSAGES/make.mo
-/usr/share/locale/it/LC_MESSAGES/make.mo
-/usr/share/locale/ja/LC_MESSAGES/make.mo
-/usr/share/locale/ko/LC_MESSAGES/make.mo
-/usr/share/locale/lt/LC_MESSAGES/make.mo
-/usr/share/locale/nl/LC_MESSAGES/make.mo
-/usr/share/locale/pl/LC_MESSAGES/make.mo
-/usr/share/locale/pt/LC_MESSAGES/make.mo
-/usr/share/locale/pt_BR/LC_MESSAGES/make.mo
-/usr/share/locale/ru/LC_MESSAGES/make.mo
-/usr/share/locale/sr/LC_MESSAGES/make.mo
-/usr/share/locale/sv/LC_MESSAGES/make.mo
-/usr/share/locale/tr/LC_MESSAGES/make.mo
-/usr/share/locale/uk/LC_MESSAGES/make.mo
-/usr/share/locale/vi/LC_MESSAGES/make.mo
-/usr/share/locale/zh_CN/LC_MESSAGES/make.mo
-/usr/share/locale/zh_TW/LC_MESSAGES/make.mo
 /usr/share/man/man1/make.1.gz
 
 

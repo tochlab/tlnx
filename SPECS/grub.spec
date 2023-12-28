@@ -24,7 +24,8 @@ Source0:	https://ftpmirror.gnu.org/gnu/grub/grub-%{version}.tar.gz
             --disable-werror       \
             --disable-grub-mkfont   \
             --disable-grub-themes   \
-            --disable-grub-mount
+            --disable-grub-mount \
+	    --disable-nls
 
 make %{?_smp_mflags}
 
@@ -636,46 +637,6 @@ rm -fr $RPM_BUILD_ROOT/usr/share/man/
 /usr/share/grub/grub-mkconfig_lib
 /usr/share/info/grub-dev.info.gz
 /usr/share/info/grub.info.gz
-/usr/share/locale/ast/LC_MESSAGES/grub.mo
-/usr/share/locale/ca/LC_MESSAGES/grub.mo
-/usr/share/locale/da/LC_MESSAGES/grub.mo
-/usr/share/locale/de/LC_MESSAGES/grub.mo
-/usr/share/locale/de@hebrew/LC_MESSAGES/grub.mo
-/usr/share/locale/de_CH/LC_MESSAGES/grub.mo
-/usr/share/locale/en@arabic/LC_MESSAGES/grub.mo
-/usr/share/locale/en@cyrillic/LC_MESSAGES/grub.mo
-/usr/share/locale/en@greek/LC_MESSAGES/grub.mo
-/usr/share/locale/en@hebrew/LC_MESSAGES/grub.mo
-/usr/share/locale/en@piglatin/LC_MESSAGES/grub.mo
-/usr/share/locale/en@quot/LC_MESSAGES/grub.mo
-/usr/share/locale/eo/LC_MESSAGES/grub.mo
-/usr/share/locale/es/LC_MESSAGES/grub.mo
-/usr/share/locale/fi/LC_MESSAGES/grub.mo
-/usr/share/locale/fr/LC_MESSAGES/grub.mo
-/usr/share/locale/gl/LC_MESSAGES/grub.mo
-/usr/share/locale/hr/LC_MESSAGES/grub.mo
-/usr/share/locale/hu/LC_MESSAGES/grub.mo
-/usr/share/locale/id/LC_MESSAGES/grub.mo
-/usr/share/locale/it/LC_MESSAGES/grub.mo
-/usr/share/locale/ja/LC_MESSAGES/grub.mo
-/usr/share/locale/ko/LC_MESSAGES/grub.mo
-/usr/share/locale/lt/LC_MESSAGES/grub.mo
-/usr/share/locale/nb/LC_MESSAGES/grub.mo
-/usr/share/locale/nl/LC_MESSAGES/grub.mo
-/usr/share/locale/pa/LC_MESSAGES/grub.mo
-/usr/share/locale/pl/LC_MESSAGES/grub.mo
-/usr/share/locale/pt/LC_MESSAGES/grub.mo
-/usr/share/locale/pt_BR/LC_MESSAGES/grub.mo
-/usr/share/locale/ro/LC_MESSAGES/grub.mo
-/usr/share/locale/ru/LC_MESSAGES/grub.mo
-/usr/share/locale/sl/LC_MESSAGES/grub.mo
-/usr/share/locale/sr/LC_MESSAGES/grub.mo
-/usr/share/locale/sv/LC_MESSAGES/grub.mo
-/usr/share/locale/tr/LC_MESSAGES/grub.mo
-/usr/share/locale/uk/LC_MESSAGES/grub.mo
-/usr/share/locale/vi/LC_MESSAGES/grub.mo
-/usr/share/locale/zh_CN/LC_MESSAGES/grub.mo
-/usr/share/locale/zh_TW/LC_MESSAGES/grub.mo
 /etc/grub.d/30_uefi-firmware
 /usr/lib/grub/i386-pc/afsplitter.mod
 /usr/lib/grub/i386-pc/afsplitter.module
@@ -687,6 +648,5 @@ rm -fr $RPM_BUILD_ROOT/usr/share/man/
 /usr/lib/grub/i386-pc/smbios.module
 /usr/share/info/grub.info-1.gz
 /usr/share/info/grub.info-2.gz
-/usr/share/locale/lg/LC_MESSAGES/grub.mo
 
 %changelog

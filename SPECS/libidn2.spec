@@ -20,7 +20,8 @@ Source0:	https://ftpmirror.gnu.org/gnu/libidn/libidn2-%{version}.tar.gz
 	   --disable-gcc-warnings \
            --disable-gtk-doc \
 	   --libdir=/usr/lib \
-	   --with-pkg-config-libdir=/usr/lib/pkgconfig
+	   --with-pkg-config-libdir=/usr/lib/pkgconfig \
+	    --disable-nls
 
 make %{?_smp_mflags}
 
@@ -46,29 +47,6 @@ find %{buildroot} -type f -name '*.la' -delete || die
 /usr/lib/libidn2.so.0
 /usr/lib/libidn2.so.0.3.7
 /usr/lib/pkgconfig/libidn2.pc
-/usr/share/locale/cs/LC_MESSAGES/libidn2.mo
-/usr/share/locale/da/LC_MESSAGES/libidn2.mo
-/usr/share/locale/de/LC_MESSAGES/libidn2.mo
-/usr/share/locale/eo/LC_MESSAGES/libidn2.mo
-/usr/share/locale/es/LC_MESSAGES/libidn2.mo
-/usr/share/locale/fi/LC_MESSAGES/libidn2.mo
-/usr/share/locale/fr/LC_MESSAGES/libidn2.mo
-/usr/share/locale/fur/LC_MESSAGES/libidn2.mo
-/usr/share/locale/hr/LC_MESSAGES/libidn2.mo
-/usr/share/locale/hu/LC_MESSAGES/libidn2.mo
-/usr/share/locale/id/LC_MESSAGES/libidn2.mo
-/usr/share/locale/it/LC_MESSAGES/libidn2.mo
-/usr/share/locale/ja/LC_MESSAGES/libidn2.mo
-/usr/share/locale/nl/LC_MESSAGES/libidn2.mo
-/usr/share/locale/pl/LC_MESSAGES/libidn2.mo
-/usr/share/locale/pt_BR/LC_MESSAGES/libidn2.mo
-/usr/share/locale/ro/LC_MESSAGES/libidn2.mo
-/usr/share/locale/ru/LC_MESSAGES/libidn2.mo
-/usr/share/locale/sr/LC_MESSAGES/libidn2.mo
-/usr/share/locale/sv/LC_MESSAGES/libidn2.mo
-/usr/share/locale/uk/LC_MESSAGES/libidn2.mo
-/usr/share/locale/vi/LC_MESSAGES/libidn2.mo
-/usr/share/locale/zh_CN/LC_MESSAGES/libidn2.mo
 
 %changelog
 

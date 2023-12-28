@@ -28,7 +28,7 @@ sed -i -e 's@#ENCRYPT_METHOD DES@ENCRYPT_METHOD SHA512@' \
 #sed -i 's/1000/999/' etc/useradd
 
 %build
-%configure --sysconfdir=/etc --with-group-name-max-length=32
+%configure --sysconfdir=/etc --with-group-name-max-length=32 --disable-nls
 make %{?_smp_mflags}
 
 
@@ -128,43 +128,5 @@ rm -rf $RPM_BUILD_ROOT
 /usr/sbin/usermod
 /usr/sbin/vigr
 /usr/sbin/vipw
-/usr/share/locale/bs/LC_MESSAGES/shadow.mo
-/usr/share/locale/ca/LC_MESSAGES/shadow.mo
-/usr/share/locale/cs/LC_MESSAGES/shadow.mo
-/usr/share/locale/da/LC_MESSAGES/shadow.mo
-/usr/share/locale/de/LC_MESSAGES/shadow.mo
-/usr/share/locale/dz/LC_MESSAGES/shadow.mo
-/usr/share/locale/el/LC_MESSAGES/shadow.mo
-/usr/share/locale/es/LC_MESSAGES/shadow.mo
-/usr/share/locale/eu/LC_MESSAGES/shadow.mo
-/usr/share/locale/fi/LC_MESSAGES/shadow.mo
-/usr/share/locale/fr/LC_MESSAGES/shadow.mo
-/usr/share/locale/gl/LC_MESSAGES/shadow.mo
-/usr/share/locale/he/LC_MESSAGES/shadow.mo
-/usr/share/locale/hu/LC_MESSAGES/shadow.mo
-/usr/share/locale/id/LC_MESSAGES/shadow.mo
-/usr/share/locale/it/LC_MESSAGES/shadow.mo
-/usr/share/locale/ja/LC_MESSAGES/shadow.mo
-/usr/share/locale/kk/LC_MESSAGES/shadow.mo
-/usr/share/locale/km/LC_MESSAGES/shadow.mo
-/usr/share/locale/ko/LC_MESSAGES/shadow.mo
-/usr/share/locale/nb/LC_MESSAGES/shadow.mo
-/usr/share/locale/ne/LC_MESSAGES/shadow.mo
-/usr/share/locale/nl/LC_MESSAGES/shadow.mo
-/usr/share/locale/nn/LC_MESSAGES/shadow.mo
-/usr/share/locale/pl/LC_MESSAGES/shadow.mo
-/usr/share/locale/pt/LC_MESSAGES/shadow.mo
-/usr/share/locale/pt_BR/LC_MESSAGES/shadow.mo
-/usr/share/locale/ro/LC_MESSAGES/shadow.mo
-/usr/share/locale/ru/LC_MESSAGES/shadow.mo
-/usr/share/locale/sk/LC_MESSAGES/shadow.mo
-/usr/share/locale/sq/LC_MESSAGES/shadow.mo
-/usr/share/locale/sv/LC_MESSAGES/shadow.mo
-/usr/share/locale/tl/LC_MESSAGES/shadow.mo
-/usr/share/locale/tr/LC_MESSAGES/shadow.mo
-/usr/share/locale/uk/LC_MESSAGES/shadow.mo
-/usr/share/locale/vi/LC_MESSAGES/shadow.mo
-/usr/share/locale/zh_CN/LC_MESSAGES/shadow.mo
-/usr/share/locale/zh_TW/LC_MESSAGES/shadow.mo
 
 %changelog

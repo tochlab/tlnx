@@ -37,6 +37,7 @@ cd build
 	     --disable-systemtap \
 	     --disable-nscd \
 	     --disable-timezone-tools \
+	    --disable-nls \
 	     libc_cv_slibdir=/lib
 make %{?_smp_mflags}
 
@@ -55,6 +56,7 @@ rm -rf %{buildroot}/usr/share/info/dir
 mv %{buildroot}/usr/lib/libc.so %{buildroot}/lib
 mv %{buildroot}/usr/lib/libc.a %{buildroot}/lib
 rm -rf %{buildroot}/lib/libnsl.so.1
+rm -fr %{buildroot}/usr/share/locale
 
 %files
 /etc/ld.so.cache
@@ -1454,7 +1456,6 @@ rm -rf %{buildroot}/lib/libnsl.so.1
 /usr/share/info/libc.info-8.gz
 /usr/share/info/libc.info-9.gz
 /usr/share/info/libc.info.gz
-/usr/share/locale/locale.alias
 /var/db/Makefile
 /usr/bin/ld.so
 /usr/include/bits/atomic_wide_counter.h
@@ -1467,43 +1468,6 @@ rm -rf %{buildroot}/lib/libnsl.so.1
 /usr/share/i18n/locales/C
 /usr/share/i18n/locales/ab_GE
 /usr/share/info/libc.info-18.gz
-/usr/share/locale/be/LC_MESSAGES/libc.mo
-/usr/share/locale/bg/LC_MESSAGES/libc.mo
-/usr/share/locale/ca/LC_MESSAGES/libc.mo
-/usr/share/locale/cs/LC_MESSAGES/libc.mo
-/usr/share/locale/da/LC_MESSAGES/libc.mo
-/usr/share/locale/de/LC_MESSAGES/libc.mo
-/usr/share/locale/el/LC_MESSAGES/libc.mo
-/usr/share/locale/en_GB/LC_MESSAGES/libc.mo
-/usr/share/locale/eo/LC_MESSAGES/libc.mo
-/usr/share/locale/es/LC_MESSAGES/libc.mo
-/usr/share/locale/fi/LC_MESSAGES/libc.mo
-/usr/share/locale/fr/LC_MESSAGES/libc.mo
-/usr/share/locale/gl/LC_MESSAGES/libc.mo
-/usr/share/locale/hr/LC_MESSAGES/libc.mo
-/usr/share/locale/hu/LC_MESSAGES/libc.mo
-/usr/share/locale/ia/LC_MESSAGES/libc.mo
-/usr/share/locale/id/LC_MESSAGES/libc.mo
-/usr/share/locale/it/LC_MESSAGES/libc.mo
-/usr/share/locale/ja/LC_MESSAGES/libc.mo
-/usr/share/locale/ko/LC_MESSAGES/libc.mo
-/usr/share/locale/lt/LC_MESSAGES/libc.mo
-/usr/share/locale/nb/LC_MESSAGES/libc.mo
-/usr/share/locale/nl/LC_MESSAGES/libc.mo
-/usr/share/locale/pl/LC_MESSAGES/libc.mo
-/usr/share/locale/pt/LC_MESSAGES/libc.mo
-/usr/share/locale/pt_BR/LC_MESSAGES/libc.mo
-/usr/share/locale/ru/LC_MESSAGES/libc.mo
-/usr/share/locale/rw/LC_MESSAGES/libc.mo
-/usr/share/locale/sk/LC_MESSAGES/libc.mo
-/usr/share/locale/sl/LC_MESSAGES/libc.mo
-/usr/share/locale/sr/LC_MESSAGES/libc.mo
-/usr/share/locale/sv/LC_MESSAGES/libc.mo
-/usr/share/locale/tr/LC_MESSAGES/libc.mo
-/usr/share/locale/uk/LC_MESSAGES/libc.mo
-/usr/share/locale/vi/LC_MESSAGES/libc.mo
-/usr/share/locale/zh_CN/LC_MESSAGES/libc.mo
-/usr/share/locale/zh_TW/LC_MESSAGES/libc.mo
 /usr/include/bits/mman_ext.h
 /usr/include/bits/select-decl.h
 /usr/include/bits/stdio2-decl.h
@@ -1514,6 +1478,4 @@ rm -rf %{buildroot}/lib/libnsl.so.1
 /usr/include/sys/pidfd.h
 /usr/share/i18n/locales/rif_MA
 /usr/share/i18n/locales/syr
-/usr/share/locale/ka/LC_MESSAGES/libc.mo
-/usr/share/locale/ro/LC_MESSAGES/libc.mo
 

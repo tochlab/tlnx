@@ -29,7 +29,8 @@ cd       build
 	     --disable-fuse2fs       \
 	     --without-systemd       \
              --with-systemd-unit-dir=no \
-	     --with-pkg-config-libdir=/usr/lib/pkgconfig
+	     --with-pkg-config-libdir=/usr/lib/pkgconfig \
+	    --disable-nls
 
 make %{?_smp_mflags}
 
@@ -117,27 +118,6 @@ rm -fr $RPM_BUILD_ROOT/usr/lib/systemd
 /usr/sbin/mklost+found
 /usr/share/et/et_c.awk
 /usr/share/et/et_h.awk
-/usr/share/locale/ca/LC_MESSAGES/e2fsprogs.mo
-/usr/share/locale/cs/LC_MESSAGES/e2fsprogs.mo
-/usr/share/locale/da/LC_MESSAGES/e2fsprogs.mo
-/usr/share/locale/de/LC_MESSAGES/e2fsprogs.mo
-/usr/share/locale/eo/LC_MESSAGES/e2fsprogs.mo
-/usr/share/locale/es/LC_MESSAGES/e2fsprogs.mo
-/usr/share/locale/fi/LC_MESSAGES/e2fsprogs.mo
-/usr/share/locale/fr/LC_MESSAGES/e2fsprogs.mo
-/usr/share/locale/hu/LC_MESSAGES/e2fsprogs.mo
-/usr/share/locale/id/LC_MESSAGES/e2fsprogs.mo
-/usr/share/locale/it/LC_MESSAGES/e2fsprogs.mo
-/usr/share/locale/ms/LC_MESSAGES/e2fsprogs.mo
-/usr/share/locale/nl/LC_MESSAGES/e2fsprogs.mo
-/usr/share/locale/pl/LC_MESSAGES/e2fsprogs.mo
-/usr/share/locale/pt/LC_MESSAGES/e2fsprogs.mo
-/usr/share/locale/sr/LC_MESSAGES/e2fsprogs.mo
-/usr/share/locale/sv/LC_MESSAGES/e2fsprogs.mo
-/usr/share/locale/tr/LC_MESSAGES/e2fsprogs.mo
-/usr/share/locale/uk/LC_MESSAGES/e2fsprogs.mo
-/usr/share/locale/vi/LC_MESSAGES/e2fsprogs.mo
-/usr/share/locale/zh_CN/LC_MESSAGES/e2fsprogs.mo
 /usr/share/man/man1/chattr.1.gz
 /usr/share/man/man1/compile_et.1.gz
 /usr/share/man/man1/lsattr.1.gz

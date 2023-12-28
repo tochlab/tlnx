@@ -19,7 +19,8 @@ Source0:	https://ftpmirror.gnu.org/gnu/gdbm/gdbm-%{version}.tar.gz
 %configure --prefix=/usr    \
 	    --libdir=/usr/lib \
             --disable-static \
-            --enable-libgdbm-compat
+            --enable-libgdbm-compat \
+	    --disable-nls
 make %{?_smp_mflags}
 
 %install
@@ -52,20 +53,6 @@ find %{buildroot} -type f -name '*.la' -delete || die
 /usr/share/man/man1/gdbm_load.1.gz
 /usr/share/man/man1/gdbmtool.1.gz
 /usr/share/man/man3/gdbm.3.gz
-/usr/share/locale/da/LC_MESSAGES/gdbm.mo
-/usr/share/locale/de/LC_MESSAGES/gdbm.mo
-/usr/share/locale/eo/LC_MESSAGES/gdbm.mo
-/usr/share/locale/es/LC_MESSAGES/gdbm.mo
-/usr/share/locale/fi/LC_MESSAGES/gdbm.mo
-/usr/share/locale/fr/LC_MESSAGES/gdbm.mo
-/usr/share/locale/ja/LC_MESSAGES/gdbm.mo
-/usr/share/locale/pl/LC_MESSAGES/gdbm.mo
-/usr/share/locale/pt_BR/LC_MESSAGES/gdbm.mo
-/usr/share/locale/ru/LC_MESSAGES/gdbm.mo
-/usr/share/locale/sr/LC_MESSAGES/gdbm.mo
-/usr/share/locale/sv/LC_MESSAGES/gdbm.mo
-/usr/share/locale/uk/LC_MESSAGES/gdbm.mo
-/usr/share/locale/vi/LC_MESSAGES/gdbm.mo
 
 
 %changelog

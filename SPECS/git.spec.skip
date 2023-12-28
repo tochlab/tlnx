@@ -18,7 +18,7 @@ Source0:	https://mirrors.edge.kernel.org/pub/software/scm/git/git-%{version}.tar
 %setup -q
 
 %build
-%configure --without-tcltk --disable-static 
+%configure --without-tcltk --disable-static --disable-nls
 make %{?_smp_mflags}
 
 %install
@@ -246,22 +246,6 @@ make install DESTDIR=%{buildroot} INSTALL="install" STRIP=""
 /usr/share/gitweb/static/git-logo.png
 /usr/share/gitweb/static/gitweb.css
 /usr/share/gitweb/static/gitweb.js
-/usr/share/locale/bg/LC_MESSAGES/git.mo
-/usr/share/locale/ca/LC_MESSAGES/git.mo
-/usr/share/locale/de/LC_MESSAGES/git.mo
-/usr/share/locale/el/LC_MESSAGES/git.mo
-/usr/share/locale/es/LC_MESSAGES/git.mo
-/usr/share/locale/fr/LC_MESSAGES/git.mo
-/usr/share/locale/is/LC_MESSAGES/git.mo
-/usr/share/locale/it/LC_MESSAGES/git.mo
-/usr/share/locale/ko/LC_MESSAGES/git.mo
-/usr/share/locale/pt_PT/LC_MESSAGES/git.mo
-/usr/share/locale/ru/LC_MESSAGES/git.mo
-/usr/share/locale/sv/LC_MESSAGES/git.mo
-/usr/share/locale/tr/LC_MESSAGES/git.mo
-/usr/share/locale/vi/LC_MESSAGES/git.mo
-/usr/share/locale/zh_CN/LC_MESSAGES/git.mo
-/usr/share/locale/zh_TW/LC_MESSAGES/git.mo
 /usr/share/perl5/FromCPAN/Error.pm
 /usr/share/perl5/FromCPAN/Mail/Address.pm
 /usr/share/perl5/Git.pm

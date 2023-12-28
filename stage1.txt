@@ -54,10 +54,6 @@ patch.spec
 libarchive.spec
 expat.spec
 attr.spec
-libxcrypt.spec
+libgcrypt.spec
 libtool.spec
 libcap.spec
-libseccomp.spec
-gperf.spec
-libxml2.spec
-cmake.spec

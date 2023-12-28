@@ -41,6 +41,14 @@ Contains base tree for initial work
     echo "PATH=/bin:/sbin:/usr/bin:/usr/sbin" >>  %{buildroot}/root/.bashrc
     echo "export LC_ALL LANG PATH" >> %{buildroot}/root/.bashrc
     cp %{_sourcedir}/profile %{buildroot}/etc/profile
+    echo "NAME=TLNX" > %{buildroot}/etc/os-release
+    echo "ID=tlnx" >> %{buildroot}/etc/os-release
+    echo "PRETTY_NAME=\"Tochlab Linux\""  >> %{buildroot}/etc/os-release
+    echo "ANSI_COLOR=\"1;32\"" >> %{buildroot}/etc/os-release
+    echo "HOME_URL=\"https://www.tlnx.org/\"" >> %{buildroot}/etc/os-release
+    echo "SUPPORT_URL=\"https://www.tlnx.org/support/\"" >> %{buildroot}/etc/os-release
+    echo "BUG_REPORT_URL=\"https://bugs.tlnx.org/\"" >> %{buildroot}/etc/os-release
+    echo "VERSION_ID=\"0.0\"" >> %{buildroot}/etc/os-release
 
 ###    mknod -m 600 %{buildroot}/dev/console c 5 1
 ###    mknod -m 666 %{buildroot}/dev/null c 1 3

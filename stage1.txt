@@ -54,6 +54,6 @@ patch.spec
 libarchive.spec
 expat.spec
 attr.spec
-libgcrypt.spec
 libtool.spec
 libcap.spec
+acl.spec

@@ -17,6 +17,7 @@ rpm.spec
 file.spec
 findutils.spec
 sed.spec
+libpcre.spec
 grep.spec
 less.spec
 gzip.spec

@@ -1,5 +1,5 @@
 Name:          	ncurses
-Version:	6.3
+Version:	6.4
 Release:        1%{?dist}
 Summary:	console display library
 
@@ -144,51 +144,51 @@ ldconfig
 /usr/lib/libform.a
 /usr/lib/libform.so
 /usr/lib/libform.so.6
-/usr/lib/libform.so.6.3
+/usr/lib/libform.so.%{version}
 /usr/lib/libformw.a
 /usr/lib/libformw.so
 /usr/lib/libformw.so.6
-/usr/lib/libformw.so.6.3
+/usr/lib/libformw.so.%{version}
 /usr/lib/libmenu.a
 /usr/lib/libmenu.so
 /usr/lib/libmenu.so.6
-/usr/lib/libmenu.so.6.3
+/usr/lib/libmenu.so.%{version}
 /usr/lib/libmenuw.a
 /usr/lib/libmenuw.so
 /usr/lib/libmenuw.so.6
-/usr/lib/libmenuw.so.6.3
+/usr/lib/libmenuw.so.%{version}
 /usr/lib/libncurses++.a
 /usr/lib/libncurses++.so
 /usr/lib/libncurses++.so.6
-/usr/lib/libncurses++.so.6.3
+/usr/lib/libncurses++.so.%{version}
 /usr/lib/libncurses++w.a
 /usr/lib/libncurses++w.so
 /usr/lib/libncurses++w.so.6
-/usr/lib/libncurses++w.so.6.3
+/usr/lib/libncurses++w.so.%{version}
 /usr/lib/libncurses.a
 /usr/lib/libncurses.so
 /usr/lib/libncurses.so.6
-/usr/lib/libncurses.so.6.3
+/usr/lib/libncurses.so.%{version}
 /usr/lib/libncursesw.a
 /usr/lib/libncursesw.so
 /usr/lib/libncursesw.so.6
-/usr/lib/libncursesw.so.6.3
+/usr/lib/libncursesw.so.%{version}
 /usr/lib/libpanel.a
 /usr/lib/libpanel.so
 /usr/lib/libpanel.so.6
-/usr/lib/libpanel.so.6.3
+/usr/lib/libpanel.so.%{version}
 /usr/lib/libpanelw.a
 /usr/lib/libpanelw.so
 /usr/lib/libpanelw.so.6
-/usr/lib/libpanelw.so.6.3
+/usr/lib/libpanelw.so.%{version}
 /usr/lib/libtinfo.a
 /usr/lib/libtinfo.so
 /usr/lib/libtinfo.so.6
-/usr/lib/libtinfo.so.6.3
+/usr/lib/libtinfo.so.%{version}
 /usr/lib/libtinfow.a
 /usr/lib/libtinfow.so
 /usr/lib/libtinfow.so.6
-/usr/lib/libtinfow.so.6.3
+/usr/lib/libtinfow.so.%{version}
 /usr/lib/pkgconfig/form.pc
 /usr/lib/pkgconfig/menu.pc
 /usr/lib/pkgconfig/ncurses++.pc
@@ -3179,7 +3179,6 @@ ldconfig
 /usr/share/terminfo/t/ts100-sp
 /usr/share/terminfo/t/ts1p
 /usr/share/terminfo/t/tt
-/usr/share/terminfo/t/tt505-22
 /usr/share/terminfo/t/tt52
 /usr/share/terminfo/t/tty33
 /usr/share/terminfo/t/tty35
@@ -3921,5 +3920,36 @@ ldconfig
 /usr/share/terminfo/z/ztx
 /usr/share/terminfo/z/ztx-1-a
 /usr/share/terminfo/z/ztx11
+   /usr/share/terminfo/a/aixterm+sl
+   /usr/share/terminfo/a/ansi+cpr
+   /usr/share/terminfo/a/apollo+vt132
+   /usr/share/terminfo/a/att505-22
+   /usr/share/terminfo/b/bracketed+paste
+   /usr/share/terminfo/d/decid+cpr
+   /usr/share/terminfo/k/kitty+setal
+   /usr/share/terminfo/m/mosh
+   /usr/share/terminfo/m/mosh-256color
+   /usr/share/terminfo/n/ncr260vp+sl
+   /usr/share/terminfo/n/ncr260vt+sl
+   /usr/share/terminfo/n/no+brackets
+   /usr/share/terminfo/n/nsterm-build440
+   /usr/share/terminfo/s/screen-base
+   /usr/share/terminfo/t/teken-16color
+   /usr/share/terminfo/t/teken-2018
+   /usr/share/terminfo/t/teken-2022
+   /usr/share/terminfo/t/teken-sc
+   /usr/share/terminfo/t/teken-sc+fkeys
+   /usr/share/terminfo/t/teken-vt
+   /usr/share/terminfo/t/teken-vt+fkeys
+   /usr/share/terminfo/w/wyse+sl
+   /usr/share/terminfo/x/x10term+sl
+   /usr/share/terminfo/x/xgterm
+   /usr/share/terminfo/x/xterm+acs
+   /usr/share/terminfo/x/xterm+alt47
+   /usr/share/terminfo/x/xterm+focus
+   /usr/share/terminfo/x/xterm+sl-alt
+   /usr/share/terminfo/x/xterm-p370
+   /usr/share/terminfo/x/xterm-p371
+
 
 %changelog

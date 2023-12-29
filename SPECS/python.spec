@@ -25,7 +25,8 @@ Source0:	https://www.python.org/ftp/python/%{version}/Python-%{version}.tar.xz
 	    --without-ensurepip \
 	    --with-pkg-config-libdir=/usr/lib/pkgconfig \
 	    --enable-optimizations
-make %{?_smp_mflags}
+# make %{?_smp_mflags} segfault in tlnx-stage1
+make
 
 %install
 %make_install

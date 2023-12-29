@@ -1,5 +1,5 @@
 Name:           gmp
-Version:	6.2.1
+Version:	6.3.0
 Release:        1%{?dist}
 Summary:	The GMP package contains math libraries. These have useful functions for arbitrary precision arithmetic.
 
@@ -28,10 +28,10 @@ find %{buildroot} -type f -name '*.la' -delete || die
 /usr/include/gmpxx.h
 /usr/lib/libgmp.so
 /usr/lib/libgmp.so.10
-/usr/lib/libgmp.so.10.4.1
+/usr/lib/libgmp.so.10.5.0
 /usr/lib/libgmpxx.so
 /usr/lib/libgmpxx.so.4
-/usr/lib/libgmpxx.so.4.6.1
+/usr/lib/libgmpxx.so.4.7.0
 /usr/lib/pkgconfig/gmp.pc
 /usr/lib/pkgconfig/gmpxx.pc
 /usr/share/info/gmp.info-1.gz

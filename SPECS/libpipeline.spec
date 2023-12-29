@@ -1,5 +1,5 @@
 Name:           libpipeline
-Version:	1.5.5
+Version:	1.5.7
 Release:        1%{?dist}
 Summary:	a pipeline manipulation library
 

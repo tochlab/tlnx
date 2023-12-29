@@ -1,5 +1,5 @@
 Name:           binutils
-Version:	2.38
+Version:	2.41
 Release:        1%{?dist}
 Summary:	The GNU Binutils are a collection of binary tools.
 
@@ -172,50 +172,6 @@ find %{buildroot} -type f -name '*.la' -delete || die
 /usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_iamcu.xu
 /usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_iamcu.xw
 /usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_iamcu.xwe
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_k1om.x
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_k1om.xbn
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_k1om.xc
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_k1om.xce
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_k1om.xd
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_k1om.xdc
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_k1om.xdce
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_k1om.xde
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_k1om.xdw
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_k1om.xdwe
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_k1om.xe
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_k1om.xn
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_k1om.xr
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_k1om.xs
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_k1om.xsc
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_k1om.xsce
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_k1om.xse
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_k1om.xsw
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_k1om.xswe
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_k1om.xu
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_k1om.xw
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_k1om.xwe
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_l1om.x
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_l1om.xbn
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_l1om.xc
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_l1om.xce
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_l1om.xd
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_l1om.xdc
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_l1om.xdce
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_l1om.xde
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_l1om.xdw
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_l1om.xdwe
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_l1om.xe
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_l1om.xn
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_l1om.xr
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_l1om.xs
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_l1om.xsc
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_l1om.xsce
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_l1om.xse
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_l1om.xsw
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_l1om.xswe
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_l1om.xu
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_l1om.xw
-/usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_l1om.xwe
 /usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_x86_64.x
 /usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_x86_64.xbn
 /usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_x86_64.xc
@@ -240,5 +196,40 @@ find %{buildroot} -type f -name '*.la' -delete || die
 /usr/x86_64-pc-linux-gnu/lib/ldscripts/elf_x86_64.xwe
 /usr/lib/bfd-plugins/libdep.so
 /usr/share/info/ctf-spec.info.gz
+/usr/bin/gp-archive
+/usr/bin/gp-collect-app
+/usr/bin/gp-display-html
+/usr/bin/gp-display-src
+/usr/bin/gp-display-text
+/usr/bin/gprofng
+/usr/etc/gprofng.rc
+/usr/include/collectorAPI.h
+/usr/include/libcollector.h
+/usr/include/libfcollector.h
+/usr/include/sframe-api.h
+/usr/include/sframe.h
+/usr/lib/gprofng/libgp-collector.so
+/usr/lib/gprofng/libgp-collectorAPI.a
+/usr/lib/gprofng/libgp-collectorAPI.so
+/usr/lib/gprofng/libgp-heap.so
+/usr/lib/gprofng/libgp-iotrace.so
+/usr/lib/gprofng/libgp-sync.so
+/usr/lib/libgprofng.a
+/usr/lib/libgprofng.so
+/usr/lib/libgprofng.so.0
+/usr/lib/libgprofng.so.0.0.0
+/usr/lib/libsframe.a
+/usr/lib/libsframe.so
+/usr/lib/libsframe.so.1
+/usr/lib/libsframe.so.1.0.0
+/usr/share/info/gprofng.info.gz
+/usr/share/info/ldint.info.gz
+/usr/share/info/sframe-spec.info.gz
+/usr/share/man/man1/gp-archive.1.gz
+/usr/share/man/man1/gp-collect-app.1.gz
+/usr/share/man/man1/gp-display-html.1.gz
+/usr/share/man/man1/gp-display-src.1.gz
+/usr/share/man/man1/gp-display-text.1.gz
+/usr/share/man/man1/gprofng.1.gz
 
 %changelog

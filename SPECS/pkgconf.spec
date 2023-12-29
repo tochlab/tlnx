@@ -1,5 +1,5 @@
 Name:          	pkgconf
-Version:	1.8.0
+Version:	1.8.1
 Release:        1%{?dist}
 Summary:	pkg-config compatible replacement with no dependencies other than ANSI C89
 

@@ -1,5 +1,5 @@
 Name:           gawk
-Version:	5.1.1
+Version:	5.3.0
 Release:        1%{?dist}
 Summary:	GNU awk pattern-matching language
 
@@ -75,7 +75,17 @@ rm -rf $RPM_BUILD_ROOT/usr/share/info/dir
 /usr/share/info/gawk.info.gz
 /usr/share/info/gawkinet.info.gz
 /usr/share/info/gawkworkflow.info.gz
+/usr/share/info/gawk_api-figure1.png.gz
+/usr/share/info/gawk_api-figure2.png.gz
+/usr/share/info/gawk_api-figure3.png.gz
+/usr/share/info/gawk_array-elements.png.gz
+/usr/share/info/gawk_general-program.png.gz
+/usr/share/info/gawk_process-flow.png.gz
+/usr/share/info/gawk_statist.jpg.gz
+/usr/share/info/pm-gawk.info.gz
 /usr/share/man/man1/gawk.1.gz
+/usr/share/man/man1/gawkbug.1.gz
+/usr/share/man/man1/pm-gawk.1.gz
 /usr/share/man/man3/filefuncs.3am.gz
 /usr/share/man/man3/fnmatch.3am.gz
 /usr/share/man/man3/fork.3am.gz
@@ -88,5 +98,7 @@ rm -rf $RPM_BUILD_ROOT/usr/share/info/dir
 /usr/share/man/man3/rwarray.3am.gz
 /usr/share/man/man3/time.3am.gz
 /usr/share/awk/isnumeric.awk
+/usr/bin/gawkbug
+/usr/share/awk/tocsv.awk
 
 %changelog

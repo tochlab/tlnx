@@ -1,11 +1,11 @@
 Name:           util-linux
-Version:	2.37.4
+Version:	2.39.3
 Release:        1%{?dist}
 Summary:	Various useful Linux utilities
 
 License:	GPL-2 GPL-3 LGPL-2.1 BSD-4 MIT public-domain
 URL:		https://www.kernel.org/pub/linux/utils/util-linux/
-Source0:	https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.37/util-linux-%{version}.tar.gz
+Source0:	https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.39/util-linux-%{version}.tar.gz
 
 #BuildRequires:
 #Requires:
@@ -400,6 +400,20 @@ find %{buildroot} -type f -name '*.la' -delete || die
 /usr/share/man/man1/irqtop.1.gz
 /usr/share/man/man1/lsirq.1.gz
 /usr/share/man/man1/uclampset.1.gz
+/bin/lsfd
+/bin/pipesz
+/sbin/blkpr
+/usr/bin/fadvise
+/usr/bin/waitpid
+/usr/share/bash-completion/completions/fadvise
+/usr/share/bash-completion/completions/lastb
+/usr/share/bash-completion/completions/pipesz
+/usr/share/bash-completion/completions/waitpid
+/usr/share/man/man1/fadvise.1.gz
+/usr/share/man/man1/lsfd.1.gz
+/usr/share/man/man1/pipesz.1.gz
+/usr/share/man/man1/waitpid.1.gz
+/usr/share/man/man8/blkpr.8.gz
 
 
 %changelog

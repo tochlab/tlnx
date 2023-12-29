@@ -1,5 +1,5 @@
 Name:           libunistring
-Version:	1.0
+Version:	1.1
 Release:        1%{?dist}
 Summary:	Library for manipulating Unicode and C strings according to Unicode standard
 
@@ -57,8 +57,8 @@ ln -s /usr/lib/libunistring.so.2 /usr/lib/libunistring.so.5
 /usr/include/uniwidth.h
 /usr/lib/libunistring.a
 /usr/lib/libunistring.so
-/usr/lib/libunistring.so.2
-/usr/lib/libunistring.so.2.2.0
+/usr/lib/libunistring.so.5
+/usr/lib/libunistring.so.5.0.0
 /usr/share/doc/libunistring/libunistring_1.html
 /usr/share/doc/libunistring/libunistring_10.html
 /usr/share/doc/libunistring/libunistring_11.html

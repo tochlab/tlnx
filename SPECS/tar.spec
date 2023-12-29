@@ -1,5 +1,5 @@
 Name:           tar
-Version:	1.34
+Version:	1.35
 Release:        1%{?dist}
 Summary:	GNU Tar provides the ability to create tar archives
 
@@ -32,6 +32,7 @@ rm -f $RPM_BUILD_ROOT/usr/share/info/dir
 /usr/libexec/rmt
 /usr/share/info/tar.info-1.gz
 /usr/share/info/tar.info-2.gz
+/usr/share/info/tar.info-3.gz
 /usr/share/info/tar.info.gz
 /usr/share/man/man1/tar.1.gz
 /usr/share/man/man8/rmt.8.gz

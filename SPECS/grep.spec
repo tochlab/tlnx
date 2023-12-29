@@ -1,5 +1,5 @@
 Name:           grep
-Version:	3.7
+Version:	3.11
 Release:        1%{?dist}
 Summary:	GNU regular expression matcher
 
@@ -30,8 +30,6 @@ rm -fr %{buildroot}/usr/share/info/dir
 /bin/fgrep
 /bin/grep
 /usr/share/info/grep.info.gz
-/usr/share/man/man1/egrep.1.gz
-/usr/share/man/man1/fgrep.1.gz
 /usr/share/man/man1/grep.1.gz
 
 %changelog

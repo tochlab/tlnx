@@ -1,5 +1,5 @@
 Name:           diffutils
-Version:	3.8
+Version:	3.10
 Release:        1%{?dist}
 Summary:	Tools to make diffs and compare files
 

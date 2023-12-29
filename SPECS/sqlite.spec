@@ -1,11 +1,11 @@
 Name:           sqlite
-Version:	3.38.2
+Version:	3.44.2
 Release:        1%{?dist}
 Summary:	SQL database engine
 
 License:	public domain
 URL:		https://sqlite.org/
-Source0:	https://www.sqlite.org/2022/sqlite-autoconf-3380200.tar.gz
+Source0:	https://sqlite.org/2023/sqlite-autoconf-3440200.tar.gz	
 
 #BuildRequires:
 #Requires:
@@ -16,17 +16,17 @@ SQL database engine
 %prep
 umask 022
 cd %{_builddir}
-rm -rf sqlite-autoconf-3380200
-tar xvf %{_sourcedir}/sqlite-autoconf-3380200.tar.gz
+rm -rf sqlite-autoconf-3440200
+tar xvf %{_sourcedir}/sqlite-autoconf-3440200.tar.gz
 
 %build
-cd sqlite-autoconf-3380200
+cd sqlite-autoconf-3440200
 %configure --prefix=/usr --libdir=/usr/lib --with-pkg-config-libdir=/usr/lib/pkgconfig
 make %{?_smp_mflags}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-cd %{_builddir}/sqlite-autoconf-3380200
+cd %{_builddir}/sqlite-autoconf-3440200
 %make_install
 find %{buildroot} -type f -name '*.la' -delete || die
 

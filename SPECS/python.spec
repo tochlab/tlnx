@@ -1,5 +1,5 @@
 Name:          	Python
-Version:	3.11.6
+Version:	3.11.7
 Release:        1%{?dist}
 Summary:	An interpreted, interactive, object-oriented programming language
 
@@ -972,9 +972,9 @@ ln -s /usr/bin/python3 /usr/bin/python
    /usr/lib/python3.11/lib-dynload/xxlimited_35.cpython-311-x86_64-linux-gnu.so
    /usr/lib/python3.11/lib-dynload/zlib.cpython-311-x86_64-linux-gnu.so
    /usr/lib/python3.11/lib2to3/Grammar.txt
-   /usr/lib/python3.11/lib2to3/Grammar3.11.6.final.0.pickle
+   /usr/lib/python3.11/lib2to3/Grammar3.11.7.final.0.pickle
    /usr/lib/python3.11/lib2to3/PatternGrammar.txt
-   /usr/lib/python3.11/lib2to3/PatternGrammar3.11.6.final.0.pickle
+   /usr/lib/python3.11/lib2to3/PatternGrammar3.11.7.final.0.pickle
    /usr/lib/python3.11/lib2to3/__init__.py
    /usr/lib/python3.11/lib2to3/__main__.py
    /usr/lib/python3.11/lib2to3/btm_matcher.py
@@ -1192,8 +1192,6 @@ ln -s /usr/bin/python3 /usr/bin/python
    /usr/lib/python3.11/test/_test_embed_structseq.py
    /usr/lib/python3.11/test/_test_multiprocessing.py
    /usr/lib/python3.11/test/_test_venv_multiprocessing.py
-   /usr/lib/python3.11/test/_typed_dict_helper.py
-   /usr/lib/python3.11/test/allsans.pem
    /usr/lib/python3.11/test/audiodata/pluck-alaw.aifc
    /usr/lib/python3.11/test/audiodata/pluck-pcm16.aiff
    /usr/lib/python3.11/test/audiodata/pluck-pcm16.au
@@ -1213,18 +1211,38 @@ ln -s /usr/bin/python3 /usr/bin/python
    /usr/lib/python3.11/test/audiotests.py
    /usr/lib/python3.11/test/audit-tests.py
    /usr/lib/python3.11/test/autotest.py
-   /usr/lib/python3.11/test/badcert.pem
-   /usr/lib/python3.11/test/badkey.pem
    /usr/lib/python3.11/test/bisect_cmd.py
-   /usr/lib/python3.11/test/capath/4e1295a3.0
-   /usr/lib/python3.11/test/capath/5ed36f99.0
-   /usr/lib/python3.11/test/capath/6e88d7b8.0
-   /usr/lib/python3.11/test/capath/99d0fa06.0
-   /usr/lib/python3.11/test/capath/b1930218.0
-   /usr/lib/python3.11/test/capath/ceff1710.0
-   /usr/lib/python3.11/test/cfgparser.1
-   /usr/lib/python3.11/test/cfgparser.2
-   /usr/lib/python3.11/test/cfgparser.3
+   /usr/lib/python3.11/test/certdata/allsans.pem
+   /usr/lib/python3.11/test/certdata/badcert.pem
+   /usr/lib/python3.11/test/certdata/badkey.pem
+   /usr/lib/python3.11/test/certdata/capath/4e1295a3.0
+   /usr/lib/python3.11/test/certdata/capath/5ed36f99.0
+   /usr/lib/python3.11/test/certdata/capath/6e88d7b8.0
+   /usr/lib/python3.11/test/certdata/capath/99d0fa06.0
+   /usr/lib/python3.11/test/certdata/capath/b1930218.0
+   /usr/lib/python3.11/test/certdata/capath/ceff1710.0
+   /usr/lib/python3.11/test/certdata/ffdh3072.pem
+   /usr/lib/python3.11/test/certdata/idnsans.pem
+   /usr/lib/python3.11/test/certdata/keycert.passwd.pem
+   /usr/lib/python3.11/test/certdata/keycert.pem
+   /usr/lib/python3.11/test/certdata/keycert2.pem
+   /usr/lib/python3.11/test/certdata/keycert3.pem
+   /usr/lib/python3.11/test/certdata/keycert4.pem
+   /usr/lib/python3.11/test/certdata/keycertecc.pem
+   /usr/lib/python3.11/test/certdata/make_ssl_certs.py
+   /usr/lib/python3.11/test/certdata/nokia.pem
+   /usr/lib/python3.11/test/certdata/nosan.pem
+   /usr/lib/python3.11/test/certdata/nullbytecert.pem
+   /usr/lib/python3.11/test/certdata/nullcert.pem
+   /usr/lib/python3.11/test/certdata/pycacert.pem
+   /usr/lib/python3.11/test/certdata/pycakey.pem
+   /usr/lib/python3.11/test/certdata/revocation.crl
+   /usr/lib/python3.11/test/certdata/secp384r1.pem
+   /usr/lib/python3.11/test/certdata/selfsigned_pythontestdotnet.pem
+   /usr/lib/python3.11/test/certdata/ssl_cert.pem
+   /usr/lib/python3.11/test/certdata/ssl_key.passwd.pem
+   /usr/lib/python3.11/test/certdata/ssl_key.pem
+   /usr/lib/python3.11/test/certdata/talos-2019-0758.pem
    /usr/lib/python3.11/test/cjkencodings/big5-utf8.txt
    /usr/lib/python3.11/test/cjkencodings/big5.txt
    /usr/lib/python3.11/test/cjkencodings/big5hkscs-utf8.txt
@@ -1257,6 +1275,9 @@ ln -s /usr/bin/python3 /usr/bin/python
    /usr/lib/python3.11/test/cjkencodings/shift_jisx0213.txt
    /usr/lib/python3.11/test/clinic.test.c
    /usr/lib/python3.11/test/cmath_testcases.txt
+   /usr/lib/python3.11/test/configdata/cfgparser.1
+   /usr/lib/python3.11/test/configdata/cfgparser.2
+   /usr/lib/python3.11/test/configdata/cfgparser.3
    /usr/lib/python3.11/test/crashers/README
    /usr/lib/python3.11/test/crashers/bogus_code_obj.py
    /usr/lib/python3.11/test/crashers/gc_inspection.py
@@ -1436,14 +1457,9 @@ ln -s /usr/bin/python3 /usr/bin/python
    /usr/lib/python3.11/test/encoded_modules/module_iso_8859_1.py
    /usr/lib/python3.11/test/encoded_modules/module_koi8_r.py
    /usr/lib/python3.11/test/exception_hierarchy.txt
-   /usr/lib/python3.11/test/ffdh3072.pem
-   /usr/lib/python3.11/test/final_a.py
-   /usr/lib/python3.11/test/final_b.py
    /usr/lib/python3.11/test/floating_points.txt
    /usr/lib/python3.11/test/fork_wait.py
    /usr/lib/python3.11/test/formatfloat_testcases.txt
-   /usr/lib/python3.11/test/gdb_sample.py
-   /usr/lib/python3.11/test/idnsans.pem
    /usr/lib/python3.11/test/ieee754.txt
    /usr/lib/python3.11/test/imghdrdata/python-raw.jpg
    /usr/lib/python3.11/test/imghdrdata/python.bmp
@@ -1460,54 +1476,44 @@ ln -s /usr/bin/python3 /usr/bin/python
    /usr/lib/python3.11/test/imghdrdata/python.webp
    /usr/lib/python3.11/test/imghdrdata/python.xbm
    /usr/lib/python3.11/test/imp_dummy.py
-   /usr/lib/python3.11/test/inspect_fodder.py
-   /usr/lib/python3.11/test/inspect_fodder2.py
-   /usr/lib/python3.11/test/inspect_stock_annotations.py
-   /usr/lib/python3.11/test/inspect_stringized_annotations.py
-   /usr/lib/python3.11/test/inspect_stringized_annotations_2.py
-   /usr/lib/python3.11/test/keycert.passwd.pem
-   /usr/lib/python3.11/test/keycert.pem
-   /usr/lib/python3.11/test/keycert2.pem
-   /usr/lib/python3.11/test/keycert3.pem
-   /usr/lib/python3.11/test/keycert4.pem
-   /usr/lib/python3.11/test/keycertecc.pem
    /usr/lib/python3.11/test/leakers/README.txt
    /usr/lib/python3.11/test/leakers/__init__.py
    /usr/lib/python3.11/test/leakers/test_ctypes.py
    /usr/lib/python3.11/test/leakers/test_selftype.py
    /usr/lib/python3.11/test/libregrtest/__init__.py
    /usr/lib/python3.11/test/libregrtest/cmdline.py
+   /usr/lib/python3.11/test/libregrtest/filter.py
+   /usr/lib/python3.11/test/libregrtest/findtests.py
+   /usr/lib/python3.11/test/libregrtest/logger.py
    /usr/lib/python3.11/test/libregrtest/main.py
+   /usr/lib/python3.11/test/libregrtest/mypy.ini
    /usr/lib/python3.11/test/libregrtest/pgo.py
    /usr/lib/python3.11/test/libregrtest/refleak.py
-   /usr/lib/python3.11/test/libregrtest/runtest.py
-   /usr/lib/python3.11/test/libregrtest/runtest_mp.py
+   /usr/lib/python3.11/test/libregrtest/result.py
+   /usr/lib/python3.11/test/libregrtest/results.py
+   /usr/lib/python3.11/test/libregrtest/run_workers.py
+   /usr/lib/python3.11/test/libregrtest/runtests.py
    /usr/lib/python3.11/test/libregrtest/save_env.py
    /usr/lib/python3.11/test/libregrtest/setup.py
+   /usr/lib/python3.11/test/libregrtest/single.py
+   /usr/lib/python3.11/test/libregrtest/testresult.py
    /usr/lib/python3.11/test/libregrtest/utils.py
    /usr/lib/python3.11/test/libregrtest/win_utils.py
+   /usr/lib/python3.11/test/libregrtest/worker.py
    /usr/lib/python3.11/test/list_tests.py
    /usr/lib/python3.11/test/lock_tests.py
    /usr/lib/python3.11/test/mailcap.txt
-   /usr/lib/python3.11/test/make_ssl_certs.py
    /usr/lib/python3.11/test/mapping_tests.py
    /usr/lib/python3.11/test/math_testcases.txt
    /usr/lib/python3.11/test/memory_watchdog.py
    /usr/lib/python3.11/test/mime.types
    /usr/lib/python3.11/test/mock_socket.py
-   /usr/lib/python3.11/test/mod_generics_cache.py
    /usr/lib/python3.11/test/mp_fork_bomb.py
    /usr/lib/python3.11/test/mp_preload.py
    /usr/lib/python3.11/test/multibytecodec_support.py
-   /usr/lib/python3.11/test/nokia.pem
-   /usr/lib/python3.11/test/nosan.pem
-   /usr/lib/python3.11/test/nullbytecert.pem
-   /usr/lib/python3.11/test/nullcert.pem
    /usr/lib/python3.11/test/pickletester.py
    /usr/lib/python3.11/test/profilee.py
    /usr/lib/python3.11/test/pstats.pck
-   /usr/lib/python3.11/test/pycacert.pem
-   /usr/lib/python3.11/test/pycakey.pem
    /usr/lib/python3.11/test/pyclbr_input.py
    /usr/lib/python3.11/test/pydoc_mod.py
    /usr/lib/python3.11/test/pydocfodder.py
@@ -1520,12 +1526,9 @@ ln -s /usr/bin/python3 /usr/bin/python
    /usr/lib/python3.11/test/regrtest.py
    /usr/lib/python3.11/test/relimport.py
    /usr/lib/python3.11/test/reperf.py
-   /usr/lib/python3.11/test/revocation.crl
    /usr/lib/python3.11/test/sample_doctest.py
    /usr/lib/python3.11/test/sample_doctest_no_docstrings.py
    /usr/lib/python3.11/test/sample_doctest_no_doctests.py
-   /usr/lib/python3.11/test/secp384r1.pem
-   /usr/lib/python3.11/test/selfsigned_pythontestdotnet.pem
    /usr/lib/python3.11/test/seq_tests.py
    /usr/lib/python3.11/test/signalinterproctester.py
    /usr/lib/python3.11/test/sndhdrdata/README
@@ -1538,9 +1541,6 @@ ln -s /usr/bin/python3 /usr/bin/python
    /usr/lib/python3.11/test/sndhdrdata/sndhdr.voc
    /usr/lib/python3.11/test/sndhdrdata/sndhdr.wav
    /usr/lib/python3.11/test/sortperf.py
-   /usr/lib/python3.11/test/ssl_cert.pem
-   /usr/lib/python3.11/test/ssl_key.passwd.pem
-   /usr/lib/python3.11/test/ssl_key.pem
    /usr/lib/python3.11/test/ssl_servers.py
    /usr/lib/python3.11/test/ssltests.py
    /usr/lib/python3.11/test/string_tests.py
@@ -1556,12 +1556,11 @@ ln -s /usr/bin/python3 /usr/bin/python
    /usr/lib/python3.11/test/support/interpreters.py
    /usr/lib/python3.11/test/support/logging_helper.py
    /usr/lib/python3.11/test/support/os_helper.py
+   /usr/lib/python3.11/test/support/pty_helper.py
    /usr/lib/python3.11/test/support/script_helper.py
    /usr/lib/python3.11/test/support/socket_helper.py
-   /usr/lib/python3.11/test/support/testresult.py
    /usr/lib/python3.11/test/support/threading_helper.py
    /usr/lib/python3.11/test/support/warnings_helper.py
-   /usr/lib/python3.11/test/talos-2019-0758.pem
    /usr/lib/python3.11/test/test___all__.py
    /usr/lib/python3.11/test/test__locale.py
    /usr/lib/python3.11/test/test__opcode.py
@@ -1861,7 +1860,14 @@ ln -s /usr/bin/python3 /usr/bin/python
    /usr/lib/python3.11/test/test_future_stmt/test_future_multiple_imports.py
    /usr/lib/python3.11/test/test_future_stmt/test_future_single_import.py
    /usr/lib/python3.11/test/test_gc.py
-   /usr/lib/python3.11/test/test_gdb.py
+   /usr/lib/python3.11/test/test_gdb/__init__.py
+   /usr/lib/python3.11/test/test_gdb/gdb_sample.py
+   /usr/lib/python3.11/test/test_gdb/test_backtrace.py
+   /usr/lib/python3.11/test/test_gdb/test_cfunction.py
+   /usr/lib/python3.11/test/test_gdb/test_cfunction_full.py
+   /usr/lib/python3.11/test/test_gdb/test_misc.py
+   /usr/lib/python3.11/test/test_gdb/test_pretty_print.py
+   /usr/lib/python3.11/test/test_gdb/util.py
    /usr/lib/python3.11/test/test_generator_stop.py
    /usr/lib/python3.11/test/test_generators.py
    /usr/lib/python3.11/test/test_genericalias.py
@@ -2024,7 +2030,13 @@ ln -s /usr/bin/python3 /usr/bin/python
    /usr/lib/python3.11/test/test_importlib/zipdata02/__init__.py
    /usr/lib/python3.11/test/test_importlib/zipdata02/ziptestdata.zip
    /usr/lib/python3.11/test/test_index.py
-   /usr/lib/python3.11/test/test_inspect.py
+   /usr/lib/python3.11/test/test_inspect/__init__.py
+   /usr/lib/python3.11/test/test_inspect/inspect_fodder.py
+   /usr/lib/python3.11/test/test_inspect/inspect_fodder2.py
+   /usr/lib/python3.11/test/test_inspect/inspect_stock_annotations.py
+   /usr/lib/python3.11/test/test_inspect/inspect_stringized_annotations.py
+   /usr/lib/python3.11/test/test_inspect/inspect_stringized_annotations_2.py
+   /usr/lib/python3.11/test/test_inspect/test_inspect.py
    /usr/lib/python3.11/test/test_int.py
    /usr/lib/python3.11/test/test_int_literal.py
    /usr/lib/python3.11/test/test_interpreters.py
@@ -2083,6 +2095,8 @@ ln -s /usr/bin/python3 /usr/bin/python
    /usr/lib/python3.11/test/test_module/bad_getattr.py
    /usr/lib/python3.11/test/test_module/bad_getattr2.py
    /usr/lib/python3.11/test/test_module/bad_getattr3.py
+   /usr/lib/python3.11/test/test_module/final_a.py
+   /usr/lib/python3.11/test/test_module/final_b.py
    /usr/lib/python3.11/test/test_module/good_getattr.py
    /usr/lib/python3.11/test/test_modulefinder.py
    /usr/lib/python3.11/test/test_msilib.py
@@ -2222,6 +2236,7 @@ ln -s /usr/bin/python3 /usr/bin/python
    /usr/lib/python3.11/test/test_tcl.py
    /usr/lib/python3.11/test/test_telnetlib.py
    /usr/lib/python3.11/test/test_tempfile.py
+   /usr/lib/python3.11/test/test_termios.py
    /usr/lib/python3.11/test/test_textwrap.py
    /usr/lib/python3.11/test/test_thread.py
    /usr/lib/python3.11/test/test_threadedtempfile.py
@@ -2332,6 +2347,7 @@ ln -s /usr/bin/python3 /usr/bin/python
    /usr/lib/python3.11/test/test_tracemalloc.py
    /usr/lib/python3.11/test/test_ttk_guionly.py
    /usr/lib/python3.11/test/test_ttk_textonly.py
+   /usr/lib/python3.11/test/test_tty.py
    /usr/lib/python3.11/test/test_tuple.py
    /usr/lib/python3.11/test/test_turtle.py
    /usr/lib/python3.11/test/test_type_annotations.py
@@ -2422,6 +2438,7 @@ ln -s /usr/bin/python3 /usr/bin/python
    /usr/lib/python3.11/test/tracedmodules/__init__.py
    /usr/lib/python3.11/test/tracedmodules/testmod.py
    /usr/lib/python3.11/test/typinganndata/__init__.py
+   /usr/lib/python3.11/test/typinganndata/_typed_dict_helper.py
    /usr/lib/python3.11/test/typinganndata/ann_module.py
    /usr/lib/python3.11/test/typinganndata/ann_module2.py
    /usr/lib/python3.11/test/typinganndata/ann_module3.py
@@ -2431,6 +2448,7 @@ ln -s /usr/bin/python3 /usr/bin/python
    /usr/lib/python3.11/test/typinganndata/ann_module7.py
    /usr/lib/python3.11/test/typinganndata/ann_module8.py
    /usr/lib/python3.11/test/typinganndata/ann_module9.py
+   /usr/lib/python3.11/test/typinganndata/mod_generics_cache.py
    /usr/lib/python3.11/test/win_console_handler.py
    /usr/lib/python3.11/test/xmltestdata/c14n-20/README
    /usr/lib/python3.11/test/xmltestdata/c14n-20/c14nComment.xml
@@ -2677,5 +2695,5 @@ ln -s /usr/bin/python3 /usr/bin/python
    /usr/lib/python3.11/zoneinfo/_zoneinfo.py
    /usr/share/man/man1/python3.1.gz
    /usr/share/man/man1/python3.11.1.gz
-   
+
 %changelog

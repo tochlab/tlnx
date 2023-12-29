@@ -1,5 +1,5 @@
 Name:           file
-Version:	5.41
+Version:	5.45
 Release:        1%{?dist}
 Summary:	File utility
 

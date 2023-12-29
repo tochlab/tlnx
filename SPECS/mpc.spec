@@ -1,5 +1,5 @@
 Name:           mpc
-Version:        1.2.1
+Version:        1.3.1
 Release:        1%{?dist}
 Summary:        mpc lib
 
@@ -46,7 +46,7 @@ rm -rf $RPM_BUILD_ROOT
 /usr/include/mpc.h
 /usr/lib/libmpc.so
 /usr/lib/libmpc.so.3
-/usr/lib/libmpc.so.3.2.1
+/usr/lib/libmpc.so.3.3.1
 /usr/share/info/mpc.info.gz
 
 %changelog

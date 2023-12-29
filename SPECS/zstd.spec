@@ -1,5 +1,5 @@
 Name:           zstd
-Version:	1.5.2
+Version:	1.5.5
 Release:        1%{?dist}
 Summary:	zstd fast compression library
 

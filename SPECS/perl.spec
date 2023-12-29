@@ -1,5 +1,5 @@
 Name:           perl
-Version:	5.34.1
+Version:	5.38.2
 Release:        1%{?dist}
 Summary:	Larry Wall's Practical Extraction and Report Language
 
@@ -20,12 +20,12 @@ export BUILD_ZLIB=False
 export BUILD_BZIP2=0
 sh Configure -des -Dprefix=/usr                 \
                   -Dvendorprefix=/usr                         \
-                  -Dprivlib=/usr/lib/perl5/5.34     \
-                  -Darchlib=/usr/lib/perl5/5.34     \
-                  -Dsitelib=/usr/lib/perl5/5.34     \
-                  -Dsitearch=/usr/lib/perl5/5.34    \
-                  -Dvendorlib=/usr/lib/perl5/5.34 \
-                  -Dvendorarch=/usr/lib/perl5/5.34 \
+                  -Dprivlib=/usr/lib/perl5/5.38     \
+                  -Darchlib=/usr/lib/perl5/5.38     \
+                  -Dsitelib=/usr/lib/perl5/5.38     \
+                  -Dsitearch=/usr/lib/perl5/5.38    \
+                  -Dvendorlib=/usr/lib/perl5/5.38 \
+                  -Dvendorarch=/usr/lib/perl5/5.38 \
                   -Duseshrplib \
                   -Dnoextensions="ODBM_File DB_File NDBM_File"
                   
@@ -34,2492 +34,2518 @@ make %{?_smp_mflags}
 %install
 rm -rf $RPM_BUILD_ROOT
 %make_install
-#rm -fr %{buildroot}/usr/lib/perl5/5.34/auto/
-#rm -fr %{buildroot}/usr/lib/perl5/5.34/DB_File.pm
-#rm -fr %{buildroot}/usr/share/man/man3/DB_File.3.gz
-chmod +x,+w %{buildroot}/usr/lib/perl5/5.34/CORE/libperl.so
-chmod -R +x,+w %{buildroot}/usr/lib/perl5/5.34/auto/
+chmod +x,+w %{buildroot}/usr/lib/perl5/5.38/CORE/libperl.so
+chmod -R +x,+w %{buildroot}/usr/lib/perl5/5.38/auto/
 
 %post
-chmod -R -x,-w /usr/lib/perl5/5.34/auto/
+chmod -R -x,-w /usr/lib/perl5/5.38/auto/
 
 %files
-#/usr/lib/perl5/5.34/DB_File.pm
-#/usr/share/man/man3/DB_File.3.gz
-/usr/bin/corelist
-/usr/bin/cpan
-/usr/bin/enc2xs
-/usr/bin/encguess
-/usr/bin/h2ph
-/usr/bin/h2xs
-/usr/bin/instmodsh
-/usr/bin/json_pp
-/usr/bin/libnetcfg
-/usr/bin/perl
-/usr/bin/perl%{version}
-/usr/bin/perlbug
-/usr/bin/perldoc
-/usr/bin/perlivp
-/usr/bin/perlthanks
-/usr/bin/piconv
-/usr/bin/pl2pm
-/usr/bin/pod2html
-/usr/bin/pod2man
-/usr/bin/pod2text
-/usr/bin/pod2usage
-/usr/bin/podchecker
-/usr/bin/prove
-/usr/bin/ptar
-/usr/bin/ptardiff
-/usr/bin/ptargrep
-/usr/bin/shasum
-/usr/bin/splain
-/usr/bin/streamzip
-/usr/bin/xsubpp
-/usr/bin/zipdetails
-/usr/lib/perl5/5.34/.packlist
-/usr/lib/perl5/5.34/AnyDBM_File.pm
-/usr/lib/perl5/5.34/App/Cpan.pm
-/usr/lib/perl5/5.34/App/Prove.pm
-/usr/lib/perl5/5.34/App/Prove/State.pm
-/usr/lib/perl5/5.34/App/Prove/State/Result.pm
-/usr/lib/perl5/5.34/App/Prove/State/Result/Test.pm
-/usr/lib/perl5/5.34/Archive/Tar.pm
-/usr/lib/perl5/5.34/Archive/Tar/Constant.pm
-/usr/lib/perl5/5.34/Archive/Tar/File.pm
-/usr/lib/perl5/5.34/Attribute/Handlers.pm
-/usr/lib/perl5/5.34/AutoLoader.pm
-/usr/lib/perl5/5.34/AutoSplit.pm
-/usr/lib/perl5/5.34/B.pm
-/usr/lib/perl5/5.34/B/Concise.pm
-/usr/lib/perl5/5.34/B/Deparse.pm
-/usr/lib/perl5/5.34/B/Op_private.pm
-/usr/lib/perl5/5.34/B/Showlex.pm
-/usr/lib/perl5/5.34/B/Terse.pm
-/usr/lib/perl5/5.34/B/Xref.pm
-/usr/lib/perl5/5.34/Benchmark.pm
-/usr/lib/perl5/5.34/CORE.pod
-/usr/lib/perl5/5.34/CORE/EXTERN.h
-/usr/lib/perl5/5.34/CORE/INTERN.h
-/usr/lib/perl5/5.34/CORE/XSUB.h
-/usr/lib/perl5/5.34/CORE/av.h
-/usr/lib/perl5/5.34/CORE/bitcount.h
-/usr/lib/perl5/5.34/CORE/charclass_invlists.h
-/usr/lib/perl5/5.34/CORE/config.h
-/usr/lib/perl5/5.34/CORE/cop.h
-/usr/lib/perl5/5.34/CORE/cv.h
-/usr/lib/perl5/5.34/CORE/dosish.h
-/usr/lib/perl5/5.34/CORE/ebcdic_tables.h
-/usr/lib/perl5/5.34/CORE/embed.h
-/usr/lib/perl5/5.34/CORE/embedvar.h
-/usr/lib/perl5/5.34/CORE/fakesdio.h
-/usr/lib/perl5/5.34/CORE/feature.h
-/usr/lib/perl5/5.34/CORE/form.h
-/usr/lib/perl5/5.34/CORE/git_version.h
-/usr/lib/perl5/5.34/CORE/gv.h
-/usr/lib/perl5/5.34/CORE/handy.h
-/usr/lib/perl5/5.34/CORE/hv.h
-/usr/lib/perl5/5.34/CORE/hv_func.h
-/usr/lib/perl5/5.34/CORE/hv_macro.h
-/usr/lib/perl5/5.34/CORE/inline.h
-/usr/lib/perl5/5.34/CORE/intrpvar.h
-/usr/lib/perl5/5.34/CORE/invlist_inline.h
-/usr/lib/perl5/5.34/CORE/iperlsys.h
-/usr/lib/perl5/5.34/CORE/keywords.h
-/usr/lib/perl5/5.34/CORE/l1_char_class_tab.h
-/usr/lib/perl5/5.34/CORE/libperl.so
-/usr/lib/perl5/5.34/CORE/malloc_ctl.h
-/usr/lib/perl5/5.34/CORE/metaconfig.h
-/usr/lib/perl5/5.34/CORE/mg.h
-/usr/lib/perl5/5.34/CORE/mg_data.h
-/usr/lib/perl5/5.34/CORE/mg_raw.h
-/usr/lib/perl5/5.34/CORE/mg_vtable.h
-/usr/lib/perl5/5.34/CORE/mydtrace.h
-/usr/lib/perl5/5.34/CORE/nostdio.h
-/usr/lib/perl5/5.34/CORE/op.h
-/usr/lib/perl5/5.34/CORE/op_reg_common.h
-/usr/lib/perl5/5.34/CORE/opcode.h
-/usr/lib/perl5/5.34/CORE/opnames.h
-/usr/lib/perl5/5.34/CORE/overload.h
-/usr/lib/perl5/5.34/CORE/pad.h
-/usr/lib/perl5/5.34/CORE/parser.h
-/usr/lib/perl5/5.34/CORE/patchlevel.h
-/usr/lib/perl5/5.34/CORE/perl.h
-/usr/lib/perl5/5.34/CORE/perl_inc_macro.h
-/usr/lib/perl5/5.34/CORE/perl_langinfo.h
-/usr/lib/perl5/5.34/CORE/perl_siphash.h
-/usr/lib/perl5/5.34/CORE/perlapi.h
-/usr/lib/perl5/5.34/CORE/perlio.h
-/usr/lib/perl5/5.34/CORE/perliol.h
-/usr/lib/perl5/5.34/CORE/perlsdio.h
-/usr/lib/perl5/5.34/CORE/perlvars.h
-/usr/lib/perl5/5.34/CORE/perly.h
-/usr/lib/perl5/5.34/CORE/pp.h
-/usr/lib/perl5/5.34/CORE/pp_proto.h
-/usr/lib/perl5/5.34/CORE/proto.h
-/usr/lib/perl5/5.34/CORE/reentr.h
-/usr/lib/perl5/5.34/CORE/regcharclass.h
-/usr/lib/perl5/5.34/CORE/regcomp.h
-/usr/lib/perl5/5.34/CORE/regexp.h
-/usr/lib/perl5/5.34/CORE/regnodes.h
-/usr/lib/perl5/5.34/CORE/sbox32_hash.h
-/usr/lib/perl5/5.34/CORE/scope.h
-/usr/lib/perl5/5.34/CORE/sv.h
-/usr/lib/perl5/5.34/CORE/thread.h
-/usr/lib/perl5/5.34/CORE/time64.h
-/usr/lib/perl5/5.34/CORE/time64_config.h
-/usr/lib/perl5/5.34/CORE/uconfig.h
-/usr/lib/perl5/5.34/CORE/uni_keywords.h
-/usr/lib/perl5/5.34/CORE/unicode_constants.h
-/usr/lib/perl5/5.34/CORE/unixish.h
-/usr/lib/perl5/5.34/CORE/utf8.h
-/usr/lib/perl5/5.34/CORE/utfebcdic.h
-/usr/lib/perl5/5.34/CORE/util.h
-/usr/lib/perl5/5.34/CORE/uudmap.h
-/usr/lib/perl5/5.34/CORE/vutil.h
-/usr/lib/perl5/5.34/CORE/warnings.h
-/usr/lib/perl5/5.34/CORE/zaphod32_hash.h
-/usr/lib/perl5/5.34/CPAN.pm
-/usr/lib/perl5/5.34/CPAN/API/HOWTO.pod
-/usr/lib/perl5/5.34/CPAN/Author.pm
-/usr/lib/perl5/5.34/CPAN/Bundle.pm
-/usr/lib/perl5/5.34/CPAN/CacheMgr.pm
-/usr/lib/perl5/5.34/CPAN/Complete.pm
-/usr/lib/perl5/5.34/CPAN/Debug.pm
-/usr/lib/perl5/5.34/CPAN/DeferredCode.pm
-/usr/lib/perl5/5.34/CPAN/Distribution.pm
-/usr/lib/perl5/5.34/CPAN/Distroprefs.pm
-/usr/lib/perl5/5.34/CPAN/Distrostatus.pm
-/usr/lib/perl5/5.34/CPAN/Exception/RecursiveDependency.pm
-/usr/lib/perl5/5.34/CPAN/Exception/blocked_urllist.pm
-/usr/lib/perl5/5.34/CPAN/Exception/yaml_not_installed.pm
-/usr/lib/perl5/5.34/CPAN/Exception/yaml_process_error.pm
-/usr/lib/perl5/5.34/CPAN/FTP.pm
-/usr/lib/perl5/5.34/CPAN/FTP/netrc.pm
-/usr/lib/perl5/5.34/CPAN/FirstTime.pm
-/usr/lib/perl5/5.34/CPAN/HTTP/Client.pm
-/usr/lib/perl5/5.34/CPAN/HTTP/Credentials.pm
-/usr/lib/perl5/5.34/CPAN/HandleConfig.pm
-/usr/lib/perl5/5.34/CPAN/Index.pm
-/usr/lib/perl5/5.34/CPAN/InfoObj.pm
-/usr/lib/perl5/5.34/CPAN/Kwalify.pm
-/usr/lib/perl5/5.34/CPAN/Kwalify/distroprefs.dd
-/usr/lib/perl5/5.34/CPAN/Kwalify/distroprefs.yml
-/usr/lib/perl5/5.34/CPAN/LWP/UserAgent.pm
-/usr/lib/perl5/5.34/CPAN/Meta.pm
-/usr/lib/perl5/5.34/CPAN/Meta/Converter.pm
-/usr/lib/perl5/5.34/CPAN/Meta/Feature.pm
-/usr/lib/perl5/5.34/CPAN/Meta/History.pm
-/usr/lib/perl5/5.34/CPAN/Meta/History/Meta_1_0.pod
-/usr/lib/perl5/5.34/CPAN/Meta/History/Meta_1_1.pod
-/usr/lib/perl5/5.34/CPAN/Meta/History/Meta_1_2.pod
-/usr/lib/perl5/5.34/CPAN/Meta/History/Meta_1_3.pod
-/usr/lib/perl5/5.34/CPAN/Meta/History/Meta_1_4.pod
-/usr/lib/perl5/5.34/CPAN/Meta/Merge.pm
-/usr/lib/perl5/5.34/CPAN/Meta/Prereqs.pm
-/usr/lib/perl5/5.34/CPAN/Meta/Requirements.pm
-/usr/lib/perl5/5.34/CPAN/Meta/Spec.pm
-/usr/lib/perl5/5.34/CPAN/Meta/Validator.pm
-/usr/lib/perl5/5.34/CPAN/Meta/YAML.pm
-/usr/lib/perl5/5.34/CPAN/Mirrors.pm
-/usr/lib/perl5/5.34/CPAN/Module.pm
-/usr/lib/perl5/5.34/CPAN/Nox.pm
-/usr/lib/perl5/5.34/CPAN/Plugin.pm
-/usr/lib/perl5/5.34/CPAN/Plugin/Specfile.pm
-/usr/lib/perl5/5.34/CPAN/Prompt.pm
-/usr/lib/perl5/5.34/CPAN/Queue.pm
-/usr/lib/perl5/5.34/CPAN/Shell.pm
-/usr/lib/perl5/5.34/CPAN/Tarzip.pm
-/usr/lib/perl5/5.34/CPAN/URL.pm
-/usr/lib/perl5/5.34/CPAN/Version.pm
-/usr/lib/perl5/5.34/Carp.pm
-/usr/lib/perl5/5.34/Carp/Heavy.pm
-/usr/lib/perl5/5.34/Class/Struct.pm
-/usr/lib/perl5/5.34/Compress/Raw/Bzip2.pm
-/usr/lib/perl5/5.34/Compress/Raw/Zlib.pm
-/usr/lib/perl5/5.34/Compress/Zlib.pm
-/usr/lib/perl5/5.34/Config.pm
-/usr/lib/perl5/5.34/Config.pod
-/usr/lib/perl5/5.34/Config/Extensions.pm
-/usr/lib/perl5/5.34/Config/Perl/V.pm
-/usr/lib/perl5/5.34/Config_git.pl
-/usr/lib/perl5/5.34/Config_heavy.pl
-/usr/lib/perl5/5.34/Cwd.pm
-/usr/lib/perl5/5.34/DB.pm
-/usr/lib/perl5/5.34/DBM_Filter.pm
-/usr/lib/perl5/5.34/DBM_Filter/compress.pm
-/usr/lib/perl5/5.34/DBM_Filter/encode.pm
-/usr/lib/perl5/5.34/DBM_Filter/int32.pm
-/usr/lib/perl5/5.34/DBM_Filter/null.pm
-/usr/lib/perl5/5.34/DBM_Filter/utf8.pm
-/usr/lib/perl5/5.34/Data/Dumper.pm
-/usr/lib/perl5/5.34/Devel/PPPort.pm
-/usr/lib/perl5/5.34/Devel/Peek.pm
-/usr/lib/perl5/5.34/Devel/SelfStubber.pm
-/usr/lib/perl5/5.34/Digest.pm
-/usr/lib/perl5/5.34/Digest/MD5.pm
-/usr/lib/perl5/5.34/Digest/SHA.pm
-/usr/lib/perl5/5.34/Digest/base.pm
-/usr/lib/perl5/5.34/Digest/file.pm
-/usr/lib/perl5/5.34/DirHandle.pm
-/usr/lib/perl5/5.34/Dumpvalue.pm
-/usr/lib/perl5/5.34/DynaLoader.pm
-/usr/lib/perl5/5.34/Encode.pm
-/usr/lib/perl5/5.34/Encode/Alias.pm
-/usr/lib/perl5/5.34/Encode/Byte.pm
-/usr/lib/perl5/5.34/Encode/CJKConstants.pm
-/usr/lib/perl5/5.34/Encode/CN.pm
-/usr/lib/perl5/5.34/Encode/CN/HZ.pm
-/usr/lib/perl5/5.34/Encode/Changes.e2x
-/usr/lib/perl5/5.34/Encode/Config.pm
-/usr/lib/perl5/5.34/Encode/ConfigLocal_PM.e2x
-/usr/lib/perl5/5.34/Encode/EBCDIC.pm
-/usr/lib/perl5/5.34/Encode/Encoder.pm
-/usr/lib/perl5/5.34/Encode/Encoding.pm
-/usr/lib/perl5/5.34/Encode/GSM0338.pm
-/usr/lib/perl5/5.34/Encode/Guess.pm
-/usr/lib/perl5/5.34/Encode/JP.pm
-/usr/lib/perl5/5.34/Encode/JP/H2Z.pm
-/usr/lib/perl5/5.34/Encode/JP/JIS7.pm
-/usr/lib/perl5/5.34/Encode/KR.pm
-/usr/lib/perl5/5.34/Encode/KR/2022_KR.pm
-/usr/lib/perl5/5.34/Encode/MIME/Header.pm
-/usr/lib/perl5/5.34/Encode/MIME/Header/ISO_2022_JP.pm
-/usr/lib/perl5/5.34/Encode/MIME/Name.pm
-/usr/lib/perl5/5.34/Encode/Makefile_PL.e2x
-/usr/lib/perl5/5.34/Encode/PerlIO.pod
-/usr/lib/perl5/5.34/Encode/README.e2x
-/usr/lib/perl5/5.34/Encode/Supported.pod
-/usr/lib/perl5/5.34/Encode/Symbol.pm
-/usr/lib/perl5/5.34/Encode/TW.pm
-/usr/lib/perl5/5.34/Encode/Unicode.pm
-/usr/lib/perl5/5.34/Encode/Unicode/UTF7.pm
-/usr/lib/perl5/5.34/Encode/_PM.e2x
-/usr/lib/perl5/5.34/Encode/_T.e2x
-/usr/lib/perl5/5.34/Encode/encode.h
-/usr/lib/perl5/5.34/English.pm
-/usr/lib/perl5/5.34/Env.pm
-/usr/lib/perl5/5.34/Errno.pm
-/usr/lib/perl5/5.34/Exporter.pm
-/usr/lib/perl5/5.34/Exporter/Heavy.pm
-/usr/lib/perl5/5.34/ExtUtils/CBuilder.pm
-/usr/lib/perl5/5.34/ExtUtils/CBuilder/Base.pm
-/usr/lib/perl5/5.34/ExtUtils/CBuilder/Platform/Unix.pm
-/usr/lib/perl5/5.34/ExtUtils/CBuilder/Platform/VMS.pm
-/usr/lib/perl5/5.34/ExtUtils/CBuilder/Platform/Windows.pm
-/usr/lib/perl5/5.34/ExtUtils/CBuilder/Platform/Windows/BCC.pm
-/usr/lib/perl5/5.34/ExtUtils/CBuilder/Platform/Windows/GCC.pm
-/usr/lib/perl5/5.34/ExtUtils/CBuilder/Platform/Windows/MSVC.pm
-/usr/lib/perl5/5.34/ExtUtils/CBuilder/Platform/aix.pm
-/usr/lib/perl5/5.34/ExtUtils/CBuilder/Platform/android.pm
-/usr/lib/perl5/5.34/ExtUtils/CBuilder/Platform/cygwin.pm
-/usr/lib/perl5/5.34/ExtUtils/CBuilder/Platform/darwin.pm
-/usr/lib/perl5/5.34/ExtUtils/CBuilder/Platform/dec_osf.pm
-/usr/lib/perl5/5.34/ExtUtils/CBuilder/Platform/os2.pm
-/usr/lib/perl5/5.34/ExtUtils/Command.pm
-/usr/lib/perl5/5.34/ExtUtils/Command/MM.pm
-/usr/lib/perl5/5.34/ExtUtils/Constant.pm
-/usr/lib/perl5/5.34/ExtUtils/Constant/Base.pm
-/usr/lib/perl5/5.34/ExtUtils/Constant/ProxySubs.pm
-/usr/lib/perl5/5.34/ExtUtils/Constant/Utils.pm
-/usr/lib/perl5/5.34/ExtUtils/Constant/XS.pm
-/usr/lib/perl5/5.34/ExtUtils/Embed.pm
-/usr/lib/perl5/5.34/ExtUtils/Install.pm
-/usr/lib/perl5/5.34/ExtUtils/Installed.pm
-/usr/lib/perl5/5.34/ExtUtils/Liblist.pm
-/usr/lib/perl5/5.34/ExtUtils/Liblist/Kid.pm
-/usr/lib/perl5/5.34/ExtUtils/MANIFEST.SKIP
-/usr/lib/perl5/5.34/ExtUtils/MM.pm
-/usr/lib/perl5/5.34/ExtUtils/MM_AIX.pm
-/usr/lib/perl5/5.34/ExtUtils/MM_Any.pm
-/usr/lib/perl5/5.34/ExtUtils/MM_BeOS.pm
-/usr/lib/perl5/5.34/ExtUtils/MM_Cygwin.pm
-/usr/lib/perl5/5.34/ExtUtils/MM_DOS.pm
-/usr/lib/perl5/5.34/ExtUtils/MM_Darwin.pm
-/usr/lib/perl5/5.34/ExtUtils/MM_MacOS.pm
-/usr/lib/perl5/5.34/ExtUtils/MM_NW5.pm
-/usr/lib/perl5/5.34/ExtUtils/MM_OS2.pm
-/usr/lib/perl5/5.34/ExtUtils/MM_OS390.pm
-/usr/lib/perl5/5.34/ExtUtils/MM_QNX.pm
-/usr/lib/perl5/5.34/ExtUtils/MM_UWIN.pm
-/usr/lib/perl5/5.34/ExtUtils/MM_Unix.pm
-/usr/lib/perl5/5.34/ExtUtils/MM_VMS.pm
-/usr/lib/perl5/5.34/ExtUtils/MM_VOS.pm
-/usr/lib/perl5/5.34/ExtUtils/MM_Win32.pm
-/usr/lib/perl5/5.34/ExtUtils/MM_Win95.pm
-/usr/lib/perl5/5.34/ExtUtils/MY.pm
-/usr/lib/perl5/5.34/ExtUtils/MakeMaker.pm
-/usr/lib/perl5/5.34/ExtUtils/MakeMaker/Config.pm
-/usr/lib/perl5/5.34/ExtUtils/MakeMaker/FAQ.pod
-/usr/lib/perl5/5.34/ExtUtils/MakeMaker/Locale.pm
-/usr/lib/perl5/5.34/ExtUtils/MakeMaker/Tutorial.pod
-/usr/lib/perl5/5.34/ExtUtils/MakeMaker/version.pm
-/usr/lib/perl5/5.34/ExtUtils/Manifest.pm
-/usr/lib/perl5/5.34/ExtUtils/Miniperl.pm
-/usr/lib/perl5/5.34/ExtUtils/Mkbootstrap.pm
-/usr/lib/perl5/5.34/ExtUtils/Mksymlists.pm
-/usr/lib/perl5/5.34/ExtUtils/PL2Bat.pm
-/usr/lib/perl5/5.34/ExtUtils/Packlist.pm
-/usr/lib/perl5/5.34/ExtUtils/ParseXS.pm
-/usr/lib/perl5/5.34/ExtUtils/ParseXS.pod
-/usr/lib/perl5/5.34/ExtUtils/ParseXS/Constants.pm
-/usr/lib/perl5/5.34/ExtUtils/ParseXS/CountLines.pm
-/usr/lib/perl5/5.34/ExtUtils/ParseXS/Eval.pm
-/usr/lib/perl5/5.34/ExtUtils/ParseXS/Utilities.pm
-/usr/lib/perl5/5.34/ExtUtils/Typemaps.pm
-/usr/lib/perl5/5.34/ExtUtils/Typemaps/Cmd.pm
-/usr/lib/perl5/5.34/ExtUtils/Typemaps/InputMap.pm
-/usr/lib/perl5/5.34/ExtUtils/Typemaps/OutputMap.pm
-/usr/lib/perl5/5.34/ExtUtils/Typemaps/Type.pm
-/usr/lib/perl5/5.34/ExtUtils/testlib.pm
-/usr/lib/perl5/5.34/ExtUtils/typemap
-/usr/lib/perl5/5.34/ExtUtils/xsubpp
-/usr/lib/perl5/5.34/Fatal.pm
-/usr/lib/perl5/5.34/Fcntl.pm
-/usr/lib/perl5/5.34/File/Basename.pm
-/usr/lib/perl5/5.34/File/Compare.pm
-/usr/lib/perl5/5.34/File/Copy.pm
-/usr/lib/perl5/5.34/File/DosGlob.pm
-/usr/lib/perl5/5.34/File/Fetch.pm
-/usr/lib/perl5/5.34/File/Find.pm
-/usr/lib/perl5/5.34/File/Glob.pm
-/usr/lib/perl5/5.34/File/GlobMapper.pm
-/usr/lib/perl5/5.34/File/Path.pm
-/usr/lib/perl5/5.34/File/Spec.pm
-/usr/lib/perl5/5.34/File/Spec/AmigaOS.pm
-/usr/lib/perl5/5.34/File/Spec/Cygwin.pm
-/usr/lib/perl5/5.34/File/Spec/Epoc.pm
-/usr/lib/perl5/5.34/File/Spec/Functions.pm
-/usr/lib/perl5/5.34/File/Spec/Mac.pm
-/usr/lib/perl5/5.34/File/Spec/OS2.pm
-/usr/lib/perl5/5.34/File/Spec/Unix.pm
-/usr/lib/perl5/5.34/File/Spec/VMS.pm
-/usr/lib/perl5/5.34/File/Spec/Win32.pm
-/usr/lib/perl5/5.34/File/Temp.pm
-/usr/lib/perl5/5.34/File/stat.pm
-/usr/lib/perl5/5.34/FileCache.pm
-/usr/lib/perl5/5.34/FileHandle.pm
-/usr/lib/perl5/5.34/Filter/Simple.pm
-/usr/lib/perl5/5.34/Filter/Util/Call.pm
-/usr/lib/perl5/5.34/FindBin.pm
-/usr/lib/perl5/5.34/GDBM_File.pm
-/usr/lib/perl5/5.34/Getopt/Long.pm
-/usr/lib/perl5/5.34/Getopt/Std.pm
-/usr/lib/perl5/5.34/HTTP/Tiny.pm
-/usr/lib/perl5/5.34/Hash/Util.pm
-/usr/lib/perl5/5.34/Hash/Util/FieldHash.pm
-/usr/lib/perl5/5.34/I18N/Collate.pm
-/usr/lib/perl5/5.34/I18N/LangTags.pm
-/usr/lib/perl5/5.34/I18N/LangTags/Detect.pm
-/usr/lib/perl5/5.34/I18N/LangTags/List.pm
-/usr/lib/perl5/5.34/I18N/Langinfo.pm
-/usr/lib/perl5/5.34/IO.pm
-/usr/lib/perl5/5.34/IO/Compress/Adapter/Bzip2.pm
-/usr/lib/perl5/5.34/IO/Compress/Adapter/Deflate.pm
-/usr/lib/perl5/5.34/IO/Compress/Adapter/Identity.pm
-/usr/lib/perl5/5.34/IO/Compress/Base.pm
-/usr/lib/perl5/5.34/IO/Compress/Base/Common.pm
-/usr/lib/perl5/5.34/IO/Compress/Bzip2.pm
-/usr/lib/perl5/5.34/IO/Compress/Deflate.pm
-/usr/lib/perl5/5.34/IO/Compress/FAQ.pod
-/usr/lib/perl5/5.34/IO/Compress/Gzip.pm
-/usr/lib/perl5/5.34/IO/Compress/Gzip/Constants.pm
-/usr/lib/perl5/5.34/IO/Compress/RawDeflate.pm
-/usr/lib/perl5/5.34/IO/Compress/Zip.pm
-/usr/lib/perl5/5.34/IO/Compress/Zip/Constants.pm
-/usr/lib/perl5/5.34/IO/Compress/Zlib/Constants.pm
-/usr/lib/perl5/5.34/IO/Compress/Zlib/Extra.pm
-/usr/lib/perl5/5.34/IO/Dir.pm
-/usr/lib/perl5/5.34/IO/File.pm
-/usr/lib/perl5/5.34/IO/Handle.pm
-/usr/lib/perl5/5.34/IO/Pipe.pm
-/usr/lib/perl5/5.34/IO/Poll.pm
-/usr/lib/perl5/5.34/IO/Seekable.pm
-/usr/lib/perl5/5.34/IO/Select.pm
-/usr/lib/perl5/5.34/IO/Socket.pm
-/usr/lib/perl5/5.34/IO/Socket/INET.pm
-/usr/lib/perl5/5.34/IO/Socket/IP.pm
-/usr/lib/perl5/5.34/IO/Socket/UNIX.pm
-/usr/lib/perl5/5.34/IO/Uncompress/Adapter/Bunzip2.pm
-/usr/lib/perl5/5.34/IO/Uncompress/Adapter/Identity.pm
-/usr/lib/perl5/5.34/IO/Uncompress/Adapter/Inflate.pm
-/usr/lib/perl5/5.34/IO/Uncompress/AnyInflate.pm
-/usr/lib/perl5/5.34/IO/Uncompress/AnyUncompress.pm
-/usr/lib/perl5/5.34/IO/Uncompress/Base.pm
-/usr/lib/perl5/5.34/IO/Uncompress/Bunzip2.pm
-/usr/lib/perl5/5.34/IO/Uncompress/Gunzip.pm
-/usr/lib/perl5/5.34/IO/Uncompress/Inflate.pm
-/usr/lib/perl5/5.34/IO/Uncompress/RawInflate.pm
-/usr/lib/perl5/5.34/IO/Uncompress/Unzip.pm
-/usr/lib/perl5/5.34/IO/Zlib.pm
-/usr/lib/perl5/5.34/IPC/Cmd.pm
-/usr/lib/perl5/5.34/IPC/Msg.pm
-/usr/lib/perl5/5.34/IPC/Open2.pm
-/usr/lib/perl5/5.34/IPC/Open3.pm
-/usr/lib/perl5/5.34/IPC/Semaphore.pm
-/usr/lib/perl5/5.34/IPC/SharedMem.pm
-/usr/lib/perl5/5.34/IPC/SysV.pm
-/usr/lib/perl5/5.34/Internals.pod
-/usr/lib/perl5/5.34/JSON/PP.pm
-/usr/lib/perl5/5.34/JSON/PP/Boolean.pm
-/usr/lib/perl5/5.34/List/Util.pm
-/usr/lib/perl5/5.34/List/Util/XS.pm
-/usr/lib/perl5/5.34/Locale/Maketext.pm
-/usr/lib/perl5/5.34/Locale/Maketext.pod
-/usr/lib/perl5/5.34/Locale/Maketext/Cookbook.pod
-/usr/lib/perl5/5.34/Locale/Maketext/Guts.pm
-/usr/lib/perl5/5.34/Locale/Maketext/GutsLoader.pm
-/usr/lib/perl5/5.34/Locale/Maketext/Simple.pm
-/usr/lib/perl5/5.34/Locale/Maketext/TPJ13.pod
-/usr/lib/perl5/5.34/MIME/Base64.pm
-/usr/lib/perl5/5.34/MIME/QuotedPrint.pm
-/usr/lib/perl5/5.34/Math/BigFloat.pm
-/usr/lib/perl5/5.34/Math/BigFloat/Trace.pm
-/usr/lib/perl5/5.34/Math/BigInt.pm
-/usr/lib/perl5/5.34/Math/BigInt/Calc.pm
-/usr/lib/perl5/5.34/Math/BigInt/FastCalc.pm
-/usr/lib/perl5/5.34/Math/BigInt/Lib.pm
-/usr/lib/perl5/5.34/Math/BigInt/Trace.pm
-/usr/lib/perl5/5.34/Math/BigRat.pm
-/usr/lib/perl5/5.34/Math/Complex.pm
-/usr/lib/perl5/5.34/Math/Trig.pm
-/usr/lib/perl5/5.34/Memoize.pm
-/usr/lib/perl5/5.34/Memoize/AnyDBM_File.pm
-/usr/lib/perl5/5.34/Memoize/Expire.pm
-/usr/lib/perl5/5.34/Memoize/ExpireFile.pm
-/usr/lib/perl5/5.34/Memoize/ExpireTest.pm
-/usr/lib/perl5/5.34/Memoize/SDBM_File.pm
-/usr/lib/perl5/5.34/Memoize/Storable.pm
-/usr/lib/perl5/5.34/Module/CoreList.pm
-/usr/lib/perl5/5.34/Module/CoreList.pod
-/usr/lib/perl5/5.34/Module/CoreList/Utils.pm
-/usr/lib/perl5/5.34/Module/Load.pm
-/usr/lib/perl5/5.34/Module/Load/Conditional.pm
-/usr/lib/perl5/5.34/Module/Loaded.pm
-/usr/lib/perl5/5.34/Module/Metadata.pm
-/usr/lib/perl5/5.34/NEXT.pm
-/usr/lib/perl5/5.34/Net/Cmd.pm
-/usr/lib/perl5/5.34/Net/Config.pm
-/usr/lib/perl5/5.34/Net/Domain.pm
-/usr/lib/perl5/5.34/Net/FTP.pm
-/usr/lib/perl5/5.34/Net/FTP/A.pm
-/usr/lib/perl5/5.34/Net/FTP/E.pm
-/usr/lib/perl5/5.34/Net/FTP/I.pm
-/usr/lib/perl5/5.34/Net/FTP/L.pm
-/usr/lib/perl5/5.34/Net/FTP/dataconn.pm
-/usr/lib/perl5/5.34/Net/NNTP.pm
-/usr/lib/perl5/5.34/Net/Netrc.pm
-/usr/lib/perl5/5.34/Net/POP3.pm
-/usr/lib/perl5/5.34/Net/Ping.pm
-/usr/lib/perl5/5.34/Net/SMTP.pm
-/usr/lib/perl5/5.34/Net/Time.pm
-/usr/lib/perl5/5.34/Net/hostent.pm
-/usr/lib/perl5/5.34/Net/libnetFAQ.pod
-/usr/lib/perl5/5.34/Net/netent.pm
-/usr/lib/perl5/5.34/Net/protoent.pm
-/usr/lib/perl5/5.34/Net/servent.pm
-/usr/lib/perl5/5.34/O.pm
-/usr/lib/perl5/5.34/Opcode.pm
-/usr/lib/perl5/5.34/POSIX.pm
-/usr/lib/perl5/5.34/POSIX.pod
-/usr/lib/perl5/5.34/Params/Check.pm
-/usr/lib/perl5/5.34/Parse/CPAN/Meta.pm
-/usr/lib/perl5/5.34/Perl/OSType.pm
-/usr/lib/perl5/5.34/PerlIO.pm
-/usr/lib/perl5/5.34/PerlIO/encoding.pm
-/usr/lib/perl5/5.34/PerlIO/mmap.pm
-/usr/lib/perl5/5.34/PerlIO/scalar.pm
-/usr/lib/perl5/5.34/PerlIO/via.pm
-/usr/lib/perl5/5.34/PerlIO/via/QuotedPrint.pm
-/usr/lib/perl5/5.34/Pod/Checker.pm
-/usr/lib/perl5/5.34/Pod/Escapes.pm
-/usr/lib/perl5/5.34/Pod/Functions.pm
-/usr/lib/perl5/5.34/Pod/Html.pm
-/usr/lib/perl5/5.34/Pod/Man.pm
-/usr/lib/perl5/5.34/Pod/ParseLink.pm
-/usr/lib/perl5/5.34/Pod/Perldoc.pm
-/usr/lib/perl5/5.34/Pod/Perldoc/BaseTo.pm
-/usr/lib/perl5/5.34/Pod/Perldoc/GetOptsOO.pm
-/usr/lib/perl5/5.34/Pod/Perldoc/ToANSI.pm
-/usr/lib/perl5/5.34/Pod/Perldoc/ToChecker.pm
-/usr/lib/perl5/5.34/Pod/Perldoc/ToMan.pm
-/usr/lib/perl5/5.34/Pod/Perldoc/ToNroff.pm
-/usr/lib/perl5/5.34/Pod/Perldoc/ToPod.pm
-/usr/lib/perl5/5.34/Pod/Perldoc/ToRtf.pm
-/usr/lib/perl5/5.34/Pod/Perldoc/ToTerm.pm
-/usr/lib/perl5/5.34/Pod/Perldoc/ToText.pm
-/usr/lib/perl5/5.34/Pod/Perldoc/ToTk.pm
-/usr/lib/perl5/5.34/Pod/Perldoc/ToXml.pm
-/usr/lib/perl5/5.34/Pod/Simple.pm
-/usr/lib/perl5/5.34/Pod/Simple.pod
-/usr/lib/perl5/5.34/Pod/Simple/BlackBox.pm
-/usr/lib/perl5/5.34/Pod/Simple/Checker.pm
-/usr/lib/perl5/5.34/Pod/Simple/Debug.pm
-/usr/lib/perl5/5.34/Pod/Simple/DumpAsText.pm
-/usr/lib/perl5/5.34/Pod/Simple/DumpAsXML.pm
-/usr/lib/perl5/5.34/Pod/Simple/HTML.pm
-/usr/lib/perl5/5.34/Pod/Simple/HTMLBatch.pm
-/usr/lib/perl5/5.34/Pod/Simple/HTMLLegacy.pm
-/usr/lib/perl5/5.34/Pod/Simple/JustPod.pm
-/usr/lib/perl5/5.34/Pod/Simple/LinkSection.pm
-/usr/lib/perl5/5.34/Pod/Simple/Methody.pm
-/usr/lib/perl5/5.34/Pod/Simple/Progress.pm
-/usr/lib/perl5/5.34/Pod/Simple/PullParser.pm
-/usr/lib/perl5/5.34/Pod/Simple/PullParserEndToken.pm
-/usr/lib/perl5/5.34/Pod/Simple/PullParserStartToken.pm
-/usr/lib/perl5/5.34/Pod/Simple/PullParserTextToken.pm
-/usr/lib/perl5/5.34/Pod/Simple/PullParserToken.pm
-/usr/lib/perl5/5.34/Pod/Simple/RTF.pm
-/usr/lib/perl5/5.34/Pod/Simple/Search.pm
-/usr/lib/perl5/5.34/Pod/Simple/SimpleTree.pm
-/usr/lib/perl5/5.34/Pod/Simple/Subclassing.pod
-/usr/lib/perl5/5.34/Pod/Simple/Text.pm
-/usr/lib/perl5/5.34/Pod/Simple/TextContent.pm
-/usr/lib/perl5/5.34/Pod/Simple/TiedOutFH.pm
-/usr/lib/perl5/5.34/Pod/Simple/Transcode.pm
-/usr/lib/perl5/5.34/Pod/Simple/TranscodeDumb.pm
-/usr/lib/perl5/5.34/Pod/Simple/TranscodeSmart.pm
-/usr/lib/perl5/5.34/Pod/Simple/XHTML.pm
-/usr/lib/perl5/5.34/Pod/Simple/XMLOutStream.pm
-/usr/lib/perl5/5.34/Pod/Text.pm
-/usr/lib/perl5/5.34/Pod/Text/Color.pm
-/usr/lib/perl5/5.34/Pod/Text/Overstrike.pm
-/usr/lib/perl5/5.34/Pod/Text/Termcap.pm
-/usr/lib/perl5/5.34/Pod/Usage.pm
-/usr/lib/perl5/5.34/SDBM_File.pm
-/usr/lib/perl5/5.34/Safe.pm
-/usr/lib/perl5/5.34/Scalar/Util.pm
-/usr/lib/perl5/5.34/Search/Dict.pm
-/usr/lib/perl5/5.34/SelectSaver.pm
-/usr/lib/perl5/5.34/SelfLoader.pm
-/usr/lib/perl5/5.34/Socket.pm
-/usr/lib/perl5/5.34/Storable.pm
-/usr/lib/perl5/5.34/Sub/Util.pm
-/usr/lib/perl5/5.34/Symbol.pm
-/usr/lib/perl5/5.34/Sys/Hostname.pm
-/usr/lib/perl5/5.34/Sys/Syslog.pm
-/usr/lib/perl5/5.34/TAP/Base.pm
-/usr/lib/perl5/5.34/TAP/Formatter/Base.pm
-/usr/lib/perl5/5.34/TAP/Formatter/Color.pm
-/usr/lib/perl5/5.34/TAP/Formatter/Console.pm
-/usr/lib/perl5/5.34/TAP/Formatter/Console/ParallelSession.pm
-/usr/lib/perl5/5.34/TAP/Formatter/Console/Session.pm
-/usr/lib/perl5/5.34/TAP/Formatter/File.pm
-/usr/lib/perl5/5.34/TAP/Formatter/File/Session.pm
-/usr/lib/perl5/5.34/TAP/Formatter/Session.pm
-/usr/lib/perl5/5.34/TAP/Harness.pm
-/usr/lib/perl5/5.34/TAP/Harness/Beyond.pod
-/usr/lib/perl5/5.34/TAP/Harness/Env.pm
-/usr/lib/perl5/5.34/TAP/Object.pm
-/usr/lib/perl5/5.34/TAP/Parser.pm
-/usr/lib/perl5/5.34/TAP/Parser/Aggregator.pm
-/usr/lib/perl5/5.34/TAP/Parser/Grammar.pm
-/usr/lib/perl5/5.34/TAP/Parser/Iterator.pm
-/usr/lib/perl5/5.34/TAP/Parser/Iterator/Array.pm
-/usr/lib/perl5/5.34/TAP/Parser/Iterator/Process.pm
-/usr/lib/perl5/5.34/TAP/Parser/Iterator/Stream.pm
-/usr/lib/perl5/5.34/TAP/Parser/IteratorFactory.pm
-/usr/lib/perl5/5.34/TAP/Parser/Multiplexer.pm
-/usr/lib/perl5/5.34/TAP/Parser/Result.pm
-/usr/lib/perl5/5.34/TAP/Parser/Result/Bailout.pm
-/usr/lib/perl5/5.34/TAP/Parser/Result/Comment.pm
-/usr/lib/perl5/5.34/TAP/Parser/Result/Plan.pm
-/usr/lib/perl5/5.34/TAP/Parser/Result/Pragma.pm
-/usr/lib/perl5/5.34/TAP/Parser/Result/Test.pm
-/usr/lib/perl5/5.34/TAP/Parser/Result/Unknown.pm
-/usr/lib/perl5/5.34/TAP/Parser/Result/Version.pm
-/usr/lib/perl5/5.34/TAP/Parser/Result/YAML.pm
-/usr/lib/perl5/5.34/TAP/Parser/ResultFactory.pm
-/usr/lib/perl5/5.34/TAP/Parser/Scheduler.pm
-/usr/lib/perl5/5.34/TAP/Parser/Scheduler/Job.pm
-/usr/lib/perl5/5.34/TAP/Parser/Scheduler/Spinner.pm
-/usr/lib/perl5/5.34/TAP/Parser/Source.pm
-/usr/lib/perl5/5.34/TAP/Parser/SourceHandler.pm
-/usr/lib/perl5/5.34/TAP/Parser/SourceHandler/Executable.pm
-/usr/lib/perl5/5.34/TAP/Parser/SourceHandler/File.pm
-/usr/lib/perl5/5.34/TAP/Parser/SourceHandler/Handle.pm
-/usr/lib/perl5/5.34/TAP/Parser/SourceHandler/Perl.pm
-/usr/lib/perl5/5.34/TAP/Parser/SourceHandler/RawTAP.pm
-/usr/lib/perl5/5.34/TAP/Parser/YAMLish/Reader.pm
-/usr/lib/perl5/5.34/TAP/Parser/YAMLish/Writer.pm
-/usr/lib/perl5/5.34/Term/ANSIColor.pm
-/usr/lib/perl5/5.34/Term/Cap.pm
-/usr/lib/perl5/5.34/Term/Complete.pm
-/usr/lib/perl5/5.34/Term/ReadLine.pm
-/usr/lib/perl5/5.34/Test.pm
-/usr/lib/perl5/5.34/Test/Builder.pm
-/usr/lib/perl5/5.34/Test/Builder/Formatter.pm
-/usr/lib/perl5/5.34/Test/Builder/IO/Scalar.pm
-/usr/lib/perl5/5.34/Test/Builder/Module.pm
-/usr/lib/perl5/5.34/Test/Builder/Tester.pm
-/usr/lib/perl5/5.34/Test/Builder/Tester/Color.pm
-/usr/lib/perl5/5.34/Test/Builder/TodoDiag.pm
-/usr/lib/perl5/5.34/Test/Harness.pm
-/usr/lib/perl5/5.34/Test/More.pm
-/usr/lib/perl5/5.34/Test/Simple.pm
-/usr/lib/perl5/5.34/Test/Tester.pm
-/usr/lib/perl5/5.34/Test/Tester/Capture.pm
-/usr/lib/perl5/5.34/Test/Tester/CaptureRunner.pm
-/usr/lib/perl5/5.34/Test/Tester/Delegate.pm
-/usr/lib/perl5/5.34/Test/Tutorial.pod
-/usr/lib/perl5/5.34/Test/use/ok.pm
-/usr/lib/perl5/5.34/Test2.pm
-/usr/lib/perl5/5.34/Test2/API.pm
-/usr/lib/perl5/5.34/Test2/API/Breakage.pm
-/usr/lib/perl5/5.34/Test2/API/Context.pm
-/usr/lib/perl5/5.34/Test2/API/Instance.pm
-/usr/lib/perl5/5.34/Test2/API/InterceptResult.pm
-/usr/lib/perl5/5.34/Test2/API/InterceptResult/Event.pm
-/usr/lib/perl5/5.34/Test2/API/InterceptResult/Facet.pm
-/usr/lib/perl5/5.34/Test2/API/InterceptResult/Hub.pm
-/usr/lib/perl5/5.34/Test2/API/InterceptResult/Squasher.pm
-/usr/lib/perl5/5.34/Test2/API/Stack.pm
-/usr/lib/perl5/5.34/Test2/Event.pm
-/usr/lib/perl5/5.34/Test2/Event/Bail.pm
-/usr/lib/perl5/5.34/Test2/Event/Diag.pm
-/usr/lib/perl5/5.34/Test2/Event/Encoding.pm
-/usr/lib/perl5/5.34/Test2/Event/Exception.pm
-/usr/lib/perl5/5.34/Test2/Event/Fail.pm
-/usr/lib/perl5/5.34/Test2/Event/Generic.pm
-/usr/lib/perl5/5.34/Test2/Event/Note.pm
-/usr/lib/perl5/5.34/Test2/Event/Ok.pm
-/usr/lib/perl5/5.34/Test2/Event/Pass.pm
-/usr/lib/perl5/5.34/Test2/Event/Plan.pm
-/usr/lib/perl5/5.34/Test2/Event/Skip.pm
-/usr/lib/perl5/5.34/Test2/Event/Subtest.pm
-/usr/lib/perl5/5.34/Test2/Event/TAP/Version.pm
-/usr/lib/perl5/5.34/Test2/Event/V2.pm
-/usr/lib/perl5/5.34/Test2/Event/Waiting.pm
-/usr/lib/perl5/5.34/Test2/EventFacet.pm
-/usr/lib/perl5/5.34/Test2/EventFacet/About.pm
-/usr/lib/perl5/5.34/Test2/EventFacet/Amnesty.pm
-/usr/lib/perl5/5.34/Test2/EventFacet/Assert.pm
-/usr/lib/perl5/5.34/Test2/EventFacet/Control.pm
-/usr/lib/perl5/5.34/Test2/EventFacet/Error.pm
-/usr/lib/perl5/5.34/Test2/EventFacet/Hub.pm
-/usr/lib/perl5/5.34/Test2/EventFacet/Info.pm
-/usr/lib/perl5/5.34/Test2/EventFacet/Info/Table.pm
-/usr/lib/perl5/5.34/Test2/EventFacet/Meta.pm
-/usr/lib/perl5/5.34/Test2/EventFacet/Parent.pm
-/usr/lib/perl5/5.34/Test2/EventFacet/Plan.pm
-/usr/lib/perl5/5.34/Test2/EventFacet/Render.pm
-/usr/lib/perl5/5.34/Test2/EventFacet/Trace.pm
-/usr/lib/perl5/5.34/Test2/Formatter.pm
-/usr/lib/perl5/5.34/Test2/Formatter/TAP.pm
-/usr/lib/perl5/5.34/Test2/Hub.pm
-/usr/lib/perl5/5.34/Test2/Hub/Interceptor.pm
-/usr/lib/perl5/5.34/Test2/Hub/Interceptor/Terminator.pm
-/usr/lib/perl5/5.34/Test2/Hub/Subtest.pm
-/usr/lib/perl5/5.34/Test2/IPC.pm
-/usr/lib/perl5/5.34/Test2/IPC/Driver.pm
-/usr/lib/perl5/5.34/Test2/IPC/Driver/Files.pm
-/usr/lib/perl5/5.34/Test2/Tools/Tiny.pm
-/usr/lib/perl5/5.34/Test2/Transition.pod
-/usr/lib/perl5/5.34/Test2/Util.pm
-/usr/lib/perl5/5.34/Test2/Util/ExternalMeta.pm
-/usr/lib/perl5/5.34/Test2/Util/Facets2Legacy.pm
-/usr/lib/perl5/5.34/Test2/Util/HashBase.pm
-/usr/lib/perl5/5.34/Test2/Util/Trace.pm
-/usr/lib/perl5/5.34/Text/Abbrev.pm
-/usr/lib/perl5/5.34/Text/Balanced.pm
-/usr/lib/perl5/5.34/Text/ParseWords.pm
-/usr/lib/perl5/5.34/Text/Tabs.pm
-/usr/lib/perl5/5.34/Text/Wrap.pm
-/usr/lib/perl5/5.34/Thread.pm
-/usr/lib/perl5/5.34/Thread/Queue.pm
-/usr/lib/perl5/5.34/Thread/Semaphore.pm
-/usr/lib/perl5/5.34/Tie/Array.pm
-/usr/lib/perl5/5.34/Tie/File.pm
-/usr/lib/perl5/5.34/Tie/Handle.pm
-/usr/lib/perl5/5.34/Tie/Hash.pm
-/usr/lib/perl5/5.34/Tie/Hash/NamedCapture.pm
-/usr/lib/perl5/5.34/Tie/Memoize.pm
-/usr/lib/perl5/5.34/Tie/RefHash.pm
-/usr/lib/perl5/5.34/Tie/Scalar.pm
-/usr/lib/perl5/5.34/Tie/StdHandle.pm
-/usr/lib/perl5/5.34/Tie/SubstrHash.pm
-/usr/lib/perl5/5.34/Time/HiRes.pm
-/usr/lib/perl5/5.34/Time/Local.pm
-/usr/lib/perl5/5.34/Time/Piece.pm
-/usr/lib/perl5/5.34/Time/Seconds.pm
-/usr/lib/perl5/5.34/Time/gmtime.pm
-/usr/lib/perl5/5.34/Time/localtime.pm
-/usr/lib/perl5/5.34/Time/tm.pm
-/usr/lib/perl5/5.34/UNIVERSAL.pm
-/usr/lib/perl5/5.34/Unicode/Collate.pm
-/usr/lib/perl5/5.34/Unicode/Collate/CJK/Big5.pm
-/usr/lib/perl5/5.34/Unicode/Collate/CJK/GB2312.pm
-/usr/lib/perl5/5.34/Unicode/Collate/CJK/JISX0208.pm
-/usr/lib/perl5/5.34/Unicode/Collate/CJK/Korean.pm
-/usr/lib/perl5/5.34/Unicode/Collate/CJK/Pinyin.pm
-/usr/lib/perl5/5.34/Unicode/Collate/CJK/Stroke.pm
-/usr/lib/perl5/5.34/Unicode/Collate/CJK/Zhuyin.pm
-/usr/lib/perl5/5.34/Unicode/Collate/Locale.pm
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/af.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/ar.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/as.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/az.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/be.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/bn.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/ca.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/cs.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/cu.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/cy.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/da.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/de_at_ph.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/de_phone.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/dsb.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/ee.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/eo.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/es.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/es_trad.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/et.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/fa.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/fi.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/fi_phone.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/fil.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/fo.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/fr_ca.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/gu.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/ha.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/haw.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/he.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/hi.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/hr.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/hu.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/hy.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/ig.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/is.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/ja.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/kk.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/kl.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/kn.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/ko.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/kok.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/lkt.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/ln.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/lt.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/lv.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/mk.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/ml.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/mr.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/mt.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/nb.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/nn.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/nso.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/om.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/or.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/pa.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/pl.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/ro.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/sa.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/se.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/si.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/si_dict.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/sk.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/sl.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/sq.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/sr.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/sv.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/sv_refo.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/ta.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/te.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/th.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/tn.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/to.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/tr.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/ug_cyrl.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/uk.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/ur.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/vi.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/vo.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/wae.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/wo.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/yo.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/zh.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/zh_big5.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/zh_gb.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/zh_pin.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/zh_strk.pl
-/usr/lib/perl5/5.34/Unicode/Collate/Locale/zh_zhu.pl
-/usr/lib/perl5/5.34/Unicode/Collate/allkeys.txt
-/usr/lib/perl5/5.34/Unicode/Collate/keys.txt
-/usr/lib/perl5/5.34/Unicode/Normalize.pm
-/usr/lib/perl5/5.34/Unicode/UCD.pm
-/usr/lib/perl5/5.34/User/grent.pm
-/usr/lib/perl5/5.34/User/pwent.pm
-/usr/lib/perl5/5.34/XSLoader.pm
-/usr/lib/perl5/5.34/_charnames.pm
-/usr/lib/perl5/5.34/attributes.pm
-/usr/lib/perl5/5.34/autodie.pm
-/usr/lib/perl5/5.34/autodie/Scope/Guard.pm
-/usr/lib/perl5/5.34/autodie/Scope/GuardStack.pm
-/usr/lib/perl5/5.34/autodie/Util.pm
-/usr/lib/perl5/5.34/autodie/exception.pm
-/usr/lib/perl5/5.34/autodie/exception/system.pm
-/usr/lib/perl5/5.34/autodie/hints.pm
-/usr/lib/perl5/5.34/autodie/skip.pm
-/usr/lib/perl5/5.34/autouse.pm
-/usr/lib/perl5/5.34/base.pm
-/usr/lib/perl5/5.34/bigint.pm
-/usr/lib/perl5/5.34/bignum.pm
-/usr/lib/perl5/5.34/bigrat.pm
-/usr/lib/perl5/5.34/blib.pm
-/usr/lib/perl5/5.34/bytes.pm
-/usr/lib/perl5/5.34/bytes_heavy.pl
-/usr/lib/perl5/5.34/charnames.pm
-/usr/lib/perl5/5.34/constant.pm
-/usr/lib/perl5/5.34/deprecate.pm
-/usr/lib/perl5/5.34/diagnostics.pm
-/usr/lib/perl5/5.34/dumpvar.pl
-/usr/lib/perl5/5.34/encoding.pm
-/usr/lib/perl5/5.34/encoding/warnings.pm
-/usr/lib/perl5/5.34/experimental.pm
-/usr/lib/perl5/5.34/feature.pm
-/usr/lib/perl5/5.34/fields.pm
-/usr/lib/perl5/5.34/filetest.pm
-/usr/lib/perl5/5.34/if.pm
-/usr/lib/perl5/5.34/integer.pm
-/usr/lib/perl5/5.34/less.pm
-/usr/lib/perl5/5.34/lib.pm
-/usr/lib/perl5/5.34/locale.pm
-/usr/lib/perl5/5.34/meta_notation.pm
-/usr/lib/perl5/5.34/mro.pm
-/usr/lib/perl5/5.34/ok.pm
-/usr/lib/perl5/5.34/open.pm
-/usr/lib/perl5/5.34/ops.pm
-/usr/lib/perl5/5.34/overload.pm
-/usr/lib/perl5/5.34/overload/numbers.pm
-/usr/lib/perl5/5.34/overloading.pm
-/usr/lib/perl5/5.34/parent.pm
-/usr/lib/perl5/5.34/perl5db.pl
-/usr/lib/perl5/5.34/perlfaq.pm
-/usr/lib/perl5/5.34/pod/perl.pod
-/usr/lib/perl5/5.34/pod/perl5004delta.pod
-/usr/lib/perl5/5.34/pod/perl5005delta.pod
-/usr/lib/perl5/5.34/pod/perl5100delta.pod
-/usr/lib/perl5/5.34/pod/perl5101delta.pod
-/usr/lib/perl5/5.34/pod/perl5120delta.pod
-/usr/lib/perl5/5.34/pod/perl5121delta.pod
-/usr/lib/perl5/5.34/pod/perl5122delta.pod
-/usr/lib/perl5/5.34/pod/perl5123delta.pod
-/usr/lib/perl5/5.34/pod/perl5124delta.pod
-/usr/lib/perl5/5.34/pod/perl5125delta.pod
-/usr/lib/perl5/5.34/pod/perl5140delta.pod
-/usr/lib/perl5/5.34/pod/perl5141delta.pod
-/usr/lib/perl5/5.34/pod/perl5142delta.pod
-/usr/lib/perl5/5.34/pod/perl5143delta.pod
-/usr/lib/perl5/5.34/pod/perl5144delta.pod
-/usr/lib/perl5/5.34/pod/perl5160delta.pod
-/usr/lib/perl5/5.34/pod/perl5161delta.pod
-/usr/lib/perl5/5.34/pod/perl5162delta.pod
-/usr/lib/perl5/5.34/pod/perl5163delta.pod
-/usr/lib/perl5/5.34/pod/perl5180delta.pod
-/usr/lib/perl5/5.34/pod/perl5181delta.pod
-/usr/lib/perl5/5.34/pod/perl5182delta.pod
-/usr/lib/perl5/5.34/pod/perl5184delta.pod
-/usr/lib/perl5/5.34/pod/perl5200delta.pod
-/usr/lib/perl5/5.34/pod/perl5201delta.pod
-/usr/lib/perl5/5.34/pod/perl5202delta.pod
-/usr/lib/perl5/5.34/pod/perl5203delta.pod
-/usr/lib/perl5/5.34/pod/perl5220delta.pod
-/usr/lib/perl5/5.34/pod/perl5221delta.pod
-/usr/lib/perl5/5.34/pod/perl5222delta.pod
-/usr/lib/perl5/5.34/pod/perl5223delta.pod
-/usr/lib/perl5/5.34/pod/perl5224delta.pod
-/usr/lib/perl5/5.34/pod/perl5240delta.pod
-/usr/lib/perl5/5.34/pod/perl5241delta.pod
-/usr/lib/perl5/5.34/pod/perl5242delta.pod
-/usr/lib/perl5/5.34/pod/perl5243delta.pod
-/usr/lib/perl5/5.34/pod/perl5244delta.pod
-/usr/lib/perl5/5.34/pod/perl5260delta.pod
-/usr/lib/perl5/5.34/pod/perl5261delta.pod
-/usr/lib/perl5/5.34/pod/perl5262delta.pod
-/usr/lib/perl5/5.34/pod/perl5263delta.pod
-/usr/lib/perl5/5.34/pod/perl5280delta.pod
-/usr/lib/perl5/5.34/pod/perl5281delta.pod
-/usr/lib/perl5/5.34/pod/perl5282delta.pod
-/usr/lib/perl5/5.34/pod/perl5283delta.pod
-/usr/lib/perl5/5.34/pod/perl5300delta.pod
-/usr/lib/perl5/5.34/pod/perl5301delta.pod
-/usr/lib/perl5/5.34/pod/perl5302delta.pod
-/usr/lib/perl5/5.34/pod/perl5303delta.pod
-/usr/lib/perl5/5.34/pod/perl5320delta.pod
-/usr/lib/perl5/5.34/pod/perl5321delta.pod
-/usr/lib/perl5/5.34/pod/perl5340delta.pod
-/usr/lib/perl5/5.34/pod/perl561delta.pod
-/usr/lib/perl5/5.34/pod/perl56delta.pod
-/usr/lib/perl5/5.34/pod/perl581delta.pod
-/usr/lib/perl5/5.34/pod/perl582delta.pod
-/usr/lib/perl5/5.34/pod/perl583delta.pod
-/usr/lib/perl5/5.34/pod/perl584delta.pod
-/usr/lib/perl5/5.34/pod/perl585delta.pod
-/usr/lib/perl5/5.34/pod/perl586delta.pod
-/usr/lib/perl5/5.34/pod/perl587delta.pod
-/usr/lib/perl5/5.34/pod/perl588delta.pod
-/usr/lib/perl5/5.34/pod/perl589delta.pod
-/usr/lib/perl5/5.34/pod/perl58delta.pod
-/usr/lib/perl5/5.34/pod/perlaix.pod
-/usr/lib/perl5/5.34/pod/perlamiga.pod
-/usr/lib/perl5/5.34/pod/perlandroid.pod
-/usr/lib/perl5/5.34/pod/perlapi.pod
-/usr/lib/perl5/5.34/pod/perlapio.pod
-/usr/lib/perl5/5.34/pod/perlartistic.pod
-/usr/lib/perl5/5.34/pod/perlbook.pod
-/usr/lib/perl5/5.34/pod/perlboot.pod
-/usr/lib/perl5/5.34/pod/perlbot.pod
-/usr/lib/perl5/5.34/pod/perlbs2000.pod
-/usr/lib/perl5/5.34/pod/perlcall.pod
-/usr/lib/perl5/5.34/pod/perlcheat.pod
-/usr/lib/perl5/5.34/pod/perlclib.pod
-/usr/lib/perl5/5.34/pod/perlcn.pod
-/usr/lib/perl5/5.34/pod/perlcommunity.pod
-/usr/lib/perl5/5.34/pod/perlcygwin.pod
-/usr/lib/perl5/5.34/pod/perldata.pod
-/usr/lib/perl5/5.34/pod/perldbmfilter.pod
-/usr/lib/perl5/5.34/pod/perldebguts.pod
-/usr/lib/perl5/5.34/pod/perldebtut.pod
-/usr/lib/perl5/5.34/pod/perldebug.pod
-/usr/lib/perl5/5.34/pod/perldelta.pod
-/usr/lib/perl5/5.34/pod/perldeprecation.pod
-/usr/lib/perl5/5.34/pod/perldiag.pod
-/usr/lib/perl5/5.34/pod/perldoc.pod
-/usr/lib/perl5/5.34/pod/perldocstyle.pod
-/usr/lib/perl5/5.34/pod/perldos.pod
-/usr/lib/perl5/5.34/pod/perldsc.pod
-/usr/lib/perl5/5.34/pod/perldtrace.pod
-/usr/lib/perl5/5.34/pod/perlebcdic.pod
-/usr/lib/perl5/5.34/pod/perlembed.pod
-/usr/lib/perl5/5.34/pod/perlexperiment.pod
-/usr/lib/perl5/5.34/pod/perlfaq.pod
-/usr/lib/perl5/5.34/pod/perlfaq1.pod
-/usr/lib/perl5/5.34/pod/perlfaq2.pod
-/usr/lib/perl5/5.34/pod/perlfaq3.pod
-/usr/lib/perl5/5.34/pod/perlfaq4.pod
-/usr/lib/perl5/5.34/pod/perlfaq5.pod
-/usr/lib/perl5/5.34/pod/perlfaq6.pod
-/usr/lib/perl5/5.34/pod/perlfaq7.pod
-/usr/lib/perl5/5.34/pod/perlfaq8.pod
-/usr/lib/perl5/5.34/pod/perlfaq9.pod
-/usr/lib/perl5/5.34/pod/perlfilter.pod
-/usr/lib/perl5/5.34/pod/perlfork.pod
-/usr/lib/perl5/5.34/pod/perlform.pod
-/usr/lib/perl5/5.34/pod/perlfreebsd.pod
-/usr/lib/perl5/5.34/pod/perlfunc.pod
-/usr/lib/perl5/5.34/pod/perlgit.pod
-/usr/lib/perl5/5.34/pod/perlglossary.pod
-/usr/lib/perl5/5.34/pod/perlgov.pod
-/usr/lib/perl5/5.34/pod/perlgpl.pod
-/usr/lib/perl5/5.34/pod/perlguts.pod
-/usr/lib/perl5/5.34/pod/perlhack.pod
-/usr/lib/perl5/5.34/pod/perlhacktips.pod
-/usr/lib/perl5/5.34/pod/perlhacktut.pod
-/usr/lib/perl5/5.34/pod/perlhaiku.pod
-/usr/lib/perl5/5.34/pod/perlhist.pod
-/usr/lib/perl5/5.34/pod/perlhpux.pod
-/usr/lib/perl5/5.34/pod/perlhurd.pod
-/usr/lib/perl5/5.34/pod/perlintern.pod
-/usr/lib/perl5/5.34/pod/perlinterp.pod
-/usr/lib/perl5/5.34/pod/perlintro.pod
-/usr/lib/perl5/5.34/pod/perliol.pod
-/usr/lib/perl5/5.34/pod/perlipc.pod
-/usr/lib/perl5/5.34/pod/perlirix.pod
-/usr/lib/perl5/5.34/pod/perljp.pod
-/usr/lib/perl5/5.34/pod/perlko.pod
-/usr/lib/perl5/5.34/pod/perllexwarn.pod
-/usr/lib/perl5/5.34/pod/perllinux.pod
-/usr/lib/perl5/5.34/pod/perllocale.pod
-/usr/lib/perl5/5.34/pod/perllol.pod
-/usr/lib/perl5/5.34/pod/perlmacos.pod
-/usr/lib/perl5/5.34/pod/perlmacosx.pod
-/usr/lib/perl5/5.34/pod/perlmod.pod
-/usr/lib/perl5/5.34/pod/perlmodinstall.pod
-/usr/lib/perl5/5.34/pod/perlmodlib.pod
-/usr/lib/perl5/5.34/pod/perlmodstyle.pod
-/usr/lib/perl5/5.34/pod/perlmroapi.pod
-/usr/lib/perl5/5.34/pod/perlnetware.pod
-/usr/lib/perl5/5.34/pod/perlnewmod.pod
-/usr/lib/perl5/5.34/pod/perlnumber.pod
-/usr/lib/perl5/5.34/pod/perlobj.pod
-/usr/lib/perl5/5.34/pod/perlootut.pod
-/usr/lib/perl5/5.34/pod/perlop.pod
-/usr/lib/perl5/5.34/pod/perlopenbsd.pod
-/usr/lib/perl5/5.34/pod/perlopentut.pod
-/usr/lib/perl5/5.34/pod/perlos2.pod
-/usr/lib/perl5/5.34/pod/perlos390.pod
-/usr/lib/perl5/5.34/pod/perlos400.pod
-/usr/lib/perl5/5.34/pod/perlpacktut.pod
-/usr/lib/perl5/5.34/pod/perlperf.pod
-/usr/lib/perl5/5.34/pod/perlplan9.pod
-/usr/lib/perl5/5.34/pod/perlpod.pod
-/usr/lib/perl5/5.34/pod/perlpodspec.pod
-/usr/lib/perl5/5.34/pod/perlpodstyle.pod
-/usr/lib/perl5/5.34/pod/perlpolicy.pod
-/usr/lib/perl5/5.34/pod/perlport.pod
-/usr/lib/perl5/5.34/pod/perlpragma.pod
-/usr/lib/perl5/5.34/pod/perlqnx.pod
-/usr/lib/perl5/5.34/pod/perlre.pod
-/usr/lib/perl5/5.34/pod/perlreapi.pod
-/usr/lib/perl5/5.34/pod/perlrebackslash.pod
-/usr/lib/perl5/5.34/pod/perlrecharclass.pod
-/usr/lib/perl5/5.34/pod/perlref.pod
-/usr/lib/perl5/5.34/pod/perlreftut.pod
-/usr/lib/perl5/5.34/pod/perlreguts.pod
-/usr/lib/perl5/5.34/pod/perlrepository.pod
-/usr/lib/perl5/5.34/pod/perlrequick.pod
-/usr/lib/perl5/5.34/pod/perlreref.pod
-/usr/lib/perl5/5.34/pod/perlretut.pod
-/usr/lib/perl5/5.34/pod/perlriscos.pod
-/usr/lib/perl5/5.34/pod/perlrun.pod
-/usr/lib/perl5/5.34/pod/perlsec.pod
-/usr/lib/perl5/5.34/pod/perlsecpolicy.pod
-/usr/lib/perl5/5.34/pod/perlsolaris.pod
-/usr/lib/perl5/5.34/pod/perlsource.pod
-/usr/lib/perl5/5.34/pod/perlstyle.pod
-/usr/lib/perl5/5.34/pod/perlsub.pod
-/usr/lib/perl5/5.34/pod/perlsyn.pod
-/usr/lib/perl5/5.34/pod/perlsynology.pod
-/usr/lib/perl5/5.34/pod/perlthrtut.pod
-/usr/lib/perl5/5.34/pod/perltie.pod
-/usr/lib/perl5/5.34/pod/perltoc.pod
-/usr/lib/perl5/5.34/pod/perltodo.pod
-/usr/lib/perl5/5.34/pod/perltooc.pod
-/usr/lib/perl5/5.34/pod/perltoot.pod
-/usr/lib/perl5/5.34/pod/perltrap.pod
-/usr/lib/perl5/5.34/pod/perltru64.pod
-/usr/lib/perl5/5.34/pod/perltw.pod
-/usr/lib/perl5/5.34/pod/perlunicode.pod
-/usr/lib/perl5/5.34/pod/perlunicook.pod
-/usr/lib/perl5/5.34/pod/perlunifaq.pod
-/usr/lib/perl5/5.34/pod/perluniintro.pod
-/usr/lib/perl5/5.34/pod/perluniprops.pod
-/usr/lib/perl5/5.34/pod/perlunitut.pod
-/usr/lib/perl5/5.34/pod/perlutil.pod
-/usr/lib/perl5/5.34/pod/perlvar.pod
-/usr/lib/perl5/5.34/pod/perlvms.pod
-/usr/lib/perl5/5.34/pod/perlvos.pod
-/usr/lib/perl5/5.34/pod/perlwin32.pod
-/usr/lib/perl5/5.34/pod/perlxs.pod
-/usr/lib/perl5/5.34/pod/perlxstut.pod
-/usr/lib/perl5/5.34/pod/perlxstypemap.pod
-/usr/lib/perl5/5.34/re.pm
-/usr/lib/perl5/5.34/sigtrap.pm
-/usr/lib/perl5/5.34/sort.pm
-/usr/lib/perl5/5.34/strict.pm
-/usr/lib/perl5/5.34/subs.pm
-/usr/lib/perl5/5.34/threads.pm
-/usr/lib/perl5/5.34/threads/shared.pm
-/usr/lib/perl5/5.34/unicore/Blocks.txt
-/usr/lib/perl5/5.34/unicore/CombiningClass.pl
-/usr/lib/perl5/5.34/unicore/Decomposition.pl
-/usr/lib/perl5/5.34/unicore/Name.pl
-/usr/lib/perl5/5.34/unicore/Name.pm
-/usr/lib/perl5/5.34/unicore/NamedSequences.txt
-/usr/lib/perl5/5.34/unicore/SpecialCasing.txt
-/usr/lib/perl5/5.34/unicore/To/Age.pl
-/usr/lib/perl5/5.34/unicore/To/Bc.pl
-/usr/lib/perl5/5.34/unicore/To/Bmg.pl
-/usr/lib/perl5/5.34/unicore/To/Bpb.pl
-/usr/lib/perl5/5.34/unicore/To/Bpt.pl
-/usr/lib/perl5/5.34/unicore/To/Cf.pl
-/usr/lib/perl5/5.34/unicore/To/Digit.pl
-/usr/lib/perl5/5.34/unicore/To/Ea.pl
-/usr/lib/perl5/5.34/unicore/To/EqUIdeo.pl
-/usr/lib/perl5/5.34/unicore/To/Fold.pl
-/usr/lib/perl5/5.34/unicore/To/GCB.pl
-/usr/lib/perl5/5.34/unicore/To/Gc.pl
-/usr/lib/perl5/5.34/unicore/To/Hst.pl
-/usr/lib/perl5/5.34/unicore/To/Identif2.pl
-/usr/lib/perl5/5.34/unicore/To/Identifi.pl
-/usr/lib/perl5/5.34/unicore/To/InPC.pl
-/usr/lib/perl5/5.34/unicore/To/InSC.pl
-/usr/lib/perl5/5.34/unicore/To/Isc.pl
-/usr/lib/perl5/5.34/unicore/To/Jg.pl
-/usr/lib/perl5/5.34/unicore/To/Jt.pl
-/usr/lib/perl5/5.34/unicore/To/Lb.pl
-/usr/lib/perl5/5.34/unicore/To/Lc.pl
-/usr/lib/perl5/5.34/unicore/To/Lower.pl
-/usr/lib/perl5/5.34/unicore/To/NFCQC.pl
-/usr/lib/perl5/5.34/unicore/To/NFDQC.pl
-/usr/lib/perl5/5.34/unicore/To/NFKCCF.pl
-/usr/lib/perl5/5.34/unicore/To/NFKCQC.pl
-/usr/lib/perl5/5.34/unicore/To/NFKDQC.pl
-/usr/lib/perl5/5.34/unicore/To/Na1.pl
-/usr/lib/perl5/5.34/unicore/To/NameAlia.pl
-/usr/lib/perl5/5.34/unicore/To/Nt.pl
-/usr/lib/perl5/5.34/unicore/To/Nv.pl
-/usr/lib/perl5/5.34/unicore/To/PerlDeci.pl
-/usr/lib/perl5/5.34/unicore/To/SB.pl
-/usr/lib/perl5/5.34/unicore/To/Sc.pl
-/usr/lib/perl5/5.34/unicore/To/Scx.pl
-/usr/lib/perl5/5.34/unicore/To/Tc.pl
-/usr/lib/perl5/5.34/unicore/To/Title.pl
-/usr/lib/perl5/5.34/unicore/To/Uc.pl
-/usr/lib/perl5/5.34/unicore/To/Upper.pl
-/usr/lib/perl5/5.34/unicore/To/Vo.pl
-/usr/lib/perl5/5.34/unicore/To/WB.pl
-/usr/lib/perl5/5.34/unicore/To/_PerlLB.pl
-/usr/lib/perl5/5.34/unicore/To/_PerlSCX.pl
-/usr/lib/perl5/5.34/unicore/UCD.pl
-/usr/lib/perl5/5.34/unicore/lib/Age/NA.pl
-/usr/lib/perl5/5.34/unicore/lib/Age/V100.pl
-/usr/lib/perl5/5.34/unicore/lib/Age/V11.pl
-/usr/lib/perl5/5.34/unicore/lib/Age/V110.pl
-/usr/lib/perl5/5.34/unicore/lib/Age/V120.pl
-/usr/lib/perl5/5.34/unicore/lib/Age/V130.pl
-/usr/lib/perl5/5.34/unicore/lib/Age/V20.pl
-/usr/lib/perl5/5.34/unicore/lib/Age/V30.pl
-/usr/lib/perl5/5.34/unicore/lib/Age/V31.pl
-/usr/lib/perl5/5.34/unicore/lib/Age/V32.pl
-/usr/lib/perl5/5.34/unicore/lib/Age/V40.pl
-/usr/lib/perl5/5.34/unicore/lib/Age/V41.pl
-/usr/lib/perl5/5.34/unicore/lib/Age/V50.pl
-/usr/lib/perl5/5.34/unicore/lib/Age/V51.pl
-/usr/lib/perl5/5.34/unicore/lib/Age/V52.pl
-/usr/lib/perl5/5.34/unicore/lib/Age/V60.pl
-/usr/lib/perl5/5.34/unicore/lib/Age/V61.pl
-/usr/lib/perl5/5.34/unicore/lib/Age/V70.pl
-/usr/lib/perl5/5.34/unicore/lib/Age/V80.pl
-/usr/lib/perl5/5.34/unicore/lib/Age/V90.pl
-/usr/lib/perl5/5.34/unicore/lib/Alpha/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/Bc/AL.pl
-/usr/lib/perl5/5.34/unicore/lib/Bc/AN.pl
-/usr/lib/perl5/5.34/unicore/lib/Bc/B.pl
-/usr/lib/perl5/5.34/unicore/lib/Bc/BN.pl
-/usr/lib/perl5/5.34/unicore/lib/Bc/CS.pl
-/usr/lib/perl5/5.34/unicore/lib/Bc/EN.pl
-/usr/lib/perl5/5.34/unicore/lib/Bc/ES.pl
-/usr/lib/perl5/5.34/unicore/lib/Bc/ET.pl
-/usr/lib/perl5/5.34/unicore/lib/Bc/L.pl
-/usr/lib/perl5/5.34/unicore/lib/Bc/NSM.pl
-/usr/lib/perl5/5.34/unicore/lib/Bc/ON.pl
-/usr/lib/perl5/5.34/unicore/lib/Bc/R.pl
-/usr/lib/perl5/5.34/unicore/lib/Bc/WS.pl
-/usr/lib/perl5/5.34/unicore/lib/BidiC/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/BidiM/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/Blk/NB.pl
-/usr/lib/perl5/5.34/unicore/lib/Bpt/C.pl
-/usr/lib/perl5/5.34/unicore/lib/Bpt/N.pl
-/usr/lib/perl5/5.34/unicore/lib/Bpt/O.pl
-/usr/lib/perl5/5.34/unicore/lib/CE/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/CI/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/CWCF/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/CWCM/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/CWKCF/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/CWL/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/CWT/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/CWU/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/Cased/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/Ccc/A.pl
-/usr/lib/perl5/5.34/unicore/lib/Ccc/AL.pl
-/usr/lib/perl5/5.34/unicore/lib/Ccc/AR.pl
-/usr/lib/perl5/5.34/unicore/lib/Ccc/ATAR.pl
-/usr/lib/perl5/5.34/unicore/lib/Ccc/B.pl
-/usr/lib/perl5/5.34/unicore/lib/Ccc/BR.pl
-/usr/lib/perl5/5.34/unicore/lib/Ccc/DB.pl
-/usr/lib/perl5/5.34/unicore/lib/Ccc/NK.pl
-/usr/lib/perl5/5.34/unicore/lib/Ccc/NR.pl
-/usr/lib/perl5/5.34/unicore/lib/Ccc/OV.pl
-/usr/lib/perl5/5.34/unicore/lib/Ccc/VR.pl
-/usr/lib/perl5/5.34/unicore/lib/CompEx/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/DI/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/Dash/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/Dep/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/Dia/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/Dt/Com.pl
-/usr/lib/perl5/5.34/unicore/lib/Dt/Enc.pl
-/usr/lib/perl5/5.34/unicore/lib/Dt/Fin.pl
-/usr/lib/perl5/5.34/unicore/lib/Dt/Font.pl
-/usr/lib/perl5/5.34/unicore/lib/Dt/Init.pl
-/usr/lib/perl5/5.34/unicore/lib/Dt/Iso.pl
-/usr/lib/perl5/5.34/unicore/lib/Dt/Med.pl
-/usr/lib/perl5/5.34/unicore/lib/Dt/Nar.pl
-/usr/lib/perl5/5.34/unicore/lib/Dt/Nb.pl
-/usr/lib/perl5/5.34/unicore/lib/Dt/NonCanon.pl
-/usr/lib/perl5/5.34/unicore/lib/Dt/Sqr.pl
-/usr/lib/perl5/5.34/unicore/lib/Dt/Sub.pl
-/usr/lib/perl5/5.34/unicore/lib/Dt/Sup.pl
-/usr/lib/perl5/5.34/unicore/lib/Dt/Vert.pl
-/usr/lib/perl5/5.34/unicore/lib/EBase/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/EComp/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/EPres/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/Ea/A.pl
-/usr/lib/perl5/5.34/unicore/lib/Ea/H.pl
-/usr/lib/perl5/5.34/unicore/lib/Ea/N.pl
-/usr/lib/perl5/5.34/unicore/lib/Ea/Na.pl
-/usr/lib/perl5/5.34/unicore/lib/Ea/W.pl
-/usr/lib/perl5/5.34/unicore/lib/Emoji/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/Ext/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/ExtPict/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/GCB/CN.pl
-/usr/lib/perl5/5.34/unicore/lib/GCB/EX.pl
-/usr/lib/perl5/5.34/unicore/lib/GCB/LV.pl
-/usr/lib/perl5/5.34/unicore/lib/GCB/LVT.pl
-/usr/lib/perl5/5.34/unicore/lib/GCB/PP.pl
-/usr/lib/perl5/5.34/unicore/lib/GCB/SM.pl
-/usr/lib/perl5/5.34/unicore/lib/GCB/XX.pl
-/usr/lib/perl5/5.34/unicore/lib/Gc/C.pl
-/usr/lib/perl5/5.34/unicore/lib/Gc/Cf.pl
-/usr/lib/perl5/5.34/unicore/lib/Gc/Cn.pl
-/usr/lib/perl5/5.34/unicore/lib/Gc/L.pl
-/usr/lib/perl5/5.34/unicore/lib/Gc/LC.pl
-/usr/lib/perl5/5.34/unicore/lib/Gc/Ll.pl
-/usr/lib/perl5/5.34/unicore/lib/Gc/Lm.pl
-/usr/lib/perl5/5.34/unicore/lib/Gc/Lo.pl
-/usr/lib/perl5/5.34/unicore/lib/Gc/Lu.pl
-/usr/lib/perl5/5.34/unicore/lib/Gc/M.pl
-/usr/lib/perl5/5.34/unicore/lib/Gc/Mc.pl
-/usr/lib/perl5/5.34/unicore/lib/Gc/Me.pl
-/usr/lib/perl5/5.34/unicore/lib/Gc/Mn.pl
-/usr/lib/perl5/5.34/unicore/lib/Gc/N.pl
-/usr/lib/perl5/5.34/unicore/lib/Gc/Nd.pl
-/usr/lib/perl5/5.34/unicore/lib/Gc/Nl.pl
-/usr/lib/perl5/5.34/unicore/lib/Gc/No.pl
-/usr/lib/perl5/5.34/unicore/lib/Gc/P.pl
-/usr/lib/perl5/5.34/unicore/lib/Gc/Pc.pl
-/usr/lib/perl5/5.34/unicore/lib/Gc/Pd.pl
-/usr/lib/perl5/5.34/unicore/lib/Gc/Pe.pl
-/usr/lib/perl5/5.34/unicore/lib/Gc/Pf.pl
-/usr/lib/perl5/5.34/unicore/lib/Gc/Pi.pl
-/usr/lib/perl5/5.34/unicore/lib/Gc/Po.pl
-/usr/lib/perl5/5.34/unicore/lib/Gc/Ps.pl
-/usr/lib/perl5/5.34/unicore/lib/Gc/S.pl
-/usr/lib/perl5/5.34/unicore/lib/Gc/Sc.pl
-/usr/lib/perl5/5.34/unicore/lib/Gc/Sk.pl
-/usr/lib/perl5/5.34/unicore/lib/Gc/Sm.pl
-/usr/lib/perl5/5.34/unicore/lib/Gc/So.pl
-/usr/lib/perl5/5.34/unicore/lib/Gc/Z.pl
-/usr/lib/perl5/5.34/unicore/lib/Gc/Zs.pl
-/usr/lib/perl5/5.34/unicore/lib/GrBase/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/GrExt/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/Hex/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/Hst/NA.pl
-/usr/lib/perl5/5.34/unicore/lib/Hyphen/T.pl
-/usr/lib/perl5/5.34/unicore/lib/IDC/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/IDS/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/IdStatus/Allowed.pl
-/usr/lib/perl5/5.34/unicore/lib/IdStatus/Restrict.pl
-/usr/lib/perl5/5.34/unicore/lib/IdType/DefaultI.pl
-/usr/lib/perl5/5.34/unicore/lib/IdType/Exclusio.pl
-/usr/lib/perl5/5.34/unicore/lib/IdType/Inclusio.pl
-/usr/lib/perl5/5.34/unicore/lib/IdType/LimitedU.pl
-/usr/lib/perl5/5.34/unicore/lib/IdType/NotChara.pl
-/usr/lib/perl5/5.34/unicore/lib/IdType/NotNFKC.pl
-/usr/lib/perl5/5.34/unicore/lib/IdType/NotXID.pl
-/usr/lib/perl5/5.34/unicore/lib/IdType/Obsolete.pl
-/usr/lib/perl5/5.34/unicore/lib/IdType/Recommen.pl
-/usr/lib/perl5/5.34/unicore/lib/IdType/Technica.pl
-/usr/lib/perl5/5.34/unicore/lib/IdType/Uncommon.pl
-/usr/lib/perl5/5.34/unicore/lib/Ideo/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/In/10_0.pl
-/usr/lib/perl5/5.34/unicore/lib/In/11_0.pl
-/usr/lib/perl5/5.34/unicore/lib/In/12_0.pl
-/usr/lib/perl5/5.34/unicore/lib/In/12_1.pl
-/usr/lib/perl5/5.34/unicore/lib/In/13_0.pl
-/usr/lib/perl5/5.34/unicore/lib/In/2_0.pl
-/usr/lib/perl5/5.34/unicore/lib/In/2_1.pl
-/usr/lib/perl5/5.34/unicore/lib/In/3_0.pl
-/usr/lib/perl5/5.34/unicore/lib/In/3_1.pl
-/usr/lib/perl5/5.34/unicore/lib/In/3_2.pl
-/usr/lib/perl5/5.34/unicore/lib/In/4_0.pl
-/usr/lib/perl5/5.34/unicore/lib/In/4_1.pl
-/usr/lib/perl5/5.34/unicore/lib/In/5_0.pl
-/usr/lib/perl5/5.34/unicore/lib/In/5_1.pl
-/usr/lib/perl5/5.34/unicore/lib/In/5_2.pl
-/usr/lib/perl5/5.34/unicore/lib/In/6_0.pl
-/usr/lib/perl5/5.34/unicore/lib/In/6_1.pl
-/usr/lib/perl5/5.34/unicore/lib/In/6_2.pl
-/usr/lib/perl5/5.34/unicore/lib/In/6_3.pl
-/usr/lib/perl5/5.34/unicore/lib/In/7_0.pl
-/usr/lib/perl5/5.34/unicore/lib/In/8_0.pl
-/usr/lib/perl5/5.34/unicore/lib/In/9_0.pl
-/usr/lib/perl5/5.34/unicore/lib/InPC/Bottom.pl
-/usr/lib/perl5/5.34/unicore/lib/InPC/BottomAn.pl
-/usr/lib/perl5/5.34/unicore/lib/InPC/Left.pl
-/usr/lib/perl5/5.34/unicore/lib/InPC/LeftAndR.pl
-/usr/lib/perl5/5.34/unicore/lib/InPC/NA.pl
-/usr/lib/perl5/5.34/unicore/lib/InPC/Overstru.pl
-/usr/lib/perl5/5.34/unicore/lib/InPC/Right.pl
-/usr/lib/perl5/5.34/unicore/lib/InPC/Top.pl
-/usr/lib/perl5/5.34/unicore/lib/InPC/TopAndBo.pl
-/usr/lib/perl5/5.34/unicore/lib/InPC/TopAndL2.pl
-/usr/lib/perl5/5.34/unicore/lib/InPC/TopAndLe.pl
-/usr/lib/perl5/5.34/unicore/lib/InPC/TopAndRi.pl
-/usr/lib/perl5/5.34/unicore/lib/InPC/VisualOr.pl
-/usr/lib/perl5/5.34/unicore/lib/InSC/Avagraha.pl
-/usr/lib/perl5/5.34/unicore/lib/InSC/Bindu.pl
-/usr/lib/perl5/5.34/unicore/lib/InSC/Cantilla.pl
-/usr/lib/perl5/5.34/unicore/lib/InSC/Consona2.pl
-/usr/lib/perl5/5.34/unicore/lib/InSC/Consona3.pl
-/usr/lib/perl5/5.34/unicore/lib/InSC/Consona4.pl
-/usr/lib/perl5/5.34/unicore/lib/InSC/Consona5.pl
-/usr/lib/perl5/5.34/unicore/lib/InSC/Consona6.pl
-/usr/lib/perl5/5.34/unicore/lib/InSC/Consona7.pl
-/usr/lib/perl5/5.34/unicore/lib/InSC/Consona8.pl
-/usr/lib/perl5/5.34/unicore/lib/InSC/Consona9.pl
-/usr/lib/perl5/5.34/unicore/lib/InSC/Consonan.pl
-/usr/lib/perl5/5.34/unicore/lib/InSC/Invisibl.pl
-/usr/lib/perl5/5.34/unicore/lib/InSC/Nukta.pl
-/usr/lib/perl5/5.34/unicore/lib/InSC/Number.pl
-/usr/lib/perl5/5.34/unicore/lib/InSC/Other.pl
-/usr/lib/perl5/5.34/unicore/lib/InSC/PureKill.pl
-/usr/lib/perl5/5.34/unicore/lib/InSC/Syllable.pl
-/usr/lib/perl5/5.34/unicore/lib/InSC/ToneMark.pl
-/usr/lib/perl5/5.34/unicore/lib/InSC/Virama.pl
-/usr/lib/perl5/5.34/unicore/lib/InSC/Visarga.pl
-/usr/lib/perl5/5.34/unicore/lib/InSC/Vowel.pl
-/usr/lib/perl5/5.34/unicore/lib/InSC/VowelDep.pl
-/usr/lib/perl5/5.34/unicore/lib/InSC/VowelInd.pl
-/usr/lib/perl5/5.34/unicore/lib/Jg/Ain.pl
-/usr/lib/perl5/5.34/unicore/lib/Jg/Alef.pl
-/usr/lib/perl5/5.34/unicore/lib/Jg/Beh.pl
-/usr/lib/perl5/5.34/unicore/lib/Jg/Dal.pl
-/usr/lib/perl5/5.34/unicore/lib/Jg/FarsiYeh.pl
-/usr/lib/perl5/5.34/unicore/lib/Jg/Feh.pl
-/usr/lib/perl5/5.34/unicore/lib/Jg/Gaf.pl
-/usr/lib/perl5/5.34/unicore/lib/Jg/Hah.pl
-/usr/lib/perl5/5.34/unicore/lib/Jg/HanifiRo.pl
-/usr/lib/perl5/5.34/unicore/lib/Jg/Kaf.pl
-/usr/lib/perl5/5.34/unicore/lib/Jg/Lam.pl
-/usr/lib/perl5/5.34/unicore/lib/Jg/NoJoinin.pl
-/usr/lib/perl5/5.34/unicore/lib/Jg/Qaf.pl
-/usr/lib/perl5/5.34/unicore/lib/Jg/Reh.pl
-/usr/lib/perl5/5.34/unicore/lib/Jg/Sad.pl
-/usr/lib/perl5/5.34/unicore/lib/Jg/Seen.pl
-/usr/lib/perl5/5.34/unicore/lib/Jg/Waw.pl
-/usr/lib/perl5/5.34/unicore/lib/Jg/Yeh.pl
-/usr/lib/perl5/5.34/unicore/lib/Jt/C.pl
-/usr/lib/perl5/5.34/unicore/lib/Jt/D.pl
-/usr/lib/perl5/5.34/unicore/lib/Jt/L.pl
-/usr/lib/perl5/5.34/unicore/lib/Jt/R.pl
-/usr/lib/perl5/5.34/unicore/lib/Jt/T.pl
-/usr/lib/perl5/5.34/unicore/lib/Jt/U.pl
-/usr/lib/perl5/5.34/unicore/lib/Lb/AI.pl
-/usr/lib/perl5/5.34/unicore/lib/Lb/AL.pl
-/usr/lib/perl5/5.34/unicore/lib/Lb/BA.pl
-/usr/lib/perl5/5.34/unicore/lib/Lb/BB.pl
-/usr/lib/perl5/5.34/unicore/lib/Lb/CJ.pl
-/usr/lib/perl5/5.34/unicore/lib/Lb/CL.pl
-/usr/lib/perl5/5.34/unicore/lib/Lb/CM.pl
-/usr/lib/perl5/5.34/unicore/lib/Lb/EX.pl
-/usr/lib/perl5/5.34/unicore/lib/Lb/GL.pl
-/usr/lib/perl5/5.34/unicore/lib/Lb/ID.pl
-/usr/lib/perl5/5.34/unicore/lib/Lb/IN.pl
-/usr/lib/perl5/5.34/unicore/lib/Lb/IS.pl
-/usr/lib/perl5/5.34/unicore/lib/Lb/NS.pl
-/usr/lib/perl5/5.34/unicore/lib/Lb/NU.pl
-/usr/lib/perl5/5.34/unicore/lib/Lb/OP.pl
-/usr/lib/perl5/5.34/unicore/lib/Lb/PO.pl
-/usr/lib/perl5/5.34/unicore/lib/Lb/PR.pl
-/usr/lib/perl5/5.34/unicore/lib/Lb/QU.pl
-/usr/lib/perl5/5.34/unicore/lib/Lb/SA.pl
-/usr/lib/perl5/5.34/unicore/lib/Lb/XX.pl
-/usr/lib/perl5/5.34/unicore/lib/Lower/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/Math/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/NFCQC/M.pl
-/usr/lib/perl5/5.34/unicore/lib/NFCQC/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/NFDQC/N.pl
-/usr/lib/perl5/5.34/unicore/lib/NFDQC/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/NFKCQC/N.pl
-/usr/lib/perl5/5.34/unicore/lib/NFKCQC/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/NFKDQC/N.pl
-/usr/lib/perl5/5.34/unicore/lib/NFKDQC/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/Nt/Di.pl
-/usr/lib/perl5/5.34/unicore/lib/Nt/None.pl
-/usr/lib/perl5/5.34/unicore/lib/Nt/Nu.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/0.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/1.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/10.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/100.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/1000.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/10000.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/100000.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/11.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/12.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/13.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/14.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/15.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/16.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/17.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/18.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/19.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/1_16.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/1_2.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/1_3.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/1_4.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/1_6.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/1_8.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/2.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/20.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/200.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/2000.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/20000.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/2_3.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/3.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/30.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/300.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/3000.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/30000.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/3_16.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/3_4.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/4.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/40.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/400.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/4000.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/40000.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/5.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/50.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/500.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/5000.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/50000.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/6.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/60.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/600.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/6000.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/60000.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/7.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/70.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/700.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/7000.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/70000.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/8.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/80.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/800.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/8000.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/80000.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/9.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/90.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/900.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/9000.pl
-/usr/lib/perl5/5.34/unicore/lib/Nv/90000.pl
-/usr/lib/perl5/5.34/unicore/lib/PCM/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/PatSyn/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/Perl/Alnum.pl
-/usr/lib/perl5/5.34/unicore/lib/Perl/Assigned.pl
-/usr/lib/perl5/5.34/unicore/lib/Perl/Blank.pl
-/usr/lib/perl5/5.34/unicore/lib/Perl/Graph.pl
-/usr/lib/perl5/5.34/unicore/lib/Perl/PerlWord.pl
-/usr/lib/perl5/5.34/unicore/lib/Perl/PosixPun.pl
-/usr/lib/perl5/5.34/unicore/lib/Perl/Print.pl
-/usr/lib/perl5/5.34/unicore/lib/Perl/SpacePer.pl
-/usr/lib/perl5/5.34/unicore/lib/Perl/Title.pl
-/usr/lib/perl5/5.34/unicore/lib/Perl/Word.pl
-/usr/lib/perl5/5.34/unicore/lib/Perl/XPosixPu.pl
-/usr/lib/perl5/5.34/unicore/lib/Perl/_PerlAny.pl
-/usr/lib/perl5/5.34/unicore/lib/Perl/_PerlCh2.pl
-/usr/lib/perl5/5.34/unicore/lib/Perl/_PerlCha.pl
-/usr/lib/perl5/5.34/unicore/lib/Perl/_PerlFol.pl
-/usr/lib/perl5/5.34/unicore/lib/Perl/_PerlIDC.pl
-/usr/lib/perl5/5.34/unicore/lib/Perl/_PerlIDS.pl
-/usr/lib/perl5/5.34/unicore/lib/Perl/_PerlIsI.pl
-/usr/lib/perl5/5.34/unicore/lib/Perl/_PerlNch.pl
-/usr/lib/perl5/5.34/unicore/lib/Perl/_PerlPat.pl
-/usr/lib/perl5/5.34/unicore/lib/Perl/_PerlPr2.pl
-/usr/lib/perl5/5.34/unicore/lib/Perl/_PerlPro.pl
-/usr/lib/perl5/5.34/unicore/lib/Perl/_PerlQuo.pl
-/usr/lib/perl5/5.34/unicore/lib/QMark/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/SB/AT.pl
-/usr/lib/perl5/5.34/unicore/lib/SB/CL.pl
-/usr/lib/perl5/5.34/unicore/lib/SB/EX.pl
-/usr/lib/perl5/5.34/unicore/lib/SB/FO.pl
-/usr/lib/perl5/5.34/unicore/lib/SB/LE.pl
-/usr/lib/perl5/5.34/unicore/lib/SB/LO.pl
-/usr/lib/perl5/5.34/unicore/lib/SB/NU.pl
-/usr/lib/perl5/5.34/unicore/lib/SB/SC.pl
-/usr/lib/perl5/5.34/unicore/lib/SB/ST.pl
-/usr/lib/perl5/5.34/unicore/lib/SB/Sp.pl
-/usr/lib/perl5/5.34/unicore/lib/SB/UP.pl
-/usr/lib/perl5/5.34/unicore/lib/SB/XX.pl
-/usr/lib/perl5/5.34/unicore/lib/SD/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/STerm/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/Sc/Arab.pl
-/usr/lib/perl5/5.34/unicore/lib/Sc/Beng.pl
-/usr/lib/perl5/5.34/unicore/lib/Sc/Cprt.pl
-/usr/lib/perl5/5.34/unicore/lib/Sc/Cyrl.pl
-/usr/lib/perl5/5.34/unicore/lib/Sc/Deva.pl
-/usr/lib/perl5/5.34/unicore/lib/Sc/Dupl.pl
-/usr/lib/perl5/5.34/unicore/lib/Sc/Geor.pl
-/usr/lib/perl5/5.34/unicore/lib/Sc/Glag.pl
-/usr/lib/perl5/5.34/unicore/lib/Sc/Gong.pl
-/usr/lib/perl5/5.34/unicore/lib/Sc/Gonm.pl
-/usr/lib/perl5/5.34/unicore/lib/Sc/Gran.pl
-/usr/lib/perl5/5.34/unicore/lib/Sc/Grek.pl
-/usr/lib/perl5/5.34/unicore/lib/Sc/Gujr.pl
-/usr/lib/perl5/5.34/unicore/lib/Sc/Guru.pl
-/usr/lib/perl5/5.34/unicore/lib/Sc/Han.pl
-/usr/lib/perl5/5.34/unicore/lib/Sc/Hang.pl
-/usr/lib/perl5/5.34/unicore/lib/Sc/Hira.pl
-/usr/lib/perl5/5.34/unicore/lib/Sc/Kana.pl
-/usr/lib/perl5/5.34/unicore/lib/Sc/Knda.pl
-/usr/lib/perl5/5.34/unicore/lib/Sc/Latn.pl
-/usr/lib/perl5/5.34/unicore/lib/Sc/Limb.pl
-/usr/lib/perl5/5.34/unicore/lib/Sc/Linb.pl
-/usr/lib/perl5/5.34/unicore/lib/Sc/Mlym.pl
-/usr/lib/perl5/5.34/unicore/lib/Sc/Mong.pl
-/usr/lib/perl5/5.34/unicore/lib/Sc/Mult.pl
-/usr/lib/perl5/5.34/unicore/lib/Sc/Orya.pl
-/usr/lib/perl5/5.34/unicore/lib/Sc/Sinh.pl
-/usr/lib/perl5/5.34/unicore/lib/Sc/Syrc.pl
-/usr/lib/perl5/5.34/unicore/lib/Sc/Taml.pl
-/usr/lib/perl5/5.34/unicore/lib/Sc/Telu.pl
-/usr/lib/perl5/5.34/unicore/lib/Sc/Zinh.pl
-/usr/lib/perl5/5.34/unicore/lib/Sc/Zyyy.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Adlm.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Arab.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Armn.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Beng.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Bhks.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Bopo.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Cakm.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Cham.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Copt.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Cprt.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Cyrl.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Deva.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Diak.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Dupl.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Ethi.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Geor.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Glag.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Gong.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Gonm.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Gran.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Grek.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Gujr.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Guru.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Han.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Hang.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Hebr.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Hira.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Hmng.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Hmnp.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Kana.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Khar.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Khmr.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Khoj.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Knda.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Kthi.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Lana.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Lao.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Latn.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Limb.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Lina.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Linb.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Mlym.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Mong.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Mult.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Mymr.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Nand.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Orya.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Phlp.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Rohg.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Shrd.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Sind.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Sinh.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Syrc.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Tagb.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Takr.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Talu.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Taml.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Tang.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Telu.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Thaa.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Tibt.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Tirh.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Xsux.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Yezi.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Yi.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Zinh.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Zyyy.pl
-/usr/lib/perl5/5.34/unicore/lib/Scx/Zzzz.pl
-/usr/lib/perl5/5.34/unicore/lib/Term/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/UIdeo/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/Upper/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/Vo/R.pl
-/usr/lib/perl5/5.34/unicore/lib/Vo/Tr.pl
-/usr/lib/perl5/5.34/unicore/lib/Vo/Tu.pl
-/usr/lib/perl5/5.34/unicore/lib/Vo/U.pl
-/usr/lib/perl5/5.34/unicore/lib/WB/EX.pl
-/usr/lib/perl5/5.34/unicore/lib/WB/Extend.pl
-/usr/lib/perl5/5.34/unicore/lib/WB/FO.pl
-/usr/lib/perl5/5.34/unicore/lib/WB/HL.pl
-/usr/lib/perl5/5.34/unicore/lib/WB/KA.pl
-/usr/lib/perl5/5.34/unicore/lib/WB/LE.pl
-/usr/lib/perl5/5.34/unicore/lib/WB/MB.pl
-/usr/lib/perl5/5.34/unicore/lib/WB/ML.pl
-/usr/lib/perl5/5.34/unicore/lib/WB/MN.pl
-/usr/lib/perl5/5.34/unicore/lib/WB/NU.pl
-/usr/lib/perl5/5.34/unicore/lib/WB/WSegSpac.pl
-/usr/lib/perl5/5.34/unicore/lib/WB/XX.pl
-/usr/lib/perl5/5.34/unicore/lib/XIDC/Y.pl
-/usr/lib/perl5/5.34/unicore/lib/XIDS/Y.pl
-/usr/lib/perl5/5.34/unicore/uni_keywords.pl
-/usr/lib/perl5/5.34/unicore/version
-/usr/lib/perl5/5.34/utf8.pm
-/usr/lib/perl5/5.34/vars.pm
-/usr/lib/perl5/5.34/version.pm
-/usr/lib/perl5/5.34/version.pod
-/usr/lib/perl5/5.34/version/Internals.pod
-/usr/lib/perl5/5.34/version/regex.pm
-/usr/lib/perl5/5.34/vmsish.pm
-/usr/lib/perl5/5.34/warnings.pm
-/usr/lib/perl5/5.34/warnings/register.pm
-/usr/share/man/man1/corelist.1.gz
-/usr/share/man/man1/cpan.1.gz
-/usr/share/man/man1/enc2xs.1.gz
-/usr/share/man/man1/encguess.1.gz
-/usr/share/man/man1/h2ph.1.gz
-/usr/share/man/man1/h2xs.1.gz
-/usr/share/man/man1/instmodsh.1.gz
-/usr/share/man/man1/json_pp.1.gz
-/usr/share/man/man1/libnetcfg.1.gz
-/usr/share/man/man1/perl.1.gz
-/usr/share/man/man1/perl5004delta.1.gz
-/usr/share/man/man1/perl5005delta.1.gz
-/usr/share/man/man1/perl5100delta.1.gz
-/usr/share/man/man1/perl5101delta.1.gz
-/usr/share/man/man1/perl5120delta.1.gz
-/usr/share/man/man1/perl5121delta.1.gz
-/usr/share/man/man1/perl5122delta.1.gz
-/usr/share/man/man1/perl5123delta.1.gz
-/usr/share/man/man1/perl5124delta.1.gz
-/usr/share/man/man1/perl5125delta.1.gz
-/usr/share/man/man1/perl5140delta.1.gz
-/usr/share/man/man1/perl5141delta.1.gz
-/usr/share/man/man1/perl5142delta.1.gz
-/usr/share/man/man1/perl5143delta.1.gz
-/usr/share/man/man1/perl5144delta.1.gz
-/usr/share/man/man1/perl5160delta.1.gz
-/usr/share/man/man1/perl5161delta.1.gz
-/usr/share/man/man1/perl5162delta.1.gz
-/usr/share/man/man1/perl5163delta.1.gz
-/usr/share/man/man1/perl5180delta.1.gz
-/usr/share/man/man1/perl5181delta.1.gz
-/usr/share/man/man1/perl5182delta.1.gz
-/usr/share/man/man1/perl5184delta.1.gz
-/usr/share/man/man1/perl5200delta.1.gz
-/usr/share/man/man1/perl5201delta.1.gz
-/usr/share/man/man1/perl5202delta.1.gz
-/usr/share/man/man1/perl5203delta.1.gz
-/usr/share/man/man1/perl5220delta.1.gz
-/usr/share/man/man1/perl5221delta.1.gz
-/usr/share/man/man1/perl5222delta.1.gz
-/usr/share/man/man1/perl5223delta.1.gz
-/usr/share/man/man1/perl5224delta.1.gz
-/usr/share/man/man1/perl5240delta.1.gz
-/usr/share/man/man1/perl5241delta.1.gz
-/usr/share/man/man1/perl5242delta.1.gz
-/usr/share/man/man1/perl5243delta.1.gz
-/usr/share/man/man1/perl5244delta.1.gz
-/usr/share/man/man1/perl5260delta.1.gz
-/usr/share/man/man1/perl5261delta.1.gz
-/usr/share/man/man1/perl5262delta.1.gz
-/usr/share/man/man1/perl5263delta.1.gz
-/usr/share/man/man1/perl5280delta.1.gz
-/usr/share/man/man1/perl5281delta.1.gz
-/usr/share/man/man1/perl5282delta.1.gz
-/usr/share/man/man1/perl5283delta.1.gz
-/usr/share/man/man1/perl5300delta.1.gz
-/usr/share/man/man1/perl5301delta.1.gz
-/usr/share/man/man1/perl5302delta.1.gz
-/usr/share/man/man1/perl5303delta.1.gz
-/usr/share/man/man1/perl5320delta.1.gz
-/usr/share/man/man1/perl5321delta.1.gz
-/usr/share/man/man1/perl5340delta.1.gz
-/usr/share/man/man1/perl561delta.1.gz
-/usr/share/man/man1/perl56delta.1.gz
-/usr/share/man/man1/perl581delta.1.gz
-/usr/share/man/man1/perl582delta.1.gz
-/usr/share/man/man1/perl583delta.1.gz
-/usr/share/man/man1/perl584delta.1.gz
-/usr/share/man/man1/perl585delta.1.gz
-/usr/share/man/man1/perl586delta.1.gz
-/usr/share/man/man1/perl587delta.1.gz
-/usr/share/man/man1/perl588delta.1.gz
-/usr/share/man/man1/perl589delta.1.gz
-/usr/share/man/man1/perl58delta.1.gz
-/usr/share/man/man1/perlaix.1.gz
-/usr/share/man/man1/perlamiga.1.gz
-/usr/share/man/man1/perlandroid.1.gz
-/usr/share/man/man1/perlapi.1.gz
-/usr/share/man/man1/perlapio.1.gz
-/usr/share/man/man1/perlartistic.1.gz
-/usr/share/man/man1/perlbook.1.gz
-/usr/share/man/man1/perlboot.1.gz
-/usr/share/man/man1/perlbot.1.gz
-/usr/share/man/man1/perlbs2000.1.gz
-/usr/share/man/man1/perlbug.1.gz
-/usr/share/man/man1/perlcall.1.gz
-/usr/share/man/man1/perlcheat.1.gz
-/usr/share/man/man1/perlclib.1.gz
-/usr/share/man/man1/perlcn.1.gz
-/usr/share/man/man1/perlcommunity.1.gz
-/usr/share/man/man1/perlcygwin.1.gz
-/usr/share/man/man1/perldata.1.gz
-/usr/share/man/man1/perldbmfilter.1.gz
-/usr/share/man/man1/perldebguts.1.gz
-/usr/share/man/man1/perldebtut.1.gz
-/usr/share/man/man1/perldebug.1.gz
-/usr/share/man/man1/perldelta.1.gz
-/usr/share/man/man1/perldeprecation.1.gz
-/usr/share/man/man1/perldiag.1.gz
-/usr/share/man/man1/perldoc.1.gz
-/usr/share/man/man1/perldocstyle.1.gz
-/usr/share/man/man1/perldos.1.gz
-/usr/share/man/man1/perldsc.1.gz
-/usr/share/man/man1/perldtrace.1.gz
-/usr/share/man/man1/perlebcdic.1.gz
-/usr/share/man/man1/perlembed.1.gz
-/usr/share/man/man1/perlexperiment.1.gz
-/usr/share/man/man1/perlfaq.1.gz
-/usr/share/man/man1/perlfaq1.1.gz
-/usr/share/man/man1/perlfaq2.1.gz
-/usr/share/man/man1/perlfaq3.1.gz
-/usr/share/man/man1/perlfaq4.1.gz
-/usr/share/man/man1/perlfaq5.1.gz
-/usr/share/man/man1/perlfaq6.1.gz
-/usr/share/man/man1/perlfaq7.1.gz
-/usr/share/man/man1/perlfaq8.1.gz
-/usr/share/man/man1/perlfaq9.1.gz
-/usr/share/man/man1/perlfilter.1.gz
-/usr/share/man/man1/perlfork.1.gz
-/usr/share/man/man1/perlform.1.gz
-/usr/share/man/man1/perlfreebsd.1.gz
-/usr/share/man/man1/perlfunc.1.gz
-/usr/share/man/man1/perlgit.1.gz
-/usr/share/man/man1/perlglossary.1.gz
-/usr/share/man/man1/perlgov.1.gz
-/usr/share/man/man1/perlgpl.1.gz
-/usr/share/man/man1/perlguts.1.gz
-/usr/share/man/man1/perlhack.1.gz
-/usr/share/man/man1/perlhacktips.1.gz
-/usr/share/man/man1/perlhacktut.1.gz
-/usr/share/man/man1/perlhaiku.1.gz
-/usr/share/man/man1/perlhist.1.gz
-/usr/share/man/man1/perlhpux.1.gz
-/usr/share/man/man1/perlhurd.1.gz
-/usr/share/man/man1/perlintern.1.gz
-/usr/share/man/man1/perlinterp.1.gz
-/usr/share/man/man1/perlintro.1.gz
-/usr/share/man/man1/perliol.1.gz
-/usr/share/man/man1/perlipc.1.gz
-/usr/share/man/man1/perlirix.1.gz
-/usr/share/man/man1/perlivp.1.gz
-/usr/share/man/man1/perljp.1.gz
-/usr/share/man/man1/perlko.1.gz
-/usr/share/man/man1/perllexwarn.1.gz
-/usr/share/man/man1/perllinux.1.gz
-/usr/share/man/man1/perllocale.1.gz
-/usr/share/man/man1/perllol.1.gz
-/usr/share/man/man1/perlmacos.1.gz
-/usr/share/man/man1/perlmacosx.1.gz
-/usr/share/man/man1/perlmod.1.gz
-/usr/share/man/man1/perlmodinstall.1.gz
-/usr/share/man/man1/perlmodlib.1.gz
-/usr/share/man/man1/perlmodstyle.1.gz
-/usr/share/man/man1/perlmroapi.1.gz
-/usr/share/man/man1/perlnetware.1.gz
-/usr/share/man/man1/perlnewmod.1.gz
-/usr/share/man/man1/perlnumber.1.gz
-/usr/share/man/man1/perlobj.1.gz
-/usr/share/man/man1/perlootut.1.gz
-/usr/share/man/man1/perlop.1.gz
-/usr/share/man/man1/perlopenbsd.1.gz
-/usr/share/man/man1/perlopentut.1.gz
-/usr/share/man/man1/perlos2.1.gz
-/usr/share/man/man1/perlos390.1.gz
-/usr/share/man/man1/perlos400.1.gz
-/usr/share/man/man1/perlpacktut.1.gz
-/usr/share/man/man1/perlperf.1.gz
-/usr/share/man/man1/perlplan9.1.gz
-/usr/share/man/man1/perlpod.1.gz
-/usr/share/man/man1/perlpodspec.1.gz
-/usr/share/man/man1/perlpodstyle.1.gz
-/usr/share/man/man1/perlpolicy.1.gz
-/usr/share/man/man1/perlport.1.gz
-/usr/share/man/man1/perlpragma.1.gz
-/usr/share/man/man1/perlqnx.1.gz
-/usr/share/man/man1/perlre.1.gz
-/usr/share/man/man1/perlreapi.1.gz
-/usr/share/man/man1/perlrebackslash.1.gz
-/usr/share/man/man1/perlrecharclass.1.gz
-/usr/share/man/man1/perlref.1.gz
-/usr/share/man/man1/perlreftut.1.gz
-/usr/share/man/man1/perlreguts.1.gz
-/usr/share/man/man1/perlrepository.1.gz
-/usr/share/man/man1/perlrequick.1.gz
-/usr/share/man/man1/perlreref.1.gz
-/usr/share/man/man1/perlretut.1.gz
-/usr/share/man/man1/perlriscos.1.gz
-/usr/share/man/man1/perlrun.1.gz
-/usr/share/man/man1/perlsec.1.gz
-/usr/share/man/man1/perlsecpolicy.1.gz
-/usr/share/man/man1/perlsolaris.1.gz
-/usr/share/man/man1/perlsource.1.gz
-/usr/share/man/man1/perlstyle.1.gz
-/usr/share/man/man1/perlsub.1.gz
-/usr/share/man/man1/perlsyn.1.gz
-/usr/share/man/man1/perlsynology.1.gz
-/usr/share/man/man1/perlthanks.1.gz
-/usr/share/man/man1/perlthrtut.1.gz
-/usr/share/man/man1/perltie.1.gz
-/usr/share/man/man1/perltoc.1.gz
-/usr/share/man/man1/perltodo.1.gz
-/usr/share/man/man1/perltooc.1.gz
-/usr/share/man/man1/perltoot.1.gz
-/usr/share/man/man1/perltrap.1.gz
-/usr/share/man/man1/perltru64.1.gz
-/usr/share/man/man1/perltw.1.gz
-/usr/share/man/man1/perlunicode.1.gz
-/usr/share/man/man1/perlunicook.1.gz
-/usr/share/man/man1/perlunifaq.1.gz
-/usr/share/man/man1/perluniintro.1.gz
-/usr/share/man/man1/perluniprops.1.gz
-/usr/share/man/man1/perlunitut.1.gz
-/usr/share/man/man1/perlutil.1.gz
-/usr/share/man/man1/perlvar.1.gz
-/usr/share/man/man1/perlvms.1.gz
-/usr/share/man/man1/perlvos.1.gz
-/usr/share/man/man1/perlwin32.1.gz
-/usr/share/man/man1/perlxs.1.gz
-/usr/share/man/man1/perlxstut.1.gz
-/usr/share/man/man1/perlxstypemap.1.gz
-/usr/share/man/man1/piconv.1.gz
-/usr/share/man/man1/pl2pm.1.gz
-/usr/share/man/man1/pod2html.1.gz
-/usr/share/man/man1/pod2man.1.gz
-/usr/share/man/man1/pod2text.1.gz
-/usr/share/man/man1/pod2usage.1.gz
-/usr/share/man/man1/podchecker.1.gz
-/usr/share/man/man1/prove.1.gz
-/usr/share/man/man1/ptar.1.gz
-/usr/share/man/man1/ptardiff.1.gz
-/usr/share/man/man1/ptargrep.1.gz
-/usr/share/man/man1/shasum.1.gz
-/usr/share/man/man1/splain.1.gz
-/usr/share/man/man1/streamzip.1.gz
-/usr/share/man/man1/xsubpp.1.gz
-/usr/share/man/man1/zipdetails.1.gz
-/usr/share/man/man3/AnyDBM_File.3.gz
-/usr/share/man/man3/App::Cpan.3.gz
-/usr/share/man/man3/App::Prove.3.gz
-/usr/share/man/man3/App::Prove::State.3.gz
-/usr/share/man/man3/App::Prove::State::Result.3.gz
-/usr/share/man/man3/App::Prove::State::Result::Test.3.gz
-/usr/share/man/man3/Archive::Tar.3.gz
-/usr/share/man/man3/Archive::Tar::File.3.gz
-/usr/share/man/man3/Attribute::Handlers.3.gz
-/usr/share/man/man3/AutoLoader.3.gz
-/usr/share/man/man3/AutoSplit.3.gz
-/usr/share/man/man3/B.3.gz
-/usr/share/man/man3/B::Concise.3.gz
-/usr/share/man/man3/B::Deparse.3.gz
-/usr/share/man/man3/B::Op_private.3.gz
-/usr/share/man/man3/B::Showlex.3.gz
-/usr/share/man/man3/B::Terse.3.gz
-/usr/share/man/man3/B::Xref.3.gz
-/usr/share/man/man3/Benchmark.3.gz
-/usr/share/man/man3/CORE.3.gz
-/usr/share/man/man3/CPAN.3.gz
-/usr/share/man/man3/CPAN::API::HOWTO.3.gz
-/usr/share/man/man3/CPAN::Debug.3.gz
-/usr/share/man/man3/CPAN::Distroprefs.3.gz
-/usr/share/man/man3/CPAN::FirstTime.3.gz
-/usr/share/man/man3/CPAN::HandleConfig.3.gz
-/usr/share/man/man3/CPAN::Kwalify.3.gz
-/usr/share/man/man3/CPAN::Meta.3.gz
-/usr/share/man/man3/CPAN::Meta::Converter.3.gz
-/usr/share/man/man3/CPAN::Meta::Feature.3.gz
-/usr/share/man/man3/CPAN::Meta::History.3.gz
-/usr/share/man/man3/CPAN::Meta::History::Meta_1_0.3.gz
-/usr/share/man/man3/CPAN::Meta::History::Meta_1_1.3.gz
-/usr/share/man/man3/CPAN::Meta::History::Meta_1_2.3.gz
-/usr/share/man/man3/CPAN::Meta::History::Meta_1_3.3.gz
-/usr/share/man/man3/CPAN::Meta::History::Meta_1_4.3.gz
-/usr/share/man/man3/CPAN::Meta::Merge.3.gz
-/usr/share/man/man3/CPAN::Meta::Prereqs.3.gz
-/usr/share/man/man3/CPAN::Meta::Requirements.3.gz
-/usr/share/man/man3/CPAN::Meta::Spec.3.gz
-/usr/share/man/man3/CPAN::Meta::Validator.3.gz
-/usr/share/man/man3/CPAN::Meta::YAML.3.gz
-/usr/share/man/man3/CPAN::Mirrors.3.gz
-/usr/share/man/man3/CPAN::Nox.3.gz
-/usr/share/man/man3/CPAN::Plugin.3.gz
-/usr/share/man/man3/CPAN::Plugin::Specfile.3.gz
-/usr/share/man/man3/CPAN::Queue.3.gz
-/usr/share/man/man3/CPAN::Tarzip.3.gz
-/usr/share/man/man3/CPAN::Version.3.gz
-/usr/share/man/man3/Carp.3.gz
-/usr/share/man/man3/Class::Struct.3.gz
-/usr/share/man/man3/Compress::Raw::Bzip2.3.gz
-/usr/share/man/man3/Compress::Raw::Zlib.3.gz
-/usr/share/man/man3/Compress::Zlib.3.gz
-/usr/share/man/man3/Config.3.gz
-/usr/share/man/man3/Config::Extensions.3.gz
-/usr/share/man/man3/Config::Perl::V.3.gz
-/usr/share/man/man3/Cwd.3.gz
-/usr/share/man/man3/DB.3.gz
-/usr/share/man/man3/DBM_Filter.3.gz
-/usr/share/man/man3/DBM_Filter::compress.3.gz
-/usr/share/man/man3/DBM_Filter::encode.3.gz
-/usr/share/man/man3/DBM_Filter::int32.3.gz
-/usr/share/man/man3/DBM_Filter::null.3.gz
-/usr/share/man/man3/DBM_Filter::utf8.3.gz
-/usr/share/man/man3/Data::Dumper.3.gz
-/usr/share/man/man3/Devel::PPPort.3.gz
-/usr/share/man/man3/Devel::Peek.3.gz
-/usr/share/man/man3/Devel::SelfStubber.3.gz
-/usr/share/man/man3/Digest.3.gz
-/usr/share/man/man3/Digest::MD5.3.gz
-/usr/share/man/man3/Digest::SHA.3.gz
-/usr/share/man/man3/Digest::base.3.gz
-/usr/share/man/man3/Digest::file.3.gz
-/usr/share/man/man3/DirHandle.3.gz
-/usr/share/man/man3/Dumpvalue.3.gz
-/usr/share/man/man3/DynaLoader.3.gz
-/usr/share/man/man3/Encode.3.gz
-/usr/share/man/man3/Encode::Alias.3.gz
-/usr/share/man/man3/Encode::Byte.3.gz
-/usr/share/man/man3/Encode::CJKConstants.3.gz
-/usr/share/man/man3/Encode::CN.3.gz
-/usr/share/man/man3/Encode::CN::HZ.3.gz
-/usr/share/man/man3/Encode::Config.3.gz
-/usr/share/man/man3/Encode::EBCDIC.3.gz
-/usr/share/man/man3/Encode::Encoder.3.gz
-/usr/share/man/man3/Encode::Encoding.3.gz
-/usr/share/man/man3/Encode::GSM0338.3.gz
-/usr/share/man/man3/Encode::Guess.3.gz
-/usr/share/man/man3/Encode::JP.3.gz
-/usr/share/man/man3/Encode::JP::H2Z.3.gz
-/usr/share/man/man3/Encode::JP::JIS7.3.gz
-/usr/share/man/man3/Encode::KR.3.gz
-/usr/share/man/man3/Encode::KR::2022_KR.3.gz
-/usr/share/man/man3/Encode::MIME::Header.3.gz
-/usr/share/man/man3/Encode::MIME::Name.3.gz
-/usr/share/man/man3/Encode::PerlIO.3.gz
-/usr/share/man/man3/Encode::Supported.3.gz
-/usr/share/man/man3/Encode::Symbol.3.gz
-/usr/share/man/man3/Encode::TW.3.gz
-/usr/share/man/man3/Encode::Unicode.3.gz
-/usr/share/man/man3/Encode::Unicode::UTF7.3.gz
-/usr/share/man/man3/English.3.gz
-/usr/share/man/man3/Env.3.gz
-/usr/share/man/man3/Errno.3.gz
-/usr/share/man/man3/Exporter.3.gz
-/usr/share/man/man3/Exporter::Heavy.3.gz
-/usr/share/man/man3/ExtUtils::CBuilder.3.gz
-/usr/share/man/man3/ExtUtils::CBuilder::Platform::Windows.3.gz
-/usr/share/man/man3/ExtUtils::Command.3.gz
-/usr/share/man/man3/ExtUtils::Command::MM.3.gz
-/usr/share/man/man3/ExtUtils::Constant.3.gz
-/usr/share/man/man3/ExtUtils::Constant::Base.3.gz
-/usr/share/man/man3/ExtUtils::Constant::Utils.3.gz
-/usr/share/man/man3/ExtUtils::Constant::XS.3.gz
-/usr/share/man/man3/ExtUtils::Embed.3.gz
-/usr/share/man/man3/ExtUtils::Install.3.gz
-/usr/share/man/man3/ExtUtils::Installed.3.gz
-/usr/share/man/man3/ExtUtils::Liblist.3.gz
-/usr/share/man/man3/ExtUtils::MM.3.gz
-/usr/share/man/man3/ExtUtils::MM_AIX.3.gz
-/usr/share/man/man3/ExtUtils::MM_Any.3.gz
-/usr/share/man/man3/ExtUtils::MM_BeOS.3.gz
-/usr/share/man/man3/ExtUtils::MM_Cygwin.3.gz
-/usr/share/man/man3/ExtUtils::MM_DOS.3.gz
-/usr/share/man/man3/ExtUtils::MM_Darwin.3.gz
-/usr/share/man/man3/ExtUtils::MM_MacOS.3.gz
-/usr/share/man/man3/ExtUtils::MM_NW5.3.gz
-/usr/share/man/man3/ExtUtils::MM_OS2.3.gz
-/usr/share/man/man3/ExtUtils::MM_OS390.3.gz
-/usr/share/man/man3/ExtUtils::MM_QNX.3.gz
-/usr/share/man/man3/ExtUtils::MM_UWIN.3.gz
-/usr/share/man/man3/ExtUtils::MM_Unix.3.gz
-/usr/share/man/man3/ExtUtils::MM_VMS.3.gz
-/usr/share/man/man3/ExtUtils::MM_VOS.3.gz
-/usr/share/man/man3/ExtUtils::MM_Win32.3.gz
-/usr/share/man/man3/ExtUtils::MM_Win95.3.gz
-/usr/share/man/man3/ExtUtils::MY.3.gz
-/usr/share/man/man3/ExtUtils::MakeMaker.3.gz
-/usr/share/man/man3/ExtUtils::MakeMaker::Config.3.gz
-/usr/share/man/man3/ExtUtils::MakeMaker::FAQ.3.gz
-/usr/share/man/man3/ExtUtils::MakeMaker::Locale.3.gz
-/usr/share/man/man3/ExtUtils::MakeMaker::Tutorial.3.gz
-/usr/share/man/man3/ExtUtils::Manifest.3.gz
-/usr/share/man/man3/ExtUtils::Miniperl.3.gz
-/usr/share/man/man3/ExtUtils::Mkbootstrap.3.gz
-/usr/share/man/man3/ExtUtils::Mksymlists.3.gz
-/usr/share/man/man3/ExtUtils::PL2Bat.3.gz
-/usr/share/man/man3/ExtUtils::Packlist.3.gz
-/usr/share/man/man3/ExtUtils::ParseXS.3.gz
-/usr/share/man/man3/ExtUtils::ParseXS::Constants.3.gz
-/usr/share/man/man3/ExtUtils::ParseXS::Eval.3.gz
-/usr/share/man/man3/ExtUtils::ParseXS::Utilities.3.gz
-/usr/share/man/man3/ExtUtils::Typemaps.3.gz
-/usr/share/man/man3/ExtUtils::Typemaps::Cmd.3.gz
-/usr/share/man/man3/ExtUtils::Typemaps::InputMap.3.gz
-/usr/share/man/man3/ExtUtils::Typemaps::OutputMap.3.gz
-/usr/share/man/man3/ExtUtils::Typemaps::Type.3.gz
-/usr/share/man/man3/ExtUtils::testlib.3.gz
-/usr/share/man/man3/Fatal.3.gz
-/usr/share/man/man3/Fcntl.3.gz
-/usr/share/man/man3/File::Basename.3.gz
-/usr/share/man/man3/File::Compare.3.gz
-/usr/share/man/man3/File::Copy.3.gz
-/usr/share/man/man3/File::DosGlob.3.gz
-/usr/share/man/man3/File::Fetch.3.gz
-/usr/share/man/man3/File::Find.3.gz
-/usr/share/man/man3/File::Glob.3.gz
-/usr/share/man/man3/File::GlobMapper.3.gz
-/usr/share/man/man3/File::Path.3.gz
-/usr/share/man/man3/File::Spec.3.gz
-/usr/share/man/man3/File::Spec::AmigaOS.3.gz
-/usr/share/man/man3/File::Spec::Cygwin.3.gz
-/usr/share/man/man3/File::Spec::Epoc.3.gz
-/usr/share/man/man3/File::Spec::Functions.3.gz
-/usr/share/man/man3/File::Spec::Mac.3.gz
-/usr/share/man/man3/File::Spec::OS2.3.gz
-/usr/share/man/man3/File::Spec::Unix.3.gz
-/usr/share/man/man3/File::Spec::VMS.3.gz
-/usr/share/man/man3/File::Spec::Win32.3.gz
-/usr/share/man/man3/File::Temp.3.gz
-/usr/share/man/man3/File::stat.3.gz
-/usr/share/man/man3/FileCache.3.gz
-/usr/share/man/man3/FileHandle.3.gz
-/usr/share/man/man3/Filter::Simple.3.gz
-/usr/share/man/man3/Filter::Util::Call.3.gz
-/usr/share/man/man3/FindBin.3.gz
-/usr/share/man/man3/GDBM_File.3.gz
-/usr/share/man/man3/Getopt::Long.3.gz
-/usr/share/man/man3/Getopt::Std.3.gz
-/usr/share/man/man3/HTTP::Tiny.3.gz
-/usr/share/man/man3/Hash::Util.3.gz
-/usr/share/man/man3/Hash::Util::FieldHash.3.gz
-/usr/share/man/man3/I18N::Collate.3.gz
-/usr/share/man/man3/I18N::LangTags.3.gz
-/usr/share/man/man3/I18N::LangTags::Detect.3.gz
-/usr/share/man/man3/I18N::LangTags::List.3.gz
-/usr/share/man/man3/I18N::Langinfo.3.gz
-/usr/share/man/man3/IO.3.gz
-/usr/share/man/man3/IO::Compress::Base.3.gz
-/usr/share/man/man3/IO::Compress::Bzip2.3.gz
-/usr/share/man/man3/IO::Compress::Deflate.3.gz
-/usr/share/man/man3/IO::Compress::FAQ.3.gz
-/usr/share/man/man3/IO::Compress::Gzip.3.gz
-/usr/share/man/man3/IO::Compress::RawDeflate.3.gz
-/usr/share/man/man3/IO::Compress::Zip.3.gz
-/usr/share/man/man3/IO::Dir.3.gz
-/usr/share/man/man3/IO::File.3.gz
-/usr/share/man/man3/IO::Handle.3.gz
-/usr/share/man/man3/IO::Pipe.3.gz
-/usr/share/man/man3/IO::Poll.3.gz
-/usr/share/man/man3/IO::Seekable.3.gz
-/usr/share/man/man3/IO::Select.3.gz
-/usr/share/man/man3/IO::Socket.3.gz
-/usr/share/man/man3/IO::Socket::INET.3.gz
-/usr/share/man/man3/IO::Socket::IP.3.gz
-/usr/share/man/man3/IO::Socket::UNIX.3.gz
-/usr/share/man/man3/IO::Uncompress::AnyInflate.3.gz
-/usr/share/man/man3/IO::Uncompress::AnyUncompress.3.gz
-/usr/share/man/man3/IO::Uncompress::Base.3.gz
-/usr/share/man/man3/IO::Uncompress::Bunzip2.3.gz
-/usr/share/man/man3/IO::Uncompress::Gunzip.3.gz
-/usr/share/man/man3/IO::Uncompress::Inflate.3.gz
-/usr/share/man/man3/IO::Uncompress::RawInflate.3.gz
-/usr/share/man/man3/IO::Uncompress::Unzip.3.gz
-/usr/share/man/man3/IO::Zlib.3.gz
-/usr/share/man/man3/IPC::Cmd.3.gz
-/usr/share/man/man3/IPC::Msg.3.gz
-/usr/share/man/man3/IPC::Open2.3.gz
-/usr/share/man/man3/IPC::Open3.3.gz
-/usr/share/man/man3/IPC::Semaphore.3.gz
-/usr/share/man/man3/IPC::SharedMem.3.gz
-/usr/share/man/man3/IPC::SysV.3.gz
-/usr/share/man/man3/Internals.3.gz
-/usr/share/man/man3/JSON::PP.3.gz
-/usr/share/man/man3/JSON::PP::Boolean.3.gz
-/usr/share/man/man3/List::Util.3.gz
-/usr/share/man/man3/List::Util::XS.3.gz
-/usr/share/man/man3/Locale::Maketext.3.gz
-/usr/share/man/man3/Locale::Maketext::Cookbook.3.gz
-/usr/share/man/man3/Locale::Maketext::Guts.3.gz
-/usr/share/man/man3/Locale::Maketext::GutsLoader.3.gz
-/usr/share/man/man3/Locale::Maketext::Simple.3.gz
-/usr/share/man/man3/Locale::Maketext::TPJ13.3.gz
-/usr/share/man/man3/MIME::Base64.3.gz
-/usr/share/man/man3/MIME::QuotedPrint.3.gz
-/usr/share/man/man3/Math::BigFloat.3.gz
-/usr/share/man/man3/Math::BigInt.3.gz
-/usr/share/man/man3/Math::BigInt::Calc.3.gz
-/usr/share/man/man3/Math::BigInt::FastCalc.3.gz
-/usr/share/man/man3/Math::BigInt::Lib.3.gz
-/usr/share/man/man3/Math::BigRat.3.gz
-/usr/share/man/man3/Math::Complex.3.gz
-/usr/share/man/man3/Math::Trig.3.gz
-/usr/share/man/man3/Memoize.3.gz
-/usr/share/man/man3/Memoize::AnyDBM_File.3.gz
-/usr/share/man/man3/Memoize::Expire.3.gz
-/usr/share/man/man3/Memoize::ExpireFile.3.gz
-/usr/share/man/man3/Memoize::ExpireTest.3.gz
-/usr/share/man/man3/Memoize::SDBM_File.3.gz
-/usr/share/man/man3/Memoize::Storable.3.gz
-/usr/share/man/man3/Module::CoreList.3.gz
-/usr/share/man/man3/Module::CoreList::Utils.3.gz
-/usr/share/man/man3/Module::Load.3.gz
-/usr/share/man/man3/Module::Load::Conditional.3.gz
-/usr/share/man/man3/Module::Loaded.3.gz
-/usr/share/man/man3/Module::Metadata.3.gz
-/usr/share/man/man3/NEXT.3.gz
-/usr/share/man/man3/Net::Cmd.3.gz
-/usr/share/man/man3/Net::Config.3.gz
-/usr/share/man/man3/Net::Domain.3.gz
-/usr/share/man/man3/Net::FTP.3.gz
-/usr/share/man/man3/Net::NNTP.3.gz
-/usr/share/man/man3/Net::Netrc.3.gz
-/usr/share/man/man3/Net::POP3.3.gz
-/usr/share/man/man3/Net::Ping.3.gz
-/usr/share/man/man3/Net::SMTP.3.gz
-/usr/share/man/man3/Net::Time.3.gz
-/usr/share/man/man3/Net::hostent.3.gz
-/usr/share/man/man3/Net::libnetFAQ.3.gz
-/usr/share/man/man3/Net::netent.3.gz
-/usr/share/man/man3/Net::protoent.3.gz
-/usr/share/man/man3/Net::servent.3.gz
-/usr/share/man/man3/O.3.gz
-/usr/share/man/man3/Opcode.3.gz
-/usr/share/man/man3/POSIX.3.gz
-/usr/share/man/man3/Params::Check.3.gz
-/usr/share/man/man3/Parse::CPAN::Meta.3.gz
-/usr/share/man/man3/Perl::OSType.3.gz
-/usr/share/man/man3/PerlIO.3.gz
-/usr/share/man/man3/PerlIO::encoding.3.gz
-/usr/share/man/man3/PerlIO::mmap.3.gz
-/usr/share/man/man3/PerlIO::scalar.3.gz
-/usr/share/man/man3/PerlIO::via.3.gz
-/usr/share/man/man3/PerlIO::via::QuotedPrint.3.gz
-/usr/share/man/man3/Pod::Checker.3.gz
-/usr/share/man/man3/Pod::Escapes.3.gz
-/usr/share/man/man3/Pod::Html.3.gz
-/usr/share/man/man3/Pod::Man.3.gz
-/usr/share/man/man3/Pod::ParseLink.3.gz
-/usr/share/man/man3/Pod::Perldoc.3.gz
-/usr/share/man/man3/Pod::Perldoc::BaseTo.3.gz
-/usr/share/man/man3/Pod::Perldoc::GetOptsOO.3.gz
-/usr/share/man/man3/Pod::Perldoc::ToANSI.3.gz
-/usr/share/man/man3/Pod::Perldoc::ToChecker.3.gz
-/usr/share/man/man3/Pod::Perldoc::ToMan.3.gz
-/usr/share/man/man3/Pod::Perldoc::ToNroff.3.gz
-/usr/share/man/man3/Pod::Perldoc::ToPod.3.gz
-/usr/share/man/man3/Pod::Perldoc::ToRtf.3.gz
-/usr/share/man/man3/Pod::Perldoc::ToTerm.3.gz
-/usr/share/man/man3/Pod::Perldoc::ToText.3.gz
-/usr/share/man/man3/Pod::Perldoc::ToTk.3.gz
-/usr/share/man/man3/Pod::Perldoc::ToXml.3.gz
-/usr/share/man/man3/Pod::Simple.3.gz
-/usr/share/man/man3/Pod::Simple::Checker.3.gz
-/usr/share/man/man3/Pod::Simple::Debug.3.gz
-/usr/share/man/man3/Pod::Simple::DumpAsText.3.gz
-/usr/share/man/man3/Pod::Simple::DumpAsXML.3.gz
-/usr/share/man/man3/Pod::Simple::HTML.3.gz
-/usr/share/man/man3/Pod::Simple::HTMLBatch.3.gz
-/usr/share/man/man3/Pod::Simple::JustPod.3.gz
-/usr/share/man/man3/Pod::Simple::LinkSection.3.gz
-/usr/share/man/man3/Pod::Simple::Methody.3.gz
-/usr/share/man/man3/Pod::Simple::PullParser.3.gz
-/usr/share/man/man3/Pod::Simple::PullParserEndToken.3.gz
-/usr/share/man/man3/Pod::Simple::PullParserStartToken.3.gz
-/usr/share/man/man3/Pod::Simple::PullParserTextToken.3.gz
-/usr/share/man/man3/Pod::Simple::PullParserToken.3.gz
-/usr/share/man/man3/Pod::Simple::RTF.3.gz
-/usr/share/man/man3/Pod::Simple::Search.3.gz
-/usr/share/man/man3/Pod::Simple::SimpleTree.3.gz
-/usr/share/man/man3/Pod::Simple::Subclassing.3.gz
-/usr/share/man/man3/Pod::Simple::Text.3.gz
-/usr/share/man/man3/Pod::Simple::TextContent.3.gz
-/usr/share/man/man3/Pod::Simple::XHTML.3.gz
-/usr/share/man/man3/Pod::Simple::XMLOutStream.3.gz
-/usr/share/man/man3/Pod::Text.3.gz
-/usr/share/man/man3/Pod::Text::Color.3.gz
-/usr/share/man/man3/Pod::Text::Overstrike.3.gz
-/usr/share/man/man3/Pod::Text::Termcap.3.gz
-/usr/share/man/man3/Pod::Usage.3.gz
-/usr/share/man/man3/SDBM_File.3.gz
-/usr/share/man/man3/Safe.3.gz
-/usr/share/man/man3/Scalar::Util.3.gz
-/usr/share/man/man3/Search::Dict.3.gz
-/usr/share/man/man3/SelectSaver.3.gz
-/usr/share/man/man3/SelfLoader.3.gz
-/usr/share/man/man3/Socket.3.gz
-/usr/share/man/man3/Storable.3.gz
-/usr/share/man/man3/Sub::Util.3.gz
-/usr/share/man/man3/Symbol.3.gz
-/usr/share/man/man3/Sys::Hostname.3.gz
-/usr/share/man/man3/Sys::Syslog.3.gz
-/usr/share/man/man3/TAP::Base.3.gz
-/usr/share/man/man3/TAP::Formatter::Base.3.gz
-/usr/share/man/man3/TAP::Formatter::Color.3.gz
-/usr/share/man/man3/TAP::Formatter::Console.3.gz
-/usr/share/man/man3/TAP::Formatter::Console::ParallelSession.3.gz
-/usr/share/man/man3/TAP::Formatter::Console::Session.3.gz
-/usr/share/man/man3/TAP::Formatter::File.3.gz
-/usr/share/man/man3/TAP::Formatter::File::Session.3.gz
-/usr/share/man/man3/TAP::Formatter::Session.3.gz
-/usr/share/man/man3/TAP::Harness.3.gz
-/usr/share/man/man3/TAP::Harness::Beyond.3.gz
-/usr/share/man/man3/TAP::Harness::Env.3.gz
-/usr/share/man/man3/TAP::Object.3.gz
-/usr/share/man/man3/TAP::Parser.3.gz
-/usr/share/man/man3/TAP::Parser::Aggregator.3.gz
-/usr/share/man/man3/TAP::Parser::Grammar.3.gz
-/usr/share/man/man3/TAP::Parser::Iterator.3.gz
-/usr/share/man/man3/TAP::Parser::Iterator::Array.3.gz
-/usr/share/man/man3/TAP::Parser::Iterator::Process.3.gz
-/usr/share/man/man3/TAP::Parser::Iterator::Stream.3.gz
-/usr/share/man/man3/TAP::Parser::IteratorFactory.3.gz
-/usr/share/man/man3/TAP::Parser::Multiplexer.3.gz
-/usr/share/man/man3/TAP::Parser::Result.3.gz
-/usr/share/man/man3/TAP::Parser::Result::Bailout.3.gz
-/usr/share/man/man3/TAP::Parser::Result::Comment.3.gz
-/usr/share/man/man3/TAP::Parser::Result::Plan.3.gz
-/usr/share/man/man3/TAP::Parser::Result::Pragma.3.gz
-/usr/share/man/man3/TAP::Parser::Result::Test.3.gz
-/usr/share/man/man3/TAP::Parser::Result::Unknown.3.gz
-/usr/share/man/man3/TAP::Parser::Result::Version.3.gz
-/usr/share/man/man3/TAP::Parser::Result::YAML.3.gz
-/usr/share/man/man3/TAP::Parser::ResultFactory.3.gz
-/usr/share/man/man3/TAP::Parser::Scheduler.3.gz
-/usr/share/man/man3/TAP::Parser::Scheduler::Job.3.gz
-/usr/share/man/man3/TAP::Parser::Scheduler::Spinner.3.gz
-/usr/share/man/man3/TAP::Parser::Source.3.gz
-/usr/share/man/man3/TAP::Parser::SourceHandler.3.gz
-/usr/share/man/man3/TAP::Parser::SourceHandler::Executable.3.gz
-/usr/share/man/man3/TAP::Parser::SourceHandler::File.3.gz
-/usr/share/man/man3/TAP::Parser::SourceHandler::Handle.3.gz
-/usr/share/man/man3/TAP::Parser::SourceHandler::Perl.3.gz
-/usr/share/man/man3/TAP::Parser::SourceHandler::RawTAP.3.gz
-/usr/share/man/man3/TAP::Parser::YAMLish::Reader.3.gz
-/usr/share/man/man3/TAP::Parser::YAMLish::Writer.3.gz
-/usr/share/man/man3/Term::ANSIColor.3.gz
-/usr/share/man/man3/Term::Cap.3.gz
-/usr/share/man/man3/Term::Complete.3.gz
-/usr/share/man/man3/Term::ReadLine.3.gz
-/usr/share/man/man3/Test.3.gz
-/usr/share/man/man3/Test2.3.gz
-/usr/share/man/man3/Test2::API.3.gz
-/usr/share/man/man3/Test2::API::Breakage.3.gz
-/usr/share/man/man3/Test2::API::Context.3.gz
-/usr/share/man/man3/Test2::API::Instance.3.gz
-/usr/share/man/man3/Test2::API::InterceptResult.3.gz
-/usr/share/man/man3/Test2::API::InterceptResult::Event.3.gz
-/usr/share/man/man3/Test2::API::InterceptResult::Hub.3.gz
-/usr/share/man/man3/Test2::API::InterceptResult::Squasher.3.gz
-/usr/share/man/man3/Test2::API::Stack.3.gz
-/usr/share/man/man3/Test2::Event.3.gz
-/usr/share/man/man3/Test2::Event::Bail.3.gz
-/usr/share/man/man3/Test2::Event::Diag.3.gz
-/usr/share/man/man3/Test2::Event::Encoding.3.gz
-/usr/share/man/man3/Test2::Event::Exception.3.gz
-/usr/share/man/man3/Test2::Event::Fail.3.gz
-/usr/share/man/man3/Test2::Event::Generic.3.gz
-/usr/share/man/man3/Test2::Event::Note.3.gz
-/usr/share/man/man3/Test2::Event::Ok.3.gz
-/usr/share/man/man3/Test2::Event::Pass.3.gz
-/usr/share/man/man3/Test2::Event::Plan.3.gz
-/usr/share/man/man3/Test2::Event::Skip.3.gz
-/usr/share/man/man3/Test2::Event::Subtest.3.gz
-/usr/share/man/man3/Test2::Event::TAP::Version.3.gz
-/usr/share/man/man3/Test2::Event::V2.3.gz
-/usr/share/man/man3/Test2::Event::Waiting.3.gz
-/usr/share/man/man3/Test2::EventFacet.3.gz
-/usr/share/man/man3/Test2::EventFacet::About.3.gz
-/usr/share/man/man3/Test2::EventFacet::Amnesty.3.gz
-/usr/share/man/man3/Test2::EventFacet::Assert.3.gz
-/usr/share/man/man3/Test2::EventFacet::Control.3.gz
-/usr/share/man/man3/Test2::EventFacet::Error.3.gz
-/usr/share/man/man3/Test2::EventFacet::Hub.3.gz
-/usr/share/man/man3/Test2::EventFacet::Info.3.gz
-/usr/share/man/man3/Test2::EventFacet::Info::Table.3.gz
-/usr/share/man/man3/Test2::EventFacet::Meta.3.gz
-/usr/share/man/man3/Test2::EventFacet::Parent.3.gz
-/usr/share/man/man3/Test2::EventFacet::Plan.3.gz
-/usr/share/man/man3/Test2::EventFacet::Render.3.gz
-/usr/share/man/man3/Test2::EventFacet::Trace.3.gz
-/usr/share/man/man3/Test2::Formatter.3.gz
-/usr/share/man/man3/Test2::Formatter::TAP.3.gz
-/usr/share/man/man3/Test2::Hub.3.gz
-/usr/share/man/man3/Test2::Hub::Interceptor.3.gz
-/usr/share/man/man3/Test2::Hub::Interceptor::Terminator.3.gz
-/usr/share/man/man3/Test2::Hub::Subtest.3.gz
-/usr/share/man/man3/Test2::IPC.3.gz
-/usr/share/man/man3/Test2::IPC::Driver.3.gz
-/usr/share/man/man3/Test2::IPC::Driver::Files.3.gz
-/usr/share/man/man3/Test2::Tools::Tiny.3.gz
-/usr/share/man/man3/Test2::Transition.3.gz
-/usr/share/man/man3/Test2::Util.3.gz
-/usr/share/man/man3/Test2::Util::ExternalMeta.3.gz
-/usr/share/man/man3/Test2::Util::Facets2Legacy.3.gz
-/usr/share/man/man3/Test2::Util::HashBase.3.gz
-/usr/share/man/man3/Test2::Util::Trace.3.gz
-/usr/share/man/man3/Test::Builder.3.gz
-/usr/share/man/man3/Test::Builder::Formatter.3.gz
-/usr/share/man/man3/Test::Builder::IO::Scalar.3.gz
-/usr/share/man/man3/Test::Builder::Module.3.gz
-/usr/share/man/man3/Test::Builder::Tester.3.gz
-/usr/share/man/man3/Test::Builder::Tester::Color.3.gz
-/usr/share/man/man3/Test::Builder::TodoDiag.3.gz
-/usr/share/man/man3/Test::Harness.3.gz
-/usr/share/man/man3/Test::More.3.gz
-/usr/share/man/man3/Test::Simple.3.gz
-/usr/share/man/man3/Test::Tester.3.gz
-/usr/share/man/man3/Test::Tester::Capture.3.gz
-/usr/share/man/man3/Test::Tester::CaptureRunner.3.gz
-/usr/share/man/man3/Test::Tutorial.3.gz
-/usr/share/man/man3/Test::use::ok.3.gz
-/usr/share/man/man3/Text::Abbrev.3.gz
-/usr/share/man/man3/Text::Balanced.3.gz
-/usr/share/man/man3/Text::ParseWords.3.gz
-/usr/share/man/man3/Text::Tabs.3.gz
-/usr/share/man/man3/Text::Wrap.3.gz
-/usr/share/man/man3/Thread.3.gz
-/usr/share/man/man3/Thread::Queue.3.gz
-/usr/share/man/man3/Thread::Semaphore.3.gz
-/usr/share/man/man3/Tie::Array.3.gz
-/usr/share/man/man3/Tie::File.3.gz
-/usr/share/man/man3/Tie::Handle.3.gz
-/usr/share/man/man3/Tie::Hash.3.gz
-/usr/share/man/man3/Tie::Hash::NamedCapture.3.gz
-/usr/share/man/man3/Tie::Memoize.3.gz
-/usr/share/man/man3/Tie::RefHash.3.gz
-/usr/share/man/man3/Tie::Scalar.3.gz
-/usr/share/man/man3/Tie::StdHandle.3.gz
-/usr/share/man/man3/Tie::SubstrHash.3.gz
-/usr/share/man/man3/Time::HiRes.3.gz
-/usr/share/man/man3/Time::Local.3.gz
-/usr/share/man/man3/Time::Piece.3.gz
-/usr/share/man/man3/Time::Seconds.3.gz
-/usr/share/man/man3/Time::gmtime.3.gz
-/usr/share/man/man3/Time::localtime.3.gz
-/usr/share/man/man3/Time::tm.3.gz
-/usr/share/man/man3/UNIVERSAL.3.gz
-/usr/share/man/man3/Unicode::Collate.3.gz
-/usr/share/man/man3/Unicode::Collate::CJK::Big5.3.gz
-/usr/share/man/man3/Unicode::Collate::CJK::GB2312.3.gz
-/usr/share/man/man3/Unicode::Collate::CJK::JISX0208.3.gz
-/usr/share/man/man3/Unicode::Collate::CJK::Korean.3.gz
-/usr/share/man/man3/Unicode::Collate::CJK::Pinyin.3.gz
-/usr/share/man/man3/Unicode::Collate::CJK::Stroke.3.gz
-/usr/share/man/man3/Unicode::Collate::CJK::Zhuyin.3.gz
-/usr/share/man/man3/Unicode::Collate::Locale.3.gz
-/usr/share/man/man3/Unicode::Normalize.3.gz
-/usr/share/man/man3/Unicode::UCD.3.gz
-/usr/share/man/man3/User::grent.3.gz
-/usr/share/man/man3/User::pwent.3.gz
-/usr/share/man/man3/XSLoader.3.gz
-/usr/share/man/man3/attributes.3.gz
-/usr/share/man/man3/autodie.3.gz
-/usr/share/man/man3/autodie::Scope::Guard.3.gz
-/usr/share/man/man3/autodie::Scope::GuardStack.3.gz
-/usr/share/man/man3/autodie::Util.3.gz
-/usr/share/man/man3/autodie::exception.3.gz
-/usr/share/man/man3/autodie::exception::system.3.gz
-/usr/share/man/man3/autodie::hints.3.gz
-/usr/share/man/man3/autodie::skip.3.gz
-/usr/share/man/man3/autouse.3.gz
-/usr/share/man/man3/base.3.gz
-/usr/share/man/man3/bigint.3.gz
-/usr/share/man/man3/bignum.3.gz
-/usr/share/man/man3/bigrat.3.gz
-/usr/share/man/man3/blib.3.gz
-/usr/share/man/man3/bytes.3.gz
-/usr/share/man/man3/charnames.3.gz
-/usr/share/man/man3/constant.3.gz
-/usr/share/man/man3/deprecate.3.gz
-/usr/share/man/man3/diagnostics.3.gz
-/usr/share/man/man3/encoding.3.gz
-/usr/share/man/man3/encoding::warnings.3.gz
-/usr/share/man/man3/experimental.3.gz
-/usr/share/man/man3/feature.3.gz
-/usr/share/man/man3/fields.3.gz
-/usr/share/man/man3/filetest.3.gz
-/usr/share/man/man3/if.3.gz
-/usr/share/man/man3/integer.3.gz
-/usr/share/man/man3/less.3.gz
-/usr/share/man/man3/lib.3.gz
-/usr/share/man/man3/locale.3.gz
-/usr/share/man/man3/mro.3.gz
-/usr/share/man/man3/ok.3.gz
-/usr/share/man/man3/open.3.gz
-/usr/share/man/man3/ops.3.gz
-/usr/share/man/man3/overload.3.gz
-/usr/share/man/man3/overloading.3.gz
-/usr/share/man/man3/parent.3.gz
-/usr/share/man/man3/re.3.gz
-/usr/share/man/man3/sigtrap.3.gz
-/usr/share/man/man3/sort.3.gz
-/usr/share/man/man3/strict.3.gz
-/usr/share/man/man3/subs.3.gz
-/usr/share/man/man3/threads.3.gz
-/usr/share/man/man3/threads::shared.3.gz
-/usr/share/man/man3/utf8.3.gz
-/usr/share/man/man3/vars.3.gz
-/usr/share/man/man3/version.3.gz
-/usr/share/man/man3/version::Internals.3.gz
-/usr/share/man/man3/vmsish.3.gz
-/usr/share/man/man3/warnings.3.gz
-/usr/share/man/man3/warnings::register.3.gz
-/usr/lib/perl5/5.34/pod/perl5341delta.pod
-/usr/share/man/man1/perl5341delta.1.gz
-   /usr/lib/perl5/5.34/auto/B/B.so
-   /usr/lib/perl5/5.34/auto/Compress/Raw/Bzip2/Bzip2.so
-   /usr/lib/perl5/5.34/auto/Compress/Raw/Zlib/Zlib.so
-   /usr/lib/perl5/5.34/auto/Cwd/Cwd.so
-#   /usr/lib/perl5/5.34/auto/DB_File/DB_File.so
-   /usr/lib/perl5/5.34/auto/Data/Dumper/Dumper.so
-   /usr/lib/perl5/5.34/auto/Devel/Peek/Peek.so
-   /usr/lib/perl5/5.34/auto/Digest/MD5/MD5.so
-   /usr/lib/perl5/5.34/auto/Digest/SHA/SHA.so
-   /usr/lib/perl5/5.34/auto/Encode/Byte/Byte.so
-   /usr/lib/perl5/5.34/auto/Encode/CN/CN.so
-   /usr/lib/perl5/5.34/auto/Encode/EBCDIC/EBCDIC.so
-   /usr/lib/perl5/5.34/auto/Encode/Encode.so
-   /usr/lib/perl5/5.34/auto/Encode/JP/JP.so
-   /usr/lib/perl5/5.34/auto/Encode/KR/KR.so
-   /usr/lib/perl5/5.34/auto/Encode/Symbol/Symbol.so
-   /usr/lib/perl5/5.34/auto/Encode/TW/TW.so
-   /usr/lib/perl5/5.34/auto/Encode/Unicode/Unicode.so
-   /usr/lib/perl5/5.34/auto/Fcntl/Fcntl.so
-   /usr/lib/perl5/5.34/auto/File/DosGlob/DosGlob.so
-   /usr/lib/perl5/5.34/auto/File/Glob/Glob.so
-   /usr/lib/perl5/5.34/auto/Filter/Util/Call/Call.so
-   /usr/lib/perl5/5.34/auto/GDBM_File/GDBM_File.so
-   /usr/lib/perl5/5.34/auto/Hash/Util/FieldHash/FieldHash.so
-   /usr/lib/perl5/5.34/auto/Hash/Util/Util.so
-   /usr/lib/perl5/5.34/auto/I18N/Langinfo/Langinfo.so
-   /usr/lib/perl5/5.34/auto/IO/IO.so
-   /usr/lib/perl5/5.34/auto/IPC/SysV/SysV.so
-   /usr/lib/perl5/5.34/auto/List/Util/Util.so
-   /usr/lib/perl5/5.34/auto/MIME/Base64/Base64.so
-   /usr/lib/perl5/5.34/auto/Math/BigInt/FastCalc/FastCalc.so
-   /usr/lib/perl5/5.34/auto/Opcode/Opcode.so
-   /usr/lib/perl5/5.34/auto/POSIX/POSIX.so
-   /usr/lib/perl5/5.34/auto/PerlIO/encoding/encoding.so
-   /usr/lib/perl5/5.34/auto/PerlIO/mmap/mmap.so
-   /usr/lib/perl5/5.34/auto/PerlIO/scalar/scalar.so
-   /usr/lib/perl5/5.34/auto/PerlIO/via/via.so
-   /usr/lib/perl5/5.34/auto/SDBM_File/SDBM_File.so
-   /usr/lib/perl5/5.34/auto/Socket/Socket.so
-   /usr/lib/perl5/5.34/auto/Storable/Storable.so
-   /usr/lib/perl5/5.34/auto/Sys/Hostname/Hostname.so
-   /usr/lib/perl5/5.34/auto/Sys/Syslog/Syslog.so
-   /usr/lib/perl5/5.34/auto/Time/HiRes/HiRes.so
-   /usr/lib/perl5/5.34/auto/Time/Piece/Piece.so
-   /usr/lib/perl5/5.34/auto/Unicode/Collate/Collate.so
-   /usr/lib/perl5/5.34/auto/Unicode/Normalize/Normalize.so
-   /usr/lib/perl5/5.34/auto/attributes/attributes.so
-   /usr/lib/perl5/5.34/auto/mro/mro.so
-   /usr/lib/perl5/5.34/auto/re/re.so
-   /usr/lib/perl5/5.34/auto/threads/shared/shared.so
-   /usr/lib/perl5/5.34/auto/threads/threads.so
-   /usr/lib/perl5/5.34/Memoize/NDBM_File.pm
+   /usr/bin/corelist
+   /usr/bin/cpan
+   /usr/bin/enc2xs
+   /usr/bin/encguess
+   /usr/bin/h2ph
+   /usr/bin/h2xs
+   /usr/bin/instmodsh
+   /usr/bin/json_pp
+   /usr/bin/libnetcfg
+   /usr/bin/perl
+   /usr/bin/perl5.38.2
+   /usr/bin/perlbug
+   /usr/bin/perldoc
+   /usr/bin/perlivp
+   /usr/bin/perlthanks
+   /usr/bin/piconv
+   /usr/bin/pl2pm
+   /usr/bin/pod2html
+   /usr/bin/pod2man
+   /usr/bin/pod2text
+   /usr/bin/pod2usage
+   /usr/bin/podchecker
+   /usr/bin/prove
+   /usr/bin/ptar
+   /usr/bin/ptardiff
+   /usr/bin/ptargrep
+   /usr/bin/shasum
+   /usr/bin/splain
+   /usr/bin/streamzip
+   /usr/bin/xsubpp
+   /usr/bin/zipdetails
+   /usr/lib/perl5/5.38/.packlist
+   /usr/lib/perl5/5.38/AnyDBM_File.pm
+   /usr/lib/perl5/5.38/App/Cpan.pm
+   /usr/lib/perl5/5.38/App/Prove.pm
+   /usr/lib/perl5/5.38/App/Prove/State.pm
+   /usr/lib/perl5/5.38/App/Prove/State/Result.pm
+   /usr/lib/perl5/5.38/App/Prove/State/Result/Test.pm
+   /usr/lib/perl5/5.38/Archive/Tar.pm
+   /usr/lib/perl5/5.38/Archive/Tar/Constant.pm
+   /usr/lib/perl5/5.38/Archive/Tar/File.pm
+   /usr/lib/perl5/5.38/Attribute/Handlers.pm
+   /usr/lib/perl5/5.38/AutoLoader.pm
+   /usr/lib/perl5/5.38/AutoSplit.pm
+   /usr/lib/perl5/5.38/B.pm
+   /usr/lib/perl5/5.38/B/Concise.pm
+   /usr/lib/perl5/5.38/B/Deparse.pm
+   /usr/lib/perl5/5.38/B/Op_private.pm
+   /usr/lib/perl5/5.38/B/Showlex.pm
+   /usr/lib/perl5/5.38/B/Terse.pm
+   /usr/lib/perl5/5.38/B/Xref.pm
+   /usr/lib/perl5/5.38/Benchmark.pm
+   /usr/lib/perl5/5.38/CORE.pod
+   /usr/lib/perl5/5.38/CORE/EXTERN.h
+   /usr/lib/perl5/5.38/CORE/INTERN.h
+   /usr/lib/perl5/5.38/CORE/XSUB.h
+   /usr/lib/perl5/5.38/CORE/av.h
+   /usr/lib/perl5/5.38/CORE/bitcount.h
+   /usr/lib/perl5/5.38/CORE/charclass_invlists.h
+   /usr/lib/perl5/5.38/CORE/config.h
+   /usr/lib/perl5/5.38/CORE/cop.h
+   /usr/lib/perl5/5.38/CORE/cv.h
+   /usr/lib/perl5/5.38/CORE/dosish.h
+   /usr/lib/perl5/5.38/CORE/ebcdic_tables.h
+   /usr/lib/perl5/5.38/CORE/embed.h
+   /usr/lib/perl5/5.38/CORE/embedvar.h
+   /usr/lib/perl5/5.38/CORE/fakesdio.h
+   /usr/lib/perl5/5.38/CORE/feature.h
+   /usr/lib/perl5/5.38/CORE/form.h
+   /usr/lib/perl5/5.38/CORE/git_version.h
+   /usr/lib/perl5/5.38/CORE/gv.h
+   /usr/lib/perl5/5.38/CORE/handy.h
+   /usr/lib/perl5/5.38/CORE/hv.h
+   /usr/lib/perl5/5.38/CORE/hv_func.h
+   /usr/lib/perl5/5.38/CORE/hv_macro.h
+   /usr/lib/perl5/5.38/CORE/inline.h
+   /usr/lib/perl5/5.38/CORE/intrpvar.h
+   /usr/lib/perl5/5.38/CORE/invlist_inline.h
+   /usr/lib/perl5/5.38/CORE/iperlsys.h
+   /usr/lib/perl5/5.38/CORE/keywords.h
+   /usr/lib/perl5/5.38/CORE/l1_char_class_tab.h
+   /usr/lib/perl5/5.38/CORE/libperl.so
+   /usr/lib/perl5/5.38/CORE/malloc_ctl.h
+   /usr/lib/perl5/5.38/CORE/metaconfig.h
+   /usr/lib/perl5/5.38/CORE/mg.h
+   /usr/lib/perl5/5.38/CORE/mg_data.h
+   /usr/lib/perl5/5.38/CORE/mg_raw.h
+   /usr/lib/perl5/5.38/CORE/mg_vtable.h
+   /usr/lib/perl5/5.38/CORE/mydtrace.h
+   /usr/lib/perl5/5.38/CORE/nostdio.h
+   /usr/lib/perl5/5.38/CORE/op.h
+   /usr/lib/perl5/5.38/CORE/op_reg_common.h
+   /usr/lib/perl5/5.38/CORE/opcode.h
+   /usr/lib/perl5/5.38/CORE/opnames.h
+   /usr/lib/perl5/5.38/CORE/overload.h
+   /usr/lib/perl5/5.38/CORE/pad.h
+   /usr/lib/perl5/5.38/CORE/parser.h
+   /usr/lib/perl5/5.38/CORE/patchlevel.h
+   /usr/lib/perl5/5.38/CORE/perl.h
+   /usr/lib/perl5/5.38/CORE/perl_inc_macro.h
+   /usr/lib/perl5/5.38/CORE/perl_langinfo.h
+   /usr/lib/perl5/5.38/CORE/perl_siphash.h
+   /usr/lib/perl5/5.38/CORE/perlapi.h
+   /usr/lib/perl5/5.38/CORE/perlio.h
+   /usr/lib/perl5/5.38/CORE/perliol.h
+   /usr/lib/perl5/5.38/CORE/perlsdio.h
+   /usr/lib/perl5/5.38/CORE/perlstatic.h
+   /usr/lib/perl5/5.38/CORE/perlvars.h
+   /usr/lib/perl5/5.38/CORE/perly.h
+   /usr/lib/perl5/5.38/CORE/pp.h
+   /usr/lib/perl5/5.38/CORE/pp_proto.h
+   /usr/lib/perl5/5.38/CORE/proto.h
+   /usr/lib/perl5/5.38/CORE/reentr.h
+   /usr/lib/perl5/5.38/CORE/regcharclass.h
+   /usr/lib/perl5/5.38/CORE/regcomp.h
+   /usr/lib/perl5/5.38/CORE/regcomp_internal.h
+   /usr/lib/perl5/5.38/CORE/regexp.h
+   /usr/lib/perl5/5.38/CORE/reginline.h
+   /usr/lib/perl5/5.38/CORE/regnodes.h
+   /usr/lib/perl5/5.38/CORE/sbox32_hash.h
+   /usr/lib/perl5/5.38/CORE/scope.h
+   /usr/lib/perl5/5.38/CORE/scope_types.h
+   /usr/lib/perl5/5.38/CORE/sv.h
+   /usr/lib/perl5/5.38/CORE/sv_inline.h
+   /usr/lib/perl5/5.38/CORE/thread.h
+   /usr/lib/perl5/5.38/CORE/time64.h
+   /usr/lib/perl5/5.38/CORE/time64_config.h
+   /usr/lib/perl5/5.38/CORE/uconfig.h
+   /usr/lib/perl5/5.38/CORE/uni_keywords.h
+   /usr/lib/perl5/5.38/CORE/unicode_constants.h
+   /usr/lib/perl5/5.38/CORE/unixish.h
+   /usr/lib/perl5/5.38/CORE/utf8.h
+   /usr/lib/perl5/5.38/CORE/utfebcdic.h
+   /usr/lib/perl5/5.38/CORE/util.h
+   /usr/lib/perl5/5.38/CORE/uudmap.h
+   /usr/lib/perl5/5.38/CORE/vutil.h
+   /usr/lib/perl5/5.38/CORE/warnings.h
+   /usr/lib/perl5/5.38/CORE/zaphod32_hash.h
+   /usr/lib/perl5/5.38/CPAN.pm
+   /usr/lib/perl5/5.38/CPAN/API/HOWTO.pod
+   /usr/lib/perl5/5.38/CPAN/Author.pm
+   /usr/lib/perl5/5.38/CPAN/Bundle.pm
+   /usr/lib/perl5/5.38/CPAN/CacheMgr.pm
+   /usr/lib/perl5/5.38/CPAN/Complete.pm
+   /usr/lib/perl5/5.38/CPAN/Debug.pm
+   /usr/lib/perl5/5.38/CPAN/DeferredCode.pm
+   /usr/lib/perl5/5.38/CPAN/Distribution.pm
+   /usr/lib/perl5/5.38/CPAN/Distroprefs.pm
+   /usr/lib/perl5/5.38/CPAN/Distrostatus.pm
+   /usr/lib/perl5/5.38/CPAN/Exception/RecursiveDependency.pm
+   /usr/lib/perl5/5.38/CPAN/Exception/blocked_urllist.pm
+   /usr/lib/perl5/5.38/CPAN/Exception/yaml_not_installed.pm
+   /usr/lib/perl5/5.38/CPAN/Exception/yaml_process_error.pm
+   /usr/lib/perl5/5.38/CPAN/FTP.pm
+   /usr/lib/perl5/5.38/CPAN/FTP/netrc.pm
+   /usr/lib/perl5/5.38/CPAN/FirstTime.pm
+   /usr/lib/perl5/5.38/CPAN/HTTP/Client.pm
+   /usr/lib/perl5/5.38/CPAN/HTTP/Credentials.pm
+   /usr/lib/perl5/5.38/CPAN/HandleConfig.pm
+   /usr/lib/perl5/5.38/CPAN/Index.pm
+   /usr/lib/perl5/5.38/CPAN/InfoObj.pm
+   /usr/lib/perl5/5.38/CPAN/Kwalify.pm
+   /usr/lib/perl5/5.38/CPAN/Kwalify/distroprefs.dd
+   /usr/lib/perl5/5.38/CPAN/Kwalify/distroprefs.yml
+   /usr/lib/perl5/5.38/CPAN/LWP/UserAgent.pm
+   /usr/lib/perl5/5.38/CPAN/Meta.pm
+   /usr/lib/perl5/5.38/CPAN/Meta/Converter.pm
+   /usr/lib/perl5/5.38/CPAN/Meta/Feature.pm
+   /usr/lib/perl5/5.38/CPAN/Meta/History.pm
+   /usr/lib/perl5/5.38/CPAN/Meta/History/Meta_1_0.pod
+   /usr/lib/perl5/5.38/CPAN/Meta/History/Meta_1_1.pod
+   /usr/lib/perl5/5.38/CPAN/Meta/History/Meta_1_2.pod
+   /usr/lib/perl5/5.38/CPAN/Meta/History/Meta_1_3.pod
+   /usr/lib/perl5/5.38/CPAN/Meta/History/Meta_1_4.pod
+   /usr/lib/perl5/5.38/CPAN/Meta/Merge.pm
+   /usr/lib/perl5/5.38/CPAN/Meta/Prereqs.pm
+   /usr/lib/perl5/5.38/CPAN/Meta/Requirements.pm
+   /usr/lib/perl5/5.38/CPAN/Meta/Spec.pm
+   /usr/lib/perl5/5.38/CPAN/Meta/Validator.pm
+   /usr/lib/perl5/5.38/CPAN/Meta/YAML.pm
+   /usr/lib/perl5/5.38/CPAN/Mirrors.pm
+   /usr/lib/perl5/5.38/CPAN/Module.pm
+   /usr/lib/perl5/5.38/CPAN/Nox.pm
+   /usr/lib/perl5/5.38/CPAN/Plugin.pm
+   /usr/lib/perl5/5.38/CPAN/Plugin/Specfile.pm
+   /usr/lib/perl5/5.38/CPAN/Prompt.pm
+   /usr/lib/perl5/5.38/CPAN/Queue.pm
+   /usr/lib/perl5/5.38/CPAN/Shell.pm
+   /usr/lib/perl5/5.38/CPAN/Tarzip.pm
+   /usr/lib/perl5/5.38/CPAN/URL.pm
+   /usr/lib/perl5/5.38/CPAN/Version.pm
+   /usr/lib/perl5/5.38/Carp.pm
+   /usr/lib/perl5/5.38/Carp/Heavy.pm
+   /usr/lib/perl5/5.38/Class/Struct.pm
+   /usr/lib/perl5/5.38/Compress/Raw/Bzip2.pm
+   /usr/lib/perl5/5.38/Compress/Raw/Zlib.pm
+   /usr/lib/perl5/5.38/Compress/Zlib.pm
+   /usr/lib/perl5/5.38/Config.pm
+   /usr/lib/perl5/5.38/Config.pod
+   /usr/lib/perl5/5.38/Config/Extensions.pm
+   /usr/lib/perl5/5.38/Config/Perl/V.pm
+   /usr/lib/perl5/5.38/Config_git.pl
+   /usr/lib/perl5/5.38/Config_heavy.pl
+   /usr/lib/perl5/5.38/Cwd.pm
+   /usr/lib/perl5/5.38/DB.pm
+   /usr/lib/perl5/5.38/DBM_Filter.pm
+   /usr/lib/perl5/5.38/DBM_Filter/compress.pm
+   /usr/lib/perl5/5.38/DBM_Filter/encode.pm
+   /usr/lib/perl5/5.38/DBM_Filter/int32.pm
+   /usr/lib/perl5/5.38/DBM_Filter/null.pm
+   /usr/lib/perl5/5.38/DBM_Filter/utf8.pm
+   /usr/lib/perl5/5.38/Data/Dumper.pm
+   /usr/lib/perl5/5.38/Devel/PPPort.pm
+   /usr/lib/perl5/5.38/Devel/Peek.pm
+   /usr/lib/perl5/5.38/Devel/SelfStubber.pm
+   /usr/lib/perl5/5.38/Digest.pm
+   /usr/lib/perl5/5.38/Digest/MD5.pm
+   /usr/lib/perl5/5.38/Digest/SHA.pm
+   /usr/lib/perl5/5.38/Digest/base.pm
+   /usr/lib/perl5/5.38/Digest/file.pm
+   /usr/lib/perl5/5.38/DirHandle.pm
+   /usr/lib/perl5/5.38/Dumpvalue.pm
+   /usr/lib/perl5/5.38/DynaLoader.pm
+   /usr/lib/perl5/5.38/Encode.pm
+   /usr/lib/perl5/5.38/Encode/Alias.pm
+   /usr/lib/perl5/5.38/Encode/Byte.pm
+   /usr/lib/perl5/5.38/Encode/CJKConstants.pm
+   /usr/lib/perl5/5.38/Encode/CN.pm
+   /usr/lib/perl5/5.38/Encode/CN/HZ.pm
+   /usr/lib/perl5/5.38/Encode/Changes.e2x
+   /usr/lib/perl5/5.38/Encode/Config.pm
+   /usr/lib/perl5/5.38/Encode/ConfigLocal_PM.e2x
+   /usr/lib/perl5/5.38/Encode/EBCDIC.pm
+   /usr/lib/perl5/5.38/Encode/Encoder.pm
+   /usr/lib/perl5/5.38/Encode/Encoding.pm
+   /usr/lib/perl5/5.38/Encode/GSM0338.pm
+   /usr/lib/perl5/5.38/Encode/Guess.pm
+   /usr/lib/perl5/5.38/Encode/JP.pm
+   /usr/lib/perl5/5.38/Encode/JP/H2Z.pm
+   /usr/lib/perl5/5.38/Encode/JP/JIS7.pm
+   /usr/lib/perl5/5.38/Encode/KR.pm
+   /usr/lib/perl5/5.38/Encode/KR/2022_KR.pm
+   /usr/lib/perl5/5.38/Encode/MIME/Header.pm
+   /usr/lib/perl5/5.38/Encode/MIME/Header/ISO_2022_JP.pm
+   /usr/lib/perl5/5.38/Encode/MIME/Name.pm
+   /usr/lib/perl5/5.38/Encode/Makefile_PL.e2x
+   /usr/lib/perl5/5.38/Encode/PerlIO.pod
+   /usr/lib/perl5/5.38/Encode/README.e2x
+   /usr/lib/perl5/5.38/Encode/Supported.pod
+   /usr/lib/perl5/5.38/Encode/Symbol.pm
+   /usr/lib/perl5/5.38/Encode/TW.pm
+   /usr/lib/perl5/5.38/Encode/Unicode.pm
+   /usr/lib/perl5/5.38/Encode/Unicode/UTF7.pm
+   /usr/lib/perl5/5.38/Encode/_PM.e2x
+   /usr/lib/perl5/5.38/Encode/_T.e2x
+   /usr/lib/perl5/5.38/Encode/encode.h
+   /usr/lib/perl5/5.38/English.pm
+   /usr/lib/perl5/5.38/Env.pm
+   /usr/lib/perl5/5.38/Errno.pm
+   /usr/lib/perl5/5.38/Exporter.pm
+   /usr/lib/perl5/5.38/Exporter/Heavy.pm
+   /usr/lib/perl5/5.38/ExtUtils/CBuilder.pm
+   /usr/lib/perl5/5.38/ExtUtils/CBuilder/Base.pm
+   /usr/lib/perl5/5.38/ExtUtils/CBuilder/Platform/Unix.pm
+   /usr/lib/perl5/5.38/ExtUtils/CBuilder/Platform/VMS.pm
+   /usr/lib/perl5/5.38/ExtUtils/CBuilder/Platform/Windows.pm
+   /usr/lib/perl5/5.38/ExtUtils/CBuilder/Platform/Windows/BCC.pm
+   /usr/lib/perl5/5.38/ExtUtils/CBuilder/Platform/Windows/GCC.pm
+   /usr/lib/perl5/5.38/ExtUtils/CBuilder/Platform/Windows/MSVC.pm
+   /usr/lib/perl5/5.38/ExtUtils/CBuilder/Platform/aix.pm
+   /usr/lib/perl5/5.38/ExtUtils/CBuilder/Platform/android.pm
+   /usr/lib/perl5/5.38/ExtUtils/CBuilder/Platform/cygwin.pm
+   /usr/lib/perl5/5.38/ExtUtils/CBuilder/Platform/darwin.pm
+   /usr/lib/perl5/5.38/ExtUtils/CBuilder/Platform/dec_osf.pm
+   /usr/lib/perl5/5.38/ExtUtils/CBuilder/Platform/os2.pm
+   /usr/lib/perl5/5.38/ExtUtils/Command.pm
+   /usr/lib/perl5/5.38/ExtUtils/Command/MM.pm
+   /usr/lib/perl5/5.38/ExtUtils/Constant.pm
+   /usr/lib/perl5/5.38/ExtUtils/Constant/Base.pm
+   /usr/lib/perl5/5.38/ExtUtils/Constant/ProxySubs.pm
+   /usr/lib/perl5/5.38/ExtUtils/Constant/Utils.pm
+   /usr/lib/perl5/5.38/ExtUtils/Constant/XS.pm
+   /usr/lib/perl5/5.38/ExtUtils/Embed.pm
+   /usr/lib/perl5/5.38/ExtUtils/Install.pm
+   /usr/lib/perl5/5.38/ExtUtils/Installed.pm
+   /usr/lib/perl5/5.38/ExtUtils/Liblist.pm
+   /usr/lib/perl5/5.38/ExtUtils/Liblist/Kid.pm
+   /usr/lib/perl5/5.38/ExtUtils/MANIFEST.SKIP
+   /usr/lib/perl5/5.38/ExtUtils/MM.pm
+   /usr/lib/perl5/5.38/ExtUtils/MM_AIX.pm
+   /usr/lib/perl5/5.38/ExtUtils/MM_Any.pm
+   /usr/lib/perl5/5.38/ExtUtils/MM_BeOS.pm
+   /usr/lib/perl5/5.38/ExtUtils/MM_Cygwin.pm
+   /usr/lib/perl5/5.38/ExtUtils/MM_DOS.pm
+   /usr/lib/perl5/5.38/ExtUtils/MM_Darwin.pm
+   /usr/lib/perl5/5.38/ExtUtils/MM_MacOS.pm
+   /usr/lib/perl5/5.38/ExtUtils/MM_NW5.pm
+   /usr/lib/perl5/5.38/ExtUtils/MM_OS2.pm
+   /usr/lib/perl5/5.38/ExtUtils/MM_OS390.pm
+   /usr/lib/perl5/5.38/ExtUtils/MM_QNX.pm
+   /usr/lib/perl5/5.38/ExtUtils/MM_UWIN.pm
+   /usr/lib/perl5/5.38/ExtUtils/MM_Unix.pm
+   /usr/lib/perl5/5.38/ExtUtils/MM_VMS.pm
+   /usr/lib/perl5/5.38/ExtUtils/MM_VOS.pm
+   /usr/lib/perl5/5.38/ExtUtils/MM_Win32.pm
+   /usr/lib/perl5/5.38/ExtUtils/MM_Win95.pm
+   /usr/lib/perl5/5.38/ExtUtils/MY.pm
+   /usr/lib/perl5/5.38/ExtUtils/MakeMaker.pm
+   /usr/lib/perl5/5.38/ExtUtils/MakeMaker/Config.pm
+   /usr/lib/perl5/5.38/ExtUtils/MakeMaker/FAQ.pod
+   /usr/lib/perl5/5.38/ExtUtils/MakeMaker/Locale.pm
+   /usr/lib/perl5/5.38/ExtUtils/MakeMaker/Tutorial.pod
+   /usr/lib/perl5/5.38/ExtUtils/MakeMaker/version.pm
+   /usr/lib/perl5/5.38/ExtUtils/Manifest.pm
+   /usr/lib/perl5/5.38/ExtUtils/Miniperl.pm
+   /usr/lib/perl5/5.38/ExtUtils/Mkbootstrap.pm
+   /usr/lib/perl5/5.38/ExtUtils/Mksymlists.pm
+   /usr/lib/perl5/5.38/ExtUtils/PL2Bat.pm
+   /usr/lib/perl5/5.38/ExtUtils/Packlist.pm
+   /usr/lib/perl5/5.38/ExtUtils/ParseXS.pm
+   /usr/lib/perl5/5.38/ExtUtils/ParseXS.pod
+   /usr/lib/perl5/5.38/ExtUtils/ParseXS/Constants.pm
+   /usr/lib/perl5/5.38/ExtUtils/ParseXS/CountLines.pm
+   /usr/lib/perl5/5.38/ExtUtils/ParseXS/Eval.pm
+   /usr/lib/perl5/5.38/ExtUtils/ParseXS/Utilities.pm
+   /usr/lib/perl5/5.38/ExtUtils/Typemaps.pm
+   /usr/lib/perl5/5.38/ExtUtils/Typemaps/Cmd.pm
+   /usr/lib/perl5/5.38/ExtUtils/Typemaps/InputMap.pm
+   /usr/lib/perl5/5.38/ExtUtils/Typemaps/OutputMap.pm
+   /usr/lib/perl5/5.38/ExtUtils/Typemaps/Type.pm
+   /usr/lib/perl5/5.38/ExtUtils/testlib.pm
+   /usr/lib/perl5/5.38/ExtUtils/typemap
+   /usr/lib/perl5/5.38/ExtUtils/xsubpp
+   /usr/lib/perl5/5.38/Fatal.pm
+   /usr/lib/perl5/5.38/Fcntl.pm
+   /usr/lib/perl5/5.38/File/Basename.pm
+   /usr/lib/perl5/5.38/File/Compare.pm
+   /usr/lib/perl5/5.38/File/Copy.pm
+   /usr/lib/perl5/5.38/File/DosGlob.pm
+   /usr/lib/perl5/5.38/File/Fetch.pm
+   /usr/lib/perl5/5.38/File/Find.pm
+   /usr/lib/perl5/5.38/File/Glob.pm
+   /usr/lib/perl5/5.38/File/GlobMapper.pm
+   /usr/lib/perl5/5.38/File/Path.pm
+   /usr/lib/perl5/5.38/File/Spec.pm
+   /usr/lib/perl5/5.38/File/Spec/AmigaOS.pm
+   /usr/lib/perl5/5.38/File/Spec/Cygwin.pm
+   /usr/lib/perl5/5.38/File/Spec/Epoc.pm
+   /usr/lib/perl5/5.38/File/Spec/Functions.pm
+   /usr/lib/perl5/5.38/File/Spec/Mac.pm
+   /usr/lib/perl5/5.38/File/Spec/OS2.pm
+   /usr/lib/perl5/5.38/File/Spec/Unix.pm
+   /usr/lib/perl5/5.38/File/Spec/VMS.pm
+   /usr/lib/perl5/5.38/File/Spec/Win32.pm
+   /usr/lib/perl5/5.38/File/Temp.pm
+   /usr/lib/perl5/5.38/File/stat.pm
+   /usr/lib/perl5/5.38/FileCache.pm
+   /usr/lib/perl5/5.38/FileHandle.pm
+   /usr/lib/perl5/5.38/Filter/Simple.pm
+   /usr/lib/perl5/5.38/Filter/Util/Call.pm
+   /usr/lib/perl5/5.38/FindBin.pm
+   /usr/lib/perl5/5.38/GDBM_File.pm
+   /usr/lib/perl5/5.38/Getopt/Long.pm
+   /usr/lib/perl5/5.38/Getopt/Std.pm
+   /usr/lib/perl5/5.38/HTTP/Tiny.pm
+   /usr/lib/perl5/5.38/Hash/Util.pm
+   /usr/lib/perl5/5.38/Hash/Util/FieldHash.pm
+   /usr/lib/perl5/5.38/I18N/Collate.pm
+   /usr/lib/perl5/5.38/I18N/LangTags.pm
+   /usr/lib/perl5/5.38/I18N/LangTags/Detect.pm
+   /usr/lib/perl5/5.38/I18N/LangTags/List.pm
+   /usr/lib/perl5/5.38/I18N/Langinfo.pm
+   /usr/lib/perl5/5.38/IO.pm
+   /usr/lib/perl5/5.38/IO/Compress/Adapter/Bzip2.pm
+   /usr/lib/perl5/5.38/IO/Compress/Adapter/Deflate.pm
+   /usr/lib/perl5/5.38/IO/Compress/Adapter/Identity.pm
+   /usr/lib/perl5/5.38/IO/Compress/Base.pm
+   /usr/lib/perl5/5.38/IO/Compress/Base/Common.pm
+   /usr/lib/perl5/5.38/IO/Compress/Bzip2.pm
+   /usr/lib/perl5/5.38/IO/Compress/Deflate.pm
+   /usr/lib/perl5/5.38/IO/Compress/FAQ.pod
+   /usr/lib/perl5/5.38/IO/Compress/Gzip.pm
+   /usr/lib/perl5/5.38/IO/Compress/Gzip/Constants.pm
+   /usr/lib/perl5/5.38/IO/Compress/RawDeflate.pm
+   /usr/lib/perl5/5.38/IO/Compress/Zip.pm
+   /usr/lib/perl5/5.38/IO/Compress/Zip/Constants.pm
+   /usr/lib/perl5/5.38/IO/Compress/Zlib/Constants.pm
+   /usr/lib/perl5/5.38/IO/Compress/Zlib/Extra.pm
+   /usr/lib/perl5/5.38/IO/Dir.pm
+   /usr/lib/perl5/5.38/IO/File.pm
+   /usr/lib/perl5/5.38/IO/Handle.pm
+   /usr/lib/perl5/5.38/IO/Pipe.pm
+   /usr/lib/perl5/5.38/IO/Poll.pm
+   /usr/lib/perl5/5.38/IO/Seekable.pm
+   /usr/lib/perl5/5.38/IO/Select.pm
+   /usr/lib/perl5/5.38/IO/Socket.pm
+   /usr/lib/perl5/5.38/IO/Socket/INET.pm
+   /usr/lib/perl5/5.38/IO/Socket/IP.pm
+   /usr/lib/perl5/5.38/IO/Socket/UNIX.pm
+   /usr/lib/perl5/5.38/IO/Uncompress/Adapter/Bunzip2.pm
+   /usr/lib/perl5/5.38/IO/Uncompress/Adapter/Identity.pm
+   /usr/lib/perl5/5.38/IO/Uncompress/Adapter/Inflate.pm
+   /usr/lib/perl5/5.38/IO/Uncompress/AnyInflate.pm
+   /usr/lib/perl5/5.38/IO/Uncompress/AnyUncompress.pm
+   /usr/lib/perl5/5.38/IO/Uncompress/Base.pm
+   /usr/lib/perl5/5.38/IO/Uncompress/Bunzip2.pm
+   /usr/lib/perl5/5.38/IO/Uncompress/Gunzip.pm
+   /usr/lib/perl5/5.38/IO/Uncompress/Inflate.pm
+   /usr/lib/perl5/5.38/IO/Uncompress/RawInflate.pm
+   /usr/lib/perl5/5.38/IO/Uncompress/Unzip.pm
+   /usr/lib/perl5/5.38/IO/Zlib.pm
+   /usr/lib/perl5/5.38/IPC/Cmd.pm
+   /usr/lib/perl5/5.38/IPC/Msg.pm
+   /usr/lib/perl5/5.38/IPC/Open2.pm
+   /usr/lib/perl5/5.38/IPC/Open3.pm
+   /usr/lib/perl5/5.38/IPC/Semaphore.pm
+   /usr/lib/perl5/5.38/IPC/SharedMem.pm
+   /usr/lib/perl5/5.38/IPC/SysV.pm
+   /usr/lib/perl5/5.38/Internals.pod
+   /usr/lib/perl5/5.38/JSON/PP.pm
+   /usr/lib/perl5/5.38/JSON/PP/Boolean.pm
+   /usr/lib/perl5/5.38/List/Util.pm
+   /usr/lib/perl5/5.38/List/Util/XS.pm
+   /usr/lib/perl5/5.38/Locale/Maketext.pm
+   /usr/lib/perl5/5.38/Locale/Maketext.pod
+   /usr/lib/perl5/5.38/Locale/Maketext/Cookbook.pod
+   /usr/lib/perl5/5.38/Locale/Maketext/Guts.pm
+   /usr/lib/perl5/5.38/Locale/Maketext/GutsLoader.pm
+   /usr/lib/perl5/5.38/Locale/Maketext/Simple.pm
+   /usr/lib/perl5/5.38/Locale/Maketext/TPJ13.pod
+   /usr/lib/perl5/5.38/MIME/Base64.pm
+   /usr/lib/perl5/5.38/MIME/QuotedPrint.pm
+   /usr/lib/perl5/5.38/Math/BigFloat.pm
+   /usr/lib/perl5/5.38/Math/BigFloat/Trace.pm
+   /usr/lib/perl5/5.38/Math/BigInt.pm
+   /usr/lib/perl5/5.38/Math/BigInt/Calc.pm
+   /usr/lib/perl5/5.38/Math/BigInt/FastCalc.pm
+   /usr/lib/perl5/5.38/Math/BigInt/Lib.pm
+   /usr/lib/perl5/5.38/Math/BigInt/Trace.pm
+   /usr/lib/perl5/5.38/Math/BigRat.pm
+   /usr/lib/perl5/5.38/Math/BigRat/Trace.pm
+   /usr/lib/perl5/5.38/Math/Complex.pm
+   /usr/lib/perl5/5.38/Math/Trig.pm
+   /usr/lib/perl5/5.38/Memoize.pm
+   /usr/lib/perl5/5.38/Memoize/AnyDBM_File.pm
+   /usr/lib/perl5/5.38/Memoize/Expire.pm
+   /usr/lib/perl5/5.38/Memoize/NDBM_File.pm
+   /usr/lib/perl5/5.38/Memoize/SDBM_File.pm
+   /usr/lib/perl5/5.38/Memoize/Storable.pm
+   /usr/lib/perl5/5.38/Module/CoreList.pm
+   /usr/lib/perl5/5.38/Module/CoreList.pod
+   /usr/lib/perl5/5.38/Module/CoreList/Utils.pm
+   /usr/lib/perl5/5.38/Module/Load.pm
+   /usr/lib/perl5/5.38/Module/Load/Conditional.pm
+   /usr/lib/perl5/5.38/Module/Loaded.pm
+   /usr/lib/perl5/5.38/Module/Metadata.pm
+   /usr/lib/perl5/5.38/NEXT.pm
+   /usr/lib/perl5/5.38/Net/Cmd.pm
+   /usr/lib/perl5/5.38/Net/Config.pm
+   /usr/lib/perl5/5.38/Net/Domain.pm
+   /usr/lib/perl5/5.38/Net/FTP.pm
+   /usr/lib/perl5/5.38/Net/FTP/A.pm
+   /usr/lib/perl5/5.38/Net/FTP/E.pm
+   /usr/lib/perl5/5.38/Net/FTP/I.pm
+   /usr/lib/perl5/5.38/Net/FTP/L.pm
+   /usr/lib/perl5/5.38/Net/FTP/dataconn.pm
+   /usr/lib/perl5/5.38/Net/NNTP.pm
+   /usr/lib/perl5/5.38/Net/Netrc.pm
+   /usr/lib/perl5/5.38/Net/POP3.pm
+   /usr/lib/perl5/5.38/Net/Ping.pm
+   /usr/lib/perl5/5.38/Net/SMTP.pm
+   /usr/lib/perl5/5.38/Net/Time.pm
+   /usr/lib/perl5/5.38/Net/hostent.pm
+   /usr/lib/perl5/5.38/Net/libnetFAQ.pod
+   /usr/lib/perl5/5.38/Net/netent.pm
+   /usr/lib/perl5/5.38/Net/protoent.pm
+   /usr/lib/perl5/5.38/Net/servent.pm
+   /usr/lib/perl5/5.38/O.pm
+   /usr/lib/perl5/5.38/Opcode.pm
+   /usr/lib/perl5/5.38/POSIX.pm
+   /usr/lib/perl5/5.38/POSIX.pod
+   /usr/lib/perl5/5.38/Params/Check.pm
+   /usr/lib/perl5/5.38/Parse/CPAN/Meta.pm
+   /usr/lib/perl5/5.38/Perl/OSType.pm
+   /usr/lib/perl5/5.38/PerlIO.pm
+   /usr/lib/perl5/5.38/PerlIO/encoding.pm
+   /usr/lib/perl5/5.38/PerlIO/mmap.pm
+   /usr/lib/perl5/5.38/PerlIO/scalar.pm
+   /usr/lib/perl5/5.38/PerlIO/via.pm
+   /usr/lib/perl5/5.38/PerlIO/via/QuotedPrint.pm
+   /usr/lib/perl5/5.38/Pod/Checker.pm
+   /usr/lib/perl5/5.38/Pod/Escapes.pm
+   /usr/lib/perl5/5.38/Pod/Functions.pm
+   /usr/lib/perl5/5.38/Pod/Html.pm
+   /usr/lib/perl5/5.38/Pod/Html/Util.pm
+   /usr/lib/perl5/5.38/Pod/Man.pm
+   /usr/lib/perl5/5.38/Pod/ParseLink.pm
+   /usr/lib/perl5/5.38/Pod/Perldoc.pm
+   /usr/lib/perl5/5.38/Pod/Perldoc/BaseTo.pm
+   /usr/lib/perl5/5.38/Pod/Perldoc/GetOptsOO.pm
+   /usr/lib/perl5/5.38/Pod/Perldoc/ToANSI.pm
+   /usr/lib/perl5/5.38/Pod/Perldoc/ToChecker.pm
+   /usr/lib/perl5/5.38/Pod/Perldoc/ToMan.pm
+   /usr/lib/perl5/5.38/Pod/Perldoc/ToNroff.pm
+   /usr/lib/perl5/5.38/Pod/Perldoc/ToPod.pm
+   /usr/lib/perl5/5.38/Pod/Perldoc/ToRtf.pm
+   /usr/lib/perl5/5.38/Pod/Perldoc/ToTerm.pm
+   /usr/lib/perl5/5.38/Pod/Perldoc/ToText.pm
+   /usr/lib/perl5/5.38/Pod/Perldoc/ToTk.pm
+   /usr/lib/perl5/5.38/Pod/Perldoc/ToXml.pm
+   /usr/lib/perl5/5.38/Pod/Simple.pm
+   /usr/lib/perl5/5.38/Pod/Simple.pod
+   /usr/lib/perl5/5.38/Pod/Simple/BlackBox.pm
+   /usr/lib/perl5/5.38/Pod/Simple/Checker.pm
+   /usr/lib/perl5/5.38/Pod/Simple/Debug.pm
+   /usr/lib/perl5/5.38/Pod/Simple/DumpAsText.pm
+   /usr/lib/perl5/5.38/Pod/Simple/DumpAsXML.pm
+   /usr/lib/perl5/5.38/Pod/Simple/HTML.pm
+   /usr/lib/perl5/5.38/Pod/Simple/HTMLBatch.pm
+   /usr/lib/perl5/5.38/Pod/Simple/HTMLLegacy.pm
+   /usr/lib/perl5/5.38/Pod/Simple/JustPod.pm
+   /usr/lib/perl5/5.38/Pod/Simple/LinkSection.pm
+   /usr/lib/perl5/5.38/Pod/Simple/Methody.pm
+   /usr/lib/perl5/5.38/Pod/Simple/Progress.pm
+   /usr/lib/perl5/5.38/Pod/Simple/PullParser.pm
+   /usr/lib/perl5/5.38/Pod/Simple/PullParserEndToken.pm
+   /usr/lib/perl5/5.38/Pod/Simple/PullParserStartToken.pm
+   /usr/lib/perl5/5.38/Pod/Simple/PullParserTextToken.pm
+   /usr/lib/perl5/5.38/Pod/Simple/PullParserToken.pm
+   /usr/lib/perl5/5.38/Pod/Simple/RTF.pm
+   /usr/lib/perl5/5.38/Pod/Simple/Search.pm
+   /usr/lib/perl5/5.38/Pod/Simple/SimpleTree.pm
+   /usr/lib/perl5/5.38/Pod/Simple/Subclassing.pod
+   /usr/lib/perl5/5.38/Pod/Simple/Text.pm
+   /usr/lib/perl5/5.38/Pod/Simple/TextContent.pm
+   /usr/lib/perl5/5.38/Pod/Simple/TiedOutFH.pm
+   /usr/lib/perl5/5.38/Pod/Simple/Transcode.pm
+   /usr/lib/perl5/5.38/Pod/Simple/TranscodeDumb.pm
+   /usr/lib/perl5/5.38/Pod/Simple/TranscodeSmart.pm
+   /usr/lib/perl5/5.38/Pod/Simple/XHTML.pm
+   /usr/lib/perl5/5.38/Pod/Simple/XMLOutStream.pm
+   /usr/lib/perl5/5.38/Pod/Text.pm
+   /usr/lib/perl5/5.38/Pod/Text/Color.pm
+   /usr/lib/perl5/5.38/Pod/Text/Overstrike.pm
+   /usr/lib/perl5/5.38/Pod/Text/Termcap.pm
+   /usr/lib/perl5/5.38/Pod/Usage.pm
+   /usr/lib/perl5/5.38/SDBM_File.pm
+   /usr/lib/perl5/5.38/Safe.pm
+   /usr/lib/perl5/5.38/Scalar/Util.pm
+   /usr/lib/perl5/5.38/Search/Dict.pm
+   /usr/lib/perl5/5.38/SelectSaver.pm
+   /usr/lib/perl5/5.38/SelfLoader.pm
+   /usr/lib/perl5/5.38/Socket.pm
+   /usr/lib/perl5/5.38/Storable.pm
+   /usr/lib/perl5/5.38/Sub/Util.pm
+   /usr/lib/perl5/5.38/Symbol.pm
+   /usr/lib/perl5/5.38/Sys/Hostname.pm
+   /usr/lib/perl5/5.38/Sys/Syslog.pm
+   /usr/lib/perl5/5.38/TAP/Base.pm
+   /usr/lib/perl5/5.38/TAP/Formatter/Base.pm
+   /usr/lib/perl5/5.38/TAP/Formatter/Color.pm
+   /usr/lib/perl5/5.38/TAP/Formatter/Console.pm
+   /usr/lib/perl5/5.38/TAP/Formatter/Console/ParallelSession.pm
+   /usr/lib/perl5/5.38/TAP/Formatter/Console/Session.pm
+   /usr/lib/perl5/5.38/TAP/Formatter/File.pm
+   /usr/lib/perl5/5.38/TAP/Formatter/File/Session.pm
+   /usr/lib/perl5/5.38/TAP/Formatter/Session.pm
+   /usr/lib/perl5/5.38/TAP/Harness.pm
+   /usr/lib/perl5/5.38/TAP/Harness/Beyond.pod
+   /usr/lib/perl5/5.38/TAP/Harness/Env.pm
+   /usr/lib/perl5/5.38/TAP/Object.pm
+   /usr/lib/perl5/5.38/TAP/Parser.pm
+   /usr/lib/perl5/5.38/TAP/Parser/Aggregator.pm
+   /usr/lib/perl5/5.38/TAP/Parser/Grammar.pm
+   /usr/lib/perl5/5.38/TAP/Parser/Iterator.pm
+   /usr/lib/perl5/5.38/TAP/Parser/Iterator/Array.pm
+   /usr/lib/perl5/5.38/TAP/Parser/Iterator/Process.pm
+   /usr/lib/perl5/5.38/TAP/Parser/Iterator/Stream.pm
+   /usr/lib/perl5/5.38/TAP/Parser/IteratorFactory.pm
+   /usr/lib/perl5/5.38/TAP/Parser/Multiplexer.pm
+   /usr/lib/perl5/5.38/TAP/Parser/Result.pm
+   /usr/lib/perl5/5.38/TAP/Parser/Result/Bailout.pm
+   /usr/lib/perl5/5.38/TAP/Parser/Result/Comment.pm
+   /usr/lib/perl5/5.38/TAP/Parser/Result/Plan.pm
+   /usr/lib/perl5/5.38/TAP/Parser/Result/Pragma.pm
+   /usr/lib/perl5/5.38/TAP/Parser/Result/Test.pm
+   /usr/lib/perl5/5.38/TAP/Parser/Result/Unknown.pm
+   /usr/lib/perl5/5.38/TAP/Parser/Result/Version.pm
+   /usr/lib/perl5/5.38/TAP/Parser/Result/YAML.pm
+   /usr/lib/perl5/5.38/TAP/Parser/ResultFactory.pm
+   /usr/lib/perl5/5.38/TAP/Parser/Scheduler.pm
+   /usr/lib/perl5/5.38/TAP/Parser/Scheduler/Job.pm
+   /usr/lib/perl5/5.38/TAP/Parser/Scheduler/Spinner.pm
+   /usr/lib/perl5/5.38/TAP/Parser/Source.pm
+   /usr/lib/perl5/5.38/TAP/Parser/SourceHandler.pm
+   /usr/lib/perl5/5.38/TAP/Parser/SourceHandler/Executable.pm
+   /usr/lib/perl5/5.38/TAP/Parser/SourceHandler/File.pm
+   /usr/lib/perl5/5.38/TAP/Parser/SourceHandler/Handle.pm
+   /usr/lib/perl5/5.38/TAP/Parser/SourceHandler/Perl.pm
+   /usr/lib/perl5/5.38/TAP/Parser/SourceHandler/RawTAP.pm
+   /usr/lib/perl5/5.38/TAP/Parser/YAMLish/Reader.pm
+   /usr/lib/perl5/5.38/TAP/Parser/YAMLish/Writer.pm
+   /usr/lib/perl5/5.38/Term/ANSIColor.pm
+   /usr/lib/perl5/5.38/Term/Cap.pm
+   /usr/lib/perl5/5.38/Term/Complete.pm
+   /usr/lib/perl5/5.38/Term/ReadLine.pm
+   /usr/lib/perl5/5.38/Test.pm
+   /usr/lib/perl5/5.38/Test/Builder.pm
+   /usr/lib/perl5/5.38/Test/Builder/Formatter.pm
+   /usr/lib/perl5/5.38/Test/Builder/IO/Scalar.pm
+   /usr/lib/perl5/5.38/Test/Builder/Module.pm
+   /usr/lib/perl5/5.38/Test/Builder/Tester.pm
+   /usr/lib/perl5/5.38/Test/Builder/Tester/Color.pm
+   /usr/lib/perl5/5.38/Test/Builder/TodoDiag.pm
+   /usr/lib/perl5/5.38/Test/Harness.pm
+   /usr/lib/perl5/5.38/Test/More.pm
+   /usr/lib/perl5/5.38/Test/Simple.pm
+   /usr/lib/perl5/5.38/Test/Tester.pm
+   /usr/lib/perl5/5.38/Test/Tester/Capture.pm
+   /usr/lib/perl5/5.38/Test/Tester/CaptureRunner.pm
+   /usr/lib/perl5/5.38/Test/Tester/Delegate.pm
+   /usr/lib/perl5/5.38/Test/Tutorial.pod
+   /usr/lib/perl5/5.38/Test/use/ok.pm
+   /usr/lib/perl5/5.38/Test2.pm
+   /usr/lib/perl5/5.38/Test2/API.pm
+   /usr/lib/perl5/5.38/Test2/API/Breakage.pm
+   /usr/lib/perl5/5.38/Test2/API/Context.pm
+   /usr/lib/perl5/5.38/Test2/API/Instance.pm
+   /usr/lib/perl5/5.38/Test2/API/InterceptResult.pm
+   /usr/lib/perl5/5.38/Test2/API/InterceptResult/Event.pm
+   /usr/lib/perl5/5.38/Test2/API/InterceptResult/Facet.pm
+   /usr/lib/perl5/5.38/Test2/API/InterceptResult/Hub.pm
+   /usr/lib/perl5/5.38/Test2/API/InterceptResult/Squasher.pm
+   /usr/lib/perl5/5.38/Test2/API/Stack.pm
+   /usr/lib/perl5/5.38/Test2/Event.pm
+   /usr/lib/perl5/5.38/Test2/Event/Bail.pm
+   /usr/lib/perl5/5.38/Test2/Event/Diag.pm
+   /usr/lib/perl5/5.38/Test2/Event/Encoding.pm
+   /usr/lib/perl5/5.38/Test2/Event/Exception.pm
+   /usr/lib/perl5/5.38/Test2/Event/Fail.pm
+   /usr/lib/perl5/5.38/Test2/Event/Generic.pm
+   /usr/lib/perl5/5.38/Test2/Event/Note.pm
+   /usr/lib/perl5/5.38/Test2/Event/Ok.pm
+   /usr/lib/perl5/5.38/Test2/Event/Pass.pm
+   /usr/lib/perl5/5.38/Test2/Event/Plan.pm
+   /usr/lib/perl5/5.38/Test2/Event/Skip.pm
+   /usr/lib/perl5/5.38/Test2/Event/Subtest.pm
+   /usr/lib/perl5/5.38/Test2/Event/TAP/Version.pm
+   /usr/lib/perl5/5.38/Test2/Event/V2.pm
+   /usr/lib/perl5/5.38/Test2/Event/Waiting.pm
+   /usr/lib/perl5/5.38/Test2/EventFacet.pm
+   /usr/lib/perl5/5.38/Test2/EventFacet/About.pm
+   /usr/lib/perl5/5.38/Test2/EventFacet/Amnesty.pm
+   /usr/lib/perl5/5.38/Test2/EventFacet/Assert.pm
+   /usr/lib/perl5/5.38/Test2/EventFacet/Control.pm
+   /usr/lib/perl5/5.38/Test2/EventFacet/Error.pm
+   /usr/lib/perl5/5.38/Test2/EventFacet/Hub.pm
+   /usr/lib/perl5/5.38/Test2/EventFacet/Info.pm
+   /usr/lib/perl5/5.38/Test2/EventFacet/Info/Table.pm
+   /usr/lib/perl5/5.38/Test2/EventFacet/Meta.pm
+   /usr/lib/perl5/5.38/Test2/EventFacet/Parent.pm
+   /usr/lib/perl5/5.38/Test2/EventFacet/Plan.pm
+   /usr/lib/perl5/5.38/Test2/EventFacet/Render.pm
+   /usr/lib/perl5/5.38/Test2/EventFacet/Trace.pm
+   /usr/lib/perl5/5.38/Test2/Formatter.pm
+   /usr/lib/perl5/5.38/Test2/Formatter/TAP.pm
+   /usr/lib/perl5/5.38/Test2/Hub.pm
+   /usr/lib/perl5/5.38/Test2/Hub/Interceptor.pm
+   /usr/lib/perl5/5.38/Test2/Hub/Interceptor/Terminator.pm
+   /usr/lib/perl5/5.38/Test2/Hub/Subtest.pm
+   /usr/lib/perl5/5.38/Test2/IPC.pm
+   /usr/lib/perl5/5.38/Test2/IPC/Driver.pm
+   /usr/lib/perl5/5.38/Test2/IPC/Driver/Files.pm
+   /usr/lib/perl5/5.38/Test2/Tools/Tiny.pm
+   /usr/lib/perl5/5.38/Test2/Transition.pod
+   /usr/lib/perl5/5.38/Test2/Util.pm
+   /usr/lib/perl5/5.38/Test2/Util/ExternalMeta.pm
+   /usr/lib/perl5/5.38/Test2/Util/Facets2Legacy.pm
+   /usr/lib/perl5/5.38/Test2/Util/HashBase.pm
+   /usr/lib/perl5/5.38/Test2/Util/Trace.pm
+   /usr/lib/perl5/5.38/Text/Abbrev.pm
+   /usr/lib/perl5/5.38/Text/Balanced.pm
+   /usr/lib/perl5/5.38/Text/ParseWords.pm
+   /usr/lib/perl5/5.38/Text/Tabs.pm
+   /usr/lib/perl5/5.38/Text/Wrap.pm
+   /usr/lib/perl5/5.38/Thread.pm
+   /usr/lib/perl5/5.38/Thread/Queue.pm
+   /usr/lib/perl5/5.38/Thread/Semaphore.pm
+   /usr/lib/perl5/5.38/Tie/Array.pm
+   /usr/lib/perl5/5.38/Tie/File.pm
+   /usr/lib/perl5/5.38/Tie/Handle.pm
+   /usr/lib/perl5/5.38/Tie/Hash.pm
+   /usr/lib/perl5/5.38/Tie/Hash/NamedCapture.pm
+   /usr/lib/perl5/5.38/Tie/Memoize.pm
+   /usr/lib/perl5/5.38/Tie/RefHash.pm
+   /usr/lib/perl5/5.38/Tie/Scalar.pm
+   /usr/lib/perl5/5.38/Tie/StdHandle.pm
+   /usr/lib/perl5/5.38/Tie/SubstrHash.pm
+   /usr/lib/perl5/5.38/Time/HiRes.pm
+   /usr/lib/perl5/5.38/Time/Local.pm
+   /usr/lib/perl5/5.38/Time/Piece.pm
+   /usr/lib/perl5/5.38/Time/Seconds.pm
+   /usr/lib/perl5/5.38/Time/gmtime.pm
+   /usr/lib/perl5/5.38/Time/localtime.pm
+   /usr/lib/perl5/5.38/Time/tm.pm
+   /usr/lib/perl5/5.38/UNIVERSAL.pm
+   /usr/lib/perl5/5.38/Unicode/Collate.pm
+   /usr/lib/perl5/5.38/Unicode/Collate/CJK/Big5.pm
+   /usr/lib/perl5/5.38/Unicode/Collate/CJK/GB2312.pm
+   /usr/lib/perl5/5.38/Unicode/Collate/CJK/JISX0208.pm
+   /usr/lib/perl5/5.38/Unicode/Collate/CJK/Korean.pm
+   /usr/lib/perl5/5.38/Unicode/Collate/CJK/Pinyin.pm
+   /usr/lib/perl5/5.38/Unicode/Collate/CJK/Stroke.pm
+   /usr/lib/perl5/5.38/Unicode/Collate/CJK/Zhuyin.pm
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale.pm
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/af.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/ar.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/as.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/az.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/be.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/bn.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/ca.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/cs.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/cu.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/cy.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/da.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/de_at_ph.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/de_phone.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/dsb.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/ee.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/eo.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/es.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/es_trad.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/et.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/fa.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/fi.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/fi_phone.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/fil.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/fo.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/fr_ca.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/gu.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/ha.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/haw.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/he.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/hi.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/hr.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/hu.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/hy.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/ig.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/is.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/ja.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/kk.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/kl.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/kn.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/ko.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/kok.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/lkt.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/ln.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/lt.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/lv.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/mk.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/ml.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/mr.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/mt.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/nb.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/nn.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/nso.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/om.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/or.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/pa.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/pl.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/ro.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/sa.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/se.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/si.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/si_dict.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/sk.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/sl.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/sq.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/sr.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/sv.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/sv_refo.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/ta.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/te.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/th.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/tn.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/to.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/tr.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/ug_cyrl.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/uk.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/ur.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/vi.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/vo.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/wae.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/wo.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/yo.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/zh.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/zh_big5.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/zh_gb.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/zh_pin.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/zh_strk.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/Locale/zh_zhu.pl
+   /usr/lib/perl5/5.38/Unicode/Collate/allkeys.txt
+   /usr/lib/perl5/5.38/Unicode/Collate/keys.txt
+   /usr/lib/perl5/5.38/Unicode/Normalize.pm
+   /usr/lib/perl5/5.38/Unicode/UCD.pm
+   /usr/lib/perl5/5.38/User/grent.pm
+   /usr/lib/perl5/5.38/User/pwent.pm
+   /usr/lib/perl5/5.38/XSLoader.pm
+   /usr/lib/perl5/5.38/_charnames.pm
+   /usr/lib/perl5/5.38/attributes.pm
+   /usr/lib/perl5/5.38/auto/B/B.so
+   /usr/lib/perl5/5.38/auto/Compress/Raw/Bzip2/Bzip2.so
+   /usr/lib/perl5/5.38/auto/Compress/Raw/Zlib/Zlib.so
+   /usr/lib/perl5/5.38/auto/Cwd/Cwd.so
+   /usr/lib/perl5/5.38/auto/Data/Dumper/Dumper.so
+   /usr/lib/perl5/5.38/auto/Devel/Peek/Peek.so
+   /usr/lib/perl5/5.38/auto/Digest/MD5/MD5.so
+   /usr/lib/perl5/5.38/auto/Digest/SHA/SHA.so
+   /usr/lib/perl5/5.38/auto/Encode/Byte/Byte.so
+   /usr/lib/perl5/5.38/auto/Encode/CN/CN.so
+   /usr/lib/perl5/5.38/auto/Encode/EBCDIC/EBCDIC.so
+   /usr/lib/perl5/5.38/auto/Encode/Encode.so
+   /usr/lib/perl5/5.38/auto/Encode/JP/JP.so
+   /usr/lib/perl5/5.38/auto/Encode/KR/KR.so
+   /usr/lib/perl5/5.38/auto/Encode/Symbol/Symbol.so
+   /usr/lib/perl5/5.38/auto/Encode/TW/TW.so
+   /usr/lib/perl5/5.38/auto/Encode/Unicode/Unicode.so
+   /usr/lib/perl5/5.38/auto/Fcntl/Fcntl.so
+   /usr/lib/perl5/5.38/auto/File/DosGlob/DosGlob.so
+   /usr/lib/perl5/5.38/auto/File/Glob/Glob.so
+   /usr/lib/perl5/5.38/auto/Filter/Util/Call/Call.so
+   /usr/lib/perl5/5.38/auto/GDBM_File/GDBM_File.so
+   /usr/lib/perl5/5.38/auto/Hash/Util/FieldHash/FieldHash.so
+   /usr/lib/perl5/5.38/auto/Hash/Util/Util.so
+   /usr/lib/perl5/5.38/auto/I18N/Langinfo/Langinfo.so
+   /usr/lib/perl5/5.38/auto/IO/IO.so
+   /usr/lib/perl5/5.38/auto/IPC/SysV/SysV.so
+   /usr/lib/perl5/5.38/auto/List/Util/Util.so
+   /usr/lib/perl5/5.38/auto/MIME/Base64/Base64.so
+   /usr/lib/perl5/5.38/auto/Math/BigInt/FastCalc/FastCalc.so
+   /usr/lib/perl5/5.38/auto/Opcode/Opcode.so
+   /usr/lib/perl5/5.38/auto/POSIX/POSIX.so
+   /usr/lib/perl5/5.38/auto/PerlIO/encoding/encoding.so
+   /usr/lib/perl5/5.38/auto/PerlIO/mmap/mmap.so
+   /usr/lib/perl5/5.38/auto/PerlIO/scalar/scalar.so
+   /usr/lib/perl5/5.38/auto/PerlIO/via/via.so
+   /usr/lib/perl5/5.38/auto/SDBM_File/SDBM_File.so
+   /usr/lib/perl5/5.38/auto/Socket/Socket.so
+   /usr/lib/perl5/5.38/auto/Storable/Storable.so
+   /usr/lib/perl5/5.38/auto/Sys/Hostname/Hostname.so
+   /usr/lib/perl5/5.38/auto/Sys/Syslog/Syslog.so
+   /usr/lib/perl5/5.38/auto/Time/HiRes/HiRes.so
+   /usr/lib/perl5/5.38/auto/Time/Piece/Piece.so
+   /usr/lib/perl5/5.38/auto/Unicode/Collate/Collate.so
+   /usr/lib/perl5/5.38/auto/Unicode/Normalize/Normalize.so
+   /usr/lib/perl5/5.38/auto/attributes/attributes.so
+   /usr/lib/perl5/5.38/auto/mro/mro.so
+   /usr/lib/perl5/5.38/auto/re/re.so
+   /usr/lib/perl5/5.38/auto/threads/shared/shared.so
+   /usr/lib/perl5/5.38/auto/threads/threads.so
+   /usr/lib/perl5/5.38/autodie.pm
+   /usr/lib/perl5/5.38/autodie/Scope/Guard.pm
+   /usr/lib/perl5/5.38/autodie/Scope/GuardStack.pm
+   /usr/lib/perl5/5.38/autodie/Util.pm
+   /usr/lib/perl5/5.38/autodie/exception.pm
+   /usr/lib/perl5/5.38/autodie/exception/system.pm
+   /usr/lib/perl5/5.38/autodie/hints.pm
+   /usr/lib/perl5/5.38/autodie/skip.pm
+   /usr/lib/perl5/5.38/autouse.pm
+   /usr/lib/perl5/5.38/base.pm
+   /usr/lib/perl5/5.38/bigfloat.pm
+   /usr/lib/perl5/5.38/bigint.pm
+   /usr/lib/perl5/5.38/bignum.pm
+   /usr/lib/perl5/5.38/bigrat.pm
+   /usr/lib/perl5/5.38/blib.pm
+   /usr/lib/perl5/5.38/builtin.pm
+   /usr/lib/perl5/5.38/bytes.pm
+   /usr/lib/perl5/5.38/bytes_heavy.pl
+   /usr/lib/perl5/5.38/charnames.pm
+   /usr/lib/perl5/5.38/constant.pm
+   /usr/lib/perl5/5.38/deprecate.pm
+   /usr/lib/perl5/5.38/diagnostics.pm
+   /usr/lib/perl5/5.38/dumpvar.pl
+   /usr/lib/perl5/5.38/encoding.pm
+   /usr/lib/perl5/5.38/encoding/warnings.pm
+   /usr/lib/perl5/5.38/experimental.pm
+   /usr/lib/perl5/5.38/feature.pm
+   /usr/lib/perl5/5.38/fields.pm
+   /usr/lib/perl5/5.38/filetest.pm
+   /usr/lib/perl5/5.38/if.pm
+   /usr/lib/perl5/5.38/integer.pm
+   /usr/lib/perl5/5.38/less.pm
+   /usr/lib/perl5/5.38/lib.pm
+   /usr/lib/perl5/5.38/locale.pm
+   /usr/lib/perl5/5.38/meta_notation.pm
+   /usr/lib/perl5/5.38/mro.pm
+   /usr/lib/perl5/5.38/ok.pm
+   /usr/lib/perl5/5.38/open.pm
+   /usr/lib/perl5/5.38/ops.pm
+   /usr/lib/perl5/5.38/overload.pm
+   /usr/lib/perl5/5.38/overload/numbers.pm
+   /usr/lib/perl5/5.38/overloading.pm
+   /usr/lib/perl5/5.38/parent.pm
+   /usr/lib/perl5/5.38/perl5db.pl
+   /usr/lib/perl5/5.38/perlfaq.pm
+   /usr/lib/perl5/5.38/pod/perl.pod
+   /usr/lib/perl5/5.38/pod/perl5004delta.pod
+   /usr/lib/perl5/5.38/pod/perl5005delta.pod
+   /usr/lib/perl5/5.38/pod/perl5100delta.pod
+   /usr/lib/perl5/5.38/pod/perl5101delta.pod
+   /usr/lib/perl5/5.38/pod/perl5120delta.pod
+   /usr/lib/perl5/5.38/pod/perl5121delta.pod
+   /usr/lib/perl5/5.38/pod/perl5122delta.pod
+   /usr/lib/perl5/5.38/pod/perl5123delta.pod
+   /usr/lib/perl5/5.38/pod/perl5124delta.pod
+   /usr/lib/perl5/5.38/pod/perl5125delta.pod
+   /usr/lib/perl5/5.38/pod/perl5140delta.pod
+   /usr/lib/perl5/5.38/pod/perl5141delta.pod
+   /usr/lib/perl5/5.38/pod/perl5142delta.pod
+   /usr/lib/perl5/5.38/pod/perl5143delta.pod
+   /usr/lib/perl5/5.38/pod/perl5144delta.pod
+   /usr/lib/perl5/5.38/pod/perl5160delta.pod
+   /usr/lib/perl5/5.38/pod/perl5161delta.pod
+   /usr/lib/perl5/5.38/pod/perl5162delta.pod
+   /usr/lib/perl5/5.38/pod/perl5163delta.pod
+   /usr/lib/perl5/5.38/pod/perl5180delta.pod
+   /usr/lib/perl5/5.38/pod/perl5181delta.pod
+   /usr/lib/perl5/5.38/pod/perl5182delta.pod
+   /usr/lib/perl5/5.38/pod/perl5184delta.pod
+   /usr/lib/perl5/5.38/pod/perl5200delta.pod
+   /usr/lib/perl5/5.38/pod/perl5201delta.pod
+   /usr/lib/perl5/5.38/pod/perl5202delta.pod
+   /usr/lib/perl5/5.38/pod/perl5203delta.pod
+   /usr/lib/perl5/5.38/pod/perl5220delta.pod
+   /usr/lib/perl5/5.38/pod/perl5221delta.pod
+   /usr/lib/perl5/5.38/pod/perl5222delta.pod
+   /usr/lib/perl5/5.38/pod/perl5223delta.pod
+   /usr/lib/perl5/5.38/pod/perl5224delta.pod
+   /usr/lib/perl5/5.38/pod/perl5240delta.pod
+   /usr/lib/perl5/5.38/pod/perl5241delta.pod
+   /usr/lib/perl5/5.38/pod/perl5242delta.pod
+   /usr/lib/perl5/5.38/pod/perl5243delta.pod
+   /usr/lib/perl5/5.38/pod/perl5244delta.pod
+   /usr/lib/perl5/5.38/pod/perl5260delta.pod
+   /usr/lib/perl5/5.38/pod/perl5261delta.pod
+   /usr/lib/perl5/5.38/pod/perl5262delta.pod
+   /usr/lib/perl5/5.38/pod/perl5263delta.pod
+   /usr/lib/perl5/5.38/pod/perl5280delta.pod
+   /usr/lib/perl5/5.38/pod/perl5281delta.pod
+   /usr/lib/perl5/5.38/pod/perl5282delta.pod
+   /usr/lib/perl5/5.38/pod/perl5283delta.pod
+   /usr/lib/perl5/5.38/pod/perl5300delta.pod
+   /usr/lib/perl5/5.38/pod/perl5301delta.pod
+   /usr/lib/perl5/5.38/pod/perl5302delta.pod
+   /usr/lib/perl5/5.38/pod/perl5303delta.pod
+   /usr/lib/perl5/5.38/pod/perl5320delta.pod
+   /usr/lib/perl5/5.38/pod/perl5321delta.pod
+   /usr/lib/perl5/5.38/pod/perl5340delta.pod
+   /usr/lib/perl5/5.38/pod/perl5341delta.pod
+   /usr/lib/perl5/5.38/pod/perl5342delta.pod
+   /usr/lib/perl5/5.38/pod/perl5343delta.pod
+   /usr/lib/perl5/5.38/pod/perl5360delta.pod
+   /usr/lib/perl5/5.38/pod/perl5361delta.pod
+   /usr/lib/perl5/5.38/pod/perl5362delta.pod
+   /usr/lib/perl5/5.38/pod/perl5363delta.pod
+   /usr/lib/perl5/5.38/pod/perl5380delta.pod
+   /usr/lib/perl5/5.38/pod/perl5381delta.pod
+   /usr/lib/perl5/5.38/pod/perl5382delta.pod
+   /usr/lib/perl5/5.38/pod/perl561delta.pod
+   /usr/lib/perl5/5.38/pod/perl56delta.pod
+   /usr/lib/perl5/5.38/pod/perl581delta.pod
+   /usr/lib/perl5/5.38/pod/perl582delta.pod
+   /usr/lib/perl5/5.38/pod/perl583delta.pod
+   /usr/lib/perl5/5.38/pod/perl584delta.pod
+   /usr/lib/perl5/5.38/pod/perl585delta.pod
+   /usr/lib/perl5/5.38/pod/perl586delta.pod
+   /usr/lib/perl5/5.38/pod/perl587delta.pod
+   /usr/lib/perl5/5.38/pod/perl588delta.pod
+   /usr/lib/perl5/5.38/pod/perl589delta.pod
+   /usr/lib/perl5/5.38/pod/perl58delta.pod
+   /usr/lib/perl5/5.38/pod/perlaix.pod
+   /usr/lib/perl5/5.38/pod/perlamiga.pod
+   /usr/lib/perl5/5.38/pod/perlandroid.pod
+   /usr/lib/perl5/5.38/pod/perlapi.pod
+   /usr/lib/perl5/5.38/pod/perlapio.pod
+   /usr/lib/perl5/5.38/pod/perlartistic.pod
+   /usr/lib/perl5/5.38/pod/perlbook.pod
+   /usr/lib/perl5/5.38/pod/perlboot.pod
+   /usr/lib/perl5/5.38/pod/perlbot.pod
+   /usr/lib/perl5/5.38/pod/perlbs2000.pod
+   /usr/lib/perl5/5.38/pod/perlcall.pod
+   /usr/lib/perl5/5.38/pod/perlcheat.pod
+   /usr/lib/perl5/5.38/pod/perlclass.pod
+   /usr/lib/perl5/5.38/pod/perlclassguts.pod
+   /usr/lib/perl5/5.38/pod/perlclib.pod
+   /usr/lib/perl5/5.38/pod/perlcn.pod
+   /usr/lib/perl5/5.38/pod/perlcommunity.pod
+   /usr/lib/perl5/5.38/pod/perlcygwin.pod
+   /usr/lib/perl5/5.38/pod/perldata.pod
+   /usr/lib/perl5/5.38/pod/perldbmfilter.pod
+   /usr/lib/perl5/5.38/pod/perldebguts.pod
+   /usr/lib/perl5/5.38/pod/perldebtut.pod
+   /usr/lib/perl5/5.38/pod/perldebug.pod
+   /usr/lib/perl5/5.38/pod/perldelta.pod
+   /usr/lib/perl5/5.38/pod/perldeprecation.pod
+   /usr/lib/perl5/5.38/pod/perldiag.pod
+   /usr/lib/perl5/5.38/pod/perldoc.pod
+   /usr/lib/perl5/5.38/pod/perldocstyle.pod
+   /usr/lib/perl5/5.38/pod/perldsc.pod
+   /usr/lib/perl5/5.38/pod/perldtrace.pod
+   /usr/lib/perl5/5.38/pod/perlebcdic.pod
+   /usr/lib/perl5/5.38/pod/perlembed.pod
+   /usr/lib/perl5/5.38/pod/perlexperiment.pod
+   /usr/lib/perl5/5.38/pod/perlfaq.pod
+   /usr/lib/perl5/5.38/pod/perlfaq1.pod
+   /usr/lib/perl5/5.38/pod/perlfaq2.pod
+   /usr/lib/perl5/5.38/pod/perlfaq3.pod
+   /usr/lib/perl5/5.38/pod/perlfaq4.pod
+   /usr/lib/perl5/5.38/pod/perlfaq5.pod
+   /usr/lib/perl5/5.38/pod/perlfaq6.pod
+   /usr/lib/perl5/5.38/pod/perlfaq7.pod
+   /usr/lib/perl5/5.38/pod/perlfaq8.pod
+   /usr/lib/perl5/5.38/pod/perlfaq9.pod
+   /usr/lib/perl5/5.38/pod/perlfilter.pod
+   /usr/lib/perl5/5.38/pod/perlfork.pod
+   /usr/lib/perl5/5.38/pod/perlform.pod
+   /usr/lib/perl5/5.38/pod/perlfreebsd.pod
+   /usr/lib/perl5/5.38/pod/perlfunc.pod
+   /usr/lib/perl5/5.38/pod/perlgit.pod
+   /usr/lib/perl5/5.38/pod/perlglossary.pod
+   /usr/lib/perl5/5.38/pod/perlgov.pod
+   /usr/lib/perl5/5.38/pod/perlgpl.pod
+   /usr/lib/perl5/5.38/pod/perlguts.pod
+   /usr/lib/perl5/5.38/pod/perlhack.pod
+   /usr/lib/perl5/5.38/pod/perlhacktips.pod
+   /usr/lib/perl5/5.38/pod/perlhacktut.pod
+   /usr/lib/perl5/5.38/pod/perlhaiku.pod
+   /usr/lib/perl5/5.38/pod/perlhist.pod
+   /usr/lib/perl5/5.38/pod/perlhpux.pod
+   /usr/lib/perl5/5.38/pod/perlhurd.pod
+   /usr/lib/perl5/5.38/pod/perlintern.pod
+   /usr/lib/perl5/5.38/pod/perlinterp.pod
+   /usr/lib/perl5/5.38/pod/perlintro.pod
+   /usr/lib/perl5/5.38/pod/perliol.pod
+   /usr/lib/perl5/5.38/pod/perlipc.pod
+   /usr/lib/perl5/5.38/pod/perlirix.pod
+   /usr/lib/perl5/5.38/pod/perljp.pod
+   /usr/lib/perl5/5.38/pod/perlko.pod
+   /usr/lib/perl5/5.38/pod/perllexwarn.pod
+   /usr/lib/perl5/5.38/pod/perllinux.pod
+   /usr/lib/perl5/5.38/pod/perllocale.pod
+   /usr/lib/perl5/5.38/pod/perllol.pod
+   /usr/lib/perl5/5.38/pod/perlmacosx.pod
+   /usr/lib/perl5/5.38/pod/perlmod.pod
+   /usr/lib/perl5/5.38/pod/perlmodinstall.pod
+   /usr/lib/perl5/5.38/pod/perlmodlib.pod
+   /usr/lib/perl5/5.38/pod/perlmodstyle.pod
+   /usr/lib/perl5/5.38/pod/perlmroapi.pod
+   /usr/lib/perl5/5.38/pod/perlnewmod.pod
+   /usr/lib/perl5/5.38/pod/perlnumber.pod
+   /usr/lib/perl5/5.38/pod/perlobj.pod
+   /usr/lib/perl5/5.38/pod/perlootut.pod
+   /usr/lib/perl5/5.38/pod/perlop.pod
+   /usr/lib/perl5/5.38/pod/perlopenbsd.pod
+   /usr/lib/perl5/5.38/pod/perlopentut.pod
+   /usr/lib/perl5/5.38/pod/perlos2.pod
+   /usr/lib/perl5/5.38/pod/perlos390.pod
+   /usr/lib/perl5/5.38/pod/perlos400.pod
+   /usr/lib/perl5/5.38/pod/perlpacktut.pod
+   /usr/lib/perl5/5.38/pod/perlperf.pod
+   /usr/lib/perl5/5.38/pod/perlplan9.pod
+   /usr/lib/perl5/5.38/pod/perlpod.pod
+   /usr/lib/perl5/5.38/pod/perlpodspec.pod
+   /usr/lib/perl5/5.38/pod/perlpodstyle.pod
+   /usr/lib/perl5/5.38/pod/perlpolicy.pod
+   /usr/lib/perl5/5.38/pod/perlport.pod
+   /usr/lib/perl5/5.38/pod/perlpragma.pod
+   /usr/lib/perl5/5.38/pod/perlqnx.pod
+   /usr/lib/perl5/5.38/pod/perlre.pod
+   /usr/lib/perl5/5.38/pod/perlreapi.pod
+   /usr/lib/perl5/5.38/pod/perlrebackslash.pod
+   /usr/lib/perl5/5.38/pod/perlrecharclass.pod
+   /usr/lib/perl5/5.38/pod/perlref.pod
+   /usr/lib/perl5/5.38/pod/perlreftut.pod
+   /usr/lib/perl5/5.38/pod/perlreguts.pod
+   /usr/lib/perl5/5.38/pod/perlrepository.pod
+   /usr/lib/perl5/5.38/pod/perlrequick.pod
+   /usr/lib/perl5/5.38/pod/perlreref.pod
+   /usr/lib/perl5/5.38/pod/perlretut.pod
+   /usr/lib/perl5/5.38/pod/perlriscos.pod
+   /usr/lib/perl5/5.38/pod/perlrun.pod
+   /usr/lib/perl5/5.38/pod/perlsec.pod
+   /usr/lib/perl5/5.38/pod/perlsecpolicy.pod
+   /usr/lib/perl5/5.38/pod/perlsolaris.pod
+   /usr/lib/perl5/5.38/pod/perlsource.pod
+   /usr/lib/perl5/5.38/pod/perlstyle.pod
+   /usr/lib/perl5/5.38/pod/perlsub.pod
+   /usr/lib/perl5/5.38/pod/perlsyn.pod
+   /usr/lib/perl5/5.38/pod/perlsynology.pod
+   /usr/lib/perl5/5.38/pod/perlthrtut.pod
+   /usr/lib/perl5/5.38/pod/perltie.pod
+   /usr/lib/perl5/5.38/pod/perltoc.pod
+   /usr/lib/perl5/5.38/pod/perltodo.pod
+   /usr/lib/perl5/5.38/pod/perltooc.pod
+   /usr/lib/perl5/5.38/pod/perltoot.pod
+   /usr/lib/perl5/5.38/pod/perltrap.pod
+   /usr/lib/perl5/5.38/pod/perltru64.pod
+   /usr/lib/perl5/5.38/pod/perltw.pod
+   /usr/lib/perl5/5.38/pod/perlunicode.pod
+   /usr/lib/perl5/5.38/pod/perlunicook.pod
+   /usr/lib/perl5/5.38/pod/perlunifaq.pod
+   /usr/lib/perl5/5.38/pod/perluniintro.pod
+   /usr/lib/perl5/5.38/pod/perluniprops.pod
+   /usr/lib/perl5/5.38/pod/perlunitut.pod
+   /usr/lib/perl5/5.38/pod/perlutil.pod
+   /usr/lib/perl5/5.38/pod/perlvar.pod
+   /usr/lib/perl5/5.38/pod/perlvms.pod
+   /usr/lib/perl5/5.38/pod/perlvos.pod
+   /usr/lib/perl5/5.38/pod/perlwin32.pod
+   /usr/lib/perl5/5.38/pod/perlxs.pod
+   /usr/lib/perl5/5.38/pod/perlxstut.pod
+   /usr/lib/perl5/5.38/pod/perlxstypemap.pod
+   /usr/lib/perl5/5.38/re.pm
+   /usr/lib/perl5/5.38/sigtrap.pm
+   /usr/lib/perl5/5.38/sort.pm
+   /usr/lib/perl5/5.38/stable.pm
+   /usr/lib/perl5/5.38/strict.pm
+   /usr/lib/perl5/5.38/subs.pm
+   /usr/lib/perl5/5.38/threads.pm
+   /usr/lib/perl5/5.38/threads/shared.pm
+   /usr/lib/perl5/5.38/unicore/Blocks.txt
+   /usr/lib/perl5/5.38/unicore/CombiningClass.pl
+   /usr/lib/perl5/5.38/unicore/Decomposition.pl
+   /usr/lib/perl5/5.38/unicore/Name.pl
+   /usr/lib/perl5/5.38/unicore/Name.pm
+   /usr/lib/perl5/5.38/unicore/NamedSequences.txt
+   /usr/lib/perl5/5.38/unicore/SpecialCasing.txt
+   /usr/lib/perl5/5.38/unicore/TestNorm.pl
+   /usr/lib/perl5/5.38/unicore/To/Age.pl
+   /usr/lib/perl5/5.38/unicore/To/Bc.pl
+   /usr/lib/perl5/5.38/unicore/To/Bmg.pl
+   /usr/lib/perl5/5.38/unicore/To/Bpb.pl
+   /usr/lib/perl5/5.38/unicore/To/Bpt.pl
+   /usr/lib/perl5/5.38/unicore/To/Cf.pl
+   /usr/lib/perl5/5.38/unicore/To/Ea.pl
+   /usr/lib/perl5/5.38/unicore/To/EqUIdeo.pl
+   /usr/lib/perl5/5.38/unicore/To/GCB.pl
+   /usr/lib/perl5/5.38/unicore/To/Gc.pl
+   /usr/lib/perl5/5.38/unicore/To/Hst.pl
+   /usr/lib/perl5/5.38/unicore/To/Identif2.pl
+   /usr/lib/perl5/5.38/unicore/To/Identifi.pl
+   /usr/lib/perl5/5.38/unicore/To/InPC.pl
+   /usr/lib/perl5/5.38/unicore/To/InSC.pl
+   /usr/lib/perl5/5.38/unicore/To/Isc.pl
+   /usr/lib/perl5/5.38/unicore/To/Jg.pl
+   /usr/lib/perl5/5.38/unicore/To/Jt.pl
+   /usr/lib/perl5/5.38/unicore/To/Lb.pl
+   /usr/lib/perl5/5.38/unicore/To/Lc.pl
+   /usr/lib/perl5/5.38/unicore/To/NFCQC.pl
+   /usr/lib/perl5/5.38/unicore/To/NFDQC.pl
+   /usr/lib/perl5/5.38/unicore/To/NFKCCF.pl
+   /usr/lib/perl5/5.38/unicore/To/NFKCQC.pl
+   /usr/lib/perl5/5.38/unicore/To/NFKDQC.pl
+   /usr/lib/perl5/5.38/unicore/To/Na1.pl
+   /usr/lib/perl5/5.38/unicore/To/NameAlia.pl
+   /usr/lib/perl5/5.38/unicore/To/Nt.pl
+   /usr/lib/perl5/5.38/unicore/To/Nv.pl
+   /usr/lib/perl5/5.38/unicore/To/PerlDeci.pl
+   /usr/lib/perl5/5.38/unicore/To/SB.pl
+   /usr/lib/perl5/5.38/unicore/To/Sc.pl
+   /usr/lib/perl5/5.38/unicore/To/Scx.pl
+   /usr/lib/perl5/5.38/unicore/To/Tc.pl
+   /usr/lib/perl5/5.38/unicore/To/Uc.pl
+   /usr/lib/perl5/5.38/unicore/To/Vo.pl
+   /usr/lib/perl5/5.38/unicore/To/WB.pl
+   /usr/lib/perl5/5.38/unicore/To/_PerlLB.pl
+   /usr/lib/perl5/5.38/unicore/To/_PerlSCX.pl
+   /usr/lib/perl5/5.38/unicore/UCD.pl
+   /usr/lib/perl5/5.38/unicore/lib/Age/NA.pl
+   /usr/lib/perl5/5.38/unicore/lib/Age/V100.pl
+   /usr/lib/perl5/5.38/unicore/lib/Age/V11.pl
+   /usr/lib/perl5/5.38/unicore/lib/Age/V110.pl
+   /usr/lib/perl5/5.38/unicore/lib/Age/V120.pl
+   /usr/lib/perl5/5.38/unicore/lib/Age/V130.pl
+   /usr/lib/perl5/5.38/unicore/lib/Age/V140.pl
+   /usr/lib/perl5/5.38/unicore/lib/Age/V150.pl
+   /usr/lib/perl5/5.38/unicore/lib/Age/V20.pl
+   /usr/lib/perl5/5.38/unicore/lib/Age/V30.pl
+   /usr/lib/perl5/5.38/unicore/lib/Age/V31.pl
+   /usr/lib/perl5/5.38/unicore/lib/Age/V32.pl
+   /usr/lib/perl5/5.38/unicore/lib/Age/V40.pl
+   /usr/lib/perl5/5.38/unicore/lib/Age/V41.pl
+   /usr/lib/perl5/5.38/unicore/lib/Age/V50.pl
+   /usr/lib/perl5/5.38/unicore/lib/Age/V51.pl
+   /usr/lib/perl5/5.38/unicore/lib/Age/V52.pl
+   /usr/lib/perl5/5.38/unicore/lib/Age/V60.pl
+   /usr/lib/perl5/5.38/unicore/lib/Age/V61.pl
+   /usr/lib/perl5/5.38/unicore/lib/Age/V70.pl
+   /usr/lib/perl5/5.38/unicore/lib/Age/V80.pl
+   /usr/lib/perl5/5.38/unicore/lib/Age/V90.pl
+   /usr/lib/perl5/5.38/unicore/lib/Alpha/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/Bc/AL.pl
+   /usr/lib/perl5/5.38/unicore/lib/Bc/AN.pl
+   /usr/lib/perl5/5.38/unicore/lib/Bc/B.pl
+   /usr/lib/perl5/5.38/unicore/lib/Bc/BN.pl
+   /usr/lib/perl5/5.38/unicore/lib/Bc/CS.pl
+   /usr/lib/perl5/5.38/unicore/lib/Bc/EN.pl
+   /usr/lib/perl5/5.38/unicore/lib/Bc/ES.pl
+   /usr/lib/perl5/5.38/unicore/lib/Bc/ET.pl
+   /usr/lib/perl5/5.38/unicore/lib/Bc/L.pl
+   /usr/lib/perl5/5.38/unicore/lib/Bc/NSM.pl
+   /usr/lib/perl5/5.38/unicore/lib/Bc/ON.pl
+   /usr/lib/perl5/5.38/unicore/lib/Bc/R.pl
+   /usr/lib/perl5/5.38/unicore/lib/Bc/WS.pl
+   /usr/lib/perl5/5.38/unicore/lib/BidiC/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/BidiM/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/Blk/NB.pl
+   /usr/lib/perl5/5.38/unicore/lib/Bpt/C.pl
+   /usr/lib/perl5/5.38/unicore/lib/Bpt/N.pl
+   /usr/lib/perl5/5.38/unicore/lib/Bpt/O.pl
+   /usr/lib/perl5/5.38/unicore/lib/CE/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/CI/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/CWCF/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/CWCM/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/CWKCF/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/CWL/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/CWT/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/CWU/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/Cased/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/Ccc/A.pl
+   /usr/lib/perl5/5.38/unicore/lib/Ccc/AL.pl
+   /usr/lib/perl5/5.38/unicore/lib/Ccc/AR.pl
+   /usr/lib/perl5/5.38/unicore/lib/Ccc/ATAR.pl
+   /usr/lib/perl5/5.38/unicore/lib/Ccc/B.pl
+   /usr/lib/perl5/5.38/unicore/lib/Ccc/BR.pl
+   /usr/lib/perl5/5.38/unicore/lib/Ccc/DB.pl
+   /usr/lib/perl5/5.38/unicore/lib/Ccc/NK.pl
+   /usr/lib/perl5/5.38/unicore/lib/Ccc/NR.pl
+   /usr/lib/perl5/5.38/unicore/lib/Ccc/OV.pl
+   /usr/lib/perl5/5.38/unicore/lib/Ccc/VR.pl
+   /usr/lib/perl5/5.38/unicore/lib/CompEx/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/DI/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/Dash/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/Dep/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/Dia/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/Dt/Com.pl
+   /usr/lib/perl5/5.38/unicore/lib/Dt/Enc.pl
+   /usr/lib/perl5/5.38/unicore/lib/Dt/Fin.pl
+   /usr/lib/perl5/5.38/unicore/lib/Dt/Font.pl
+   /usr/lib/perl5/5.38/unicore/lib/Dt/Init.pl
+   /usr/lib/perl5/5.38/unicore/lib/Dt/Iso.pl
+   /usr/lib/perl5/5.38/unicore/lib/Dt/Med.pl
+   /usr/lib/perl5/5.38/unicore/lib/Dt/Nar.pl
+   /usr/lib/perl5/5.38/unicore/lib/Dt/Nb.pl
+   /usr/lib/perl5/5.38/unicore/lib/Dt/NonCanon.pl
+   /usr/lib/perl5/5.38/unicore/lib/Dt/Sqr.pl
+   /usr/lib/perl5/5.38/unicore/lib/Dt/Sub.pl
+   /usr/lib/perl5/5.38/unicore/lib/Dt/Sup.pl
+   /usr/lib/perl5/5.38/unicore/lib/Dt/Vert.pl
+   /usr/lib/perl5/5.38/unicore/lib/EBase/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/EComp/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/EPres/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/Ea/A.pl
+   /usr/lib/perl5/5.38/unicore/lib/Ea/H.pl
+   /usr/lib/perl5/5.38/unicore/lib/Ea/N.pl
+   /usr/lib/perl5/5.38/unicore/lib/Ea/Na.pl
+   /usr/lib/perl5/5.38/unicore/lib/Ea/W.pl
+   /usr/lib/perl5/5.38/unicore/lib/Emoji/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/Ext/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/ExtPict/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/GCB/CN.pl
+   /usr/lib/perl5/5.38/unicore/lib/GCB/EX.pl
+   /usr/lib/perl5/5.38/unicore/lib/GCB/LV.pl
+   /usr/lib/perl5/5.38/unicore/lib/GCB/LVT.pl
+   /usr/lib/perl5/5.38/unicore/lib/GCB/PP.pl
+   /usr/lib/perl5/5.38/unicore/lib/GCB/SM.pl
+   /usr/lib/perl5/5.38/unicore/lib/GCB/XX.pl
+   /usr/lib/perl5/5.38/unicore/lib/Gc/C.pl
+   /usr/lib/perl5/5.38/unicore/lib/Gc/Cf.pl
+   /usr/lib/perl5/5.38/unicore/lib/Gc/Cn.pl
+   /usr/lib/perl5/5.38/unicore/lib/Gc/L.pl
+   /usr/lib/perl5/5.38/unicore/lib/Gc/LC.pl
+   /usr/lib/perl5/5.38/unicore/lib/Gc/Ll.pl
+   /usr/lib/perl5/5.38/unicore/lib/Gc/Lm.pl
+   /usr/lib/perl5/5.38/unicore/lib/Gc/Lo.pl
+   /usr/lib/perl5/5.38/unicore/lib/Gc/Lu.pl
+   /usr/lib/perl5/5.38/unicore/lib/Gc/M.pl
+   /usr/lib/perl5/5.38/unicore/lib/Gc/Mc.pl
+   /usr/lib/perl5/5.38/unicore/lib/Gc/Me.pl
+   /usr/lib/perl5/5.38/unicore/lib/Gc/Mn.pl
+   /usr/lib/perl5/5.38/unicore/lib/Gc/N.pl
+   /usr/lib/perl5/5.38/unicore/lib/Gc/Nd.pl
+   /usr/lib/perl5/5.38/unicore/lib/Gc/Nl.pl
+   /usr/lib/perl5/5.38/unicore/lib/Gc/No.pl
+   /usr/lib/perl5/5.38/unicore/lib/Gc/P.pl
+   /usr/lib/perl5/5.38/unicore/lib/Gc/Pc.pl
+   /usr/lib/perl5/5.38/unicore/lib/Gc/Pd.pl
+   /usr/lib/perl5/5.38/unicore/lib/Gc/Pe.pl
+   /usr/lib/perl5/5.38/unicore/lib/Gc/Pf.pl
+   /usr/lib/perl5/5.38/unicore/lib/Gc/Pi.pl
+   /usr/lib/perl5/5.38/unicore/lib/Gc/Po.pl
+   /usr/lib/perl5/5.38/unicore/lib/Gc/Ps.pl
+   /usr/lib/perl5/5.38/unicore/lib/Gc/S.pl
+   /usr/lib/perl5/5.38/unicore/lib/Gc/Sc.pl
+   /usr/lib/perl5/5.38/unicore/lib/Gc/Sk.pl
+   /usr/lib/perl5/5.38/unicore/lib/Gc/Sm.pl
+   /usr/lib/perl5/5.38/unicore/lib/Gc/So.pl
+   /usr/lib/perl5/5.38/unicore/lib/Gc/Z.pl
+   /usr/lib/perl5/5.38/unicore/lib/Gc/Zs.pl
+   /usr/lib/perl5/5.38/unicore/lib/GrBase/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/GrExt/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/Hex/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/Hst/NA.pl
+   /usr/lib/perl5/5.38/unicore/lib/Hyphen/T.pl
+   /usr/lib/perl5/5.38/unicore/lib/IDC/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/IDS/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/IdStatus/Allowed.pl
+   /usr/lib/perl5/5.38/unicore/lib/IdStatus/Restrict.pl
+   /usr/lib/perl5/5.38/unicore/lib/IdType/DefaultI.pl
+   /usr/lib/perl5/5.38/unicore/lib/IdType/Exclusio.pl
+   /usr/lib/perl5/5.38/unicore/lib/IdType/Inclusio.pl
+   /usr/lib/perl5/5.38/unicore/lib/IdType/LimitedU.pl
+   /usr/lib/perl5/5.38/unicore/lib/IdType/NotChara.pl
+   /usr/lib/perl5/5.38/unicore/lib/IdType/NotNFKC.pl
+   /usr/lib/perl5/5.38/unicore/lib/IdType/NotXID.pl
+   /usr/lib/perl5/5.38/unicore/lib/IdType/Obsolete.pl
+   /usr/lib/perl5/5.38/unicore/lib/IdType/Recommen.pl
+   /usr/lib/perl5/5.38/unicore/lib/IdType/Technica.pl
+   /usr/lib/perl5/5.38/unicore/lib/IdType/Uncommon.pl
+   /usr/lib/perl5/5.38/unicore/lib/Ideo/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/In/10_0.pl
+   /usr/lib/perl5/5.38/unicore/lib/In/11_0.pl
+   /usr/lib/perl5/5.38/unicore/lib/In/12_0.pl
+   /usr/lib/perl5/5.38/unicore/lib/In/12_1.pl
+   /usr/lib/perl5/5.38/unicore/lib/In/13_0.pl
+   /usr/lib/perl5/5.38/unicore/lib/In/14_0.pl
+   /usr/lib/perl5/5.38/unicore/lib/In/15_0.pl
+   /usr/lib/perl5/5.38/unicore/lib/In/2_0.pl
+   /usr/lib/perl5/5.38/unicore/lib/In/2_1.pl
+   /usr/lib/perl5/5.38/unicore/lib/In/3_0.pl
+   /usr/lib/perl5/5.38/unicore/lib/In/3_1.pl
+   /usr/lib/perl5/5.38/unicore/lib/In/3_2.pl
+   /usr/lib/perl5/5.38/unicore/lib/In/4_0.pl
+   /usr/lib/perl5/5.38/unicore/lib/In/4_1.pl
+   /usr/lib/perl5/5.38/unicore/lib/In/5_0.pl
+   /usr/lib/perl5/5.38/unicore/lib/In/5_1.pl
+   /usr/lib/perl5/5.38/unicore/lib/In/5_2.pl
+   /usr/lib/perl5/5.38/unicore/lib/In/6_0.pl
+   /usr/lib/perl5/5.38/unicore/lib/In/6_1.pl
+   /usr/lib/perl5/5.38/unicore/lib/In/6_2.pl
+   /usr/lib/perl5/5.38/unicore/lib/In/6_3.pl
+   /usr/lib/perl5/5.38/unicore/lib/In/7_0.pl
+   /usr/lib/perl5/5.38/unicore/lib/In/8_0.pl
+   /usr/lib/perl5/5.38/unicore/lib/In/9_0.pl
+   /usr/lib/perl5/5.38/unicore/lib/InPC/Bottom.pl
+   /usr/lib/perl5/5.38/unicore/lib/InPC/BottomAn.pl
+   /usr/lib/perl5/5.38/unicore/lib/InPC/Left.pl
+   /usr/lib/perl5/5.38/unicore/lib/InPC/LeftAndR.pl
+   /usr/lib/perl5/5.38/unicore/lib/InPC/NA.pl
+   /usr/lib/perl5/5.38/unicore/lib/InPC/Overstru.pl
+   /usr/lib/perl5/5.38/unicore/lib/InPC/Right.pl
+   /usr/lib/perl5/5.38/unicore/lib/InPC/Top.pl
+   /usr/lib/perl5/5.38/unicore/lib/InPC/TopAndBo.pl
+   /usr/lib/perl5/5.38/unicore/lib/InPC/TopAndL2.pl
+   /usr/lib/perl5/5.38/unicore/lib/InPC/TopAndLe.pl
+   /usr/lib/perl5/5.38/unicore/lib/InPC/TopAndRi.pl
+   /usr/lib/perl5/5.38/unicore/lib/InPC/VisualOr.pl
+   /usr/lib/perl5/5.38/unicore/lib/InSC/Avagraha.pl
+   /usr/lib/perl5/5.38/unicore/lib/InSC/Bindu.pl
+   /usr/lib/perl5/5.38/unicore/lib/InSC/Cantilla.pl
+   /usr/lib/perl5/5.38/unicore/lib/InSC/Consona2.pl
+   /usr/lib/perl5/5.38/unicore/lib/InSC/Consona3.pl
+   /usr/lib/perl5/5.38/unicore/lib/InSC/Consona4.pl
+   /usr/lib/perl5/5.38/unicore/lib/InSC/Consona5.pl
+   /usr/lib/perl5/5.38/unicore/lib/InSC/Consona6.pl
+   /usr/lib/perl5/5.38/unicore/lib/InSC/Consona7.pl
+   /usr/lib/perl5/5.38/unicore/lib/InSC/Consona8.pl
+   /usr/lib/perl5/5.38/unicore/lib/InSC/Consona9.pl
+   /usr/lib/perl5/5.38/unicore/lib/InSC/Consonan.pl
+   /usr/lib/perl5/5.38/unicore/lib/InSC/Geminati.pl
+   /usr/lib/perl5/5.38/unicore/lib/InSC/Invisibl.pl
+   /usr/lib/perl5/5.38/unicore/lib/InSC/Nukta.pl
+   /usr/lib/perl5/5.38/unicore/lib/InSC/Number.pl
+   /usr/lib/perl5/5.38/unicore/lib/InSC/Other.pl
+   /usr/lib/perl5/5.38/unicore/lib/InSC/PureKill.pl
+   /usr/lib/perl5/5.38/unicore/lib/InSC/Syllable.pl
+   /usr/lib/perl5/5.38/unicore/lib/InSC/ToneMark.pl
+   /usr/lib/perl5/5.38/unicore/lib/InSC/Virama.pl
+   /usr/lib/perl5/5.38/unicore/lib/InSC/Visarga.pl
+   /usr/lib/perl5/5.38/unicore/lib/InSC/Vowel.pl
+   /usr/lib/perl5/5.38/unicore/lib/InSC/VowelDep.pl
+   /usr/lib/perl5/5.38/unicore/lib/InSC/VowelInd.pl
+   /usr/lib/perl5/5.38/unicore/lib/Jg/Ain.pl
+   /usr/lib/perl5/5.38/unicore/lib/Jg/Alef.pl
+   /usr/lib/perl5/5.38/unicore/lib/Jg/Beh.pl
+   /usr/lib/perl5/5.38/unicore/lib/Jg/Dal.pl
+   /usr/lib/perl5/5.38/unicore/lib/Jg/FarsiYeh.pl
+   /usr/lib/perl5/5.38/unicore/lib/Jg/Feh.pl
+   /usr/lib/perl5/5.38/unicore/lib/Jg/Gaf.pl
+   /usr/lib/perl5/5.38/unicore/lib/Jg/Hah.pl
+   /usr/lib/perl5/5.38/unicore/lib/Jg/HanifiRo.pl
+   /usr/lib/perl5/5.38/unicore/lib/Jg/Kaf.pl
+   /usr/lib/perl5/5.38/unicore/lib/Jg/Lam.pl
+   /usr/lib/perl5/5.38/unicore/lib/Jg/NoJoinin.pl
+   /usr/lib/perl5/5.38/unicore/lib/Jg/Noon.pl
+   /usr/lib/perl5/5.38/unicore/lib/Jg/Qaf.pl
+   /usr/lib/perl5/5.38/unicore/lib/Jg/Reh.pl
+   /usr/lib/perl5/5.38/unicore/lib/Jg/Sad.pl
+   /usr/lib/perl5/5.38/unicore/lib/Jg/Seen.pl
+   /usr/lib/perl5/5.38/unicore/lib/Jg/Tah.pl
+   /usr/lib/perl5/5.38/unicore/lib/Jg/Waw.pl
+   /usr/lib/perl5/5.38/unicore/lib/Jg/Yeh.pl
+   /usr/lib/perl5/5.38/unicore/lib/Jt/C.pl
+   /usr/lib/perl5/5.38/unicore/lib/Jt/D.pl
+   /usr/lib/perl5/5.38/unicore/lib/Jt/L.pl
+   /usr/lib/perl5/5.38/unicore/lib/Jt/R.pl
+   /usr/lib/perl5/5.38/unicore/lib/Jt/T.pl
+   /usr/lib/perl5/5.38/unicore/lib/Jt/U.pl
+   /usr/lib/perl5/5.38/unicore/lib/Lb/AI.pl
+   /usr/lib/perl5/5.38/unicore/lib/Lb/AL.pl
+   /usr/lib/perl5/5.38/unicore/lib/Lb/BA.pl
+   /usr/lib/perl5/5.38/unicore/lib/Lb/BB.pl
+   /usr/lib/perl5/5.38/unicore/lib/Lb/CJ.pl
+   /usr/lib/perl5/5.38/unicore/lib/Lb/CL.pl
+   /usr/lib/perl5/5.38/unicore/lib/Lb/CM.pl
+   /usr/lib/perl5/5.38/unicore/lib/Lb/EX.pl
+   /usr/lib/perl5/5.38/unicore/lib/Lb/GL.pl
+   /usr/lib/perl5/5.38/unicore/lib/Lb/ID.pl
+   /usr/lib/perl5/5.38/unicore/lib/Lb/IN.pl
+   /usr/lib/perl5/5.38/unicore/lib/Lb/IS.pl
+   /usr/lib/perl5/5.38/unicore/lib/Lb/NS.pl
+   /usr/lib/perl5/5.38/unicore/lib/Lb/NU.pl
+   /usr/lib/perl5/5.38/unicore/lib/Lb/OP.pl
+   /usr/lib/perl5/5.38/unicore/lib/Lb/PO.pl
+   /usr/lib/perl5/5.38/unicore/lib/Lb/PR.pl
+   /usr/lib/perl5/5.38/unicore/lib/Lb/QU.pl
+   /usr/lib/perl5/5.38/unicore/lib/Lb/SA.pl
+   /usr/lib/perl5/5.38/unicore/lib/Lb/XX.pl
+   /usr/lib/perl5/5.38/unicore/lib/Lower/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/Math/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/NFCQC/M.pl
+   /usr/lib/perl5/5.38/unicore/lib/NFCQC/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/NFDQC/N.pl
+   /usr/lib/perl5/5.38/unicore/lib/NFDQC/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/NFKCQC/N.pl
+   /usr/lib/perl5/5.38/unicore/lib/NFKCQC/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/NFKDQC/N.pl
+   /usr/lib/perl5/5.38/unicore/lib/NFKDQC/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nt/Di.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nt/None.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nt/Nu.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/0.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/1.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/10.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/100.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/1000.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/10000.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/100000.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/11.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/12.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/13.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/14.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/15.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/16.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/17.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/18.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/19.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/1_16.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/1_2.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/1_3.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/1_4.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/1_6.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/1_8.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/2.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/20.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/200.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/2000.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/20000.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/2_3.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/3.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/30.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/300.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/3000.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/30000.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/3_16.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/3_4.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/4.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/40.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/400.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/4000.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/40000.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/5.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/50.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/500.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/5000.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/50000.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/6.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/60.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/600.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/6000.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/60000.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/7.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/70.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/700.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/7000.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/70000.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/8.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/80.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/800.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/8000.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/80000.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/9.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/90.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/900.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/9000.pl
+   /usr/lib/perl5/5.38/unicore/lib/Nv/90000.pl
+   /usr/lib/perl5/5.38/unicore/lib/PCM/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/PatSyn/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/Perl/Alnum.pl
+   /usr/lib/perl5/5.38/unicore/lib/Perl/Assigned.pl
+   /usr/lib/perl5/5.38/unicore/lib/Perl/Blank.pl
+   /usr/lib/perl5/5.38/unicore/lib/Perl/Graph.pl
+   /usr/lib/perl5/5.38/unicore/lib/Perl/PerlWord.pl
+   /usr/lib/perl5/5.38/unicore/lib/Perl/PosixPun.pl
+   /usr/lib/perl5/5.38/unicore/lib/Perl/Print.pl
+   /usr/lib/perl5/5.38/unicore/lib/Perl/SpacePer.pl
+   /usr/lib/perl5/5.38/unicore/lib/Perl/Title.pl
+   /usr/lib/perl5/5.38/unicore/lib/Perl/Word.pl
+   /usr/lib/perl5/5.38/unicore/lib/Perl/XPosixPu.pl
+   /usr/lib/perl5/5.38/unicore/lib/Perl/_PerlAny.pl
+   /usr/lib/perl5/5.38/unicore/lib/Perl/_PerlCh2.pl
+   /usr/lib/perl5/5.38/unicore/lib/Perl/_PerlCha.pl
+   /usr/lib/perl5/5.38/unicore/lib/Perl/_PerlFol.pl
+   /usr/lib/perl5/5.38/unicore/lib/Perl/_PerlIDC.pl
+   /usr/lib/perl5/5.38/unicore/lib/Perl/_PerlIDS.pl
+   /usr/lib/perl5/5.38/unicore/lib/Perl/_PerlIsI.pl
+   /usr/lib/perl5/5.38/unicore/lib/Perl/_PerlNch.pl
+   /usr/lib/perl5/5.38/unicore/lib/Perl/_PerlPat.pl
+   /usr/lib/perl5/5.38/unicore/lib/Perl/_PerlPr2.pl
+   /usr/lib/perl5/5.38/unicore/lib/Perl/_PerlPro.pl
+   /usr/lib/perl5/5.38/unicore/lib/Perl/_PerlQuo.pl
+   /usr/lib/perl5/5.38/unicore/lib/QMark/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/SB/AT.pl
+   /usr/lib/perl5/5.38/unicore/lib/SB/CL.pl
+   /usr/lib/perl5/5.38/unicore/lib/SB/EX.pl
+   /usr/lib/perl5/5.38/unicore/lib/SB/FO.pl
+   /usr/lib/perl5/5.38/unicore/lib/SB/LE.pl
+   /usr/lib/perl5/5.38/unicore/lib/SB/LO.pl
+   /usr/lib/perl5/5.38/unicore/lib/SB/NU.pl
+   /usr/lib/perl5/5.38/unicore/lib/SB/SC.pl
+   /usr/lib/perl5/5.38/unicore/lib/SB/ST.pl
+   /usr/lib/perl5/5.38/unicore/lib/SB/Sp.pl
+   /usr/lib/perl5/5.38/unicore/lib/SB/UP.pl
+   /usr/lib/perl5/5.38/unicore/lib/SB/XX.pl
+   /usr/lib/perl5/5.38/unicore/lib/SD/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/STerm/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/Sc/Arab.pl
+   /usr/lib/perl5/5.38/unicore/lib/Sc/Beng.pl
+   /usr/lib/perl5/5.38/unicore/lib/Sc/Cprt.pl
+   /usr/lib/perl5/5.38/unicore/lib/Sc/Cyrl.pl
+   /usr/lib/perl5/5.38/unicore/lib/Sc/Deva.pl
+   /usr/lib/perl5/5.38/unicore/lib/Sc/Dupl.pl
+   /usr/lib/perl5/5.38/unicore/lib/Sc/Geor.pl
+   /usr/lib/perl5/5.38/unicore/lib/Sc/Glag.pl
+   /usr/lib/perl5/5.38/unicore/lib/Sc/Gong.pl
+   /usr/lib/perl5/5.38/unicore/lib/Sc/Gonm.pl
+   /usr/lib/perl5/5.38/unicore/lib/Sc/Gran.pl
+   /usr/lib/perl5/5.38/unicore/lib/Sc/Grek.pl
+   /usr/lib/perl5/5.38/unicore/lib/Sc/Gujr.pl
+   /usr/lib/perl5/5.38/unicore/lib/Sc/Guru.pl
+   /usr/lib/perl5/5.38/unicore/lib/Sc/Han.pl
+   /usr/lib/perl5/5.38/unicore/lib/Sc/Hang.pl
+   /usr/lib/perl5/5.38/unicore/lib/Sc/Hira.pl
+   /usr/lib/perl5/5.38/unicore/lib/Sc/Kana.pl
+   /usr/lib/perl5/5.38/unicore/lib/Sc/Knda.pl
+   /usr/lib/perl5/5.38/unicore/lib/Sc/Latn.pl
+   /usr/lib/perl5/5.38/unicore/lib/Sc/Limb.pl
+   /usr/lib/perl5/5.38/unicore/lib/Sc/Linb.pl
+   /usr/lib/perl5/5.38/unicore/lib/Sc/Mlym.pl
+   /usr/lib/perl5/5.38/unicore/lib/Sc/Mong.pl
+   /usr/lib/perl5/5.38/unicore/lib/Sc/Mult.pl
+   /usr/lib/perl5/5.38/unicore/lib/Sc/Orya.pl
+   /usr/lib/perl5/5.38/unicore/lib/Sc/Sinh.pl
+   /usr/lib/perl5/5.38/unicore/lib/Sc/Syrc.pl
+   /usr/lib/perl5/5.38/unicore/lib/Sc/Taml.pl
+   /usr/lib/perl5/5.38/unicore/lib/Sc/Telu.pl
+   /usr/lib/perl5/5.38/unicore/lib/Sc/Zinh.pl
+   /usr/lib/perl5/5.38/unicore/lib/Sc/Zyyy.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Adlm.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Arab.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Armn.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Beng.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Bhks.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Bopo.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Cakm.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Cham.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Copt.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Cprt.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Cyrl.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Deva.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Diak.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Dupl.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Ethi.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Geor.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Glag.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Gong.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Gonm.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Gran.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Grek.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Gujr.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Guru.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Han.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Hang.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Hebr.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Hira.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Hmng.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Hmnp.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Kana.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Khar.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Khmr.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Khoj.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Knda.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Kthi.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Lana.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Lao.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Latn.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Limb.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Lina.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Linb.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Mlym.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Mong.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Mult.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Mymr.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Nand.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Nko.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Orya.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Phlp.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Rohg.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Shrd.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Sind.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Sinh.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Syrc.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Tagb.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Takr.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Talu.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Taml.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Tang.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Telu.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Thaa.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Tibt.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Tirh.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Vith.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Xsux.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Yezi.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Yi.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Zinh.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Zyyy.pl
+   /usr/lib/perl5/5.38/unicore/lib/Scx/Zzzz.pl
+   /usr/lib/perl5/5.38/unicore/lib/Term/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/UIdeo/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/Upper/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/VS/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/Vo/R.pl
+   /usr/lib/perl5/5.38/unicore/lib/Vo/Tr.pl
+   /usr/lib/perl5/5.38/unicore/lib/Vo/Tu.pl
+   /usr/lib/perl5/5.38/unicore/lib/Vo/U.pl
+   /usr/lib/perl5/5.38/unicore/lib/WB/EX.pl
+   /usr/lib/perl5/5.38/unicore/lib/WB/Extend.pl
+   /usr/lib/perl5/5.38/unicore/lib/WB/FO.pl
+   /usr/lib/perl5/5.38/unicore/lib/WB/HL.pl
+   /usr/lib/perl5/5.38/unicore/lib/WB/KA.pl
+   /usr/lib/perl5/5.38/unicore/lib/WB/LE.pl
+   /usr/lib/perl5/5.38/unicore/lib/WB/MB.pl
+   /usr/lib/perl5/5.38/unicore/lib/WB/ML.pl
+   /usr/lib/perl5/5.38/unicore/lib/WB/MN.pl
+   /usr/lib/perl5/5.38/unicore/lib/WB/NU.pl
+   /usr/lib/perl5/5.38/unicore/lib/WB/WSegSpac.pl
+   /usr/lib/perl5/5.38/unicore/lib/WB/XX.pl
+   /usr/lib/perl5/5.38/unicore/lib/XIDC/Y.pl
+   /usr/lib/perl5/5.38/unicore/lib/XIDS/Y.pl
+   /usr/lib/perl5/5.38/unicore/uni_keywords.pl
+   /usr/lib/perl5/5.38/unicore/version
+   /usr/lib/perl5/5.38/utf8.pm
+   /usr/lib/perl5/5.38/vars.pm
+   /usr/lib/perl5/5.38/version.pm
+   /usr/lib/perl5/5.38/version.pod
+   /usr/lib/perl5/5.38/version/Internals.pod
+   /usr/lib/perl5/5.38/version/regex.pm
+   /usr/lib/perl5/5.38/vmsish.pm
+   /usr/lib/perl5/5.38/warnings.pm
+   /usr/lib/perl5/5.38/warnings/register.pm
+   /usr/share/man/man1/corelist.1.gz
+   /usr/share/man/man1/cpan.1.gz
+   /usr/share/man/man1/enc2xs.1.gz
+   /usr/share/man/man1/encguess.1.gz
+   /usr/share/man/man1/h2ph.1.gz
+   /usr/share/man/man1/h2xs.1.gz
+   /usr/share/man/man1/instmodsh.1.gz
+   /usr/share/man/man1/json_pp.1.gz
+   /usr/share/man/man1/libnetcfg.1.gz
+   /usr/share/man/man1/perl.1.gz
+   /usr/share/man/man1/perl5004delta.1.gz
+   /usr/share/man/man1/perl5005delta.1.gz
+   /usr/share/man/man1/perl5100delta.1.gz
+   /usr/share/man/man1/perl5101delta.1.gz
+   /usr/share/man/man1/perl5120delta.1.gz
+   /usr/share/man/man1/perl5121delta.1.gz
+   /usr/share/man/man1/perl5122delta.1.gz
+   /usr/share/man/man1/perl5123delta.1.gz
+   /usr/share/man/man1/perl5124delta.1.gz
+   /usr/share/man/man1/perl5125delta.1.gz
+   /usr/share/man/man1/perl5140delta.1.gz
+   /usr/share/man/man1/perl5141delta.1.gz
+   /usr/share/man/man1/perl5142delta.1.gz
+   /usr/share/man/man1/perl5143delta.1.gz
+   /usr/share/man/man1/perl5144delta.1.gz
+   /usr/share/man/man1/perl5160delta.1.gz
+   /usr/share/man/man1/perl5161delta.1.gz
+   /usr/share/man/man1/perl5162delta.1.gz
+   /usr/share/man/man1/perl5163delta.1.gz
+   /usr/share/man/man1/perl5180delta.1.gz
+   /usr/share/man/man1/perl5181delta.1.gz
+   /usr/share/man/man1/perl5182delta.1.gz
+   /usr/share/man/man1/perl5184delta.1.gz
+   /usr/share/man/man1/perl5200delta.1.gz
+   /usr/share/man/man1/perl5201delta.1.gz
+   /usr/share/man/man1/perl5202delta.1.gz
+   /usr/share/man/man1/perl5203delta.1.gz
+   /usr/share/man/man1/perl5220delta.1.gz
+   /usr/share/man/man1/perl5221delta.1.gz
+   /usr/share/man/man1/perl5222delta.1.gz
+   /usr/share/man/man1/perl5223delta.1.gz
+   /usr/share/man/man1/perl5224delta.1.gz
+   /usr/share/man/man1/perl5240delta.1.gz
+   /usr/share/man/man1/perl5241delta.1.gz
+   /usr/share/man/man1/perl5242delta.1.gz
+   /usr/share/man/man1/perl5243delta.1.gz
+   /usr/share/man/man1/perl5244delta.1.gz
+   /usr/share/man/man1/perl5260delta.1.gz
+   /usr/share/man/man1/perl5261delta.1.gz
+   /usr/share/man/man1/perl5262delta.1.gz
+   /usr/share/man/man1/perl5263delta.1.gz
+   /usr/share/man/man1/perl5280delta.1.gz
+   /usr/share/man/man1/perl5281delta.1.gz
+   /usr/share/man/man1/perl5282delta.1.gz
+   /usr/share/man/man1/perl5283delta.1.gz
+   /usr/share/man/man1/perl5300delta.1.gz
+   /usr/share/man/man1/perl5301delta.1.gz
+   /usr/share/man/man1/perl5302delta.1.gz
+   /usr/share/man/man1/perl5303delta.1.gz
+   /usr/share/man/man1/perl5320delta.1.gz
+   /usr/share/man/man1/perl5321delta.1.gz
+   /usr/share/man/man1/perl5340delta.1.gz
+   /usr/share/man/man1/perl5341delta.1.gz
+   /usr/share/man/man1/perl5342delta.1.gz
+   /usr/share/man/man1/perl5343delta.1.gz
+   /usr/share/man/man1/perl5360delta.1.gz
+   /usr/share/man/man1/perl5361delta.1.gz
+   /usr/share/man/man1/perl5362delta.1.gz
+   /usr/share/man/man1/perl5363delta.1.gz
+   /usr/share/man/man1/perl5380delta.1.gz
+   /usr/share/man/man1/perl5381delta.1.gz
+   /usr/share/man/man1/perl5382delta.1.gz
+   /usr/share/man/man1/perl561delta.1.gz
+   /usr/share/man/man1/perl56delta.1.gz
+   /usr/share/man/man1/perl581delta.1.gz
+   /usr/share/man/man1/perl582delta.1.gz
+   /usr/share/man/man1/perl583delta.1.gz
+   /usr/share/man/man1/perl584delta.1.gz
+   /usr/share/man/man1/perl585delta.1.gz
+   /usr/share/man/man1/perl586delta.1.gz
+   /usr/share/man/man1/perl587delta.1.gz
+   /usr/share/man/man1/perl588delta.1.gz
+   /usr/share/man/man1/perl589delta.1.gz
+   /usr/share/man/man1/perl58delta.1.gz
+   /usr/share/man/man1/perlaix.1.gz
+   /usr/share/man/man1/perlamiga.1.gz
+   /usr/share/man/man1/perlandroid.1.gz
+   /usr/share/man/man1/perlapi.1.gz
+   /usr/share/man/man1/perlapio.1.gz
+   /usr/share/man/man1/perlartistic.1.gz
+   /usr/share/man/man1/perlbook.1.gz
+   /usr/share/man/man1/perlboot.1.gz
+   /usr/share/man/man1/perlbot.1.gz
+   /usr/share/man/man1/perlbs2000.1.gz
+   /usr/share/man/man1/perlbug.1.gz
+   /usr/share/man/man1/perlcall.1.gz
+   /usr/share/man/man1/perlcheat.1.gz
+   /usr/share/man/man1/perlclass.1.gz
+   /usr/share/man/man1/perlclassguts.1.gz
+   /usr/share/man/man1/perlclib.1.gz
+   /usr/share/man/man1/perlcn.1.gz
+   /usr/share/man/man1/perlcommunity.1.gz
+   /usr/share/man/man1/perlcygwin.1.gz
+   /usr/share/man/man1/perldata.1.gz
+   /usr/share/man/man1/perldbmfilter.1.gz
+   /usr/share/man/man1/perldebguts.1.gz
+   /usr/share/man/man1/perldebtut.1.gz
+   /usr/share/man/man1/perldebug.1.gz
+   /usr/share/man/man1/perldelta.1.gz
+   /usr/share/man/man1/perldeprecation.1.gz
+   /usr/share/man/man1/perldiag.1.gz
+   /usr/share/man/man1/perldoc.1.gz
+   /usr/share/man/man1/perldocstyle.1.gz
+   /usr/share/man/man1/perldsc.1.gz
+   /usr/share/man/man1/perldtrace.1.gz
+   /usr/share/man/man1/perlebcdic.1.gz
+   /usr/share/man/man1/perlembed.1.gz
+   /usr/share/man/man1/perlexperiment.1.gz
+   /usr/share/man/man1/perlfaq.1.gz
+   /usr/share/man/man1/perlfaq1.1.gz
+   /usr/share/man/man1/perlfaq2.1.gz
+   /usr/share/man/man1/perlfaq3.1.gz
+   /usr/share/man/man1/perlfaq4.1.gz
+   /usr/share/man/man1/perlfaq5.1.gz
+   /usr/share/man/man1/perlfaq6.1.gz
+   /usr/share/man/man1/perlfaq7.1.gz
+   /usr/share/man/man1/perlfaq8.1.gz
+   /usr/share/man/man1/perlfaq9.1.gz
+   /usr/share/man/man1/perlfilter.1.gz
+   /usr/share/man/man1/perlfork.1.gz
+   /usr/share/man/man1/perlform.1.gz
+   /usr/share/man/man1/perlfreebsd.1.gz
+   /usr/share/man/man1/perlfunc.1.gz
+   /usr/share/man/man1/perlgit.1.gz
+   /usr/share/man/man1/perlglossary.1.gz
+   /usr/share/man/man1/perlgov.1.gz
+   /usr/share/man/man1/perlgpl.1.gz
+   /usr/share/man/man1/perlguts.1.gz
+   /usr/share/man/man1/perlhack.1.gz
+   /usr/share/man/man1/perlhacktips.1.gz
+   /usr/share/man/man1/perlhacktut.1.gz
+   /usr/share/man/man1/perlhaiku.1.gz
+   /usr/share/man/man1/perlhist.1.gz
+   /usr/share/man/man1/perlhpux.1.gz
+   /usr/share/man/man1/perlhurd.1.gz
+   /usr/share/man/man1/perlintern.1.gz
+   /usr/share/man/man1/perlinterp.1.gz
+   /usr/share/man/man1/perlintro.1.gz
+   /usr/share/man/man1/perliol.1.gz
+   /usr/share/man/man1/perlipc.1.gz
+   /usr/share/man/man1/perlirix.1.gz
+   /usr/share/man/man1/perlivp.1.gz
+   /usr/share/man/man1/perljp.1.gz
+   /usr/share/man/man1/perlko.1.gz
+   /usr/share/man/man1/perllexwarn.1.gz
+   /usr/share/man/man1/perllinux.1.gz
+   /usr/share/man/man1/perllocale.1.gz
+   /usr/share/man/man1/perllol.1.gz
+   /usr/share/man/man1/perlmacosx.1.gz
+   /usr/share/man/man1/perlmod.1.gz
+   /usr/share/man/man1/perlmodinstall.1.gz
+   /usr/share/man/man1/perlmodlib.1.gz
+   /usr/share/man/man1/perlmodstyle.1.gz
+   /usr/share/man/man1/perlmroapi.1.gz
+   /usr/share/man/man1/perlnewmod.1.gz
+   /usr/share/man/man1/perlnumber.1.gz
+   /usr/share/man/man1/perlobj.1.gz
+   /usr/share/man/man1/perlootut.1.gz
+   /usr/share/man/man1/perlop.1.gz
+   /usr/share/man/man1/perlopenbsd.1.gz
+   /usr/share/man/man1/perlopentut.1.gz
+   /usr/share/man/man1/perlos2.1.gz
+   /usr/share/man/man1/perlos390.1.gz
+   /usr/share/man/man1/perlos400.1.gz
+   /usr/share/man/man1/perlpacktut.1.gz
+   /usr/share/man/man1/perlperf.1.gz
+   /usr/share/man/man1/perlplan9.1.gz
+   /usr/share/man/man1/perlpod.1.gz
+   /usr/share/man/man1/perlpodspec.1.gz
+   /usr/share/man/man1/perlpodstyle.1.gz
+   /usr/share/man/man1/perlpolicy.1.gz
+   /usr/share/man/man1/perlport.1.gz
+   /usr/share/man/man1/perlpragma.1.gz
+   /usr/share/man/man1/perlqnx.1.gz
+   /usr/share/man/man1/perlre.1.gz
+   /usr/share/man/man1/perlreapi.1.gz
+   /usr/share/man/man1/perlrebackslash.1.gz
+   /usr/share/man/man1/perlrecharclass.1.gz
+   /usr/share/man/man1/perlref.1.gz
+   /usr/share/man/man1/perlreftut.1.gz
+   /usr/share/man/man1/perlreguts.1.gz
+   /usr/share/man/man1/perlrepository.1.gz
+   /usr/share/man/man1/perlrequick.1.gz
+   /usr/share/man/man1/perlreref.1.gz
+   /usr/share/man/man1/perlretut.1.gz
+   /usr/share/man/man1/perlriscos.1.gz
+   /usr/share/man/man1/perlrun.1.gz
+   /usr/share/man/man1/perlsec.1.gz
+   /usr/share/man/man1/perlsecpolicy.1.gz
+   /usr/share/man/man1/perlsolaris.1.gz
+   /usr/share/man/man1/perlsource.1.gz
+   /usr/share/man/man1/perlstyle.1.gz
+   /usr/share/man/man1/perlsub.1.gz
+   /usr/share/man/man1/perlsyn.1.gz
+   /usr/share/man/man1/perlsynology.1.gz
+   /usr/share/man/man1/perlthanks.1.gz
+   /usr/share/man/man1/perlthrtut.1.gz
+   /usr/share/man/man1/perltie.1.gz
+   /usr/share/man/man1/perltoc.1.gz
+   /usr/share/man/man1/perltodo.1.gz
+   /usr/share/man/man1/perltooc.1.gz
+   /usr/share/man/man1/perltoot.1.gz
+   /usr/share/man/man1/perltrap.1.gz
+   /usr/share/man/man1/perltru64.1.gz
+   /usr/share/man/man1/perltw.1.gz
+   /usr/share/man/man1/perlunicode.1.gz
+   /usr/share/man/man1/perlunicook.1.gz
+   /usr/share/man/man1/perlunifaq.1.gz
+   /usr/share/man/man1/perluniintro.1.gz
+   /usr/share/man/man1/perluniprops.1.gz
+   /usr/share/man/man1/perlunitut.1.gz
+   /usr/share/man/man1/perlutil.1.gz
+   /usr/share/man/man1/perlvar.1.gz
+   /usr/share/man/man1/perlvms.1.gz
+   /usr/share/man/man1/perlvos.1.gz
+   /usr/share/man/man1/perlwin32.1.gz
+   /usr/share/man/man1/perlxs.1.gz
+   /usr/share/man/man1/perlxstut.1.gz
+   /usr/share/man/man1/perlxstypemap.1.gz
+   /usr/share/man/man1/piconv.1.gz
+   /usr/share/man/man1/pl2pm.1.gz
+   /usr/share/man/man1/pod2html.1.gz
+   /usr/share/man/man1/pod2man.1.gz
+   /usr/share/man/man1/pod2text.1.gz
+   /usr/share/man/man1/pod2usage.1.gz
+   /usr/share/man/man1/podchecker.1.gz
+   /usr/share/man/man1/prove.1.gz
+   /usr/share/man/man1/ptar.1.gz
+   /usr/share/man/man1/ptardiff.1.gz
+   /usr/share/man/man1/ptargrep.1.gz
+   /usr/share/man/man1/shasum.1.gz
+   /usr/share/man/man1/splain.1.gz
+   /usr/share/man/man1/streamzip.1.gz
+   /usr/share/man/man1/xsubpp.1.gz
+   /usr/share/man/man1/zipdetails.1.gz
+   /usr/share/man/man3/AnyDBM_File.3.gz
+   /usr/share/man/man3/App::Cpan.3.gz
+   /usr/share/man/man3/App::Prove.3.gz
+   /usr/share/man/man3/App::Prove::State.3.gz
+   /usr/share/man/man3/App::Prove::State::Result.3.gz
+   /usr/share/man/man3/App::Prove::State::Result::Test.3.gz
+   /usr/share/man/man3/Archive::Tar.3.gz
+   /usr/share/man/man3/Archive::Tar::File.3.gz
+   /usr/share/man/man3/Attribute::Handlers.3.gz
+   /usr/share/man/man3/AutoLoader.3.gz
+   /usr/share/man/man3/AutoSplit.3.gz
+   /usr/share/man/man3/B.3.gz
+   /usr/share/man/man3/B::Concise.3.gz
+   /usr/share/man/man3/B::Deparse.3.gz
+   /usr/share/man/man3/B::Op_private.3.gz
+   /usr/share/man/man3/B::Showlex.3.gz
+   /usr/share/man/man3/B::Terse.3.gz
+   /usr/share/man/man3/B::Xref.3.gz
+   /usr/share/man/man3/Benchmark.3.gz
+   /usr/share/man/man3/CORE.3.gz
+   /usr/share/man/man3/CPAN.3.gz
+   /usr/share/man/man3/CPAN::API::HOWTO.3.gz
+   /usr/share/man/man3/CPAN::Debug.3.gz
+   /usr/share/man/man3/CPAN::Distroprefs.3.gz
+   /usr/share/man/man3/CPAN::FirstTime.3.gz
+   /usr/share/man/man3/CPAN::HandleConfig.3.gz
+   /usr/share/man/man3/CPAN::Kwalify.3.gz
+   /usr/share/man/man3/CPAN::Meta.3.gz
+   /usr/share/man/man3/CPAN::Meta::Converter.3.gz
+   /usr/share/man/man3/CPAN::Meta::Feature.3.gz
+   /usr/share/man/man3/CPAN::Meta::History.3.gz
+   /usr/share/man/man3/CPAN::Meta::History::Meta_1_0.3.gz
+   /usr/share/man/man3/CPAN::Meta::History::Meta_1_1.3.gz
+   /usr/share/man/man3/CPAN::Meta::History::Meta_1_2.3.gz
+   /usr/share/man/man3/CPAN::Meta::History::Meta_1_3.3.gz
+   /usr/share/man/man3/CPAN::Meta::History::Meta_1_4.3.gz
+   /usr/share/man/man3/CPAN::Meta::Merge.3.gz
+   /usr/share/man/man3/CPAN::Meta::Prereqs.3.gz
+   /usr/share/man/man3/CPAN::Meta::Requirements.3.gz
+   /usr/share/man/man3/CPAN::Meta::Spec.3.gz
+   /usr/share/man/man3/CPAN::Meta::Validator.3.gz
+   /usr/share/man/man3/CPAN::Meta::YAML.3.gz
+   /usr/share/man/man3/CPAN::Mirrors.3.gz
+   /usr/share/man/man3/CPAN::Nox.3.gz
+   /usr/share/man/man3/CPAN::Plugin.3.gz
+   /usr/share/man/man3/CPAN::Plugin::Specfile.3.gz
+   /usr/share/man/man3/CPAN::Queue.3.gz
+   /usr/share/man/man3/CPAN::Tarzip.3.gz
+   /usr/share/man/man3/CPAN::Version.3.gz
+   /usr/share/man/man3/Carp.3.gz
+   /usr/share/man/man3/Class::Struct.3.gz
+   /usr/share/man/man3/Compress::Raw::Bzip2.3.gz
+   /usr/share/man/man3/Compress::Raw::Zlib.3.gz
+   /usr/share/man/man3/Compress::Zlib.3.gz
+   /usr/share/man/man3/Config.3.gz
+   /usr/share/man/man3/Config::Extensions.3.gz
+   /usr/share/man/man3/Config::Perl::V.3.gz
+   /usr/share/man/man3/Cwd.3.gz
+   /usr/share/man/man3/DB.3.gz
+   /usr/share/man/man3/DBM_Filter.3.gz
+   /usr/share/man/man3/DBM_Filter::compress.3.gz
+   /usr/share/man/man3/DBM_Filter::encode.3.gz
+   /usr/share/man/man3/DBM_Filter::int32.3.gz
+   /usr/share/man/man3/DBM_Filter::null.3.gz
+   /usr/share/man/man3/DBM_Filter::utf8.3.gz
+   /usr/share/man/man3/Data::Dumper.3.gz
+   /usr/share/man/man3/Devel::PPPort.3.gz
+   /usr/share/man/man3/Devel::Peek.3.gz
+   /usr/share/man/man3/Devel::SelfStubber.3.gz
+   /usr/share/man/man3/Digest.3.gz
+   /usr/share/man/man3/Digest::MD5.3.gz
+   /usr/share/man/man3/Digest::SHA.3.gz
+   /usr/share/man/man3/Digest::base.3.gz
+   /usr/share/man/man3/Digest::file.3.gz
+   /usr/share/man/man3/DirHandle.3.gz
+   /usr/share/man/man3/Dumpvalue.3.gz
+   /usr/share/man/man3/DynaLoader.3.gz
+   /usr/share/man/man3/Encode.3.gz
+   /usr/share/man/man3/Encode::Alias.3.gz
+   /usr/share/man/man3/Encode::Byte.3.gz
+   /usr/share/man/man3/Encode::CJKConstants.3.gz
+   /usr/share/man/man3/Encode::CN.3.gz
+   /usr/share/man/man3/Encode::CN::HZ.3.gz
+   /usr/share/man/man3/Encode::Config.3.gz
+   /usr/share/man/man3/Encode::EBCDIC.3.gz
+   /usr/share/man/man3/Encode::Encoder.3.gz
+   /usr/share/man/man3/Encode::Encoding.3.gz
+   /usr/share/man/man3/Encode::GSM0338.3.gz
+   /usr/share/man/man3/Encode::Guess.3.gz
+   /usr/share/man/man3/Encode::JP.3.gz
+   /usr/share/man/man3/Encode::JP::H2Z.3.gz
+   /usr/share/man/man3/Encode::JP::JIS7.3.gz
+   /usr/share/man/man3/Encode::KR.3.gz
+   /usr/share/man/man3/Encode::KR::2022_KR.3.gz
+   /usr/share/man/man3/Encode::MIME::Header.3.gz
+   /usr/share/man/man3/Encode::MIME::Name.3.gz
+   /usr/share/man/man3/Encode::PerlIO.3.gz
+   /usr/share/man/man3/Encode::Supported.3.gz
+   /usr/share/man/man3/Encode::Symbol.3.gz
+   /usr/share/man/man3/Encode::TW.3.gz
+   /usr/share/man/man3/Encode::Unicode.3.gz
+   /usr/share/man/man3/Encode::Unicode::UTF7.3.gz
+   /usr/share/man/man3/English.3.gz
+   /usr/share/man/man3/Env.3.gz
+   /usr/share/man/man3/Errno.3.gz
+   /usr/share/man/man3/Exporter.3.gz
+   /usr/share/man/man3/Exporter::Heavy.3.gz
+   /usr/share/man/man3/ExtUtils::CBuilder.3.gz
+   /usr/share/man/man3/ExtUtils::CBuilder::Platform::Windows.3.gz
+   /usr/share/man/man3/ExtUtils::Command.3.gz
+   /usr/share/man/man3/ExtUtils::Command::MM.3.gz
+   /usr/share/man/man3/ExtUtils::Constant.3.gz
+   /usr/share/man/man3/ExtUtils::Constant::Base.3.gz
+   /usr/share/man/man3/ExtUtils::Constant::Utils.3.gz
+   /usr/share/man/man3/ExtUtils::Constant::XS.3.gz
+   /usr/share/man/man3/ExtUtils::Embed.3.gz
+   /usr/share/man/man3/ExtUtils::Install.3.gz
+   /usr/share/man/man3/ExtUtils::Installed.3.gz
+   /usr/share/man/man3/ExtUtils::Liblist.3.gz
+   /usr/share/man/man3/ExtUtils::MM.3.gz
+   /usr/share/man/man3/ExtUtils::MM_AIX.3.gz
+   /usr/share/man/man3/ExtUtils::MM_Any.3.gz
+   /usr/share/man/man3/ExtUtils::MM_BeOS.3.gz
+   /usr/share/man/man3/ExtUtils::MM_Cygwin.3.gz
+   /usr/share/man/man3/ExtUtils::MM_DOS.3.gz
+   /usr/share/man/man3/ExtUtils::MM_Darwin.3.gz
+   /usr/share/man/man3/ExtUtils::MM_MacOS.3.gz
+   /usr/share/man/man3/ExtUtils::MM_NW5.3.gz
+   /usr/share/man/man3/ExtUtils::MM_OS2.3.gz
+   /usr/share/man/man3/ExtUtils::MM_OS390.3.gz
+   /usr/share/man/man3/ExtUtils::MM_QNX.3.gz
+   /usr/share/man/man3/ExtUtils::MM_UWIN.3.gz
+   /usr/share/man/man3/ExtUtils::MM_Unix.3.gz
+   /usr/share/man/man3/ExtUtils::MM_VMS.3.gz
+   /usr/share/man/man3/ExtUtils::MM_VOS.3.gz
+   /usr/share/man/man3/ExtUtils::MM_Win32.3.gz
+   /usr/share/man/man3/ExtUtils::MM_Win95.3.gz
+   /usr/share/man/man3/ExtUtils::MY.3.gz
+   /usr/share/man/man3/ExtUtils::MakeMaker.3.gz
+   /usr/share/man/man3/ExtUtils::MakeMaker::Config.3.gz
+   /usr/share/man/man3/ExtUtils::MakeMaker::FAQ.3.gz
+   /usr/share/man/man3/ExtUtils::MakeMaker::Locale.3.gz
+   /usr/share/man/man3/ExtUtils::MakeMaker::Tutorial.3.gz
+   /usr/share/man/man3/ExtUtils::Manifest.3.gz
+   /usr/share/man/man3/ExtUtils::Miniperl.3.gz
+   /usr/share/man/man3/ExtUtils::Mkbootstrap.3.gz
+   /usr/share/man/man3/ExtUtils::Mksymlists.3.gz
+   /usr/share/man/man3/ExtUtils::PL2Bat.3.gz
+   /usr/share/man/man3/ExtUtils::Packlist.3.gz
+   /usr/share/man/man3/ExtUtils::ParseXS.3.gz
+   /usr/share/man/man3/ExtUtils::ParseXS::Constants.3.gz
+   /usr/share/man/man3/ExtUtils::ParseXS::Eval.3.gz
+   /usr/share/man/man3/ExtUtils::ParseXS::Utilities.3.gz
+   /usr/share/man/man3/ExtUtils::Typemaps.3.gz
+   /usr/share/man/man3/ExtUtils::Typemaps::Cmd.3.gz
+   /usr/share/man/man3/ExtUtils::Typemaps::InputMap.3.gz
+   /usr/share/man/man3/ExtUtils::Typemaps::OutputMap.3.gz
+   /usr/share/man/man3/ExtUtils::Typemaps::Type.3.gz
+   /usr/share/man/man3/ExtUtils::testlib.3.gz
+   /usr/share/man/man3/Fatal.3.gz
+   /usr/share/man/man3/Fcntl.3.gz
+   /usr/share/man/man3/File::Basename.3.gz
+   /usr/share/man/man3/File::Compare.3.gz
+   /usr/share/man/man3/File::Copy.3.gz
+   /usr/share/man/man3/File::DosGlob.3.gz
+   /usr/share/man/man3/File::Fetch.3.gz
+   /usr/share/man/man3/File::Find.3.gz
+   /usr/share/man/man3/File::Glob.3.gz
+   /usr/share/man/man3/File::GlobMapper.3.gz
+   /usr/share/man/man3/File::Path.3.gz
+   /usr/share/man/man3/File::Spec.3.gz
+   /usr/share/man/man3/File::Spec::AmigaOS.3.gz
+   /usr/share/man/man3/File::Spec::Cygwin.3.gz
+   /usr/share/man/man3/File::Spec::Epoc.3.gz
+   /usr/share/man/man3/File::Spec::Functions.3.gz
+   /usr/share/man/man3/File::Spec::Mac.3.gz
+   /usr/share/man/man3/File::Spec::OS2.3.gz
+   /usr/share/man/man3/File::Spec::Unix.3.gz
+   /usr/share/man/man3/File::Spec::VMS.3.gz
+   /usr/share/man/man3/File::Spec::Win32.3.gz
+   /usr/share/man/man3/File::Temp.3.gz
+   /usr/share/man/man3/File::stat.3.gz
+   /usr/share/man/man3/FileCache.3.gz
+   /usr/share/man/man3/FileHandle.3.gz
+   /usr/share/man/man3/Filter::Simple.3.gz
+   /usr/share/man/man3/Filter::Util::Call.3.gz
+   /usr/share/man/man3/FindBin.3.gz
+   /usr/share/man/man3/GDBM_File.3.gz
+   /usr/share/man/man3/Getopt::Long.3.gz
+   /usr/share/man/man3/Getopt::Std.3.gz
+   /usr/share/man/man3/HTTP::Tiny.3.gz
+   /usr/share/man/man3/Hash::Util.3.gz
+   /usr/share/man/man3/Hash::Util::FieldHash.3.gz
+   /usr/share/man/man3/I18N::Collate.3.gz
+   /usr/share/man/man3/I18N::LangTags.3.gz
+   /usr/share/man/man3/I18N::LangTags::Detect.3.gz
+   /usr/share/man/man3/I18N::LangTags::List.3.gz
+   /usr/share/man/man3/I18N::Langinfo.3.gz
+   /usr/share/man/man3/IO.3.gz
+   /usr/share/man/man3/IO::Compress::Base.3.gz
+   /usr/share/man/man3/IO::Compress::Bzip2.3.gz
+   /usr/share/man/man3/IO::Compress::Deflate.3.gz
+   /usr/share/man/man3/IO::Compress::FAQ.3.gz
+   /usr/share/man/man3/IO::Compress::Gzip.3.gz
+   /usr/share/man/man3/IO::Compress::RawDeflate.3.gz
+   /usr/share/man/man3/IO::Compress::Zip.3.gz
+   /usr/share/man/man3/IO::Dir.3.gz
+   /usr/share/man/man3/IO::File.3.gz
+   /usr/share/man/man3/IO::Handle.3.gz
+   /usr/share/man/man3/IO::Pipe.3.gz
+   /usr/share/man/man3/IO::Poll.3.gz
+   /usr/share/man/man3/IO::Seekable.3.gz
+   /usr/share/man/man3/IO::Select.3.gz
+   /usr/share/man/man3/IO::Socket.3.gz
+   /usr/share/man/man3/IO::Socket::INET.3.gz
+   /usr/share/man/man3/IO::Socket::IP.3.gz
+   /usr/share/man/man3/IO::Socket::UNIX.3.gz
+   /usr/share/man/man3/IO::Uncompress::AnyInflate.3.gz
+   /usr/share/man/man3/IO::Uncompress::AnyUncompress.3.gz
+   /usr/share/man/man3/IO::Uncompress::Base.3.gz
+   /usr/share/man/man3/IO::Uncompress::Bunzip2.3.gz
+   /usr/share/man/man3/IO::Uncompress::Gunzip.3.gz
+   /usr/share/man/man3/IO::Uncompress::Inflate.3.gz
+   /usr/share/man/man3/IO::Uncompress::RawInflate.3.gz
+   /usr/share/man/man3/IO::Uncompress::Unzip.3.gz
+   /usr/share/man/man3/IO::Zlib.3.gz
+   /usr/share/man/man3/IPC::Cmd.3.gz
+   /usr/share/man/man3/IPC::Msg.3.gz
+   /usr/share/man/man3/IPC::Open2.3.gz
+   /usr/share/man/man3/IPC::Open3.3.gz
+   /usr/share/man/man3/IPC::Semaphore.3.gz
+   /usr/share/man/man3/IPC::SharedMem.3.gz
+   /usr/share/man/man3/IPC::SysV.3.gz
+   /usr/share/man/man3/Internals.3.gz
+   /usr/share/man/man3/JSON::PP.3.gz
+   /usr/share/man/man3/JSON::PP::Boolean.3.gz
+   /usr/share/man/man3/List::Util.3.gz
+   /usr/share/man/man3/List::Util::XS.3.gz
+   /usr/share/man/man3/Locale::Maketext.3.gz
+   /usr/share/man/man3/Locale::Maketext::Cookbook.3.gz
+   /usr/share/man/man3/Locale::Maketext::Guts.3.gz
+   /usr/share/man/man3/Locale::Maketext::GutsLoader.3.gz
+   /usr/share/man/man3/Locale::Maketext::Simple.3.gz
+   /usr/share/man/man3/Locale::Maketext::TPJ13.3.gz
+   /usr/share/man/man3/MIME::Base64.3.gz
+   /usr/share/man/man3/MIME::QuotedPrint.3.gz
+   /usr/share/man/man3/Math::BigFloat.3.gz
+   /usr/share/man/man3/Math::BigInt.3.gz
+   /usr/share/man/man3/Math::BigInt::Calc.3.gz
+   /usr/share/man/man3/Math::BigInt::FastCalc.3.gz
+   /usr/share/man/man3/Math::BigInt::Lib.3.gz
+   /usr/share/man/man3/Math::BigRat.3.gz
+   /usr/share/man/man3/Math::Complex.3.gz
+   /usr/share/man/man3/Math::Trig.3.gz
+   /usr/share/man/man3/Memoize.3.gz
+   /usr/share/man/man3/Memoize::AnyDBM_File.3.gz
+   /usr/share/man/man3/Memoize::Expire.3.gz
    /usr/share/man/man3/Memoize::NDBM_File.3.gz
+   /usr/share/man/man3/Memoize::SDBM_File.3.gz
+   /usr/share/man/man3/Memoize::Storable.3.gz
+   /usr/share/man/man3/Module::CoreList.3.gz
+   /usr/share/man/man3/Module::CoreList::Utils.3.gz
+   /usr/share/man/man3/Module::Load.3.gz
+   /usr/share/man/man3/Module::Load::Conditional.3.gz
+   /usr/share/man/man3/Module::Loaded.3.gz
+   /usr/share/man/man3/Module::Metadata.3.gz
+   /usr/share/man/man3/NEXT.3.gz
+   /usr/share/man/man3/Net::Cmd.3.gz
+   /usr/share/man/man3/Net::Config.3.gz
+   /usr/share/man/man3/Net::Domain.3.gz
+   /usr/share/man/man3/Net::FTP.3.gz
+   /usr/share/man/man3/Net::NNTP.3.gz
+   /usr/share/man/man3/Net::Netrc.3.gz
+   /usr/share/man/man3/Net::POP3.3.gz
+   /usr/share/man/man3/Net::Ping.3.gz
+   /usr/share/man/man3/Net::SMTP.3.gz
+   /usr/share/man/man3/Net::Time.3.gz
+   /usr/share/man/man3/Net::hostent.3.gz
+   /usr/share/man/man3/Net::libnetFAQ.3.gz
+   /usr/share/man/man3/Net::netent.3.gz
+   /usr/share/man/man3/Net::protoent.3.gz
+   /usr/share/man/man3/Net::servent.3.gz
+   /usr/share/man/man3/O.3.gz
+   /usr/share/man/man3/Opcode.3.gz
+   /usr/share/man/man3/POSIX.3.gz
+   /usr/share/man/man3/Params::Check.3.gz
+   /usr/share/man/man3/Parse::CPAN::Meta.3.gz
+   /usr/share/man/man3/Perl::OSType.3.gz
+   /usr/share/man/man3/PerlIO.3.gz
+   /usr/share/man/man3/PerlIO::encoding.3.gz
+   /usr/share/man/man3/PerlIO::mmap.3.gz
+   /usr/share/man/man3/PerlIO::scalar.3.gz
+   /usr/share/man/man3/PerlIO::via.3.gz
+   /usr/share/man/man3/PerlIO::via::QuotedPrint.3.gz
+   /usr/share/man/man3/Pod::Checker.3.gz
+   /usr/share/man/man3/Pod::Escapes.3.gz
+   /usr/share/man/man3/Pod::Html.3.gz
+   /usr/share/man/man3/Pod::Html::Util.3.gz
+   /usr/share/man/man3/Pod::Man.3.gz
+   /usr/share/man/man3/Pod::ParseLink.3.gz
+   /usr/share/man/man3/Pod::Perldoc.3.gz
+   /usr/share/man/man3/Pod::Perldoc::BaseTo.3.gz
+   /usr/share/man/man3/Pod::Perldoc::GetOptsOO.3.gz
+   /usr/share/man/man3/Pod::Perldoc::ToANSI.3.gz
+   /usr/share/man/man3/Pod::Perldoc::ToChecker.3.gz
+   /usr/share/man/man3/Pod::Perldoc::ToMan.3.gz
+   /usr/share/man/man3/Pod::Perldoc::ToNroff.3.gz
+   /usr/share/man/man3/Pod::Perldoc::ToPod.3.gz
+   /usr/share/man/man3/Pod::Perldoc::ToRtf.3.gz
+   /usr/share/man/man3/Pod::Perldoc::ToTerm.3.gz
+   /usr/share/man/man3/Pod::Perldoc::ToText.3.gz
+   /usr/share/man/man3/Pod::Perldoc::ToTk.3.gz
+   /usr/share/man/man3/Pod::Perldoc::ToXml.3.gz
+   /usr/share/man/man3/Pod::Simple.3.gz
+   /usr/share/man/man3/Pod::Simple::Checker.3.gz
+   /usr/share/man/man3/Pod::Simple::Debug.3.gz
+   /usr/share/man/man3/Pod::Simple::DumpAsText.3.gz
+   /usr/share/man/man3/Pod::Simple::DumpAsXML.3.gz
+   /usr/share/man/man3/Pod::Simple::HTML.3.gz
+   /usr/share/man/man3/Pod::Simple::HTMLBatch.3.gz
+   /usr/share/man/man3/Pod::Simple::JustPod.3.gz
+   /usr/share/man/man3/Pod::Simple::LinkSection.3.gz
+   /usr/share/man/man3/Pod::Simple::Methody.3.gz
+   /usr/share/man/man3/Pod::Simple::PullParser.3.gz
+   /usr/share/man/man3/Pod::Simple::PullParserEndToken.3.gz
+   /usr/share/man/man3/Pod::Simple::PullParserStartToken.3.gz
+   /usr/share/man/man3/Pod::Simple::PullParserTextToken.3.gz
+   /usr/share/man/man3/Pod::Simple::PullParserToken.3.gz
+   /usr/share/man/man3/Pod::Simple::RTF.3.gz
+   /usr/share/man/man3/Pod::Simple::Search.3.gz
+   /usr/share/man/man3/Pod::Simple::SimpleTree.3.gz
+   /usr/share/man/man3/Pod::Simple::Subclassing.3.gz
+   /usr/share/man/man3/Pod::Simple::Text.3.gz
+   /usr/share/man/man3/Pod::Simple::TextContent.3.gz
+   /usr/share/man/man3/Pod::Simple::XHTML.3.gz
+   /usr/share/man/man3/Pod::Simple::XMLOutStream.3.gz
+   /usr/share/man/man3/Pod::Text.3.gz
+   /usr/share/man/man3/Pod::Text::Color.3.gz
+   /usr/share/man/man3/Pod::Text::Overstrike.3.gz
+   /usr/share/man/man3/Pod::Text::Termcap.3.gz
+   /usr/share/man/man3/Pod::Usage.3.gz
+   /usr/share/man/man3/SDBM_File.3.gz
+   /usr/share/man/man3/Safe.3.gz
+   /usr/share/man/man3/Scalar::Util.3.gz
+   /usr/share/man/man3/Search::Dict.3.gz
+   /usr/share/man/man3/SelectSaver.3.gz
+   /usr/share/man/man3/SelfLoader.3.gz
+   /usr/share/man/man3/Socket.3.gz
+   /usr/share/man/man3/Storable.3.gz
+   /usr/share/man/man3/Sub::Util.3.gz
+   /usr/share/man/man3/Symbol.3.gz
+   /usr/share/man/man3/Sys::Hostname.3.gz
+   /usr/share/man/man3/Sys::Syslog.3.gz
+   /usr/share/man/man3/TAP::Base.3.gz
+   /usr/share/man/man3/TAP::Formatter::Base.3.gz
+   /usr/share/man/man3/TAP::Formatter::Color.3.gz
+   /usr/share/man/man3/TAP::Formatter::Console.3.gz
+   /usr/share/man/man3/TAP::Formatter::Console::ParallelSession.3.gz
+   /usr/share/man/man3/TAP::Formatter::Console::Session.3.gz
+   /usr/share/man/man3/TAP::Formatter::File.3.gz
+   /usr/share/man/man3/TAP::Formatter::File::Session.3.gz
+   /usr/share/man/man3/TAP::Formatter::Session.3.gz
+   /usr/share/man/man3/TAP::Harness.3.gz
+   /usr/share/man/man3/TAP::Harness::Beyond.3.gz
+   /usr/share/man/man3/TAP::Harness::Env.3.gz
+   /usr/share/man/man3/TAP::Object.3.gz
+   /usr/share/man/man3/TAP::Parser.3.gz
+   /usr/share/man/man3/TAP::Parser::Aggregator.3.gz
+   /usr/share/man/man3/TAP::Parser::Grammar.3.gz
+   /usr/share/man/man3/TAP::Parser::Iterator.3.gz
+   /usr/share/man/man3/TAP::Parser::Iterator::Array.3.gz
+   /usr/share/man/man3/TAP::Parser::Iterator::Process.3.gz
+   /usr/share/man/man3/TAP::Parser::Iterator::Stream.3.gz
+   /usr/share/man/man3/TAP::Parser::IteratorFactory.3.gz
+   /usr/share/man/man3/TAP::Parser::Multiplexer.3.gz
+   /usr/share/man/man3/TAP::Parser::Result.3.gz
+   /usr/share/man/man3/TAP::Parser::Result::Bailout.3.gz
+   /usr/share/man/man3/TAP::Parser::Result::Comment.3.gz
+   /usr/share/man/man3/TAP::Parser::Result::Plan.3.gz
+   /usr/share/man/man3/TAP::Parser::Result::Pragma.3.gz
+   /usr/share/man/man3/TAP::Parser::Result::Test.3.gz
+   /usr/share/man/man3/TAP::Parser::Result::Unknown.3.gz
+   /usr/share/man/man3/TAP::Parser::Result::Version.3.gz
+   /usr/share/man/man3/TAP::Parser::Result::YAML.3.gz
+   /usr/share/man/man3/TAP::Parser::ResultFactory.3.gz
+   /usr/share/man/man3/TAP::Parser::Scheduler.3.gz
+   /usr/share/man/man3/TAP::Parser::Scheduler::Job.3.gz
+   /usr/share/man/man3/TAP::Parser::Scheduler::Spinner.3.gz
+   /usr/share/man/man3/TAP::Parser::Source.3.gz
+   /usr/share/man/man3/TAP::Parser::SourceHandler.3.gz
+   /usr/share/man/man3/TAP::Parser::SourceHandler::Executable.3.gz
+   /usr/share/man/man3/TAP::Parser::SourceHandler::File.3.gz
+   /usr/share/man/man3/TAP::Parser::SourceHandler::Handle.3.gz
+   /usr/share/man/man3/TAP::Parser::SourceHandler::Perl.3.gz
+   /usr/share/man/man3/TAP::Parser::SourceHandler::RawTAP.3.gz
+   /usr/share/man/man3/TAP::Parser::YAMLish::Reader.3.gz
+   /usr/share/man/man3/TAP::Parser::YAMLish::Writer.3.gz
+   /usr/share/man/man3/Term::ANSIColor.3.gz
+   /usr/share/man/man3/Term::Cap.3.gz
+   /usr/share/man/man3/Term::Complete.3.gz
+   /usr/share/man/man3/Term::ReadLine.3.gz
+   /usr/share/man/man3/Test.3.gz
+   /usr/share/man/man3/Test2.3.gz
+   /usr/share/man/man3/Test2::API.3.gz
+   /usr/share/man/man3/Test2::API::Breakage.3.gz
+   /usr/share/man/man3/Test2::API::Context.3.gz
+   /usr/share/man/man3/Test2::API::Instance.3.gz
+   /usr/share/man/man3/Test2::API::InterceptResult.3.gz
+   /usr/share/man/man3/Test2::API::InterceptResult::Event.3.gz
+   /usr/share/man/man3/Test2::API::InterceptResult::Hub.3.gz
+   /usr/share/man/man3/Test2::API::InterceptResult::Squasher.3.gz
+   /usr/share/man/man3/Test2::API::Stack.3.gz
+   /usr/share/man/man3/Test2::Event.3.gz
+   /usr/share/man/man3/Test2::Event::Bail.3.gz
+   /usr/share/man/man3/Test2::Event::Diag.3.gz
+   /usr/share/man/man3/Test2::Event::Encoding.3.gz
+   /usr/share/man/man3/Test2::Event::Exception.3.gz
+   /usr/share/man/man3/Test2::Event::Fail.3.gz
+   /usr/share/man/man3/Test2::Event::Generic.3.gz
+   /usr/share/man/man3/Test2::Event::Note.3.gz
+   /usr/share/man/man3/Test2::Event::Ok.3.gz
+   /usr/share/man/man3/Test2::Event::Pass.3.gz
+   /usr/share/man/man3/Test2::Event::Plan.3.gz
+   /usr/share/man/man3/Test2::Event::Skip.3.gz
+   /usr/share/man/man3/Test2::Event::Subtest.3.gz
+   /usr/share/man/man3/Test2::Event::TAP::Version.3.gz
+   /usr/share/man/man3/Test2::Event::V2.3.gz
+   /usr/share/man/man3/Test2::Event::Waiting.3.gz
+   /usr/share/man/man3/Test2::EventFacet.3.gz
+   /usr/share/man/man3/Test2::EventFacet::About.3.gz
+   /usr/share/man/man3/Test2::EventFacet::Amnesty.3.gz
+   /usr/share/man/man3/Test2::EventFacet::Assert.3.gz
+   /usr/share/man/man3/Test2::EventFacet::Control.3.gz
+   /usr/share/man/man3/Test2::EventFacet::Error.3.gz
+   /usr/share/man/man3/Test2::EventFacet::Hub.3.gz
+   /usr/share/man/man3/Test2::EventFacet::Info.3.gz
+   /usr/share/man/man3/Test2::EventFacet::Info::Table.3.gz
+   /usr/share/man/man3/Test2::EventFacet::Meta.3.gz
+   /usr/share/man/man3/Test2::EventFacet::Parent.3.gz
+   /usr/share/man/man3/Test2::EventFacet::Plan.3.gz
+   /usr/share/man/man3/Test2::EventFacet::Render.3.gz
+   /usr/share/man/man3/Test2::EventFacet::Trace.3.gz
+   /usr/share/man/man3/Test2::Formatter.3.gz
+   /usr/share/man/man3/Test2::Formatter::TAP.3.gz
+   /usr/share/man/man3/Test2::Hub.3.gz
+   /usr/share/man/man3/Test2::Hub::Interceptor.3.gz
+   /usr/share/man/man3/Test2::Hub::Interceptor::Terminator.3.gz
+   /usr/share/man/man3/Test2::Hub::Subtest.3.gz
+   /usr/share/man/man3/Test2::IPC.3.gz
+   /usr/share/man/man3/Test2::IPC::Driver.3.gz
+   /usr/share/man/man3/Test2::IPC::Driver::Files.3.gz
+   /usr/share/man/man3/Test2::Tools::Tiny.3.gz
+   /usr/share/man/man3/Test2::Transition.3.gz
+   /usr/share/man/man3/Test2::Util.3.gz
+   /usr/share/man/man3/Test2::Util::ExternalMeta.3.gz
+   /usr/share/man/man3/Test2::Util::Facets2Legacy.3.gz
+   /usr/share/man/man3/Test2::Util::HashBase.3.gz
+   /usr/share/man/man3/Test2::Util::Trace.3.gz
+   /usr/share/man/man3/Test::Builder.3.gz
+   /usr/share/man/man3/Test::Builder::Formatter.3.gz
+   /usr/share/man/man3/Test::Builder::IO::Scalar.3.gz
+   /usr/share/man/man3/Test::Builder::Module.3.gz
+   /usr/share/man/man3/Test::Builder::Tester.3.gz
+   /usr/share/man/man3/Test::Builder::Tester::Color.3.gz
+   /usr/share/man/man3/Test::Builder::TodoDiag.3.gz
+   /usr/share/man/man3/Test::Harness.3.gz
+   /usr/share/man/man3/Test::More.3.gz
+   /usr/share/man/man3/Test::Simple.3.gz
+   /usr/share/man/man3/Test::Tester.3.gz
+   /usr/share/man/man3/Test::Tester::Capture.3.gz
+   /usr/share/man/man3/Test::Tester::CaptureRunner.3.gz
+   /usr/share/man/man3/Test::Tutorial.3.gz
+   /usr/share/man/man3/Test::use::ok.3.gz
+   /usr/share/man/man3/Text::Abbrev.3.gz
+   /usr/share/man/man3/Text::Balanced.3.gz
+   /usr/share/man/man3/Text::ParseWords.3.gz
+   /usr/share/man/man3/Text::Tabs.3.gz
+   /usr/share/man/man3/Text::Wrap.3.gz
+   /usr/share/man/man3/Thread.3.gz
+   /usr/share/man/man3/Thread::Queue.3.gz
+   /usr/share/man/man3/Thread::Semaphore.3.gz
+   /usr/share/man/man3/Tie::Array.3.gz
+   /usr/share/man/man3/Tie::File.3.gz
+   /usr/share/man/man3/Tie::Handle.3.gz
+   /usr/share/man/man3/Tie::Hash.3.gz
+   /usr/share/man/man3/Tie::Hash::NamedCapture.3.gz
+   /usr/share/man/man3/Tie::Memoize.3.gz
+   /usr/share/man/man3/Tie::RefHash.3.gz
+   /usr/share/man/man3/Tie::Scalar.3.gz
+   /usr/share/man/man3/Tie::StdHandle.3.gz
+   /usr/share/man/man3/Tie::SubstrHash.3.gz
+   /usr/share/man/man3/Time::HiRes.3.gz
+   /usr/share/man/man3/Time::Local.3.gz
+   /usr/share/man/man3/Time::Piece.3.gz
+   /usr/share/man/man3/Time::Seconds.3.gz
+   /usr/share/man/man3/Time::gmtime.3.gz
+   /usr/share/man/man3/Time::localtime.3.gz
+   /usr/share/man/man3/Time::tm.3.gz
+   /usr/share/man/man3/UNIVERSAL.3.gz
+   /usr/share/man/man3/Unicode::Collate.3.gz
+   /usr/share/man/man3/Unicode::Collate::CJK::Big5.3.gz
+   /usr/share/man/man3/Unicode::Collate::CJK::GB2312.3.gz
+   /usr/share/man/man3/Unicode::Collate::CJK::JISX0208.3.gz
+   /usr/share/man/man3/Unicode::Collate::CJK::Korean.3.gz
+   /usr/share/man/man3/Unicode::Collate::CJK::Pinyin.3.gz
+   /usr/share/man/man3/Unicode::Collate::CJK::Stroke.3.gz
+   /usr/share/man/man3/Unicode::Collate::CJK::Zhuyin.3.gz
+   /usr/share/man/man3/Unicode::Collate::Locale.3.gz
+   /usr/share/man/man3/Unicode::Normalize.3.gz
+   /usr/share/man/man3/Unicode::UCD.3.gz
+   /usr/share/man/man3/User::grent.3.gz
+   /usr/share/man/man3/User::pwent.3.gz
+   /usr/share/man/man3/XSLoader.3.gz
+   /usr/share/man/man3/attributes.3.gz
+   /usr/share/man/man3/autodie.3.gz
+   /usr/share/man/man3/autodie::Scope::Guard.3.gz
+   /usr/share/man/man3/autodie::Scope::GuardStack.3.gz
+   /usr/share/man/man3/autodie::Util.3.gz
+   /usr/share/man/man3/autodie::exception.3.gz
+   /usr/share/man/man3/autodie::exception::system.3.gz
+   /usr/share/man/man3/autodie::hints.3.gz
+   /usr/share/man/man3/autodie::skip.3.gz
+   /usr/share/man/man3/autouse.3.gz
+   /usr/share/man/man3/base.3.gz
+   /usr/share/man/man3/bigfloat.3.gz
+   /usr/share/man/man3/bigint.3.gz
+   /usr/share/man/man3/bignum.3.gz
+   /usr/share/man/man3/bigrat.3.gz
+   /usr/share/man/man3/blib.3.gz
+   /usr/share/man/man3/builtin.3.gz
+   /usr/share/man/man3/bytes.3.gz
+   /usr/share/man/man3/charnames.3.gz
+   /usr/share/man/man3/constant.3.gz
+   /usr/share/man/man3/deprecate.3.gz
+   /usr/share/man/man3/diagnostics.3.gz
+   /usr/share/man/man3/encoding.3.gz
+   /usr/share/man/man3/encoding::warnings.3.gz
+   /usr/share/man/man3/experimental.3.gz
+   /usr/share/man/man3/feature.3.gz
+   /usr/share/man/man3/fields.3.gz
+   /usr/share/man/man3/filetest.3.gz
+   /usr/share/man/man3/if.3.gz
+   /usr/share/man/man3/integer.3.gz
+   /usr/share/man/man3/less.3.gz
+   /usr/share/man/man3/lib.3.gz
+   /usr/share/man/man3/locale.3.gz
+   /usr/share/man/man3/mro.3.gz
+   /usr/share/man/man3/ok.3.gz
+   /usr/share/man/man3/open.3.gz
+   /usr/share/man/man3/ops.3.gz
+   /usr/share/man/man3/overload.3.gz
+   /usr/share/man/man3/overloading.3.gz
+   /usr/share/man/man3/parent.3.gz
+   /usr/share/man/man3/re.3.gz
+   /usr/share/man/man3/sigtrap.3.gz
+   /usr/share/man/man3/sort.3.gz
+   /usr/share/man/man3/stable.3.gz
+   /usr/share/man/man3/strict.3.gz
+   /usr/share/man/man3/subs.3.gz
+   /usr/share/man/man3/threads.3.gz
+   /usr/share/man/man3/threads::shared.3.gz
+   /usr/share/man/man3/utf8.3.gz
+   /usr/share/man/man3/vars.3.gz
+   /usr/share/man/man3/version.3.gz
+   /usr/share/man/man3/version::Internals.3.gz
+   /usr/share/man/man3/vmsish.3.gz
+   /usr/share/man/man3/warnings.3.gz
+   /usr/share/man/man3/warnings::register.3.gz
 
 %changelog
 

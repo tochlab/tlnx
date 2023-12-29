@@ -1,5 +1,5 @@
 Name:           popt
-Version:	1.18
+Version:	1.19
 Release:        1%{?dist}
 Summary:	Parse Options - Command line parser
 
@@ -39,7 +39,7 @@ find %{buildroot} -type f -name '*.la' -delete || die
 /usr/lib/libpopt.a
 /usr/lib/libpopt.so
 /usr/lib/libpopt.so.0
-/usr/lib/libpopt.so.0.0.1
+/usr/lib/libpopt.so.0.0.2
 /usr/lib/pkgconfig/popt.pc
 /usr/share/man/man3/popt.3.gz
 

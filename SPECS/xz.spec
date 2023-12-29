@@ -1,5 +1,5 @@
 Name:           xz
-Version:	5.2.5
+Version:	5.4.5
 Release:        1%{?dist}
 Summary:	XZ utils
 
@@ -31,7 +31,7 @@ make %{?_smp_mflags}
 rm -rf $RPM_BUILD_ROOT
 %make_install
 find %{buildroot} -type f -name '*.la' -delete || die
-
+rm -fr %{buildroot}/usr/share/doc/xz/api
 
 %files
 /usr/bin/lzcat
@@ -74,7 +74,7 @@ find %{buildroot} -type f -name '*.la' -delete || die
 /usr/include/lzma/vli.h
 /usr/lib/liblzma.so
 /usr/lib/liblzma.so.5
-/usr/lib/liblzma.so.5.2.5
+/usr/lib/liblzma.so.%{version}
 /usr/lib/pkgconfig/liblzma.pc
 /usr/share/doc/xz/AUTHORS
 /usr/share/doc/xz/COPYING

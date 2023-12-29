@@ -1,11 +1,11 @@
 Name:           expat
-Version:	2.4.8
+Version:	2.4.9
 Release:        1%{?dist}
 Summary:	Stream-oriented XML parser library
 
 License:	MIT
 URL:		https://libexpat.github.io/
-Source0:	https://github.com/libexpat/libexpat/releases/download/R_2_4_8/expat-2.4.8.tar.xz
+Source0:	https://github.com/libexpat/libexpat/releases/download/R_2_4_9/expat-2.4.9.tar.xz
 
 #BuildRequires:
 #Requires:
@@ -37,7 +37,7 @@ find %{buildroot} -type f -name '*.la' -delete || die
 /usr/include/expat_external.h
 /usr/lib/libexpat.so
 /usr/lib/libexpat.so.1
-/usr/lib/libexpat.so.1.8.8
+/usr/lib/libexpat.so.1.8.9
 /usr/lib/pkgconfig/expat.pc
 /usr/share/doc/expat/AUTHORS
 /usr/share/doc/expat/changelog

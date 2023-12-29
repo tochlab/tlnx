@@ -1,5 +1,5 @@
 Name:           libseccomp
-Version:	2.5.4
+Version:	2.5.5
 Release:        1%{?dist}
 Summary:	High level interface to Linux seccomp filter
 

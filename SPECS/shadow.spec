@@ -1,12 +1,12 @@
 Name:           shadow
-Version:        4.11.1
+Version:        4.13
 Release:        1%{?dist}
 Summary:        Utilities to deal with user accounts
 
 #Group:          
 License:        BSD GPL-2
 URL:            https://github.com/shadow-maint/shadow
-Source0:	https://github.com/shadow-maint/shadow/releases/download/v%{version}/shadow-%{version}.tar.gz
+Source0:	https://github.com/shadow-maint/shadow/releases/download/%{version}/shadow-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 #BuildRequires:  

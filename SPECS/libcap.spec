@@ -1,5 +1,5 @@
 Name:          	libcap
-Version:	2.64
+Version:	2.69
 Release:        1%{?dist}
 Summary:	POSIX 1003.1e capabilities
 
@@ -26,11 +26,11 @@ rm -rf $RPM_BUILD_ROOT
 /usr/lib/libcap.a
 /usr/lib/libcap.so
 /usr/lib/libcap.so.2
-/usr/lib/libcap.so.2.64
+/usr/lib/libcap.so.%{version}
 /usr/lib/libpsx.a
 /usr/lib/libpsx.so
 /usr/lib/libpsx.so.2
-/usr/lib/libpsx.so.2.64
+/usr/lib/libpsx.so.%{version}
 /sbin/capsh
 /sbin/getcap
 /sbin/getpcaps
@@ -108,6 +108,15 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/man/man8/getcap.8.gz
 /usr/share/man/man8/getpcaps.8.gz
 /usr/share/man/man8/setcap.8.gz
+/usr/share/man/man3/__psx_syscall.3.gz
+/usr/share/man/man3/cap_copy_int_check.3.gz
+/usr/share/man/man3/cap_get_nsowner.3.gz
+/usr/share/man/man3/cap_prctl.3.gz
+/usr/share/man/man3/cap_prctlw.3.gz
+/usr/share/man/man3/cap_proc_root.3.gz
+/usr/share/man/man3/cap_set_nsowner.3.gz
+/usr/share/man/man3/cap_set_syscall.3.gz
+/usr/share/man/man3/psx_load_syscalls.3.gz
 
 
 %changelog

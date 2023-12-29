@@ -1,5 +1,5 @@
 Name:           libtirpc
-Version:	1.3.2
+Version:	1.3.4
 Release:        1%{?dist}
 Summary:	Transport Independent RPC library (SunRPC replacement)
 

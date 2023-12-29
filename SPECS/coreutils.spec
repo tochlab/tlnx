@@ -1,5 +1,5 @@
 Name:           coreutils
-Version:	8.32
+Version:	9.4	
 Release:        1%{?dist}
 Summary:	Standard GNU utilities (chmod, cp, dd, ls, sort, tr, head, wc, who,...
 

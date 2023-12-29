@@ -1,5 +1,5 @@
 Name:           mpfr
-Version:        4.1.0
+Version:        4.2.1
 Release:        1%{?dist}
 Summary:        mpfr lib
 
@@ -45,7 +45,7 @@ rm -rf $RPM_BUILD_ROOT
 /usr/include/mpfr.h
 /usr/lib/libmpfr.so
 /usr/lib/libmpfr.so.6
-/usr/lib/libmpfr.so.6.1.0
+/usr/lib/libmpfr.so.6.2.1
 /usr/lib/pkgconfig/mpfr.pc
 /usr/share/doc/mpfr/AUTHORS
 /usr/share/doc/mpfr/BUGS

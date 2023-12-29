@@ -1,11 +1,11 @@
 Name:           rsync
-Version:	3.2.4
+Version:	3.2.7
 Release:        1%{?dist}
 Summary:	File transfer program to keep remote files into sync
 
 License:	GPL-3
 URL:		https://rsync.samba.org/
-Source0:	https://download.samba.org/pub/rsync/src/rsync-3.2.4.tar.gz
+Source0:	https://download.samba.org/pub/rsync/src/rsync-%{version}.tar.gz
 
 #BuildRequires:
 #Requires:

@@ -1,5 +1,5 @@
 Name:           make
-Version:	4.3
+Version:	4.4.1
 Release:        1%{?dist}
 Summary:	Standard tool to compile source trees
 
@@ -29,6 +29,7 @@ rm -rf $RPM_BUILD_ROOT/usr/share/info/dir
 /usr/include/gnumake.h
 /usr/share/info/make.info-1.gz
 /usr/share/info/make.info-2.gz
+/usr/share/info/make.info-3.gz
 /usr/share/info/make.info.gz
 /usr/share/man/man1/make.1.gz
 

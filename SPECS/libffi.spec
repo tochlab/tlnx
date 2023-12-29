@@ -1,5 +1,5 @@
 Name:           libffi
-Version:	3.4.2
+Version:	3.4.4
 Release:        1
 Summary:	a portable, high level programming interface to various calling conventions
 
@@ -32,7 +32,7 @@ find %{buildroot} -type f -name '*.la' -delete || die
 /usr/lib/libffi.a
 /usr/lib/libffi.so
 /usr/lib/libffi.so.8
-/usr/lib/libffi.so.8.1.0
+/usr/lib/libffi.so.8.1.2
 /usr/lib/pkgconfig/libffi.pc
 /usr/share/info/libffi.info.gz
 /usr/share/man/man3/ffi.3.gz

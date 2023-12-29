@@ -1,5 +1,5 @@
 Name:           man-db
-Version:	2.9.4
+Version:	2.12.0
 Release:        1%{?dist}
 Summary:	a man replacement that utilizes berkdb instead of flat files
 

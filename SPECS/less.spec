@@ -1,5 +1,5 @@
 Name:           less
-Version:	590
+Version:	643	
 Release:        1%{?dist}
 Summary:	Excellent text file viewer
 

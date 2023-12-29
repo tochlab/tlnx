@@ -1,5 +1,5 @@
 Name:           elfutils
-Version:        0.186
+Version:        0.190
 Release:        1%{?dist}
 Summary:	Libraries/utilities to handle ELF objects (drop in replacement for libelf)
 
@@ -52,15 +52,15 @@ rm -rf $RPM_BUILD_ROOT
 /usr/include/gelf.h
 /usr/include/libelf.h
 /usr/include/nlist.h
-/usr/lib/libasm-0.186.so
+/usr/lib/libasm-%{version}.so
 /usr/lib/libasm.a
 /usr/lib/libasm.so
 /usr/lib/libasm.so.1
-/usr/lib/libdw-0.186.so
+/usr/lib/libdw-%{version}.so
 /usr/lib/libdw.a
 /usr/lib/libdw.so
 /usr/lib/libdw.so.1
-/usr/lib/libelf-0.186.so
+/usr/lib/libelf-%{version}.so
 /usr/lib/libelf.a
 /usr/lib/libelf.so
 /usr/lib/libelf.so.1
@@ -72,5 +72,7 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/man/man3/elf_clone.3.gz
 /usr/share/man/man3/elf_getdata.3.gz
 /usr/share/man/man3/elf_update.3.gz
+/usr/bin/eu-srcfiles
+/usr/share/man/man1/eu-srcfiles.1.gz
 
 %changelog

@@ -1,5 +1,5 @@
 Name:           readline
-Version:	8.1
+Version:	8.2
 Release:        1%{?dist}
 Summary:	GNU Readline Library
 
@@ -46,6 +46,7 @@ ln -sfv ../../lib/$(readlink %{buildroot}/usr/lib/libhistory.so ) %{buildroot}/u
 /usr/lib/libhistory.so
 /usr/lib/libreadline.so
 /usr/lib/pkgconfig/readline.pc
+/usr/lib/pkgconfig/history.pc
 /usr/share/doc/readline/CHANGES
 /usr/share/doc/readline/INSTALL
 /usr/share/doc/readline/README

@@ -62,4 +62,5 @@ cmake.spec
 libxml2.spec
 libunistring.spec
 gperf.spec
+git.spec
 gcc.spec

@@ -1,4 +1,4 @@
 #!/bin/sh
-umount /root/tmp/dev
-umount /root/tmp/proc
-rm -fr /root/tmp/*
+umount /root/rpmbuild/tmp/dev
+umount /root/rpmbuild/tmp/proc
+rm -fr /root/rpmbuild/tmp/*

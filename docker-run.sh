@@ -6,4 +6,4 @@ if [ `basename $WD` != "rpmbuild" ]; then
 	exit
 fi
 
-docker run -it --privileged -v `pwd`:/root/rpmbuild --tmpfs /root/rpmbuild/BUILD:exec --tmpfs /root/rpmbuild/BUILDROOT:exec tlnx-stage0
+docker run -it --privileged -v `pwd`:/root/rpmbuild --tmpfs /root/rpmbuild/BUILD:exec --tmpfs /root/rpmbuild/BUILDROOT:exec tlnx0/stage0

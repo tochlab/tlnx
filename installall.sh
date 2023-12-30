@@ -1,9 +1,9 @@
 #!/bin/sh
-INSTALL_DESTDIR=/root/tmp/
-mkdir $INSTALL_DESTDIR/dev
-mkdir $INSTALL_DESTDIR/proc
-mount --bind /dev/ $INSTALL_DESTDIR/dev
-mount --bind /proc/ $INSTALL_DESTDIR/proc
+INSTALL_DESTDIR=`pwd`/tmp/
+#mkdir $INSTALL_DESTDIR/dev
+#mkdir $INSTALL_DESTDIR/proc
+#mount --bind /dev/ $INSTALL_DESTDIR/dev
+#mount --bind /proc/ $INSTALL_DESTDIR/proc
 for s in $(find ./RPMS/ -name \*.rpm)
 do
 	echo ===== INSTALL $s to $INSTALL_DESTDIR =====
